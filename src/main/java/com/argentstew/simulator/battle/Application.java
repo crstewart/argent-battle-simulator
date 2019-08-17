@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle;
 
+import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
 
 /**
@@ -20,12 +21,21 @@ public class Application {
         System.out.println("FIGHT!");
 
         while (fighter1.getHp() > 0 && fighter2.getHp() > 0) {
-            fighter1.attack(fighter2);
-            System.out.println(fighter1.getName() + " attacks " + fighter2.getName() + "!");
+            AttackAction attack = fighter1.attack();
+            System.out.println(fighter1.getName() + " attacks " + fighter2.getName() + " for " + attack.getDamage() + " damage!");
+            if (attack.isCrit()) {
+                System.out.println("CRITICAL HIT!");
+            }
+            fighter2.takeDamage(attack);
             System.out.println(fighter2);
+
             if (fighter2.getHp() > 0) {
-                fighter2.attack(fighter1);
-                System.out.println(fighter2.getName() + " attacks " + fighter1.getName() + "!");
+                AttackAction attack2 = fighter2.attack();
+                System.out.println(fighter2.getName() + " attacks " + fighter1.getName() + " for " + attack2.getDamage() + " damage!");
+                if (attack2.isCrit()) {
+                    System.out.println("CRITICAL HIT!");
+                }
+                fighter1.takeDamage(attack2);
                 System.out.println(fighter1);
             }
         }
