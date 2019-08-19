@@ -29,7 +29,7 @@ public class FighterStats {
     private int intellect;
 
     // factors into damage reduction from magical attacks
-    private int willpower;
+    private int magicDefense;
 
     // factors into dodge chance
     private int size;
