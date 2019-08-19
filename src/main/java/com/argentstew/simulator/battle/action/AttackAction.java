@@ -1,6 +1,7 @@
 package com.argentstew.simulator.battle.action;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * com.argentstew.simulator.battle.action
@@ -9,9 +10,9 @@ import lombok.Data;
  * @author Craig
  */
 @Data
-public class AttackAction {
+@EqualsAndHashCode(callSuper = true)
+public class AttackAction extends Action {
 
-    private Action action = Action.ATTACK;
     private int damage;
     private boolean isCrit;
 }

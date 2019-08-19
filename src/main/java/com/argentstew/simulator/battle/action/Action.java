@@ -1,14 +1,14 @@
 package com.argentstew.simulator.battle.action;
 
+import com.argentstew.simulator.battle.action.ActionType;
+
 /**
- * com.argentstew.simulator.battle.action
- * 8/17/2019
+ * com.argentstew.simulator.battle.action.attack
+ * 8/18/2019
  *
  * @author Craig
  */
-public enum Action {
+public abstract class Action {
 
-    ATTACK,
-    GUARD,
-    DODGE
+    protected ActionType type;
 }

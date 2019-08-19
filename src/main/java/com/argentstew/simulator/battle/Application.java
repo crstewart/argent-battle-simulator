@@ -2,6 +2,7 @@ package com.argentstew.simulator.battle;
 
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
+import com.argentstew.simulator.battle.fighter.FighterVariance;
 
 /**
  * com.argentstew.simulator.battle
@@ -13,8 +14,12 @@ public class Application {
 
     public static void main(String[] args) {
 
-        Fighter fighter1 = new Fighter("Fighter 1", 100);
-        Fighter fighter2 = new Fighter("Fighter 2", 100);
+        Fighter fighter1 = Fighter.builder().name("Fighter 1").maxHp(100).hp(100)
+                .variance(FighterVariance.builder().critChance(0.2).damageVariance(10).build())
+                .build();
+        Fighter fighter2 = Fighter.builder().name("Fighter 2").maxHp(100).hp(100)
+                .variance(FighterVariance.builder().critChance(0.2).damageVariance(10).build())
+                .build();
 
         System.out.println(fighter1 + " enters!");
         System.out.println(fighter2 + " enters!");
