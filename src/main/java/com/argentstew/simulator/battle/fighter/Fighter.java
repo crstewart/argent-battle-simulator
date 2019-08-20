@@ -2,6 +2,7 @@ package com.argentstew.simulator.battle.fighter;
 
 import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
+import com.argentstew.simulator.battle.reporting.DamageReport;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,31 +26,42 @@ public class Fighter {
 
     private List<Action> actions;
 
+    private FighterDefenses defenses;
     private FighterStats stats;
     private FighterTraits traits;
-    private FighterVariance variance;
 
-    public AttackAction attack() {
-        AttackAction attack = new AttackAction();
-        double baseDamage = calculateBaseDamage();
-        if (Math.random() <= variance.getCritChance()) {
-            attack.setDamage((int) Math.round(baseDamage * 2));
-            attack.setCrit(true);
+    public DamageReport attack() {
+        AttackAction attack = selectAttackAction();
+        double baseDamage = calculateBaseDamage(attack);
+        DamageReport report = new DamageReport();
+        report.setAttack(attack);
+        if (Math.random() < 0.2) {
+            report.setDamage((int) Math.round(baseDamage * 2));
+            report.setCrit(true);
         } else {
-            attack.setDamage((int) Math.round(baseDamage));
-            attack.setCrit(false);
+            report.setDamage((int) Math.round(baseDamage));
+            report.setCrit(false);
         }
 
-        return attack;
+        return report;
     }
 
-    public void takeDamage(AttackAction attack) {
-        this.hp = (attack.getDamage() > this.hp) ? 0 : this.hp - attack.getDamage();
+    public void takeDamage(DamageReport report) {
+        this.hp = (report.getDamage() > this.hp) ? 0 : this.hp - report.getDamage();
     }
 
-    private double calculateBaseDamage() {
-        int baseAttack = 5;
-        double bonusDamage = Math.random() * variance.getDamageVariance();
+    private AttackAction selectAttackAction() {
+        while (true) {
+            int index = (int) Math.round(Math.random() * (actions.size() - 1));
+            if (actions.get(index) instanceof AttackAction) {
+                return (AttackAction) actions.get(index);
+            }
+        }
+    }
+
+    private double calculateBaseDamage(AttackAction attack) {
+        int baseAttack = attack.getPower();
+        double bonusDamage = Math.random() * attack.getVariance();
         return baseAttack + bonusDamage;
     }
 
