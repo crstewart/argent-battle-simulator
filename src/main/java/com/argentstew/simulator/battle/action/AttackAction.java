@@ -21,6 +21,7 @@ public class AttackAction extends Action {
     private String name;
     private int power;
     private double variance;
+    private int speed;
     private double stunChance;
     private ActionType type;
     private List<AttackSubType> subtypes;
