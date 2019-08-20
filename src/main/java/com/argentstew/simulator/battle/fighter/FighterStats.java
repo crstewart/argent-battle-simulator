@@ -16,10 +16,13 @@ public class FighterStats {
     // factors into damage done by melee attacks
     private int strength;
 
-    // factors into damage reduction from physical attacks
-    private int defense;
+    // factors into damage done by ranged attacks and hit chance with physical attacks
+    private int dexterity;
 
-    // factors into damage done by ranged attacks and dodge chance
+    // factors into hit chance with ranged attacks
+    private int aim;
+
+    // factors into critical hit chance with physical and ranged attacks and dodge chance
     private int agility;
 
     // factors into attack timing and dodge chance
@@ -28,8 +31,8 @@ public class FighterStats {
     // factors into damage done by magical attacks and strategy
     private int intellect;
 
-    // factors into damage reduction from magical attacks
-    private int magicDefense;
+    // factors into critical hit chance with magic attacks
+    private int willpower;
 
     // factors into dodge chance
     private int size;
