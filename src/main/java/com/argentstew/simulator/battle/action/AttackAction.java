@@ -15,7 +15,7 @@ import java.util.List;
  */
 @Data
 @Builder
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 public class AttackAction extends Action {
 
     private String name;
@@ -25,4 +25,9 @@ public class AttackAction extends Action {
     private double stunChance;
     private ActionType type;
     private List<AttackSubType> subtypes;
+
+    @Override
+    public boolean isDoable() {
+        return true;
+    }
 }
