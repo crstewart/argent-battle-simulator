@@ -67,24 +67,24 @@ public class Fighter {
         return strategy.selectAction(doableActions);
     }
 
-    public DamageReport attack() {
-        AttackAction attack = (AttackAction) selectAction();
-        double baseDamage = calculateBaseDamage(attack);
-        DamageReport report = new DamageReport();
-        report.setAttack(attack);
-        if (Math.random() < 0.2) {
-            report.setDamage((int) Math.round(baseDamage * 2));
-            report.setCrit(true);
-        } else {
-            report.setDamage((int) Math.round(baseDamage));
-            report.setCrit(false);
-        }
+//    public DamageReport attack() {
+//        AttackAction attack = (AttackAction) selectAction();
+//        double baseDamage = calculateBaseDamage(attack);
+//        DamageReport report = new DamageReport();
+//        report.setAttack(attack);
+//        if (Math.random() < 0.2) {
+//            report.setDamage((int) Math.round(baseDamage * 2));
+//            report.setCrit(true);
+//        } else {
+//            report.setDamage((int) Math.round(baseDamage));
+//            report.setCrit(false);
+//        }
+//
+//        return report;
+//    }
 
-        return report;
-    }
-
-    public void takeDamage(DamageReport report) {
-        this.hp = (report.getDamage() > this.hp) ? 0 : this.hp - report.getDamage();
+    public void takeDamage(int damage) {
+        this.hp = (damage > this.hp) ? 0 : this.hp - damage;
     }
 
     private double calculateBaseDamage(AttackAction attack) {

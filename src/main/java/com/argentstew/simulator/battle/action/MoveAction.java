@@ -10,6 +10,6 @@ public class MoveAction extends Action {
 
     @Override
     public boolean isDoable() {
-        return false;
+        return true;
     }
 }

@@ -13,17 +13,17 @@ import lombok.EqualsAndHashCode;
 @Data
 @Builder
 @EqualsAndHashCode(callSuper = false)
-public class GuardAction extends Action {
+public class DefenseAction extends Action {
 
     private String name;
     private int speed;
 
-    public void applyEffect(AttackAction attack) {
+    public void beforeAttack() {}
 
-    }
+    public void afterAttack() {}
 
     @Override
     public boolean isDoable() {
-        return false;
+        return true;
     }
 }
