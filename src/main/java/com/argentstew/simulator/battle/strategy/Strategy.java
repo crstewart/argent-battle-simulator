@@ -13,5 +13,7 @@ import java.util.List;
 public interface Strategy {
 
     Double addAction(Action action, double weight);
+    void setWeight(Action action, double weight);
+    void adjustWeight(Action action, double adjustment);
     Action selectAction(List<Action> actions);
 }

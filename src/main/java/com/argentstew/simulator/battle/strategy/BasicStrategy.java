@@ -38,6 +38,17 @@ public class BasicStrategy implements Strategy {
     }
 
     @Override
+    public void setWeight(Action action, double weight) {
+        weights.put(action, weight);
+    }
+
+    @Override
+    public void adjustWeight(Action action, double adjustment) {
+        double initialWeight = weights.get(action);
+        weights.put(action, initialWeight + adjustment);
+    }
+
+    @Override
     public Action selectAction(List<Action> actions) {
         if (actions == null || actions.isEmpty()) {
             throw new IllegalStateException("Cannot choose no action!");

@@ -36,25 +36,8 @@ public class Application {
         System.out.println(fighter2 + " enters!");
         System.out.println("FIGHT!");
 
-        while (fighter1.getHp() > 0 && fighter2.getHp() > 0) {
-            DamageReport report = fighter1.attack();
-            System.out.println(fighter1.getName() + " attacks " + fighter2.getName() + " with " + report.getAttack().getName() + " for " + report.getDamage() + " damage!");
-            if (report.isCrit()) {
-                System.out.println("CRITICAL HIT!");
-            }
-            fighter2.takeDamage(report);
-            System.out.println(fighter2);
-
-            if (fighter2.getHp() > 0) {
-                DamageReport report2 = fighter2.attack();
-                System.out.println(fighter2.getName() + " attacks " + fighter1.getName() + " with " + report.getAttack().getName() + " for " + report2.getDamage() + " damage!");
-                if (report2.isCrit()) {
-                    System.out.println("CRITICAL HIT!");
-                }
-                fighter1.takeDamage(report2);
-                System.out.println(fighter1);
-            }
-        }
+        Battle battle = new DuelBattle(fighter1, fighter2);
+        battle.start();
 
         if (fighter1.getHp() > 0) {
             System.out.println(fighter1.getName() + " wins!");

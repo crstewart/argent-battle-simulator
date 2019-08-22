@@ -2,6 +2,7 @@ package com.argentstew.simulator.battle.action;
 
 import com.argentstew.simulator.battle.action.ActionType;
 import com.argentstew.simulator.battle.fighter.Fighter;
+import lombok.Builder;
 import lombok.Data;
 
 /**
