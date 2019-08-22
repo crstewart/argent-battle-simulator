@@ -52,63 +52,26 @@ public class DuelBattle implements Battle {
 
     private void resolveAttacks(AttackAction fighter1Action, AttackAction fighter2Action) {
         if (fighter1Action.getSpeed() > fighter2Action.getSpeed()) {
-            DamageReport report = damageCalculator.calculateDamage(fighter1Action, fighter2);
-            System.out.println(fighter1.getName() + " attacks " + fighter2.getName() + " with " + report.getAttack().getName() + " for " + report.getDamage() + " damage!");
-            if (report.isCrit()) {
-                System.out.println("CRITICAL HIT!");
-            }
-            fighter2.takeDamage(report.getDamage());
-            System.out.println(fighter2);
+            DamageReport report = resolveAttackAgainstFighter(fighter1Action, fighter2);
             if (fighter2.getHp() > 0) {
                 if (report.isStun()) {
                     System.out.println(fighter2.getName() + " is stunned by the attack and cannot act!");
                 } else {
-                    report = damageCalculator.calculateDamage(fighter2Action, fighter1);
-                    System.out.println(fighter2.getName() + " attacks " + fighter1.getName() + " with " + report.getAttack().getName() + " for " + report.getDamage() + " damage!");
-                    if (report.isCrit()) {
-                        System.out.println("CRITICAL HIT!");
-                    }
-                    fighter1.takeDamage(report.getDamage());
-                    System.out.println(fighter1);
+                    resolveAttackAgainstFighter(fighter2Action, fighter1);
                 }
             }
         } else if (fighter2Action.getSpeed() > fighter1Action.getSpeed()) {
-            DamageReport report = damageCalculator.calculateDamage(fighter2Action, fighter1);
-            System.out.println(fighter2.getName() + " attacks " + fighter1.getName() + " with " + report.getAttack().getName() + " for " + report.getDamage() + " damage!");
-            if (report.isCrit()) {
-                System.out.println("CRITICAL HIT!");
-            }
-            fighter1.takeDamage(report.getDamage());
-            System.out.println(fighter1);
+            DamageReport report = resolveAttackAgainstFighter(fighter2Action, fighter1);
             if (fighter1.getHp() > 0) {
                 if (report.isStun()) {
                     System.out.println(fighter1.getName() + " is stunned by the attack and cannot act!");
                 } else {
-                    report = damageCalculator.calculateDamage(fighter1Action, fighter2);
-                    System.out.println(fighter1.getName() + " attacks " + fighter2.getName() + " with " + report.getAttack().getName() + " for " + report.getDamage() + " damage!");
-                    if (report.isCrit()) {
-                        System.out.println("CRITICAL HIT!");
-                    }
-                    fighter2.takeDamage(report.getDamage());
-                    System.out.println(fighter2);
+                    resolveAttackAgainstFighter(fighter1Action, fighter2);
                 }
             }
         } else {
-            DamageReport report = damageCalculator.calculateDamage(fighter1Action, fighter2);
-            System.out.println(fighter1.getName() + " attacks " + fighter2.getName() + " with " + report.getAttack().getName() + " for " + report.getDamage() + " damage!");
-            if (report.isCrit()) {
-                System.out.println("CRITICAL HIT!");
-            }
-            fighter2.takeDamage(report.getDamage());
-            System.out.println(fighter2);
-
-            report = damageCalculator.calculateDamage(fighter2Action, fighter1);
-            System.out.println(fighter2.getName() + " attacks " + fighter1.getName() + " with " + report.getAttack().getName() + " for " + report.getDamage() + " damage!");
-            if (report.isCrit()) {
-                System.out.println("CRITICAL HIT!");
-            }
-            fighter1.takeDamage(report.getDamage());
-            System.out.println(fighter1);
+            resolveAttackAgainstFighter(fighter1Action, fighter2);
+            resolveAttackAgainstFighter(fighter2Action, fighter1);
         }
     }
 
@@ -122,6 +85,23 @@ public class DuelBattle implements Battle {
 
     private void resolveActions(Action action1, Action action2) {
 
+    }
+
+    private DamageReport resolveAttackAgainstFighter(AttackAction attack, Fighter fighter) {
+        DamageReport report = damageCalculator.calculateDamage(attack, fighter);
+        System.out.println(attack.getOwner().getName() + " attacks " + fighter.getName() + " with " + attack.getName() + "!");
+        if (report.isMiss()) {
+            System.out.println(attack.getOwner().getName() + " missed!");
+        } else {
+            System.out.println(fighter.getName() + " takes " + report.getDamage() + " damage!");
+        }
+        if (report.isCrit()) {
+            System.out.println("CRITICAL HIT!");
+        }
+        fighter.takeDamage(report.getDamage());
+        System.out.println(fighter);
+
+        return report;
     }
 
     @Override

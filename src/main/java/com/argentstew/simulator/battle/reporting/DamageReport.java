@@ -14,6 +14,7 @@ public class DamageReport {
 
     private AttackAction attack;
     private int damage;
+    private boolean isMiss;
     private boolean isCrit;
     private boolean isStun;
 }
