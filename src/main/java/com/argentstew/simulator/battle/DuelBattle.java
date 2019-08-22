@@ -17,6 +17,13 @@ public class DuelBattle implements Battle {
     private Fighter fighter2;
 
     @Override
+    public void announce() {
+        System.out.println(fighter1 + " enters!");
+        System.out.println(fighter2 + " enters!");
+        System.out.println("FIGHT!");
+    }
+
+    @Override
     public void start() {
         while (fighter1.getHp() > 0 && fighter2.getHp() > 0) {
             DamageReport report = fighter1.attack();
@@ -36,6 +43,15 @@ public class DuelBattle implements Battle {
                 fighter1.takeDamage(report2);
                 System.out.println(fighter1);
             }
+        }
+    }
+
+    @Override
+    public void determineWinner() {
+        if (fighter1.getHp() > 0) {
+            System.out.println(fighter1.getName() + " wins!");
+        } else {
+            System.out.println(fighter2.getName() + " wins!");
         }
     }
 }

@@ -32,17 +32,9 @@ public class Application {
                 .addAction(AttackAction.builder().name("Punch").power(5).variance(10).build())
                 .addAction(AttackAction.builder().name("Kick").power(2).variance(16).build());
 
-        System.out.println(fighter1 + " enters!");
-        System.out.println(fighter2 + " enters!");
-        System.out.println("FIGHT!");
-
         Battle battle = new DuelBattle(fighter1, fighter2);
+        battle.announce();
         battle.start();
-
-        if (fighter1.getHp() > 0) {
-            System.out.println(fighter1.getName() + " wins!");
-        } else {
-            System.out.println(fighter2.getName() + " wins!");
-        }
+        battle.determineWinner();
     }
 }

@@ -8,5 +8,7 @@ package com.argentstew.simulator.battle;
  */
 public interface Battle {
 
+    void announce();
     void start();
+    void determineWinner();
 }

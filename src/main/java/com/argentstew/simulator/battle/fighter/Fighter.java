@@ -27,6 +27,7 @@ public class Fighter {
     private int maxHp;
 
     private List<Action> actions;
+    private List<FighterClassification> classifications;
 
     private FighterDefenses defenses;
     private FighterStats stats;
