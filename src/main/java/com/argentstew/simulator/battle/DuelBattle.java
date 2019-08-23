@@ -106,7 +106,9 @@ public class DuelBattle implements Battle {
     private void resolveAttack(AttackAction attack, MoveAction move) {
         if (attack.getSpeed() > move.getSpeed()) {
             DamageReport report = resolveAttackAgainstFighter(attack, move.getOwner());
-            if (!report.isStun()) {
+            if (report.isStun()) {
+                System.out.println(move.getOwner().getName() + " is stunned by the attack and cannot act!");
+            } else {
                 System.out.println(move.getMessage());
             }
         } else {
