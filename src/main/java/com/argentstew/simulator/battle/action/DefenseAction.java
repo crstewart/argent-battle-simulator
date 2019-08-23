@@ -16,11 +16,22 @@ import lombok.EqualsAndHashCode;
 public class DefenseAction extends Action {
 
     private String name;
+    private String initiateMessage;
+    private String successMessage;
+    private String failureMessage;
     private int speed;
 
-    public void beforeAttack() {}
+    public boolean isSuccessful(AttackAction attack) {
+        return true;
+    }
 
-    public void afterAttack() {}
+    public int applyDefense(int damage) {
+        return 0;
+    }
+
+    public AttackAction doCounterAttack(AttackAction attack, int damage) {
+        return null;
+    }
 
     @Override
     public boolean isDoable() {

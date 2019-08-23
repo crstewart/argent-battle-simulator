@@ -75,21 +75,67 @@ public class DuelBattle implements Battle {
         }
     }
 
-    private void resolveDefense(AttackAction attackAction, DefenseAction defenseAction) {
-
+    private void resolveDefense(AttackAction attack, DefenseAction defense) {
+        if (attack.getSpeed() > defense.getSpeed()) {
+            resolveAttackAgainstFighter(attack, defense.getOwner());
+            System.out.println(defense.getOwner().getName() + " failed to guard against the attack in time!");
+        } else {
+            System.out.println(attack.getOwner().getName() + " attacks " + defense.getOwner().getName() + " with " + attack.getName() + "!");
+            System.out.println(defense.getInitiateMessage());
+            if (defense.isSuccessful(attack)) {
+                System.out.println(defense.getSuccessMessage());
+                DamageReport report = damageCalculator.calculateDamage(attack, defense.getOwner());
+                int damage = defense.applyDefense(report.getDamage());
+                if (damage > 0) {
+                    System.out.println(defense.getOwner().getName() + " takes " + report.getDamage() + " damage!");
+                    defense.getOwner().takeDamage(damage);
+                }
+                if (defense.getOwner().getHp() > 0) {
+                    AttackAction counterAttack = defense.doCounterAttack(attack, damage);
+                    if (counterAttack != null) {
+                        resolveAttackAgainstFighter(counterAttack, attack.getOwner());
+                    }
+                }
+            } else {
+                System.out.println(defense.getFailureMessage());
+                resolveAttackAgainstFighter(attack, defense.getOwner());
+            }
+        }
     }
 
-    private void resolveAttack(AttackAction attackAction, MoveAction moveAction) {
-
+    private void resolveAttack(AttackAction attack, MoveAction move) {
+        if (attack.getSpeed() > move.getSpeed()) {
+            DamageReport report = resolveAttackAgainstFighter(attack, move.getOwner());
+            if (!report.isStun()) {
+                System.out.println(move.getMessage());
+            }
+        } else {
+            System.out.println(move.getMessage());
+            resolveAttackAgainstFighter(attack, move.getOwner());
+        }
     }
 
     private void resolveActions(Action action1, Action action2) {
+        if (action1 instanceof DefenseAction) {
+            DefenseAction defense = (DefenseAction) action1;
+            System.out.println(defense.getInitiateMessage());
+        } else {
+            MoveAction move = (MoveAction) action1;
+            System.out.println(move.getMessage());
+        }
 
+        if (action2 instanceof DefenseAction) {
+            DefenseAction defense = (DefenseAction) action2;
+            System.out.println(defense.getInitiateMessage());
+        } else {
+            MoveAction move = (MoveAction) action2;
+            System.out.println(move.getMessage());
+        }
     }
 
     private DamageReport resolveAttackAgainstFighter(AttackAction attack, Fighter fighter) {
-        DamageReport report = damageCalculator.calculateDamage(attack, fighter);
         System.out.println(attack.getOwner().getName() + " attacks " + fighter.getName() + " with " + attack.getName() + "!");
+        DamageReport report = damageCalculator.calculateDamage(attack, fighter);
         if (report.isMiss()) {
             System.out.println(attack.getOwner().getName() + " missed!");
         } else {
