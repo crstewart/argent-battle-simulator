@@ -2,11 +2,13 @@ package com.argentstew.simulator.battle.action;
 
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
+import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -17,19 +19,18 @@ import java.util.List;
  * @author Craig
  */
 @Data
-@Builder
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class AttackAction extends Action {
+public abstract class AttackAction extends Action {
 
-    private String name;
-    private int power;
-    private double variance;
-    private int speed;
-    private double stunChance;
-    private double failureAdjustment;
-    private ActionType type;
-    private List<AttackSubType> subtypes;
-    private List<AttackCharacteristic> characteristics;
+    protected String name;
+    protected int power;
+    protected double variance;
+    protected double speed;
+    protected double failureAdjustment;
+    protected AttackType attackType;
+    protected List<AttackSubType> subtypes;
+    protected List<AttackCharacteristic> characteristics;
 
     public boolean hasCharacteristic(AttackCharacteristic characteristic) {
         if (characteristics == null) {
@@ -39,34 +40,38 @@ public class AttackAction extends Action {
         return characteristics.contains(characteristic);
     }
 
-    public DamageReport doAttack(Fighter defender) {
-        double bonusDamage = Math.random() * variance;
-        double baseDamage = power + bonusDamage;
+    public abstract DamageReport doAttack(Fighter defender);
 
-        DamageReport report = new DamageReport();
-        report.setAttack(this);
-        if (Math.random() < 0.2) {
-            report.setDamage((int) Math.round(baseDamage * 2));
-            report.setCrit(true);
-        } else {
-            report.setDamage((int) Math.round(baseDamage));
-            report.setCrit(false);
-        }
+    public abstract double getStrategyAdjustment(DamageReport report);
 
-        return report;
-    }
-
-    public double getStrategyAdjustment(DamageReport report) {
-        if (report.isMiss()) {
-            return -0.1;
-        }
-        double expectedDamage = power + (variance / 2.0);
-        if (report.isCrit()) {
-            expectedDamage *= 2;
-        }
-
-        return report.getDamage() - expectedDamage;
-    }
+//    public DamageReport doAttack(Fighter defender) {
+//        double bonusDamage = Math.random() * variance;
+//        double baseDamage = power + bonusDamage;
+//
+//        DamageReport report = new DamageReport();
+//        report.setAttack(this);
+//        if (Math.random() < 0.2) {
+//            report.setDamage((int) Math.round(baseDamage * 2));
+//            report.setCrit(true);
+//        } else {
+//            report.setDamage((int) Math.round(baseDamage));
+//            report.setCrit(false);
+//        }
+//
+//        return report;
+//    }
+//
+//    public double getStrategyAdjustment(DamageReport report) {
+//        if (report.isMiss()) {
+//            return -0.1;
+//        }
+//        double expectedDamage = power + (variance / 2.0);
+//        if (report.isCrit()) {
+//            expectedDamage *= 2;
+//        }
+//
+//        return report.getDamage() - expectedDamage;
+//    }
 
     @Override
     public boolean isDoable() {

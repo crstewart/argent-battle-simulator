@@ -19,7 +19,7 @@ public abstract class DefenseAction extends Action {
     private String initiateMessage;
     private String successMessage;
     private String failureMessage;
-    private int speed;
+    private double speed;
 
     public boolean isSuccessful(AttackAction attack) {
         return true;

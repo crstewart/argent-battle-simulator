@@ -34,6 +34,11 @@ public class DuelArena implements Arena {
     }
 
     @Override
+    public double getDistanceBetweenFighters() {
+        return rightFighterPosition.getX() - leftFighterPosition.getX();
+    }
+
+    @Override
     public boolean canAdvance(Fighter fighter) {
         if (fighter == null) {
             return false;

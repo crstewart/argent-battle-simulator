@@ -1,9 +1,7 @@
 package com.argentstew.simulator.battle.fighter;
 
 import com.argentstew.simulator.battle.action.Action;
-import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.arena.Arena;
-import com.argentstew.simulator.battle.arena.DuelArena;
 import com.argentstew.simulator.battle.strategy.Strategy;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -56,7 +54,7 @@ public class Fighter {
 
     public Fighter addActions(Iterable<Action> actions) {
         for (Action action : actions) {
-           addAction(action);
+            addAction(action);
         }
 
         return this;
@@ -73,30 +71,8 @@ public class Fighter {
         return strategy.selectAction(doableActions);
     }
 
-//    public DamageReport attack() {
-//        AttackAction attack = (AttackAction) selectAction();
-//        double baseDamage = calculateBaseDamage(attack);
-//        DamageReport report = new DamageReport();
-//        report.setAttack(attack);
-//        if (Math.random() < 0.2) {
-//            report.setDamage((int) Math.round(baseDamage * 2));
-//            report.setCrit(true);
-//        } else {
-//            report.setDamage((int) Math.round(baseDamage));
-//            report.setCrit(false);
-//        }
-//
-//        return report;
-//    }
-
     public void takeDamage(int damage) {
         this.hp = (damage > this.hp) ? 0 : this.hp - damage;
-    }
-
-    private double calculateBaseDamage(AttackAction attack) {
-        int baseAttack = attack.getPower();
-        double bonusDamage = Math.random() * attack.getVariance();
-        return baseAttack + bonusDamage;
     }
 
     @Override

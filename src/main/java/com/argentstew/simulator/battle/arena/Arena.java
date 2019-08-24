@@ -12,6 +12,7 @@ import lombok.Data;
  */
 public interface Arena {
 
+    double getDistanceBetweenFighters();
     boolean canAdvance(Fighter fighter);
     boolean canRetreat(Fighter fighter);
     void advance(Fighter fighter);

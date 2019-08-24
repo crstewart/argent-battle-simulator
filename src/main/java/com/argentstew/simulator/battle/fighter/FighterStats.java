@@ -13,30 +13,33 @@ import lombok.Data;
 @Builder
 public class FighterStats {
 
-    // factors into damage done by melee attacks
-    private int strength;
+    // factors into damage done and stun chance with melee attacks
+    private double strength;
 
-    // factors into damage done by ranged attacks and hit chance with physical attacks
-    private int dexterity;
+    // factors into stun defense for physical and ranged attacks
+    private double toughness;
 
-    // factors into hit chance with ranged attacks
-    private int aim;
+    // factors into damage done by ranged attacks and hit chance with melee attacks
+    private double dexterity;
+
+    // factors into hit chance and critical hit chance with ranged attacks
+    private double aim;
 
     // factors into critical hit chance with physical and ranged attacks and dodge chance
-    private int agility;
+    private double agility;
 
     // factors into attack timing and dodge chance
-    private int speed;
+    private double speed;
 
     // factors into damage done by magical attacks and strategy
-    private int intellect;
+    private double intellect;
 
-    // factors into critical hit chance with magic attacks
-    private int willpower;
+    // factors into critical hit chance and stun defense with magic attacks
+    private double willpower;
 
     // factors into miss chance
-    private int size;
+    private double size;
 
     // factors into enemy grapple attack success
-    private int weight;
+    private double weight;
 }

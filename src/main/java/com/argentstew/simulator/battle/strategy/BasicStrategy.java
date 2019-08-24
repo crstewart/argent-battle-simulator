@@ -1,7 +1,6 @@
 package com.argentstew.simulator.battle.strategy;
 
 import com.argentstew.simulator.battle.action.Action;
-import com.argentstew.simulator.battle.fighter.Fighter;
 
 import java.util.Collection;
 import java.util.HashMap;

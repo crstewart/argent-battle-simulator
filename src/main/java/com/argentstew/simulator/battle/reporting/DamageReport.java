@@ -1,7 +1,9 @@
 package com.argentstew.simulator.battle.reporting;
 
 import com.argentstew.simulator.battle.action.AttackAction;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * com.argentstew.simulator.battle.reporting
@@ -10,6 +12,8 @@ import lombok.Data;
  * @author Craig
  */
 @Data
+@Builder
+@NoArgsConstructor
 public class DamageReport {
 
     private AttackAction attack;
