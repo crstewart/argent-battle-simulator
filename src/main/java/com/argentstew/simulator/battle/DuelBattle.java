@@ -22,8 +22,8 @@ public class DuelBattle implements Battle {
 
     @Override
     public void announce() {
-        System.out.println(fighter1 + " enters!");
-        System.out.println(fighter2 + " enters!");
+        System.out.println(fighter1.getEntryQuote());
+        System.out.println(fighter2.getEntryQuote());
         System.out.println("FIGHT!");
     }
 
@@ -176,8 +176,10 @@ public class DuelBattle implements Battle {
     public void determineWinner() {
         if (fighter1.getHp() > 0) {
             System.out.println(fighter1.getName() + " wins!");
+            System.out.println(fighter1.getVictoryQuote());
         } else if (fighter2.getHp() > 0) {
             System.out.println(fighter2.getName() + " wins!");
+            System.out.println(fighter2.getVictoryQuote());
         } else {
             System.out.println(fighter1.getName() + " and " + fighter2.getName() + " fight to a draw!");
         }

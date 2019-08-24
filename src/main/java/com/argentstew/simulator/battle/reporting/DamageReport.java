@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
  * @author Craig
  */
 @Data
-@Builder
 @NoArgsConstructor
 public class DamageReport {
 

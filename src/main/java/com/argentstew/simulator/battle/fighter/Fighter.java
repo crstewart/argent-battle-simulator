@@ -30,6 +30,9 @@ public class Fighter {
     private Arena arena;
     private int direction;
 
+    private List<String> entryQuotes;
+    private List<String> victoryQuotes;
+
     private List<Action> actions;
     private List<FighterClassification> classifications;
 
@@ -73,6 +76,16 @@ public class Fighter {
 
     public void takeDamage(int damage) {
         this.hp = (damage > this.hp) ? 0 : this.hp - damage;
+    }
+
+    public String getEntryQuote() {
+        int quoteIndex = (int) Math.floor(Math.random() * entryQuotes.size());
+        return entryQuotes.get(quoteIndex);
+    }
+
+    public String getVictoryQuote() {
+        int quoteIndex = (int) Math.floor(Math.random() * victoryQuotes.size());
+        return victoryQuotes.get(quoteIndex);
     }
 
     @Override
