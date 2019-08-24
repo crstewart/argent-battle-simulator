@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.action.attack;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.trait.Trait;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -40,6 +41,9 @@ public abstract class MagicAttack extends AttackAction {
         damage *= defender.getDefenses().get(this.attackType);
         for (AttackSubType subType : this.subtypes) {
             damage *= defender.getDefenses().get(subType);
+        }
+        for (Trait trait : owner.getTraits().getTraits()) {
+            damage = trait.applyBonusDamage(defender, damage);
         }
 
         double critChance = getCritChance(defender);

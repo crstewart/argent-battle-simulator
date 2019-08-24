@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.MoveAction;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.trait.Trait;
 import lombok.AllArgsConstructor;
 
 /**
@@ -177,6 +178,14 @@ public class DuelBattle implements Battle {
 
         fighter.takeDamage(report.getDamage());
         System.out.println(fighter);
+
+        for (Trait trait : fighter.getTraits().getTraits()) {
+            AttackAction counterAttack = trait.applyPassiveDefense(attack);
+            if (counterAttack != null) {
+                DamageReport counterReport = counterAttack.doAttack(attack.getOwner());
+                System.out.println(fighter.getName() + "'s " + counterReport.getAttack().getName() + " counters for " + counterReport.getDamage() + " damage!");
+            }
+        }
 
         return report;
     }
