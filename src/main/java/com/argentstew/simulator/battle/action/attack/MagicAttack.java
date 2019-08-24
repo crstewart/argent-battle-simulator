@@ -24,16 +24,6 @@ public abstract class MagicAttack extends AttackAction {
     }
 
     @Override
-    public double getSpeed() {
-        if (requiresMeleeRange) {
-            int distance = (int) Math.round(owner.getArena().getDistanceBetweenFighters());
-            return 1 + (2 * (distance - 1)) + this.speed;
-        }
-
-        return this.speed;
-    }
-
-    @Override
     public DamageReport doAttack(Fighter defender) {
         DamageReport report = new DamageReport();
         report.setAttack(this);
@@ -92,6 +82,16 @@ public abstract class MagicAttack extends AttackAction {
         }
 
         return stunChance;
+    }
+
+    @Override
+    public double calculateSpeed() {
+        if (requiresMeleeRange) {
+            int distance = (int) Math.round(owner.getArena().getDistanceBetweenFighters());
+            return 1 + (2 * (distance - 1)) + this.speed;
+        }
+
+        return this.speed;
     }
 
     @Override

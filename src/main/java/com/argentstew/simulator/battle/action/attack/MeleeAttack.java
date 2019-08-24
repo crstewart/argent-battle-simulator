@@ -20,12 +20,6 @@ public abstract class MeleeAttack extends AttackAction {
     }
 
     @Override
-    public double getSpeed() {
-        int distance = (int) Math.round(owner.getArena().getDistanceBetweenFighters());
-        return 1 + (2 * (distance - 1)) + this.speed;
-    }
-
-    @Override
     public DamageReport doAttack(Fighter defender) {
         DamageReport report = new DamageReport();
         report.setAttack(this);
@@ -86,6 +80,12 @@ public abstract class MeleeAttack extends AttackAction {
         }
 
         return stunChance;
+    }
+
+    @Override
+    public double calculateSpeed() {
+        int distance = (int) Math.round(owner.getArena().getDistanceBetweenFighters());
+        return 1 + (2 * (distance - 1)) + this.speed;
     }
 
     @Override

@@ -20,11 +20,6 @@ public abstract class RangedAttack extends AttackAction {
     }
 
     @Override
-    public double getSpeed() {
-        return this.speed;
-    }
-
-    @Override
     public DamageReport doAttack(Fighter defender) {
         DamageReport report = new DamageReport();
         report.setAttack(this);
@@ -83,6 +78,11 @@ public abstract class RangedAttack extends AttackAction {
         }
 
         return stunChance;
+    }
+
+    @Override
+    public double calculateSpeed() {
+        return this.speed;
     }
 
     @Override

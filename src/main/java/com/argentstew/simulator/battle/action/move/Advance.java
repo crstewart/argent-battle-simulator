@@ -13,12 +13,13 @@ import lombok.EqualsAndHashCode;
 public class Advance extends MoveAction {
 
     public Advance() {
+        this.setName("Advance");
         this.setMessage("advances!");
         this.setDirection(1);
     }
 
     @Override
-    public double getSpeed() {
+    public double calculateSpeed() {
         return 5.0 - (owner.getStats().getSpeed() / 2.0);
     }
 

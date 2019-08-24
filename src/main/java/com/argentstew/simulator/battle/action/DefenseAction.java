@@ -15,11 +15,9 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public abstract class DefenseAction extends Action {
 
-    protected String name;
     protected String initiateMessage;
     protected String successMessage;
     protected String failureMessage;
-    protected double speed;
 
     public boolean isSuccessful(AttackAction attack) {
         return true;
@@ -31,6 +29,11 @@ public abstract class DefenseAction extends Action {
 
     public double getSuccessAdjustment() {
         return owner.getStats().getIntellect() * 0.04;
+    }
+
+    @Override
+    public double calculateSpeed() {
+        return speed;
     }
 
     @Override

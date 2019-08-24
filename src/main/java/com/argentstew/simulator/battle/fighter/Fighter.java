@@ -11,6 +11,7 @@ import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * com.argentstew.simulator.battle.fighter
@@ -21,7 +22,6 @@ import java.util.List;
 @Data
 @Builder
 @AllArgsConstructor
-@EqualsAndHashCode
 public class Fighter {
 
     private String name;
@@ -96,7 +96,32 @@ public class Fighter {
 
     @Override
     public String toString() {
-        return name + " (" + hp + "/" + maxHp + "), [" + xStrikeMeter + "/"
+        return name + " (" + hp + "/" + maxHp + ") [" + xStrikeMeter + "/"
                 + XStrike.X_STRIKE_METER_READY + "]";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fighter fighter = (Fighter) o;
+        return hp == fighter.hp &&
+                maxHp == fighter.maxHp &&
+                xStrikeMeter == fighter.xStrikeMeter &&
+                direction == fighter.direction &&
+                Objects.equals(name, fighter.name) &&
+                Objects.equals(arena, fighter.arena) &&
+                Objects.equals(entryQuotes, fighter.entryQuotes) &&
+                Objects.equals(victoryQuotes, fighter.victoryQuotes) &&
+                Objects.equals(classifications, fighter.classifications) &&
+                Objects.equals(defenses, fighter.defenses) &&
+                Objects.equals(stats, fighter.stats) &&
+                Objects.equals(traits, fighter.traits) &&
+                Objects.equals(strategy, fighter.strategy);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, hp, maxHp, xStrikeMeter, arena, direction, entryQuotes, victoryQuotes, classifications, defenses, stats, traits, strategy);
     }
 }

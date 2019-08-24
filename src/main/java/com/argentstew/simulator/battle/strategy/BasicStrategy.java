@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * com.argentstew.simulator.battle.strategy
@@ -17,7 +18,7 @@ public class BasicStrategy implements Strategy {
 
     private static final double MIN_WEIGHT = 0.01;
 
-    private Map<Action, Double> weights;
+    private Map<String, Double> weights;
 
     public BasicStrategy() {
         this(new HashMap<>());
@@ -26,17 +27,18 @@ public class BasicStrategy implements Strategy {
     public BasicStrategy(Collection<Action> actions) {
         this.weights = new HashMap<>();
         for (Action action : actions) {
-            weights.put(action, 1.0);
+            weights.put(action.getName(), 1.0);
         }
     }
 
     public BasicStrategy(Map<Action, Double> weights) {
-        this.weights = weights;
+        this.weights = weights.entrySet().stream()
+                .collect(Collectors.toMap(entry -> entry.getKey().getName(), Map.Entry::getValue));
     }
 
     @Override
     public Double addAction(Action action, double weight) {
-        return weights.put(action, weight);
+        return weights.put(action.getName(), weight);
     }
 
     @Override
@@ -44,21 +46,21 @@ public class BasicStrategy implements Strategy {
         if (weight < MIN_WEIGHT) {
             throw new IllegalStateException("Strategy weight cannot be less than 0.01");
         }
-        weights.put(action, weight);
+        weights.put(action.getName(), weight);
     }
 
     @Override
     public void adjustWeight(Action action, double adjustment) {
-        if (!weights.containsKey(action)) {
+        if (!weights.containsKey(action.getName())) {
             return;
         }
 
-        double initialWeight = weights.get(action);
+        double initialWeight = weights.get(action.getName());
         double adjustedWeight = initialWeight + adjustment;
         if (adjustedWeight < MIN_WEIGHT) {
             adjustedWeight = MIN_WEIGHT;
         }
-        weights.put(action, adjustedWeight);
+        weights.put(action.getName(), adjustedWeight);
     }
 
     @Override
@@ -71,7 +73,7 @@ public class BasicStrategy implements Strategy {
         double totalWeight = 0;
         for (Action action: actions) {
             relativeWeight.put(action, totalWeight);
-            totalWeight += weights.get(action);
+            totalWeight += weights.get(action.getName());
         }
 
         double selector = Math.random() * totalWeight;

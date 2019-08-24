@@ -14,10 +14,14 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode
 public abstract class Action {
 
+    protected String name;
     protected ActionType type;
     protected Fighter owner;
+    protected double speed;
 
     public abstract boolean isDoable();
+
+    public abstract double calculateSpeed();
 
     public abstract double getFailureAdjustment();
 }

@@ -23,6 +23,7 @@ public class DuelBattle implements Battle {
 
     @Override
     public void announce() {
+        System.out.println("Today's battle: " + fighter1.getName() + " vs. " + fighter2.getName() + "!");
         System.out.println(fighter1.getEntryQuote());
         System.out.println(fighter2.getEntryQuote());
         System.out.println("FIGHT!");
@@ -49,11 +50,13 @@ public class DuelBattle implements Battle {
 
             fighter1.adjustXStrikeMeter(1);
             fighter2.adjustXStrikeMeter(1);
+
+            System.out.println("Status: " + fighter1 + " vs " + fighter2);
         }
     }
 
     private void resolveAttacks(AttackAction fighter1Action, AttackAction fighter2Action) {
-        if (fighter1Action.getSpeed() > fighter2Action.getSpeed()) {
+        if (fighter1Action.calculateSpeed() > fighter2Action.calculateSpeed()) {
             DamageReport report = resolveAttackAgainstFighter(fighter1Action, fighter2);
             if (fighter2.getHp() > 0) {
                 if (report.isStun()) {
@@ -63,7 +66,7 @@ public class DuelBattle implements Battle {
                     resolveAttackAgainstFighter(fighter2Action, fighter1);
                 }
             }
-        } else if (fighter2Action.getSpeed() > fighter1Action.getSpeed()) {
+        } else if (fighter2Action.calculateSpeed() > fighter1Action.calculateSpeed()) {
             DamageReport report = resolveAttackAgainstFighter(fighter2Action, fighter1);
             if (fighter1.getHp() > 0) {
                 if (report.isStun()) {
@@ -80,7 +83,7 @@ public class DuelBattle implements Battle {
     }
 
     private void resolveDefense(AttackAction attack, DefenseAction defense) {
-        if (attack.getSpeed() > defense.getSpeed()) {
+        if (attack.calculateSpeed() > defense.calculateSpeed()) {
             resolveAttackAgainstFighter(attack, defense.getOwner());
             System.out.println(defense.getOwner().getName() + " failed to defend against the attack in time!");
             defense.getOwner().getStrategy().adjustWeight(defense, defense.getFailureAdjustment());
@@ -112,7 +115,7 @@ public class DuelBattle implements Battle {
     }
 
     private void resolveAttack(AttackAction attack, MoveAction move) {
-        if (attack.getSpeed() > move.getSpeed()) {
+        if (attack.calculateSpeed() > move.calculateSpeed()) {
             DamageReport report = resolveAttackAgainstFighter(attack, move.getOwner());
             if (report.isStun()) {
                 System.out.println(move.getOwner().getName() + " is stunned by the attack and cannot act!");

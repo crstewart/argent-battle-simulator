@@ -13,12 +13,13 @@ import lombok.EqualsAndHashCode;
 public class Retreat extends MoveAction {
 
     public Retreat() {
+        this.setName("Retreat");
         this.setMessage("retreats!");
         this.setDirection(-1);
     }
 
     @Override
-    public double getSpeed() {
+    public double calculateSpeed() {
         return 5.0 - (owner.getStats().getSpeed() / 2.0);
     }
 
