@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.action.attack;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
+import lombok.EqualsAndHashCode;
 
 /**
  * com.argentstew.simulator.battle.action.attack
@@ -10,6 +11,7 @@ import com.argentstew.simulator.battle.reporting.DamageReport;
  *
  * @author Craig
  */
+@EqualsAndHashCode(callSuper = true)
 public abstract class RangedAttack extends AttackAction {
 
     protected RangedAttack() {

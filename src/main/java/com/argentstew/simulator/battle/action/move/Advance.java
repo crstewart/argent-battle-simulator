@@ -1,6 +1,7 @@
 package com.argentstew.simulator.battle.action.move;
 
 import com.argentstew.simulator.battle.action.MoveAction;
+import lombok.EqualsAndHashCode;
 
 /**
  * com.argentstew.simulator.battle.action.move
@@ -8,6 +9,7 @@ import com.argentstew.simulator.battle.action.MoveAction;
  *
  * @author Craig
  */
+@EqualsAndHashCode(callSuper = true)
 public class Advance extends MoveAction {
 
     public Advance() {

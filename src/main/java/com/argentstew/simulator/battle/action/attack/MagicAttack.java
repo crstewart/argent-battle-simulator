@@ -13,7 +13,7 @@ import lombok.EqualsAndHashCode;
  * @author Craig
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public abstract class MagicAttack extends AttackAction {
 
     private boolean requiresMeleeRange;

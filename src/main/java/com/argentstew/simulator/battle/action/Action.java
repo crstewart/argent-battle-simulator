@@ -1,9 +1,8 @@
 package com.argentstew.simulator.battle.action;
 
-import com.argentstew.simulator.battle.action.ActionType;
 import com.argentstew.simulator.battle.fighter.Fighter;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * com.argentstew.simulator.battle.action.attack
@@ -12,6 +11,7 @@ import lombok.Data;
  * @author Craig
  */
 @Data
+@EqualsAndHashCode
 public abstract class Action {
 
     protected ActionType type;

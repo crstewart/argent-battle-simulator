@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  * @author Craig
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public abstract class MoveAction extends Action {
 
     private String message;
