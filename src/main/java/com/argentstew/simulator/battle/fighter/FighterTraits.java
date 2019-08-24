@@ -1,7 +1,9 @@
 package com.argentstew.simulator.battle.fighter;
 
 import com.argentstew.simulator.battle.trait.Trait;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -12,6 +14,8 @@ import java.util.List;
  * @author Craig
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class FighterTraits {
 
     private List<Trait> traits;

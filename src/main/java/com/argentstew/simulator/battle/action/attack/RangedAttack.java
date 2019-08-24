@@ -35,7 +35,7 @@ public abstract class RangedAttack extends AttackAction {
             return report;
         }
 
-        double baseDamage = getBaseDamage(defender);
+        double baseDamage = getBaseDamage();
         double bonusDamage = Math.random() * variance;
         double damage = baseDamage + bonusDamage;
         damage *= defender.getDefenses().get(this.attackType);
@@ -64,7 +64,7 @@ public abstract class RangedAttack extends AttackAction {
         return (0.041 * (10 - owner.getStats().getAim())) + (0.009 * (11 - defender.getStats().getSize()));
     }
 
-    protected double getBaseDamage(Fighter defender) {
+    protected double getBaseDamage() {
         return (power * 0.25) + (owner.getStats().getDexterity() * 0.5);
     }
 
@@ -83,5 +83,21 @@ public abstract class RangedAttack extends AttackAction {
         }
 
         return stunChance;
+    }
+
+    @Override
+    public double getStrategyAdjustment(DamageReport report) {
+        double expectedDamage = getBaseDamage() + (variance / 2.0);
+        if (report.isCrit()) {
+            expectedDamage *= getCritMultiplier(null);
+        }
+
+        double damageDifference = report.getDamage() - expectedDamage;
+        return owner.getStats().getIntellect() * damageDifference * 0.05;
+    }
+
+    @Override
+    public double getFailureAdjustment() {
+        return owner.getStats().getIntellect() * -0.05;
     }
 }

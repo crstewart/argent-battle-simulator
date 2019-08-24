@@ -15,11 +15,11 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public abstract class DefenseAction extends Action {
 
-    private String name;
-    private String initiateMessage;
-    private String successMessage;
-    private String failureMessage;
-    private double speed;
+    protected String name;
+    protected String initiateMessage;
+    protected String successMessage;
+    protected String failureMessage;
+    protected double speed;
 
     public boolean isSuccessful(AttackAction attack) {
         return true;

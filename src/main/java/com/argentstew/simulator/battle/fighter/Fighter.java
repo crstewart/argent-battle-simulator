@@ -1,6 +1,7 @@
 package com.argentstew.simulator.battle.fighter;
 
 import com.argentstew.simulator.battle.action.Action;
+import com.argentstew.simulator.battle.action.attack.XStrike;
 import com.argentstew.simulator.battle.arena.Arena;
 import com.argentstew.simulator.battle.strategy.Strategy;
 import lombok.AllArgsConstructor;
@@ -95,6 +96,7 @@ public class Fighter {
 
     @Override
     public String toString() {
-        return name + " (" + hp + "/" + maxHp + ")";
+        return name + " (" + hp + "/" + maxHp + "), [" + xStrikeMeter + "/"
+                + XStrike.X_STRIKE_METER_READY + "]";
     }
 }

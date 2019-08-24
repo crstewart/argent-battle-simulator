@@ -28,6 +28,7 @@ public enum AttackSubType {
     SHOTGUN,
     RIFLE,
     EXPLOSIVE,
+    ARMOR_PIERCING,
 
     // elemental attacks
     FIRE,
@@ -44,5 +45,9 @@ public enum AttackSubType {
     MYSTIC,
     CHI,
     SOUND,
-    TOXIC
+    TOXIC,
+
+    // special types
+    ASSIST,
+    GRAPPLE
 }
