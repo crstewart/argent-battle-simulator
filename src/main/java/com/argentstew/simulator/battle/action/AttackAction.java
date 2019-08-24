@@ -2,6 +2,8 @@ package com.argentstew.simulator.battle.action;
 
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
+import com.argentstew.simulator.battle.fighter.Fighter;
+import com.argentstew.simulator.battle.reporting.DamageReport;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -34,6 +36,23 @@ public class AttackAction extends Action {
         }
 
         return characteristics.contains(characteristic);
+    }
+
+    public DamageReport doAttack(Fighter defender) {
+        double bonusDamage = Math.random() * variance;
+        double baseDamage = power + bonusDamage;
+
+        DamageReport report = new DamageReport();
+        report.setAttack(this);
+        if (Math.random() < 0.2) {
+            report.setDamage((int) Math.round(baseDamage * 2));
+            report.setCrit(true);
+        } else {
+            report.setDamage((int) Math.round(baseDamage));
+            report.setCrit(false);
+        }
+
+        return report;
     }
 
     @Override

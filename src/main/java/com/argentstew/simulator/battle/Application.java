@@ -1,17 +1,8 @@
 package com.argentstew.simulator.battle;
 
-import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
-import com.argentstew.simulator.battle.action.DefenseAction;
-import com.argentstew.simulator.battle.calculator.DamageCalculatorImpl;
 import com.argentstew.simulator.battle.fighter.Fighter;
-import com.argentstew.simulator.battle.fighter.FighterVariance;
-import com.argentstew.simulator.battle.reporting.DamageReport;
 import com.argentstew.simulator.battle.strategy.BasicStrategy;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * com.argentstew.simulator.battle
@@ -34,7 +25,7 @@ public class Application {
                 .addAction(AttackAction.builder().name("Punch").power(5).variance(10).build())
                 .addAction(AttackAction.builder().name("Kick").power(2).variance(16).build());
 
-        Battle battle = new DuelBattle(fighter1, fighter2, new DamageCalculatorImpl());
+        Battle battle = new DuelBattle(fighter1, fighter2);
         battle.announce();
         battle.start();
         battle.determineWinner();

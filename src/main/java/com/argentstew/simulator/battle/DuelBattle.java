@@ -4,7 +4,6 @@ import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.DefenseAction;
 import com.argentstew.simulator.battle.action.MoveAction;
-import com.argentstew.simulator.battle.calculator.DamageCalculator;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 import lombok.AllArgsConstructor;
@@ -20,7 +19,6 @@ public class DuelBattle implements Battle {
 
     private Fighter fighter1;
     private Fighter fighter2;
-    private DamageCalculator damageCalculator;
 
     @Override
     public void announce() {
@@ -84,7 +82,7 @@ public class DuelBattle implements Battle {
             System.out.println(defense.getOwner().getName() + " " + defense.getInitiateMessage());
             if (defense.isSuccessful(attack)) {
                 System.out.println(defense.getOwner().getName() + " " + defense.getSuccessMessage());
-                DamageReport report = damageCalculator.calculateDamage(attack, defense.getOwner());
+                DamageReport report = attack.doAttack(defense.getOwner());
                 int damage = defense.applyDefense(report.getDamage());
                 if (damage > 0) {
                     System.out.println(defense.getOwner().getName() + " takes " + report.getDamage() + " damage!");
@@ -141,7 +139,7 @@ public class DuelBattle implements Battle {
 
     private DamageReport resolveAttackAgainstFighter(AttackAction attack, Fighter fighter) {
         System.out.println(attack.getOwner().getName() + " attacks " + fighter.getName() + " with " + attack.getName() + "!");
-        DamageReport report = damageCalculator.calculateDamage(attack, fighter);
+        DamageReport report = attack.doAttack(fighter);
         if (report.isMiss()) {
             System.out.println(attack.getOwner().getName() + " missed!");
         } else {
