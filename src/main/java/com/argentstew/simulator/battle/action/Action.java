@@ -18,4 +18,6 @@ public abstract class Action {
     protected Fighter owner;
 
     public abstract boolean isDoable();
+
+    public abstract double getFailureAdjustment();
 }

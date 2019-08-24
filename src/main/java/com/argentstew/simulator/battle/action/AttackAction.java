@@ -26,6 +26,7 @@ public class AttackAction extends Action {
     private double variance;
     private int speed;
     private double stunChance;
+    private double failureAdjustment;
     private ActionType type;
     private List<AttackSubType> subtypes;
     private List<AttackCharacteristic> characteristics;
@@ -53,6 +54,18 @@ public class AttackAction extends Action {
         }
 
         return report;
+    }
+
+    public double getStrategyAdjustment(DamageReport report) {
+        if (report.isMiss()) {
+            return -0.1;
+        }
+        double expectedDamage = power + (variance / 2.0);
+        if (report.isCrit()) {
+            expectedDamage *= 2;
+        }
+
+        return report.getDamage() - expectedDamage;
     }
 
     @Override

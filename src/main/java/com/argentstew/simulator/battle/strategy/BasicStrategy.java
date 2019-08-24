@@ -1,6 +1,7 @@
 package com.argentstew.simulator.battle.strategy;
 
 import com.argentstew.simulator.battle.action.Action;
+import com.argentstew.simulator.battle.fighter.Fighter;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -14,6 +15,8 @@ import java.util.Map;
  * @author Craig
  */
 public class BasicStrategy implements Strategy {
+
+    private static final double MIN_WEIGHT = 0.01;
 
     private Map<Action, Double> weights;
 
@@ -39,13 +42,24 @@ public class BasicStrategy implements Strategy {
 
     @Override
     public void setWeight(Action action, double weight) {
+        if (weight < MIN_WEIGHT) {
+            throw new IllegalStateException("Strategy weight cannot be less than 0.01");
+        }
         weights.put(action, weight);
     }
 
     @Override
     public void adjustWeight(Action action, double adjustment) {
+        if (!weights.containsKey(action)) {
+            return;
+        }
+
         double initialWeight = weights.get(action);
-        weights.put(action, initialWeight + adjustment);
+        double adjustedWeight = initialWeight + adjustment;
+        if (adjustedWeight < MIN_WEIGHT) {
+            adjustedWeight = MIN_WEIGHT;
+        }
+        weights.put(action, adjustedWeight);
     }
 
     @Override

@@ -28,4 +28,14 @@ public abstract class DefenseAction extends Action {
     public abstract int applyDefense(int damage);
 
     public abstract AttackAction doCounterAttack(AttackAction attack, int damage);
+
+    public double getSuccessAdjustment() {
+        return owner.getStats().getIntellect() * 0.04;
+    }
+
+    @Override
+    public double getFailureAdjustment() {
+        return owner.getStats().getIntellect() * -0.03;
+    }
+
 }

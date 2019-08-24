@@ -54,6 +54,7 @@ public class DuelBattle implements Battle {
             if (fighter2.getHp() > 0) {
                 if (report.isStun()) {
                     System.out.println(fighter2.getName() + " is stunned by the attack and cannot act!");
+                    fighter2.getStrategy().adjustWeight(fighter2Action, fighter2Action.getFailureAdjustment());
                 } else {
                     resolveAttackAgainstFighter(fighter2Action, fighter1);
                 }
@@ -63,6 +64,7 @@ public class DuelBattle implements Battle {
             if (fighter1.getHp() > 0) {
                 if (report.isStun()) {
                     System.out.println(fighter1.getName() + " is stunned by the attack and cannot act!");
+                    fighter1.getStrategy().adjustWeight(fighter1Action, fighter1Action.getFailureAdjustment());
                 } else {
                     resolveAttackAgainstFighter(fighter1Action, fighter2);
                 }
@@ -76,7 +78,8 @@ public class DuelBattle implements Battle {
     private void resolveDefense(AttackAction attack, DefenseAction defense) {
         if (attack.getSpeed() > defense.getSpeed()) {
             resolveAttackAgainstFighter(attack, defense.getOwner());
-            System.out.println(defense.getOwner().getName() + " failed to guard against the attack in time!");
+            System.out.println(defense.getOwner().getName() + " failed to defend against the attack in time!");
+            defense.getOwner().getStrategy().adjustWeight(defense, defense.getFailureAdjustment());
         } else {
             System.out.println(attack.getOwner().getName() + " attacks " + defense.getOwner().getName() + " with " + attack.getName() + "!");
             System.out.println(defense.getOwner().getName() + " " + defense.getInitiateMessage());
@@ -88,6 +91,7 @@ public class DuelBattle implements Battle {
                     System.out.println(defense.getOwner().getName() + " takes " + report.getDamage() + " damage!");
                     defense.getOwner().takeDamage(damage);
                 }
+                defense.getOwner().getStrategy().adjustWeight(defense, defense.getSuccessAdjustment());
                 if (defense.getOwner().getHp() > 0) {
                     AttackAction counterAttack = defense.doCounterAttack(attack, damage);
                     if (counterAttack != null) {
@@ -97,6 +101,7 @@ public class DuelBattle implements Battle {
             } else {
                 System.out.println(defense.getOwner().getName() + " " + defense.getFailureMessage());
                 resolveAttackAgainstFighter(attack, defense.getOwner());
+                defense.getOwner().getStrategy().adjustWeight(defense, defense.getFailureAdjustment());
             }
         }
     }
@@ -106,14 +111,21 @@ public class DuelBattle implements Battle {
             DamageReport report = resolveAttackAgainstFighter(attack, move.getOwner());
             if (report.isStun()) {
                 System.out.println(move.getOwner().getName() + " is stunned by the attack and cannot act!");
+                move.getOwner().getStrategy().adjustWeight(move, move.getFailureAdjustment());
             } else {
                 System.out.println(move.getOwner().getName() + " " + move.getMessage());
                 move.move();
+                move.getOwner().getStrategy().adjustWeight(move, move.getSuccessAdjustment());
             }
         } else {
             System.out.println(move.getOwner().getName() + " " + move.getMessage());
             move.move();
-            resolveAttackAgainstFighter(attack, move.getOwner());
+            DamageReport report = resolveAttackAgainstFighter(attack, move.getOwner());
+            if (report.isMiss()) {
+                move.getOwner().getStrategy().adjustWeight(move, move.getFailureAdjustment());
+            } else {
+                move.getOwner().getStrategy().adjustWeight(move, move.getSuccessAdjustment());
+            }
         }
     }
 
@@ -125,6 +137,7 @@ public class DuelBattle implements Battle {
             MoveAction move = (MoveAction) action1;
             System.out.println(move.getOwner().getName() + " " + move.getMessage());
             move.move();
+            move.getOwner().getStrategy().adjustWeight(move, move.getSuccessAdjustment());
         }
 
         if (action2 instanceof DefenseAction) {
@@ -134,6 +147,7 @@ public class DuelBattle implements Battle {
             MoveAction move = (MoveAction) action2;
             System.out.println(move.getOwner().getName() + " " + move.getMessage());
             move.move();
+            move.getOwner().getStrategy().adjustWeight(move, move.getSuccessAdjustment());
         }
     }
 
@@ -142,12 +156,16 @@ public class DuelBattle implements Battle {
         DamageReport report = attack.doAttack(fighter);
         if (report.isMiss()) {
             System.out.println(attack.getOwner().getName() + " missed!");
+            attack.getOwner().getStrategy().adjustWeight(attack, attack.getFailureAdjustment());
         } else {
             System.out.println(fighter.getName() + " takes " + report.getDamage() + " damage!");
+            double strategyAdjustment = attack.getStrategyAdjustment(report);
+            attack.getOwner().getStrategy().adjustWeight(attack, strategyAdjustment);
         }
         if (report.isCrit()) {
             System.out.println("CRITICAL HIT!");
         }
+
         fighter.takeDamage(report.getDamage());
         System.out.println(fighter);
 

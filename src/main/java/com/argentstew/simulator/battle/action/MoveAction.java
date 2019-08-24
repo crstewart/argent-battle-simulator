@@ -28,4 +28,13 @@ public abstract class MoveAction extends Action {
     }
 
     public abstract void move();
+
+    public double getSuccessAdjustment() {
+        return owner.getStats().getIntellect() * 0.025;
+    }
+
+    @Override
+    public double getFailureAdjustment() {
+        return owner.getStats().getIntellect() * -0.025;
+    }
 }
