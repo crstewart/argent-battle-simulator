@@ -19,7 +19,7 @@ public class FlyingSlam extends MeleeAttack {
         super();
         this.name = "Flying Slam";
         this.power = 50;
-        this.variance = 5;
+        this.variance = 3;
         this.speed = 2;
         this.subtypes = Arrays.asList(AttackSubType.GRAPPLE, AttackSubType.SLAM);
         this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);

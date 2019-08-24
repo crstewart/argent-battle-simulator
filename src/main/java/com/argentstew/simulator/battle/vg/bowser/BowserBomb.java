@@ -17,7 +17,7 @@ public class BowserBomb extends MeleeAttack {
         super();
         this.name = "Bowser Bomb";
         this.power = 70;
-        this.variance = 7;
+        this.variance = 4;
         this.speed = 4;
         this.subtypes = Collections.singletonList(AttackSubType.SLAM);
         this.characteristics = Collections.emptyList();

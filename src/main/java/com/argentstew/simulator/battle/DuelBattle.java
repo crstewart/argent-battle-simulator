@@ -99,7 +99,7 @@ public class DuelBattle implements Battle {
                     defense.getOwner().takeDamage(damage);
                 }
                 defense.getOwner().getStrategy().adjustWeight(defense, defense.getSuccessAdjustment());
-                defense.getOwner().adjustXStrikeMeter((defense instanceof Dodge) ? 2 : 1);
+                defense.getOwner().adjustXStrikeMeter((defense instanceof Dodge) ? 3 : 2);
                 if (defense.getOwner().getHp() > 0) {
                     AttackAction counterAttack = defense.doCounterAttack(attack, damage);
                     if (counterAttack != null) {

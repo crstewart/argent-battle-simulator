@@ -17,7 +17,7 @@ public class FireBreath extends RangedAttack {
         super();
         this.name = "Fire Breath";
         this.power = 35;
-        this.variance = 7;
+        this.variance = 4;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.FIRE);
         this.characteristics = Collections.emptyList();

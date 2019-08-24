@@ -64,7 +64,7 @@ public abstract class MagicAttack extends AttackAction {
     }
 
     protected double getBaseDamage() {
-        return (power * 0.25) + (owner.getStats().getIntellect() * 0.5);
+        return (power * 0.2) + (owner.getStats().getIntellect() * 0.4);
     }
 
     protected double getCritChance(Fighter defender) {

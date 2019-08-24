@@ -60,7 +60,7 @@ public abstract class RangedAttack extends AttackAction {
     }
 
     protected double getBaseDamage() {
-        return (power * 0.25) + (owner.getStats().getDexterity() * 0.5);
+        return (power * 0.2) + (owner.getStats().getDexterity() * 0.4);
     }
 
     protected double getCritChance(Fighter defender) {

@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.Hazardous;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.vg.bowser.*;
@@ -36,7 +37,7 @@ public class VgFighterFactory {
                 stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(5.5).aim(6)
                         .agility(5).speed(5).intellect(5).willpower(5.5).size(4).weight(4.5).build();
                 traits = new FighterTraits(Collections.singletonList(new Rival("Bowser", 0.05)));
-                return Fighter.builder().name("Mario").hp(120).maxHp(120).xStrikeMeter(0)
+                return Fighter.builder().name("Mario").hp(150).maxHp(150).xStrikeMeter(0)
                         .entryQuotes(Arrays.asList("Mario: 'Here we gooooo!'", "Mario: 'It's-a me, Mario!'"))
                         .victoryQuotes(Arrays.asList("Mario: 'Thank you so much for playing my game!'",
                                 "Mario: 'Yahoo! Mario's the winner!'"))
@@ -52,14 +53,14 @@ public class VgFighterFactory {
                 stats = FighterStats.builder().strength(8).toughness(10).dexterity(3).aim(3)
                         .agility(2).speed(2).intellect(3).willpower(6).size(8.5).weight(9).build();
                 traits = new FighterTraits(Collections.singletonList(new Hazardous()));
-                return Fighter.builder().name("Bowser").hp(150).maxHp(150).xStrikeMeter(0)
+                return Fighter.builder().name("Bowser").hp(200).maxHp(200).xStrikeMeter(0)
                         .entryQuotes(Arrays.asList("Bowser: 'I'll show you the power of the Koopa King!'",
                                 "Bowser: 'Stomping fools is my business!'"))
                         .victoryQuotes(Arrays.asList("Bowser: 'I'm the biggest, baddest brute around, and don't you forget it.'",
-                                "Mario: 'What a total waste of time!'"))
+                                "Bowser: 'What a total waste of time!'"))
                         .classifications(Arrays.asList(FighterClassification.ANIMAL, FighterClassification.MONSTER))
                         .defenses(defenses).stats(stats).traits(traits)
-                        .strategy(new BalancedStrategy()).build()
+                        .strategy(new OffensiveStrategy()).build()
                         .addAction(new KoopaClaw()).addAction(new FireBreath()).addAction(new BowserBomb())
                         .addAction(new FlyingSlam()).addAction(new WhirlingFortress())
                         .addAction(new GiantBowserPunch())

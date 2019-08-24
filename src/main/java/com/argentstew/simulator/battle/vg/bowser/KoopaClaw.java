@@ -17,7 +17,7 @@ public class KoopaClaw extends MeleeAttack {
         super();
         this.name = "Koopa Claw";
         this.power = 55;
-        this.variance = 6;
+        this.variance = 3;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.CLAW);
         this.characteristics = Collections.emptyList();

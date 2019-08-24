@@ -18,7 +18,7 @@ public class PunchGlove extends MeleeAttack {
         super();
         this.name = "Punch Glove";
         this.power = 40;
-        this.variance = 4;
+        this.variance = 2;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.PUNCH);
         this.characteristics = Collections.emptyList();

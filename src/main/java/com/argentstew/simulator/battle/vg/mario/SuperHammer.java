@@ -17,7 +17,7 @@ public class SuperHammer extends MeleeAttack {
         super();
         this.name = "Super Hammer";
         this.power = 70;
-        this.variance = 6;
+        this.variance = 3;
         this.speed = 3;
         this.subtypes = Collections.singletonList(AttackSubType.SMASH);
         this.characteristics = Collections.emptyList();
