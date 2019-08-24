@@ -2,11 +2,13 @@ package com.argentstew.simulator.battle.fighter;
 
 import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
-import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.arena.Arena;
+import com.argentstew.simulator.battle.arena.DuelArena;
 import com.argentstew.simulator.battle.strategy.Strategy;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +22,15 @@ import java.util.List;
 @Data
 @Builder
 @AllArgsConstructor
+@EqualsAndHashCode
 public class Fighter {
 
     private String name;
     private int hp;
     private int maxHp;
+
+    private Arena arena;
+    private int direction;
 
     private List<Action> actions;
     private List<FighterClassification> classifications;

@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.action;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,9 +12,8 @@ import lombok.EqualsAndHashCode;
  * @author Craig
  */
 @Data
-@Builder
 @EqualsAndHashCode(callSuper = false)
-public class MoveAction extends Action {
+public abstract class MoveAction extends Action {
 
     private String message;
     private int direction;
@@ -26,4 +26,6 @@ public class MoveAction extends Action {
     public boolean isDoable() {
         return true;
     }
+
+    public abstract void move();
 }

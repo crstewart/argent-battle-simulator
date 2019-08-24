@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.action;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,9 +12,8 @@ import lombok.EqualsAndHashCode;
  * @author Craig
  */
 @Data
-@Builder
 @EqualsAndHashCode(callSuper = false)
-public class DefenseAction extends Action {
+public abstract class DefenseAction extends Action {
 
     private String name;
     private String initiateMessage;
@@ -25,16 +25,7 @@ public class DefenseAction extends Action {
         return true;
     }
 
-    public int applyDefense(int damage) {
-        return 0;
-    }
+    public abstract int applyDefense(int damage);
 
-    public AttackAction doCounterAttack(AttackAction attack, int damage) {
-        return null;
-    }
-
-    @Override
-    public boolean isDoable() {
-        return true;
-    }
+    public abstract AttackAction doCounterAttack(AttackAction attack, int damage);
 }

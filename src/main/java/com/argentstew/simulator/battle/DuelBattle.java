@@ -81,9 +81,9 @@ public class DuelBattle implements Battle {
             System.out.println(defense.getOwner().getName() + " failed to guard against the attack in time!");
         } else {
             System.out.println(attack.getOwner().getName() + " attacks " + defense.getOwner().getName() + " with " + attack.getName() + "!");
-            System.out.println(defense.getInitiateMessage());
+            System.out.println(defense.getOwner().getName() + " " + defense.getInitiateMessage());
             if (defense.isSuccessful(attack)) {
-                System.out.println(defense.getSuccessMessage());
+                System.out.println(defense.getOwner().getName() + " " + defense.getSuccessMessage());
                 DamageReport report = damageCalculator.calculateDamage(attack, defense.getOwner());
                 int damage = defense.applyDefense(report.getDamage());
                 if (damage > 0) {
@@ -97,7 +97,7 @@ public class DuelBattle implements Battle {
                     }
                 }
             } else {
-                System.out.println(defense.getFailureMessage());
+                System.out.println(defense.getOwner().getName() + " " + defense.getFailureMessage());
                 resolveAttackAgainstFighter(attack, defense.getOwner());
             }
         }
@@ -109,10 +109,12 @@ public class DuelBattle implements Battle {
             if (report.isStun()) {
                 System.out.println(move.getOwner().getName() + " is stunned by the attack and cannot act!");
             } else {
-                System.out.println(move.getMessage());
+                System.out.println(move.getOwner().getName() + " " + move.getMessage());
+                move.move();
             }
         } else {
-            System.out.println(move.getMessage());
+            System.out.println(move.getOwner().getName() + " " + move.getMessage());
+            move.move();
             resolveAttackAgainstFighter(attack, move.getOwner());
         }
     }
@@ -120,18 +122,20 @@ public class DuelBattle implements Battle {
     private void resolveActions(Action action1, Action action2) {
         if (action1 instanceof DefenseAction) {
             DefenseAction defense = (DefenseAction) action1;
-            System.out.println(defense.getInitiateMessage());
+            System.out.println(defense.getOwner().getName() + " " + defense.getInitiateMessage());
         } else {
             MoveAction move = (MoveAction) action1;
-            System.out.println(move.getMessage());
+            System.out.println(move.getOwner().getName() + " " + move.getMessage());
+            move.move();
         }
 
         if (action2 instanceof DefenseAction) {
             DefenseAction defense = (DefenseAction) action2;
-            System.out.println(defense.getInitiateMessage());
+            System.out.println(defense.getOwner().getName() + " " + defense.getInitiateMessage());
         } else {
             MoveAction move = (MoveAction) action2;
-            System.out.println(move.getMessage());
+            System.out.println(move.getOwner().getName() + " " + move.getMessage());
+            move.move();
         }
     }
 

@@ -34,7 +34,7 @@ public class FighterStats {
     // factors into critical hit chance with magic attacks
     private int willpower;
 
-    // factors into dodge chance
+    // factors into miss chance
     private int size;
 
     // factors into enemy grapple attack success

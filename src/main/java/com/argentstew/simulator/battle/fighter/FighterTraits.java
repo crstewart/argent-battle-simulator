@@ -15,4 +15,8 @@ import java.util.List;
 public class FighterTraits {
 
     private List<Trait> traits;
+
+    public boolean has(Trait trait) {
+        return traits != null && traits.contains(trait);
+    }
 }

@@ -7,4 +7,6 @@ package com.argentstew.simulator.battle.trait;
  * @author Craig
  */
 public interface Trait {
+
+    String getName();
 }
