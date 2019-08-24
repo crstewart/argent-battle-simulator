@@ -26,6 +26,7 @@ public class Fighter {
     private String name;
     private int hp;
     private int maxHp;
+    private int xStrikeMeter;
 
     private Arena arena;
     private int direction;
@@ -76,6 +77,10 @@ public class Fighter {
 
     public void takeDamage(int damage) {
         this.hp = (damage > this.hp) ? 0 : this.hp - damage;
+    }
+
+    public void adjustXStrikeMeter(int adjustment) {
+        this.xStrikeMeter += adjustment;
     }
 
     public String getEntryQuote() {

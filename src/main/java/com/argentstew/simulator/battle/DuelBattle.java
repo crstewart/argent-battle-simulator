@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.DefenseAction;
 import com.argentstew.simulator.battle.action.MoveAction;
+import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 import lombok.AllArgsConstructor;
@@ -45,6 +46,9 @@ public class DuelBattle implements Battle {
             } else {
                 resolveActions(fighter1Action, fighter2Action);
             }
+
+            fighter1.adjustXStrikeMeter(1);
+            fighter2.adjustXStrikeMeter(1);
         }
     }
 
@@ -92,6 +96,7 @@ public class DuelBattle implements Battle {
                     defense.getOwner().takeDamage(damage);
                 }
                 defense.getOwner().getStrategy().adjustWeight(defense, defense.getSuccessAdjustment());
+                defense.getOwner().adjustXStrikeMeter((defense instanceof Dodge) ? 2 : 1);
                 if (defense.getOwner().getHp() > 0) {
                     AttackAction counterAttack = defense.doCounterAttack(attack, damage);
                     if (counterAttack != null) {
@@ -161,6 +166,7 @@ public class DuelBattle implements Battle {
             System.out.println(fighter.getName() + " takes " + report.getDamage() + " damage!");
             double strategyAdjustment = attack.getStrategyAdjustment(report);
             attack.getOwner().getStrategy().adjustWeight(attack, strategyAdjustment);
+            attack.getOwner().adjustXStrikeMeter(1);
         }
         if (report.isCrit()) {
             System.out.println("CRITICAL HIT!");
