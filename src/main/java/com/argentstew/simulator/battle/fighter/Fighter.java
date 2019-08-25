@@ -49,7 +49,7 @@ public class Fighter {
         }
 
         if (strategy != null) {
-            strategy.addAction(action, 1.0);
+            strategy.addAction(action);
         }
 
         action.setOwner(this);

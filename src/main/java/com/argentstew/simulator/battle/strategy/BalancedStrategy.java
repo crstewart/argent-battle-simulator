@@ -15,11 +15,11 @@ public class BalancedStrategy extends BasicStrategy {
         super();
     }
 
-    public void addAction(Action action) {
+    public Double addAction(Action action) {
         if (action instanceof XStrike) {
-            super.addAction(action, 12.0);
+            return super.addAction(action, 6.0);
         } else {
-            super.addAction(action, 1.0);
+            return super.addAction(action, 1.0);
         }
     }
 }

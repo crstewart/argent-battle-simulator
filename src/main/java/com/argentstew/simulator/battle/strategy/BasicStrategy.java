@@ -37,7 +37,11 @@ public class BasicStrategy implements Strategy {
     }
 
     @Override
-    public Double addAction(Action action, double weight) {
+    public Double addAction(Action action) {
+        return weights.put(action.getName(), 1.0);
+    }
+
+    protected Double addAction(Action action, double weight) {
         return weights.put(action.getName(), weight);
     }
 
