@@ -27,6 +27,11 @@ public abstract class MeleeXStrike extends MeleeAttack implements XStrike {
     }
 
     @Override
+    public double getMissChance(Fighter defender) {
+        return 0;
+    }
+
+    @Override
     public double getStrategyAdjustment(DamageReport report) {
         return 0;
     }

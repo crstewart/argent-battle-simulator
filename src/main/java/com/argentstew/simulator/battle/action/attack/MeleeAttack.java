@@ -61,7 +61,7 @@ public abstract class MeleeAttack extends AttackAction {
     }
 
     protected double getMissChance(Fighter defender) {
-        return (0.008 * (11 - owner.getStats().getDexterity()))
+        return ((0.005 * Math.pow(owner.getStats().getDexterity() - 10, 2)) + 0.05)
                 + (0.002 * (11 - defender.getStats().getSize()));
     }
 

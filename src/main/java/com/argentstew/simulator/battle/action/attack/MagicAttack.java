@@ -65,7 +65,13 @@ public abstract class MagicAttack extends AttackAction {
     }
 
     protected double getMissChance(Fighter defender) {
-        return (0.015 * (11 - owner.getStats().getIntellect())) + (0.005 * (11 - defender.getStats().getSize()));
+        if (requiresMeleeRange) {
+            return ((0.005 * Math.pow(owner.getStats().getIntellect() - 10, 2)) + 0.05)
+                    + (0.002 * (11 - defender.getStats().getSize()));
+        } else {
+            return ((-0.075 * Math.pow(owner.getStats().getAim() - 10, 2)) + 0.945)
+                    + (0.01 * (11 - defender.getStats().getSize()));
+        }
     }
 
     protected double getBaseDamage() {
