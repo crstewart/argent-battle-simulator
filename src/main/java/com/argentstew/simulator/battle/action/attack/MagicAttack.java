@@ -87,7 +87,7 @@ public abstract class MagicAttack extends AttackAction {
     }
 
     protected double getStunChance(Fighter defender, boolean isCrit) {
-        double stunChance = ((11 - defender.getStats().getWillpower()) * 0.022);
+        double stunChance = ((-0.03 * Math.pow(defender.getStats().getWillpower(), 1.05)) + 0.4);
         if (isCrit) {
             stunChance *= 1.3;
         }

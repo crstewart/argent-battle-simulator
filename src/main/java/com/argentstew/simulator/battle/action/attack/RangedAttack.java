@@ -78,7 +78,7 @@ public abstract class RangedAttack extends AttackAction {
     }
 
     protected double getStunChance(Fighter defender, boolean isCrit) {
-        double stunChance = ((11 - defender.getStats().getToughness()) * 0.022);
+        double stunChance = ((-0.03 * Math.pow(defender.getStats().getToughness(), 1.05)) + 0.4);
         if (isCrit) {
             stunChance *= 1.3;
         }
