@@ -16,8 +16,8 @@ public class SuperPunch extends MeleeAttack {
     public SuperPunch() {
         super();
         this.name = "Super Punch";
-        this.power = 55;
-        this.variance = 2;
+        this.power = 60;
+        this.variance = 4;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.PUNCH);
         this.characteristics = Collections.emptyList();

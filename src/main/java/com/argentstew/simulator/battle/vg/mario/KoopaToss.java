@@ -18,8 +18,8 @@ public class KoopaToss extends MeleeAttack {
     public KoopaToss() {
         super();
         this.name = "Koopa Toss";
-        this.power = 50;
-        this.variance = 3;
+        this.power = 60;
+        this.variance = 5;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);
         this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);

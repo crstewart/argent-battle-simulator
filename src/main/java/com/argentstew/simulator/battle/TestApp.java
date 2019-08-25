@@ -4,6 +4,11 @@ import com.argentstew.simulator.battle.arena.DuelArena;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
 /**
  * com.argentstew.simulator.battle
  * 8/24/2019
@@ -12,37 +17,51 @@ import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
  */
 public class TestApp {
 
+    private static final List<String> FIGHTERS = Arrays.asList("Mario", "Luigi", "Bowser");
+
     public static void main(String[] args) {
-        int marioWins = 0;
-        int bowserWins = 0;
-        int draws = 0;
 
+        List<String> results = new ArrayList<>();
         VgFighterFactory factory = new VgFighterFactory();
-        for (int i = 0; i < 1000; i++) {
-            Fighter mario = factory.getFighter("Mario");
-            Fighter bowser = factory.getFighter("Bowser");
+        for (int i = 0; i < FIGHTERS.size(); i++) {
+            String fighter1Name = FIGHTERS.get(i);
+            for (int j = i + 1; j < FIGHTERS.size(); j++) {
+                String fighter2Name = FIGHTERS.get(j);
 
-            DuelArena arena = new DuelArena();
-            arena.setLeftFighter(mario);
-            arena.setRightFighter(bowser);
+                int fighter1Wins = 0;
+                int fighter2Wins = 0;
+                int draws = 0;
 
-            Battle battle = new DuelBattle(mario, bowser);
-            battle.announce();
-            battle.start();
-            Fighter winner = battle.determineWinner();
+                for (int k = 0; k < 1000; k++) {
+                    Fighter fighter1 = factory.getFighter(fighter1Name);
+                    Fighter fighter2 = factory.getFighter(fighter2Name);
 
-            if (winner == null) {
-                draws++;
-            } else if ("Mario".equals(winner.getName())) {
-                marioWins++;
-            } else if ("Bowser".equals(winner.getName())) {
-                bowserWins++;
+                    DuelArena arena = new DuelArena();
+                    arena.setLeftFighter(fighter1);
+                    arena.setRightFighter(fighter2);
+
+                    Battle battle = new DuelBattle(fighter1, fighter2);
+                    battle.announce();
+                    battle.start();
+                    Fighter winner = battle.determineWinner();
+
+                    if (winner == null) {
+                        draws++;
+                    } else if (fighter1Name.equals(winner.getName())) {
+                        fighter1Wins++;
+                    } else if (fighter2Name.equals(winner.getName())) {
+                        fighter2Wins++;
+                    }
+                }
+
+                results.add(fighter1Name + " vs " + fighter2Name + ": " + fighter1Wins + " to " + fighter2Wins
+                    + " (with " + draws + " draws)");
             }
         }
 
         System.out.println(" *** Results:");
-        System.out.println("       Mario: " + marioWins);
-        System.out.println("       Bowser: " + bowserWins);
-        System.out.println("       Draws: " + draws);
+        for (String result : results) {
+            System.out.println("      " + result);
+        }
     }
 }
