@@ -34,7 +34,9 @@ public class DuelBattle implements Battle {
 
     @Override
     public void start() {
+        int turn = 1;
         while (fighter1.getHp() > 0 && fighter2.getHp() > 0) {
+            battleLogger.log("----- Turn " + turn + " -----");
             Action fighter1Action = fighter1.selectAction();
             Action fighter2Action = fighter2.selectAction();
             if (fighter1Action instanceof AttackAction && fighter2Action instanceof AttackAction) {
@@ -55,6 +57,7 @@ public class DuelBattle implements Battle {
             fighter2.adjustXStrikeMeter(1);
 
             battleLogger.log("Status: " + fighter1 + " vs " + fighter2);
+            turn++;
         }
     }
 
@@ -91,7 +94,7 @@ public class DuelBattle implements Battle {
             battleLogger.log(defense.getOwner().getName() + " failed to defend against the attack in time!");
             defense.getOwner().getStrategy().adjustWeight(defense, defense.getFailureAdjustment());
         } else {
-            battleLogger.log(attack.getOwner().getName() + " attacks " + defense.getOwner().getName() + " with " + attack.getName() + "!");
+            battleLogger.log(attack.getOwner().getName() + " readies their " + attack.getName() + " attack!");
             battleLogger.log(defense.getOwner().getName() + " " + defense.getInitiateMessage());
             if (defense.isSuccessful(attack)) {
                 battleLogger.log(defense.getOwner().getName() + " " + defense.getSuccessMessage());
