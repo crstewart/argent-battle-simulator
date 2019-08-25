@@ -9,7 +9,6 @@ import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 /**
  * com.argentstew.simulator.battle
@@ -35,7 +34,7 @@ public class TestApp {
                 int fighter2Wins = 0;
                 int draws = 0;
 
-                System.out.println("Running battle for " + fighter1Name + " and " + fighter2Name + "...");
+                System.out.println("Running battles for " + fighter1Name + " and " + fighter2Name + "...");
                 for (int k = 0; k < 1000; k++) {
                     Fighter fighter1 = factory.getFighter(fighter1Name);
                     Fighter fighter2 = factory.getFighter(fighter2Name);

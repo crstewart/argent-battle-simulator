@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.DefenseAction;
 import com.argentstew.simulator.battle.action.MoveAction;
+import com.argentstew.simulator.battle.action.attack.XStrike;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.logger.BattleLogger;
@@ -168,6 +169,9 @@ public class DuelBattle implements Battle {
     }
 
     private DamageReport resolveAttackAgainstFighter(AttackAction attack, Fighter fighter) {
+        if (attack instanceof XStrike) {
+            battleLogger.log(attack.getOwner().getName() + " unleashes their X-STRIKE!");
+        }
         battleLogger.log(attack.getOwner().getName() + " attacks " + fighter.getName() + " with " + attack.getName() + "!");
         DamageReport report = attack.doAttack(fighter);
         if (report.isMiss()) {
