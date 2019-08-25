@@ -98,7 +98,7 @@ public class DuelBattle implements Battle {
                 DamageReport report = attack.doAttack(defense.getOwner());
                 int damage = defense.applyDefense(report.getDamage());
                 if (damage > 0) {
-                    battleLogger.log(defense.getOwner().getName() + " takes " + report.getDamage() + " damage!");
+                    battleLogger.log(defense.getOwner().getName() + " takes " + damage + " damage!");
                     defense.getOwner().takeDamage(damage);
                     battleLogger.log(defense.getOwner());
                 }
