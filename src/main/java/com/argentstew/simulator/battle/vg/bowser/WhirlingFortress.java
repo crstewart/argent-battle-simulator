@@ -21,7 +21,7 @@ public class WhirlingFortress extends Guard {
 
     @Override
     public int applyDefense(int damage) {
-        return 0;
+        return (int) Math.round(damage * 0.2);
     }
 
     @Override

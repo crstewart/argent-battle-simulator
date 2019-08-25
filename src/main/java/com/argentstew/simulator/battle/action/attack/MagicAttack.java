@@ -28,6 +28,7 @@ public abstract class MagicAttack extends AttackAction {
     public DamageReport doAttack(Fighter defender) {
         DamageReport report = new DamageReport();
         report.setAttack(this);
+        report.setDefender(defender);
 
         double missChance = getMissChance(defender);
         if (Math.random() < missChance) {
@@ -101,6 +102,9 @@ public abstract class MagicAttack extends AttackAction {
     @Override
     public double getStrategyAdjustment(DamageReport report) {
         double expectedDamage = getBaseDamage() + (variance / 2.0);
+        for (Trait trait : owner.getTraits().getTraits()) {
+            expectedDamage = trait.applyBonusDamage(report.getDefender(), expectedDamage);
+        }
         if (report.isCrit()) {
             expectedDamage *= getCritMultiplier(null);
         }

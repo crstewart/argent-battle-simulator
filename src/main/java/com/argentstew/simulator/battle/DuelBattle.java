@@ -57,7 +57,7 @@ public class DuelBattle implements Battle {
     }
 
     private void resolveAttacks(AttackAction fighter1Action, AttackAction fighter2Action) {
-        if (fighter1Action.calculateSpeed() > fighter2Action.calculateSpeed()) {
+        if (fighter1Action.calculateSpeed() < fighter2Action.calculateSpeed()) {
             DamageReport report = resolveAttackAgainstFighter(fighter1Action, fighter2);
             if (fighter2.getHp() > 0) {
                 if (report.isStun()) {
@@ -67,7 +67,7 @@ public class DuelBattle implements Battle {
                     resolveAttackAgainstFighter(fighter2Action, fighter1);
                 }
             }
-        } else if (fighter2Action.calculateSpeed() > fighter1Action.calculateSpeed()) {
+        } else if (fighter2Action.calculateSpeed() < fighter1Action.calculateSpeed()) {
             DamageReport report = resolveAttackAgainstFighter(fighter2Action, fighter1);
             if (fighter1.getHp() > 0) {
                 if (report.isStun()) {
@@ -84,7 +84,7 @@ public class DuelBattle implements Battle {
     }
 
     private void resolveDefense(AttackAction attack, DefenseAction defense) {
-        if (attack.calculateSpeed() > defense.calculateSpeed()) {
+        if (attack.calculateSpeed() < defense.calculateSpeed()) {
             resolveAttackAgainstFighter(attack, defense.getOwner());
             System.out.println(defense.getOwner().getName() + " failed to defend against the attack in time!");
             defense.getOwner().getStrategy().adjustWeight(defense, defense.getFailureAdjustment());
@@ -107,6 +107,7 @@ public class DuelBattle implements Battle {
                         resolveAttackAgainstFighter(counterAttack, attack.getOwner());
                     }
                 }
+                applyPassiveDefenses(attack, defense.getOwner());
             } else {
                 System.out.println(defense.getOwner().getName() + " " + defense.getFailureMessage());
                 resolveAttackAgainstFighter(attack, defense.getOwner());
@@ -116,7 +117,7 @@ public class DuelBattle implements Battle {
     }
 
     private void resolveAttack(AttackAction attack, MoveAction move) {
-        if (attack.calculateSpeed() > move.calculateSpeed()) {
+        if (attack.calculateSpeed() < move.calculateSpeed()) {
             DamageReport report = resolveAttackAgainstFighter(attack, move.getOwner());
             if (report.isStun()) {
                 System.out.println(move.getOwner().getName() + " is stunned by the attack and cannot act!");
@@ -179,27 +180,34 @@ public class DuelBattle implements Battle {
         fighter.takeDamage(report.getDamage());
         System.out.println(fighter);
 
-        for (Trait trait : fighter.getTraits().getTraits()) {
-            AttackAction counterAttack = trait.applyPassiveDefense(attack);
-            if (counterAttack != null) {
-                DamageReport counterReport = counterAttack.doAttack(attack.getOwner());
-                System.out.println(fighter.getName() + "'s " + counterReport.getAttack().getName() + " counters for " + counterReport.getDamage() + " damage!");
-            }
-        }
+        applyPassiveDefenses(attack, fighter);
 
         return report;
     }
 
+    private void applyPassiveDefenses(AttackAction attack, Fighter defender) {
+        for (Trait trait : defender.getTraits().getTraits()) {
+            AttackAction counterAttack = trait.applyPassiveDefense(attack);
+            if (counterAttack != null) {
+                DamageReport counterReport = counterAttack.doAttack(attack.getOwner());
+                System.out.println(defender.getName() + "'s " + counterReport.getAttack().getName() + " counters for " + counterReport.getDamage() + " damage!");
+            }
+        }
+    }
+
     @Override
-    public void determineWinner() {
+    public Fighter determineWinner() {
         if (fighter1.getHp() > 0) {
             System.out.println(fighter1.getName() + " wins!");
             System.out.println(fighter1.getVictoryQuote());
+            return fighter1;
         } else if (fighter2.getHp() > 0) {
             System.out.println(fighter2.getName() + " wins!");
             System.out.println(fighter2.getVictoryQuote());
+            return fighter2;
         } else {
             System.out.println(fighter1.getName() + " and " + fighter2.getName() + " fight to a draw!");
+            return null;
         }
     }
 }
