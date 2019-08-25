@@ -13,35 +13,35 @@ import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 public class TestApp {
 
     public static void main(String[] args) {
-        int marioWins = 0;
+        int luigiWins = 0;
         int bowserWins = 0;
         int draws = 0;
 
         VgFighterFactory factory = new VgFighterFactory();
         for (int i = 0; i < 1000; i++) {
-            Fighter mario = factory.getFighter("Mario");
+            Fighter luigi = factory.getFighter("Luigi");
             Fighter bowser = factory.getFighter("Bowser");
 
             DuelArena arena = new DuelArena();
-            arena.setLeftFighter(mario);
+            arena.setLeftFighter(luigi);
             arena.setRightFighter(bowser);
 
-            Battle battle = new DuelBattle(mario, bowser);
+            Battle battle = new DuelBattle(luigi, bowser);
             battle.announce();
             battle.start();
             Fighter winner = battle.determineWinner();
 
             if (winner == null) {
                 draws++;
-            } else if ("Mario".equals(winner.getName())) {
-                marioWins++;
+            } else if ("Luigi".equals(winner.getName())) {
+                luigiWins++;
             } else if ("Bowser".equals(winner.getName())) {
                 bowserWins++;
             }
         }
 
         System.out.println(" *** Results:");
-        System.out.println("       Mario: " + marioWins);
+        System.out.println("       Luigi: " + luigiWins);
         System.out.println("       Bowser: " + bowserWins);
         System.out.println("       Draws: " + draws);
     }

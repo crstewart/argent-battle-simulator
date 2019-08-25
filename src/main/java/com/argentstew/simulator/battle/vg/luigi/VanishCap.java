@@ -1,7 +1,7 @@
-package com.argentstew.simulator.battle.vg.mario;
+package com.argentstew.simulator.battle.vg.luigi;
 
 import com.argentstew.simulator.battle.action.AttackAction;
-import com.argentstew.simulator.battle.action.DefenseAction;
+import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Guard;
 
 /**
@@ -10,19 +10,19 @@ import com.argentstew.simulator.battle.action.defense.Guard;
  *
  * @author Craig
  */
-public class MetalCap extends Guard {
+public class VanishCap extends Guard {
 
-    public MetalCap() {
-        this.name = "Metal Cap";
-        this.initiateMessage = "puts on his Metal Cap!";
-        this.successMessage = "successfully defended the attack!";
-        this.failureMessage = "failed to block the attack!";
-        this.speed = 2;
+    public VanishCap() {
+        this.name = "Vanish Cap";
+        this.initiateMessage = "puts on his Vanish Cap!";
+        this.successMessage = "phased through the attack!";
+        this.failureMessage = "was still struck by the attack!";
+        this.speed = 1.5;
     }
 
     @Override
     public int applyDefense(int damage) {
-        return (int) Math.round(damage * 0.05);
+        return 0;
     }
 
     @Override
@@ -37,6 +37,6 @@ public class MetalCap extends Guard {
 
     @Override
     protected boolean doesGuardAttack(AttackAction attack) {
-        return true;
+        return !AttackType.MAGIC.equals(attack.getAttackType());
     }
 }

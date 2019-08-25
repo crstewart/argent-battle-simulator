@@ -98,6 +98,7 @@ public class DuelBattle implements Battle {
                 if (damage > 0) {
                     System.out.println(defense.getOwner().getName() + " takes " + report.getDamage() + " damage!");
                     defense.getOwner().takeDamage(damage);
+                    System.out.println(defense.getOwner());
                 }
                 defense.getOwner().getStrategy().adjustWeight(defense, defense.getSuccessAdjustment());
                 defense.getOwner().adjustXStrikeMeter((defense instanceof Dodge) ? 3 : 2);
@@ -191,6 +192,8 @@ public class DuelBattle implements Battle {
             if (counterAttack != null) {
                 DamageReport counterReport = counterAttack.doAttack(attack.getOwner());
                 System.out.println(defender.getName() + "'s " + counterReport.getAttack().getName() + " counters for " + counterReport.getDamage() + " damage!");
+                attack.getOwner().takeDamage(counterReport.getDamage());
+                System.out.println(attack.getOwner());
             }
         }
     }
