@@ -36,9 +36,9 @@ public class VgFighterFactory {
                 defenses.set(AttackSubType.FIRE, 1.2);
                 stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(5.5).aim(6)
                         .agility(5).speed(5).intellect(5).willpower(5.5).size(4).weight(4.5).build();
-                traits = new FighterTraits(Collections.singletonList(new Rival("Bowser", 1.3)));
+                traits = new FighterTraits(Collections.singletonList(new Rival("Bowser", 1.1)));
                 return Fighter.builder().name("Mario").hp(150).maxHp(150).xStrikeMeter(0)
-                        .entryQuotes(Arrays.asList("Mario: 'Here we gooooo!'", "Mario: 'It's-a me, Mario!'"))
+                        .entryQuotes(Arrays.asList("Mario: 'Here we go!'", "Mario: 'It's-a me, Mario!'"))
                         .victoryQuotes(Arrays.asList("Mario: 'Thank you so much for playing my game!'",
                                 "Mario: 'Yahoo! Mario's the winner!'"))
                         .classifications(Collections.singletonList(FighterClassification.HUMANOID))
