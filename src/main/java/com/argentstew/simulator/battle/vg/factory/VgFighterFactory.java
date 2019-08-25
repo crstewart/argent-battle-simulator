@@ -35,9 +35,9 @@ public class VgFighterFactory {
                 defenses.set(AttackType.MAGIC, 0.9);
                 defenses.set(AttackSubType.PIERCE, 1.2);
                 defenses.set(AttackSubType.FIRE, 1.2);
-                stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(5.5).aim(6)
+                stats = FighterStats.builder().strength(6.5).toughness(5.5).dexterity(5.5).aim(6)
                         .agility(5).speed(5).intellect(5).willpower(5.5).size(4).weight(4.5).build();
-                traits = new FighterTraits(Collections.singletonList(new Rival("Bowser", 1.1)));
+                traits = new FighterTraits(Collections.singletonList(new Rival("Bowser", 1.125)));
                 return Fighter.builder().name("Mario").hp(150).maxHp(150).xStrikeMeter(0)
                         .entryQuotes(Arrays.asList("Mario: 'Here we go!'", "Mario: 'It's-a me, Mario!'"))
                         .victoryQuotes(Arrays.asList("Mario: 'Thank you so much for playing my game!'",
@@ -53,7 +53,7 @@ public class VgFighterFactory {
                 defenses.set(AttackType.MAGIC, 0.9);
                 defenses.set(AttackSubType.PIERCE, 1.2);
                 defenses.set(AttackSubType.FIRE, 1.2);
-                stats = FighterStats.builder().strength(5.5).toughness(4.5).dexterity(6.5).aim(6)
+                stats = FighterStats.builder().strength(5.5).toughness(4.5).dexterity(6).aim(6)
                         .agility(5.5).speed(5).intellect(5).willpower(5.5).size(4).weight(4.5).build();
                 traits = new FighterTraits();
                 return Fighter.builder().name("Luigi").hp(150).maxHp(150).xStrikeMeter(0)
@@ -70,7 +70,7 @@ public class VgFighterFactory {
                         .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
             case "Bowser":
                 defenses.set(AttackSubType.FIRE, 1.2);
-                stats = FighterStats.builder().strength(8).toughness(10).dexterity(2).aim(2)
+                stats = FighterStats.builder().strength(8.5).toughness(10).dexterity(2).aim(2)
                         .agility(2).speed(2).intellect(3).willpower(6).size(8.5).weight(9).build();
                 traits = new FighterTraits(Collections.singletonList(new Hazardous()));
                 return Fighter.builder().name("Bowser").hp(200).maxHp(200).xStrikeMeter(0)
