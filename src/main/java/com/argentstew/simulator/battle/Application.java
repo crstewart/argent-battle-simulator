@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.arena.Arena;
 import com.argentstew.simulator.battle.arena.DuelArena;
 import com.argentstew.simulator.battle.fighter.Fighter;
+import com.argentstew.simulator.battle.logger.StandardBattleLogger;
 import com.argentstew.simulator.battle.strategy.BasicStrategy;
 import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 
@@ -25,7 +26,7 @@ public class Application {
         arena.setLeftFighter(mario);
         arena.setRightFighter(bowser);
 
-        Battle battle = new DuelBattle(mario, bowser);
+        Battle battle = new DuelBattle(mario, bowser, new StandardBattleLogger());
         battle.announce();
         battle.start();
         battle.determineWinner();

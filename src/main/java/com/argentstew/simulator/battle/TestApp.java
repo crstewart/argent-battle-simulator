@@ -2,6 +2,8 @@ package com.argentstew.simulator.battle;
 
 import com.argentstew.simulator.battle.arena.DuelArena;
 import com.argentstew.simulator.battle.fighter.Fighter;
+import com.argentstew.simulator.battle.logger.BattleLogger;
+import com.argentstew.simulator.battle.logger.NoopBattleLogger;
 import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 
 import java.util.ArrayList;
@@ -23,6 +25,7 @@ public class TestApp {
 
         List<String> results = new ArrayList<>();
         VgFighterFactory factory = new VgFighterFactory();
+        BattleLogger logger = new NoopBattleLogger();
         for (int i = 0; i < FIGHTERS.size(); i++) {
             String fighter1Name = FIGHTERS.get(i);
             for (int j = i + 1; j < FIGHTERS.size(); j++) {
@@ -32,6 +35,7 @@ public class TestApp {
                 int fighter2Wins = 0;
                 int draws = 0;
 
+                System.out.println("Running battle for " + fighter1Name + " and " + fighter2Name + "...");
                 for (int k = 0; k < 1000; k++) {
                     Fighter fighter1 = factory.getFighter(fighter1Name);
                     Fighter fighter2 = factory.getFighter(fighter2Name);
@@ -40,7 +44,7 @@ public class TestApp {
                     arena.setLeftFighter(fighter1);
                     arena.setRightFighter(fighter2);
 
-                    Battle battle = new DuelBattle(fighter1, fighter2);
+                    Battle battle = new DuelBattle(fighter1, fighter2, logger);
                     battle.announce();
                     battle.start();
                     Fighter winner = battle.determineWinner();
