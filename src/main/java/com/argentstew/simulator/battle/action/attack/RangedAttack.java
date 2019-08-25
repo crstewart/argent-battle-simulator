@@ -61,7 +61,7 @@ public abstract class RangedAttack extends AttackAction {
     }
 
     protected double getMissChance(Fighter defender) {
-        return ((-0.075 * Math.pow(owner.getStats().getAim() - 10, 2)) + 0.945)
+        return ((-0.075 * Math.pow(owner.getStats().getAim(), 1.1)) + 0.945)
                 + (0.01 * (11 - defender.getStats().getSize()));
     }
 

@@ -69,7 +69,7 @@ public abstract class MagicAttack extends AttackAction {
             return ((0.005 * Math.pow(owner.getStats().getIntellect() - 10, 2)) + 0.05)
                     + (0.002 * (11 - defender.getStats().getSize()));
         } else {
-            return ((-0.075 * Math.pow(owner.getStats().getAim() - 10, 2)) + 0.945)
+            return ((-0.075 * Math.pow(owner.getStats().getAim(), 1.1)) + 0.945)
                     + (0.01 * (11 - defender.getStats().getSize()));
         }
     }
