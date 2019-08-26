@@ -30,9 +30,9 @@ public class VgFighterFactory {
         switch(name) {
             case Mario.NAME:
                return Mario.get();
-            case "Luigi":
+            case Luigi.NAME:
                 return Luigi.get();
-            case "Bowser":
+            case Bowser.NAME:
                 return Bowser.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
