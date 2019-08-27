@@ -16,7 +16,7 @@ public class MarioFinale extends RangedXStrike {
     public MarioFinale() {
         super();
         this.name = "Mario Finale";
-        this.power = 180;
+        this.power = 220;
         this.variance = 15;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.FIRE);

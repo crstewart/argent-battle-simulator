@@ -18,7 +18,7 @@ public class Poultergust extends RangedXStrike {
     public Poultergust() {
         super();
         this.name = "Poultergust";
-        this.power = 190;
+        this.power = 240;
         this.variance = 15;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.AIR);

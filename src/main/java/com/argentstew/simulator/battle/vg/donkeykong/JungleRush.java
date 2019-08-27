@@ -18,7 +18,7 @@ public class JungleRush extends MeleeXStrike {
     public JungleRush() {
         super();
         this.name = "Jungle Rush";
-        this.power = 225;
+        this.power = 275;
         this.variance = 12;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.PUNCH);

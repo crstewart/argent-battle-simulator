@@ -19,7 +19,7 @@ public class GiantBowserPunch extends MeleeXStrike {
     public GiantBowserPunch() {
         super();
         this.name = "Giant Bowser Punch";
-        this.power = 200;
+        this.power = 250;
         this.variance = 10;
         this.speed = 5;
         this.subtypes = Collections.singletonList(AttackSubType.PUNCH);

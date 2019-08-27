@@ -18,7 +18,7 @@ public class PsychBomb extends RangedXStrike {
     public PsychBomb() {
         super();
         this.name = "Psych Bomb";
-        this.power = 200;
+        this.power = 250;
         this.variance = 16;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.EXPLOSIVE);
