@@ -27,6 +27,8 @@ public class Fighter {
     private String name;
     private int hp;
     private int maxHp;
+    private int mp;
+    private int maxMp;
     private int xStrikeMeter;
 
     private Arena arena;
@@ -78,6 +80,18 @@ public class Fighter {
 
     public void takeDamage(int damage) {
         this.hp = (damage > this.hp) ? 0 : this.hp - damage;
+    }
+
+    public void heal(int hp) {
+        this.hp = Math.min(this.hp + hp, maxHp);
+    }
+
+    public void useMagic(int mpUsed) {
+        this.mp = (mpUsed > this.mp) ? 0 : this.mp - mpUsed;
+    }
+
+    public void restoreMagic(int mp) {
+        this.mp = Math.min(this.mp + mp, maxMp);
     }
 
     public void adjustXStrikeMeter(int adjustment) {

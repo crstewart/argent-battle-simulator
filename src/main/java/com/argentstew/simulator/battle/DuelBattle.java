@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.action.DefenseAction;
 import com.argentstew.simulator.battle.action.MoveAction;
 import com.argentstew.simulator.battle.action.attack.XStrike;
 import com.argentstew.simulator.battle.action.defense.Dodge;
+import com.argentstew.simulator.battle.action.defense.Heal;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.logger.BattleLogger;
 import com.argentstew.simulator.battle.reporting.DamageReport;
@@ -107,7 +108,13 @@ public class DuelBattle implements Battle {
                     battleLogger.log(defense.getOwner());
                 }
                 defense.getOwner().getStrategy().adjustWeight(defense, defense.getSuccessAdjustment());
-                defense.getOwner().adjustXStrikeMeter((defense instanceof Dodge) ? 3 : 2);
+                if (defense instanceof Heal) {
+                    applyHeal((Heal) defense);
+                } else if (defense instanceof Dodge) {
+                    defense.getOwner().adjustXStrikeMeter(3);
+                } else {
+                    defense.getOwner().adjustXStrikeMeter(2);
+                }
                 if (defense.getOwner().getHp() > 0) {
                     AttackAction counterAttack = defense.doCounterAttack(attack, damage);
                     if (counterAttack != null) {
@@ -150,6 +157,11 @@ public class DuelBattle implements Battle {
         if (action1 instanceof DefenseAction) {
             DefenseAction defense = (DefenseAction) action1;
             battleLogger.log(defense.getOwner().getName() + " " + defense.getInitiateMessage());
+            if (defense instanceof Heal) {
+                Heal heal = (Heal) defense;
+                battleLogger.log(heal.getOwner().getName() + " " + heal.getSuccessMessage());
+                applyHeal(heal);
+            }
         } else {
             MoveAction move = (MoveAction) action1;
             battleLogger.log(move.getOwner().getName() + " " + move.getMessage());
@@ -160,6 +172,11 @@ public class DuelBattle implements Battle {
         if (action2 instanceof DefenseAction) {
             DefenseAction defense = (DefenseAction) action2;
             battleLogger.log(defense.getOwner().getName() + " " + defense.getInitiateMessage());
+            if (defense instanceof Heal) {
+                Heal heal = (Heal) defense;
+                battleLogger.log(heal.getOwner().getName() + " " + heal.getSuccessMessage());
+                applyHeal(heal);
+            }
         } else {
             MoveAction move = (MoveAction) action2;
             battleLogger.log(move.getOwner().getName() + " " + move.getMessage());
@@ -204,6 +221,16 @@ public class DuelBattle implements Battle {
                 attack.getOwner().takeDamage(counterReport.getDamage());
                 battleLogger.log(attack.getOwner());
             }
+        }
+    }
+
+    private void applyHeal(Heal heal) {
+        int hpRestored = heal.restoreHealth(0);
+        if (hpRestored > 0) {
+            heal.getOwner().heal(hpRestored);
+            battleLogger.log(heal.getOwner().getName() + " restores " + hpRestored + " health!");
+            heal.getOwner().getStrategy().adjustWeight(heal, heal.getSuccessAdjustment());
+            heal.getOwner().adjustXStrikeMeter(2);
         }
     }
 

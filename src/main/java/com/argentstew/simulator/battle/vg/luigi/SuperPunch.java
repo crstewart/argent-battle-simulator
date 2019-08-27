@@ -2,6 +2,7 @@ package com.argentstew.simulator.battle.vg.luigi;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
+import com.argentstew.simulator.battle.fighter.Fighter;
 
 import java.util.Collections;
 
@@ -21,5 +22,11 @@ public class SuperPunch extends MeleeAttack {
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.PUNCH);
         this.characteristics = Collections.emptyList();
+    }
+
+    @Override
+    protected double getCritChance(Fighter defender) {
+        double baseCritChance = super.getCritChance(defender);
+        return baseCritChance * 2;
     }
 }

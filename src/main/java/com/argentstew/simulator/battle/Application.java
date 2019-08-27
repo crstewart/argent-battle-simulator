@@ -19,14 +19,14 @@ public class Application {
     public static void main(String[] args) {
 
         VgFighterFactory factory = new VgFighterFactory();
-        Fighter mario = factory.getFighter("Mario");
-        Fighter bowser = factory.getFighter("Bowser");
+        Fighter fighter1 = factory.getFighter("Mario");
+        Fighter fighter2 = factory.getFighter("Peach");
 
         DuelArena arena = new DuelArena();
-        arena.setLeftFighter(mario);
-        arena.setRightFighter(bowser);
+        arena.setLeftFighter(fighter1);
+        arena.setRightFighter(fighter2);
 
-        Battle battle = new DuelBattle(mario, bowser, new StandardBattleLogger());
+        Battle battle = new DuelBattle(fighter1, fighter2, new StandardBattleLogger());
         battle.announce();
         battle.start();
         battle.determineWinner();

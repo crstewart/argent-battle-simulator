@@ -1,18 +1,10 @@
 package com.argentstew.simulator.battle.vg.factory;
 
-import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
-import com.argentstew.simulator.battle.action.defense.Dodge;
-import com.argentstew.simulator.battle.action.move.Advance;
-import com.argentstew.simulator.battle.action.move.Retreat;
-import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
-import com.argentstew.simulator.battle.trait.impl.Hazardous;
-import com.argentstew.simulator.battle.trait.impl.Rival;
-import com.argentstew.simulator.battle.vg.bowser.*;
-import com.argentstew.simulator.battle.vg.luigi.*;
-import com.argentstew.simulator.battle.vg.mario.*;
+import com.argentstew.simulator.battle.fighter.Fighter;
+import com.argentstew.simulator.battle.vg.bowser.Bowser;
+import com.argentstew.simulator.battle.vg.luigi.Luigi;
+import com.argentstew.simulator.battle.vg.mario.Mario;
+import com.argentstew.simulator.battle.vg.peach.Peach;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -34,6 +26,8 @@ public class VgFighterFactory {
                 return Luigi.get();
             case Bowser.NAME:
                 return Bowser.get();
+            case Peach.NAME:
+                return Peach.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
