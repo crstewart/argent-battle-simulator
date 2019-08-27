@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
 import com.argentstew.simulator.battle.vg.mario.Mario;
 import com.argentstew.simulator.battle.vg.peach.Peach;
+import com.argentstew.simulator.battle.vg.wario.Wario;
 import com.argentstew.simulator.battle.vg.yoshi.Yoshi;
 
 import java.util.Arrays;
@@ -37,6 +38,8 @@ public class VgFighterFactory {
                 return DiddyKong.get();
             case Yoshi.NAME:
                 return Yoshi.get();
+            case Wario.NAME:
+                return Wario.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
