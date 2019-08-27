@@ -23,7 +23,7 @@ public class Wario {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
 
-        FighterStats stats = FighterStats.builder().strength(7).toughness(6).dexterity(3).aim(5)
+        FighterStats stats = FighterStats.builder().strength(6.5).toughness(6).dexterity(3).aim(5)
                 .agility(3).speed(3.5).intellect(5).willpower(6).size(4).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(170).maxHp(170).xStrikeMeter(0)

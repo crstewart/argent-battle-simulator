@@ -111,9 +111,9 @@ public class DuelBattle implements Battle {
                 if (defense instanceof Heal) {
                     applyHeal((Heal) defense);
                 } else if (defense instanceof Dodge) {
-                    defense.getOwner().adjustXStrikeMeter(3);
-                } else {
                     defense.getOwner().adjustXStrikeMeter(2);
+                } else {
+                    defense.getOwner().adjustXStrikeMeter(3);
                 }
                 if (defense.getOwner().getHp() > 0) {
                     AttackAction counterAttack = defense.doCounterAttack(attack, damage);
