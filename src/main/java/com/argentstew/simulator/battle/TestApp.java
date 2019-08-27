@@ -18,7 +18,8 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final List<String> FIGHTERS = Arrays.asList("Mario", "Luigi", "Peach", "Bowser", "Donkey Kong");
+    private static final List<String> FIGHTERS = Arrays.asList("Mario", "Luigi", "Peach", "Bowser", "Donkey Kong",
+            "Diddy Kong");
 
     public static void main(String[] args) {
 

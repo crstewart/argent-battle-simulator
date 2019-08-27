@@ -2,6 +2,7 @@ package com.argentstew.simulator.battle.vg.factory;
 
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.vg.bowser.Bowser;
+import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
 import com.argentstew.simulator.battle.vg.mario.Mario;
@@ -31,6 +32,8 @@ public class VgFighterFactory {
                 return Peach.get();
             case DonkeyKong.NAME:
                 return DonkeyKong.get();
+            case DiddyKong.NAME:
+                return DiddyKong.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
