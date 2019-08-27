@@ -1,6 +1,5 @@
 package com.argentstew.simulator.battle.vg.yoshi;
 
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
@@ -8,7 +7,6 @@ import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * com.argentstew.simulator.battle.vg.yoshi
@@ -35,7 +33,7 @@ public class Yoshi {
                 .strategy(new BalancedStrategy()).build()
                 .addAction(new EggToss()).addAction(new EggLay()).addAction(new GroundPound())
                 .addAction(new FlutterKick()).addAction(new EggShield())
-                .addAction(new YoshiStampede())
+                .addAction(new MegaEggdozer())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
     }
 }
