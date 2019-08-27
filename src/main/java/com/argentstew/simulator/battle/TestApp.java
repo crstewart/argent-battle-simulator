@@ -19,7 +19,7 @@ import java.util.List;
 public class TestApp {
 
     private static final List<String> FIGHTERS = Arrays.asList("Mario", "Luigi", "Peach", "Bowser", "Donkey Kong",
-            "Diddy Kong", "Yoshi", "Wario");
+            "Diddy Kong", "Yoshi", "Wario", "Link");
 
     public static void main(String[] args) {
 
