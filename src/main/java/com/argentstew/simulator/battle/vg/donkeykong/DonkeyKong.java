@@ -24,8 +24,8 @@ public class DonkeyKong {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MELEE, 1.2);
-        defenses.set(AttackType.RANGED, 1.2);
+        defenses.set(AttackType.MELEE, 1.15);
+        defenses.set(AttackType.RANGED, 1.15);
 
         FighterStats stats = FighterStats.builder().strength(9).toughness(7.5).dexterity(3).aim(2)
                 .agility(4).speed(3).intellect(1.5).willpower(5).size(8).weight(8).build();

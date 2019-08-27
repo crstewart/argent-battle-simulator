@@ -28,7 +28,7 @@ public class Bowser {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.FIRE, 1.2);
 
-        FighterStats stats = FighterStats.builder().strength(8.5).toughness(10).dexterity(2).aim(2)
+        FighterStats stats = FighterStats.builder().strength(8).toughness(10).dexterity(2).aim(2)
                 .agility(2).speed(2).intellect(3).willpower(6).size(8.5).weight(9).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Hazardous()));
         return Fighter.builder().name(NAME).hp(200).maxHp(200).xStrikeMeter(0)
