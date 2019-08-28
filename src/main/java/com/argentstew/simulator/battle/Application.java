@@ -17,7 +17,7 @@ public class Application {
 
         VgFighterFactory factory = new VgFighterFactory();
         Fighter fighter1 = factory.getFighter("Donkey Kong");
-        Fighter fighter2 = factory.getFighter("Diddy Kong");
+        Fighter fighter2 = factory.getFighter("Zelda");
 
         DuelArena arena = new DuelArena();
         arena.setLeftFighter(fighter1);

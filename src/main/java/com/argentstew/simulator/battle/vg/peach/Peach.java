@@ -26,7 +26,7 @@ public class Peach {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.7);
+        defenses.set(AttackType.MAGIC, 0.8);
         defenses.set(AttackSubType.PIERCE, 1.2);
         defenses.set(AttackSubType.FIRE, 1.2);
 

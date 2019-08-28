@@ -10,6 +10,7 @@ import com.argentstew.simulator.battle.vg.mario.Mario;
 import com.argentstew.simulator.battle.vg.peach.Peach;
 import com.argentstew.simulator.battle.vg.wario.Wario;
 import com.argentstew.simulator.battle.vg.yoshi.Yoshi;
+import com.argentstew.simulator.battle.vg.zelda.Zelda;
 
 /**
  * com.argentstew.simulator.battle.vg.factory
@@ -40,6 +41,8 @@ public class VgFighterFactory {
                 return Wario.get();
             case Link.NAME:
                 return Link.get();
+            case Zelda.NAME:
+                return Zelda.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

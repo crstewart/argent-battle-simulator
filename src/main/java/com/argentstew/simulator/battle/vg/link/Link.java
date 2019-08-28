@@ -8,6 +8,8 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
+import com.argentstew.simulator.battle.trait.impl.Rival;
+import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -26,14 +28,14 @@ public class Link {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MELEE, 0.9);
         defenses.set(AttackType.RANGED, 0.9);
-        defenses.set(AttackType.MAGIC, 0.6);
+        defenses.set(AttackType.MAGIC, 0.8);
         defenses.set(AttackSubType.PIERCE, 1.12);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.12);
         defenses.set(AttackSubType.FIRE, 1.2);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(9).aim(7)
-                .agility(5).speed(4).intellect(5).willpower(8).size(5).weight(4.5).build();
-        FighterTraits traits = new FighterTraits();
+                .agility(5).speed(4).intellect(5).willpower(8).size(5).weight(5).build();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Ganondorf.NAME, 1.1)));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .entryQuotes(Arrays.asList("Navi: 'Hey! Listen! Watch out!'",
                         "Fi: 'Master, I predict an 85% chance of victory against this foe.'"))
