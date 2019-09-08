@@ -4,10 +4,12 @@ import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.vg.bowser.Bowser;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
+import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
 import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
 import com.argentstew.simulator.battle.vg.mario.Mario;
 import com.argentstew.simulator.battle.vg.peach.Peach;
+import com.argentstew.simulator.battle.vg.pikachu.Pikachu;
 import com.argentstew.simulator.battle.vg.wario.Wario;
 import com.argentstew.simulator.battle.vg.yoshi.Yoshi;
 import com.argentstew.simulator.battle.vg.zelda.Zelda;
@@ -43,6 +45,10 @@ public class VgFighterFactory {
                 return Link.get();
             case Zelda.NAME:
                 return Zelda.get();
+            case Ganondorf.NAME:
+                return Ganondorf.get();
+            case Pikachu.NAME:
+                return Pikachu.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

@@ -6,9 +6,11 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
+import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * com.argentstew.simulator.battle.vg.ganondorf
@@ -22,21 +24,24 @@ public class Ganondorf {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.7);
-        defenses.set(AttackSubType.LIGHT, 1.5);
+        defenses.set(AttackType.MAGIC, 0.8);
+        defenses.set(AttackSubType.LIGHT, 1.25);
+        defenses.set(AttackSubType.DARK, 1.1);
 
-        FighterStats stats = FighterStats.builder().strength(3.5).toughness(3).dexterity(7).aim(8)
-                .agility(5).speed(4).intellect(8).willpower(8).size(4.5).weight(4.5).build();
+        FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(3.5).aim(5)
+                .agility(4).speed(3.5).intellect(6.5).willpower(7.5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(200).maxHp(200).xStrikeMeter(0)
-                .entryQuotes(Arrays.asList("Bowser: 'I'll show you the power of the Koopa King!'",
-                        "Bowser: 'Stomping fools is my business!'"))
-                .victoryQuotes(Arrays.asList("Bowser: 'I'm the biggest, baddest brute around, and don't you forget it.'",
-                        "Bowser: 'What a total waste of time!'"))
-                .classifications(Arrays.asList(FighterClassification.ANIMAL, FighterClassification.MONSTER))
+        return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
+                .entryQuotes(Arrays.asList("Ganondorf: 'Behold! The power of the Demon King!'",
+                        "Ganondorf: 'You want a piece of me?! Very funny! I like your attitude!'"))
+                .victoryQuotes(Arrays.asList("Ganondorf: 'I've outlived more \"heroes\" than you can possibly imagine.'",
+                        "Ganondorf: 'Pathetic little fool! Do you know who I am?! I am Ganondorf and soon I will rule the world!'"))
+                .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new OffensiveStrategy()).build()
-
+                .strategy(new BalancedStrategy()).build()
+                .addAction(new SwordOfDespair()).addAction(new MagicOrb()).addAction(new WarlockPunch())
+                .addAction(new FlameChoke())
+                .addAction(new DarkLordGanon())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
     }
 }
