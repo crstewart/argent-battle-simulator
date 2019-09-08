@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
+import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -34,7 +35,7 @@ public class Pikachu {
 
         FighterStats stats = FighterStats.builder().strength(2).toughness(4).dexterity(8).aim(8.5)
                 .agility(9).speed(8).intellect(3).willpower(5.5).size(2).weight(1.5).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(125).maxHp(125).xStrikeMeter(0)
                 .entryQuotes(Arrays.asList("Pikachu: 'Pi-KA!'", "Pikachu: 'Pika pi!'"))
                 .victoryQuotes(Arrays.asList("Pikachu: 'Pika pika! Pikachu!'", "Pikachu: 'Pi pikachu!'"))

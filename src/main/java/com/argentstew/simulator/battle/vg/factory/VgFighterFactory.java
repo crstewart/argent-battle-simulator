@@ -2,6 +2,7 @@ package com.argentstew.simulator.battle.vg.factory;
 
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.vg.bowser.Bowser;
+import com.argentstew.simulator.battle.vg.charizard.Charizard;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
 import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
@@ -49,6 +50,8 @@ public class VgFighterFactory {
                 return Ganondorf.get();
             case Pikachu.NAME:
                 return Pikachu.get();
+            case Charizard.NAME:
+                return Charizard.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
