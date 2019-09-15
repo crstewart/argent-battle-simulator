@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
+import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 
@@ -30,7 +31,7 @@ public class Mewtwo {
         defenses.set(AttackSubType.MYSTIC, 0.75);
         defenses.set(AttackSubType.CHI, 0.75);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(4).aim(6)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(4).aim(6.5)
                 .agility(8).speed(7).intellect(10).willpower(5).size(5.5).weight(6.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(180).maxHp(180).xStrikeMeter(0)
@@ -40,7 +41,7 @@ public class Mewtwo {
                         "Mewtwo: 'It is what you do with the gift of life that determines who you are.'"))
                 .classifications(Collections.singletonList(FighterClassification.MONSTER))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new DefensiveStrategy()).build()
+                .strategy(new BalancedStrategy()).build()
                 .addAction(new Psychic()).addAction(new ShadowBall()).addAction(new Confusion())
                 .addAction(new Recover())
                 .addAction(new MegaPsystrike())
