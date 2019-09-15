@@ -16,8 +16,8 @@ public class Application {
     public static void main(String[] args) {
 
         VgFighterFactory factory = new VgFighterFactory();
-        Fighter fighter1 = factory.getFighter("Donkey Kong");
-        Fighter fighter2 = factory.getFighter("Zelda");
+        Fighter fighter1 = factory.getFighter("Peach");
+        Fighter fighter2 = factory.getFighter("Mewtwo");
 
         DuelArena arena = new DuelArena();
         arena.setLeftFighter(fighter1);

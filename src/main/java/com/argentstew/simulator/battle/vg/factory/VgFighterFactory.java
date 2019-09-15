@@ -9,6 +9,7 @@ import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
 import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
 import com.argentstew.simulator.battle.vg.mario.Mario;
+import com.argentstew.simulator.battle.vg.mewtwo.Mewtwo;
 import com.argentstew.simulator.battle.vg.peach.Peach;
 import com.argentstew.simulator.battle.vg.pikachu.Pikachu;
 import com.argentstew.simulator.battle.vg.wario.Wario;
@@ -52,6 +53,8 @@ public class VgFighterFactory {
                 return Pikachu.get();
             case Charizard.NAME:
                 return Charizard.get();
+            case Mewtwo.NAME:
+                return Mewtwo.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
