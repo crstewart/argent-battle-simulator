@@ -27,10 +27,11 @@ public class TestApp {
         List<String> results = new ArrayList<>();
         VgFighterFactory factory = new VgFighterFactory();
         BattleLogger logger = new NoopBattleLogger();
-        for (int i = 0; i < FIGHTERS.size(); i++) {
+        for (int i = 0; i < FIGHTERS.size() - 1; i++) {
             String fighter1Name = FIGHTERS.get(i);
-            for (int j = i + 1; j < FIGHTERS.size(); j++) {
-                String fighter2Name = FIGHTERS.get(j);
+//            for (int j = i + 1; j < FIGHTERS.size(); j++) {
+//                String fighter2Name = FIGHTERS.get(j);
+                String fighter2Name = FIGHTERS.get(FIGHTERS.size() - 1);
 
                 int fighter1Wins = 0;
                 int fighter2Wins = 0;
@@ -61,7 +62,7 @@ public class TestApp {
 
                 results.add(fighter1Name + " vs " + fighter2Name + ": " + fighter1Wins + " to " + fighter2Wins
                     + " (with " + draws + " draws)");
-            }
+//            }
         }
 
         System.out.println(" *** Results:");
