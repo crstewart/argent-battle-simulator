@@ -20,7 +20,7 @@ public class ZeroLaser extends RangedXStrike {
         super();
         this.name = "Zero Laser";
         this.power = 250;
-        this.variance = 11;
+        this.variance = 12;
         this.speed = 2.5;
         this.subtypes = Collections.singletonList(AttackSubType.PLASMA);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);

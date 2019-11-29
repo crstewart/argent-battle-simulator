@@ -18,7 +18,7 @@ public class WaveBeam extends RangedAttack {
         super();
         this.name = "Wave Beam";
         this.power = 55;
-        this.variance = 5;
+        this.variance = 4;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.PLASMA);
         this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);

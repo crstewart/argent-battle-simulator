@@ -22,7 +22,7 @@ public class SuperMissile extends RangedAttack {
         super();
         this.name = "Super Missile";
         this.power = 90;
-        this.variance = 8;
+        this.variance = 7;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.EXPLOSIVE);
         this.characteristics = Collections.singletonList(AttackCharacteristic.UNDODGEABLE);

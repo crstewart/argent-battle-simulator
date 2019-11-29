@@ -18,7 +18,7 @@ public class ScrewAttack extends MeleeAttack {
         super();
         this.name = "Screw Attack";
         this.power = 80;
-        this.variance = 6;
+        this.variance = 5;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.THUNDER);
         this.characteristics = Collections.emptyList();

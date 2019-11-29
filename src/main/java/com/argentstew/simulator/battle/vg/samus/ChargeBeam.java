@@ -17,7 +17,7 @@ public class ChargeBeam extends RangedAttack {
         super();
         this.name = "Charge Beam (Uncharged)";
         this.power = 45;
-        this.variance = 3;
+        this.variance = 2;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.PLASMA);
         this.characteristics = Collections.emptyList();
