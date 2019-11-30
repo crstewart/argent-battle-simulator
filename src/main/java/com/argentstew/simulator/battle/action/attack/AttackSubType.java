@@ -16,6 +16,7 @@ public enum AttackSubType {
     CLAW,
     BITE,
     TAIL,
+    WING,
 
     // weapon attacks
     SLASH,
