@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.vg.bowser.Bowser;
 import com.argentstew.simulator.battle.vg.charizard.Charizard;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
+import com.argentstew.simulator.battle.vg.fox.Fox;
 import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
 import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
@@ -61,6 +62,8 @@ public class VgFighterFactory {
                 return Samus.get();
             case Ridley.NAME:
                 return Ridley.get();
+            case Fox.NAME:
+                return Fox.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

@@ -1,4 +1,4 @@
-package com.argentstew.simulator.battle.vg.zelda;
+package com.argentstew.simulator.battle.vg.common;
 
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 

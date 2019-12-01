@@ -1,11 +1,7 @@
 package com.argentstew.simulator.battle.vg.pikachu;
 
 import com.argentstew.simulator.battle.action.AttackAction;
-import com.argentstew.simulator.battle.action.attack.MagicAttack;
-import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.action.defense.Guard;
-import com.argentstew.simulator.battle.vg.zelda.ReflectedMagicAttack;
-import com.argentstew.simulator.battle.vg.zelda.ReflectedRangedAttack;
 
 /**
  * com.argentstew.simulator.battle.vg.pikachu
