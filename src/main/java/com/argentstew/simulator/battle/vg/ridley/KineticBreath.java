@@ -17,7 +17,7 @@ public class KineticBreath extends RangedAttack {
         super();
         this.name = "Kinetic Breath";
         this.power = 40;
-        this.variance = 10;
+        this.variance = 9;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.PLASMA);
         this.characteristics = Collections.emptyList();

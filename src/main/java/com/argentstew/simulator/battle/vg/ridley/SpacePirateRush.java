@@ -18,7 +18,7 @@ public class SpacePirateRush extends MeleeAttack {
     public SpacePirateRush() {
         super();
         this.name = "Space Pirate Rush";
-        this.power = 85;
+        this.power = 80;
         this.variance = 6;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);

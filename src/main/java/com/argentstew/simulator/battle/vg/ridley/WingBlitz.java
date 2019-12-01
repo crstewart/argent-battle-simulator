@@ -17,7 +17,7 @@ public class WingBlitz extends MeleeAttack {
     public WingBlitz() {
         super();
         this.name = "Wing Blitz";
-        this.power = 75;
+        this.power = 70;
         this.variance = 5;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.WING);

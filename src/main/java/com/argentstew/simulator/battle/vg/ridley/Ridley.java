@@ -27,8 +27,8 @@ public class Ridley {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 1.2);
-        defenses.set(AttackSubType.PUNCH, 1.05);
-        defenses.set(AttackSubType.KICK, 0.95);
+        defenses.set(AttackSubType.PUNCH, 1.1);
+        defenses.set(AttackSubType.KICK, 0.9);
         defenses.set(AttackSubType.ICE, 1.1);
         defenses.set(AttackSubType.PLASMA, 1.05);
         defenses.set(AttackSubType.HANDGUN, 0.9);

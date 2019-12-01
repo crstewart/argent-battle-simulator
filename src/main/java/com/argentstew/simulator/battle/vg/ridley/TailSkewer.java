@@ -18,7 +18,7 @@ public class TailSkewer extends MeleeAttack {
     public TailSkewer() {
         super();
         this.name = "Tail Skewer";
-        this.power = 50;
+        this.power = 45;
         this.variance = 4;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.PIERCE);
