@@ -39,7 +39,7 @@ public class Ganondorf {
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
-                .addAction(new SwordOfDespair()).addAction(new MagicOrb()).addAction(new WarlockPunch())
+                .addAction(new MagicOrb()).addAction(new SwordOfDespair()).addAction(new WarlockPunch())
                 .addAction(new FlameChoke())
                 .addAction(new DarkLordGanon())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());

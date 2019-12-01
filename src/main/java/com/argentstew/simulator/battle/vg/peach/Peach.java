@@ -40,7 +40,7 @@ public class Peach {
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
-                .addAction(new FryingPan()).addAction(new PeachParasol()).addAction(new Vegetable())
+                .addAction(new PeachParasol()).addAction(new FryingPan()).addAction(new Vegetable())
                 .addAction(new SweetKiss()).addAction(new Therapy())
                 .addAction(new PsychBomb())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());

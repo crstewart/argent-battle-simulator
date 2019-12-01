@@ -40,7 +40,7 @@ public class Luigi {
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
-                .addAction(new SuperPunch()).addAction(new GreenFireball()).addAction(new HammerThrow())
+                .addAction(new GreenFireball()).addAction(new SuperPunch()).addAction(new HammerThrow())
                 .addAction(new PoultergustPlunger()).addAction(new VanishCap())
                 .addAction(new Poultergust())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());

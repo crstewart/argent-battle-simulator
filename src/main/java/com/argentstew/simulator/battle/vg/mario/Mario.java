@@ -39,7 +39,7 @@ public class Mario {
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
-                .addAction(new PunchGlove()).addAction(new SuperHammer()).addAction(new Fireball())
+                .addAction(new Fireball()).addAction(new PunchGlove()).addAction(new SuperHammer())
                 .addAction(new Fludd()).addAction(new KoopaToss()).addAction(new MetalCap())
                 .addAction(new MarioFinale())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());

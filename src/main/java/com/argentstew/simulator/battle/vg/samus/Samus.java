@@ -12,6 +12,7 @@ import com.argentstew.simulator.battle.trait.impl.BountyHunter;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.vg.pikachu.*;
+import com.argentstew.simulator.battle.vg.ridley.Ridley;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -36,7 +37,7 @@ public class Samus {
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(5.5).aim(7)
                 .agility(6).speed(4).intellect(5).willpower(4.5).size(4.5).weight(4.5).build();
-        FighterTraits traits = new FighterTraits(Arrays.asList(new BountyHunter(), new Rival("Ridley", 1.1)));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new BountyHunter(), new Rival(Ridley.NAME, 1.1)));
         return Fighter.builder().name(NAME).hp(130).maxHp(130).mp(10).maxMp(10).xStrikeMeter(0)
                 .entryQuotes(Arrays.asList("Samus: 'You're mine!'", "Samus: 'Try me.'"))
                 .victoryQuotes(Arrays.asList("Samus: 'My past is not a memory. It's a force at my back.'",

@@ -39,7 +39,7 @@ public class Bowser {
                 .classifications(Arrays.asList(FighterClassification.ANIMAL, FighterClassification.MONSTER))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new OffensiveStrategy()).build()
-                .addAction(new KoopaClaw()).addAction(new FireBreath()).addAction(new BowserBomb())
+                .addAction(new FireBreath()).addAction(new KoopaClaw()).addAction(new BowserBomb())
                 .addAction(new FlyingSlam()).addAction(new WhirlingFortress())
                 .addAction(new GiantBowserPunch())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());

@@ -13,6 +13,7 @@ repositories {
 }
 
 dependencies {
+    compile 'org.apache.commons:commons-lang3:3.9'
     compileOnly 'org.projectlombok:lombok:1.18.8'
 
     testCompile 'junit:junit:4.12'
