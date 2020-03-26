@@ -30,7 +30,7 @@ public class Ness {
 
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(5).dexterity(7).aim(5.5)
                 .agility(5).speed(5).intellect(5).willpower(7).size(4.5).weight(4.5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new DragonSlayer()));
+        FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(135).maxHp(135).mp(120).maxMp(120).xStrikeMeter(0)
                 .entryQuotes(Arrays.asList("Ness pulls out his bat and does a home run pose.",
                         "Ness explodes onto the scene, ready for battle!"))
