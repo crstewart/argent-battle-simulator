@@ -35,7 +35,7 @@ public class Kirby {
         return Fighter.builder().name(NAME).hp(125).maxHp(125).xStrikeMeter(0)
                 .entryQuotes(Arrays.asList("Kirby: 'Hiii!'", "Kirby: 'Poyo!'"))
                 .victoryQuotes(Arrays.asList("Kirby dances around after his win.",
-                        "Kirby does a big spin and poses victoriously.'"))
+                        "Kirby does a big spin and poses victoriously."))
                 .classifications(Collections.singletonList(FighterClassification.ALIEN))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()

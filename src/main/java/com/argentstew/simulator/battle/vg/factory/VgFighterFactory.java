@@ -14,6 +14,7 @@ import com.argentstew.simulator.battle.vg.luigi.Luigi;
 import com.argentstew.simulator.battle.vg.mario.Mario;
 import com.argentstew.simulator.battle.vg.marth.Marth;
 import com.argentstew.simulator.battle.vg.mewtwo.Mewtwo;
+import com.argentstew.simulator.battle.vg.ness.Ness;
 import com.argentstew.simulator.battle.vg.peach.Peach;
 import com.argentstew.simulator.battle.vg.pikachu.Pikachu;
 import com.argentstew.simulator.battle.vg.ridley.Ridley;
@@ -73,6 +74,8 @@ public class VgFighterFactory {
                 return KingDedede.get();
             case Marth.NAME:
                 return Marth.get();
+            case Ness.NAME:
+                return Ness.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
