@@ -28,7 +28,7 @@ public class KingDedede {
         defenses.set(AttackSubType.DARK, 1.15);
 
         FighterStats stats = FighterStats.builder().strength(7).toughness(3).dexterity(4).aim(4)
-                .agility(3).speed(3).intellect(5).willpower(4).size(5).weight(5).build();
+                .agility(3).speed(3).intellect(5).willpower(4).size(2).weight(2).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
                 .entryQuotes(Arrays.asList("King Dedede raises his hammer in the air and settles it on his shoulder.",

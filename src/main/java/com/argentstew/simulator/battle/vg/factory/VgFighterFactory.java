@@ -12,6 +12,7 @@ import com.argentstew.simulator.battle.vg.kirby.Kirby;
 import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
 import com.argentstew.simulator.battle.vg.mario.Mario;
+import com.argentstew.simulator.battle.vg.marth.Marth;
 import com.argentstew.simulator.battle.vg.mewtwo.Mewtwo;
 import com.argentstew.simulator.battle.vg.peach.Peach;
 import com.argentstew.simulator.battle.vg.pikachu.Pikachu;
@@ -70,6 +71,8 @@ public class VgFighterFactory {
                 return Kirby.get();
             case KingDedede.NAME:
                 return KingDedede.get();
+            case Marth.NAME:
+                return Marth.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
