@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.vg.inkling;
 
+import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.defense.Heal;
@@ -41,6 +42,13 @@ public class RefillInk extends Heal {
     @Override
     protected int calculateAmountHealed(int incomingDamage) {
         this.owner.setMp(this.owner.getMaxMp());
+        for (Action action : owner.getActions()) {
+            if ("Refill Ink".equals(action.getName())) {
+                owner.getStrategy().setWeight(action, 0.1);
+                break;
+            }
+        }
+
         return 0;
     }
 

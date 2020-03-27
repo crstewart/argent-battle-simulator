@@ -36,7 +36,7 @@ public class Inkling {
                 .victoryQuotes(Arrays.asList("Inkling: 'Booyah!'", "Inkling: 'Woomy!'"))
                 .classifications(Arrays.asList(FighterClassification.HUMANOID, FighterClassification.ANIMAL))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new BalancedStrategy()).build()
+                .strategy(new InklingStrategy()).build()
                 .addAction(new Splattershot()).addAction(new SplatRoller()).addAction(new SplatCharger())
                 .addAction(new SplatBomb()).addAction(new RefillInk())
                 .addAction(new KillerWail())

@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.vg.inkling;
 
+import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
@@ -16,13 +17,13 @@ import java.util.Collections;
  */
 public class SplatBomb extends RangedAttack {
 
-    public static final int MP_COST = 70;
+    public static final int MP_COST = 30;
 
     public SplatBomb() {
         super();
         this.name = "Splat Bomb";
         this.power = 90;
-        this.variance = 12;
+        this.variance = 8;
         this.speed = 1.5;
         this.subtypes = Arrays.asList(AttackSubType.TOXIC, AttackSubType.EXPLOSIVE);
         this.characteristics = Collections.emptyList();
@@ -31,6 +32,13 @@ public class SplatBomb extends RangedAttack {
     @Override
     public DamageReport doAttack(Fighter defender) {
         owner.useMagic(MP_COST);
+        for (Action action : owner.getActions()) {
+            if ("Refill Ink".equals(action.getName())) {
+                owner.getStrategy().adjustWeight(action, 0.6);
+                break;
+            }
+        }
+
         return super.doAttack(defender);
     }
 

@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.vg.inkling;
 
+import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
@@ -21,8 +22,8 @@ public class SplatRoller extends MeleeAttack {
     public SplatRoller() {
         super();
         this.name = "Splat Roller";
-        this.power = 75;
-        this.variance = 8;
+        this.power = 70;
+        this.variance = 6;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.TOXIC, AttackSubType.SMASH);
         this.characteristics = Collections.emptyList();
@@ -31,6 +32,13 @@ public class SplatRoller extends MeleeAttack {
     @Override
     public DamageReport doAttack(Fighter defender) {
         owner.useMagic(MP_COST);
+        for (Action action : owner.getActions()) {
+            if ("Refill Ink".equals(action.getName())) {
+                owner.getStrategy().adjustWeight(action, 0.5);
+                break;
+            }
+        }
+
         return super.doAttack(defender);
     }
 

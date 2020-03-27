@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.vg.inkling;
 
+import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
@@ -20,8 +21,8 @@ public class SplatCharger extends RangedAttack {
     public SplatCharger() {
         super();
         this.name = "Splat Charger";
-        this.power = 65;
-        this.variance = 8;
+        this.power = 60;
+        this.variance = 6;
         this.speed = 2.5;
         this.subtypes = Collections.singletonList(AttackSubType.TOXIC);
         this.characteristics = Collections.emptyList();
@@ -37,6 +38,13 @@ public class SplatCharger extends RangedAttack {
     @Override
     public DamageReport doAttack(Fighter defender) {
         owner.useMagic(MP_COST);
+        for (Action action : owner.getActions()) {
+            if ("Refill Ink".equals(action.getName())) {
+                owner.getStrategy().adjustWeight(action, 0.2);
+                break;
+            }
+        }
+
         return super.doAttack(defender);
     }
 
