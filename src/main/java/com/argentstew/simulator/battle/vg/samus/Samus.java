@@ -30,6 +30,7 @@ public class Samus {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 1.25);
+        defenses.set(AttackSubType.TOXIC, 1.1);
         defenses.set(AttackSubType.HANDGUN, 0.75);
         defenses.set(AttackSubType.SHOTGUN, 0.75);
         defenses.set(AttackSubType.RIFLE, 0.75);

@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
 import com.argentstew.simulator.battle.vg.fox.Fox;
 import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
+import com.argentstew.simulator.battle.vg.inkling.Inkling;
 import com.argentstew.simulator.battle.vg.kingdedede.KingDedede;
 import com.argentstew.simulator.battle.vg.kirby.Kirby;
 import com.argentstew.simulator.battle.vg.link.Link;
@@ -82,6 +83,8 @@ public class VgFighterFactory {
                 return CaptainFalcon.get();
             case Pit.NAME:
                 return Pit.get();
+            case Inkling.NAME:
+                return Inkling.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
