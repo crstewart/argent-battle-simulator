@@ -32,6 +32,7 @@ public class Ness {
                 .agility(5).speed(5).intellect(5).willpower(7).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(135).maxHp(135).mp(120).maxMp(120).xStrikeMeter(0)
+                .description("An all-around fighter with PSI abilities of varying power.")
                 .entryQuotes(Arrays.asList("Ness pulls out his bat and does a home run pose.",
                         "Ness explodes onto the scene, ready for battle!"))
                 .victoryQuotes(Arrays.asList("Ness nods solemnly, acknowledging his victory in battle.",

@@ -28,6 +28,7 @@ public class DiddyKong {
                 .agility(8).speed(6.5).intellect(4).willpower(3.5).size(4).weight(3.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(130).maxHp(130).xStrikeMeter(0)
+                .description("A speedy fighter whose banana peels can slip up even the toughest of foes.")
                 .entryQuotes(Arrays.asList("Diddy claps his hands and faces his opponent.",
                         "Diddy bursts onto the scene and backflips."))
                 .victoryQuotes(Arrays.asList("Diddy tosses his hat into the air and winks.",

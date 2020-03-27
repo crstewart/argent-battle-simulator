@@ -33,6 +33,7 @@ public class Fox {
                 .agility(6).speed(6.5).intellect(6).willpower(6).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(125).maxHp(125).xStrikeMeter(0)
+                .description("A speedy fighter with a reflective guard and a blaster that does not stun opponents.")
                 .entryQuotes(Arrays.asList("Fox: 'Here I come!'", "Fox: 'Star Fox, ready for duty!'"))
                 .victoryQuotes(Arrays.asList("Fox: 'This is Fox, returning to base!'",
                         "Fox: 'Sorry to jet, but I'm in a hurry!'"))

@@ -25,6 +25,7 @@ import java.util.Objects;
 public class Fighter {
 
     private String name;
+    private String description;
     private int hp;
     private int maxHp;
     private int mp;

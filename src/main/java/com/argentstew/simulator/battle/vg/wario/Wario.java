@@ -27,6 +27,7 @@ public class Wario {
                 .agility(3).speed(3.5).intellect(5).willpower(6).size(4).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(170).maxHp(170).xStrikeMeter(0)
+                .description("A tank with a single-use ranged attack that fights aggressively in melee.")
                 .entryQuotes(Arrays.asList("Wario: 'I'm-a Wario, I'm-a gonna win!'",
                         "Wario: 'Hey! Look here! It's Wario.'"))
                 .victoryQuotes(Arrays.asList("Wario: 'Yeah! Take that losers! Heh heh heh!'",

@@ -37,6 +37,7 @@ public class Pikachu {
                 .agility(9).speed(8).intellect(3).willpower(5.5).size(2).weight(1.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(125).maxHp(125).xStrikeMeter(0)
+                .description("A speedy fighter with strong defenses leading to a powerful X-Strike.")
                 .entryQuotes(Arrays.asList("Pikachu: 'Pi-KA!'", "Pikachu: 'Pika pi!'"))
                 .victoryQuotes(Arrays.asList("Pikachu: 'Pika pika! Pikachu!'", "Pikachu: 'Pi pikachu!'"))
                 .classifications(Arrays.asList(FighterClassification.ANIMAL, FighterClassification.MONSTER))

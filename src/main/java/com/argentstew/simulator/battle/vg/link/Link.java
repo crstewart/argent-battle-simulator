@@ -37,6 +37,7 @@ public class Link {
                 .agility(5).speed(4).intellect(5).willpower(8).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Ganondorf.NAME, 1.1)));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
+                .description("A weaponmaster with a variety of accurate attacks who deals extra damage against Ganondorf.")
                 .entryQuotes(Arrays.asList("Navi: 'Hey! Listen! Watch out!'",
                         "Fi: 'Master, I predict an 85% chance of victory against this foe.'"))
                 .victoryQuotes(Arrays.asList("Link swings and spins his sword before sheathing it triumphantly.",

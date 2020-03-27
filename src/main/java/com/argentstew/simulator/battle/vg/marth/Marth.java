@@ -36,6 +36,7 @@ public class Marth {
                 .agility(6).speed(6).intellect(5).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new DragonSlayer()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
+                .description("A weaponmaster who takes extra damage from piercing attacks but resists hack attacks.")
                 .entryQuotes(Arrays.asList("Marth: 'If you will allow me, I can be your strength!'",
                         "Marth: 'Everyone, watch over me!'"))
                 .victoryQuotes(Arrays.asList("Marth: 'I cannot afford to lose!'",

@@ -33,6 +33,7 @@ public class Kirby {
                 .agility(6).speed(3.5).intellect(2.5).willpower(8).size(1).weight(1).build();
         FighterTraits traits = new FighterTraits(Collections.emptyList());
         return Fighter.builder().name(NAME).hp(125).maxHp(125).xStrikeMeter(0)
+                .description("An all-around fighter with the ability to copy opponents' attacks.")
                 .entryQuotes(Arrays.asList("Kirby: 'Hiii!'", "Kirby: 'Poyo!'"))
                 .victoryQuotes(Arrays.asList("Kirby dances around after his win.",
                         "Kirby does a big spin and poses victoriously."))

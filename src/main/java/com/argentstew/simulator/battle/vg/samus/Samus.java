@@ -39,6 +39,7 @@ public class Samus {
                 .agility(6).speed(4).intellect(5).willpower(4.5).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new BountyHunter(), new Rival(Ridley.NAME, 1.1)));
         return Fighter.builder().name(NAME).hp(130).maxHp(130).mp(10).maxMp(10).xStrikeMeter(0)
+                .description("A futuristic gunner with a large arsenal that deals extra damage to Ridley.")
                 .entryQuotes(Arrays.asList("Samus: 'You're mine!'", "Samus: 'Try me.'"))
                 .victoryQuotes(Arrays.asList("Samus: 'My past is not a memory. It's a force at my back.'",
                         "Samus: 'Is that all?'"))

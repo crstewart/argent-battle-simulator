@@ -32,6 +32,7 @@ public class Bowser {
                 .agility(2).speed(2).intellect(3).willpower(6).size(8.5).weight(9).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Hazardous()));
         return Fighter.builder().name(NAME).hp(200).maxHp(200).xStrikeMeter(0)
+                .description("A strong, tough tank whose spiked shell hurts melee attackers.")
                 .entryQuotes(Arrays.asList("Bowser: 'I'll show you the power of the Koopa King!'",
                         "Bowser: 'Stomping fools is my business!'"))
                 .victoryQuotes(Arrays.asList("Bowser: 'I'm the biggest, baddest brute around, and don't you forget it.'",

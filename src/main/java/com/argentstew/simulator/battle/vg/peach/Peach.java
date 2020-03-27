@@ -34,6 +34,7 @@ public class Peach {
                 .agility(7).speed(5).intellect(5).willpower(7).size(4).weight(4).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(140).maxHp(140).mp(25).maxMp(25).xStrikeMeter(0)
+                .description("An all-around fighter whose healing magic can turn the tide of battle.")
                 .entryQuotes(Arrays.asList("Peach: 'Yay! Peach! Let's go!'", "Peach: 'Leave it to me!'"))
                 .victoryQuotes(Arrays.asList("Peach: 'Ohhh, did I win?'",
                         "Peach: 'I won! Oh, yay for me!'"))

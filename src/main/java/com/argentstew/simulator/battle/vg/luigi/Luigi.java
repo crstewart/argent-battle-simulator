@@ -33,6 +33,7 @@ public class Luigi {
                 .agility(5.5).speed(5).intellect(5).willpower(5.5).size(4).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
+                .description("An all-around fighter whose punch attack can land surprising critical hits.")
                 .entryQuotes(Arrays.asList("Luigi: 'It's-a go time!'",
                         "Luigi: 'This looks like a job for Luigi!'"))
                 .victoryQuotes(Arrays.asList("Luigi: 'Luigi win! Luigi number one! Wow.'",

@@ -32,6 +32,7 @@ public class Ganondorf {
                 .agility(4).speed(3.5).intellect(6.5).willpower(7.5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
+                .description("A brawler who resists magic with a variety of darkness-infused attacks.")
                 .entryQuotes(Arrays.asList("Ganondorf: 'Behold! The power of the Demon King!'",
                         "Ganondorf: 'You want a piece of me?! Very funny! I like your attitude!'"))
                 .victoryQuotes(Arrays.asList("Ganondorf: 'I've outlived more \"heroes\" than you can possibly imagine.'",

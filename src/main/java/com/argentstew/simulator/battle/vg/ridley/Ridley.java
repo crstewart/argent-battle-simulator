@@ -40,6 +40,7 @@ public class Ridley {
                 .agility(7.5).speed(8).intellect(4).willpower(3).size(10).weight(8).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
+                .description("A brawler with high speed and power whose tail can strike critically.")
                 .entryQuotes(Arrays.asList("Ridley swoops into the battlefield with a flap of his wings.'",
                         "Ridley roars and prepares himself for the coming battle.'"))
                 .victoryQuotes(Arrays.asList("Ridley stands over his opponent, triumphant.'",

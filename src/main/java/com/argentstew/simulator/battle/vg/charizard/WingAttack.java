@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.vg.charizard;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 
+import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -19,7 +20,7 @@ public class WingAttack extends MeleeAttack {
         this.power = 60;
         this.variance = 6;
         this.speed = 0.5;
-        this.subtypes = Collections.singletonList(AttackSubType.AIR);
+        this.subtypes = Arrays.asList(AttackSubType.AIR, AttackSubType.WING);
         this.characteristics = Collections.emptyList();
     }
 }

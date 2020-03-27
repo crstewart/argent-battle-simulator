@@ -31,6 +31,7 @@ public class KingDedede {
                 .agility(3).speed(3).intellect(5).willpower(4).size(2).weight(2).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
+                .description("A brawler with powerful, inaccurate attacks.")
                 .entryQuotes(Arrays.asList("King Dedede raises his hammer in the air and settles it on his shoulder.",
                         "King Dedede: 'Ha! You're going to love this.'"))
                 .victoryQuotes(Arrays.asList("King Dedede: 'I'll be the one to keep the peace!'",

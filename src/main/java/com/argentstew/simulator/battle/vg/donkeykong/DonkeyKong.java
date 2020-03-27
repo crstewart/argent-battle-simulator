@@ -31,8 +31,9 @@ public class DonkeyKong {
                 .agility(4).speed(3).intellect(1.5).willpower(5).size(8).weight(8).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(200).maxHp(200).mp(4).maxMp(4).xStrikeMeter(0)
-                .entryQuotes(Arrays.asList("DK punds his chest and prepares for battle.",
-                        "DK jumps onto the scene and slam the ground."))
+                .description("A tank who fights overly aggressively, taking extra damage from many attacks.")
+                .entryQuotes(Arrays.asList("DK pounds his chest and prepares for battle.",
+                        "DK jumps onto the scene and slams the ground."))
                 .victoryQuotes(Arrays.asList("DK does a backflip and flexes his arms.",
                         "DK clasps his hands above his head and shakes them in a victory pose."))
                 .classifications(Collections.singletonList(FighterClassification.ANIMAL))

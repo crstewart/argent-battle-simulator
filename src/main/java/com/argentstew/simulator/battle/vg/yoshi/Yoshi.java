@@ -25,6 +25,7 @@ public class Yoshi {
                 .agility(6.5).speed(6).intellect(3).willpower(8).size(4).weight(4).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
+                .description("An all-around fighter who is accurate at range but not in melee combat.")
                 .entryQuotes(Arrays.asList("Yoshi: 'Yoshi!'",
                         "Yoshi pops out of an egg and faces his opponent."))
                 .victoryQuotes(Arrays.asList("Yoshi spins around and gives the V sign.", "Yoshi: 'Wow!'"))

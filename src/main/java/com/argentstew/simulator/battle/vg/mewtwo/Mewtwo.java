@@ -35,6 +35,7 @@ public class Mewtwo {
                 .agility(8).speed(7).intellect(10).willpower(5).size(5.5).weight(6.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(180).maxHp(180).xStrikeMeter(0)
+                .description("A tank with overwhelming stats and calculated strikes.")
                 .entryQuotes(Arrays.asList("Mewtwo: 'Behold my powers! I am the strongest Pokémon in the world.'",
                         "Mewtwo: 'I will find my own purpose... and purge this planet of all who oppose me!'"))
                 .victoryQuotes(Arrays.asList("Mewtwo: 'I am sparing your life, for the moment. But you cannot escape your fate.'",

@@ -33,6 +33,7 @@ public class Zelda {
                 .agility(5).speed(4).intellect(8).willpower(8).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Ganondorf.NAME, 1.1)));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
+                .description("A mage with a reflective guard and strong magic abilities.")
                 .entryQuotes(Arrays.asList("Zelda: 'I will deal with Hyrule's enemies myself!'",
                         "Zelda: 'Stow your fear; it's now or never!'"))
                 .victoryQuotes(Arrays.asList("Zelda: 'Victory is ours on this day!'",
