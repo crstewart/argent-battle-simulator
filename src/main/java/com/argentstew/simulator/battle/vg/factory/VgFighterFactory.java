@@ -15,6 +15,7 @@ import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
 import com.argentstew.simulator.battle.vg.mario.Mario;
 import com.argentstew.simulator.battle.vg.marth.Marth;
+import com.argentstew.simulator.battle.vg.megaman.MegaMan;
 import com.argentstew.simulator.battle.vg.mewtwo.Mewtwo;
 import com.argentstew.simulator.battle.vg.ness.Ness;
 import com.argentstew.simulator.battle.vg.peach.Peach;
@@ -85,6 +86,8 @@ public class VgFighterFactory {
                 return Pit.get();
             case Inkling.NAME:
                 return Inkling.get();
+            case MegaMan.NAME:
+                return MegaMan.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

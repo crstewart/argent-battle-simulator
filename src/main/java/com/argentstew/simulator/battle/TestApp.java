@@ -21,7 +21,7 @@ public class TestApp {
     private static final List<String> FIGHTERS = Arrays.asList("Mario", "Luigi", "Peach", "Bowser", "Donkey Kong",
             "Diddy Kong", "Yoshi", "Wario", "Link", "Zelda", "Ganondorf", "Pikachu", "Charizard", "Mewtwo",
             "Samus Aran", "Ridley", "Fox McCloud", "Kirby", "King Dedede", "Marth", "Ness", "Captain Falcon", "Pit",
-            "Inkling");
+            "Inkling", "Mega Man");
 
     public static void main(String[] args) {
 
