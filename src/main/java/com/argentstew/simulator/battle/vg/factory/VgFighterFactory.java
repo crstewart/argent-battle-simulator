@@ -31,6 +31,7 @@ import com.argentstew.simulator.battle.vg.ryu.Ryu;
 import com.argentstew.simulator.battle.vg.samus.Samus;
 import com.argentstew.simulator.battle.vg.sigma.Sigma;
 import com.argentstew.simulator.battle.vg.tronbonne.TronBonne;
+import com.argentstew.simulator.battle.vg.viewtifuljoe.ViewtifulJoe;
 import com.argentstew.simulator.battle.vg.wario.Wario;
 import com.argentstew.simulator.battle.vg.yoshi.Yoshi;
 import com.argentstew.simulator.battle.vg.zelda.Zelda;
@@ -115,6 +116,8 @@ public class VgFighterFactory {
                 return LeonKennedy.get();
             case AlbertWesker.NAME:
                 return AlbertWesker.get();
+            case ViewtifulJoe.NAME:
+                return ViewtifulJoe.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
