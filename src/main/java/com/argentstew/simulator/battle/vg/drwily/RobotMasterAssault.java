@@ -22,7 +22,8 @@ public class RobotMasterAssault extends MeleeXStrike {
         this.variance = 12;
         this.speed = 4;
         this.subtypes = Arrays.asList(AttackSubType.FIRE, AttackSubType.ICE, AttackSubType.THUNDER, AttackSubType.TOXIC,
-                AttackSubType.EARTH, AttackSubType.EXPLOSIVE, AttackSubType.NATURE, AttackSubType.METAL);
+                AttackSubType.EARTH, AttackSubType.EXPLOSIVE, AttackSubType.NATURE, AttackSubType.METAL,
+                AttackSubType.ASSIST);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }
 }

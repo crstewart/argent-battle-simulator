@@ -27,6 +27,7 @@ import com.argentstew.simulator.battle.vg.samus.Samus;
 import com.argentstew.simulator.battle.vg.wario.Wario;
 import com.argentstew.simulator.battle.vg.yoshi.Yoshi;
 import com.argentstew.simulator.battle.vg.zelda.Zelda;
+import com.argentstew.simulator.battle.vg.zero.Zero;
 
 /**
  * com.argentstew.simulator.battle.vg.factory
@@ -91,6 +92,8 @@ public class VgFighterFactory {
                 return MegaMan.get();
             case DrWily.NAME:
                 return DrWily.get();
+            case Zero.NAME:
+                return Zero.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
