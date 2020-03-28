@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.vg.bowser.Bowser;
 import com.argentstew.simulator.battle.vg.captfalcon.CaptainFalcon;
 import com.argentstew.simulator.battle.vg.charizard.Charizard;
+import com.argentstew.simulator.battle.vg.chunli.ChunLi;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
 import com.argentstew.simulator.battle.vg.drwily.DrWily;
@@ -103,6 +104,8 @@ public class VgFighterFactory {
                 return TronBonne.get();
             case Ryu.NAME:
                 return Ryu.get();
+            case ChunLi.NAME:
+                return ChunLi.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

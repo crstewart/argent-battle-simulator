@@ -30,6 +30,7 @@ public class Ryu {
         defenses.set(AttackSubType.HEADBUTT, 0.95);
         defenses.set(AttackSubType.SLAM, 0.95);
         defenses.set(AttackSubType.GRAPPLE, 0.95);
+        defenses.set(AttackSubType.CHI, 0.95);
         defenses.set(AttackSubType.DARK, 1.2);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(5).dexterity(5).aim(4)
