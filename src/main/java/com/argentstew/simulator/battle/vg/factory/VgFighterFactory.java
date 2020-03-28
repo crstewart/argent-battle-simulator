@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.vg.bowser.Bowser;
 import com.argentstew.simulator.battle.vg.captfalcon.CaptainFalcon;
 import com.argentstew.simulator.battle.vg.charizard.Charizard;
 import com.argentstew.simulator.battle.vg.chunli.ChunLi;
+import com.argentstew.simulator.battle.vg.dante.Dante;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
 import com.argentstew.simulator.battle.vg.drwily.DrWily;
@@ -121,6 +122,8 @@ public class VgFighterFactory {
                 return ViewtifulJoe.get();
             case Morrigan.NAME:
                 return Morrigan.get();
+            case Dante.NAME:
+                return Dante.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
