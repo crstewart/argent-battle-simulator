@@ -23,7 +23,7 @@ public class Demonslayer implements Trait {
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {
         if (defender.getClassifications().contains(FighterClassification.DEMONIC)) {
-            return rawDamage * 1.1;
+            return rawDamage * 1.25;
         }
 
         return rawDamage;
