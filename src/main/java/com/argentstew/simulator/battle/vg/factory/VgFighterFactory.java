@@ -1,6 +1,7 @@
 package com.argentstew.simulator.battle.vg.factory;
 
 import com.argentstew.simulator.battle.fighter.Fighter;
+import com.argentstew.simulator.battle.vg.akuma.Akuma;
 import com.argentstew.simulator.battle.vg.bowser.Bowser;
 import com.argentstew.simulator.battle.vg.captfalcon.CaptainFalcon;
 import com.argentstew.simulator.battle.vg.charizard.Charizard;
@@ -106,6 +107,8 @@ public class VgFighterFactory {
                 return Ryu.get();
             case ChunLi.NAME:
                 return ChunLi.get();
+            case Akuma.NAME:
+                return Akuma.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
