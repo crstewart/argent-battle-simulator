@@ -22,7 +22,7 @@ public class TestApp {
             "Diddy Kong", "Yoshi", "Wario", "Link", "Zelda", "Ganondorf", "Pikachu", "Charizard", "Mewtwo",
             "Samus Aran", "Ridley", "Fox McCloud", "Kirby", "King Dedede", "Marth", "Ness", "Captain Falcon", "Pit",
             "Inkling", "Mega Man", "Dr. Wily", "Zero", "Sigma", "Tron Bonne", "Ryu", "Chun Li", "Akuma",
-            "Leon Kennedy");
+            "Leon Kennedy", "Albert Wesker");
 
     public static void main(String[] args) {
 
