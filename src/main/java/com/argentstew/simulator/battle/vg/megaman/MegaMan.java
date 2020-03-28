@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.Rival;
+import com.argentstew.simulator.battle.vg.drwily.DrWily;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -38,7 +39,7 @@ public class MegaMan {
 
         FighterStats stats = FighterStats.builder().strength(5).toughness(2).dexterity(5.5).aim(7.5)
                 .agility(3).speed(3.5).intellect(2).willpower(3).size(4.5).weight(5.5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival("Dr. Wily", 1.1)));
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(DrWily.NAME, 1.1)));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A weaponmaster with a large arsenal of ranged attacks that deals extra damage to Dr. Wily.")
                 .entryQuotes(Arrays.asList("Mega Man: 'I am more than a robot!'", "Mega Man: 'We don't have to fight!'"))

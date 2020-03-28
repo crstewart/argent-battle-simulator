@@ -39,7 +39,7 @@ public class Pit {
                         "Pit: 'I hope you're ready for a hot plate of punishment!'"))
                 .victoryQuotes(Arrays.asList("Pit: 'Gracious goddess of light watches from up above!'",
                         "Pit: 'It's game over for you!'"))
-                .classifications(Collections.singletonList(FighterClassification.HUMANOID))
+                .classifications(Collections.singletonList(FighterClassification.DIVINE))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
                 .addAction(new PalutenaBow()).addAction(new UpperdashArm()).addAction(new FirstBlade())

@@ -45,6 +45,11 @@ public class Hazardous implements Trait {
         return null;
     }
 
+    @Override
+    public DamageReport applyArmor(DamageReport report) {
+        return report;
+    }
+
     public static class HazardousBody extends AttackAction {
 
         private HazardousBody() {

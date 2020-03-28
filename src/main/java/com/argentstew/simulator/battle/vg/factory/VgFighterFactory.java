@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.vg.captfalcon.CaptainFalcon;
 import com.argentstew.simulator.battle.vg.charizard.Charizard;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
+import com.argentstew.simulator.battle.vg.drwily.DrWily;
 import com.argentstew.simulator.battle.vg.fox.Fox;
 import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
 import com.argentstew.simulator.battle.vg.inkling.Inkling;
@@ -88,6 +89,8 @@ public class VgFighterFactory {
                 return Inkling.get();
             case MegaMan.NAME:
                 return MegaMan.get();
+            case DrWily.NAME:
+                return DrWily.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

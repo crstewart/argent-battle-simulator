@@ -13,5 +13,7 @@ public enum FighterClassification {
     ALIEN,
     MONSTER,
     DRAGON,
-    MECH
+    MECH,
+    DIVINE,
+    DEMONIC
 }
