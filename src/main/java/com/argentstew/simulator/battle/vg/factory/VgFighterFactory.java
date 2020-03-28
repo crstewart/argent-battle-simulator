@@ -25,6 +25,7 @@ import com.argentstew.simulator.battle.vg.pit.Pit;
 import com.argentstew.simulator.battle.vg.ridley.Ridley;
 import com.argentstew.simulator.battle.vg.samus.Samus;
 import com.argentstew.simulator.battle.vg.sigma.Sigma;
+import com.argentstew.simulator.battle.vg.tronbonne.TronBonne;
 import com.argentstew.simulator.battle.vg.wario.Wario;
 import com.argentstew.simulator.battle.vg.yoshi.Yoshi;
 import com.argentstew.simulator.battle.vg.zelda.Zelda;
@@ -97,6 +98,8 @@ public class VgFighterFactory {
                 return Zero.get();
             case Sigma.NAME:
                 return Sigma.get();
+            case TronBonne.NAME:
+                return TronBonne.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
