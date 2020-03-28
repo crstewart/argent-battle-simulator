@@ -14,6 +14,7 @@ import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
 import com.argentstew.simulator.battle.vg.inkling.Inkling;
 import com.argentstew.simulator.battle.vg.kingdedede.KingDedede;
 import com.argentstew.simulator.battle.vg.kirby.Kirby;
+import com.argentstew.simulator.battle.vg.leonkennedy.LeonKennedy;
 import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
 import com.argentstew.simulator.battle.vg.mario.Mario;
@@ -109,6 +110,8 @@ public class VgFighterFactory {
                 return ChunLi.get();
             case Akuma.NAME:
                 return Akuma.get();
+            case LeonKennedy.NAME:
+                return LeonKennedy.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
