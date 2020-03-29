@@ -28,7 +28,7 @@ public class Squall {
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(4.5).dexterity(6).aim(8)
                 .agility(6).speed(6.5).intellect(5).willpower(5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(140).maxHp(140).mp(0).maxMp(10).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A speedy fighter who utilizes magic along with his unique sword.")
                 .entryQuotes(Arrays.asList("Squall: 'I'm more complex than you think.'",
                         "Squall: 'I won't hold back.'"))
