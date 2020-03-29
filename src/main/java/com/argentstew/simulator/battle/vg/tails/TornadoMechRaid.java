@@ -1,4 +1,4 @@
-package com.argentstew.simulator.battle.vg.sonic;
+package com.argentstew.simulator.battle.vg.tails;
 
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
@@ -9,20 +9,20 @@ import java.util.Arrays;
 import java.util.Collections;
 
 /**
- * com.argentstew.simulator.battle.vg.sonic
+ * com.argentstew.simulator.battle.vg.tails
  * 8/24/2019
  *
  * @author Craig
  */
-public class SuperSonic extends MeleeXStrike {
+public class TornadoMechRaid extends RangedXStrike {
 
-    public SuperSonic() {
+    public TornadoMechRaid() {
         super();
-        this.name = "Super Sonic";
-        this.power = 230;
-        this.variance = 15;
-        this.speed = 1;
-        this.subtypes = Arrays.asList(AttackSubType.SLAM, AttackSubType.LIGHT);
+        this.name = "Tornado Mech Raid";
+        this.power = 250;
+        this.variance = 16;
+        this.speed = 5;
+        this.subtypes = Collections.singletonList(AttackSubType.EXPLOSIVE);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }
 
