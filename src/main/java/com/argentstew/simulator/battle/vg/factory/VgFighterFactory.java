@@ -38,6 +38,7 @@ import com.argentstew.simulator.battle.vg.sonic.Sonic;
 import com.argentstew.simulator.battle.vg.tails.Tails;
 import com.argentstew.simulator.battle.vg.tronbonne.TronBonne;
 import com.argentstew.simulator.battle.vg.viewtifuljoe.ViewtifulJoe;
+import com.argentstew.simulator.battle.vg.vyse.Vyse;
 import com.argentstew.simulator.battle.vg.wario.Wario;
 import com.argentstew.simulator.battle.vg.yoshi.Yoshi;
 import com.argentstew.simulator.battle.vg.zelda.Zelda;
@@ -136,6 +137,8 @@ public class VgFighterFactory {
                 return Tails.get();
             case DrEggman.NAME:
                 return DrEggman.get();
+            case Vyse.NAME:
+                return Vyse.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
