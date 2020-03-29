@@ -14,6 +14,7 @@ import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
 import com.argentstew.simulator.battle.vg.dreggman.DrEggman;
 import com.argentstew.simulator.battle.vg.drwily.DrWily;
+import com.argentstew.simulator.battle.vg.erdrick.Erdrick;
 import com.argentstew.simulator.battle.vg.fox.Fox;
 import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
 import com.argentstew.simulator.battle.vg.inkling.Inkling;
@@ -151,6 +152,8 @@ public class VgFighterFactory {
                 return Kefka.get();
             case Sephiroth.NAME:
                 return Sephiroth.get();
+            case Erdrick.NAME:
+                return Erdrick.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
