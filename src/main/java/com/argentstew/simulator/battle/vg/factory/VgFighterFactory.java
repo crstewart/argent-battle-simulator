@@ -11,6 +11,7 @@ import com.argentstew.simulator.battle.vg.chunli.ChunLi;
 import com.argentstew.simulator.battle.vg.dante.Dante;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
+import com.argentstew.simulator.battle.vg.dreggman.DrEggman;
 import com.argentstew.simulator.battle.vg.drwily.DrWily;
 import com.argentstew.simulator.battle.vg.fox.Fox;
 import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
@@ -133,6 +134,8 @@ public class VgFighterFactory {
                 return Sonic.get();
             case Tails.NAME:
                 return Tails.get();
+            case DrEggman.NAME:
+                return DrEggman.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

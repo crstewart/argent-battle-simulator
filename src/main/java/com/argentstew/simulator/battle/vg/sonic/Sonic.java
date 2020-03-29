@@ -12,6 +12,7 @@ import com.argentstew.simulator.battle.trait.impl.Hazardous;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.vg.arthur.*;
+import com.argentstew.simulator.battle.vg.dreggman.DrEggman;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -35,7 +36,7 @@ public class Sonic {
         FighterStats stats = FighterStats.builder().strength(2).toughness(3).dexterity(5).aim(4)
                 .agility(7.5).speed(10).intellect(5).willpower(5).size(4).weight(4).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new NaturalAgility(), new Hazardous(),
-                new Rival("Dr. Eggman", 1.1)));
+                new Rival(DrEggman.NAME, 1.2)));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A speedy fighter with hazardous quills and fast melee attacks who counters Dr. Eggman.")
                 .entryQuotes(Arrays.asList("Sonic: 'Sonic's the name. Speed's my game.'",
