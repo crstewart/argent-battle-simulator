@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.vg.bowser.Bowser;
 import com.argentstew.simulator.battle.vg.captfalcon.CaptainFalcon;
 import com.argentstew.simulator.battle.vg.charizard.Charizard;
 import com.argentstew.simulator.battle.vg.chunli.ChunLi;
+import com.argentstew.simulator.battle.vg.cloud.Cloud;
 import com.argentstew.simulator.battle.vg.dante.Dante;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
@@ -139,6 +140,8 @@ public class VgFighterFactory {
                 return DrEggman.get();
             case Vyse.NAME:
                 return Vyse.get();
+            case Cloud.NAME:
+                return Cloud.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
