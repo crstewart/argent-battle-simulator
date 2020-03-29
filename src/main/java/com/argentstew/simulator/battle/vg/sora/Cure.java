@@ -1,7 +1,8 @@
-package com.argentstew.simulator.battle.vg.erdrick;
+package com.argentstew.simulator.battle.vg.sora;
 
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.MagicAttack;
+import com.argentstew.simulator.battle.action.defense.Heal;
 
 /**
  * com.argentstew.simulator.battle.vg.erdrick
@@ -9,15 +10,15 @@ import com.argentstew.simulator.battle.action.attack.MagicAttack;
  *
  * @author Craig
  */
-public class Heal extends com.argentstew.simulator.battle.action.defense.Heal {
+public class Cure extends Heal {
 
-    public static final int MP_COST = 3;
+    public static final int MP_COST = 4;
 
-    public Heal() {
-        this.name = "Heal";
-        this.initiateMessage = "prepares to cast Heal!";
-        this.successMessage = "casts Heal!";
-        this.failureMessage = "failed to cast Heal!";
+    public Cure() {
+        this.name = "Cure";
+        this.initiateMessage = "prepares to cast Cure!";
+        this.successMessage = "casts Cure!";
+        this.failureMessage = "failed to cast Cure!";
         this.speed = 0;
     }
 
@@ -51,8 +52,8 @@ public class Heal extends com.argentstew.simulator.battle.action.defense.Heal {
 
     @Override
     protected int calculateAmountHealed(int incomingDamage) {
-        double baseHeal = 30 + (owner.getStats().getIntellect() * 0.4);
-        double variance = Math.random() * 9;
+        double baseHeal = 32 + (owner.getStats().getIntellect() * 0.4);
+        double variance = Math.random() * 10;
         return (int) Math.round(baseHeal + variance);
     }
 }

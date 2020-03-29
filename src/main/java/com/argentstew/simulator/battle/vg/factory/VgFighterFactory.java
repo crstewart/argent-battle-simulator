@@ -39,6 +39,7 @@ import com.argentstew.simulator.battle.vg.samus.Samus;
 import com.argentstew.simulator.battle.vg.sephiroth.Sephiroth;
 import com.argentstew.simulator.battle.vg.sigma.Sigma;
 import com.argentstew.simulator.battle.vg.sonic.Sonic;
+import com.argentstew.simulator.battle.vg.sora.Sora;
 import com.argentstew.simulator.battle.vg.squall.Squall;
 import com.argentstew.simulator.battle.vg.tails.Tails;
 import com.argentstew.simulator.battle.vg.tronbonne.TronBonne;
@@ -154,6 +155,8 @@ public class VgFighterFactory {
                 return Sephiroth.get();
             case Erdrick.NAME:
                 return Erdrick.get();
+            case Sora.NAME:
+                return Sora.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
