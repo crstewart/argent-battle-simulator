@@ -35,6 +35,7 @@ import com.argentstew.simulator.battle.vg.pit.Pit;
 import com.argentstew.simulator.battle.vg.ridley.Ridley;
 import com.argentstew.simulator.battle.vg.ryu.Ryu;
 import com.argentstew.simulator.battle.vg.samus.Samus;
+import com.argentstew.simulator.battle.vg.sephiroth.Sephiroth;
 import com.argentstew.simulator.battle.vg.sigma.Sigma;
 import com.argentstew.simulator.battle.vg.sonic.Sonic;
 import com.argentstew.simulator.battle.vg.squall.Squall;
@@ -148,6 +149,8 @@ public class VgFighterFactory {
                 return Squall.get();
             case Kefka.NAME:
                 return Kefka.get();
+            case Sephiroth.NAME:
+                return Sephiroth.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
