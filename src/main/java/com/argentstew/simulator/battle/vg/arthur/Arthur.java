@@ -28,7 +28,7 @@ public class Arthur {
         defenses.set(AttackType.MAGIC, 0.85);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.1);
 
-        FighterStats stats = FighterStats.builder().strength(4).toughness(8).dexterity(3).aim(9)
+        FighterStats stats = FighterStats.builder().strength(4).toughness(8).dexterity(3.5).aim(9)
                 .agility(3).speed(2).intellect(4.5).willpower(7.5).size(4).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Demonslayer()));
         return Fighter.builder().name(NAME).hp(130).maxHp(130).xStrikeMeter(0)
