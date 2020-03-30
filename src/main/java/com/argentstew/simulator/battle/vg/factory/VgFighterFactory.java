@@ -9,6 +9,7 @@ import com.argentstew.simulator.battle.vg.captfalcon.CaptainFalcon;
 import com.argentstew.simulator.battle.vg.charizard.Charizard;
 import com.argentstew.simulator.battle.vg.chunli.ChunLi;
 import com.argentstew.simulator.battle.vg.cloud.Cloud;
+import com.argentstew.simulator.battle.vg.crono.Crono;
 import com.argentstew.simulator.battle.vg.dante.Dante;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
@@ -157,6 +158,8 @@ public class VgFighterFactory {
                 return Erdrick.get();
             case Sora.NAME:
                 return Sora.get();
+            case Crono.NAME:
+                return Crono.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

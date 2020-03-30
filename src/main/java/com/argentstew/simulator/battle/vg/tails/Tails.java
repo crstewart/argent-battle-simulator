@@ -29,6 +29,7 @@ public class Tails {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 1.1);
+        defenses.set(AttackSubType.AIR, 1.1);
         defenses.set(AttackSubType.PIERCE, 1.1);
 
         FighterStats stats = FighterStats.builder().strength(1.5).toughness(2.5).dexterity(8).aim(8)
