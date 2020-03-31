@@ -25,6 +25,7 @@ import com.argentstew.simulator.battle.vg.kirby.Kirby;
 import com.argentstew.simulator.battle.vg.leonkennedy.LeonKennedy;
 import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
+import com.argentstew.simulator.battle.vg.magus.Magus;
 import com.argentstew.simulator.battle.vg.mario.Mario;
 import com.argentstew.simulator.battle.vg.marth.Marth;
 import com.argentstew.simulator.battle.vg.megaman.MegaMan;
@@ -160,6 +161,8 @@ public class VgFighterFactory {
                 return Sora.get();
             case Crono.NAME:
                 return Crono.get();
+            case Magus.NAME:
+                return Magus.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

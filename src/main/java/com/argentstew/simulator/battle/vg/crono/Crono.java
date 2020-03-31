@@ -32,10 +32,10 @@ public class Crono {
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(16).maxMp(16).xStrikeMeter(0)
                 .description("An all-around fighter with melee, ranged, and magic attacks.")
-                .entryQuotes(Arrays.asList("Crono pulls out his katana and take a fighting stance.'",
-                        "Crono blinks and looks confused at his opponent.'"))
-                .victoryQuotes(Arrays.asList("Crono puts away his katana and does a fist pump.'",
-                        "Crono revels in victory with his friends!'"))
+                .entryQuotes(Arrays.asList("Crono pulls out his katana and take a fighting stance.",
+                        "Crono blinks and looks confused at his opponent."))
+                .victoryQuotes(Arrays.asList("Crono puts away his katana and does a fist pump.",
+                        "Crono revels in victory with his friends!"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
