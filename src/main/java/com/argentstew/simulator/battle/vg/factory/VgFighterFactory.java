@@ -9,6 +9,7 @@ import com.argentstew.simulator.battle.vg.captfalcon.CaptainFalcon;
 import com.argentstew.simulator.battle.vg.charizard.Charizard;
 import com.argentstew.simulator.battle.vg.chunli.ChunLi;
 import com.argentstew.simulator.battle.vg.cloud.Cloud;
+import com.argentstew.simulator.battle.vg.crash.CrashBandicoot;
 import com.argentstew.simulator.battle.vg.crono.Crono;
 import com.argentstew.simulator.battle.vg.dante.Dante;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
@@ -163,6 +164,8 @@ public class VgFighterFactory {
                 return Crono.get();
             case Magus.NAME:
                 return Magus.get();
+            case CrashBandicoot.NAME:
+                return CrashBandicoot.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
