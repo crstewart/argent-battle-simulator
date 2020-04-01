@@ -43,6 +43,7 @@ import com.argentstew.simulator.battle.vg.sephiroth.Sephiroth;
 import com.argentstew.simulator.battle.vg.sigma.Sigma;
 import com.argentstew.simulator.battle.vg.sonic.Sonic;
 import com.argentstew.simulator.battle.vg.sora.Sora;
+import com.argentstew.simulator.battle.vg.spyro.Spyro;
 import com.argentstew.simulator.battle.vg.squall.Squall;
 import com.argentstew.simulator.battle.vg.tails.Tails;
 import com.argentstew.simulator.battle.vg.tronbonne.TronBonne;
@@ -166,6 +167,8 @@ public class VgFighterFactory {
                 return Magus.get();
             case CrashBandicoot.NAME:
                 return CrashBandicoot.get();
+            case Spyro.NAME:
+                return Spyro.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
