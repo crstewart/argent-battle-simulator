@@ -20,6 +20,7 @@ import com.argentstew.simulator.battle.vg.erdrick.Erdrick;
 import com.argentstew.simulator.battle.vg.fox.Fox;
 import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
 import com.argentstew.simulator.battle.vg.inkling.Inkling;
+import com.argentstew.simulator.battle.vg.jak.JakAndDaxter;
 import com.argentstew.simulator.battle.vg.kefka.Kefka;
 import com.argentstew.simulator.battle.vg.kingdedede.KingDedede;
 import com.argentstew.simulator.battle.vg.kirby.Kirby;
@@ -169,6 +170,8 @@ public class VgFighterFactory {
                 return CrashBandicoot.get();
             case Spyro.NAME:
                 return Spyro.get();
+            case JakAndDaxter.NAME:
+                return JakAndDaxter.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
