@@ -46,6 +46,7 @@ import com.argentstew.simulator.battle.vg.ryu.Ryu;
 import com.argentstew.simulator.battle.vg.samus.Samus;
 import com.argentstew.simulator.battle.vg.sephiroth.Sephiroth;
 import com.argentstew.simulator.battle.vg.sigma.Sigma;
+import com.argentstew.simulator.battle.vg.slycooper.SlyCooper;
 import com.argentstew.simulator.battle.vg.sonic.Sonic;
 import com.argentstew.simulator.battle.vg.sora.Sora;
 import com.argentstew.simulator.battle.vg.spyro.Spyro;
@@ -184,6 +185,8 @@ public class VgFighterFactory {
                 return Kratos.get();
             case ColeMacgrath.NAME:
                 return ColeMacgrath.get();
+            case SlyCooper.NAME:
+                return SlyCooper.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
