@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
+import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.vg.slycooper.*;
 
@@ -41,7 +42,7 @@ public class SolidSnake {
                         "Snake: 'Colonel, mission accomplished.'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new DefensiveStrategy()).build()
+                .strategy(new BalancedStrategy()).build()
                 .addAction(new M67FragGrenade()).addAction(new MK23SOCOM()).addAction(new FAMAS())
                 .addAction(new StealthTakedown()).addAction(new StunKnife())
                 .addAction(new M79GrenadeLauncher())
