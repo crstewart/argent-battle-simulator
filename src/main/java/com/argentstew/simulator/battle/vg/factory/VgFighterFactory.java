@@ -9,6 +9,7 @@ import com.argentstew.simulator.battle.vg.captfalcon.CaptainFalcon;
 import com.argentstew.simulator.battle.vg.charizard.Charizard;
 import com.argentstew.simulator.battle.vg.chunli.ChunLi;
 import com.argentstew.simulator.battle.vg.cloud.Cloud;
+import com.argentstew.simulator.battle.vg.cole.ColeMacgrath;
 import com.argentstew.simulator.battle.vg.crash.CrashBandicoot;
 import com.argentstew.simulator.battle.vg.crono.Crono;
 import com.argentstew.simulator.battle.vg.dante.Dante;
@@ -181,6 +182,8 @@ public class VgFighterFactory {
                 return NathanDrake.get();
             case Kratos.NAME:
                 return Kratos.get();
+            case ColeMacgrath.NAME:
+                return ColeMacgrath.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

@@ -36,7 +36,7 @@ public class Kratos {
         return Fighter.builder().name(NAME).hp(155).maxHp(155).xStrikeMeter(0)
                 .description("A vicious brawler with mild anti-mage properties.")
                 .entryQuotes(Arrays.asList("Kratos: 'You will not see the end of this day.'",
-                        "Kratos: 'My vengeance ends now. '"))
+                        "Kratos: 'My vengeance ends now.'"))
                 .victoryQuotes(Arrays.asList("Kratos: 'By the gods, what have I become?'",
                         "Kratos: 'The Gods of Olympus have abandoned me. Now there is no hope!'"))
                 .classifications(Arrays.asList(FighterClassification.HUMANOID, FighterClassification.DIVINE))
