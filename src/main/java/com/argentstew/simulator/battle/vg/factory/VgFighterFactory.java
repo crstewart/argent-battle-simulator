@@ -37,6 +37,7 @@ import com.argentstew.simulator.battle.vg.mewtwo.Mewtwo;
 import com.argentstew.simulator.battle.vg.morrigan.Morrigan;
 import com.argentstew.simulator.battle.vg.nathandrake.NathanDrake;
 import com.argentstew.simulator.battle.vg.ness.Ness;
+import com.argentstew.simulator.battle.vg.pacman.Pacman;
 import com.argentstew.simulator.battle.vg.peach.Peach;
 import com.argentstew.simulator.battle.vg.pikachu.Pikachu;
 import com.argentstew.simulator.battle.vg.pit.Pit;
@@ -193,6 +194,8 @@ public class VgFighterFactory {
                 return SolidSnake.get();
             case SimonBelmont.NAME:
                 return SimonBelmont.get();
+            case Pacman.NAME:
+                return Pacman.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

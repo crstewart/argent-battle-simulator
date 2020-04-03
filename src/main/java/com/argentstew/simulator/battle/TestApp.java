@@ -25,7 +25,7 @@ public class TestApp {
             "Leon Kennedy", "Albert Wesker", "Viewtiful Joe", "Morrigan Aensland", "Dante", "Arthur", "Sonic", "Tails",
             "Dr. Eggman", "Vyse", "Cloud Strife", "Squall Leonhart", "Kefka Palazzo", "Sephiroth", "Erdrick", "Sora",
             "Crono", "Magus", "Crash Bandicoot", "Spyro", "Jak & Daxter", "Ratchet & Clank", "Nathan Drake", "Kratos",
-            "Cole MacGrath", "Sly Cooper", "Solid Snake", "Simon Belmont");
+            "Cole MacGrath", "Sly Cooper", "Solid Snake", "Simon Belmont", "Pac-Man");
 
     public static void main(String[] args) {
 
