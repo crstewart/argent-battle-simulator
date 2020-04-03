@@ -24,6 +24,7 @@ import com.argentstew.simulator.battle.vg.jak.JakAndDaxter;
 import com.argentstew.simulator.battle.vg.kefka.Kefka;
 import com.argentstew.simulator.battle.vg.kingdedede.KingDedede;
 import com.argentstew.simulator.battle.vg.kirby.Kirby;
+import com.argentstew.simulator.battle.vg.kratos.Kratos;
 import com.argentstew.simulator.battle.vg.leonkennedy.LeonKennedy;
 import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
@@ -178,6 +179,8 @@ public class VgFighterFactory {
                 return RatchetAndClank.get();
             case NathanDrake.NAME:
                 return NathanDrake.get();
+            case Kratos.NAME:
+                return Kratos.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
