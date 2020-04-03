@@ -37,6 +37,7 @@ import com.argentstew.simulator.battle.vg.ness.Ness;
 import com.argentstew.simulator.battle.vg.peach.Peach;
 import com.argentstew.simulator.battle.vg.pikachu.Pikachu;
 import com.argentstew.simulator.battle.vg.pit.Pit;
+import com.argentstew.simulator.battle.vg.ratchet.RatchetAndClank;
 import com.argentstew.simulator.battle.vg.ridley.Ridley;
 import com.argentstew.simulator.battle.vg.ryu.Ryu;
 import com.argentstew.simulator.battle.vg.samus.Samus;
@@ -172,6 +173,8 @@ public class VgFighterFactory {
                 return Spyro.get();
             case JakAndDaxter.NAME:
                 return JakAndDaxter.get();
+            case RatchetAndClank.NAME:
+                return RatchetAndClank.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
