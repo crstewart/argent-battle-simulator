@@ -33,6 +33,7 @@ import com.argentstew.simulator.battle.vg.marth.Marth;
 import com.argentstew.simulator.battle.vg.megaman.MegaMan;
 import com.argentstew.simulator.battle.vg.mewtwo.Mewtwo;
 import com.argentstew.simulator.battle.vg.morrigan.Morrigan;
+import com.argentstew.simulator.battle.vg.nathandrake.NathanDrake;
 import com.argentstew.simulator.battle.vg.ness.Ness;
 import com.argentstew.simulator.battle.vg.peach.Peach;
 import com.argentstew.simulator.battle.vg.pikachu.Pikachu;
@@ -175,6 +176,8 @@ public class VgFighterFactory {
                 return JakAndDaxter.get();
             case RatchetAndClank.NAME:
                 return RatchetAndClank.get();
+            case NathanDrake.NAME:
+                return NathanDrake.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
