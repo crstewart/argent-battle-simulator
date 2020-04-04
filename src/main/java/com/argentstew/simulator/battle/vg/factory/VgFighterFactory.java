@@ -66,6 +66,7 @@ import com.argentstew.simulator.battle.vg.spyro.Spyro;
 import com.argentstew.simulator.battle.vg.squall.Squall;
 import com.argentstew.simulator.battle.vg.steve.Steve;
 import com.argentstew.simulator.battle.vg.tails.Tails;
+import com.argentstew.simulator.battle.vg.terry.TerryBogard;
 import com.argentstew.simulator.battle.vg.tronbonne.TronBonne;
 import com.argentstew.simulator.battle.vg.viewtifuljoe.ViewtifulJoe;
 import com.argentstew.simulator.battle.vg.vyse.Vyse;
@@ -229,6 +230,8 @@ public class VgFighterFactory {
                 return JohnMarston.get();
             case BigDaddy.NAME:
                 return BigDaddy.get();
+            case TerryBogard.NAME:
+                return TerryBogard.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
