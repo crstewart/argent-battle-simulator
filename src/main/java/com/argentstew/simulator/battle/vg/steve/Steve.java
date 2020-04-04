@@ -41,7 +41,7 @@ public class Steve {
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("An all-around fighter who can build blockades to prevent attacks.")
                 .entryQuotes(Arrays.asList("Steve turns from his construction to face his opponent.",
-                        "Steve dons his armor and prepares for the battle ahead.'"))
+                        "Steve dons his armor and prepares for the battle ahead."))
                 .victoryQuotes(Arrays.asList("Steve returns to his construction project, having secured victory.",
                         "Steve hears a creeper approaching and runs off to further adventure."))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))

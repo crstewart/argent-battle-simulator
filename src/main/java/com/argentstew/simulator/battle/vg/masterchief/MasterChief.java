@@ -35,7 +35,7 @@ public class MasterChief {
         FighterStats stats = FighterStats.builder().strength(7).toughness(7).dexterity(5).aim(6.5)
                 .agility(3.5).speed(3).intellect(6).willpower(5).size(5).weight(5.5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(170).maxHp(170).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(175).maxHp(175).xStrikeMeter(0)
                 .description("A futuristic tank who can pierce enemy armor with a charged attack.")
                 .entryQuotes(Arrays.asList("Master Chief: 'Don't get any funny ideas.'",
                         "Master Chief: 'I was gonna shoot my way out of this. Mix things up a little.'"))
