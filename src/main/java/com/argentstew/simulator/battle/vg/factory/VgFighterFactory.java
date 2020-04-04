@@ -35,6 +35,7 @@ import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.lloyd.LloydIrving;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
 import com.argentstew.simulator.battle.vg.magus.Magus;
+import com.argentstew.simulator.battle.vg.marcusfenix.MarcusFenix;
 import com.argentstew.simulator.battle.vg.mario.Mario;
 import com.argentstew.simulator.battle.vg.marth.Marth;
 import com.argentstew.simulator.battle.vg.masterchief.MasterChief;
@@ -214,6 +215,8 @@ public class VgFighterFactory {
                 return Heavy.get();
             case MasterChief.NAME:
                 return MasterChief.get();
+            case MarcusFenix.NAME:
+                return MarcusFenix.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
