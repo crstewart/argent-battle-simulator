@@ -22,6 +22,7 @@ import com.argentstew.simulator.battle.vg.erdrick.Erdrick;
 import com.argentstew.simulator.battle.vg.fox.Fox;
 import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
 import com.argentstew.simulator.battle.vg.gordonfreeman.GordonFreeman;
+import com.argentstew.simulator.battle.vg.handsomejack.HandsomeJack;
 import com.argentstew.simulator.battle.vg.heavy.Heavy;
 import com.argentstew.simulator.battle.vg.heihachi.Heihachi;
 import com.argentstew.simulator.battle.vg.inkling.Inkling;
@@ -232,6 +233,8 @@ public class VgFighterFactory {
                 return BigDaddy.get();
             case TerryBogard.NAME:
                 return TerryBogard.get();
+            case HandsomeJack.NAME:
+                return HandsomeJack.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

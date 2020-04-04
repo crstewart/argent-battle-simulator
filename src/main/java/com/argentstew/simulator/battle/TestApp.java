@@ -27,7 +27,7 @@ public class TestApp {
             "Crono", "Magus", "Crash Bandicoot", "Spyro", "Jak & Daxter", "Ratchet & Clank", "Nathan Drake", "Kratos",
             "Cole MacGrath", "Sly Cooper", "Solid Snake", "Simon Belmont", "Pac-Man", "Heihachi Mishima", "KOS-MOS",
             "Lloyd Irving", "Gordon Freeman", "Heavy", "Master Chief", "Marcus Fenix", "Steve", "Niko Bellic",
-            "John Marston", "Big Daddy", "Terry Bogard");
+            "John Marston", "Big Daddy", "Terry Bogard", "Handsome Jack");
 
     public static void main(String[] args) {
 
