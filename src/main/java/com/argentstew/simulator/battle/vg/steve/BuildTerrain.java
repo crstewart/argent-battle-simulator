@@ -1,31 +1,29 @@
-package com.argentstew.simulator.battle.vg.erdrick;
+package com.argentstew.simulator.battle.vg.steve;
 
 import com.argentstew.simulator.battle.action.AttackAction;
+import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 import com.argentstew.simulator.battle.action.defense.Guard;
 
 /**
- * com.argentstew.simulator.battle.vg.erdrick
+ * com.argentstew.simulator.battle.vg.steve
  * 8/27/2019
  *
  * @author Craig
  */
-public class Kaclang extends Guard {
+public class BuildTerrain extends Guard {
 
-    public static final int MP_COST = 6;
-
-    public Kaclang() {
-        this.name = "Kaclang";
-        this.initiateMessage = "casts Kaclang!";
-        this.successMessage = "was immune to the attack!";
-        this.failureMessage = "lost their immunity to the attack!";
+    public BuildTerrain() {
+        this.name = "Build Terrain";
+        this.initiateMessage = "builds a wall in front of him!";
+        this.successMessage = "blocked the attack!";
+        this.failureMessage = "failed to block the attack!";
         this.speed = 1.5;
     }
 
     @Override
     protected boolean doesGuardAttack(AttackAction attack) {
-        this.owner.useMagic(MP_COST);
-        return attack instanceof MeleeAttack;
+        return !(attack.getSubtypes().contains(AttackSubType.EXPLOSIVE));
     }
 
     @Override
@@ -40,6 +38,6 @@ public class Kaclang extends Guard {
 
     @Override
     public boolean isDoable() {
-        return owner.getMp() >= MP_COST;
+        return true;
     }
 }
