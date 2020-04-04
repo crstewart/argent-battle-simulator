@@ -39,9 +39,9 @@ public class Heavy {
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
-                .addAction(new Crowbar()).addAction(new SPAS12()).addAction(new OverwatchPulseRifle())
-                .addAction(new GravityGun()).addAction(new SuitCharge())
-                .addAction(new TauCannon())
+                .addAction(new Minigun()).addAction(new Shotgun()).addAction(new Fists())
+                .addAction(new Sandvich())
+                .addAction(new Natascha())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
     }
 }
