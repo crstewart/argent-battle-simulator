@@ -31,9 +31,8 @@ public class MasterChief {
         defenses.set(AttackSubType.RIFLE, 0.9);
         defenses.set(AttackSubType.SHOTGUN, 0.95);
         defenses.set(AttackSubType.EXPLOSIVE, 0.9);
-        defenses.set(AttackSubType.ARMOR_PIERCING, 0.9);
 
-        FighterStats stats = FighterStats.builder().strength(7).toughness(7).dexterity(5.5).aim(7)
+        FighterStats stats = FighterStats.builder().strength(7).toughness(7).dexterity(5).aim(6.5)
                 .agility(3.5).speed(3).intellect(6).willpower(5).size(5).weight(5.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(170).maxHp(170).xStrikeMeter(0)
@@ -45,9 +44,9 @@ public class MasterChief {
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
-                .addAction(new Crowbar()).addAction(new SPAS12()).addAction(new OverwatchPulseRifle())
-                .addAction(new GravityGun()).addAction(new SuitCharge())
-                .addAction(new TauCannon())
+                .addAction(new AssaultRifle()).addAction(new PlasmaPistol()).addAction(new PlasmaPistolCharged())
+                .addAction(new FragGrenade()).addAction(new MeleeAttack())
+                .addAction(new SpartanLaser())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
     }
 }
