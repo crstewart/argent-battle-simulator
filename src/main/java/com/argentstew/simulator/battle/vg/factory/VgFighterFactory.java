@@ -30,6 +30,7 @@ import com.argentstew.simulator.battle.vg.kosmos.KOSMOS;
 import com.argentstew.simulator.battle.vg.kratos.Kratos;
 import com.argentstew.simulator.battle.vg.leonkennedy.LeonKennedy;
 import com.argentstew.simulator.battle.vg.link.Link;
+import com.argentstew.simulator.battle.vg.lloyd.LloydIrving;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
 import com.argentstew.simulator.battle.vg.magus.Magus;
 import com.argentstew.simulator.battle.vg.mario.Mario;
@@ -202,6 +203,8 @@ public class VgFighterFactory {
                 return Heihachi.get();
             case KOSMOS.NAME:
                 return KOSMOS.get();
+            case LloydIrving.NAME:
+                return LloydIrving.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
