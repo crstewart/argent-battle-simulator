@@ -29,9 +29,7 @@ public class Spear extends RangedAttack {
     public DamageReport doAttack(Fighter defender) {
         DamageReport report = super.doAttack(defender);
         if (report.getDamage() > 0) {
-            while (owner.getArena().canAdvance(defender)) {
-                owner.getArena().advance(defender);
-            }
+            owner.getArena().fullAdvance(defender);
         }
 
         return report;

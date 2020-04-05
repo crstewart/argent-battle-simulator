@@ -17,6 +17,8 @@ public interface Arena {
     boolean canRetreat(Fighter fighter);
     void advance(Fighter fighter);
     void retreat(Fighter fighter);
+    void fullAdvance(Fighter fighter);
+    void fullRetreat(Fighter fighter);
 
     @Data
     @AllArgsConstructor

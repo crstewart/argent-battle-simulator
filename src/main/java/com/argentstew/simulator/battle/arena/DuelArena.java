@@ -88,6 +88,28 @@ public class DuelArena implements Arena {
         }
     }
 
+    @Override
+    public void fullAdvance(Fighter fighter) {
+        if (fighter != null) {
+            if (fighter.equals(leftFighter)) {
+                leftFighterPosition.setX(rightFighterPosition.getX() - 1);
+            } else {
+                rightFighterPosition.setX(leftFighterPosition.getX() + 1);
+            }
+        }
+    }
+
+    @Override
+    public void fullRetreat(Fighter fighter) {
+        if (fighter != null) {
+            if (fighter.equals(leftFighter)) {
+                leftFighterPosition.setX(MIN_POSITION);
+            } else {
+                rightFighterPosition.setX(MAX_POSITION);
+            }
+        }
+    }
+
     public Position getFighterPosition(Fighter fighter) {
         if (fighter == null) {
             return null;

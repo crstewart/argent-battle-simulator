@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.arena.DuelArena;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.logger.BattleLogger;
 import com.argentstew.simulator.battle.logger.NoopBattleLogger;
+import com.argentstew.simulator.battle.logger.StandardBattleLogger;
 import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class TestApp {
             "Lloyd Irving", "Gordon Freeman", "Heavy", "Master Chief", "Marcus Fenix", "Steve", "Niko Bellic",
             "John Marston", "Big Daddy", "Terry Bogard", "Handsome Jack", "Rayman", "Ezio Auditore",
             "Prince of Persia", "Thrall", "Jaina Proudmoore", "Arthas Menethil", "Diablo", "Sarah Kerrigan", "Tracer",
-            "Sub-Zero", "Scorpion");
+            "Sub-Zero", "Scorpion", "Bomberman");
 
     public static void main(String[] args) {
 
