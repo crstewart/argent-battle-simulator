@@ -15,6 +15,7 @@ import com.argentstew.simulator.battle.vg.cole.ColeMacgrath;
 import com.argentstew.simulator.battle.vg.crash.CrashBandicoot;
 import com.argentstew.simulator.battle.vg.crono.Crono;
 import com.argentstew.simulator.battle.vg.dante.Dante;
+import com.argentstew.simulator.battle.vg.diablo.Diablo;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
 import com.argentstew.simulator.battle.vg.dreggman.DrEggman;
@@ -253,6 +254,8 @@ public class VgFighterFactory {
                 return Jaina.get();
             case Arthas.NAME:
                 return Arthas.get();
+            case Diablo.NAME:
+                return Diablo.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
