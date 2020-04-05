@@ -31,7 +31,7 @@ public class SubZero {
         defenses.set(AttackSubType.HEADBUTT, 0.95);
         defenses.set(AttackSubType.SLAM, 0.95);
 
-        FighterStats stats = FighterStats.builder().strength(5.5).toughness(7).dexterity(6).aim(6.5)
+        FighterStats stats = FighterStats.builder().strength(5).toughness(5.5).dexterity(6).aim(6)
                 .agility(6).speed(5).intellect(5).willpower(5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(145).maxHp(145).mp(0).maxMp(100).xStrikeMeter(0)
