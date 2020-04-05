@@ -30,7 +30,7 @@ public class TestApp {
             "Lloyd Irving", "Gordon Freeman", "Heavy", "Master Chief", "Marcus Fenix", "Steve", "Niko Bellic",
             "John Marston", "Big Daddy", "Terry Bogard", "Handsome Jack", "Rayman", "Ezio Auditore",
             "Prince of Persia", "Thrall", "Jaina Proudmoore", "Arthas Menethil", "Diablo", "Sarah Kerrigan", "Tracer",
-            "Sub-Zero", "Scorpion", "Bomberman");
+            "Sub-Zero", "Scorpion", "Bomberman", "Banjo & Kazooie");
 
     public static void main(String[] args) {
 
