@@ -40,6 +40,7 @@ import com.argentstew.simulator.battle.vg.kingdedede.KingDedede;
 import com.argentstew.simulator.battle.vg.kirby.Kirby;
 import com.argentstew.simulator.battle.vg.kosmos.KOSMOS;
 import com.argentstew.simulator.battle.vg.kratos.Kratos;
+import com.argentstew.simulator.battle.vg.laracroft.LaraCroft;
 import com.argentstew.simulator.battle.vg.leonkennedy.LeonKennedy;
 import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.lloyd.LloydIrving;
@@ -274,6 +275,8 @@ public class VgFighterFactory {
                 return Bomberman.get();
             case BanjoKazooie.NAME:
                 return BanjoKazooie.get();
+            case LaraCroft.NAME:
+                return LaraCroft.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
