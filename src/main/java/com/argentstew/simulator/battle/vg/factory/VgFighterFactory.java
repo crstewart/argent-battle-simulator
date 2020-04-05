@@ -63,6 +63,7 @@ import com.argentstew.simulator.battle.vg.rayman.Rayman;
 import com.argentstew.simulator.battle.vg.ridley.Ridley;
 import com.argentstew.simulator.battle.vg.ryu.Ryu;
 import com.argentstew.simulator.battle.vg.samus.Samus;
+import com.argentstew.simulator.battle.vg.scorpion.Scorpion;
 import com.argentstew.simulator.battle.vg.sephiroth.Sephiroth;
 import com.argentstew.simulator.battle.vg.sigma.Sigma;
 import com.argentstew.simulator.battle.vg.simon.SimonBelmont;
@@ -265,6 +266,8 @@ public class VgFighterFactory {
                 return Tracer.get();
             case SubZero.NAME:
                 return SubZero.get();
+            case Scorpion.NAME:
+                return Scorpion.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
