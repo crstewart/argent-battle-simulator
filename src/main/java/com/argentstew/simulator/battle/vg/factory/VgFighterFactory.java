@@ -53,6 +53,7 @@ import com.argentstew.simulator.battle.vg.pacman.Pacman;
 import com.argentstew.simulator.battle.vg.peach.Peach;
 import com.argentstew.simulator.battle.vg.pikachu.Pikachu;
 import com.argentstew.simulator.battle.vg.pit.Pit;
+import com.argentstew.simulator.battle.vg.princeofpersia.PrinceOfPersia;
 import com.argentstew.simulator.battle.vg.ratchet.RatchetAndClank;
 import com.argentstew.simulator.battle.vg.rayman.Rayman;
 import com.argentstew.simulator.battle.vg.ridley.Ridley;
@@ -241,6 +242,8 @@ public class VgFighterFactory {
                 return Rayman.get();
             case Ezio.NAME:
                 return Ezio.get();
+            case PrinceOfPersia.NAME:
+                return PrinceOfPersia.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
