@@ -33,6 +33,7 @@ import com.argentstew.simulator.battle.vg.jaina.Jaina;
 import com.argentstew.simulator.battle.vg.jak.JakAndDaxter;
 import com.argentstew.simulator.battle.vg.johnmarston.JohnMarston;
 import com.argentstew.simulator.battle.vg.kefka.Kefka;
+import com.argentstew.simulator.battle.vg.kerrigan.Kerrigan;
 import com.argentstew.simulator.battle.vg.kingdedede.KingDedede;
 import com.argentstew.simulator.battle.vg.kirby.Kirby;
 import com.argentstew.simulator.battle.vg.kosmos.KOSMOS;
@@ -256,6 +257,8 @@ public class VgFighterFactory {
                 return Arthas.get();
             case Diablo.NAME:
                 return Diablo.get();
+            case Kerrigan.NAME:
+                return Kerrigan.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
