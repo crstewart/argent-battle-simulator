@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.vg.factory;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.vg.akuma.Akuma;
 import com.argentstew.simulator.battle.vg.albertwesker.AlbertWesker;
+import com.argentstew.simulator.battle.vg.arthas.Arthas;
 import com.argentstew.simulator.battle.vg.arthur.Arthur;
 import com.argentstew.simulator.battle.vg.bigdaddy.BigDaddy;
 import com.argentstew.simulator.battle.vg.bowser.Bowser;
@@ -250,6 +251,8 @@ public class VgFighterFactory {
                 return Thrall.get();
             case Jaina.NAME:
                 return Jaina.get();
+            case Arthas.NAME:
+                return Arthas.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
