@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
+import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.vg.diablo.*;
 
@@ -38,7 +39,7 @@ public class Kerrigan {
                         "Kerrigan: 'Ha ha ha ha ha! I'm not done with you yet...'"))
                 .classifications(Arrays.asList(FighterClassification.HUMANOID, FighterClassification.ALIEN))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new OffensiveStrategy()).build()
+                .strategy(new BalancedStrategy()).build()
                 .addAction(new SpawnZerglings()).addAction(new SpawnBanelings()).addAction(new KineticBlast())
                 .addAction(new LeapingStrike()).addAction(new Mend())
                 .addAction(new SpawnLeviathan())

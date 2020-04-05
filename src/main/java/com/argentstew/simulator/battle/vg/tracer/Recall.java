@@ -1,22 +1,22 @@
-package com.argentstew.simulator.battle.vg.princeofpersia;
+package com.argentstew.simulator.battle.vg.tracer;
 
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.MagicAttack;
 import com.argentstew.simulator.battle.action.defense.Heal;
 
 /**
- * com.argentstew.simulator.battle.vg.princeofpersia
+ * com.argentstew.simulator.battle.vg.tracer
  * 8/24/2019
  *
  * @author Craig
  */
-public class ReverseTime extends Heal {
+public class Recall extends Heal {
 
-    public ReverseTime() {
-        this.name = "Reverse Time";
-        this.initiateMessage = "attempts to turn back time!";
-        this.successMessage = "reverses time and heals his wounds!";
-        this.failureMessage = "failed to use the Dagger of Time!";
+    public Recall() {
+        this.name = "Recall";
+        this.initiateMessage = "activates her Chronal Accelerator!";
+        this.successMessage = "reverses time and heals her wounds!";
+        this.failureMessage = "failed to activate her Recall ability!";
         this.speed = 0;
     }
 
@@ -34,6 +34,7 @@ public class ReverseTime extends Heal {
 
     @Override
     public int restoreHealth(int incomingDamage) {
+        owner.setMp(Math.min(owner.getMaxMp(), owner.getMp() + 30));
         return super.restoreHealth(incomingDamage);
     }
 

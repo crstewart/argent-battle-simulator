@@ -17,7 +17,7 @@ public class Application {
 
         VgFighterFactory factory = new VgFighterFactory();
         Fighter fighter1 = factory.getFighter("Mario");
-        Fighter fighter2 = factory.getFighter("Magus");
+        Fighter fighter2 = factory.getFighter("Tracer");
 
         DuelArena arena = new DuelArena();
         arena.setLeftFighter(fighter1);
