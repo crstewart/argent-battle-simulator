@@ -71,6 +71,7 @@ import com.argentstew.simulator.battle.vg.squall.Squall;
 import com.argentstew.simulator.battle.vg.steve.Steve;
 import com.argentstew.simulator.battle.vg.tails.Tails;
 import com.argentstew.simulator.battle.vg.terry.TerryBogard;
+import com.argentstew.simulator.battle.vg.thrall.Thrall;
 import com.argentstew.simulator.battle.vg.tronbonne.TronBonne;
 import com.argentstew.simulator.battle.vg.viewtifuljoe.ViewtifulJoe;
 import com.argentstew.simulator.battle.vg.vyse.Vyse;
@@ -244,6 +245,8 @@ public class VgFighterFactory {
                 return Ezio.get();
             case PrinceOfPersia.NAME:
                 return PrinceOfPersia.get();
+            case Thrall.NAME:
+                return Thrall.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
