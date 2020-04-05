@@ -73,6 +73,7 @@ import com.argentstew.simulator.battle.vg.sora.Sora;
 import com.argentstew.simulator.battle.vg.spyro.Spyro;
 import com.argentstew.simulator.battle.vg.squall.Squall;
 import com.argentstew.simulator.battle.vg.steve.Steve;
+import com.argentstew.simulator.battle.vg.subzero.SubZero;
 import com.argentstew.simulator.battle.vg.tails.Tails;
 import com.argentstew.simulator.battle.vg.terry.TerryBogard;
 import com.argentstew.simulator.battle.vg.thrall.Thrall;
@@ -262,6 +263,8 @@ public class VgFighterFactory {
                 return Kerrigan.get();
             case Tracer.NAME:
                 return Tracer.get();
+            case SubZero.NAME:
+                return SubZero.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
