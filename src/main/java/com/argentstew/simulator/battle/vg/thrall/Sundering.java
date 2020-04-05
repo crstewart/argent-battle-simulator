@@ -2,6 +2,7 @@ package com.argentstew.simulator.battle.vg.thrall;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MagicAttack;
+import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 
 import java.util.Collections;
@@ -12,7 +13,7 @@ import java.util.Collections;
  *
  * @author Craig
  */
-public class Sundering extends MagicAttack {
+public class Sundering extends RangedAttack {
 
     public Sundering() {
         super();

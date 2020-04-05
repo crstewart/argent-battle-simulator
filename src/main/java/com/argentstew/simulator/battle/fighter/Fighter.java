@@ -31,6 +31,7 @@ public class Fighter {
     private int mp;
     private int maxMp;
     private String selfStatus;
+    private String status;
     private int xStrikeMeter;
 
     private Arena arena;

@@ -27,6 +27,7 @@ import com.argentstew.simulator.battle.vg.handsomejack.HandsomeJack;
 import com.argentstew.simulator.battle.vg.heavy.Heavy;
 import com.argentstew.simulator.battle.vg.heihachi.Heihachi;
 import com.argentstew.simulator.battle.vg.inkling.Inkling;
+import com.argentstew.simulator.battle.vg.jaina.Jaina;
 import com.argentstew.simulator.battle.vg.jak.JakAndDaxter;
 import com.argentstew.simulator.battle.vg.johnmarston.JohnMarston;
 import com.argentstew.simulator.battle.vg.kefka.Kefka;
@@ -247,6 +248,8 @@ public class VgFighterFactory {
                 return PrinceOfPersia.get();
             case Thrall.NAME:
                 return Thrall.get();
+            case Jaina.NAME:
+                return Jaina.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
