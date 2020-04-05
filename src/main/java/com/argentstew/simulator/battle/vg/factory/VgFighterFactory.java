@@ -66,6 +66,7 @@ import com.argentstew.simulator.battle.vg.ratchet.RatchetAndClank;
 import com.argentstew.simulator.battle.vg.rayman.Rayman;
 import com.argentstew.simulator.battle.vg.ridley.Ridley;
 import com.argentstew.simulator.battle.vg.ryu.Ryu;
+import com.argentstew.simulator.battle.vg.ryuhayabusa.RyuHayabusa;
 import com.argentstew.simulator.battle.vg.samus.Samus;
 import com.argentstew.simulator.battle.vg.scorpion.Scorpion;
 import com.argentstew.simulator.battle.vg.sephiroth.Sephiroth;
@@ -280,6 +281,8 @@ public class VgFighterFactory {
                 return LaraCroft.get();
             case CommanderShepard.NAME:
                 return CommanderShepard.get();
+            case RyuHayabusa.NAME:
+                return RyuHayabusa.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

@@ -1,11 +1,11 @@
-package com.argentstew.simulator.battle.vg.slycooper;
+package com.argentstew.simulator.battle.vg.ryuhayabusa;
 
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Guard;
 
 /**
- * com.argentstew.simulator.battle.vg.sly
+ * com.argentstew.simulator.battle.vg.ryuhayabusa
  * 9/8/2019
  *
  * @author Craig
