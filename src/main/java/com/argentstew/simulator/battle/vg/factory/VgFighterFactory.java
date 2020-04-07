@@ -21,6 +21,7 @@ import com.argentstew.simulator.battle.vg.dante.Dante;
 import com.argentstew.simulator.battle.vg.diablo.Diablo;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
+import com.argentstew.simulator.battle.vg.dovahkiin.Dovahkiin;
 import com.argentstew.simulator.battle.vg.dreggman.DrEggman;
 import com.argentstew.simulator.battle.vg.drwily.DrWily;
 import com.argentstew.simulator.battle.vg.erdrick.Erdrick;
@@ -283,6 +284,8 @@ public class VgFighterFactory {
                 return CommanderShepard.get();
             case RyuHayabusa.NAME:
                 return RyuHayabusa.get();
+            case Dovahkiin.NAME:
+                return Dovahkiin.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
