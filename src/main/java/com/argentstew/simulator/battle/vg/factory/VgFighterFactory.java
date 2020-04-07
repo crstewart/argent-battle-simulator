@@ -69,6 +69,7 @@ import com.argentstew.simulator.battle.vg.ridley.Ridley;
 import com.argentstew.simulator.battle.vg.ryu.Ryu;
 import com.argentstew.simulator.battle.vg.ryuhayabusa.RyuHayabusa;
 import com.argentstew.simulator.battle.vg.samus.Samus;
+import com.argentstew.simulator.battle.vg.sans.Sans;
 import com.argentstew.simulator.battle.vg.scorpion.Scorpion;
 import com.argentstew.simulator.battle.vg.sephiroth.Sephiroth;
 import com.argentstew.simulator.battle.vg.shovelknight.ShovelKnight;
@@ -289,6 +290,8 @@ public class VgFighterFactory {
                 return Dovahkiin.get();
             case ShovelKnight.NAME:
                 return ShovelKnight.get();
+            case Sans.NAME:
+                return Sans.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
