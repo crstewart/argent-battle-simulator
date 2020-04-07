@@ -44,7 +44,7 @@ public class Dovahkiin {
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
-                .addAction(new SteelSword()).addAction(new UnrelentingForce()).addAction(new FireBreath())
+                .addAction(new UnrelentingForce()).addAction(new FireBreath()).addAction(new SteelSword())
                 .addAction(new Sparks()).addAction(new SteelShield())
                 .addAction(new CallDragon())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());

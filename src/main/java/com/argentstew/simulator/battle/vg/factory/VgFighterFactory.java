@@ -71,6 +71,7 @@ import com.argentstew.simulator.battle.vg.ryuhayabusa.RyuHayabusa;
 import com.argentstew.simulator.battle.vg.samus.Samus;
 import com.argentstew.simulator.battle.vg.scorpion.Scorpion;
 import com.argentstew.simulator.battle.vg.sephiroth.Sephiroth;
+import com.argentstew.simulator.battle.vg.shovelknight.ShovelKnight;
 import com.argentstew.simulator.battle.vg.sigma.Sigma;
 import com.argentstew.simulator.battle.vg.simon.SimonBelmont;
 import com.argentstew.simulator.battle.vg.slycooper.SlyCooper;
@@ -286,6 +287,8 @@ public class VgFighterFactory {
                 return RyuHayabusa.get();
             case Dovahkiin.NAME:
                 return Dovahkiin.get();
+            case ShovelKnight.NAME:
+                return ShovelKnight.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
