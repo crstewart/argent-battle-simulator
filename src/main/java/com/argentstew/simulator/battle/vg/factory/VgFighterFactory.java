@@ -36,6 +36,7 @@ import com.argentstew.simulator.battle.vg.inkling.Inkling;
 import com.argentstew.simulator.battle.vg.jaina.Jaina;
 import com.argentstew.simulator.battle.vg.jak.JakAndDaxter;
 import com.argentstew.simulator.battle.vg.johnmarston.JohnMarston;
+import com.argentstew.simulator.battle.vg.joker.Joker;
 import com.argentstew.simulator.battle.vg.kefka.Kefka;
 import com.argentstew.simulator.battle.vg.kerrigan.Kerrigan;
 import com.argentstew.simulator.battle.vg.kingdedede.KingDedede;
@@ -292,6 +293,8 @@ public class VgFighterFactory {
                 return ShovelKnight.get();
             case Sans.NAME:
                 return Sans.get();
+            case Joker.NAME:
+                return Joker.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
