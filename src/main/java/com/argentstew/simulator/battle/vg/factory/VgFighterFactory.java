@@ -32,6 +32,7 @@ import com.argentstew.simulator.battle.vg.erdrick.Erdrick;
 import com.argentstew.simulator.battle.vg.ezio.Ezio;
 import com.argentstew.simulator.battle.vg.fox.Fox;
 import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
+import com.argentstew.simulator.battle.vg.geralt.GeraltOfRivia;
 import com.argentstew.simulator.battle.vg.gordonfreeman.GordonFreeman;
 import com.argentstew.simulator.battle.vg.guybrush.GuybrushThreepwood;
 import com.argentstew.simulator.battle.vg.handsomejack.HandsomeJack;
@@ -310,6 +311,8 @@ public class VgFighterFactory {
                 return GuybrushThreepwood.get();
             case Draven.NAME:
                 return Draven.get();
+            case GeraltOfRivia.NAME:
+                return GeraltOfRivia.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

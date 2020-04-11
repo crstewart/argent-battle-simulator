@@ -32,7 +32,7 @@ public class TestApp {
             "Prince of Persia", "Thrall", "Jaina Proudmoore", "Arthas Menethil", "Diablo", "Sarah Kerrigan", "Tracer",
             "Sub-Zero", "Scorpion", "Bomberman", "Banjo & Kazooie", "Lara Croft", "Commander Shepard",
             "Ryu Hayabusa", "Dovahkiin", "Shovel Knight", "Sans", "Joker", "Doom Slayer", "Captain Price",
-            "Cuphead", "Guybrush Threepwood", "Draven");
+            "Cuphead", "Guybrush Threepwood", "Draven", "Geralt of Rivia");
 
     public static void main(String[] args) {
 
