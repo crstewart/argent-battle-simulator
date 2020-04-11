@@ -1,4 +1,4 @@
-package com.argentstew.simulator.battle.vg.dovahkiin;
+package com.argentstew.simulator.battle.vg.draven;
 
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
@@ -8,20 +8,20 @@ import java.util.Arrays;
 import java.util.Collections;
 
 /**
- * com.argentstew.simulator.battle.vg.dovahkiin
+ * com.argentstew.simulator.battle.vg.draven
  * 8/24/2019
  *
  * @author Craig
  */
-public class CallDragon extends RangedXStrike {
+public class WhirlingDeath extends RangedXStrike {
 
-    public CallDragon() {
+    public WhirlingDeath() {
         super();
-        this.name = "Call Dragon (Od Ah Viing)";
-        this.power = 250;
-        this.variance = 15;
-        this.speed = 2;
-        this.subtypes = Arrays.asList(AttackSubType.FIRE, AttackSubType.ASSIST);
+        this.name = "Whirling Death";
+        this.power = 240;
+        this.variance = 14;
+        this.speed = 1.5;
+        this.subtypes = Collections.singletonList(AttackSubType.HACK);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }
 }

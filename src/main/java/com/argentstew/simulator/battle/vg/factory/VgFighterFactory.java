@@ -25,6 +25,7 @@ import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
 import com.argentstew.simulator.battle.vg.donkeykong.DonkeyKong;
 import com.argentstew.simulator.battle.vg.doomslayer.DoomSlayer;
 import com.argentstew.simulator.battle.vg.dovahkiin.Dovahkiin;
+import com.argentstew.simulator.battle.vg.draven.Draven;
 import com.argentstew.simulator.battle.vg.dreggman.DrEggman;
 import com.argentstew.simulator.battle.vg.drwily.DrWily;
 import com.argentstew.simulator.battle.vg.erdrick.Erdrick;
@@ -307,6 +308,8 @@ public class VgFighterFactory {
                 return Cuphead.get();
             case GuybrushThreepwood.NAME:
                 return GuybrushThreepwood.get();
+            case Draven.NAME:
+                return Draven.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
