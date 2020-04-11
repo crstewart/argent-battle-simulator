@@ -18,6 +18,7 @@ import com.argentstew.simulator.battle.vg.cole.ColeMacgrath;
 import com.argentstew.simulator.battle.vg.commandershepard.CommanderShepard;
 import com.argentstew.simulator.battle.vg.crash.CrashBandicoot;
 import com.argentstew.simulator.battle.vg.crono.Crono;
+import com.argentstew.simulator.battle.vg.cuphead.Cuphead;
 import com.argentstew.simulator.battle.vg.dante.Dante;
 import com.argentstew.simulator.battle.vg.diablo.Diablo;
 import com.argentstew.simulator.battle.vg.diddykong.DiddyKong;
@@ -301,6 +302,8 @@ public class VgFighterFactory {
                 return DoomSlayer.get();
             case CaptainPrice.NAME:
                 return CaptainPrice.get();
+            case Cuphead.NAME:
+                return Cuphead.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

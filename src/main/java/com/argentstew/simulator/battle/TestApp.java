@@ -31,7 +31,8 @@ public class TestApp {
             "John Marston", "Big Daddy", "Terry Bogard", "Handsome Jack", "Rayman", "Ezio Auditore",
             "Prince of Persia", "Thrall", "Jaina Proudmoore", "Arthas Menethil", "Diablo", "Sarah Kerrigan", "Tracer",
             "Sub-Zero", "Scorpion", "Bomberman", "Banjo & Kazooie", "Lara Croft", "Commander Shepard",
-            "Ryu Hayabusa", "Dovahkiin", "Shovel Knight", "Sans", "Joker", "Doom Slayer", "Captain Price");
+            "Ryu Hayabusa", "Dovahkiin", "Shovel Knight", "Sans", "Joker", "Doom Slayer", "Captain Price",
+            "Cuphead");
 
     public static void main(String[] args) {
 

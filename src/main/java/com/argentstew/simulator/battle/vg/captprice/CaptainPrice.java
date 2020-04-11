@@ -28,7 +28,7 @@ public class CaptainPrice {
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(5).dexterity(5).aim(7)
                 .agility(4).speed(4.5).intellect(5).willpower(5).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new Demonslayer()));
+        FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A modern all-around fighter with a set of guns at his disposal.")
                 .entryQuotes(Arrays.asList("Capt. Price: 'Just another day at the office.'",

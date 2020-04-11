@@ -1,4 +1,4 @@
-package com.argentstew.simulator.battle.vg.dreggman;
+package com.argentstew.simulator.battle.vg.cuphead;
 
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
@@ -9,20 +9,20 @@ import java.util.Arrays;
 import java.util.Collections;
 
 /**
- * com.argentstew.simulator.battle.vg.mario
+ * com.argentstew.simulator.battle.vg.cuphead
  * 8/24/2019
  *
  * @author Craig
  */
-public class DeathEgg extends RangedXStrike {
+public class EnergyBeam extends RangedXStrike {
 
-    public DeathEgg() {
+    public EnergyBeam() {
         super();
-        this.name = "Death Egg";
-        this.power = 250;
-        this.variance = 15;
-        this.speed = 5;
-        this.subtypes = Collections.singletonList(AttackSubType.PLASMA);
+        this.name = "Energy Beam";
+        this.power = 240;
+        this.variance = 14;
+        this.speed = 4;
+        this.subtypes = Collections.emptyList();
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }
 }
