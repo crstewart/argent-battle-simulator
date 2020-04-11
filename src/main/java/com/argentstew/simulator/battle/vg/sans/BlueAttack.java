@@ -17,7 +17,7 @@ public class BlueAttack extends MagicAttack {
     public BlueAttack() {
         super();
         this.name = "Blue Attack";
-        this.power = 60;
+        this.power = 70;
         this.variance = 6;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);

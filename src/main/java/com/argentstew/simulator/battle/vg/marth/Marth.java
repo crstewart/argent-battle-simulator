@@ -32,7 +32,7 @@ public class Marth {
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.25);
         defenses.set(AttackSubType.HACK, 0.75);
 
-        FighterStats stats = FighterStats.builder().strength(5).toughness(6).dexterity(7).aim(3)
+        FighterStats stats = FighterStats.builder().strength(5).toughness(6).dexterity(7).aim(4)
                 .agility(6).speed(6).intellect(5).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new DragonSlayer()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)

@@ -29,7 +29,7 @@ public class Kerrigan {
         defenses.set(AttackSubType.TOXIC, 0.95);
         defenses.set(AttackSubType.NATURE, 0.95);
 
-        FighterStats stats = FighterStats.builder().strength(6.5).toughness(5).dexterity(6.5).aim(6)
+        FighterStats stats = FighterStats.builder().strength(6.5).toughness(5).dexterity(6.5).aim(6.5)
                 .agility(7.5).speed(5).intellect(5).willpower(2).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)

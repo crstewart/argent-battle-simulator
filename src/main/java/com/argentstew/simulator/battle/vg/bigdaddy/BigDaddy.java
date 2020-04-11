@@ -37,8 +37,8 @@ public class BigDaddy {
         FighterStats stats = FighterStats.builder().strength(8).toughness(8).dexterity(1.5).aim(1.5)
                 .agility(2.5).speed(2.5).intellect(1).willpower(6.5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(180).maxHp(180).xStrikeMeter(0)
-                .description("A tank with few attacks who mights mindlessly until the bitter end.")
+        return Fighter.builder().name(NAME).hp(190).maxHp(190).xStrikeMeter(0)
+                .description("A tank with few attacks who fights mindlessly until the bitter end.")
                 .entryQuotes(Arrays.asList("Big Daddy makes a daunting, low wailing sound as he enters.",
                         "Little Sister: 'Kill them, Mr. Bubbles! Kill them!'"))
                 .victoryQuotes(Arrays.asList("Little Sister: 'I'm ready for dream time, Mr. B.'",

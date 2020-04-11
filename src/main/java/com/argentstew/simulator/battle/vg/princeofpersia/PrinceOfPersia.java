@@ -27,8 +27,8 @@ public class PrinceOfPersia {
         defenses.set(AttackType.MAGIC, 0.95);
         defenses.set(AttackSubType.PLASMA, 1.1);
 
-        FighterStats stats = FighterStats.builder().strength(5).toughness(5.5).dexterity(7).aim(6)
-                .agility(8.5).speed(6).intellect(5).willpower(6).size(5).weight(5).build();
+        FighterStats stats = FighterStats.builder().strength(5.5).toughness(5.5).dexterity(7).aim(7)
+                .agility(8.5).speed(6.5).intellect(5).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A speedy fighter who can reverse time to heal wounds.")

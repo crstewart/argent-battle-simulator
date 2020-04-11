@@ -36,8 +36,8 @@ public class Ridley {
         defenses.set(AttackSubType.RIFLE, 0.9);
         defenses.set(AttackSubType.EXPLOSIVE, 1.05);
 
-        FighterStats stats = FighterStats.builder().strength(7).toughness(5.5).dexterity(4).aim(4)
-                .agility(7.5).speed(8).intellect(4).willpower(3).size(10).weight(8).build();
+        FighterStats stats = FighterStats.builder().strength(7).toughness(5.5).dexterity(5).aim(4.5)
+                .agility(8).speed(8).intellect(4).willpower(3).size(10).weight(8).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
                 .description("A brawler with high speed and power whose tail can strike critically.")

@@ -25,13 +25,13 @@ public class Magus {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.5);
+        defenses.set(AttackType.MAGIC, 0.7);
         defenses.set(AttackSubType.SLASH, 1.05);
 
-        FighterStats stats = FighterStats.builder().strength(3).toughness(4).dexterity(4).aim(8.5)
+        FighterStats stats = FighterStats.builder().strength(3).toughness(4).dexterity(4).aim(8)
                 .agility(4).speed(3.5).intellect(7.5).willpower(8).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new BarrierChange()));
-        return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A mage with dark magic and a varying elemental barrier.")
                 .entryQuotes(Arrays.asList("Magus: 'Give me your best shot... If you're prepared for the void!",
                         "Magus: 'Do you wish to fight me?'"))

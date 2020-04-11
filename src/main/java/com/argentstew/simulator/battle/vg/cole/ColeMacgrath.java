@@ -28,8 +28,8 @@ public class ColeMacgrath {
         defenses.set(AttackSubType.EARTH, 1.05);
         defenses.set(AttackSubType.METAL, 0.9);
 
-        FighterStats stats = FighterStats.builder().strength(5).toughness(5).dexterity(6).aim(6)
-                .agility(7).speed(6).intellect(5).willpower(4).size(5).weight(5).build();
+        FighterStats stats = FighterStats.builder().strength(5.5).toughness(5).dexterity(6.5).aim(6)
+                .agility(7).speed(6.5).intellect(5).willpower(4).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
                 .description("A speedy fighter who charges all his attacks with electricity.")

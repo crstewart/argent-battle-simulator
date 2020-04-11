@@ -25,14 +25,14 @@ public class Jaina {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.5);
+        defenses.set(AttackType.MAGIC, 0.7);
         defenses.set(AttackSubType.FIRE, 0.9);
         defenses.set(AttackSubType.ICE, 0.9);
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(3.5).dexterity(6).aim(8)
-                .agility(4.5).speed(5).intellect(7.5).willpower(8).size(4.5).weight(4.5).build();
+                .agility(4.5).speed(5).intellect(7).willpower(8).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A frost mage whose attacks critically hit when chained together.")
                 .entryQuotes(Arrays.asList("Jaina: 'For the Alliance!'", "Jaina: 'I hate resorting to violence.'"))
                 .victoryQuotes(Arrays.asList("Jaina: 'All things change, whether from inside out or the outside in. That is what magic is.'",

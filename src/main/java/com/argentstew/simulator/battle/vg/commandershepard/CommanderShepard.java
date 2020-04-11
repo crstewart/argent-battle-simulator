@@ -39,7 +39,7 @@ public class CommanderShepard {
         defenses.set(AttackSubType.SHOTGUN, 0.9);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.15);
 
-        FighterStats stats = FighterStats.builder().strength(5.5).toughness(5.5).dexterity(5.5).aim(5)
+        FighterStats stats = FighterStats.builder().strength(5.5).toughness(5.5).dexterity(5.5).aim(5.5)
                 .agility(3).speed(2.5).intellect(5).willpower(3).size(5).weight(5.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(175).maxHp(175).xStrikeMeter(0)

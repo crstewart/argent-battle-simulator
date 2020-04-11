@@ -49,7 +49,7 @@ public class IncendiaryBeam extends RangedAttack {
     private int modifyDamage(Fighter defender, int damage) {
         if (defender.getClassifications().contains(FighterClassification.HUMANOID)
                 || defender.getClassifications().contains(FighterClassification.ANIMAL)) {
-            return (int) Math.round(damage * 1.2);
+            return (int) Math.round(damage * 1.25);
         }
 
         return damage;

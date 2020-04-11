@@ -28,10 +28,10 @@ public class Heavy {
         defenses.set(AttackSubType.PIERCE, 1.1);
         defenses.set(AttackSubType.FIRE, 1.1);
 
-        FighterStats stats = FighterStats.builder().strength(6.5).toughness(6).dexterity(4.5).aim(6)
-                .agility(4).speed(4).intellect(4).willpower(4).size(5.5).weight(5.5).build();
+        FighterStats stats = FighterStats.builder().strength(6.5).toughness(6.5).dexterity(5).aim(6)
+                .agility(4).speed(4).intellect(4).willpower(5).size(5.5).weight(5.5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(190).maxHp(190).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(195).maxHp(195).xStrikeMeter(0)
                 .description("A tank who packs various guns and a healing item.")
                 .entryQuotes(Arrays.asList("Heavy: 'Sandvich and I are coming for you!'", "Heavy: 'Run, cowards!'"))
                 .victoryQuotes(Arrays.asList("Heavy: 'Some people think they can outsmart me. Maybe. I've yet to meet one that can outsmart bullet.'",

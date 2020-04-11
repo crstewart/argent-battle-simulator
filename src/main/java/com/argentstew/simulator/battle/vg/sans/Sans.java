@@ -27,11 +27,11 @@ public class Sans {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.5);
+        defenses.set(AttackType.MAGIC, 0.7);
         defenses.set(AttackSubType.SLASH, 1.1);
 
-        FighterStats stats = FighterStats.builder().strength(3).toughness(4).dexterity(6).aim(8.5)
-                .agility(6).speed(2).intellect(6.5).willpower(7.5).size(4).weight(3.5).build();
+        FighterStats stats = FighterStats.builder().strength(3).toughness(4).dexterity(6).aim(9)
+                .agility(6).speed(3).intellect(8).willpower(7.5).size(4).weight(3.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(130).maxHp(130).xStrikeMeter(0)
                 .description("A mage with perfect dodging potential. That is, until he tires out.")

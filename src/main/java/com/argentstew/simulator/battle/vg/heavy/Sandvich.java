@@ -53,8 +53,8 @@ public class Sandvich extends Heal {
 
     @Override
     protected int calculateAmountHealed(int incomingDamage) {
-        double baseHeal = 38;
-        double variance = Math.random() * 14;
+        double baseHeal = 40;
+        double variance = Math.random() * 15;
         return (int) Math.round(baseHeal + variance);
     }
 }

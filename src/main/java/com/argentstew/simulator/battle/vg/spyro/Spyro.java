@@ -25,7 +25,7 @@ public class Spyro {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.AIR, 1.05);
 
-        FighterStats stats = FighterStats.builder().strength(4.5).toughness(6).dexterity(7.5).aim(7.5)
+        FighterStats stats = FighterStats.builder().strength(4.5).toughness(6).dexterity(7).aim(7)
                 .agility(6.5).speed(6.5).intellect(4).willpower(5).size(4).weight(3.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)

@@ -24,13 +24,13 @@ public class Kefka {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.5);
+        defenses.set(AttackType.MAGIC, 0.7);
         defenses.set(AttackSubType.LIGHT, 0.9);
         defenses.set(AttackSubType.DARK, 1.1);
         defenses.set(AttackSubType.SLASH, 1.1);
 
         FighterStats stats = FighterStats.builder().strength(2).toughness(2).dexterity(6).aim(8)
-                .agility(4.5).speed(4.5).intellect(7).willpower(7).size(5).weight(5).build();
+                .agility(4.5).speed(4.5).intellect(6.5).willpower(7).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(130).maxHp(130).xStrikeMeter(0)
                 .description("A crazed mage with even crazier techniques.")
