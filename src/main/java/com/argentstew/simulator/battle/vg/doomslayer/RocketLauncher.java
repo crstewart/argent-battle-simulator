@@ -21,6 +21,6 @@ public class RocketLauncher extends RangedAttack {
         this.variance = 8;
         this.speed = 2.5;
         this.subtypes = Collections.singletonList(AttackSubType.EXPLOSIVE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.BULLET_SPEED);
+        this.characteristics = Collections.emptyList();
     }
 }

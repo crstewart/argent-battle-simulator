@@ -24,6 +24,6 @@ public class CombatKnife extends MeleeAttack {
         this.variance = 4;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.BULLET_SPEED);
+        this.characteristics = Collections.emptyList();
     }
 }

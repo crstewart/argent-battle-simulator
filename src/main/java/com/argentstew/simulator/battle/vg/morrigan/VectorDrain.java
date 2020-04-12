@@ -16,7 +16,7 @@ public class VectorDrain extends MeleeAttack {
 
     public VectorDrain() {
         super();
-        this.name = "Shadow Blade";
+        this.name = "Vector Drain";
         this.power = 50;
         this.variance = 4;
         this.speed = 0.5;

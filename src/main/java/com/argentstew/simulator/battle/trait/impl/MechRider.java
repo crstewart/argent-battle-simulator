@@ -17,7 +17,7 @@ import lombok.Getter;
 @EqualsAndHashCode
 public class MechRider implements Trait {
 
-    private String name = "Bounty Hunter";
+    private String name = "Mech Rider";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {

@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
+import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.vg.terry.*;
 
 import java.util.Arrays;
@@ -37,7 +38,7 @@ public class HandsomeJack {
                         "Handsome Jack: 'I'm gonna kill you and the rest of your stupid friends!'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new TerryStrategy()).build()
+                .strategy(new BalancedStrategy()).build()
                 .addAction(new EnergyBolt()).addAction(new IncendiaryBeam()).addAction(new CorrosiveGrenade())
                 .addAction(new Turret()).addAction(new ShieldSurveyor())
                 .addAction(new SummonTheWarrior())
