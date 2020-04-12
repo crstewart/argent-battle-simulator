@@ -18,3 +18,13 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
 }
+
+jar {
+    manifest {
+        attributes "Main-Class": "com.argentstew.simulator.battle.MainApplication"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
