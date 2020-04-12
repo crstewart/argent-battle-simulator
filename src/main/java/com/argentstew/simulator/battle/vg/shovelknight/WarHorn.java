@@ -18,7 +18,7 @@ public class WarHorn extends MagicXStrike {
 
     public WarHorn() {
         super();
-        this.name = "Super Nova";
+        this.name = "War Horn";
         this.power = 250;
         this.variance = 16;
         this.speed = 2;
