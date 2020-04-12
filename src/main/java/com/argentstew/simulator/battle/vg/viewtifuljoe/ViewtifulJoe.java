@@ -26,7 +26,7 @@ public class ViewtifulJoe {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.FIRE, 0.9);
 
-        FighterStats stats = FighterStats.builder().strength(4.5).toughness(3.5).dexterity(7.5).aim(8)
+        FighterStats stats = FighterStats.builder().strength(5).toughness(3.5).dexterity(8).aim(8)
                 .agility(7).speed(7).intellect(3.5).willpower(5).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)

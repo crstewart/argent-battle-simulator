@@ -28,6 +28,7 @@ import com.argentstew.simulator.battle.vg.sans.Sans;
 import com.argentstew.simulator.battle.vg.sonic.Sonic;
 import com.argentstew.simulator.battle.vg.spyro.Spyro;
 import com.argentstew.simulator.battle.vg.tracer.Tracer;
+import com.argentstew.simulator.battle.vg.viewtifuljoe.ViewtifulJoe;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -55,7 +56,7 @@ public class TestApp {
             "Sub-Zero", "Scorpion", "Bomberman", "Banjo & Kazooie", "Lara Croft", "Commander Shepard",
             "Ryu Hayabusa", "Dovahkiin", "Shovel Knight", "Sans", "Joker", "Doom Slayer", "Captain Price",
             "Cuphead", "Guybrush Threepwood", "Draven", "Geralt of Rivia");
-    private static final String TEST_FIGHTER = Kerrigan.NAME;
+    private static final String TEST_FIGHTER = ViewtifulJoe.NAME;
 
     public static void main(String[] args) {
 
