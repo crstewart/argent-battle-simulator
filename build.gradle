@@ -1,9 +1,11 @@
 plugins {
     id 'java'
+    id 'war'
     id "io.freefair.lombok" version "3.8.4"
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
 }
 
-version = '0.1-SNAPSHOT'
+version = '1.0.1-SNAPSHOT'
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
@@ -14,6 +16,9 @@ repositories {
 
 dependencies {
     compile 'org.apache.commons:commons-lang3:3.9'
+    compile 'org.springframework.boot:spring-boot-starter-web:2.2.6.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-tomcat:2.2.6.RELEASE'
+
     compileOnly 'org.projectlombok:lombok:1.18.8'
 
     testCompile 'junit:junit:4.12'
