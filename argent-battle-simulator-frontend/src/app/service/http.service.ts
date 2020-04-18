@@ -11,7 +11,7 @@ export class HttpService {
     constructor(private httpClient: HttpClient) {}
 
     public getSimulation(fighter1Name: string, fighter2Name: string): Observable<SimulationResult> {
-        return this.httpClient.get<SimulationResult>(this.host + "/simulation", {
+        return this.httpClient.get<SimulationResult>("simulation", {
             params: {
                 fighter1: fighter1Name,
                 fighter2: fighter2Name
@@ -20,10 +20,10 @@ export class HttpService {
     }
 
     public getFighters(): Observable<string[]> {
-        return this.httpClient.get<string[]>(this.host + "/fighters");
+        return this.httpClient.get<string[]>("fighters");
     }
 
     getDownloadLink(id: string) {
-        return this.host + "/files/" + id + ".txt";
+        return "files/" + id + ".txt";
     }
 }
