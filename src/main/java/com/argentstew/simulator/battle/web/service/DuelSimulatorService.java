@@ -8,6 +8,8 @@ import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 import com.argentstew.simulator.battle.web.log.LogFetcher;
 import com.argentstew.simulator.battle.web.log.WebLogger;
 import com.argentstew.simulator.battle.web.model.SimulationResult;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +27,9 @@ import java.util.List;
 @Service
 public class DuelSimulatorService implements SimulatorService {
 
-    private VgFighterFactory fighterFactory;
+    private static final Logger LOG = LogManager.getLogger(DuelSimulatorService.class);
+
+    private final VgFighterFactory fighterFactory;
 
     @Autowired
     public DuelSimulatorService(VgFighterFactory fighterFactory) {
@@ -39,6 +43,7 @@ public class DuelSimulatorService implements SimulatorService {
 
         StringWriter stringWriter = new StringWriter();
         WebLogger logger = new WebLogger(stringWriter);
+        LOG.info("Writing log to {}.txt", logger.getUuid());
         Fighter winner;
         try {
             logger.open();

@@ -16,12 +16,14 @@ ul.nav {
     overflow: hidden;
     background-color: green;
     text-align: center;
-    width: 50%;
+    width: 80%;
+    min-width: 400px;
 }
 
 ul.nav li {
     float: left;
     margin: 0 auto;
+    width: 20%;
 }
 
 ul.nav li a {
