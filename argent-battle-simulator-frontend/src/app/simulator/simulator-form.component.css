@@ -1,0 +1,10 @@
+.character-select {
+    display: block;
+    margin: 6px auto;
+    text-align: center;
+}
+
+#sim-form-submit {
+    display: block;
+    margin: 12px auto;
+}

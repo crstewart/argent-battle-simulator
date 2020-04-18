@@ -4,20 +4,17 @@ import com.argentstew.simulator.battle.web.model.SimulationResult;
 import com.argentstew.simulator.battle.web.service.SimulatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.websocket.server.PathParam;
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-import static org.springframework.http.MediaType.APPLICATION_OCTET_STREAM_VALUE;
+import static org.springframework.http.MediaType.*;
 
 /**
  * com.argentstew.simulator.battle.web.servlet
@@ -28,8 +25,7 @@ import static org.springframework.http.MediaType.APPLICATION_OCTET_STREAM_VALUE;
 @RestController()
 public class SimulatorServlet {
 
-    @Autowired
-    private SimulatorService simulatorService;
+    private final SimulatorService simulatorService;
 
     @Autowired
     public SimulatorServlet(SimulatorService simulatorService) {
@@ -56,7 +52,7 @@ public class SimulatorServlet {
         }
     }
 
-    @GetMapping(path = "/files/{id}", produces = APPLICATION_OCTET_STREAM_VALUE)
+    @GetMapping(path = "/files/{id}.txt", produces = APPLICATION_OCTET_STREAM_VALUE)
     public ResponseEntity<String> getFile(@PathVariable("id") String id) {
         try {
             UUID uuid = UUID.fromString(id);

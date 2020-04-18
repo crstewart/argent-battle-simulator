@@ -1,0 +1,19 @@
+<div>
+    <form>
+        <div class="character-select">
+            <label for="fighter1select">Select Fighter 1: </label>
+            <select id="fighter1select" name="fighter1name" [ngModel]="fighter1" (ngModelChange)="setFighter1($event)" required>
+                <option *ngFor="let fighter of fighters" [value]="fighter">{{fighter}}</option>
+            </select>
+        </div>
+
+        <div class="character-select">
+            <label for="fighter2select">Select Fighter 2: </label>
+            <select id="fighter2select" name="fighter2name" [ngModel]="fighter2" (ngModelChange)="setFighter2($event)" required>
+                <option *ngFor="let fighter of fighters" [value]="fighter">{{fighter}}</option>
+            </select>
+        </div>
+
+        <input id="sim-form-submit" value="Submit" type="button" (click)="onSubmit()"/>
+    </form>
+</div>
