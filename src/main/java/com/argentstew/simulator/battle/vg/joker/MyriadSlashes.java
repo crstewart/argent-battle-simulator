@@ -16,6 +16,7 @@ public class MyriadSlashes extends MeleeAttack {
     public MyriadSlashes() {
         super();
         this.name = "Myriad Slashes";
+        this.description = "Requires Futsunushi";
         this.power = 60;
         this.variance = 15;
         this.speed = 1;

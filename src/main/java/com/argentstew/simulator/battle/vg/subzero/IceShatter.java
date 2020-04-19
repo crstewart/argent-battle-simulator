@@ -18,6 +18,7 @@ public class IceShatter extends MeleeXStrike {
     public IceShatter() {
         super();
         this.name = "Ice Shatter";
+        this.description = "Has 50% critical hit chance";
         this.power = 180;
         this.variance = 9;
         this.speed = 1;

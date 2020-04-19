@@ -20,6 +20,7 @@ public class Zap extends MagicAttack {
     public Zap() {
         super();
         this.name = "Zap";
+        this.description = "Costs 8 SP";
         this.power = 120;
         this.variance = 10;
         this.speed = 3;

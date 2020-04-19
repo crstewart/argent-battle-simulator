@@ -21,6 +21,7 @@ public class Gnasher extends RangedAttack {
     public Gnasher() {
         super();
         this.name = "Gnasher Shotgun";
+        this.description = "8 ammo";
         this.power = 85;
         this.variance = 8;
         this.speed = 2.5;

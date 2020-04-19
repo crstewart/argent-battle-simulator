@@ -15,6 +15,7 @@ public class SkullBarrier extends Guard {
 
     public SkullBarrier() {
         this.name = "Skull Barrier";
+        this.description = "Blocks all guardable ranged attacks";
         this.initiateMessage = "activates Skull Barrier!";
         this.successMessage = "blocked the attack!";
         this.failureMessage = "was still struck by the attack!";

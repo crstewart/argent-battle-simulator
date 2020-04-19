@@ -19,6 +19,7 @@ public class HylianShield extends Guard {
 
     public HylianShield() {
         this.name = "Hylian Shield";
+        this.description = "Blocks non-magic attacks, except for armor piercing moves";
         this.initiateMessage = "readies his Hylian Shield";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to defend the attack!";

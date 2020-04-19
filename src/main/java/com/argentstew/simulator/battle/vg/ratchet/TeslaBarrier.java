@@ -26,6 +26,7 @@ public class TeslaBarrier extends Guard {
 
     public TeslaBarrier() {
         this.name = "Tesla Barrier";
+        this.description = "Blocks firearm, plasma, and weapon attacks";
         this.initiateMessage = "uses the shield charger!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to block the attack!";

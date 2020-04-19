@@ -19,6 +19,7 @@ public class StunKnife extends MeleeAttack {
     public StunKnife() {
         super();
         this.name = "Stun Knife";
+        this.description = "Has half normal stun chance if the enemy resists thunder, double stun chance if weak to thunder";
         this.power = 50;
         this.variance = 5;
         this.speed = 1;

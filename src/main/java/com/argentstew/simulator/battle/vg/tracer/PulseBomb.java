@@ -20,6 +20,7 @@ public class PulseBomb extends RangedAttack {
     public PulseBomb() {
         super();
         this.name = "Pulse Bomb";
+        this.description = "Requires and uses max SP";
         this.power = 150;
         this.variance = 15;
         this.speed = 1;

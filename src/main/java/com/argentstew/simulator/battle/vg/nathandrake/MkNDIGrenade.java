@@ -21,6 +21,7 @@ public class MkNDIGrenade extends RangedAttack {
     public MkNDIGrenade() {
         super();
         this.name = "Mk-NDI Grenade";
+        this.description = "3 ammo";
         this.power = 90;
         this.variance = 8;
         this.speed = 2.5;

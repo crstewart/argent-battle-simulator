@@ -21,6 +21,7 @@ public class FlareWand extends MagicAttack {
     public FlareWand() {
         super();
         this.name = "Flare Wand";
+        this.description = "Uses 4 SP";
         this.power = 55;
         this.variance = 6;
         this.speed = 1;

@@ -17,6 +17,7 @@ public class PoultergustPlunger extends MeleeAttack {
     public PoultergustPlunger() {
         super();
         this.name = "Poultergust Plunger";
+        this.description = "Damage reduced against heavy opponents";
         this.power = 55;
         this.variance = 6;
         this.speed = 1;

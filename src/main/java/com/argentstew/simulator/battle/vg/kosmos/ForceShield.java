@@ -16,6 +16,7 @@ public class ForceShield extends Guard {
 
     public ForceShield() {
         this.name = "Force Shield";
+        this.description = "Blocks all guardable non-magic attacks";
         this.initiateMessage = "readies her Force Shield!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to defend the attack!";

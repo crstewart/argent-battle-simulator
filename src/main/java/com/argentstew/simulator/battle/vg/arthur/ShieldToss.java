@@ -7,7 +7,7 @@ import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.action.defense.Guard;
 
 /**
- * com.argentstew.simulator.battle.vg.pikachu
+ * com.argentstew.simulator.battle.vg.arthur
  * 8/27/2019
  *
  * @author Craig
@@ -16,6 +16,7 @@ public class ShieldToss extends Guard {
 
     public ShieldToss() {
         this.name = "Shield Toss";
+        this.description = "Blocks ranged attacks and ranged magic, counters melee attacks";
         this.initiateMessage = "throws his shield!";
         this.successMessage = "blocks the attack!";
         this.failureMessage = "failed to stop the attack!";

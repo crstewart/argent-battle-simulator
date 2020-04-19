@@ -19,6 +19,7 @@ public class Lasso extends RangedAttack {
     public Lasso() {
         super();
         this.name = "Lasso";
+        this.description = "Always ties up and stuns the opponent";
         this.power = 20;
         this.variance = 2;
         this.speed = 1;

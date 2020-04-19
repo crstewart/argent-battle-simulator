@@ -18,6 +18,7 @@ public class KoopaToss extends MeleeAttack {
     public KoopaToss() {
         super();
         this.name = "Koopa Toss";
+        this.description = "Damage reduced against heavy opponents";
         this.power = 60;
         this.variance = 5;
         this.speed = 2;

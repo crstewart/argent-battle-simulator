@@ -2,6 +2,10 @@
 
 build/
 .gradle/
+src/main/webapp/
+node_modules/
+argent-battle-simulator-frontend/dist/
+argent-battle-simulator-frontend/node_modules/
 
 #IntelliJ files
 .idea/

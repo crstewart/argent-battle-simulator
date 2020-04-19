@@ -21,6 +21,7 @@ public class FragGrenade extends RangedAttack {
     public FragGrenade() {
         super();
         this.name = "Fragmentation Grenade";
+        this.description = "2 ammo";
         this.power = 70;
         this.variance = 6;
         this.speed = 1.5;

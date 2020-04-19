@@ -16,6 +16,7 @@ public class GoldenFleece extends Guard {
 
     public GoldenFleece() {
         this.name = "Golden Fleece";
+        this.description = "Blocks all melee and magic attacks, counters with Blades of Chaos or Zeus' Fury";
         this.initiateMessage = "guards himself with the Golden Fleece";
         this.successMessage = "defends the attack and counters!";
         this.failureMessage = "failed to defend the attack!";

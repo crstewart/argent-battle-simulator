@@ -18,6 +18,7 @@ public class CrossSlashLimitBreak extends MeleeAttack {
     public CrossSlashLimitBreak() {
         super();
         this.name = "Cross-slash (Limit Break)";
+        this.description = "Uses all SP";
         this.power = 100;
         this.variance = 30;
         this.speed = 0.5;

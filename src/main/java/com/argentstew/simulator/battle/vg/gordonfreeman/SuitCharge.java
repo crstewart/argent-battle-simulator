@@ -15,6 +15,7 @@ public class SuitCharge extends Guard {
 
     public SuitCharge() {
         this.name = "Suit Charge";
+        this.description = "Blocks all guardable attacks, reduces damage by 66%";
         this.initiateMessage = "charges his HEV Suit!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to defend the attack!";

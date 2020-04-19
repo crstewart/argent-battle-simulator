@@ -15,6 +15,7 @@ public class AkuAkusProtection extends Guard {
 
     public AkuAkusProtection() {
         this.name = "Aku Aku's Protection";
+        this.description = "Blocks all guardable attacks";
         this.initiateMessage = "backs away.";
         this.successMessage = "is protected by Aku Aku!";
         this.failureMessage = "could not be defended from the attack!";

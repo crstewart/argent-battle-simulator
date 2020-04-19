@@ -17,6 +17,7 @@ public class PsiShieldAlpha extends Guard {
 
     public PsiShieldAlpha() {
         this.name = "PSI Shield Alpha";
+        this.description = "Uses 6 SP, reducing damage from melee attacks by 50%";
         this.initiateMessage = "tried PSI Shield Alpha!";
         this.successMessage = "was enveloped by a shield!";
         this.failureMessage = "failed to defend the attack!";

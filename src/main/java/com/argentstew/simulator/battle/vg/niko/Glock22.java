@@ -22,6 +22,7 @@ public class Glock22 extends RangedAttack {
     public Glock22() {
         super();
         this.name = "Glock 22";
+        this.description = "9 ammo";
         this.power = 65;
         this.variance = 6;
         this.speed = 2;

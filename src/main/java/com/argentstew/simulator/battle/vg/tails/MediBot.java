@@ -14,6 +14,7 @@ public class MediBot extends Heal {
 
     public MediBot() {
         this.name = "Medi-Bot";
+        this.description = "Heals 35-45 damage";
         this.initiateMessage = "prepares his Medi-Bot!";
         this.successMessage = "uses the bot to heal himself!";
         this.failureMessage = "fails to heal!";

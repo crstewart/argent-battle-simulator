@@ -18,6 +18,7 @@ public class Crossbow extends RangedAttack {
     public Crossbow() {
         super();
         this.name = "Crossbow";
+        this.description = "Has 150% normal critical hit chance";
         this.power = 50;
         this.variance = 5;
         this.speed = 1.5;

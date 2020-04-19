@@ -18,6 +18,7 @@ public class BusterSword extends MeleeAttack {
     public BusterSword() {
         super();
         this.name = "Buster Sword";
+        this.description = "Gains 3 SP";
         this.power = 80;
         this.variance = 5;
         this.speed = 1.5;

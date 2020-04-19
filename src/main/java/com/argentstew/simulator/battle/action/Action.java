@@ -15,6 +15,7 @@ import lombok.EqualsAndHashCode;
 public abstract class Action {
 
     protected String name;
+    protected String description;
     protected ActionType type;
     protected Fighter owner;
     protected double speed;

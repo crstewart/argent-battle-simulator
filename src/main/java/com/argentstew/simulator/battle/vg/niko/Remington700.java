@@ -19,6 +19,7 @@ public class Remington700 extends RangedXStrike {
     public Remington700() {
         super();
         this.name = "Remington 700";
+        this.description = "Always critical hits";
         this.power = 150;
         this.variance = 10;
         this.speed = 4;

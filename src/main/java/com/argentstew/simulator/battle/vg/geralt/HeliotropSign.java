@@ -16,6 +16,7 @@ public class HeliotropSign extends Guard {
 
     public HeliotropSign() {
         this.name = "Heliotrop Sign";
+        this.description = "Blocks melee and magic attacks";
         this.initiateMessage = "crosses his wrists over his chest!";
         this.successMessage = "blocks the attack with Heliotrop!";
         this.failureMessage = "was still struck by the attack!";

@@ -19,6 +19,7 @@ public class ConeOfCold extends MagicAttack {
     public ConeOfCold() {
         super();
         this.name = "Cone of Cold";
+        this.description = "If the user is 'Frostbitten' this always critical hits, else applies 'Frostbitten'";
         this.power = 45;
         this.variance = 4;
         this.speed = 0.5;

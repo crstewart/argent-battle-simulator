@@ -14,6 +14,7 @@ public class Recall extends Heal {
 
     public Recall() {
         this.name = "Recall";
+        this.description = "Restores all damage done by an attack, gains 30 SP";
         this.initiateMessage = "activates her Chronal Accelerator!";
         this.successMessage = "reverses time and heals her wounds!";
         this.failureMessage = "failed to activate her Recall ability!";

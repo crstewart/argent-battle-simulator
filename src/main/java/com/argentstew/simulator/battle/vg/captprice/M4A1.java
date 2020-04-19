@@ -21,6 +21,7 @@ public class M4A1 extends RangedAttack {
     public M4A1() {
         super();
         this.name = "M4A1 Carbine";
+        this.description = "90 ammo, each attack uses 30 ammo";
         this.power = 50;
         this.variance = 14;
         this.speed = 2;

@@ -17,6 +17,7 @@ public class Firaga extends MagicAttack {
     public Firaga() {
         super();
         this.name = "Firaga";
+        this.description = "Has 50% less miss chance";
         this.power = 60;
         this.variance = 12;
         this.speed = 2;

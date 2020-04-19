@@ -22,6 +22,7 @@ public class M22Eviscerator extends RangedAttack {
     public M22Eviscerator() {
         super();
         this.name = "M-22 Eviscerator (Incendiary)";
+        this.description = "3 ammo";
         this.power = 100;
         this.variance = 10;
         this.speed = 2;

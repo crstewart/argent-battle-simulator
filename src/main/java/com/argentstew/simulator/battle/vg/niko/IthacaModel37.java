@@ -21,6 +21,7 @@ public class IthacaModel37 extends RangedAttack {
     public IthacaModel37() {
         super();
         this.name = "Ithaca Model 37";
+        this.description = "8 ammo";
         this.power = 75;
         this.variance = 7;
         this.speed = 3;

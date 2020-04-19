@@ -17,6 +17,7 @@ public class BananaPeel extends RangedAttack {
     public BananaPeel() {
         super();
         this.name = "Banana Peel";
+        this.description = "Has 60% additional stun chance";
         this.power = 10;
         this.variance = 3;
         this.speed = 1;

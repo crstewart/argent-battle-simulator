@@ -17,6 +17,7 @@ public class Octaslash extends MeleeAttack {
     public Octaslash() {
         super();
         this.name = "Octaslash";
+        this.description = "Always critical hits";
         this.power = 40;
         this.variance = 8;
         this.speed = 2;

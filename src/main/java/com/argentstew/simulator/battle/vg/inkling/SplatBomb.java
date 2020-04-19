@@ -22,6 +22,7 @@ public class SplatBomb extends RangedAttack {
     public SplatBomb() {
         super();
         this.name = "Splat Bomb";
+        this.description = "Uses 30 SP";
         this.power = 90;
         this.variance = 8;
         this.speed = 1.5;

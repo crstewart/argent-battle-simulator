@@ -15,6 +15,7 @@ import com.argentstew.simulator.battle.action.defense.Guard;
 public class StoneChange extends Guard {
 
     public StoneChange() {
+        this.description = "Blocks all guardable attacks, counters melee attacks";
         this.name = "Stone Change";
         this.initiateMessage = "uses Stone Change!";
         this.successMessage = "was immune to the attack!";

@@ -20,6 +20,7 @@ public class CorrosiveGrenade extends RangedAttack {
     public CorrosiveGrenade() {
         super();
         this.name = "Corrosive Grenade";
+        this.description = "Deals 25% additional damage to mechs";
         this.power = 70;
         this.variance = 7;
         this.speed = 1.5;

@@ -17,6 +17,7 @@ public class FlangedMace extends MeleeAttack {
     public FlangedMace() {
         super();
         this.name = "Flanged Mace";
+        this.description = "Has 150% normal critical hit chance";
         this.power = 55;
         this.variance = 5;
         this.speed = 1.5;

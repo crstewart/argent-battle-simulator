@@ -21,6 +21,7 @@ public class Shotgun extends RangedAttack {
     public Shotgun() {
         super();
         this.name = "Shotgun";
+        this.description = "6 ammo";
         this.power = 70;
         this.variance = 7;
         this.speed = 1.5;

@@ -16,6 +16,7 @@ public class SummonFutsunushi extends MoveAction {
 
     public SummonFutsunushi() {
         this.setName("Summon Futsunushi");
+        this.setDescription("Uses all SP");
         this.setMessage("summons Futsunushi!");
         this.setDirection(1);
     }

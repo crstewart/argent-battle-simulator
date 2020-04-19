@@ -21,6 +21,7 @@ public class Pyri extends MagicAttack {
     public Pyri() {
         super();
         this.name = "Pyri";
+        this.description = "Uses 2 SP";
         this.power = 60;
         this.variance = 6;
         this.speed = 1.5;

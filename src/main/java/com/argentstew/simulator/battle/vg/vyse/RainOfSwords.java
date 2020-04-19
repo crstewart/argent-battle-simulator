@@ -21,6 +21,7 @@ public class RainOfSwords extends MagicAttack {
     public RainOfSwords() {
         super();
         this.name = "Rain of Swords";
+        this.description = "Uses 14 SP";
         this.power = 80;
         this.variance = 8;
         this.speed = 3;

@@ -21,6 +21,7 @@ public class Wevles extends MagicAttack {
     public Wevles() {
         super();
         this.name = "Wevles";
+        this.description = "Uses 4 SP";
         this.power = 75;
         this.variance = 7;
         this.speed = 2;

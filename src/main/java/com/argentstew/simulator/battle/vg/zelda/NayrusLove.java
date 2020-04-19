@@ -17,6 +17,7 @@ public class NayrusLove extends Guard {
 
     public NayrusLove() {
         this.name = "Nayru's Love";
+        this.description = "Reflects ranged attacks and ranged magic";
         this.initiateMessage = "invokes Nayru's Love!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to defend the attack!";

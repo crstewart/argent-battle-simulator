@@ -21,6 +21,7 @@ public class AssaultRifle extends RangedAttack {
     public AssaultRifle() {
         super();
         this.name = "Assault Rifle";
+        this.description = "96 ammo, each attack uses 32 ammo";
         this.power = 65;
         this.variance = 15;
         this.speed = 2;

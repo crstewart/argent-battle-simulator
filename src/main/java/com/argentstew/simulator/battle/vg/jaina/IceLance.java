@@ -19,6 +19,7 @@ public class IceLance extends MagicAttack {
     public IceLance() {
         super();
         this.name = "Ice Lance";
+        this.description = "If the user is 'Frostbitten' this always critical hits, else applies 'Frostbitten'";
         this.power = 55;
         this.variance = 5;
         this.speed = 1;

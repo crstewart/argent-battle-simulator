@@ -21,6 +21,7 @@ public class FinalAttack extends MagicXStrike {
     public FinalAttack() {
         super();
         this.name = "Final Attack";
+        this.description = "Applies the 'Tired' status, reducing dodge chance from 100% to normal";
         this.power = 200;
         this.variance = 24;
         this.speed = 3;

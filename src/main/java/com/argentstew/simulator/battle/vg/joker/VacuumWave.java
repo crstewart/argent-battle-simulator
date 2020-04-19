@@ -17,6 +17,7 @@ public class VacuumWave extends MagicAttack {
     public VacuumWave() {
         super();
         this.name = "Vacuum Wave";
+        this.description = "Requires Vishnu";
         this.power = 80;
         this.variance = 7;
         this.speed = 1.5;

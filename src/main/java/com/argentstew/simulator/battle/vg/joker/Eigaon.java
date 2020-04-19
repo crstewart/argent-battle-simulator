@@ -21,6 +21,7 @@ public class Eigaon extends MagicAttack {
     public Eigaon() {
         super();
         this.name = "Eigaon";
+        this.description = "Requires Arsene";
         this.power = 60;
         this.variance = 12;
         this.speed = 1;

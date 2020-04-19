@@ -18,7 +18,7 @@ public class Toasty extends MeleeXStrike {
 
     public Toasty() {
         super();
-        this.name = "Toasty!";
+        this.name = "Toasty";
         this.power = 160;
         this.variance = 12;
         this.speed = 1.5;

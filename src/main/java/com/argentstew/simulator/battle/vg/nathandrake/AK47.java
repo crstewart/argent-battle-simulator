@@ -22,6 +22,7 @@ public class AK47 extends RangedAttack {
     public AK47() {
         super();
         this.name = "AK-47";
+        this.description = "90 ammo, each attack uses 30 ammo";
         this.power = 70;
         this.variance = 9;
         this.speed = 1.5;

@@ -16,6 +16,7 @@ public class IceBlock extends Guard {
 
     public IceBlock() {
         this.name = "Ice Block";
+        this.description = "Blocks all magic attacks, except for fire";
         this.initiateMessage = "casts Ice Block!";
         this.successMessage = "was immune to the attack!";
         this.failureMessage = "could not defend against the attack!";

@@ -17,6 +17,7 @@ public class Meteor extends MagicAttack {
     public Meteor() {
         super();
         this.name = "Meteor";
+        this.description = "Always critical hits";
         this.power = 60;
         this.variance = 4;
         this.speed = 5;

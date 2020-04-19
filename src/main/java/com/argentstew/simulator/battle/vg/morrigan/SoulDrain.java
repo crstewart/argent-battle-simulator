@@ -18,6 +18,7 @@ public class SoulDrain extends RangedAttack {
     public SoulDrain() {
         super();
         this.name = "Soul Drain";
+        this.description = "Saps 1-2 points from the opponent's X-Strike meter";
         this.power = 35;
         this.variance = 2;
         this.speed = 1;

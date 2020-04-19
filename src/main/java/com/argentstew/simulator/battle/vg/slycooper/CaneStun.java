@@ -17,6 +17,7 @@ public class CaneStun extends MeleeAttack {
     public CaneStun() {
         super();
         this.name = "Cane Stun";
+        this.description = "Has double stun chance";
         this.power = 45;
         this.variance = 4;
         this.speed = 0.5;

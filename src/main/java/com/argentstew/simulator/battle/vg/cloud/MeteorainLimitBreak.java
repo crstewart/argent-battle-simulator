@@ -19,6 +19,7 @@ public class MeteorainLimitBreak extends RangedAttack {
     public MeteorainLimitBreak() {
         super();
         this.name = "Meteorain (Limit Break)";
+        this.description = "Uses all SP";
         this.power = 140;
         this.variance = 10;
         this.speed = 1.5;

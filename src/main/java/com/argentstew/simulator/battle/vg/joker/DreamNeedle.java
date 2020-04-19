@@ -18,6 +18,7 @@ public class DreamNeedle extends RangedAttack {
     public DreamNeedle() {
         super();
         this.name = "Dream Needle";
+        this.description = "Requires Arsene, has double stun chance";
         this.power = 45;
         this.variance = 5;
         this.speed = 0.5;

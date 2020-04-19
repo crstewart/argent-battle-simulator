@@ -25,6 +25,7 @@ public class IcyCounter extends Guard {
 
     public IcyCounter() {
         this.name = "Icy Counter";
+        this.description = "Blocks hand-to-hand combat attacks, countering with his Kori Blade";
         this.initiateMessage = "covers himself in ice!";
         this.successMessage = "defends against the attack!";
         this.failureMessage = "failed to defend the attack!";

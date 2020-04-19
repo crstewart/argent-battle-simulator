@@ -17,6 +17,7 @@ public class HomingAttack extends MeleeAttack {
     public HomingAttack() {
         super();
         this.name = "Homing Attack";
+        this.description = "No additional startup time";
         this.power = 30;
         this.variance = 3;
         this.speed = 0.5;

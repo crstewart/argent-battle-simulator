@@ -19,6 +19,7 @@ public class CrossSlash extends MeleeAttack {
     public CrossSlash() {
         super();
         this.name = "Cross-slash";
+        this.description = "Gains 2 SP";
         this.power = 50;
         this.variance = 15;
         this.speed = 1;

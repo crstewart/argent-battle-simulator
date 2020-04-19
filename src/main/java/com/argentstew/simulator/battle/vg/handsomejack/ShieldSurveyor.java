@@ -16,6 +16,7 @@ public class ShieldSurveyor extends Guard {
 
     public ShieldSurveyor() {
         this.name = "Shield Surveyor";
+        this.description = "Blocks all guardable non-magic attacks";
         this.initiateMessage = "calls for his personal Shield Surveyor!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to block the attack!";

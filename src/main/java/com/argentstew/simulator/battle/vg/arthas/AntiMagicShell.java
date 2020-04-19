@@ -15,6 +15,7 @@ public class AntiMagicShell extends Guard {
 
     public AntiMagicShell() {
         this.name = "Anti-Magic Shell";
+        this.description = "Blocks all magic attacks";
         this.initiateMessage = "casts Anti-Magic Shell!";
         this.successMessage = "was immune to the attack!";
         this.failureMessage = "could not defend against the attack!";

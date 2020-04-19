@@ -21,6 +21,7 @@ public class BarrelToss extends RangedAttack {
     public BarrelToss() {
         super();
         this.name = "Barrel Toss";
+        this.description = "Costs 1 SP";
         this.power = 65;
         this.variance = 6;
         this.speed = 3;

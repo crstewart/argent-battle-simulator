@@ -18,6 +18,7 @@ public class LegTakedown extends MeleeAttack {
     public LegTakedown() {
         super();
         this.name = "Leg Takedown";
+        this.description = "Has 50% additional stun chance";
         this.power = 50;
         this.variance = 6;
         this.speed = 1.5;

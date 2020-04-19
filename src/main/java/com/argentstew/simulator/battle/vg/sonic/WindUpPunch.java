@@ -17,6 +17,7 @@ public class WindUpPunch extends MeleeAttack {
     public WindUpPunch() {
         super();
         this.name = "Wind-Up Punch";
+        this.description = "No additional startup time";
         this.power = 55;
         this.variance = 6;
         this.speed = 1.5;

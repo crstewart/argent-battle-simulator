@@ -20,6 +20,7 @@ public class RingOfFrost extends MagicXStrike {
     public RingOfFrost() {
         super();
         this.name = "Ring of Frost";
+        this.description = "If the user is 'Frostbitten' this always critical hits, else applies 'Frostbitten'";
         this.power = 180;
         this.variance = 12;
         this.speed = 3;

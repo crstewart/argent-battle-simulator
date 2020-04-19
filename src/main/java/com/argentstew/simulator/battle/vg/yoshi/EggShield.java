@@ -23,6 +23,7 @@ public class EggShield extends Guard {
 
     public EggShield() {
         this.name = "Egg Shield";
+        this.description = "Blocks all attacks except for slam, pierce, hack, smash, and armor piercing";
         this.initiateMessage = "retreats into his Egg Shield";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "has his egg cracked by the attack!";

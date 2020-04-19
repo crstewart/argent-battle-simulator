@@ -18,6 +18,7 @@ public class Chaser extends MagicAttack {
     public Chaser() {
         super();
         this.name = "Chaser";
+        this.description = "Gains 1 SP";
         this.power = 30;
         this.variance = 6;
         this.speed = 1;

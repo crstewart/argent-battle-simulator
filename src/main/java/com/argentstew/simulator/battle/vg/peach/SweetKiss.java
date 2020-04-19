@@ -21,6 +21,7 @@ public class SweetKiss extends MagicAttack {
     public SweetKiss() {
         super();
         this.name = "Sweet Kiss";
+        this.description = "Uses 5 SP";
         this.power = 80;
         this.variance = 6;
         this.speed = 1;

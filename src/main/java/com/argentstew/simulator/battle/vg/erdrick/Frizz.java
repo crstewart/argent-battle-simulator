@@ -20,6 +20,7 @@ public class Frizz extends MagicAttack {
     public Frizz() {
         super();
         this.name = "Frizz";
+        this.description = "Costs 2 SP";
         this.power = 50;
         this.variance = 5;
         this.speed = 1;

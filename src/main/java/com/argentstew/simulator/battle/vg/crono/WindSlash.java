@@ -20,6 +20,7 @@ public class WindSlash extends RangedAttack {
     public WindSlash() {
         super();
         this.name = "Wind Slash";
+        this.description = "Costs 2 SP";
         this.power = 75;
         this.variance = 7;
         this.speed = 0.5;

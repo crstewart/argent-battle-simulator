@@ -20,6 +20,7 @@ public class Counterstrike extends Guard {
 
     public Counterstrike() {
         this.name = "Counterstrike";
+        this.description = "Uses 1 SP, blocks all guardable attacks reducing damage by 50% and countering";
         this.initiateMessage = "takes a defensive stance!";
         this.successMessage = "defends the attack!";
         this.failureMessage = "failed to defend the attack!";

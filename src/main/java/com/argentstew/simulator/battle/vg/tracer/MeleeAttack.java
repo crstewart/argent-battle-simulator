@@ -17,6 +17,7 @@ public class MeleeAttack extends com.argentstew.simulator.battle.action.attack.M
     public MeleeAttack() {
         super();
         this.name = "Melee Attack";
+        this.description = "Gains 25 SP";
         this.power = 50;
         this.variance = 6;
         this.speed = 0.5;

@@ -14,6 +14,7 @@ public class VanishCap extends Guard {
 
     public VanishCap() {
         this.name = "Vanish Cap";
+        this.description = "Blocks non-magic attacks";
         this.initiateMessage = "puts on his Vanish Cap!";
         this.successMessage = "phased through the attack!";
         this.failureMessage = "was still struck by the attack!";

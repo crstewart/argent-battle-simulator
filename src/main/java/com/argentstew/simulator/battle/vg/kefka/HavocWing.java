@@ -18,6 +18,7 @@ public class HavocWing extends MagicAttack {
     public HavocWing() {
         super();
         this.name = "Havoc Wing";
+        this.description = "Always critical hits";
         this.power = 35;
         this.variance = 6;
         this.speed = 1;

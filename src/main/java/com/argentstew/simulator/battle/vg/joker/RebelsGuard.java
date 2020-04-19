@@ -14,6 +14,7 @@ public class RebelsGuard extends Guard {
 
     public RebelsGuard() {
         this.name = "Rebel's Guard";
+        this.description = "Blocks all guardable attacks, reducing damage by 50% and gaining 50 SP";
         this.initiateMessage = "uses Rebel's Guard!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to defend the attack!";

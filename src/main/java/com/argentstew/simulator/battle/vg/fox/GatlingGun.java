@@ -22,6 +22,7 @@ public class GatlingGun extends RangedAttack {
     public GatlingGun() {
         super();
         this.name = "Gatling Gun";
+        this.description = "3 ammo";
         this.power = 75;
         this.variance = 10;
         this.speed = 1.5;

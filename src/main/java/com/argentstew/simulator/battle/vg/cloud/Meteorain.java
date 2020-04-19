@@ -19,6 +19,7 @@ public class Meteorain extends RangedAttack {
     public Meteorain() {
         super();
         this.name = "Meteorain";
+        this.description = "Gains 2 SP";
         this.power = 70;
         this.variance = 5;
         this.speed = 2;

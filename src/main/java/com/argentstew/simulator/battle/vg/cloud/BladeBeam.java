@@ -18,6 +18,7 @@ public class BladeBeam extends RangedAttack {
     public BladeBeam() {
         super();
         this.name = "Blade Beam";
+        this.description = "Gains 2 SP";
         this.power = 90;
         this.variance = 8;
         this.speed = 1.5;

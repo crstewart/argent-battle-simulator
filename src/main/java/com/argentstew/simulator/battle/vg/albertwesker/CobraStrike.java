@@ -17,6 +17,7 @@ public class CobraStrike extends MeleeAttack {
     public CobraStrike() {
         super();
         this.name = "Cobra Strike";
+        this.description = "Has double critical hit chance";
         this.power = 40;
         this.variance = 5;
         this.speed = 0.5;

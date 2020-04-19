@@ -18,6 +18,7 @@ public class Sundering extends RangedAttack {
     public Sundering() {
         super();
         this.name = "Sundering";
+        this.description = "Has 50% additional stun chance";
         this.power = 70;
         this.variance = 5;
         this.speed = 3;

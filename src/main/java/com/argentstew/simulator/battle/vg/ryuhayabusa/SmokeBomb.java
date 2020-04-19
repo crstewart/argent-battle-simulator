@@ -14,6 +14,7 @@ public class SmokeBomb extends Guard {
 
     public SmokeBomb() {
         this.name = "Smoke Bomb";
+        this.description = "Makes melee and magic attacks miss";
         this.initiateMessage = "sets off a Smoke Bomb!";
         this.successMessage = "avoided the attack!";
         this.failureMessage = "failed to avoid the attack!";

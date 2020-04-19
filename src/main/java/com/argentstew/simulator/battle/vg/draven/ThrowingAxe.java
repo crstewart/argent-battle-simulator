@@ -18,6 +18,7 @@ public class ThrowingAxe extends RangedAttack {
     public ThrowingAxe() {
         super();
         this.name = "Throwing Axe";
+        this.description = "Does 250% damage on critical hits, instead of the normal 200%";
         this.power = 50;
         this.variance = 4;
         this.speed = 1;

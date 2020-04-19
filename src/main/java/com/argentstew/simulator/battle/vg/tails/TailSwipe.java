@@ -16,6 +16,7 @@ public class TailSwipe extends MeleeAttack {
     public TailSwipe() {
         super();
         this.name = "Tail Swipe";
+        this.description = "No additional startup time";
         this.power = 40;
         this.variance = 5;
         this.speed = 1;

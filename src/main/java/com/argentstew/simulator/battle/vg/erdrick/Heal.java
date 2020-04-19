@@ -15,6 +15,7 @@ public class Heal extends com.argentstew.simulator.battle.action.defense.Heal {
 
     public Heal() {
         this.name = "Heal";
+        this.description = "Costs 3 SP, heals more than 30 damage";
         this.initiateMessage = "prepares to cast Heal!";
         this.successMessage = "casts Heal!";
         this.failureMessage = "failed to cast Heal!";

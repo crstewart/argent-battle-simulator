@@ -20,6 +20,7 @@ public class Lightning extends MagicAttack {
     public Lightning() {
         super();
         this.name = "Lightning";
+        this.description = "Costs 2 SP";
         this.power = 80;
         this.variance = 7;
         this.speed = 1;

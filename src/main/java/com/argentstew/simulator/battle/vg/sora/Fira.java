@@ -20,6 +20,7 @@ public class Fira extends MagicAttack {
     public Fira() {
         super();
         this.name = "Fira";
+        this.description = "Uses 5 SP";
         this.power = 65;
         this.variance = 5;
         this.speed = 1;

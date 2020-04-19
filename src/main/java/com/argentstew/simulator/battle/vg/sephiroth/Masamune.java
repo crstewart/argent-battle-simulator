@@ -17,6 +17,7 @@ public class Masamune extends MeleeAttack {
     public Masamune() {
         super();
         this.name = "Masamune";
+        this.description = "Always critical hits";
         this.power = 55;
         this.variance = 5;
         this.speed = 1;

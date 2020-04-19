@@ -14,6 +14,7 @@ public class Recover extends Heal {
 
     public Recover() {
         this.name = "Recover";
+        this.description = "Heals 30-40 damage";
         this.initiateMessage = "readies its recovery move!";
         this.successMessage = "uses Recover!";
         this.failureMessage = "could not use Recover!";

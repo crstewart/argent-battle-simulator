@@ -17,6 +17,7 @@ public class Reflector extends Guard {
 
     public Reflector() {
         this.name = "Reflector";
+        this.description = "Reflects all guardable ranged attacks and ranged magic";
         this.initiateMessage = "pulls out his Reflector";
         this.successMessage = "reflects the attack!";
         this.failureMessage = "failed to reflect the attack!";

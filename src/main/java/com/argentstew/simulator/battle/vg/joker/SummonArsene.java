@@ -16,6 +16,7 @@ public class SummonArsene extends MoveAction {
 
     public SummonArsene() {
         this.setName("Summon Arsene");
+        this.setDescription("Uses all SP");
         this.setMessage("summons Arsene!");
         this.setDirection(1);
     }

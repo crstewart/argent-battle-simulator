@@ -21,6 +21,7 @@ public class Minigun extends RangedAttack {
     public Minigun() {
         super();
         this.name = "Minigun";
+        this.description = "200 ammo, each attack uses 50 ammo";
         this.power = 50;
         this.variance = 15;
         this.speed = 3.5;

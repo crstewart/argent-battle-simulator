@@ -16,6 +16,7 @@ public class TopKick extends MeleeAttack {
     public TopKick() {
         super();
         this.name = "Top Kick";
+        this.description = "No additional startup time";
         this.power = 40;
         this.variance = 4;
         this.speed = 0.5;

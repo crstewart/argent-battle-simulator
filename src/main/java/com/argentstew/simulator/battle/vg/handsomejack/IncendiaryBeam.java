@@ -20,6 +20,7 @@ public class IncendiaryBeam extends RangedAttack {
     public IncendiaryBeam() {
         super();
         this.name = "Incendiary Beam";
+        this.description = "Deals 25% additional damage to humanoids and animals";
         this.power = 60;
         this.variance = 6;
         this.speed = 1;

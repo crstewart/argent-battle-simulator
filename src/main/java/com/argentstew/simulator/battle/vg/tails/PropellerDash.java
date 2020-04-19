@@ -16,6 +16,7 @@ public class PropellerDash extends MeleeAttack {
     public PropellerDash() {
         super();
         this.name = "Propeller Dash";
+        this.description = "No additional startup time";
         this.power = 45;
         this.variance = 5;
         this.speed = 1;

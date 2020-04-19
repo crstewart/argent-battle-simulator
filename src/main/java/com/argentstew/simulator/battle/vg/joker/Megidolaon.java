@@ -16,6 +16,7 @@ public class Megidolaon extends MagicAttack {
     public Megidolaon() {
         super();
         this.name = "Megidolaon";
+        this.description = "Requires Vishnu";
         this.power = 80;
         this.variance = 8;
         this.speed = 1;

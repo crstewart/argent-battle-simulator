@@ -17,6 +17,7 @@ public class Deflect extends Guard {
 
     public Deflect() {
         this.name = "Deflect";
+        this.description = "Reflects all guardable ranged attacks and ranged magic";
         this.initiateMessage = "readies his Dragon Sword!";
         this.successMessage = "successfully deflects the attack!";
         this.failureMessage = "failed to defend the attack!";

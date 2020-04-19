@@ -15,6 +15,7 @@ public class BuildTerrain extends Guard {
 
     public BuildTerrain() {
         this.name = "Build Terrain";
+        this.description = "Blocks all guardable attacks except for explosives";
         this.initiateMessage = "builds a wall in front of him!";
         this.successMessage = "blocked the attack!";
         this.failureMessage = "failed to block the attack!";

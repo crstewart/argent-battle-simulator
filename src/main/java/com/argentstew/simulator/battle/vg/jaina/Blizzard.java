@@ -20,6 +20,7 @@ public class Blizzard extends MagicAttack {
     public Blizzard() {
         super();
         this.name = "Blizzard";
+        this.description = "If the user is 'Frostbitten' this always critical hits, else applies 'Frostbitten'";
         this.power = 30;
         this.variance = 9;
         this.speed = 1;

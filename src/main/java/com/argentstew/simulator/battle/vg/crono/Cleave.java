@@ -20,6 +20,7 @@ public class Cleave extends MeleeAttack {
     public Cleave() {
         super();
         this.name = "Cleave";
+        this.description = "Cost 4 SP";
         this.power = 100;
         this.variance = 10;
         this.speed = 1.5;

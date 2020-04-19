@@ -19,6 +19,7 @@ public class SagesSeal extends MagicXStrike {
     public SagesSeal() {
         super();
         this.name = "Sage's Seal";
+        this.description = "Has 50% critical hit chance";
         this.power = 175;
         this.variance = 8;
         this.speed = 5;

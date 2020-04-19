@@ -18,6 +18,7 @@ public class Therapy extends Heal {
 
     public Therapy() {
         this.name = "Therapy";
+        this.description = "Heals at least 30 damage";
         this.initiateMessage = "prepares to cast a spell!";
         this.successMessage = "casts Therapy!";
         this.failureMessage = "failed to cast Therapy!";

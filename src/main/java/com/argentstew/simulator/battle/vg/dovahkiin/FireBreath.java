@@ -18,6 +18,7 @@ public class FireBreath extends RangedAttack {
     public FireBreath() {
         super();
         this.name = "Fire Breath (Yol Toor Shul)";
+        this.description = "Has 25% additional critical hit chance";
         this.power = 70;
         this.variance = 7;
         this.speed = 2;

@@ -21,6 +21,7 @@ public class SamuraiEdge extends RangedAttack {
     public SamuraiEdge() {
         super();
         this.name = "Samurai Edge";
+        this.description = "10 ammo";
         this.power = 60;
         this.variance = 6;
         this.speed = 1;

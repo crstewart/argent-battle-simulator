@@ -15,6 +15,7 @@ public class Parry extends Guard {
 
     public Parry() {
         this.name = "Parry";
+        this.description = "Blocks ranged attacks and ranged magic, gains 2 SP on success";
         this.initiateMessage = "attempts to parry the attack!";
         this.successMessage = "parries the attack!";
         this.failureMessage = "was struck by the attack!";

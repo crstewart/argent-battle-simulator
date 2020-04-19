@@ -13,6 +13,7 @@ public class WhirlingFortress extends Guard {
 
     public WhirlingFortress() {
         this.name = "Whirling Fortress";
+        this.description = "Blocks all guardable attacks, reducing damage by 80%";
         this.initiateMessage = "retreats into his shell!";
         this.successMessage = "spins quickly, deflecting the attack!";
         this.failureMessage = "failed to block the attack!";

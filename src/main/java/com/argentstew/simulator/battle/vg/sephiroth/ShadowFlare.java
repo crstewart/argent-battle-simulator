@@ -17,6 +17,7 @@ public class ShadowFlare extends MagicAttack {
     public ShadowFlare() {
         super();
         this.name = "Shadow Flare";
+        this.description = "Always critical hits";
         this.power = 50;
         this.variance = 6;
         this.speed = 2;

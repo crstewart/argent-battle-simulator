@@ -21,6 +21,7 @@ public class MatildaHandgun extends RangedAttack {
     public MatildaHandgun() {
         super();
         this.name = "Matilda Handgun";
+        this.description = "12 ammo, each attack uses 4 ammo";
         this.power = 70;
         this.variance = 7;
         this.speed = 1.5;

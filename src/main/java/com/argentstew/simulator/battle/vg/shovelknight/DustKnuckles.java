@@ -21,6 +21,7 @@ public class DustKnuckles extends MeleeAttack {
     public DustKnuckles() {
         super();
         this.name = "Dust Knuckles";
+        this.description = "Uses 2 SP";
         this.power = 50;
         this.variance = 5;
         this.speed = 0.5;

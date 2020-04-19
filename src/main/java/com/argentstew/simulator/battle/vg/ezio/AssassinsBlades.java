@@ -18,6 +18,7 @@ public class AssassinsBlades extends MeleeXStrike {
     public AssassinsBlades() {
         super();
         this.name = "Assassin's Blades";
+        this.description = "Has 50% critical hit chance";
         this.power = 150;
         this.variance = 10;
         this.speed = 1;

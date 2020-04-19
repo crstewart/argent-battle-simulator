@@ -21,6 +21,7 @@ public class Knife extends MeleeAttack {
     public Knife() {
         super();
         this.name = "Knife";
+        this.description = "Gains 40 SP";
         this.power = 45;
         this.variance = 4;
         this.speed = 0.5;

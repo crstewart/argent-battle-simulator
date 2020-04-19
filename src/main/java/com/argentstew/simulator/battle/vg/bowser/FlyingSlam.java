@@ -18,6 +18,7 @@ public class FlyingSlam extends MeleeAttack {
     public FlyingSlam() {
         super();
         this.name = "Flying Slam";
+        this.description = "Damage reduced against heavy opponents";
         this.power = 50;
         this.variance = 3;
         this.speed = 2;

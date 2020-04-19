@@ -22,6 +22,7 @@ public class Lobber extends RangedAttack {
     public Lobber() {
         super();
         this.name = "Lobber";
+        this.description = "3 ammo";
         this.power = 80;
         this.variance = 7;
         this.speed = 2;

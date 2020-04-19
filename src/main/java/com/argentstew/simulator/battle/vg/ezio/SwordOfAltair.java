@@ -17,6 +17,7 @@ public class SwordOfAltair extends MeleeAttack {
     public SwordOfAltair() {
         super();
         this.name = "Sword of Altair";
+        this.description = "Has 150% normal critical hit chance";
         this.power = 45;
         this.variance = 5;
         this.speed = 1;

@@ -21,6 +21,7 @@ public class Mortar extends RangedAttack {
     public Mortar() {
         super();
         this.name = "Mortar";
+        this.description = "12 ammo";
         this.power = 70;
         this.variance = 7;
         this.speed = 2;

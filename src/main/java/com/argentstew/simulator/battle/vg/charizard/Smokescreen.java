@@ -14,6 +14,7 @@ public class Smokescreen extends Guard {
 
     public Smokescreen() {
         this.name = "Smokescreen";
+        this.description = "Makes melee and magic attacks miss";
         this.initiateMessage = "puts up a Smokescreen!";
         this.successMessage = "avoided the attack!";
         this.failureMessage = "failed to avoid the attack!";

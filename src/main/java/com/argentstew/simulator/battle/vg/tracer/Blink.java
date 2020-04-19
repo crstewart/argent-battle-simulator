@@ -15,6 +15,7 @@ public class Blink extends Dodge {
 
     public Blink() {
         this.setName("Blink");
+        this.setDescription("Has increased dodge chance, gains 20 SP");
         this.setInitiateMessage("attempts to Blink!");
         this.setSuccessMessage("dodges the attack!");
         this.setFailureMessage("fails to dodge the attack!");

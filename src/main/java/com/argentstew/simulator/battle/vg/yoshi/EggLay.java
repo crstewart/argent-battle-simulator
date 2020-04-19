@@ -19,6 +19,7 @@ public class EggLay extends MeleeAttack {
     public EggLay() {
         super();
         this.name = "Egg Lay";
+        this.description = "Always stuns the opponent";
         this.power = 15;
         this.variance = 2;
         this.speed = 0.5;

@@ -16,6 +16,7 @@ public class SummonVishnu extends MoveAction {
 
     public SummonVishnu() {
         this.setName("Summon Vishnu");
+        this.setDescription("Uses all SP");
         this.setMessage("summons Vishnu!");
         this.setDirection(1);
     }

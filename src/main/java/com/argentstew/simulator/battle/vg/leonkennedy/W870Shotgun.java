@@ -22,6 +22,7 @@ public class W870Shotgun extends RangedAttack {
     public W870Shotgun() {
         super();
         this.name = "W-870 Shotgun";
+        this.description = "4 ammo";
         this.power = 80;
         this.variance = 12;
         this.speed = 2.5;

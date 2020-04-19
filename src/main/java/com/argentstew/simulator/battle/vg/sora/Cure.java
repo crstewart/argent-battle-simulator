@@ -16,6 +16,7 @@ public class Cure extends Heal {
 
     public Cure() {
         this.name = "Cure";
+        this.description = "Heals more than 32 damage";
         this.initiateMessage = "prepares to cast Cure!";
         this.successMessage = "casts Cure!";
         this.failureMessage = "failed to cast Cure!";

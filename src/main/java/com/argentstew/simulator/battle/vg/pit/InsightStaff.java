@@ -18,6 +18,7 @@ public class InsightStaff extends RangedAttack {
     public InsightStaff() {
         super();
         this.name = "Insight Staff";
+        this.description = "Does 50% damage at melee range, 200% damage at maximum range";
         this.power = 40;
         this.variance = 5;
         this.speed = 1.5;

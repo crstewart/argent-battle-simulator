@@ -20,17 +20,12 @@ public class GunSpecial extends RangedAttack {
     public GunSpecial() {
         super();
         this.name = "Gun Special";
+        this.description = "Requires a summoned persona";
         this.power = 80;
         this.variance = 8;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.HANDGUN);
         this.characteristics = Collections.singletonList(AttackCharacteristic.BULLET_SPEED);
-    }
-
-    @Override
-    public DamageReport doAttack(Fighter defender) {
-        owner.setMp(Math.min(owner.getMaxMp(), owner.getMp() + 40));
-        return super.doAttack(defender);
     }
 
     @Override

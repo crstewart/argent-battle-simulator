@@ -14,6 +14,7 @@ public class Regenerate extends Heal {
 
     public Regenerate() {
         this.name = "Regenerate";
+        this.description = "Requires Futsunushi, heals 30-36 damage";
         this.initiateMessage = "uses Regenerate 3!";
         this.successMessage = "is healed!";
         this.failureMessage = "fails to heal!";

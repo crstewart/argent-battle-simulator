@@ -16,6 +16,7 @@ public class BraveBlade extends MeleeAttack {
     public BraveBlade() {
         super();
         this.name = "Brave Blade";
+        this.description = "Requires Futsunushi";
         this.power = 120;
         this.variance = 12;
         this.speed = 2;

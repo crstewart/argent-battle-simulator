@@ -21,6 +21,7 @@ public class SplatCharger extends RangedAttack {
     public SplatCharger() {
         super();
         this.name = "Splat Charger";
+        this.description = "Uses 10 SP, has 50% critical hit chance at melee range, 200% at maximum range";
         this.power = 60;
         this.variance = 6;
         this.speed = 2.5;

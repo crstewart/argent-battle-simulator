@@ -20,6 +20,7 @@ public class PkRockinAlpha extends RangedAttack {
     public PkRockinAlpha() {
         super();
         this.name = "PK Rockin Alpha";
+        this.description = "Uses 10 SP";
         this.power = 80;
         this.variance = 4;
         this.speed = 1.5;

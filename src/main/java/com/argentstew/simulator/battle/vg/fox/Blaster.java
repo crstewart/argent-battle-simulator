@@ -17,6 +17,7 @@ public class Blaster extends RangedAttack {
     public Blaster() {
         super();
         this.name = "Blaster";
+        this.description = "Cannot stun the opponent";
         this.power = 50;
         this.variance = 8;
         this.speed = 0.5;

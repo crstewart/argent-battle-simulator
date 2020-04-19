@@ -17,6 +17,7 @@ public class BusterWolf extends MeleeAttack {
     public BusterWolf() {
         super();
         this.name = "Buster Wolf";
+        this.description = "Requires HP to be at 1/3 or less";
         this.power = 75;
         this.variance = 8;
         this.speed = 2.5;

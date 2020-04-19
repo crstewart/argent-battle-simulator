@@ -14,6 +14,7 @@ public class Mend extends Heal {
 
     public Mend() {
         this.name = "Mend";
+        this.description = "Heals 32-40 damage";
         this.initiateMessage = "assimilates her spawned zerg!";
         this.successMessage = "mends her wounds!";
         this.failureMessage = "fails to heal!";

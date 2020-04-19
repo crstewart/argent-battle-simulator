@@ -22,6 +22,7 @@ public class SplatRoller extends MeleeAttack {
     public SplatRoller() {
         super();
         this.name = "Splat Roller";
+        this.description = "Uses 25 SP";
         this.power = 70;
         this.variance = 6;
         this.speed = 1;

@@ -20,6 +20,7 @@ public class MegaBlast extends MagicAttack {
     public MegaBlast() {
         super();
         this.name = "Mega Blast";
+        this.description = "Costs 2 SP";
         this.power = 120;
         this.variance = 12;
         this.speed = 2;

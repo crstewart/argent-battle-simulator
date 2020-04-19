@@ -20,6 +20,7 @@ public class ChaosSphere extends MagicAttack {
     public ChaosSphere() {
         super();
         this.name = "Chaos Sphere";
+        this.description = "Uses 6 SP";
         this.power = 75;
         this.variance = 7;
         this.speed = 1;

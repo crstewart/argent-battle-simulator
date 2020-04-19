@@ -16,6 +16,7 @@ public class WonderWing extends Guard {
 
     public WonderWing() {
         this.name = "Wonderwing";
+        this.description = "Blocks all guardable attacks, but can only be used 5 times";
         this.initiateMessage = "uses Wonderwing!";
         this.successMessage = "was immune to the attack!";
         this.failureMessage = "failed to defend the attack!";

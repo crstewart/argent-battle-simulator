@@ -15,6 +15,7 @@ public class CamouflageCloak extends Guard {
 
     public CamouflageCloak() {
         this.name = "Camouflage Cloak";
+        this.description = "Makes all non-magic and dodgeable attacks miss";
         this.initiateMessage = "suddenly disappears!";
         this.successMessage = "avoided the attack!";
         this.failureMessage = "did not fool the attacker!";

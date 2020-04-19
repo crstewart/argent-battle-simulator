@@ -23,6 +23,7 @@ public class ShieldBot extends Guard {
 
     public ShieldBot() {
         this.name = "Shield Bot";
+        this.description = "Blocks all attacks except for slam, smash, water, thunder, shotgun, rifle, and armor piercing";
         this.initiateMessage = "prepare his Shield Bot!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to defend the attack!";

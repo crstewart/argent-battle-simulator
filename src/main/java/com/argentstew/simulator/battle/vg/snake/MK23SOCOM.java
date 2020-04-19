@@ -21,6 +21,7 @@ public class MK23SOCOM extends RangedAttack {
     public MK23SOCOM() {
         super();
         this.name = "MK23 SOCOM";
+        this.description = "12 ammo, each attack uses 4 ammo";
         this.power = 60;
         this.variance = 6;
         this.speed = 1.5;

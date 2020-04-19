@@ -22,6 +22,7 @@ public class ScatterGun extends RangedAttack {
     public ScatterGun() {
         super();
         this.name = "Scatter Gun";
+        this.description = "5 ammo";
         this.power = 60;
         this.variance = 8;
         this.speed = 1.5;

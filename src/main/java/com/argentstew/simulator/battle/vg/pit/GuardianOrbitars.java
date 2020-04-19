@@ -15,6 +15,7 @@ public class GuardianOrbitars extends Guard {
 
     public GuardianOrbitars() {
         this.name = "Guardian Orbitars";
+        this.description = "Blocks all guardable attacks";
         this.initiateMessage = "raises the Guardian Orbitars.";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to defend the attack!";

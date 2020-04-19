@@ -19,6 +19,7 @@ public class ChaosOrbit extends MagicAttack {
     public ChaosOrbit() {
         super();
         this.name = "Chaos Orbit";
+        this.description = "Costs 2 SP";
         this.power = 60;
         this.variance = 16;
         this.speed = 2;

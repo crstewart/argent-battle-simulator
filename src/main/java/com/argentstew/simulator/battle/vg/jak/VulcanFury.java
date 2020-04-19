@@ -22,6 +22,7 @@ public class VulcanFury extends RangedAttack {
     public VulcanFury() {
         super();
         this.name = "Vulcan Fury";
+        this.description = "10 ammo";
         this.power = 70;
         this.variance = 6;
         this.speed = 2;

@@ -23,6 +23,7 @@ public class BoomShield extends Guard {
 
     public BoomShield() {
         this.name = "Boom Shield";
+        this.description = "Blocks firearm, plasma, and explosive attacks";
         this.initiateMessage = "readies his Boom Shield!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to block the attack!";

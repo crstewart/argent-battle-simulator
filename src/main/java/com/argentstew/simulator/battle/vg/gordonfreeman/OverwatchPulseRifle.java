@@ -21,6 +21,7 @@ public class OverwatchPulseRifle extends RangedAttack {
     public OverwatchPulseRifle() {
         super();
         this.name = "Overwatch Pulse Rifle";
+        this.description = "60 ammo, each attack uses 30 ammo";
         this.power = 60;
         this.variance = 12;
         this.speed = 2;

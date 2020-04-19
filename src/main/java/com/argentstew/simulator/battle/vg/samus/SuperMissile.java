@@ -21,6 +21,7 @@ public class SuperMissile extends RangedAttack {
     public SuperMissile() {
         super();
         this.name = "Super Missile";
+        this.description = "Uses 5 SP";
         this.power = 90;
         this.variance = 7;
         this.speed = 1;

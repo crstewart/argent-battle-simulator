@@ -16,6 +16,7 @@ public class PhaseLocket extends Guard {
 
     public PhaseLocket() {
         this.name = "Phase Locket";
+        this.description = "Uses 8 SP, blocks all guardable attacks";
         this.initiateMessage = "uses the Phase Locket!";
         this.successMessage = "phased through the attack!";
         this.failureMessage = "was still struck by the attack!";
@@ -24,6 +25,7 @@ public class PhaseLocket extends Guard {
 
     @Override
     public int applyDefense(int damage) {
+        owner.useMagic(MP_COST);
         return 0;
     }
 

@@ -17,6 +17,7 @@ public class GuardShell extends Guard {
 
     public GuardShell() {
         this.name = "Guard Shell";
+        this.description = "Reflects weak ranged attacks";
         this.initiateMessage = "uses Guard Shell";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to block the attack!";

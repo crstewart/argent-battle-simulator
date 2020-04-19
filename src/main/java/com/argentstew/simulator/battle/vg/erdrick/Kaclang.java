@@ -16,6 +16,7 @@ public class Kaclang extends Guard {
 
     public Kaclang() {
         this.name = "Kaclang";
+        this.description = "Costs 6 SP, blocks melee attacks";
         this.initiateMessage = "casts Kaclang!";
         this.successMessage = "was immune to the attack!";
         this.failureMessage = "lost their immunity to the attack!";

@@ -18,6 +18,7 @@ public class IceBlast extends RangedAttack {
     public IceBlast() {
         super();
         this.name = "Ice Blast";
+        this.description = "Always stuns the opponent";
         this.power = 20;
         this.variance = 3;
         this.speed = 1;

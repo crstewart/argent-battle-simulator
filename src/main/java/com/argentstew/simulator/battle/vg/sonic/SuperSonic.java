@@ -19,6 +19,7 @@ public class SuperSonic extends MeleeXStrike {
     public SuperSonic() {
         super();
         this.name = "Super Sonic";
+        this.description = "No additional startup time";
         this.power = 230;
         this.variance = 15;
         this.speed = 1;

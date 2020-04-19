@@ -18,6 +18,7 @@ public class Spear extends RangedAttack {
     public Spear() {
         super();
         this.name = "Spear";
+        this.description = "Forces the opponent into melee range";
         this.power = 40;
         this.variance = 4;
         this.speed = 1;

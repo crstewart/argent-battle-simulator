@@ -17,6 +17,7 @@ public class StandAside extends RangedAttack {
     public StandAside() {
         super();
         this.name = "Stand Aside";
+        this.description = "Has 150% normal stun chance";
         this.power = 55;
         this.variance = 6;
         this.speed = 1.5;

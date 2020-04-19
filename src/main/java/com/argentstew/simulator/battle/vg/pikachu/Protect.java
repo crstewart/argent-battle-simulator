@@ -15,6 +15,7 @@ public class Protect extends Guard {
 
     public Protect() {
         this.name = "Protect";
+        this.description = "Has 5 uses, blocks all guardable attacks";
         this.initiateMessage = "protects itself!";
         this.successMessage = "successfully foiled the attack!";
         this.failureMessage = "failed to defend the attack!";

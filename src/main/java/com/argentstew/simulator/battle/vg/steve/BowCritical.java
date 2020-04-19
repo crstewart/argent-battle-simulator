@@ -17,6 +17,7 @@ public class BowCritical extends RangedAttack {
     public BowCritical() {
         super();
         this.name = "Bow (Critical)";
+        this.description = "Always critical hits";
         this.power = 60;
         this.variance = 6;
         this.speed = 4;

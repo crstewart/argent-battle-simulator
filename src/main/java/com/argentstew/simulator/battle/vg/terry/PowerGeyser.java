@@ -16,6 +16,7 @@ public class PowerGeyser extends MeleeAttack {
     public PowerGeyser() {
         super();
         this.name = "Power Geyser";
+        this.description = "Requires HP to be at 1/3 or less";
         this.power = 80;
         this.variance = 7;
         this.speed = 2.5;

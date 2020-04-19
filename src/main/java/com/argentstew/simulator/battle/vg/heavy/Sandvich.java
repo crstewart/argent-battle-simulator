@@ -16,6 +16,7 @@ public class Sandvich extends Heal {
 
     public Sandvich() {
         this.name = "Sandvich";
+        this.description = "Heals 40-55 damage";
         this.initiateMessage = "pulls out his Sandvich!";
         this.successMessage = "eats his beloved Sandvich!";
         this.failureMessage = "is stopped before he can eat!";

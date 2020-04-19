@@ -15,6 +15,7 @@ public class RefillInk extends Heal {
 
     public RefillInk() {
         this.setName("Refill Ink");
+        this.description = "Restores all SP, acts like a dodge with increased dodge chance";
         this.setInitiateMessage("sinks into the ground to refill their ink!");
         this.setSuccessMessage("fully refills their ink!");
         this.setFailureMessage("fully refills their ink, but is struck by the attack!");

@@ -22,6 +22,7 @@ public class Splattershot extends RangedAttack {
     public Splattershot() {
         super();
         this.name = "Splattershot";
+        this.description = "Uses 20 SP";
         this.power = 45;
         this.variance = 10;
         this.speed = 1;

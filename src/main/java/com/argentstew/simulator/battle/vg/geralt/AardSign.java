@@ -18,6 +18,7 @@ public class AardSign extends MagicAttack {
     public AardSign() {
         super();
         this.name = "Aard Sign";
+        this.description = "Has 150% normal stun chance";
         this.power = 45;
         this.variance = 5;
         this.speed = 1;

@@ -20,6 +20,7 @@ public class CutlassFury extends MeleeAttack {
     public CutlassFury() {
         super();
         this.name = "Cutlass Fury";
+        this.description = "Uses 7 SP";
         this.power = 125;
         this.variance = 10;
         this.speed = 2;

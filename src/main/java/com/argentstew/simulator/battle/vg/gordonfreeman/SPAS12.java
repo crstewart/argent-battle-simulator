@@ -21,6 +21,7 @@ public class SPAS12 extends RangedAttack {
     public SPAS12() {
         super();
         this.name = "SPAS-12";
+        this.description = "6 ammo";
         this.power = 80;
         this.variance = 6;
         this.speed = 2;

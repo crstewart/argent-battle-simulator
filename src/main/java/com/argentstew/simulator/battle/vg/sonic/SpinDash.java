@@ -16,6 +16,7 @@ public class SpinDash extends MeleeAttack {
     public SpinDash() {
         super();
         this.name = "Spin Dash";
+        this.description = "No additional startup time";
         this.power = 45;
         this.variance = 5;
         this.speed = 1;

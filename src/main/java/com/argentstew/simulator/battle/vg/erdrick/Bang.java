@@ -20,6 +20,7 @@ public class Bang extends MagicAttack {
     public Bang() {
         super();
         this.name = "Bang";
+        this.description = "Costs 5 SP";
         this.power = 80;
         this.variance = 8;
         this.speed = 2;

@@ -18,6 +18,7 @@ public class GustaffShield extends Guard {
 
     public GustaffShield() {
         this.name = "Gustaff Shield";
+        this.description = "Blocks all guardable and non-armor piercing attacks";
         this.initiateMessage = "raises the shield of her mech!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to block the attack!";

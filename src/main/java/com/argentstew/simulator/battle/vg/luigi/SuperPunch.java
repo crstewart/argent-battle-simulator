@@ -17,6 +17,7 @@ public class SuperPunch extends MeleeAttack {
     public SuperPunch() {
         super();
         this.name = "Super Punch";
+        this.description = "Has double critical hit chance";
         this.power = 60;
         this.variance = 4;
         this.speed = 0.5;

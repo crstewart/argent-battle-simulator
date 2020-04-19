@@ -16,6 +16,7 @@ public class Scintilla extends Guard {
 
     public Scintilla() {
         this.name = "Scintilla";
+        this.description = "Blocks melee attacks and melee magic, counters with his sword";
         this.initiateMessage = "uses Scintilla!";
         this.successMessage = "blocks the attack and prepares to counter!";
         this.failureMessage = "failed to defend the attack!";

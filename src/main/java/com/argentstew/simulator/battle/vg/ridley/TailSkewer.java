@@ -18,6 +18,7 @@ public class TailSkewer extends MeleeAttack {
     public TailSkewer() {
         super();
         this.name = "Tail Skewer";
+        this.description = "Has double critical hit chance";
         this.power = 45;
         this.variance = 4;
         this.speed = 1.5;

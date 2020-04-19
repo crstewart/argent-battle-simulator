@@ -15,6 +15,7 @@ public class SteelShield extends Guard {
 
     public SteelShield() {
         this.name = "Steel Shield";
+        this.description = "Blocks melee and ranged attacks, except for armor piercing moves";
         this.initiateMessage = "readies his Steel Shield";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to defend the attack!";

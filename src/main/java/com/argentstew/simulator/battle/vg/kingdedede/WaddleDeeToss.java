@@ -17,6 +17,7 @@ public class WaddleDeeToss extends RangedAttack {
     public WaddleDeeToss() {
         super();
         this.name = "Waddle Dee Toss";
+        this.description = "Has 50% additional critical hit chance";
         this.power = 55;
         this.variance = 3;
         this.speed = 1;

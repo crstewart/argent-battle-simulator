@@ -18,6 +18,7 @@ public class Frostbolt extends MagicAttack {
     public Frostbolt() {
         super();
         this.name = "Frostbolt";
+        this.description = "If the user is 'Frostbitten' this always critical hits, else applies 'Frostbitten'";
         this.power = 65;
         this.variance = 6;
         this.speed = 1.5;

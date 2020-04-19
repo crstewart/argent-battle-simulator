@@ -17,6 +17,7 @@ public class Cleave extends MeleeAttack {
     public Cleave() {
         super();
         this.name = "Cleave";
+        this.description = "Requires Arsene";
         this.power = 95;
         this.variance = 9;
         this.speed = 1;

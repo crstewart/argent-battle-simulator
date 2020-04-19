@@ -20,6 +20,7 @@ public class SigmaVirus extends RangedXStrike {
     public SigmaVirus() {
         super();
         this.name = "Sigma Virus";
+        this.description = "Always critical hits mechs";
         this.power = 160;
         this.variance = 10;
         this.speed = 1.5;

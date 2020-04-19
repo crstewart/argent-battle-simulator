@@ -20,6 +20,7 @@ public class M67FragGrenade extends RangedAttack {
     public M67FragGrenade() {
         super();
         this.name = "M67 Fragmentation Grenade";
+        this.description = "3 ammo";
         this.power = 80;
         this.variance = 10;
         this.speed = 3;

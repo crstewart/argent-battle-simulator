@@ -14,6 +14,7 @@ public class MetalCap extends Guard {
 
     public MetalCap() {
         this.name = "Metal Cap";
+        this.description = "Blocks all guardable attacks, reducing damage by 95%";
         this.initiateMessage = "puts on his Metal Cap!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to block the attack!";

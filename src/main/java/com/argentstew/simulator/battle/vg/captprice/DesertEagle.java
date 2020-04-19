@@ -21,6 +21,7 @@ public class DesertEagle extends RangedAttack {
     public DesertEagle() {
         super();
         this.name = "Desert Eagle";
+        this.description = "7 ammo";
         this.power = 65;
         this.variance = 7;
         this.speed = 2;

@@ -21,6 +21,7 @@ public class M1911 extends RangedAttack {
     public M1911() {
         super();
         this.name = "Colt .45";
+        this.description = "7 ammo";
         this.power = 55;
         this.variance = 6;
         this.speed = 1.5;

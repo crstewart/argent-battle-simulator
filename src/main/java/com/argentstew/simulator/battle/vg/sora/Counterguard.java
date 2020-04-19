@@ -15,6 +15,7 @@ public class Counterguard extends Guard {
 
     public Counterguard() {
         this.name = "Counterguard";
+        this.description = "Blocks melee attacks, reducing damage by 50% and countering and gaining 3 SP";
         this.initiateMessage = "uses Counterguard!";
         this.successMessage = "defends the attack!";
         this.failureMessage = "failed to defend the attack!";

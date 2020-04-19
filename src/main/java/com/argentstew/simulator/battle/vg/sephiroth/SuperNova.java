@@ -20,6 +20,7 @@ public class SuperNova extends MagicXStrike {
     public SuperNova() {
         super();
         this.name = "Super Nova";
+        this.description = "Always critical hits";
         this.power = 120;
         this.variance = 6;
         this.speed = 10;

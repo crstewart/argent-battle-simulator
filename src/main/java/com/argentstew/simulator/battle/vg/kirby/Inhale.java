@@ -22,6 +22,7 @@ public class Inhale extends MeleeAttack {
     public Inhale() {
         super();
         this.name = "Inhale";
+        this.description = "Copies an attack from the opponent on success";
         this.power = 75;
         this.variance = 4;
         this.speed = 1;

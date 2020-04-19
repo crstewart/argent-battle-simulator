@@ -21,6 +21,7 @@ public class PsiShieldBeta extends Guard {
 
     public PsiShieldBeta() {
         this.name = "PSI Shield Beta";
+        this.description = "Uses 10 SP, reflecting melee attacks";
         this.initiateMessage = "tried PSI Shield Beta!";
         this.successMessage = "was enveloped by a shield, reflecting the attack!";
         this.failureMessage = "failed to defend the attack!";

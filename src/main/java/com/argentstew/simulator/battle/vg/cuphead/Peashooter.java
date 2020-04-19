@@ -19,6 +19,7 @@ public class Peashooter extends MagicAttack {
     public Peashooter() {
         super();
         this.name = "Peashooter";
+        this.description = "Gains 1 SP";
         this.power = 40;
         this.variance = 10;
         this.speed = 1;

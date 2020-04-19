@@ -18,6 +18,7 @@ public class BladeBeamLimitBreak extends RangedAttack {
     public BladeBeamLimitBreak() {
         super();
         this.name = "Blade Beam (Limit Break)";
+        this.description= "Uses all SP";
         this.power = 180;
         this.variance = 16;
         this.speed = 1;

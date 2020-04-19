@@ -19,6 +19,7 @@ public class PulsePistols extends RangedAttack {
     public PulsePistols() {
         super();
         this.name = "Pulse Pistols";
+        this.description = "Gains 35 SP";
         this.power = 50;
         this.variance = 16;
         this.speed = 1;
