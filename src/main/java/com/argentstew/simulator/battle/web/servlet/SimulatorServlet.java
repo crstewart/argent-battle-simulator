@@ -1,6 +1,8 @@
 package com.argentstew.simulator.battle.web.servlet;
 
+import com.argentstew.simulator.battle.web.model.FighterDTO;
 import com.argentstew.simulator.battle.web.model.SimulationResult;
+import com.argentstew.simulator.battle.web.service.FighterService;
 import com.argentstew.simulator.battle.web.service.SimulatorService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -31,10 +33,12 @@ public class SimulatorServlet {
     private static final Logger LOG = LogManager.getLogger(SimulatorServlet.class);
 
     private final SimulatorService simulatorService;
+    private final FighterService fighterService;
 
     @Autowired
-    public SimulatorServlet(SimulatorService simulatorService) {
+    public SimulatorServlet(SimulatorService simulatorService, FighterService fighterService) {
         this.simulatorService = simulatorService;
+        this.fighterService = fighterService;
     }
 
     @GetMapping(path = "/simulation", produces = APPLICATION_JSON_VALUE)
@@ -77,6 +81,24 @@ public class SimulatorServlet {
 
     @GetMapping(path = "/fighters", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<String>> getFighters() {
-        return new ResponseEntity<>(simulatorService.getFighters(), HttpStatus.OK);
+        try {
+            return new ResponseEntity<>(fighterService.getFighters(), HttpStatus.OK);
+        } catch (Exception e) {
+            LOG.error("Unknown error occurred. Please contact the administrator.", e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping(path = "/fighters/{name}", produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<FighterDTO> getFighterByName(@PathVariable("name") String name) {
+        try {
+            return new ResponseEntity<>(fighterService.getFighter(name), HttpStatus.OK);
+        } catch (IllegalStateException e) {
+            LOG.error("Could not fetch fighter " + name, e);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        } catch (Exception e) {
+            LOG.error("Unknown error occurred. Please contact the administrator.", e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

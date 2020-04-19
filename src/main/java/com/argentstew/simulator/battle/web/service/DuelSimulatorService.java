@@ -74,10 +74,4 @@ public class DuelSimulatorService implements SimulatorService {
         LogFetcher logFetcher = new LogFetcher(id);
         return logFetcher.getFile();
     }
-
-    @Override
-    public List<String> getFighters() {
-        VgFighterFactory.FIGHTERS.sort(String::compareTo);
-        return VgFighterFactory.FIGHTERS;
-    }
 }

@@ -16,6 +16,4 @@ public interface SimulatorService {
     SimulationResult run(String fighter1Name, String fighter2Name) throws IOException;
 
     String fetchSimulation(String id) throws IOException;
-
-    List<String> getFighters();
 }
