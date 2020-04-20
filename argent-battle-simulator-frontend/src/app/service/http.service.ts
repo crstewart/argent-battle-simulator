@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {SimulationResult} from "../model/simulation-result";
 import {Observable} from "rxjs";
+import {Fighter} from "../model/fighter";
 
 @Injectable()
 export class HttpService {
@@ -23,7 +24,11 @@ export class HttpService {
         return this.httpClient.get<string[]>("fighters");
     }
 
-    getDownloadLink(id: string) {
+    public getDownloadLink(id: string) {
         return "files/" + id + ".txt";
+    }
+
+    public getFighter(name: string): Observable<Fighter> {
+        return this.httpClient.get<Fighter>("fighters/" + name);
     }
 }

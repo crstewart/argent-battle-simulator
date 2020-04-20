@@ -1,0 +1,87 @@
+<div class="border">
+    <div class="character-select">
+        <label for="fighter1select">Select a fighter to view their details: </label>
+        <select id="fighter1select" name="fighter1name" [ngModel]="selectedFighter == null ? null : selectedFighter.name"
+                (ngModelChange)="setFighter($event)" required>
+            <option *ngFor="let fighter of fighters" [value]="fighter">{{fighter}}</option>
+        </select>
+    </div>
+</div>
+<div *ngIf="selectedFighter != null" class="border">
+    <div class="character-details">
+        <span class="name" [innerText]="selectedFighter.name"></span><br/>
+        <br/>
+        <em [innerText]="selectedFighter.description"></em><br/>
+        Classifications: <span [innerText]="selectedFighter.classifications.join(', ')"></span><br/>
+        <br/>
+        <table>
+            <tr>
+                <td [innerText]="'HP: ' + selectedFighter.hp + '/' + selectedFighter.hp"></td>
+                <td [innerText]="'SP: ' + selectedFighter.sp + '/' + selectedFighter.maxSp"></td>
+            </tr>
+            <tr>
+                <td [innerText]="'Strength: ' + selectedFighter.strength"></td>
+                <td [innerText]="'Speed: ' + selectedFighter.speed"></td>
+            </tr>
+            <tr>
+                <td [innerText]="'Toughness: ' + selectedFighter.toughness"></td>
+                <td [innerText]="'Intellect: ' + selectedFighter.intellect"></td>
+            </tr>
+            <tr>
+                <td [innerText]="'Dexterity: ' + selectedFighter.dexterity"></td>
+                <td [innerText]="'Willpower: ' + selectedFighter.willpower"></td>
+            </tr>
+            <tr>
+                <td [innerText]="'Aim: ' + selectedFighter.aim"></td>
+                <td [innerText]="'Size: ' + selectedFighter.size"></td>
+            </tr>
+            <tr>
+                <td [innerText]="'Agility: ' + selectedFighter.agility"></td>
+                <td [innerText]="'Weight: ' + selectedFighter.weight"></td>
+            </tr>
+        </table>
+        <br/>
+        <span [innerText]="'Traits: ' + ((selectedFighter.traits.length == 0) ? 'NONE' : selectedFighter.traits.join(', '))"></span><br/>
+        <br/>
+        <span>Defenses:</span><br/>
+        <div *ngFor="let defense of selectedFighter.defenses">
+            <span [innerText]="defense"></span><br/>
+        </div>
+        <br/>
+        <span [innerText]="'Strategy: ' + selectedFighter.strategy"></span><br/>
+        <br/>
+        <span>Attacks:</span><br/>
+        <div *ngFor="let attack of selectedFighter.attacks">
+            <span [innerText]="attack.name + ' - Type: ' + attack.attackType + ', Power: ' + attack.power + ' +0-'
+            + attack.variance + ', Speed: ' + attack.speed + ', Elements: ' + attack.attackSubTypes.join(', ')"></span><br/>
+            <div *ngIf="attack.characteristics.length > 0 || attack.description != null">
+                <span [innerText]="attack.characteristics.join(', ')"></span>
+                <span *ngIf="attack.description != null" [innerText]="' (' + attack.description + ')'"></span><br/>
+            </div>
+        </div>
+        <br/>
+        <span>Guards: </span>
+        <span *ngIf="selectedFighter.guards.length == 0">NONE</span>
+        <div *ngIf="selectedFighter.guards.length > 0">
+            <div *ngFor="let guard of selectedFighter.guards">
+                <span [innerText]="guard.name + ' - ' + guard.description"></span>
+            </div>
+        </div>
+        <br/>
+        <span>Heals: </span>
+        <span *ngIf="selectedFighter.heals.length == 0">NONE</span>
+        <div *ngIf="selectedFighter.heals.length > 0">
+            <div *ngFor="let heal of selectedFighter.heals">
+                <span [innerText]="heal.name + ' - ' + heal.description"></span>
+            </div>
+        </div><br/>
+        <br/>
+        <span>X-Strike: </span><br/>
+        <span [innerText]="selectedFighter.xstrike.name + ' - Type: ' + selectedFighter.xstrike.attackType + ', Power: '
+            + selectedFighter.xstrike.power + ' +0-' + selectedFighter.xstrike.variance + ', Speed: '
+            + selectedFighter.xstrike.speed + ', Elements: ' + selectedFighter.xstrike.attackSubTypes.join(', ')"></span><br/>
+        <div *ngIf="selectedFighter.xstrike.description != null">
+            <span [innerText]="' (' + selectedFighter.xstrike.description + ')'"></span><br/>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {SimulationResult} from "../model/simulation-result";
-import {HttpService} from "../service/http.service";
+import {SimulationResult} from "../../model/simulation-result";
+import {HttpService} from "../../service/http.service";
 
 @Component({
     selector: 'simulator-form',

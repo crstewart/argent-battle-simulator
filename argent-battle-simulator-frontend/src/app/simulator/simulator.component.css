@@ -1,0 +1,43 @@
+.introduction {
+    text-align: center;
+    padding: 12px 12px;
+}
+
+.log {
+    white-space: pre-wrap;
+}
+
+.simulator {
+    background: #f6f6f6;
+    border: 4px solid blue;
+    border-radius: 8px;
+    margin: 12px auto;
+    width: 80%;
+    min-width: 400px;
+}
+
+.simulator-result {
+    background: #f6f6f6;
+    border: 4px solid blue;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    margin: 12px auto;
+    width: 80%;
+    min-width: 400px;
+    text-align: center;
+    font-family: "Courier New", monospace;
+}
+
+.download-link {
+    display: inline-block;
+    margin: 12px auto;
+    background: green;
+    text-decoration: none;
+    color: white;
+    padding: 6px 10px;
+    font-family: sans-serif;
+}
+
+.download-link:hover {
+    background: #00CC00;
+}

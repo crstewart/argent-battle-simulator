@@ -15,6 +15,7 @@ public class FighterDTO {
 
     private String name;
     private String description;
+    private List<String> classifications;
 
     // stats
     private int hp;

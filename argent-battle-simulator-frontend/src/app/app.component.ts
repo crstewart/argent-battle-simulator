@@ -1,7 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from "@angular/core";
-import {SimulationResult} from "./model/simulation-result";
-import {SimulatorFormComponent} from "./simulator/simulator-form.component";
-import {HttpService} from "./service/http.service";
+import {Component} from "@angular/core";
 import "rxjs/Rx";
 
 @Component({
@@ -9,22 +6,12 @@ import "rxjs/Rx";
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
 
-    @ViewChild('simulatorForm')
-    simForm: SimulatorFormComponent;
+    standingsUrl: string = "https://drive.google.com/open?id=18fGNF8XuUqKVPYH2ldcGT3Pg8BsnVL3J7_z4FIN44pM";
+    rostersUrl: string = "https://drive.google.com/open?id=1QNitZGBBdI-X2WUlOJY1x168K2YuCX96lgNnMfw0hYQ";
+    scheduleUrl: string = "https://drive.google.com/open?id=1VHaNnRBGD7qIA9sHETvvkBT88_QdGUeEsDnUMGk7LlA";
+    battleLogsUrl: string = "https://drive.google.com/open?id=1u8a1JMBoHlIbh-zL3bj34q58QjTsZ6rV";
+    patchNotesUrl: string = "https://drive.google.com/open?id=1Mmk6LFiReui6zdfptn8PBdpUPqzQLYhXh8IYZj54A2U";
 
-    simulation: SimulationResult;
-
-    constructor(private httpService: HttpService) {
-    }
-
-    ngAfterViewInit(): void {
-        this.simForm.onSimulationRun
-            .subscribe((data: SimulationResult) => this.simulation = data);
-    }
-
-    getDownloadLink(id: string): string {
-        return this.httpService.getDownloadLink(id)
-    }
 }

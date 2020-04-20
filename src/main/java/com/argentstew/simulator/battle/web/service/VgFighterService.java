@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.action.attack.*;
 import com.argentstew.simulator.battle.action.defense.Guard;
 import com.argentstew.simulator.battle.action.defense.Heal;
 import com.argentstew.simulator.battle.fighter.Fighter;
+import com.argentstew.simulator.battle.fighter.FighterClassification;
 import com.argentstew.simulator.battle.trait.Trait;
 import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 import com.argentstew.simulator.battle.web.model.AttackDTO;
@@ -51,6 +52,11 @@ public class VgFighterService implements FighterService {
 
         dto.setName(fighter.getName());
         dto.setDescription(fighter.getDescription());
+        List<String> classifications = new ArrayList<>();
+        for (FighterClassification classification : fighter.getClassifications()) {
+            classifications.add(classification.toString());
+        }
+        dto.setClassifications(classifications);
 
         dto.setHp(fighter.getMaxHp());
         dto.setSp(fighter.getMp());
