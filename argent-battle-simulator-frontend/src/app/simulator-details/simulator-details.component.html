@@ -1,0 +1,158 @@
+<div class="border">
+    <div class="simulator-description">
+        <p>
+            The Argent Battle Simulator takes a one-on-one duel between two characters and plays out the battle between
+            them.
+        </p>
+        <h2>Overview</h2>
+        <p>
+            The Argent Battle Simulator is written in Java. The source code is also available n GitHub (link in the footer)
+            if you want to take a peek at the inner workings of the simulator.
+        </p>
+        <p>
+            The Argent Battle Simulator runs battles on a 5x1 grid in a turn-based RPG manner. The fighters start at
+            positions 2 and 4 on the grid, facing each other. Every turn both fighters take one action; they have the
+            option to attack, defend, or move. The decision is made using a strategy based on weighted RNG. The weights
+            for various actions are set at the beginning of the battle. While most fighters are weighted in a balanced
+            manner between attack and defense, some are weighted toward attacks while others favor defensive tactics.
+            Weights also change over time as the fighter determines how effective each action is against the opponent.
+        </p>
+        <p>
+            Attacks are split into three categories: Melee, ranged, and magic. Damage done by these attacks is
+            determined by a mathematical formula based on the power and variance assigned to the attack plus the stats
+            for a character. The speed of the attack is determined by the attack’s speed. If a character is struck by
+            an attack before they can execute their own action, they have a chance of being stunned by the faster
+            attack. When stunned a character cannot act for that turn. Attacks that require melee range have their
+            speed in part determined by how far away they are from the other character.
+        </p>
+        <p>
+            Fighters each have a set of statistics to help decide how they fight. Most of these stats will be familiar
+            to those who play RPGs:
+        </p>
+        <ul>
+            <li><strong>HP</strong> is the amount of damage a character can take before they are KO’d.</li>
+            <li><strong>SP</strong> is the amount of magic or special power that is used or built up over time for
+                certain attacks. This only applies to certain characters.
+            <li><strong>Strength</strong> increases a fighter’s damage with melee attacks. It also factors into the
+                ability not to be stunned by opposing melee attacks.</li>
+            <li><strong>Toughness</strong> determines the fighter’s ability to resist stun from melee and ranged attacks.</li>
+            <li><strong>Dexterity</strong> factors into the ability to hit with melee attacks. It also increases damage
+                done with ranged attacks.</li>
+            <li><strong>Aim</strong> determines a character’s ability to hit with ranged attacks, as well as their
+                critical hit chance.</li>
+            <li><strong>Agility</strong> factors into a character’s ability to critical hit with melee and ranged
+                attacks. Higher numbers also allow them to dodge better.</li>
+            <li><strong>Speed</strong> factors into a character’s dodge chance. It also allows them to move on the
+                battlefield faster.</li>
+            <li><strong>Intellect</strong> increases a fighter’s damage with magic attacks. It also affects the amount
+                of weight given to a particularly effective or ineffective action when determining strategy for future
+                turns. (Higher intellect means they will use effective attacks more often.)</li>
+            <li><strong>Willpower</strong> helps determine the critical hit chance of magic attacks. It also affects
+                the stun chance of incoming magic attacks.</li>
+            <li><strong>Size</strong> factors into the chance an incoming attack will miss the fighter. Smaller
+                characters are harder to hit.</li>
+            <li><strong>Weight</strong> does not take much into account except for certain attacks that use this number.</li>
+        </ul>
+        <h2>X-Strike</h2>
+        <p>
+            Every character in the simulator has a special attack known as the X-Strike. This attack is their most
+            powerful move. X-Strikes require charging through various actions over the course of a battle. The X-Strike
+            meter fills up infinitely during a battle; however, once a character hits 20 on their meter they can spend
+            20 X-Strike points to use this powerful attack. X-Strikes cannot be blocked or dodged. X-Strikes have a high
+            weight in all strategies, so it is likely they are used once their meter fills enough.
+        </p>
+        <p>
+            X-Strike meter is filled up by characters using the following rules:
+        </p>
+        <ul>
+            <li>Every character passively gains 1 point on their X-Strike meter each turn.</li>
+            <li>A successful attack adds an additional 1 X-Strike point to their meter.</li>
+            <li>A successful dodge adds 2 extra X-Strike points to their meter.</li>
+            <li>A successful block adds 3 additional X-Strikes points to their meter.</li>
+        </ul>
+        <p>
+            All-in-all, a successful guard adds 4 points to a character’s X-Strike meter in a single turn! Defensive
+            characters gain X-Strike points faster than others, so it is entirely likely that they use their X-Strike
+            faster than anyone else.
+        </p>
+        <h2>Defenses</h2>
+        <p>
+            Some characters have specific strengths and weaknesses within the simulator. There are a lot of different
+            attack types within the simulator. For example, Slash attacks come from swords and daggers while Explosive
+            attacks come from bombs and grenades. All attacks, including X-Strikes, have their own attack type or types.
+            The effectiveness of an attack (and whether or not it is weighted higher or lower by a character mid-fight)
+            is based on how strong or weak the opponent is to that attack.
+        </p>
+        <h2>Traits</h2>
+        <p>
+            Some characters in the simulator have special traits that aid them passively in battle. The list of traits
+            are as follows:
+        </p>
+        <ul>
+            <li><strong>Rival</strong> allows a hero to deal extra damage to the villain they fight most often. For
+                example, Mario deals 10% additional damage to Bowser on all his attacks.</li>
+            <li><strong>Natural Agility</strong> allows a character to dodge gunfire, marked as BULLET_SPEED in the
+                character descriptions.</li>
+            <li><strong>Hazardous</strong> applies to characters with spiky bodies. They deal small amounts of passive
+                damage to anyone who attacks them in physical combat (punches, kicks, headbutts, etc.)</li>
+            <li><strong>Mech Rider</strong> applies to characters like Dr. Wily and Tron Bonne who ride mechs into
+                battle. They have a passive damage reduction on all incoming attacks. However, critical hits apply
+                additional damage to them.</li>
+            <li><strong>Bounty Hunter</strong> allows a character to deal a small amount of additional damage to
+                humanoid and alien characters.</li>
+            <li><strong>Maverick Hunter</strong> is unique to Zero. It allows him to deal additional damage to
+                mechs and mech riders.</li>
+            <li><strong>Ex-Maverick Hunter</strong> is unique to Sigma. It allows him to deal a small amount of bonus
+                damage to humanoids and mechs.</li>
+            <li><strong>Monster Hunter</strong> allows a character to deal additional damage to monster characters like
+                Mewtwo and Sans.</li>
+            <li><strong>Animal Hunter</strong> allows a character to deal additional damage to animal characters like
+                Sonic and Pikachu.</li>
+            <li><strong>Dragon Slayer</strong> allows a character to deal a large amount of additional damage to dragon
+                characters such as Charizard and Spyro.</li>
+            <li><strong>Demon Slayer</strong> allows a character to deal additional damage to characters with demonic
+                elements such as Akuma and Diablo.</li>
+            <li><strong>Barrier Change</strong> is unique to Magus. Whenever he uses a spell, he gains passive armor
+                against all attacks of the opposing element. However, he gains a large weakness to the same element
+                as the attack.</li>
+            <li><strong>Trickster</strong> is unique to Joker. Whenever he summons a persona, he gains the weaknesses
+                and resistances of the summon.</li>
+        </ul>
+        <h2>Battle Logs</h2>
+        <p>
+            Every battle in the simulator creates a battle log that is made available to all managers of the league. It
+            gives a fun description of how the battle went for their fighters in the simulator. A typical log looks
+            like this:
+        </p>
+        <p class="battle-log-example">
+            Today's battle: Mario vs. Sonic!<br/>
+            Mario: 'Here we go!'<br/>
+            Sonic: 'Sonic's the name. Speed's my game.'<br/>
+            FIGHT!<br/>
+            ----- Turn 1 -----<br/>
+            Sonic readies their Wind-Up Punch attack!<br/>
+            Mario attempts to dodge!<br/>
+            Mario dodges the attack!<br/>
+            Status: Mario (150/150) [3/20] vs Sonic (140/140) [1/20]<br/>
+            ----- Turn 2 -----<br/>
+            Sonic retreats!<br/>
+            Mario attacks Sonic with Koopa Toss!<br/>
+            Sonic takes 20 damage!<br/>
+            Sonic (120/140) [2/20]<br/>
+            Status: Mario (150/150) [5/20] vs Sonic (120/140) [2/20]<br/>
+            ...<br/>
+            ----- Turn 15 -----<br/>
+            Mario unleashes their X-STRIKE!<br/>
+            Mario attacks Sonic with Mario Finale!<br/>
+            Sonic takes 54 damage!<br/>
+            Sonic (0/140) [19/20]<br/>
+            Status: Mario (30/150) [14/20] vs Sonic (0/140) [19/20]<br/>
+            Mario wins!<br/>
+            Mario: 'Yahoo! Mario's the winner!
+        </p>
+        <p>
+            HP is shown in parentheses () and X-Strike meter is shown in brackets []. Each character enters with one of
+            their entry lines chosen at random. When a character wins, they celebrate with a victory quote.
+        </p>
+    </div>
+</div>

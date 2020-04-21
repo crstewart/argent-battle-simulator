@@ -1,0 +1,21 @@
+.border {
+    background: #f6f6f6;
+    border: 4px solid blue;
+    border-radius: 8px;
+    margin: 12px auto;
+    width: 80%;
+    min-width: 400px;
+}
+
+.simulator-description {
+    margin: 16px auto;
+    padding: 0 40px;
+}
+
+.battle-log-example {
+    margin: 0 auto;
+    padding: 8px;
+    width: 50%;
+    font-family: monospace;
+    border: 2px solid black;
+}

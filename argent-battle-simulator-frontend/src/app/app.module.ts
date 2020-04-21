@@ -9,12 +9,16 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {CharacterDetailsComponent} from "./character-details/character-details.component";
 import {SimulatorComponent} from "./simulator/simulator.component";
+import {SimulatorDetailsComponent} from "./simulator-details/simulator-details.component";
+import {PatchNotesComponent} from "./patch-notes/patch-notes.component";
 
 @NgModule({
     declarations: [
         AppComponent,
         SimulatorComponent,
+        SimulatorDetailsComponent,
         CharacterDetailsComponent,
+        PatchNotesComponent,
         SimulatorFormComponent
     ],
     imports: [
