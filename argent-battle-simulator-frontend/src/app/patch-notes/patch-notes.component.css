@@ -11,3 +11,15 @@
     margin: 16px auto;
     padding: 0 40px;
 }
+
+@media screen and (max-width: 640px) {
+    .border {
+        width: 90%;
+        min-width: 160px;
+        max-width: 640px;
+    }
+
+    .patch-notes {
+        padding: 0 20px;
+    }
+}

@@ -12,6 +12,13 @@ export class AppComponent {
     rostersUrl: string = "https://drive.google.com/open?id=1QNitZGBBdI-X2WUlOJY1x168K2YuCX96lgNnMfw0hYQ";
     scheduleUrl: string = "https://drive.google.com/open?id=1VHaNnRBGD7qIA9sHETvvkBT88_QdGUeEsDnUMGk7LlA";
     battleLogsUrl: string = "https://drive.google.com/open?id=1u8a1JMBoHlIbh-zL3bj34q58QjTsZ6rV";
-    patchNotesUrl: string = "https://drive.google.com/open?id=1Mmk6LFiReui6zdfptn8PBdpUPqzQLYhXh8IYZj54A2U";
 
+    toggleLinks(id: string) {
+        let links = document.getElementById(id);
+        if (links.style.display === "block") {
+            links.style.display = "none";
+        } else {
+            links.style.display = "block";
+        }
+    }
 }

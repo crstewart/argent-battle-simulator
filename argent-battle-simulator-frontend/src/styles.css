@@ -8,3 +8,10 @@ h1.title {
     font-size: 50pt;
     text-align: center;
 }
+
+@media screen and (max-width: 640px) {
+    h1.title {
+        font-size: 20pt;
+        text-align: center;
+    }
+}

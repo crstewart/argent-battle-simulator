@@ -13,9 +13,22 @@
 }
 
 .battle-log-example {
+    background: white;
     margin: 0 auto;
     padding: 8px;
     width: 50%;
     font-family: monospace;
     border: 2px solid black;
+}
+
+@media screen and (max-width: 640px) {
+    .border {
+        width: 90%;
+        min-width: 160px;
+        max-width: 640px;
+    }
+
+    .battle-log-example {
+        width: 80%;
+    }
 }

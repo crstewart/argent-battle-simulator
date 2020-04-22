@@ -1,12 +1,14 @@
 <nav id="nav-bar">
-    <ul class="nav">
+    <a class="hamburger" (click)="toggleLinks('externalLinks')">&#8801;</a>
+    <ul id="externalLinks" class="nav">
         <li><a [href]="this.standingsUrl" target="_blank">Standings</a></li>
         <li><a [href]="this.rostersUrl" target="_blank">Rosters</a></li>
         <li><a [href]="this.scheduleUrl" target="_blank">Schedule</a></li>
         <li><a [href]="this.battleLogsUrl" target="_blank">Battle Logs</a></li>
     </ul>
     <br/>
-    <ul class="nav">
+    <a class="hamburger" (click)="toggleLinks('internalLinks')">&#8801;</a>
+    <ul id="internalLinks" class="nav">
         <li><a routerLink="/" routerLinkActive="active">Home</a></li>
         <li><a routerLink="/how-it-works" routerLinkActive="active">How It Works</a></li>
         <li><a routerLink="/details" routerLinkActive="active">Character Details</a></li>
