@@ -1,6 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {SimulationResult} from "../../model/simulation-result";
 import {HttpService} from "../../service/http.service";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {checkIfMirrorMatch} from "../../validator/mirror-match-validator";
 
 @Component({
     selector: 'simulator-form',
@@ -8,6 +10,8 @@ import {HttpService} from "../../service/http.service";
     styleUrls: ['./simulator-form.component.css']
 })
 export class SimulatorFormComponent implements OnInit {
+
+    form: FormGroup;
 
     fighters: string[];
 
@@ -17,18 +21,31 @@ export class SimulatorFormComponent implements OnInit {
     @Output()
     onSimulationRun: EventEmitter<SimulationResult> = new EventEmitter<SimulationResult>();
 
-    constructor(private httpService: HttpService) {}
+    constructor(private formBuilder: FormBuilder, private httpService: HttpService) {}
 
-    setFighter1(event: Event) {
-        this.fighter1 = ""+event;
+    get formControls() {
+        return this.form.controls;
     }
 
-    setFighter2(event: Event) {
-        this.fighter2 = ""+event;
+    get isMirrorMatch() {
+        return this.formControls.fighter1?.errors?.mirrorMatch || this.formControls.fighter2?.errors?.mirrorMatch;
+    }
+
+    setFighter1() {
+        this.fighter1 = this.formControls.fighter1?.value;
+    }
+
+    setFighter2() {
+        this.fighter2 = this.formControls.fighter2?.value;
     }
 
     ngOnInit(): void {
         this.httpService.getFighters().subscribe((data: string[]) => this.fighters = data);
+
+        this.form = this.formBuilder.group({
+            fighter1: new FormControl(this.fighter1, [Validators.required, checkIfMirrorMatch]),
+            fighter2: new FormControl(this.fighter2, [Validators.required, checkIfMirrorMatch])
+        });
     }
 
     onSubmit() {

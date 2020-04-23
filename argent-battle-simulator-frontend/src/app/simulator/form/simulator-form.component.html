@@ -1,19 +1,20 @@
-<div>
-    <form>
+<div class="simulator-form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="character-select">
             <label for="fighter1select">Select Fighter 1: </label>
-            <select id="fighter1select" name="fighter1name" [ngModel]="fighter1" (ngModelChange)="setFighter1($event)" required>
+            <select id="fighter1select" name="fighter1name" formControlName="fighter1" (change)="setFighter1()">
                 <option *ngFor="let fighter of fighters" [value]="fighter">{{fighter}}</option>
             </select>
         </div>
 
         <div class="character-select">
             <label for="fighter2select">Select Fighter 2: </label>
-            <select id="fighter2select" name="fighter2name" [ngModel]="fighter2" (ngModelChange)="setFighter2($event)" required>
+            <select id="fighter2select" name="fighter2name" formControlName="fighter2" (change)="setFighter2()">
                 <option *ngFor="let fighter of fighters" [value]="fighter">{{fighter}}</option>
             </select>
         </div>
 
-        <input id="sim-form-submit" value="Submit" type="button" (click)="onSubmit()"/>
+        <input id="sim-form-submit" value="Submit" [disabled]="form.invalid" type="submit"/>
+        <span class="error" *ngIf="isMirrorMatch">Cannot select same character twice!</span>
     </form>
 </div>

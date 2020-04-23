@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {SimulatorFormComponent} from "./simulator/form/simulator-form.component";
 import {HttpService} from "./service/http.service";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CharacterDetailsComponent} from "./character-details/character-details.component";
 import {SimulatorComponent} from "./simulator/simulator.component";
 import {SimulatorDetailsComponent} from "./simulator-details/simulator-details.component";
@@ -25,6 +25,7 @@ import {PatchNotesComponent} from "./patch-notes/patch-notes.component";
         BrowserModule,
         HttpClientModule,
         FormsModule,
+        ReactiveFormsModule,
         AppRoutingModule
     ],
     providers: [HttpService],
