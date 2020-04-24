@@ -3,6 +3,8 @@ package com.argentstew.simulator.battle.web.log;
 import com.argentstew.simulator.battle.logger.BattleLogger;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.UUID;
 
@@ -80,5 +82,10 @@ public class WebLogger implements BattleLogger {
     @Override
     public void debug(String logMessage) {
         // no-op
+    }
+
+    public void cleanup() throws IOException {
+        String filename = fileDir + uuid + ".txt";
+        Files.delete(Paths.get(filename));
     }
 }

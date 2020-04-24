@@ -21,7 +21,14 @@ dependencies {
 
     compileOnly 'org.projectlombok:lombok:1.18.8'
 
-    testCompile 'junit:junit:4.12'
+    testCompile 'org.junit.jupiter:junit-jupiter:5.6.2'
+    testCompile 'org.mockito:mockito-core:3.3.3'
+    testCompile 'org.mockito:mockito-junit-jupiter:3.3.3'
+    testCompile ('org.springframework.boot:spring-boot-starter-test:2.2.6.RELEASE') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
 }
 
 task fatjar(type: Jar) {
@@ -33,4 +40,8 @@ task fatjar(type: Jar) {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
     with jar
+}
+
+test {
+    useJUnitPlatform()
 }

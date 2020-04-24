@@ -12,7 +12,7 @@ export class HttpService {
     constructor(private httpClient: HttpClient) {}
 
     public getSimulation(fighter1Name: string, fighter2Name: string): Observable<SimulationResult> {
-        return this.httpClient.get<SimulationResult>("simulation", {
+        return this.httpClient.get<SimulationResult>("v1/simulation", {
             params: {
                 fighter1: fighter1Name,
                 fighter2: fighter2Name
@@ -21,14 +21,14 @@ export class HttpService {
     }
 
     public getFighters(): Observable<string[]> {
-        return this.httpClient.get<string[]>("fighters");
+        return this.httpClient.get<string[]>("v1/fighters");
     }
 
     public getDownloadLink(id: string) {
-        return "files/" + id + ".txt";
+        return "v1/files/" + id + ".txt";
     }
 
     public getFighter(name: string): Observable<Fighter> {
-        return this.httpClient.get<Fighter>("fighters/" + name);
+        return this.httpClient.get<Fighter>("v1/fighters/" + name);
     }
 }
