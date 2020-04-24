@@ -19,11 +19,11 @@ public class WebLogger implements BattleLogger {
     private String fileDir;
     private String uuid;
     private FileWriter fileWriter;
-    private StringWriter stringWriter;
+    private Writer writer;
 
-    public WebLogger(StringWriter stringWriter) throws IOException {
+    public WebLogger(Writer writer) throws IOException {
         this.uuid = UUID.randomUUID().toString();
-        this.stringWriter = stringWriter;
+        this.writer = writer;
 
         String filename = "abs.properties";
         Properties properties = new Properties();
@@ -59,7 +59,7 @@ public class WebLogger implements BattleLogger {
 
         try {
             fileWriter.write(logMessage + "\n");
-            stringWriter.write(logMessage + "\n");
+            writer.write(logMessage + "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -73,7 +73,7 @@ public class WebLogger implements BattleLogger {
 
         try {
             fileWriter.write(object.toString() + "\n");
-            stringWriter.write(object.toString() + "\n");
+            writer.write(object.toString() + "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

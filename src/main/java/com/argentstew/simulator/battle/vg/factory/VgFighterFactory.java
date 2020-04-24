@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.vg.factory;
 
+import com.argentstew.simulator.battle.factory.FighterFactory;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.vg.akuma.Akuma;
 import com.argentstew.simulator.battle.vg.albertwesker.AlbertWesker;
@@ -111,22 +112,29 @@ import java.util.List;
  *
  * @author Craig
  */
-public class VgFighterFactory {
+public class VgFighterFactory implements FighterFactory {
 
-    public static final List<String> FIGHTERS = Arrays.asList("Mario", "Luigi", "Peach", "Bowser", "Donkey Kong",
-            "Diddy Kong", "Yoshi", "Wario", "Link", "Zelda", "Ganondorf", "Pikachu", "Charizard", "Mewtwo",
-            "Samus Aran", "Ridley", "Fox McCloud", "Kirby", "King Dedede", "Marth", "Ness", "Captain Falcon", "Pit",
-            "Inkling", "Mega Man", "Dr. Wily", "Zero", "Sigma", "Tron Bonne", "Ryu", "Chun Li", "Akuma",
-            "Leon Kennedy", "Albert Wesker", "Viewtiful Joe", "Morrigan Aensland", "Dante", "Arthur", "Sonic", "Tails",
-            "Dr. Eggman", "Vyse", "Cloud Strife", "Squall Leonhart", "Kefka Palazzo", "Sephiroth", "Erdrick", "Sora",
-            "Crono", "Magus", "Crash Bandicoot", "Spyro", "Jak & Daxter", "Ratchet & Clank", "Nathan Drake", "Kratos",
-            "Cole MacGrath", "Sly Cooper", "Solid Snake", "Simon Belmont", "Pac-Man", "Heihachi Mishima", "KOS-MOS",
-            "Lloyd Irving", "Gordon Freeman", "Heavy", "Master Chief", "Marcus Fenix", "Steve", "Niko Bellic",
-            "John Marston", "Big Daddy", "Terry Bogard", "Handsome Jack", "Rayman", "Ezio Auditore",
-            "Prince of Persia", "Thrall", "Jaina Proudmoore", "Arthas Menethil", "Diablo", "Sarah Kerrigan", "Tracer",
-            "Sub-Zero", "Scorpion", "Bomberman", "Banjo & Kazooie", "Lara Croft", "Commander Shepard",
-            "Ryu Hayabusa", "Dovahkiin", "Shovel Knight", "Sans", "Joker", "Doom Slayer", "Captain Price",
-            "Cuphead", "Guybrush Threepwood", "Draven", "Geralt of Rivia");
+    public static final List<String> FIGHTERS = Arrays.asList(Mario.NAME, Luigi.NAME, Bowser.NAME, Peach.NAME,
+            DonkeyKong.NAME, DiddyKong.NAME, Yoshi.NAME, Wario.NAME, Link.NAME, Zelda.NAME, Ganondorf.NAME,
+            Pikachu.NAME, Charizard.NAME, Mewtwo.NAME, Samus.NAME, Ridley.NAME, Fox.NAME, Kirby.NAME, KingDedede.NAME,
+            Marth.NAME, Ness.NAME, CaptainFalcon.NAME, Pit.NAME, Inkling.NAME, MegaMan.NAME, DrWily.NAME, Zero.NAME,
+            Sigma.NAME, TronBonne.NAME, Ryu.NAME, ChunLi.NAME, Akuma.NAME, LeonKennedy.NAME, AlbertWesker.NAME,
+            ViewtifulJoe.NAME, Morrigan.NAME, Dante.NAME, Arthur.NAME, Sonic.NAME, Tails.NAME, DrEggman.NAME, Vyse.NAME,
+            Cloud.NAME, Squall.NAME, Kefka.NAME, Sephiroth.NAME, Erdrick.NAME, Sora.NAME, Crono.NAME, Magus.NAME,
+            CrashBandicoot.NAME, Spyro.NAME, JakAndDaxter.NAME, RatchetAndClank.NAME, NathanDrake.NAME, Kratos.NAME,
+            ColeMacgrath.NAME, SlyCooper.NAME, SolidSnake.NAME, SimonBelmont.NAME, Pacman.NAME, Heihachi.NAME,
+            KOSMOS.NAME, LloydIrving.NAME, GordonFreeman.NAME, Heavy.NAME, MasterChief.NAME, MarcusFenix.NAME,
+            Steve.NAME, NikoBellic.NAME, JohnMarston.NAME, BigDaddy.NAME, TerryBogard.NAME, HandsomeJack.NAME,
+            Rayman.NAME, Ezio.NAME, PrinceOfPersia.NAME, Thrall.NAME, Jaina.NAME, Arthas.NAME, Diablo.NAME,
+            Kerrigan.NAME, Tracer.NAME, SubZero.NAME, Scorpion.NAME, Bomberman.NAME, BanjoKazooie.NAME, LaraCroft.NAME,
+            CommanderShepard.NAME, RyuHayabusa.NAME, Dovahkiin.NAME, ShovelKnight.NAME, Sans.NAME, Joker.NAME,
+            DoomSlayer.NAME, CaptainPrice.NAME, Cuphead.NAME, GuybrushThreepwood.NAME, Draven.NAME, GeraltOfRivia.NAME);
+
+    @Override
+    public List<String> getAllFighters() {
+        FIGHTERS.sort(String::compareTo);
+        return FIGHTERS;
+    }
 
     public Fighter getFighter(String name) {
         switch(name) {

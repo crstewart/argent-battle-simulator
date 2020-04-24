@@ -53,7 +53,6 @@ public class SimulatorController {
         }
 
         try {
-            LOG.info("Running simulation between {} and {}", fighter1, fighter2);
             result = simulatorService.run(fighter1, fighter2);
             return new ResponseEntity<>(result, HttpStatus.OK);
         } catch (Exception e) {

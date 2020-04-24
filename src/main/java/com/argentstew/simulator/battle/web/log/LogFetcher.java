@@ -14,26 +14,24 @@ import java.util.UUID;
  *
  * @author argen
  */
+@Component
 public class LogFetcher {
 
     private String fileDir;
-    private String uuid;
 
-    public LogFetcher(String uuid) throws IOException {
-        this.uuid = uuid;
-
-        String filename = "abs.properties";
-        Properties properties = new Properties();
-        if (new File(filename).exists()) {
-            properties.load(new FileInputStream(filename));
+    public String getFile(String uuid) throws IOException {
+        if (fileDir == null) {
+            String filename = "abs.properties";
+            Properties properties = new Properties();
+            if (Files.exists(Paths.get(filename))) {
+                properties.load(new FileInputStream(filename));
+            }
+            fileDir = properties.getProperty("file.dir", ".");
+            if (!fileDir.endsWith(File.separator)) {
+                fileDir += File.separator;
+            }
         }
-        this.fileDir = properties.getProperty("file.dir", ".");
-        if (!this.fileDir.endsWith(File.separator)) {
-            this.fileDir += File.separator;
-        }
-    }
 
-    public String getFile() throws IOException {
         String filename = fileDir + uuid + ".txt";
         byte[] fileBytes = Files.readAllBytes(Paths.get(filename));
         return new String(fileBytes);

@@ -5,10 +5,10 @@ import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.*;
 import com.argentstew.simulator.battle.action.defense.Guard;
 import com.argentstew.simulator.battle.action.defense.Heal;
+import com.argentstew.simulator.battle.factory.FighterFactory;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.fighter.FighterClassification;
 import com.argentstew.simulator.battle.trait.Trait;
-import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 import com.argentstew.simulator.battle.web.model.AttackDTO;
 import com.argentstew.simulator.battle.web.model.FighterDTO;
 import com.argentstew.simulator.battle.web.model.GuardDTO;
@@ -31,23 +31,23 @@ public class VgFighterService implements FighterService {
 
     private static final Logger LOG = LogManager.getLogger(VgFighterService.class);
 
-    private final VgFighterFactory fighterFactory;
+    private final FighterFactory fighterFactory;
 
     @Autowired
-    public VgFighterService(VgFighterFactory fighterFactory) {
+    public VgFighterService(FighterFactory fighterFactory) {
         this.fighterFactory = fighterFactory;
     }
 
     @Override
     public List<String> getFighters() {
-        VgFighterFactory.FIGHTERS.sort(String::compareTo);
-        return VgFighterFactory.FIGHTERS;
+        return fighterFactory.getAllFighters();
     }
 
     @Override
     public FighterDTO getFighter(String name) {
-        LOG.info("Fetching fighter information for {}", name);
         Fighter fighter = fighterFactory.getFighter(name);
+        LOG.info("Fetching fighter information for {}", fighter.getName());
+
         FighterDTO dto = new FighterDTO();
 
         dto.setName(fighter.getName());
