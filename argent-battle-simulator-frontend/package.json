@@ -5,6 +5,8 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build --outputPath=../src/main/webapp",
+        "prod": "ng build --prod --outputPath=../src/main/webapp",
+        "minify": "uglifyjs --compress --mangle --output ../src/main/webapp/app.min.js -- ../src/main/webapp/*.js",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"

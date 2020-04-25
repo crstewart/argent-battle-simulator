@@ -8,12 +8,12 @@ own simulated battles!
 
 _Note: The simulator is under an LGPL license and thus marked for 
 commercial use. The characters bundled into this project are 
-copyright their respective owners. If using the simulator as is, it
-is meant to be used for parody under fair use and provided free of 
-charge. No one is to use this project for profit without 
-modification and removing the copyrighted characters. Please fork
-this project and modify it as needed if intended to be used for
-profit._
+copyright their respective owners and intended for the purposes of
+demonstration. If using the simulator as is, it is meant to be 
+provided free of charge. No one is to use this project for profit
+without modification and removing the copyrighted characters. 
+Please fork this project and modify it as needed if intended to 
+be used for profit._
 
 ### Getting Started
 
@@ -26,7 +26,14 @@ npm install
 npm run build
 ```
 
-This will install the frontend into `src/main/webapp`. From there,
+This will install the frontend into `src/main/webapp`. When ready
+to build for production, run the follow command:
+                                                       
+```shell script
+npm run prod
+```
+
+From there,
 you can build the server by going into the project root and
 running the Gradle build:
 
@@ -42,16 +49,16 @@ container based on Alpine Linux can be built to run the service.
 
 ### API
 
-`v1/fighters` gets the full list of fighters, sorted in 
+`GET v1/fighters` gets the full list of fighters, sorted in 
 alphabetical order.
 
-`v1/fighters/{name}` gets the fighter information for the given
+`GET v1/fighters/{name}` gets the fighter information for the given
 fighter name, organized in JSON format.
 
-`v1/simulation?fighter1={name1}&fighter2={name2}` runs a
+`GET v1/simulation?fighter1={name1}&fighter2={name2}` runs a
 simulation between two fighters. The two names must be different.
 The returned object is a JSON with the winner, battle log, and a
 UUID name for the stored log.
 
-`v1/files/{uuid}.txt` retrieves the stored file based on the UUID
+`GET v1/files/{id}.txt` retrieves the stored file based on the UUID
 of the run simulation.
