@@ -7,6 +7,8 @@ import com.argentstew.simulator.battle.action.MoveAction;
 import com.argentstew.simulator.battle.action.attack.XStrike;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.defense.Heal;
+import com.argentstew.simulator.battle.action.move.Advance;
+import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.logger.BattleLogger;
 import com.argentstew.simulator.battle.reporting.DamageReport;
@@ -140,9 +142,18 @@ public class DuelBattle implements Battle {
                 battleLogger.log(move.getOwner().getName() + " is stunned by the attack and cannot act!");
                 move.getOwner().getStrategy().adjustWeight(move, move.getFailureAdjustment());
             } else {
-                battleLogger.log(move.getOwner().getName() + " " + move.getMessage());
-                move.move();
-                move.getOwner().getStrategy().adjustWeight(move, move.getSuccessAdjustment());
+                if ((move instanceof Advance && move.getOwner().getArena().canAdvance(move.getOwner())) ||
+                        (move instanceof Retreat && move.getOwner().getArena().canRetreat(move.getOwner()))) {
+                    battleLogger.log(move.getOwner().getName() + " " + move.getMessage());
+                    move.move();
+                    move.getOwner().getStrategy().adjustWeight(move, move.getSuccessAdjustment());
+                } else if (move instanceof Advance) {
+                    battleLogger.log(move.getOwner().getName() + " can no longer advance!");
+                    move.getOwner().getStrategy().adjustWeight(move, move.getFailureAdjustment());
+                } else {
+                    battleLogger.log(move.getOwner().getName() + " can no longer retreat!");
+                    move.getOwner().getStrategy().adjustWeight(move, move.getFailureAdjustment());
+                }
             }
         } else {
             battleLogger.log(move.getOwner().getName() + " " + move.getMessage());
@@ -182,9 +193,14 @@ public class DuelBattle implements Battle {
             }
         } else {
             MoveAction move = (MoveAction) action2;
-            battleLogger.log(move.getOwner().getName() + " " + move.getMessage());
-            move.move();
-            move.getOwner().getStrategy().adjustWeight(move, move.getSuccessAdjustment());
+            if ((move instanceof Advance && move.getOwner().getArena().canAdvance(move.getOwner()))
+                    || move instanceof Retreat) {
+                battleLogger.log(move.getOwner().getName() + " " + move.getMessage());
+                move.move();
+                move.getOwner().getStrategy().adjustWeight(move, move.getSuccessAdjustment());
+            } else {
+                battleLogger.log(move.getOwner().getName() + " can no longer advance!");
+            }
         }
     }
 

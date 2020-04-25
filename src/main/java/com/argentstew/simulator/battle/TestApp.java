@@ -25,6 +25,7 @@ import com.argentstew.simulator.battle.vg.marth.Marth;
 import com.argentstew.simulator.battle.vg.princeofpersia.PrinceOfPersia;
 import com.argentstew.simulator.battle.vg.ridley.Ridley;
 import com.argentstew.simulator.battle.vg.sans.Sans;
+import com.argentstew.simulator.battle.vg.scorpion.Scorpion;
 import com.argentstew.simulator.battle.vg.sonic.Sonic;
 import com.argentstew.simulator.battle.vg.spyro.Spyro;
 import com.argentstew.simulator.battle.vg.tracer.Tracer;
@@ -42,21 +43,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final List<String> FIGHTERS = Arrays.asList("Mario", "Luigi", "Peach", "Bowser", "Donkey Kong",
-            "Diddy Kong", "Yoshi", "Wario", "Link", "Zelda", "Ganondorf", "Pikachu", "Charizard", "Mewtwo",
-            "Samus Aran", "Ridley", "Fox McCloud", "Kirby", "King Dedede", "Marth", "Ness", "Captain Falcon", "Pit",
-            "Inkling", "Mega Man", "Dr. Wily", "Zero", "Sigma", "Tron Bonne", "Ryu", "Chun Li", "Akuma",
-            "Leon Kennedy", "Albert Wesker", "Viewtiful Joe", "Morrigan Aensland", "Dante", "Arthur", "Sonic", "Tails",
-            "Dr. Eggman", "Vyse", "Cloud Strife", "Squall Leonhart", "Kefka Palazzo", "Sephiroth", "Erdrick", "Sora",
-            "Crono", "Magus", "Crash Bandicoot", "Spyro", "Jak & Daxter", "Ratchet & Clank", "Nathan Drake", "Kratos",
-            "Cole MacGrath", "Sly Cooper", "Solid Snake", "Simon Belmont", "Pac-Man", "Heihachi Mishima", "KOS-MOS",
-            "Lloyd Irving", "Gordon Freeman", "Heavy", "Master Chief", "Marcus Fenix", "Steve", "Niko Bellic",
-            "John Marston", "Big Daddy", "Terry Bogard", "Handsome Jack", "Rayman", "Ezio Auditore",
-            "Prince of Persia", "Thrall", "Jaina Proudmoore", "Arthas Menethil", "Diablo", "Sarah Kerrigan", "Tracer",
-            "Sub-Zero", "Scorpion", "Bomberman", "Banjo & Kazooie", "Lara Croft", "Commander Shepard",
-            "Ryu Hayabusa", "Dovahkiin", "Shovel Knight", "Sans", "Joker", "Doom Slayer", "Captain Price",
-            "Cuphead", "Guybrush Threepwood", "Draven", "Geralt of Rivia");
-    private static final String TEST_FIGHTER = ViewtifulJoe.NAME;
+    private static final String TEST_FIGHTER = Scorpion.NAME;
 
     public static void main(String[] args) {
 
@@ -67,7 +54,7 @@ public class TestApp {
 
         VgFighterFactory factory = new VgFighterFactory();
         BattleLogger logger = new NoopBattleLogger();
-        for (String fighter1Name : FIGHTERS) {
+        for (String fighter1Name : VgFighterFactory.FIGHTERS) {
             String fighter2Name = TEST_FIGHTER;
             if (fighter1Name.equals(fighter2Name)) {
                 continue;

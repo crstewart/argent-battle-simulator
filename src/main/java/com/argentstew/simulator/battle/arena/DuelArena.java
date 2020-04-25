@@ -119,4 +119,16 @@ public class DuelArena implements Arena {
 
         return rightFighterPosition;
     }
+
+    public void setFighterPosition(Fighter fighter, int position) {
+        if (fighter == null) {
+            return;
+        }
+
+        if (fighter.equals(leftFighter)) {
+            this.leftFighterPosition = new Position(position, 0);
+        } else {
+            this.rightFighterPosition = new Position(position, 0);
+        }
+    }
 }
