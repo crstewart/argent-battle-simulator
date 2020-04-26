@@ -1,21 +1,14 @@
-<div>
-    <div class="simulator">
-        <p class="introduction">
-            What would happen if Master Chief encountered Pikachu?<br/>
-            Who really would win a match between Mario and Sonic?<br/>
-            <br/>
-            All these questions and more can be answered by the <strong>Argent Battle Simulator</strong>!<br/>
-            <br/>
-            Take it for a test drive here! Choose two fighters to duke it out and see the result of the match below!
-        </p>
-        <simulator-form #simulatorForm></simulator-form>
-    </div>
+<div class="border">
+    <p>
+        Take it for a test drive here! Choose two fighters to duke it out and see the result of the match below!
+    </p>
+    <simulator-form #simulatorForm></simulator-form>
+</div>
 
-    <div *ngIf="simulation != null" class="simulator-result">
-        <a *ngIf="simulation.id != null" class="download-link" target="_blank"
-           [href]="getDownloadLink(simulation.id)">Download Log</a>
-        <div class="log">
-            <p>{{simulation.message}}</p>
-        </div>
+<div *ngIf="simulation != null" class="border simulator-result">
+    <a *ngIf="simulation.id != null" class="download-link" target="_blank"
+       [href]="getDownloadLink(simulation.id)">Download Log</a>
+    <div class="log">
+        <p>{{simulation.message}}</p>
     </div>
 </div>

@@ -14,11 +14,13 @@ export class AppComponent {
     battleLogsUrl: string = "https://drive.google.com/open?id=1u8a1JMBoHlIbh-zL3bj34q58QjTsZ6rV";
 
     toggleLinks(id: string) {
-        let links = document.getElementById(id);
-        if (links.style.display === "block") {
-            links.style.display = "none";
-        } else {
-            links.style.display = "block";
+        if (window.innerWidth <= 640) {
+            let links = document.getElementById(id);
+            if (links.style.display === "block") {
+                links.style.display = "none";
+            } else {
+                links.style.display = "block";
+            }
         }
     }
 }

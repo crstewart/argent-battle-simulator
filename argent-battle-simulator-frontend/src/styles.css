@@ -1,17 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background: #DDEEFF;
+    background: black;
+    color: white;
     font-family: sans-serif;
-}
-
-h1.title {
-    font-size: 50pt;
-    text-align: center;
-}
-
-@media screen and (max-width: 640px) {
-    h1.title {
-        font-size: 20pt;
-        text-align: center;
-    }
 }
