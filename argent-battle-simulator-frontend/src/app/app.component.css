@@ -15,7 +15,7 @@ a.title {
     display: inline-block;
 }
 
-.dropdown:hover ul.nav {
+.hover-menu:hover ul.nav {
     display: block;
 }
 
@@ -43,6 +43,7 @@ ul.nav li a {
     text-decoration: none;
     font-weight: bold;
     margin: 0 auto;
+    width: 150px;
 }
 
 ul.nav li a:hover {
@@ -141,10 +142,9 @@ a.hamburger {
     }
 
     .intro {
-        padding: 20px;
+        padding: 20px 5%;
         width: 70%;
-        background-position: center;
-        background-size: 100%;
-        -moz-background-size: 100%;
+        background-image: none;
+        text-align: center;
     }
 }

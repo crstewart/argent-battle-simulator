@@ -13,14 +13,40 @@ export class AppComponent {
     scheduleUrl: string = "https://drive.google.com/open?id=1VHaNnRBGD7qIA9sHETvvkBT88_QdGUeEsDnUMGk7LlA";
     battleLogsUrl: string = "https://drive.google.com/open?id=1u8a1JMBoHlIbh-zL3bj34q58QjTsZ6rV";
 
-    toggleLinks(id: string) {
-        if (window.innerWidth <= 640) {
-            let links = document.getElementById(id);
-            if (links.style.display === "block") {
-                links.style.display = "none";
+    toggleMenu(isInternal: boolean) {
+        if (AppComponent.hasTouch()) {
+            let internalLinks = document.getElementById("internalLinks");
+            let externalLinks = document.getElementById("externalLinks");
+            if (isInternal) {
+                AppComponent.toggleLinks(internalLinks, externalLinks);
             } else {
-                links.style.display = "block";
+                AppComponent.toggleLinks(externalLinks, internalLinks);
             }
+
         }
+    }
+
+    private static toggleLinks(linksToToggle: HTMLElement, linkstoHide: HTMLElement) {
+        linkstoHide.style.display = "none";
+        if (linksToToggle.style.display === "block") {
+            linksToToggle.style.display = "none";
+        } else {
+            linksToToggle.style.display = "block";
+        }
+    }
+
+    setDropdownClass(): string {
+        let classes: string = "dropdown";
+        if (!AppComponent.hasTouch()) {
+            classes += " hover-menu"
+        }
+
+        return classes;
+    }
+
+    private static hasTouch(): boolean {
+        return 'ontouchstart' in document.documentElement
+            || navigator.maxTouchPoints > 0
+            || navigator.msMaxTouchPoints > 0;
     }
 }

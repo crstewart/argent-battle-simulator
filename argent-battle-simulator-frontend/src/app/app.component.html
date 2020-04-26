@@ -1,8 +1,8 @@
 <div class="main">
     <nav id="nav-bar">
         <a class="title noselect" routerLink="/" routerLinkActive="active">Argent Battle Simulator</a>
-        <div class="dropdown">
-            <a class="hamburger noselect">Details</a>
+        <div [class]="setDropdownClass()">
+            <a class="hamburger noselect" (click)="toggleMenu(true)">Details</a>
             <ul id="internalLinks" class="nav">
                 <li><a routerLink="/" routerLinkActive="active">Home</a></li>
                 <li><a routerLink="/how-it-works" routerLinkActive="active">How It Works</a></li>
@@ -10,8 +10,8 @@
                 <li><a routerLink="/patch-notes" routerLinkActive="active">Patch Notes</a></li>
             </ul>
         </div>
-        <div class="dropdown">
-            <a class="hamburger noselect">League</a>
+        <div [class]="setDropdownClass()">
+            <a class="hamburger noselect" (click)="toggleMenu(false)">League</a>
             <ul id="externalLinks" class="nav">
                 <li><a [href]="this.standingsUrl" target="_blank">Standings</a></li>
                 <li><a [href]="this.rostersUrl" target="_blank">Rosters</a></li>

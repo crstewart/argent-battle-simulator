@@ -41,13 +41,7 @@
 }
 
 @media screen and (max-width: 640px) {
-    .simulator {
-        width: 90%;
-        min-width: 160px;
-        max-width: 640px;
-    }
-
-    .simulator-result {
+    .border {
         width: 90%;
         min-width: 160px;
         max-width: 640px;
