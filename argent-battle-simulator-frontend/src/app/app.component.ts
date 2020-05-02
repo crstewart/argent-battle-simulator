@@ -8,8 +8,6 @@ import "rxjs/Rx";
 })
 export class AppComponent {
 
-    battleLogsUrl: string = "https://drive.google.com/open?id=1u8a1JMBoHlIbh-zL3bj34q58QjTsZ6rV";
-
     toggleMenu(isInternal: boolean) {
         if (AppComponent.hasTouch()) {
             let internalLinks = document.getElementById("internalLinks");
