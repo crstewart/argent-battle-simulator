@@ -1,0 +1,16 @@
+<div class="border">
+    <div class="team-select">
+        <label for="teamselect">Select a team to view their roster or select 'Available Fighters' to see the list of free agents: </label>
+        <select id="teamselect" name="teamselect" [ngModel]="selectedTeam" (ngModelChange)="setTeam($event)" required>
+            <option *ngFor="let team of teams" [value]="team">{{team === '' ? 'Available Fighters' : team}}</option>
+        </select>
+    </div>
+</div>
+<div *ngIf="selectedTeam != null" class="border">
+    <h2>{{selectedTeam === '' ? 'Available Fighters' : selectedTeam}}</h2>
+    <table>
+        <tr *ngFor="let fighter of fighters">
+            <td>{{fighter}}</td>
+        </tr>
+    </table>
+</div>

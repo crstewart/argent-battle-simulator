@@ -12,6 +12,7 @@ import {SimulatorComponent} from "./simulator/simulator.component";
 import {SimulatorDetailsComponent} from "./simulator-details/simulator-details.component";
 import {PatchNotesComponent} from "./patch-notes/patch-notes.component";
 import {StandingsComponent} from "./standings/standings.component";
+import {RostersComponent} from "./rosters/rosters.component";
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import {StandingsComponent} from "./standings/standings.component";
         CharacterDetailsComponent,
         PatchNotesComponent,
         SimulatorFormComponent,
-        StandingsComponent
+        StandingsComponent,
+        RostersComponent
     ],
     imports: [
         BrowserModule,

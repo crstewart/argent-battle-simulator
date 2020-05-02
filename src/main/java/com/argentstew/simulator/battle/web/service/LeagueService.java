@@ -14,6 +14,8 @@ import java.util.List;
  */
 public interface LeagueService {
 
+    List<String> getTeams();
+
     List<StandingsDTO> getStandings();
 
     List<String> getRosterByTeam(String teamName) throws LeagueException;

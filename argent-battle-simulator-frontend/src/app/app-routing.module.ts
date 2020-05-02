@@ -5,6 +5,7 @@ import {SimulatorComponent} from "./simulator/simulator.component";
 import {SimulatorDetailsComponent} from "./simulator-details/simulator-details.component";
 import {PatchNotesComponent} from "./patch-notes/patch-notes.component";
 import {StandingsComponent} from "./standings/standings.component";
+import {RostersComponent} from "./rosters/rosters.component";
 
 const routes: Routes = [
     { path: '', component: SimulatorComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
     { path: 'details', component: CharacterDetailsComponent },
     { path: 'patch-notes', component: PatchNotesComponent },
     { path: 'standings', component: StandingsComponent },
+    { path: 'rosters', component: RostersComponent },
 ];
 
 @NgModule({

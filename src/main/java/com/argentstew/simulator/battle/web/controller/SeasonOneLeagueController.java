@@ -35,6 +35,17 @@ public class SeasonOneLeagueController {
         this.leagueService = leagueService;
     }
 
+    @GetMapping(path = "/teams", produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<String>> getTeams() {
+        try {
+            List<String> teams = leagueService.getTeams();
+            return new ResponseEntity<>(teams, HttpStatus.OK);
+        } catch (Exception e) {
+            LOG.error("Unknown error occurred", e);
+            return new ResponseEntity<>(Collections.emptyList(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @GetMapping(path = "/standings", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<StandingsDTO>> getStandings() {
         try {

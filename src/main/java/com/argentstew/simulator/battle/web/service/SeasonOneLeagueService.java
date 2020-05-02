@@ -43,6 +43,13 @@ public class SeasonOneLeagueService implements LeagueService {
     }
 
     @Override
+    public List<String> getTeams() {
+        List<SeasonOneTeam> teams = teamRepository.findAll();
+        return teams.stream().filter((team) -> !team.getName().equals("Draw")).map(SeasonOneTeam::getName)
+                .sorted().collect(Collectors.toList());
+    }
+
+    @Override
     public List<StandingsDTO> getStandings() {
         List<SeasonOneDivision> divisions = divisionRepository.findAll();
         Map<String, StandingsDTO> teamStandingsMap = new HashMap<>(divisions.size());

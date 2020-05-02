@@ -34,6 +34,10 @@ export class HttpService {
         return this.httpClient.get<Fighter>("v1/fighters/" + name);
     }
 
+    public getTeams(): Observable<string[]> {
+        return this.httpClient.get<string[]>("v1/seasons/1/teams");
+    }
+
     public getStandings(): Observable<Standings[]> {
         return this.httpClient.get<Standings[]>("v1/seasons/1/standings");
     }
