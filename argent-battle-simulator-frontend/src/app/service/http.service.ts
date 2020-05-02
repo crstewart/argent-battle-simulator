@@ -46,6 +46,10 @@ export class HttpService {
         return this.httpClient.get<string[]>("v1/seasons/1/rosters?team=" + teamName);
     }
 
+    public getWeeks(): Observable<number[]> {
+        return this.httpClient.get<number[]>("v1/seasons/1/weeks");
+    }
+
     public getScheduleByWeek(week: number): Observable<Match[]> {
         return this.httpClient.get<Match[]>("v1/seasons/1/schedule?week=" + week);
     }

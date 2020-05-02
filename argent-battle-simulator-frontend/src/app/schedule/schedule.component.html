@@ -1,0 +1,31 @@
+<div class="border">
+    <div class="schedule-select">
+        <label for="teamselect">Filter by team: </label>
+        <select id="teamselect" name="teamselect" [ngModel]="selectedTeam" (ngModelChange)="setTeam($event)" required>
+            <option *ngFor="let team of teams" [value]="team">{{team}}</option>
+        </select>
+    </div>
+    <div class="schedule-select">
+        <label for="weekselect">Filter by week: </label>
+        <select id="weekselect" name="weekselect" [ngModel]="selectedWeek" (ngModelChange)="setWeek($event)" required>
+            <option *ngFor="let week of weeks" [value]="week">{{'Week ' + week}}</option>
+        </select>
+    </div>
+</div>
+<div *ngIf="schedule" class="border">
+    <h2>{{getHeader()}}</h2>
+    <table>
+        <tr class="table-header">
+            <td>Date</td>
+            <td>Home Team</td>
+            <td>Away Team</td>
+            <td>Winner</td>
+        </tr>
+        <tr *ngFor="let match of schedule">
+            <td>{{match.date}}</td>
+            <td>{{match.homeTeam}}</td>
+            <td>{{match.awayTeam}}</td>
+            <td>{{match.winner}}</td>
+        </tr>
+    </table>
+</div>

@@ -13,6 +13,7 @@ import {SimulatorDetailsComponent} from "./simulator-details/simulator-details.c
 import {PatchNotesComponent} from "./patch-notes/patch-notes.component";
 import {StandingsComponent} from "./standings/standings.component";
 import {RostersComponent} from "./rosters/rosters.component";
+import {ScheduleComponent} from "./schedule/schedule.component";
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import {RostersComponent} from "./rosters/rosters.component";
         PatchNotesComponent,
         SimulatorFormComponent,
         StandingsComponent,
-        RostersComponent
+        RostersComponent,
+        ScheduleComponent
     ],
     imports: [
         BrowserModule,

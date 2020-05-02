@@ -92,6 +92,12 @@ public class SeasonOneLeagueService implements LeagueService {
     }
 
     @Override
+    public List<Integer> getWeeks() {
+        List<SeasonOneWeek> weeks = weekRepository.findAll();
+        return weeks.stream().map(SeasonOneWeek::getNumber).collect(Collectors.toList());
+    }
+
+    @Override
     public List<ScheduleDTO> getFullSchedule() {
         List<SeasonOneMatch> matches = matchRepository.findAllByOrderByMatchDateAsc();
         return matches.stream().map(this::mapMatchToDto).collect(Collectors.toList());

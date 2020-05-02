@@ -71,6 +71,17 @@ public class SeasonOneLeagueController {
         }
     }
 
+    @GetMapping(path = "/weeks", produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Integer>> getWeeks() {
+        try {
+            List<Integer> weeks = leagueService.getWeeks();
+            return new ResponseEntity<>(weeks, HttpStatus.OK);
+        } catch (Exception e) {
+            LOG.error("Unknown error occurred", e);
+            return new ResponseEntity<>(Collections.emptyList(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @GetMapping(path = "/schedule", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<ScheduleDTO>> getSchedule(@RequestParam(required = false) Integer week) {
         try {

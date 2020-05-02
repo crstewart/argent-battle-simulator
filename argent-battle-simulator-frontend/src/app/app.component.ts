@@ -8,7 +8,6 @@ import "rxjs/Rx";
 })
 export class AppComponent {
 
-    scheduleUrl: string = "https://drive.google.com/open?id=1VHaNnRBGD7qIA9sHETvvkBT88_QdGUeEsDnUMGk7LlA";
     battleLogsUrl: string = "https://drive.google.com/open?id=1u8a1JMBoHlIbh-zL3bj34q58QjTsZ6rV";
 
     toggleMenu(isInternal: boolean) {

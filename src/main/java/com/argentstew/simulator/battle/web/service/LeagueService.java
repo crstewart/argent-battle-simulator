@@ -20,6 +20,8 @@ public interface LeagueService {
 
     List<String> getRosterByTeam(String teamName) throws LeagueException;
 
+    List<Integer> getWeeks();
+
     List<ScheduleDTO> getFullSchedule();
 
     List<ScheduleDTO> getFullScheduleForTeam(String teamName) throws LeagueException;
