@@ -11,6 +11,7 @@ import {CharacterDetailsComponent} from "./character-details/character-details.c
 import {SimulatorComponent} from "./simulator/simulator.component";
 import {SimulatorDetailsComponent} from "./simulator-details/simulator-details.component";
 import {PatchNotesComponent} from "./patch-notes/patch-notes.component";
+import {StandingsComponent} from "./standings/standings.component";
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import {PatchNotesComponent} from "./patch-notes/patch-notes.component";
         SimulatorDetailsComponent,
         CharacterDetailsComponent,
         PatchNotesComponent,
-        SimulatorFormComponent
+        SimulatorFormComponent,
+        StandingsComponent
     ],
     imports: [
         BrowserModule,

@@ -13,7 +13,7 @@
         <div [class]="setDropdownClass()">
             <a class="hamburger noselect" (click)="toggleMenu(false)">League</a>
             <ul id="externalLinks" class="nav">
-                <li><a [href]="this.standingsUrl" target="_blank">Standings</a></li>
+                <li><a routerLink="/standings" routerLinkActive="active">Standings</a></li>
                 <li><a [href]="this.rostersUrl" target="_blank">Rosters</a></li>
                 <li><a [href]="this.scheduleUrl" target="_blank">Schedule</a></li>
                 <li><a [href]="this.battleLogsUrl" target="_blank">Battle Logs</a></li>

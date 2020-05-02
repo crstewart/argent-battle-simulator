@@ -46,5 +46,4 @@ public class WebApplication extends SpringBootServletInitializer {
         return new HikariDataSource(config);
     }
 
-
 }

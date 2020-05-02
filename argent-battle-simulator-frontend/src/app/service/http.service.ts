@@ -1,8 +1,10 @@
 import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {SimulationResult} from "../model/simulation-result";
 import {Observable} from "rxjs";
 import {Fighter} from "../model/fighter";
+import {Standings} from "../model/standings";
+import {Match} from "../model/match";
 
 @Injectable()
 export class HttpService {
@@ -30,5 +32,25 @@ export class HttpService {
 
     public getFighter(name: string): Observable<Fighter> {
         return this.httpClient.get<Fighter>("v1/fighters/" + name);
+    }
+
+    public getStandings(): Observable<Standings[]> {
+        return this.httpClient.get<Standings[]>("v1/seasons/1/standings");
+    }
+
+    public getRoster(teamName: string): Observable<string[]> {
+        return this.httpClient.get<string[]>("v1/seasons/1/rosters?team=" + teamName);
+    }
+
+    public getScheduleByWeek(week: number): Observable<Match[]> {
+        return this.httpClient.get<Match[]>("v1/seasons/1/schedule?week=" + week);
+    }
+
+    public getScheduleByTeam(team: string): Observable<Match[]> {
+        return this.httpClient.get<Match[]>("v1/seasons/1/schedule/" + team);
+    }
+
+    public getScheduleByTeamAndWeek(team: string, week: number): Observable<Match[]> {
+        return this.httpClient.get<Match[]>("v1/seasons/1/schedule/" + team + "?week=" + week);
     }
 }
