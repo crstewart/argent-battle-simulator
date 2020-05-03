@@ -29,6 +29,12 @@ td {
     font-weight: bold;
 }
 
+p {
+    color: #666666;
+    margin: 0 auto 20px;
+    width: 80%;
+}
+
 @media screen and (max-width: 640px) {
     .border {
         width: 90%;
@@ -37,6 +43,12 @@ td {
     }
 
     table {
+        width: 90%;
+        min-width: 160px;
+        max-width: 640px;
+    }
+
+    p {
         width: 90%;
         min-width: 160px;
         max-width: 640px;

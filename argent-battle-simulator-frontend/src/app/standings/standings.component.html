@@ -4,11 +4,11 @@
         <table>
             <tr class="table-header">
                 <td>Team Name</td>
-                <td>Wins</td>
-                <td>Losses</td>
-                <td>Draws</td>
-                <td>Win Percentage</td>
-                <td>Games Behind</td>
+                <td>W</td>
+                <td>L</td>
+                <td>D</td>
+                <td>Win %</td>
+                <td>GB</td>
             </tr>
             <tr class="table-header">
                 <td colspan="6">Power Division</td>
@@ -33,5 +33,13 @@
                 <td>{{(getMastersDivisionLeaderWinDifferential() - (standings.wins - standings.losses)) / 2.0}}</td>
             </tr>
         </table>
+        <p>
+            W: Total wins<br/>
+            L: Total losses<br/>
+            D: Total draws<br/>
+            Win %: Wins divided by total matches<br/>
+            GB: Games Behind the division leader<br/>
+            ((Leader wins - Leader losses) - (Team wins - team losses)) / 2
+        </p>
     </div>
 </div>

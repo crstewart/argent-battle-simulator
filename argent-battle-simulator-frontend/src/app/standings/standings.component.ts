@@ -52,11 +52,11 @@ export class StandingsComponent implements OnInit {
 
     private static sortStandings(standings: Standings[]) {
         standings.sort((a, b) => {
-            if (a.winPercentage > b.winPercentage) return 1;
-            if (a.winPercentage < b.winPercentage) return -1;
-            if (a.team > b.team) return -1;
-            if (a.team < b.team) return 1;
+            if (a.winPercentage > b.winPercentage) return -1;
+            if (a.winPercentage < b.winPercentage) return 1;
+            if (a.team > b.team) return 1;
+            if (a.team < b.team) return -1;
             return 0;
-        }).reverse();
+        });
     }
 }
