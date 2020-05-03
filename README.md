@@ -47,6 +47,17 @@ server on port 80.
 A Dockerfile is also provided. With the war file created, a Docker
 container based on Alpine Linux can be built to run the service.
 
+Running the war file or the Docker container requires a PostgreSQL 
+backend. The database must have a league schema. An example SQL file is
+provided that can create all the schemas and tables for you. The 
+access information for the database can be defined by three environment 
+variables:
+```
+LEAGUE_DATABASE_URL = The full jdbc URL of the database
+LEAGUE_DATABASE_USER = The username that has access to the table
+LEAGUE_DATABASE_PASS = The password for the user
+```
+
 ### API
 
 `GET v1/fighters` gets the full list of fighters, sorted in 
@@ -62,3 +73,21 @@ UUID name for the stored log.
 
 `GET v1/files/{id}.txt` retrieves the stored file based on the UUID
 of the run simulation.
+
+`GET v1/seasons/{season}/teams` retrieves all the teams for the given
+season.
+
+`GET v1/seasons/{season}/standings` retrieves the up-to-date standings
+information for all the teams for the given season.
+
+`GET v1/seasons/{season}/rosters?team={team}` gets the roster for the
+given team in the given season.
+
+`GET v1/seasons/{season}/weeks` gets the list of week numbers for the
+given season.
+
+`GET v1/seasons/{season}/schedule?week={week}` gets the full or weekly
+schedule for the given season.
+
+`GET v1/seasons/{season}/schedule/{team}?week={week}` gets the full or 
+weekly schedule for the given team on the given season.
