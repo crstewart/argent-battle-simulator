@@ -2,6 +2,7 @@ package com.argentstew.simulator.battle.config;
 
 import com.argentstew.simulator.battle.web.repository.*;
 import com.argentstew.simulator.battle.web.service.FighterService;
+import com.argentstew.simulator.battle.web.service.SeasonOneLeagueService;
 import com.argentstew.simulator.battle.web.service.SimulatorService;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -22,6 +23,9 @@ public class TestConfig {
 
     @MockBean
     private FighterService fighterService;
+
+    @MockBean
+    private SeasonOneLeagueService seasonOneLeagueService;
 
     @MockBean
     private HikariDataSource dataSource;
