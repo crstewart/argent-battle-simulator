@@ -1,20 +1,22 @@
 package com.argentstew.simulator.battle.web.controller;
 
+import com.argentstew.simulator.battle.config.TestConfig;
 import com.argentstew.simulator.battle.web.model.FighterDTO;
 import com.argentstew.simulator.battle.web.model.SimulationResult;
-import com.argentstew.simulator.battle.web.repository.*;
 import com.argentstew.simulator.battle.web.service.FighterService;
 import com.argentstew.simulator.battle.web.service.SimulatorService;
-import com.zaxxer.hikari.HikariDataSource;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import javax.persistence.EntityManagerFactory;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.UUID;
@@ -29,35 +31,19 @@ import static org.mockito.Mockito.when;
  *
  * @author argen
  */
+@ExtendWith(SpringExtension.class)
 @WebMvcTest(SimulatorController.class)
+@ContextConfiguration(classes = {TestConfig.class})
 public class SimulatorControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
-    @MockBean
+    @Autowired
     private SimulatorService simulatorService;
 
-    @MockBean
+    @Autowired
     private FighterService fighterService;
-
-    @MockBean
-    private HikariDataSource dataSource;
-
-    @MockBean
-    private SeasonOneTeamRepository teamRepository;
-
-    @MockBean
-    private SeasonOneDivisionRepository divisionRepository;
-
-    @MockBean
-    private SeasonOneFighterRepository fighterRepository;
-
-    @MockBean
-    private SeasonOneWeekRepository weekRepository;
-
-    @MockBean
-    private SeasonOneMatchRepository matchRepository;
 
     @Test
     void testSimulation_Success() throws Exception {

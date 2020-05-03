@@ -47,7 +47,7 @@ public class SimulatorController {
             result.setMessage("Missing parameter. Please provide fighter1 and fighter2.");
             return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
         } else if (fighter1.equals(fighter2)) {
-            LOG.error("Mirror match detected. Fighter 1 = {}, Fighter 2 = {}", fighter1, fighter2);
+            LOG.error("Mirror match detected.");
             result.setMessage("Invalid mirror match selected. Please select different fighters.");
             return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
         }
@@ -68,10 +68,10 @@ public class SimulatorController {
             UUID uuid = UUID.fromString(id);
             return new ResponseEntity<>(simulatorService.fetchSimulation(uuid.toString()), HttpStatus.OK);
         } catch (IllegalArgumentException e) {
-            LOG.error("Bad ID: " + id, e);
+            LOG.error("Bad ID", e);
             return new ResponseEntity<>("Bad ID found", HttpStatus.BAD_REQUEST);
         } catch (IOException e) {
-            LOG.error("Missing file: " + id, e);
+            LOG.error("Missing file", e);
             return new ResponseEntity<>("File not found", HttpStatus.NOT_FOUND);
         }
     }
@@ -91,7 +91,7 @@ public class SimulatorController {
         try {
             return new ResponseEntity<>(fighterService.getFighter(name), HttpStatus.OK);
         } catch (IllegalStateException e) {
-            LOG.error("Could not fetch fighter " + name, e);
+            LOG.error("Could not fetch requested fighter", e);
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
             LOG.error("Unknown error occurred. Please contact the administrator.", e);
