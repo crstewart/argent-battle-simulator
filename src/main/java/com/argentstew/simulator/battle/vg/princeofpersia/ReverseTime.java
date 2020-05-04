@@ -18,7 +18,7 @@ public class ReverseTime extends Heal {
         this.initiateMessage = "attempts to turn back time!";
         this.successMessage = "reverses time and heals his wounds!";
         this.failureMessage = "failed to use the Dagger of Time!";
-        this.speed = 0;
+        this.speed = 10;
     }
 
     @Override

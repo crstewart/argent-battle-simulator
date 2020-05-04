@@ -94,9 +94,16 @@ public class DuelBattle implements Battle {
 
     private void resolveDefense(AttackAction attack, DefenseAction defense) {
         if (attack.calculateSpeed() < defense.calculateSpeed()) {
-            resolveAttackAgainstFighter(attack, defense.getOwner());
-            battleLogger.log(defense.getOwner().getName() + " failed to defend against the attack in time!");
-            defense.getOwner().getStrategy().adjustWeight(defense, defense.getFailureAdjustment());
+            DamageReport report = resolveAttackAgainstFighter(attack, defense.getOwner());
+            int damage = report.getDamage();
+            if (defense instanceof Heal && damage < defense.getOwner().getHp() && defense.isSuccessful(attack)) {
+                battleLogger.log(defense.getOwner().getName() + " " + defense.getSuccessMessage());
+                applyHeal((Heal) defense, damage);
+                defense.getOwner().getStrategy().adjustWeight(defense, defense.getSuccessAdjustment());
+            } else {
+                battleLogger.log(defense.getOwner().getName() + " failed to defend against the attack!");
+                defense.getOwner().getStrategy().adjustWeight(defense, defense.getFailureAdjustment());
+            }
         } else {
             battleLogger.log(attack.getOwner().getName() + " readies their " + attack.getName() + " attack!");
             battleLogger.log(defense.getOwner().getName() + " " + defense.getInitiateMessage());
@@ -114,7 +121,7 @@ public class DuelBattle implements Battle {
                 }
                 defense.getOwner().getStrategy().adjustWeight(defense, defense.getSuccessAdjustment());
                 if (defense instanceof Heal) {
-                    applyHeal((Heal) defense);
+                    applyHeal((Heal) defense, damage);
                 } else if (defense instanceof Dodge) {
                     defense.getOwner().adjustXStrikeMeter(2);
                 } else {
@@ -174,7 +181,7 @@ public class DuelBattle implements Battle {
             if (defense instanceof Heal) {
                 Heal heal = (Heal) defense;
                 battleLogger.log(heal.getOwner().getName() + " " + heal.getSuccessMessage());
-                applyHeal(heal);
+                applyHeal(heal, 0);
             }
         } else {
             MoveAction move = (MoveAction) action1;
@@ -189,7 +196,7 @@ public class DuelBattle implements Battle {
             if (defense instanceof Heal) {
                 Heal heal = (Heal) defense;
                 battleLogger.log(heal.getOwner().getName() + " " + heal.getSuccessMessage());
-                applyHeal(heal);
+                applyHeal(heal, 0);
             }
         } else {
             MoveAction move = (MoveAction) action2;
@@ -249,8 +256,8 @@ public class DuelBattle implements Battle {
         }
     }
 
-    private void applyHeal(Heal heal) {
-        int hpRestored = heal.restoreHealth(0);
+    private void applyHeal(Heal heal, int incomingDamage) {
+        int hpRestored = heal.restoreHealth(incomingDamage);
         if (hpRestored > 0) {
             heal.getOwner().heal(hpRestored);
             battleLogger.log(heal.getOwner().getName() + " restores " + hpRestored + " health!");
