@@ -20,13 +20,13 @@ public interface SeasonOneMatchRepository extends JpaRepository<SeasonOneMatch, 
 
     List<SeasonOneMatch> findAllByOrderByMatchDateAsc();
 
-    @Query("select m from SeasonOneMatch m where m.homeTeam = ?1 or m.awayTeam = ?1")
+    @Query("select m from SeasonOneMatch m where m.homeTeam = ?1 or m.awayTeam = ?1 order by m.matchDate asc")
     List<SeasonOneMatch> findAllByTeamOrderByMatchDateAsc(SeasonOneTeam team);
 
     List<SeasonOneMatch> findAllByMatchDateGreaterThanEqualAndMatchDateLessThanEqualOrderByMatchDateAsc(Date startDate,
                                                                                                         Date endDate);
 
-    @Query("select m from SeasonOneMatch m where (m.homeTeam = ?1 or m.awayTeam = ?1) and m.matchDate >= ?2 and m.matchDate <= ?3")
+    @Query("select m from SeasonOneMatch m where (m.homeTeam = ?1 or m.awayTeam = ?1) and m.matchDate >= ?2 and m.matchDate <= ?3 order by m.matchDate asc")
     List<SeasonOneMatch> findAllByTeamAndMatchDateGreaterThanEqualAndMatchDateLessThanEqualOrderByMatchDateAsc(SeasonOneTeam team,
                                                                                                                Date startDate,
                                                                                                                Date endDate);

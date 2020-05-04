@@ -15,7 +15,7 @@
 }
 
 table {
-    width: 80%;
+    width: 60%;
     margin: 20px auto;
     border: 2px solid black;
     text-align: center;
@@ -32,7 +32,7 @@ td {
 p {
     color: #666666;
     margin: 0 auto 20px;
-    width: 80%;
+    width: 60%;
 }
 
 @media screen and (max-width: 640px) {
