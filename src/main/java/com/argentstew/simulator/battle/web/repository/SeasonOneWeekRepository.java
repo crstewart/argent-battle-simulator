@@ -15,5 +15,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public interface SeasonOneWeekRepository extends JpaRepository<SeasonOneWeek, Integer> {
 
-    SeasonOneWeek findByNumber(int number);
+    SeasonOneWeek findByNumberOrderByNumber(int number);
 }

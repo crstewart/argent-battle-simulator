@@ -87,7 +87,7 @@ public class SeasonOneLeagueService implements LeagueService {
     @Override
     public List<String> getRosterByTeam(String teamName) throws LeagueException {
         SeasonOneTeam team = getTeamByName(teamName);
-        List<SeasonOneFighter> fighters = fighterRepository.findAllByTeam(team);
+        List<SeasonOneFighter> fighters = fighterRepository.findAllByTeamOrderByName(team);
         return fighters.stream().map(SeasonOneFighter::getName).collect(Collectors.toList());
     }
 
@@ -112,7 +112,7 @@ public class SeasonOneLeagueService implements LeagueService {
 
     @Override
     public List<ScheduleDTO> getWeeklySchedule(int week) {
-        SeasonOneWeek seasonWeek = weekRepository.findByNumber(week);
+        SeasonOneWeek seasonWeek = weekRepository.findByNumberOrderByNumber(week);
         List<SeasonOneMatch> matches =
                 matchRepository.findAllByMatchDateGreaterThanEqualAndMatchDateLessThanEqualOrderByMatchDateAsc(
                         seasonWeek.getStartDate(), seasonWeek.getEndDate()
@@ -123,7 +123,7 @@ public class SeasonOneLeagueService implements LeagueService {
     @Override
     public List<ScheduleDTO> getWeeklyScheduleForTeam(int week, String teamName) throws LeagueException {
         SeasonOneTeam team = getTeamByName(teamName);
-        SeasonOneWeek seasonWeek = weekRepository.findByNumber(week);
+        SeasonOneWeek seasonWeek = weekRepository.findByNumberOrderByNumber(week);
         List<SeasonOneMatch> matches =
                 matchRepository.findAllByTeamAndMatchDateGreaterThanEqualAndMatchDateLessThanEqualOrderByMatchDateAsc(
                         team, seasonWeek.getStartDate(), seasonWeek.getEndDate()

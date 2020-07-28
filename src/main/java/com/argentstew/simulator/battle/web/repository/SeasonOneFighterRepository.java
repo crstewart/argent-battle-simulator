@@ -18,5 +18,5 @@ import java.util.List;
 @Transactional(readOnly = true)
 public interface SeasonOneFighterRepository extends JpaRepository<SeasonOneFighter, String> {
 
-    List<SeasonOneFighter> findAllByTeam(SeasonOneTeam team);
+    List<SeasonOneFighter> findAllByTeamOrderByName(SeasonOneTeam team);
 }
