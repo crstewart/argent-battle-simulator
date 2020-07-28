@@ -39,7 +39,7 @@ public class Dodge extends DefenseAction {
             return true;
         }
 
-        if (attack.hasCharacteristic(AttackCharacteristic.UNDODGEABLE)) {
+        if (attack.hasCharacteristic(AttackCharacteristic.UNDODGEABLE) || attack.hasCharacteristic(AttackCharacteristic.STEALTH)) {
             return false;
         }
 
@@ -47,7 +47,7 @@ public class Dodge extends DefenseAction {
             return false;
         }
 
-        return Math.random() < (owner.getStats().getSpeed() * 0.0275 + owner.getStats().getAgility() * 0.0475);
+        return Math.random() < (owner.getStats().getSpeed() * 0.0325 + owner.getStats().getAgility() * 0.0575);
     }
 
     @Override

@@ -10,5 +10,6 @@ public enum AttackCharacteristic {
 
     UNDODGEABLE,
     UNGUARDABLE,
-    BULLET_SPEED
+    BULLET_SPEED,
+    STEALTH
 }

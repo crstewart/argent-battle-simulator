@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.DefenseAction;
 import com.argentstew.simulator.battle.action.MoveAction;
+import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.XStrike;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.defense.Heal;
@@ -24,9 +25,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class DuelBattle implements Battle {
 
-    private Fighter fighter1;
-    private Fighter fighter2;
-    private BattleLogger battleLogger;
+    private final Fighter fighter1;
+    private final Fighter fighter2;
+    private final BattleLogger battleLogger;
 
     @Override
     public void announce() {
@@ -43,6 +44,7 @@ public class DuelBattle implements Battle {
             battleLogger.log("----- Turn " + turn + " -----");
             Action fighter1Action = fighter1.selectAction();
             Action fighter2Action = fighter2.selectAction();
+            resolveStealth(fighter1Action, fighter2Action);
             if (fighter1Action instanceof AttackAction && fighter2Action instanceof AttackAction) {
                 resolveAttacks((AttackAction) fighter1Action, (AttackAction) fighter2Action);
             } else if (fighter1Action instanceof DefenseAction && fighter2Action instanceof AttackAction) {
@@ -57,11 +59,30 @@ public class DuelBattle implements Battle {
                 resolveActions(fighter1Action, fighter2Action);
             }
 
+            fighter1.setStealth(false);
+            fighter2.setStealth(false);
+
             fighter1.adjustXStrikeMeter(1);
             fighter2.adjustXStrikeMeter(1);
 
             battleLogger.log("Status: " + fighter1 + " vs " + fighter2);
             turn++;
+        }
+    }
+
+    private void resolveStealth(Action fighter1Action, Action fighter2Action) {
+        if (fighter1Action instanceof AttackAction) {
+            AttackAction fighter1Attack = (AttackAction) fighter1Action;
+            if (fighter1Attack.getCharacteristics().contains(AttackCharacteristic.STEALTH)) {
+                fighter1Attack.getOwner().setStealth(true);
+            }
+        }
+
+        if (fighter2Action instanceof AttackAction) {
+            AttackAction fighter2Attack = (AttackAction) fighter2Action;
+            if (fighter2Attack.getCharacteristics().contains(AttackCharacteristic.STEALTH)) {
+                fighter2Attack.getOwner().setStealth(true);
+            }
         }
     }
 

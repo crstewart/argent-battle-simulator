@@ -18,7 +18,7 @@ public abstract class Guard extends DefenseAction {
             return true;
         }
 
-        if (attack.hasCharacteristic(AttackCharacteristic.UNGUARDABLE)) {
+        if (attack.hasCharacteristic(AttackCharacteristic.UNGUARDABLE) || attack.hasCharacteristic(AttackCharacteristic.STEALTH)) {
             return false;
         }
 

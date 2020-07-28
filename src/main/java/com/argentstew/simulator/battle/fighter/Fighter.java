@@ -32,6 +32,7 @@ public class Fighter {
     private int maxMp;
     private String selfStatus;
     private String status;
+    private boolean isStealth;
     private int xStrikeMeter;
 
     private Arena arena;

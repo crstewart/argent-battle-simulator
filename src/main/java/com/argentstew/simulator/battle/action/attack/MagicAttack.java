@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 import com.argentstew.simulator.battle.trait.Trait;
+import com.argentstew.simulator.battle.trait.impl.StealthDetection;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -65,6 +66,11 @@ public abstract class MagicAttack extends AttackAction {
     }
 
     protected double getMissChance(Fighter defender) {
+        if (defender.isStealth() && !owner.getTraits().has(new StealthDetection())) {
+            return (defender.getStats().getSpeed() * 0.0325 + defender.getStats().getAgility() * 0.0575 +
+                    ((10 - defender.getStats().getSize()) * 0.005));
+        }
+
         if (requiresMeleeRange) {
             return ((0.005 * Math.pow(owner.getStats().getIntellect() - 10, 2)) + 0.05)
                     + (0.002 * (11 - defender.getStats().getSize()));

@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 import com.argentstew.simulator.battle.trait.Trait;
+import com.argentstew.simulator.battle.trait.impl.StealthDetection;
 import lombok.EqualsAndHashCode;
 
 /**
@@ -61,6 +62,11 @@ public abstract class RangedAttack extends AttackAction {
     }
 
     protected double getMissChance(Fighter defender) {
+        if (defender.isStealth() && !owner.getTraits().has(new StealthDetection())) {
+            return (defender.getStats().getSpeed() * 0.0325 + defender.getStats().getAgility() * 0.0575 +
+                    ((10 - defender.getStats().getSize()) * 0.005));
+        }
+
         return ((-0.075 * Math.pow(owner.getStats().getAim(), 1.1)) + 0.945)
                 + (0.01 * (11 - defender.getStats().getSize()));
     }
