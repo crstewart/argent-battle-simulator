@@ -17,8 +17,8 @@ public class GouHadouken extends RangedAttack {
     public GouHadouken() {
         super();
         this.name = "Gou Hadouken";
-        this.power = 55;
-        this.variance = 5;
+        this.power = 75;
+        this.variance = 7;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.CHI, AttackSubType.DARK);
         this.characteristics = Collections.emptyList();

@@ -16,8 +16,8 @@ public class TatsumakiZankukyaku extends MeleeAttack {
     public TatsumakiZankukyaku() {
         super();
         this.name = "Tatsumaki Zankukyaku";
-        this.power = 60;
-        this.variance = 8;
+        this.power = 70;
+        this.variance = 9;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.KICK);
         this.characteristics = Collections.emptyList();
