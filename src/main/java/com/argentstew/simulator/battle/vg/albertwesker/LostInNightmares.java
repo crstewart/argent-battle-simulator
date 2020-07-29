@@ -20,7 +20,7 @@ public class LostInNightmares extends MeleeXStrike {
         super();
         this.name = "Lost in Nightmares";
         this.power = 250;
-        this.variance = 13;
+        this.variance = 15;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.SLAM, AttackSubType.EXPLOSIVE);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
