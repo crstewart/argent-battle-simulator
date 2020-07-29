@@ -14,19 +14,26 @@ import com.argentstew.simulator.battle.action.move.Retreat;
  *
  * @author Craig
  */
-public class DefensiveStrategy extends BasicStrategy {
+public class MeleeStrategy extends BasicStrategy {
 
-    public DefensiveStrategy() {
+    public MeleeStrategy() {
         super();
     }
 
     public Double addAction(Action action) {
         if (action instanceof XStrike) {
             return super.addAction(action, 8.0);
+        } else if (action instanceof AttackAction) {
+            AttackAction attack = (AttackAction) action;
+            if (attack.isRequiresMeleeRange()) {
+                return super.addAction(action, 1.5);
+            } else {
+                return super.addAction(action, 0.5);
+            }
         } else if (action instanceof DefenseAction) {
-            return super.addAction(action, 1.5);
-        } else if (action instanceof Retreat) {
-            return super.addAction(action, 0.75);
+            return super.addAction(action, 1.0);
+        } else if (action instanceof Advance) {
+            return super.addAction(action, 1.0);
         } else if (action instanceof MoveAction) {
             return super.addAction(action, 0.5);
         } else {

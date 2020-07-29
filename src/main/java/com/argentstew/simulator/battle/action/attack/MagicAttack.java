@@ -18,8 +18,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public abstract class MagicAttack extends AttackAction {
 
-    private boolean requiresMeleeRange;
-
     protected MagicAttack() {
         super();
         this.attackType = AttackType.MAGIC;

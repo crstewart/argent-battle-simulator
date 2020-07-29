@@ -25,6 +25,7 @@ public abstract class AttackAction extends Action {
     protected int power;
     protected double variance;
     protected AttackType attackType;
+    protected boolean requiresMeleeRange;
     protected List<AttackSubType> subtypes;
     protected List<AttackCharacteristic> characteristics;
 

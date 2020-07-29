@@ -18,6 +18,7 @@ public abstract class MeleeAttack extends AttackAction {
 
     protected MeleeAttack() {
         super();
+        this.requiresMeleeRange = true;
         this.attackType = AttackType.MELEE;
     }
 

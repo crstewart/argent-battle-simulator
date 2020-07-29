@@ -18,6 +18,7 @@ public abstract class RangedAttack extends AttackAction {
 
     protected RangedAttack() {
         super();
+        this.requiresMeleeRange = false;
         this.attackType = AttackType.RANGED;
     }
 
