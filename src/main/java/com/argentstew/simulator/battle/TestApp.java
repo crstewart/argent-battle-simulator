@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.logger.StandardBattleLogger;
 import com.argentstew.simulator.battle.vg.akuma.Akuma;
 import com.argentstew.simulator.battle.vg.albertwesker.AlbertWesker;
 import com.argentstew.simulator.battle.vg.arthas.Arthas;
+import com.argentstew.simulator.battle.vg.arthur.Arthur;
 import com.argentstew.simulator.battle.vg.bigdaddy.BigDaddy;
 import com.argentstew.simulator.battle.vg.cole.ColeMacgrath;
 import com.argentstew.simulator.battle.vg.commandershepard.CommanderShepard;
@@ -46,7 +47,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Arthas.NAME;
+    private static final String TEST_FIGHTER = Arthur.NAME;
 
     public static void main(String[] args) {
 

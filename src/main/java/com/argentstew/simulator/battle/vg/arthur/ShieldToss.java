@@ -30,7 +30,7 @@ public class ShieldToss extends Guard {
         }
 
         if (attack instanceof MagicAttack) {
-            return !((MagicAttack) attack).isRequiresMeleeRange();
+            return !attack.isRequiresMeleeRange();
         }
 
         return false;
