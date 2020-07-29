@@ -23,7 +23,7 @@ public class MonsterHunter implements Trait {
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {
         if (defender.getClassifications().contains(FighterClassification.MONSTER)) {
-            return rawDamage * 1.2;
+            return rawDamage * 1.25;
         }
 
         return rawDamage;

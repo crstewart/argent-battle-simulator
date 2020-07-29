@@ -41,8 +41,8 @@ public class MechRider implements Trait {
         adjustedReport.setMiss(report.isMiss());
         adjustedReport.setCrit(report.isCrit());
         adjustedReport.setStun(report.isStun());
-        adjustedReport.setDamage(report.isCrit() ? (int) Math.round(report.getDamage() * 1.25) :
-                (int) Math.round(report.getDamage() * 0.9));
+        adjustedReport.setDamage(report.isCrit() ? (int) Math.round(report.getDamage() * 1.2) :
+                (int) Math.round(report.getDamage() * 0.8));
 
         return adjustedReport;
     }

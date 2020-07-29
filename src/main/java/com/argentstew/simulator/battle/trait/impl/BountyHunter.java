@@ -24,7 +24,7 @@ public class BountyHunter implements Trait {
     public double applyBonusDamage(Fighter defender, double rawDamage) {
         if (defender.getClassifications().contains(FighterClassification.HUMANOID)
                 || defender.getClassifications().contains(FighterClassification.ALIEN)) {
-            return rawDamage * 1.05;
+            return rawDamage * 1.1;
         }
 
         return rawDamage;

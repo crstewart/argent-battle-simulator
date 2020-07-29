@@ -70,27 +70,12 @@ public class BarrierChange implements Trait {
             if (ELEMENTS.contains(subType)) {
                 if (subType.equals(lastElementUsed)) {
                     finalDamage = (int) Math.floor(finalDamage * 1.25);
-                } else if (subType.equals(getOpposingElement(lastElementUsed))) {
+                } else {
                     finalDamage = (int) Math.ceil(finalDamage * 0.5);
                 }
             }
         }
 
         return finalDamage;
-    }
-
-    private AttackSubType getOpposingElement(AttackSubType subType) {
-        switch (subType) {
-            case FIRE:
-                return AttackSubType.ICE;
-            case ICE:
-                return AttackSubType.FIRE;
-            case THUNDER:
-                return AttackSubType.DARK;
-            case DARK:
-                return AttackSubType.THUNDER;
-        }
-
-        return null;
     }
 }

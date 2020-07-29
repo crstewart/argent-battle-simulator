@@ -64,7 +64,7 @@ public class Hazardous implements Trait {
             report.setMiss(false);
             report.setStun(false);
             report.setCrit(false);
-            report.setDamage((int) Math.round(1 + (Math.random() * 2)));
+            report.setDamage((int) Math.round(3 + (Math.random() * 3)));
             return report;
         }
 
