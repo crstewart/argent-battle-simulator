@@ -24,7 +24,7 @@ public class Arthas {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.7);
+        defenses.set(AttackType.MAGIC, 0.6);
         defenses.set(AttackSubType.SLASH, 0.9);
         defenses.set(AttackSubType.PIERCE, 0.9);
         defenses.set(AttackSubType.HACK, 0.9);
@@ -34,13 +34,13 @@ public class Arthas {
         defenses.set(AttackSubType.PUNCH, 0.9);
         defenses.set(AttackSubType.KICK, 0.9);
         defenses.set(AttackSubType.HEADBUTT, 0.9);
-        defenses.set(AttackSubType.DARK, 0.9);
-        defenses.set(AttackSubType.LIGHT, 1.15);
+        defenses.set(AttackSubType.DARK, 0.8);
+        defenses.set(AttackSubType.LIGHT, 1.25);
 
-        FighterStats stats = FighterStats.builder().strength(7).toughness(6.5).dexterity(6).aim(7)
+        FighterStats stats = FighterStats.builder().strength(7).toughness(6.5).dexterity(6).aim(6.5)
                 .agility(3).speed(3).intellect(5.5).willpower(7.5).size(5).weight(5.5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(175).maxHp(175).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(190).maxHp(190).xStrikeMeter(0)
                 .description("A tank with strong anti-mage properties, including a magic guard.")
                 .entryQuotes(Arrays.asList("Arthas: 'Frostmourne hungers.'", "Arthas: 'You shall know endless torment.'"))
                 .victoryQuotes(Arrays.asList("Arthas: 'I intend to scour humanity from this planet, and make no mistake: I have the power to do it.'",

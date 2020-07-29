@@ -25,7 +25,7 @@ public class ArmyOfTheDead extends RangedXStrike {
         this.power = 200;
         this.variance = 20;
         this.speed = 4;
-        this.subtypes = Arrays.asList(AttackSubType.DARK, AttackSubType.TOXIC);
+        this.subtypes = Arrays.asList(AttackSubType.DARK, AttackSubType.TOXIC, AttackSubType.ASSIST);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }
 }
