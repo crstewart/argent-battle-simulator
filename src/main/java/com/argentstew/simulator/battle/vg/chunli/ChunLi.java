@@ -23,11 +23,11 @@ public class ChunLi {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.PUNCH, 0.95);
-        defenses.set(AttackSubType.KICK, 0.9);
-        defenses.set(AttackSubType.HEADBUTT, 0.95);
-        defenses.set(AttackSubType.SLAM, 0.95);
-        defenses.set(AttackSubType.CHI, 0.95);
+        defenses.set(AttackSubType.PUNCH, 0.8);
+        defenses.set(AttackSubType.KICK, 0.7);
+        defenses.set(AttackSubType.HEADBUTT, 0.9);
+        defenses.set(AttackSubType.SLAM, 0.8);
+        defenses.set(AttackSubType.CHI, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(5).dexterity(6).aim(5)
                 .agility(6).speed(5).intellect(5).willpower(5).size(5).weight(4.5).build();
