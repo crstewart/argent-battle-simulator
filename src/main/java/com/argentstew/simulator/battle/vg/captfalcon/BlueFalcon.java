@@ -18,8 +18,8 @@ public class BlueFalcon extends MeleeXStrike {
     public BlueFalcon() {
         super();
         this.name = "Blue Falcon";
-        this.power = 220;
-        this.variance = 12;
+        this.power = 260;
+        this.variance = 16;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.SMASH);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);

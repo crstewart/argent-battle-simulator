@@ -17,8 +17,8 @@ public class FalconPunch extends MeleeAttack {
     public FalconPunch() {
         super();
         this.name = "Falcon Punch";
-        this.power = 90;
-        this.variance = 7;
+        this.power = 100;
+        this.variance = 10;
         this.speed = 5;
         this.subtypes = Arrays.asList(AttackSubType.PUNCH, AttackSubType.FIRE);
         this.characteristics = Collections.emptyList();

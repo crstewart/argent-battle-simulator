@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.strategy.MeleeStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.BountyHunter;
 import com.argentstew.simulator.battle.vg.ness.*;
@@ -26,10 +27,10 @@ public class CaptainFalcon {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
 
-        FighterStats stats = FighterStats.builder().strength(5).toughness(5).dexterity(6).aim(2)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(5).dexterity(6).aim(2)
                 .agility(5).speed(6).intellect(5).willpower(4.5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new BountyHunter()));
-        return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A speedy all-around fighter with standard defenses whose attacks are all on fire.")
                 .entryQuotes(Arrays.asList("Captain Falcon: 'Show me your moves!'",
                         "Captain Falcon: 'C'mon!'"))
@@ -37,7 +38,7 @@ public class CaptainFalcon {
                         "Captain Falcon: 'There are two kinds of drivers in this race... me, and the losers!'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new OffensiveStrategy()).build()
+                .strategy(new MeleeStrategy()).build()
                 .addAction(new FalconPunch()).addAction(new FalconKick()).addAction(new FalconDive())
                 .addAction(new RaptorBoost())
                 .addAction(new BlueFalcon())
