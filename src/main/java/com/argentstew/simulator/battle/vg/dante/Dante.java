@@ -25,9 +25,9 @@ public class Dante {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.95);
-        defenses.set(AttackSubType.LIGHT, 1.05);
-        defenses.set(AttackSubType.DARK, 1.05);
+        defenses.set(AttackType.MAGIC, 0.8);
+        defenses.set(AttackSubType.LIGHT, 1.25);
+        defenses.set(AttackSubType.DARK, 1.25);
 
         FighterStats stats = FighterStats.builder().strength(8).toughness(4.5).dexterity(5).aim(5)
                 .agility(7.5).speed(8).intellect(5).willpower(5.5).size(5).weight(5).build();

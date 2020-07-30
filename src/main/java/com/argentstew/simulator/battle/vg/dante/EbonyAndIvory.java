@@ -17,8 +17,8 @@ public class EbonyAndIvory extends RangedAttack {
     public EbonyAndIvory() {
         super();
         this.name = "Ebony and Ivory";
-        this.power = 75;
-        this.variance = 5;
+        this.power = 90;
+        this.variance = 6;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.HANDGUN);
         this.characteristics = Collections.singletonList(AttackCharacteristic.BULLET_SPEED);
