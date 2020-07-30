@@ -23,8 +23,8 @@ public class M8Avenger extends RangedAttack {
         super();
         this.name = "M-8 Avenger (Armor-piercing)";
         this.description = "400 ammo, each attack uses 40 ammo";
-        this.power = 50;
-        this.variance = 12;
+        this.power = 60;
+        this.variance = 15;
         this.speed = 1;
         this.ammo = 400;
         this.subtypes = Arrays.asList(AttackSubType.RIFLE, AttackSubType.ARMOR_PIERCING);

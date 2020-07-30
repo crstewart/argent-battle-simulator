@@ -23,7 +23,7 @@ public class M3Predator extends RangedAttack {
         super();
         this.name = "M-3 Predator (Cryo)";
         this.description = "12 ammo, each attack uses 4 shots";
-        this.power = 80;
+        this.power = 100;
         this.variance = 7;
         this.speed = 1.5;
         this.ammo = 12;

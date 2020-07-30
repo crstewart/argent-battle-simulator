@@ -23,7 +23,7 @@ public class M76Revenant extends RangedAttack {
         super();
         this.name = "M-76 Revenant (Disruptor)";
         this.description = "240 ammo, each attack uses 80 ammo";
-        this.power = 60;
+        this.power = 70;
         this.variance = 15;
         this.speed = 3;
         this.ammo = 240;

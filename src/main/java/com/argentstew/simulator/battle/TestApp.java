@@ -55,7 +55,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = ColeMacgrath.NAME;
+    private static final String TEST_FIGHTER = CommanderShepard.NAME;
 
     public static void main(String[] args) {
 

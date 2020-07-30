@@ -24,7 +24,7 @@ public class CommanderShepard {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.2);
+        defenses.set(AttackType.MAGIC, 1.5);
         defenses.set(AttackSubType.PUNCH, 0.8);
         defenses.set(AttackSubType.KICK, 0.8);
         defenses.set(AttackSubType.CLAW, 0.8);
@@ -34,17 +34,17 @@ public class CommanderShepard {
         defenses.set(AttackSubType.PIERCE, 0.8);
         defenses.set(AttackSubType.HACK, 0.8);
         defenses.set(AttackSubType.SMASH, 0.8);
-        defenses.set(AttackSubType.HANDGUN, 0.85);
-        defenses.set(AttackSubType.RIFLE, 0.85);
-        defenses.set(AttackSubType.SHOTGUN, 0.9);
-        defenses.set(AttackSubType.ARMOR_PIERCING, 1.15);
+        defenses.set(AttackSubType.HANDGUN, 0.75);
+        defenses.set(AttackSubType.RIFLE, 0.8);
+        defenses.set(AttackSubType.SHOTGUN, 0.75);
+        defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(5.5).dexterity(5.5).aim(5.5)
                 .agility(3).speed(2.5).intellect(5).willpower(3).size(5).weight(5.5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(175).maxHp(175).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(180).maxHp(180).xStrikeMeter(0)
                 .description("A futuristic tank who uses a variety of ammo types in his guns.")
-                .entryQuotes(Arrays.asList("Shepard: 'My name is Shepard, and I don’t take threats likely.'",
+                .entryQuotes(Arrays.asList("Shepard: 'My name is Shepard, and I don’t take threats lightly.'",
                         "Shepard: 'Get out of my way.'"))
                 .victoryQuotes(Arrays.asList("Shepard: 'Humans are aggressive. Wars have started because of our need for constant progress.'",
                         "Shepard: 'No matter how strong you are, allies make you stronger.'"))
