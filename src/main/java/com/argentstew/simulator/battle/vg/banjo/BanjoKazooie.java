@@ -24,13 +24,13 @@ public class BanjoKazooie {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
-        defenses.set(AttackSubType.WATER, 1.05);
-        defenses.set(AttackSubType.ICE, 1.05);
-        defenses.set(AttackSubType.TOXIC, 1.05);
-        defenses.set(AttackSubType.ASSIST, 0.8);
+        defenses.set(AttackType.MAGIC, 0.8);
+        defenses.set(AttackSubType.WATER, 1.1);
+        defenses.set(AttackSubType.ICE, 1.1);
+        defenses.set(AttackSubType.TOXIC, 1.25);
+        defenses.set(AttackSubType.ASSIST, 0.7);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(7).dexterity(4.5).aim(5.5)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(7).dexterity(5).aim(5.5)
                 .agility(4.5).speed(4).intellect(4).willpower(5.5).size(4).weight(4).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(160).maxHp(160).mp(0).maxMp(100).xStrikeMeter(0)
