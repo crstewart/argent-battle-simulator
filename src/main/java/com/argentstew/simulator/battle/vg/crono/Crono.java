@@ -24,8 +24,8 @@ public class Crono {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
-        defenses.set(AttackSubType.DARK, 1.2);
+        defenses.set(AttackType.MAGIC, 0.75);
+        defenses.set(AttackSubType.DARK, 1.4);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(4.5).dexterity(6).aim(6)
                 .agility(6).speed(5).intellect(4).willpower(6).size(4.5).weight(4.5).build();
