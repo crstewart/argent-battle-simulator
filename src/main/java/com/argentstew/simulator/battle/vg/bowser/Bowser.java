@@ -26,12 +26,12 @@ public class Bowser {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.FIRE, 1.2);
+        defenses.set(AttackSubType.FIRE, 1.4);
 
         FighterStats stats = FighterStats.builder().strength(8).toughness(10).dexterity(2).aim(2)
                 .agility(2).speed(2).intellect(3).willpower(6).size(8.5).weight(9).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Hazardous()));
-        return Fighter.builder().name(NAME).hp(200).maxHp(200).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(230).maxHp(230).xStrikeMeter(0)
                 .description("A strong, tough tank whose spiked shell hurts melee attackers.")
                 .entryQuotes(Arrays.asList("Bowser: 'I'll show you the power of the Koopa King!'",
                         "Bowser: 'Stomping fools is my business!'"))
