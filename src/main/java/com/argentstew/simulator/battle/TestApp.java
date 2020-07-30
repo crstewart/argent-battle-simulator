@@ -22,6 +22,7 @@ import com.argentstew.simulator.battle.vg.cole.ColeMacgrath;
 import com.argentstew.simulator.battle.vg.commandershepard.CommanderShepard;
 import com.argentstew.simulator.battle.vg.crash.CrashBandicoot;
 import com.argentstew.simulator.battle.vg.crono.Crono;
+import com.argentstew.simulator.battle.vg.cuphead.Cuphead;
 import com.argentstew.simulator.battle.vg.diablo.Diablo;
 import com.argentstew.simulator.battle.vg.dreggman.DrEggman;
 import com.argentstew.simulator.battle.vg.drwily.DrWily;
@@ -57,7 +58,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Crono.NAME;
+    private static final String TEST_FIGHTER = Cuphead.NAME;
 
     public static void main(String[] args) {
 
