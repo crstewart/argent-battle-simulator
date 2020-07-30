@@ -25,19 +25,19 @@ public class BigDaddy {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.ARMOR_PIERCING, 1.2);
-        defenses.set(AttackSubType.FIRE, 1.1);
-        defenses.set(AttackSubType.THUNDER, 1.1);
-        defenses.set(AttackSubType.NATURE, 1.05);
-        defenses.set(AttackSubType.HANDGUN, 0.8);
-        defenses.set(AttackSubType.RIFLE, 0.9);
-        defenses.set(AttackSubType.SHOTGUN, 0.85);
-        defenses.set(AttackSubType.SMASH, 0.8);
+        defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
+        defenses.set(AttackSubType.FIRE, 1.2);
+        defenses.set(AttackSubType.THUNDER, 1.2);
+        defenses.set(AttackSubType.NATURE, 1.15);
+        defenses.set(AttackSubType.HANDGUN, 0.7);
+        defenses.set(AttackSubType.RIFLE, 0.7);
+        defenses.set(AttackSubType.SHOTGUN, 0.75);
+        defenses.set(AttackSubType.SMASH, 0.7);
 
         FighterStats stats = FighterStats.builder().strength(8).toughness(8).dexterity(1.5).aim(1.5)
                 .agility(2.5).speed(2.5).intellect(1).willpower(6.5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(190).maxHp(190).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(200).maxHp(200).xStrikeMeter(0)
                 .description("A tank with few attacks who fights mindlessly until the bitter end.")
                 .entryQuotes(Arrays.asList("Big Daddy makes a daunting, low wailing sound as he enters.",
                         "Little Sister: 'Kill them, Mr. Bubbles! Kill them!'"))

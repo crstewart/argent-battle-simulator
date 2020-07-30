@@ -48,7 +48,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = BanjoKazooie.NAME;
+    private static final String TEST_FIGHTER = BigDaddy.NAME;
 
     public static void main(String[] args) {
 
