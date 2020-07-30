@@ -22,8 +22,8 @@ public class DesertEagle extends RangedAttack {
         super();
         this.name = "Desert Eagle";
         this.description = "7 ammo";
-        this.power = 65;
-        this.variance = 7;
+        this.power = 85;
+        this.variance = 8;
         this.speed = 2;
         this.ammo = 7;
         this.subtypes = Collections.singletonList(AttackSubType.HANDGUN);
