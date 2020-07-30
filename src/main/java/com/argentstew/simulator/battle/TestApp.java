@@ -15,6 +15,7 @@ import com.argentstew.simulator.battle.vg.bomberman.Bomberman;
 import com.argentstew.simulator.battle.vg.bowser.Bowser;
 import com.argentstew.simulator.battle.vg.captfalcon.CaptainFalcon;
 import com.argentstew.simulator.battle.vg.captprice.CaptainPrice;
+import com.argentstew.simulator.battle.vg.charizard.Charizard;
 import com.argentstew.simulator.battle.vg.cole.ColeMacgrath;
 import com.argentstew.simulator.battle.vg.commandershepard.CommanderShepard;
 import com.argentstew.simulator.battle.vg.diablo.Diablo;
@@ -52,7 +53,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = CaptainPrice.NAME;
+    private static final String TEST_FIGHTER = Charizard.NAME;
 
     public static void main(String[] args) {
 
