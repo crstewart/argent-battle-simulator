@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.strategy.RangedStrategy;
 import com.argentstew.simulator.battle.vg.scorpion.*;
 
 import java.util.Arrays;
@@ -35,7 +36,7 @@ public class Bomberman {
                         "Bomberman: 'Thank you for being my opponent! That was a wonderful battle!'"))
                 .classifications(Collections.singletonList(FighterClassification.ALIEN))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new BalancedStrategy()).build()
+                .strategy(new RangedStrategy()).build()
                 .addAction(new FireBomb()).addAction(new ThunderBomb()).addAction(new WaterBomb())
                 .addAction(new WindBomb())
                 .addAction(new PowerBomb())
