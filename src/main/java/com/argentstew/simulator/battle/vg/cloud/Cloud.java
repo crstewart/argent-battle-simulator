@@ -26,9 +26,9 @@ public class Cloud {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
-        defenses.set(AttackSubType.NATURE, 0.95);
-        defenses.set(AttackSubType.MYSTIC, 1.05);
+        defenses.set(AttackType.MAGIC, 0.8);
+        defenses.set(AttackSubType.NATURE, 0.8);
+        defenses.set(AttackSubType.MYSTIC, 1.2);
 
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(5).dexterity(2.5).aim(6.5)
                 .agility(5.5).speed(5.5).intellect(5).willpower(3).size(5).weight(5).build();

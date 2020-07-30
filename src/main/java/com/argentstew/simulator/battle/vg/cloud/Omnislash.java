@@ -18,8 +18,8 @@ public class Omnislash extends MeleeXStrike {
     public Omnislash() {
         super();
         this.name = "Omnislash";
-        this.power = 210;
-        this.variance = 20;
+        this.power = 225;
+        this.variance = 25;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNDODGEABLE, AttackCharacteristic.UNGUARDABLE);
