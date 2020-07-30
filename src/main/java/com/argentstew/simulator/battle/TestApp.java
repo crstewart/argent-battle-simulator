@@ -59,7 +59,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Dante.NAME;
+    private static final String TEST_FIGHTER = Diablo.NAME;
 
     public static void main(String[] args) {
 

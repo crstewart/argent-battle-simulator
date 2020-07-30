@@ -25,14 +25,13 @@ public class Diablo {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
-        defenses.set(AttackSubType.LIGHT, 1.2);
-        defenses.set(AttackSubType.DARK, 0.9);
+        defenses.set(AttackSubType.LIGHT, 1.4);
+        defenses.set(AttackSubType.DARK, 0.6);
 
         FighterStats stats = FighterStats.builder().strength(7.5).toughness(8.5).dexterity(3.5).aim(4.5)
                 .agility(3.5).speed(4).intellect(4).willpower(8.5).size(7).weight(7).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(190).maxHp(190).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(220).maxHp(220).xStrikeMeter(0)
                 .description("A tank who can shrug off almost any attack.")
                 .entryQuotes(Arrays.asList("Diablo: 'Kneel before the Lord of Terror.'", "Diablo: 'I will feast upon your terror!'"))
                 .victoryQuotes(Arrays.asList("Diablo: 'Not even death can save you from me!'",
