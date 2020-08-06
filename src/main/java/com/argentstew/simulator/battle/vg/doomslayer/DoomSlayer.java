@@ -26,11 +26,11 @@ public class DoomSlayer {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.1);
-        defenses.set(AttackSubType.PLASMA, 0.9);
-        defenses.set(AttackSubType.HANDGUN, 0.95);
+        defenses.set(AttackType.MAGIC, 1.25);
+        defenses.set(AttackSubType.PLASMA, 0.8);
+        defenses.set(AttackSubType.HANDGUN, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(8).dexterity(5).aim(5.5)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(8).dexterity(5).aim(6)
                 .agility(5.5).speed(5.5).intellect(2.5).willpower(5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Demonslayer()));
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
