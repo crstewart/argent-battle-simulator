@@ -22,8 +22,8 @@ public class Minigun extends RangedAttack {
         super();
         this.name = "Minigun";
         this.description = "200 ammo, each attack uses 50 ammo";
-        this.power = 50;
-        this.variance = 15;
+        this.power = 60;
+        this.variance = 20;
         this.speed = 3.5;
         this.ammo = 200;
         this.subtypes = Collections.singletonList(AttackSubType.RIFLE);

@@ -22,8 +22,8 @@ public class Shotgun extends RangedAttack {
         super();
         this.name = "Shotgun";
         this.description = "6 ammo";
-        this.power = 70;
-        this.variance = 7;
+        this.power = 80;
+        this.variance = 8;
         this.speed = 1.5;
         this.ammo = 6;
         this.subtypes = Collections.singletonList(AttackSubType.SHOTGUN);
