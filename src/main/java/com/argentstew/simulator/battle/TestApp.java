@@ -32,6 +32,7 @@ import com.argentstew.simulator.battle.vg.dovahkiin.Dovahkiin;
 import com.argentstew.simulator.battle.vg.draven.Draven;
 import com.argentstew.simulator.battle.vg.dreggman.DrEggman;
 import com.argentstew.simulator.battle.vg.drwily.DrWily;
+import com.argentstew.simulator.battle.vg.erdrick.Erdrick;
 import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
 import com.argentstew.simulator.battle.vg.handsomejack.HandsomeJack;
@@ -64,7 +65,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Draven.NAME;
+    private static final String TEST_FIGHTER = Erdrick.NAME;
 
     public static void main(String[] args) {
 

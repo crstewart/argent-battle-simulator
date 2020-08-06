@@ -25,27 +25,18 @@ public class Erdrick {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
-        defenses.set(AttackSubType.SLASH, 0.9);
-        defenses.set(AttackSubType.PIERCE, 0.9);
-        defenses.set(AttackSubType.HACK, 0.9);
-        defenses.set(AttackSubType.BITE, 0.9);
-        defenses.set(AttackSubType.CLAW, 0.9);
-        defenses.set(AttackSubType.TAIL, 0.9);
-        defenses.set(AttackSubType.SMASH, 1.1);
-        defenses.set(AttackSubType.SLAM, 1.1);
-        defenses.set(AttackSubType.HEADBUTT, 1.05);
-        defenses.set(AttackSubType.ARMOR_PIERCING, 1.1);
+        defenses.set(AttackType.MAGIC, 0.8);
+        defenses.set(AttackSubType.PIERCE, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(6).aim(5.5)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(6).aim(6)
                 .agility(5.5).speed(4.5).intellect(5).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new DragonSlayer()));
-        return Fighter.builder().name(NAME).hp(165).maxHp(165).mp(25).maxMp(25).xStrikeMeter(0)
-                .description("An tank with armor, magic power, healing, and dragon slaying potential.")
-                .entryQuotes(Arrays.asList("The hero raises his sword in preparation for the battle.'",
-                        "The hero appears magically, appearing ready for a fight!'"))
-                .victoryQuotes(Arrays.asList("The hero does a wide slash and poses victoriously.'",
-                        "The hero kneels down and smiles, pleased to have won another battle.'"))
+        return Fighter.builder().name(NAME).hp(160).maxHp(160).mp(25).maxMp(25).xStrikeMeter(0)
+                .description("An all-around fighter with magic power, healing, and dragon slaying potential.")
+                .entryQuotes(Arrays.asList("The hero raises his sword in preparation for the battle.",
+                        "The hero appears magically, appearing ready for a fight!"))
+                .victoryQuotes(Arrays.asList("The hero does a wide slash and poses victoriously.",
+                        "The hero kneels down and smiles, pleased to have won another battle."))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()

@@ -15,7 +15,7 @@ public class Heal extends com.argentstew.simulator.battle.action.defense.Heal {
 
     public Heal() {
         this.name = "Heal";
-        this.description = "Costs 3 SP, heals more than 30 damage";
+        this.description = "Costs 3 SP, heals more than 40 damage";
         this.initiateMessage = "prepares to cast Heal!";
         this.successMessage = "casts Heal!";
         this.failureMessage = "failed to cast Heal!";
@@ -52,7 +52,7 @@ public class Heal extends com.argentstew.simulator.battle.action.defense.Heal {
 
     @Override
     protected int calculateAmountHealed(int incomingDamage) {
-        double baseHeal = 30 + (owner.getStats().getIntellect() * 0.4);
+        double baseHeal = 40 + (owner.getStats().getIntellect() * 0.4);
         double variance = Math.random() * 9;
         return (int) Math.round(baseHeal + variance);
     }
