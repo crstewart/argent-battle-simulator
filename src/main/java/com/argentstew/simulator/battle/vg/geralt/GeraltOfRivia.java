@@ -25,13 +25,12 @@ public class GeraltOfRivia {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
-        defenses.set(AttackSubType.SLASH, 0.9);
-        defenses.set(AttackSubType.HACK, 0.9);
-        defenses.set(AttackSubType.SMASH, 0.9);
-        defenses.set(AttackSubType.PIERCE, 1.1);
-        defenses.set(AttackSubType.ARMOR_PIERCING, 1.1);
-        defenses.set(AttackSubType.TOXIC, 0.9);
+        defenses.set(AttackType.MAGIC, 0.8);
+        defenses.set(AttackSubType.SLASH, 0.8);
+        defenses.set(AttackSubType.HACK, 0.8);
+        defenses.set(AttackSubType.SMASH, 0.8);
+        defenses.set(AttackSubType.ARMOR_PIERCING, 1.3);
+        defenses.set(AttackSubType.TOXIC, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(7).dexterity(7.5).aim(7.5)
                 .agility(6.5).speed(6).intellect(6).willpower(6).size(5).weight(5).build();
