@@ -43,6 +43,7 @@ import com.argentstew.simulator.battle.vg.guybrush.GuybrushThreepwood;
 import com.argentstew.simulator.battle.vg.handsomejack.HandsomeJack;
 import com.argentstew.simulator.battle.vg.heavy.Heavy;
 import com.argentstew.simulator.battle.vg.heihachi.Heihachi;
+import com.argentstew.simulator.battle.vg.inkling.Inkling;
 import com.argentstew.simulator.battle.vg.jaina.Jaina;
 import com.argentstew.simulator.battle.vg.johnmarston.JohnMarston;
 import com.argentstew.simulator.battle.vg.kefka.Kefka;
@@ -71,7 +72,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Heihachi.NAME;
+    private static final String TEST_FIGHTER = Inkling.NAME;
 
     public static void main(String[] args) {
 

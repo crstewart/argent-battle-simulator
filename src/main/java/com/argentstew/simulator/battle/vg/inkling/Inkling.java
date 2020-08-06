@@ -24,8 +24,8 @@ public class Inkling {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.1);
-        defenses.set(AttackSubType.WATER, 1.2);
+        defenses.set(AttackType.MAGIC, 1.2);
+        defenses.set(AttackSubType.WATER, 1.5);
 
         FighterStats stats = FighterStats.builder().strength(3).toughness(2.5).dexterity(9).aim(9)
                 .agility(6.5).speed(5).intellect(4).willpower(4).size(3.5).weight(3.5).build();

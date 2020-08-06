@@ -18,8 +18,8 @@ public class KillerWail extends RangedXStrike {
     public KillerWail() {
         super();
         this.name = "Killer Wail";
-        this.power = 235;
-        this.variance = 20;
+        this.power = 250;
+        this.variance = 25;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.SOUND);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
