@@ -68,7 +68,7 @@ public abstract class MeleeAttack extends AttackAction {
                     ((10 - defender.getStats().getSize()) * 0.005));
         }
 
-        return ((0.005 * Math.pow(owner.getStats().getDexterity() - 10, 2)) + 0.05)
+        return ((0.004 * Math.pow(owner.getStats().getDexterity() - 10, 2)) + 0.025)
                 + (0.002 * (11 - defender.getStats().getSize()));
     }
 
