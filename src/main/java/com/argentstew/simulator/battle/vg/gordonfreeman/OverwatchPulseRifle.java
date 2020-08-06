@@ -22,8 +22,8 @@ public class OverwatchPulseRifle extends RangedAttack {
         super();
         this.name = "Overwatch Pulse Rifle";
         this.description = "60 ammo, each attack uses 30 ammo";
-        this.power = 60;
-        this.variance = 12;
+        this.power = 70;
+        this.variance = 14;
         this.speed = 2;
         this.ammo = 60;
         this.subtypes = Collections.singletonList(AttackSubType.PLASMA);

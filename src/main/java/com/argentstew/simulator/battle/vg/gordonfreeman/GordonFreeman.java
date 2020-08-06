@@ -24,14 +24,14 @@ public class GordonFreeman {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.1);
-        defenses.set(AttackSubType.SMASH, 1.1);
-        defenses.set(AttackSubType.TOXIC, 0.95);
-        defenses.set(AttackSubType.HANDGUN, 0.9);
-        defenses.set(AttackSubType.RIFLE, 0.9);
-        defenses.set(AttackSubType.SHOTGUN, 0.9);
-        defenses.set(AttackSubType.EXPLOSIVE, 0.9);
-        defenses.set(AttackSubType.ARMOR_PIERCING, 1.1);
+        defenses.set(AttackType.MAGIC, 1.2);
+        defenses.set(AttackSubType.SMASH, 1.2);
+        defenses.set(AttackSubType.TOXIC, 0.9);
+        defenses.set(AttackSubType.HANDGUN, 0.8);
+        defenses.set(AttackSubType.RIFLE, 0.8);
+        defenses.set(AttackSubType.SHOTGUN, 0.8);
+        defenses.set(AttackSubType.EXPLOSIVE, 0.8);
+        defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
 
         FighterStats stats = FighterStats.builder().strength(5).toughness(4.5).dexterity(7).aim(7.5)
                 .agility(4.5).speed(4.5).intellect(6.5).willpower(5).size(5).weight(5).build();
