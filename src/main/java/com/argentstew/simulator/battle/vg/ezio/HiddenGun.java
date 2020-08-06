@@ -19,8 +19,8 @@ public class HiddenGun extends RangedAttack {
         super();
         this.name = "Hidden Gun";
         this.description = "Has 150% normal critical hit chance";
-        this.power = 60;
-        this.variance = 6;
+        this.power = 70;
+        this.variance = 7;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.HANDGUN);
         this.characteristics = Collections.singletonList(AttackCharacteristic.BULLET_SPEED);

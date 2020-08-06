@@ -24,10 +24,10 @@ public class Ezio {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.95);
-        defenses.set(AttackSubType.PLASMA, 1.05);
+        defenses.set(AttackType.MAGIC, 0.9);
+        defenses.set(AttackSubType.PLASMA, 1.2);
 
-        FighterStats stats = FighterStats.builder().strength(5).toughness(5).dexterity(8).aim(7.5)
+        FighterStats stats = FighterStats.builder().strength(5).toughness(5).dexterity(8).aim(8.5)
                 .agility(5.5).speed(5).intellect(5.5).willpower(5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
