@@ -15,5 +15,6 @@ public enum FighterClassification {
     DRAGON,
     MECH,
     DIVINE,
-    DEMONIC
+    DEMONIC,
+    UNDEAD
 }
