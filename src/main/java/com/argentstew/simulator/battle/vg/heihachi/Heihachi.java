@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.strategy.MeleeStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.vg.pacman.*;
 
@@ -24,11 +25,11 @@ public class Heihachi {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.PUNCH, 0.95);
-        defenses.set(AttackSubType.KICK, 0.95);
-        defenses.set(AttackSubType.HEADBUTT, 0.95);
-        defenses.set(AttackSubType.SLAM, 0.95);
-        defenses.set(AttackSubType.GRAPPLE, 0.95);
+        defenses.set(AttackSubType.PUNCH, 0.8);
+        defenses.set(AttackSubType.KICK, 0.8);
+        defenses.set(AttackSubType.HEADBUTT, 0.8);
+        defenses.set(AttackSubType.SLAM, 0.8);
+        defenses.set(AttackSubType.GRAPPLE, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(5).dexterity(5.5).aim(3.5)
                 .agility(3).speed(4).intellect(5).willpower(5).size(4.5).weight(4.5).build();
@@ -41,7 +42,7 @@ public class Heihachi {
                         "Heihachi: 'That felt good. Next!'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new OffensiveStrategy()).build()
+                .strategy(new MeleeStrategy()).build()
                 .addAction(new DemonUppercut()).addAction(new TsunamiKick()).addAction(new DemonScissors())
                 .addAction(new Stonehead())
                 .addAction(new LightningHammer())
