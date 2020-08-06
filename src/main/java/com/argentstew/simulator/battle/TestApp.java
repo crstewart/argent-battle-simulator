@@ -70,7 +70,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = GuybrushThreepwood.NAME;
+    private static final String TEST_FIGHTER = HandsomeJack.NAME;
 
     public static void main(String[] args) {
 

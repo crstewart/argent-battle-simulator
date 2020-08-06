@@ -25,9 +25,9 @@ public class HandsomeJack {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 1.2);
-        defenses.set(AttackSubType.FIRE, 1.1);
+        defenses.set(AttackSubType.FIRE, 1.25);
 
-        FighterStats stats = FighterStats.builder().strength(3.5).toughness(3).dexterity(7).aim(7.5)
+        FighterStats stats = FighterStats.builder().strength(3.5).toughness(3).dexterity(7).aim(8)
                 .agility(4).speed(4).intellect(7).willpower(7).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
