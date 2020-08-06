@@ -28,7 +28,7 @@ public class Draven {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.95);
+        defenses.set(AttackType.MAGIC, 0.9);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(4.5).dexterity(8).aim(7.5)
                 .agility(5).speed(4.5).intellect(4.5).willpower(4).size(5).weight(5).build();
