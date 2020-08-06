@@ -22,8 +22,8 @@ public class UnrelentingForce extends RangedAttack {
         super();
         this.name = "Unrelenting Force (Fus Ro Dah)";
         this.description = "Deals additional damage based on the opponent's weight";
-        this.power = 40;
-        this.variance = 4;
+        this.power = 20;
+        this.variance = 2;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.AIR);
         this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
@@ -33,7 +33,7 @@ public class UnrelentingForce extends RangedAttack {
     public DamageReport doAttack(Fighter defender) {
         DamageReport report = super.doAttack(defender);
         if (report.getDamage() > 0) {
-            report.setDamage(report.getDamage() + (int) Math.round(defender.getStats().getWeight()));
+            report.setDamage(report.getDamage() + (2 * (int) Math.round(defender.getStats().getWeight())));
             owner.getArena().fullRetreat(defender);
         }
 

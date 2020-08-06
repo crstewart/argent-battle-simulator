@@ -26,16 +26,16 @@ public class Dovahkiin {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 0.8);
-        defenses.set(AttackSubType.HEADBUTT, 0.9);
-        defenses.set(AttackSubType.SLASH, 0.95);
-        defenses.set(AttackSubType.PIERCE, 0.95);
-        defenses.set(AttackSubType.HACK, 0.95);
-        defenses.set(AttackSubType.SMASH, 0.95);
+        defenses.set(AttackSubType.HEADBUTT, 0.8);
+        defenses.set(AttackSubType.SLASH, 0.8);
+        defenses.set(AttackSubType.PIERCE, 0.8);
+        defenses.set(AttackSubType.HACK, 0.8);
+        defenses.set(AttackSubType.SMASH, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(6).dexterity(6).aim(6.5)
                 .agility(5).speed(4.5).intellect(5).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new DragonSlayer()));
-        return Fighter.builder().name(NAME).hp(155).maxHp(155).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("An all-around fighter with an attack that pushes foes back and deals additional damage to heavyweights.")
                 .entryQuotes(Arrays.asList("Dragonborn: 'Stand aside, or else.'",
                         "Dragonborn: 'Fine. Let me see if I can cut you down.'"))
