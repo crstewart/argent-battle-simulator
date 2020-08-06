@@ -25,9 +25,8 @@ public class Jaina {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.7);
-        defenses.set(AttackSubType.FIRE, 0.9);
-        defenses.set(AttackSubType.ICE, 0.9);
+        defenses.set(AttackType.MAGIC, 0.6);
+        defenses.set(AttackSubType.ICE, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(3.5).dexterity(6).aim(8)
                 .agility(4.5).speed(5).intellect(7).willpower(8).size(4.5).weight(4.5).build();
