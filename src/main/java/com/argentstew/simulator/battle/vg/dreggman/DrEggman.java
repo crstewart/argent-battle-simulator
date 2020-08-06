@@ -27,8 +27,8 @@ public class DrEggman {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.2);
-        defenses.set(AttackSubType.PUNCH, 1.1);
+        defenses.set(AttackType.MAGIC, 1.4);
+        defenses.set(AttackSubType.PUNCH, 1.2);
         defenses.set(AttackSubType.SLAM, 1.2);
         defenses.set(AttackSubType.HANDGUN, 0.8);
         defenses.set(AttackSubType.RIFLE, 0.8);
