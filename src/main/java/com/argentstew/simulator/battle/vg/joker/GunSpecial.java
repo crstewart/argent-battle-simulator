@@ -21,8 +21,8 @@ public class GunSpecial extends RangedAttack {
         super();
         this.name = "Gun Special";
         this.description = "Requires a summoned persona";
-        this.power = 80;
-        this.variance = 8;
+        this.power = 100;
+        this.variance = 10;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.HANDGUN);
         this.characteristics = Collections.singletonList(AttackCharacteristic.BULLET_SPEED);

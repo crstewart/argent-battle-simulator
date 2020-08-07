@@ -22,7 +22,7 @@ public class AllOutAttack extends MeleeXStrike {
         this.power = 230;
         this.variance = 15;
         this.speed = 4;
-        this.subtypes = Arrays.asList(AttackSubType.SLAM, AttackSubType.SLASH);
+        this.subtypes = Arrays.asList(AttackSubType.SLAM, AttackSubType.SLASH, AttackSubType.ASSIST);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }
 }

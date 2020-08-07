@@ -22,8 +22,8 @@ public class Gun extends RangedAttack {
     public Gun() {
         super();
         this.name = "Gun";
-        this.power = 50;
-        this.variance = 6;
+        this.power = 70;
+        this.variance = 8;
         this.speed = 1;
         this.ammo = 2;
         this.subtypes = Collections.singletonList(AttackSubType.HANDGUN);
