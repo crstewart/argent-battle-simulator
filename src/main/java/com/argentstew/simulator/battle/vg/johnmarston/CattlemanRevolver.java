@@ -22,8 +22,8 @@ public class CattlemanRevolver extends RangedAttack {
         super();
         this.name = "Cattleman Revolver";
         this.description = "6 ammo";
-        this.power = 60;
-        this.variance = 5;
+        this.power = 70;
+        this.variance = 6;
         this.speed = 1;
         this.ammo = 6;
         this.subtypes = Collections.singletonList(AttackSubType.HANDGUN);
