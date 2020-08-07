@@ -23,8 +23,8 @@ public class JakAndDaxter {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.ASSIST, 0.8);
-        defenses.set(AttackSubType.DARK, 1.1);
+        defenses.set(AttackSubType.ASSIST, 0.6);
+        defenses.set(AttackSubType.DARK, 1.25);
 
         FighterStats stats = FighterStats.builder().strength(5).toughness(5.5).dexterity(6.5).aim(8)
                 .agility(4.5).speed(4.5).intellect(4.5).willpower(5.5).size(5).weight(5).build();
