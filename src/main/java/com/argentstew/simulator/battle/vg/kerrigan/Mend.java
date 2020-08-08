@@ -14,7 +14,7 @@ public class Mend extends Heal {
 
     public Mend() {
         this.name = "Mend";
-        this.description = "Heals 32-40 damage";
+        this.description = "Heals 45-60 damage";
         this.initiateMessage = "assimilates her spawned zerg!";
         this.successMessage = "mends her wounds!";
         this.failureMessage = "fails to heal!";
@@ -50,8 +50,8 @@ public class Mend extends Heal {
 
     @Override
     protected int calculateAmountHealed(int incomingDamage) {
-        double baseHeal = 32;
-        double variance = Math.random() * 8;
+        double baseHeal = 45;
+        double variance = Math.random() * 15;
         return (int) Math.round(baseHeal + variance);
     }
 }
