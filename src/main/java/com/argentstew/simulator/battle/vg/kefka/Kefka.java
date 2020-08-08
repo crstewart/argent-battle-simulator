@@ -25,9 +25,9 @@ public class Kefka {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 0.7);
-        defenses.set(AttackSubType.LIGHT, 0.9);
-        defenses.set(AttackSubType.DARK, 1.1);
-        defenses.set(AttackSubType.SLASH, 1.1);
+        defenses.set(AttackSubType.LIGHT, 0.75);
+        defenses.set(AttackSubType.DARK, 1.25);
+        defenses.set(AttackSubType.SLASH, 1.25);
 
         FighterStats stats = FighterStats.builder().strength(2).toughness(2).dexterity(6).aim(8)
                 .agility(4.5).speed(4.5).intellect(6.5).willpower(7).size(5).weight(5).build();

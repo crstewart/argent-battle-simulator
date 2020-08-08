@@ -74,7 +74,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Joker.NAME;
+    private static final String TEST_FIGHTER = Kefka.NAME;
 
     public static void main(String[] args) {
 
