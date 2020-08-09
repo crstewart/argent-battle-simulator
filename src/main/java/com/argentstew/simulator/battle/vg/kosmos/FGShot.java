@@ -18,8 +18,8 @@ public class FGShot extends RangedAttack {
     public FGShot() {
         super();
         this.name = "F-G-SHOT";
-        this.power = 70;
-        this.variance = 14;
+        this.power = 80;
+        this.variance = 18;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.RIFLE);
         this.characteristics = Collections.singletonList(AttackCharacteristic.BULLET_SPEED);

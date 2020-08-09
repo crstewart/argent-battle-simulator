@@ -17,8 +17,8 @@ public class RCannon extends RangedAttack {
     public RCannon() {
         super();
         this.name = "R-Cannon";
-        this.power = 90;
-        this.variance = 9;
+        this.power = 100;
+        this.variance = 10;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.PLASMA);
         this.characteristics = Collections.emptyList();

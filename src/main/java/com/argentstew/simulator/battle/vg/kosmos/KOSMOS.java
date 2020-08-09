@@ -25,11 +25,11 @@ public class KOSMOS {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.2);
-        defenses.set(AttackSubType.NATURE, 0.95);
-        defenses.set(AttackSubType.HANDGUN, 0.9);
-        defenses.set(AttackSubType.RIFLE, 0.9);
-        defenses.set(AttackSubType.SHOTGUN, 0.9);
+        defenses.set(AttackType.MAGIC, 1.5);
+        defenses.set(AttackSubType.NATURE, 0.75);
+        defenses.set(AttackSubType.HANDGUN, 0.8);
+        defenses.set(AttackSubType.RIFLE, 0.8);
+        defenses.set(AttackSubType.SHOTGUN, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(8.5).toughness(8).dexterity(4.5).aim(5)
                 .agility(3).speed(3.5).intellect(7).willpower(1.5).size(4.5).weight(4.5).build();
