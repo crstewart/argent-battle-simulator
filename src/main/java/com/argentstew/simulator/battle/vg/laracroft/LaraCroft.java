@@ -24,6 +24,7 @@ public class LaraCroft {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
+        defenses.set(AttackSubType.TOXIC, 1.2);
 
         FighterStats stats = FighterStats.builder().strength(5).toughness(5.5).dexterity(6.5).aim(8)
                 .agility(5.5).speed(4.5).intellect(6).willpower(5.5).size(4.5).weight(4.5).build();

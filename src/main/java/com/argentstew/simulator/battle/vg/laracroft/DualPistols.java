@@ -17,8 +17,8 @@ public class DualPistols extends RangedAttack {
     public DualPistols() {
         super();
         this.name = "Dual Pistols";
-        this.power = 65;
-        this.variance = 6;
+        this.power = 85;
+        this.variance = 7;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.HANDGUN);
         this.characteristics = Collections.singletonList(AttackCharacteristic.BULLET_SPEED);
