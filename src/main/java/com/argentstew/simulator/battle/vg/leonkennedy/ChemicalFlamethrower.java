@@ -22,7 +22,7 @@ public class ChemicalFlamethrower extends RangedAttack {
         super();
         this.name = "Chemical Flamethrower";
         this.description = "100 ammo, each attack uses 25 ammo";
-        this.power = 65;
+        this.power = 75;
         this.variance = 5;
         this.speed = 1;
         this.ammo = 100;

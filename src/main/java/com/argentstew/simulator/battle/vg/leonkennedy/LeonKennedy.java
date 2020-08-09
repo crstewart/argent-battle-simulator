@@ -24,8 +24,8 @@ public class LeonKennedy {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.HANDGUN, 0.95);
-        defenses.set(AttackSubType.DARK, 0.95);
+        defenses.set(AttackSubType.HANDGUN, 0.9);
+        defenses.set(AttackSubType.DARK, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(5).dexterity(5.5).aim(7.5)
                 .agility(4.5).speed(5).intellect(5).willpower(6).size(5).weight(5).build();
