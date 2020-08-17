@@ -58,6 +58,7 @@ import com.argentstew.simulator.battle.vg.laracroft.LaraCroft;
 import com.argentstew.simulator.battle.vg.leonkennedy.LeonKennedy;
 import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.lloyd.LloydIrving;
+import com.argentstew.simulator.battle.vg.luigi.Luigi;
 import com.argentstew.simulator.battle.vg.magus.Magus;
 import com.argentstew.simulator.battle.vg.mario.Mario;
 import com.argentstew.simulator.battle.vg.marth.Marth;
@@ -82,7 +83,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = LloydIrving.NAME;
+    private static final String TEST_FIGHTER = Luigi.NAME;
 
     public static void main(String[] args) {
 

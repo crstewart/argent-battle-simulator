@@ -25,9 +25,8 @@ public class Luigi {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.8);
-        defenses.set(AttackSubType.PIERCE, 1.2);
-        defenses.set(AttackSubType.FIRE, 1.2);
+        defenses.set(AttackSubType.PIERCE, 1.25);
+        defenses.set(AttackSubType.FIRE, 1.25);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(4.5).dexterity(6).aim(6)
                 .agility(5.5).speed(5).intellect(5).willpower(5.5).size(4).weight(4.5).build();
