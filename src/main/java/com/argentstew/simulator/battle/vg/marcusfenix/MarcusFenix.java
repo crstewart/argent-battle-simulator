@@ -24,18 +24,18 @@ public class MarcusFenix {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.2);
-        defenses.set(AttackSubType.SLASH, 0.9);
-        defenses.set(AttackSubType.PIERCE, 0.9);
-        defenses.set(AttackSubType.HACK, 0.9);
-        defenses.set(AttackSubType.SMASH, 1.1);
-        defenses.set(AttackSubType.HANDGUN, 0.9);
-        defenses.set(AttackSubType.RIFLE, 0.95);
-        defenses.set(AttackSubType.SHOTGUN, 0.95);
-        defenses.set(AttackSubType.HEADBUTT, 1.05);
-        defenses.set(AttackSubType.TAIL, 0.95);
-        defenses.set(AttackSubType.ARMOR_PIERCING, 1.1);
-        defenses.set(AttackSubType.ASSIST, 0.95);
+        defenses.set(AttackType.MAGIC, 1.4);
+        defenses.set(AttackSubType.SLASH, 0.8);
+        defenses.set(AttackSubType.PIERCE, 0.8);
+        defenses.set(AttackSubType.HACK, 0.8);
+        defenses.set(AttackSubType.SMASH, 1.2);
+        defenses.set(AttackSubType.HANDGUN, 0.7);
+        defenses.set(AttackSubType.RIFLE, 0.75);
+        defenses.set(AttackSubType.SHOTGUN, 0.75);
+        defenses.set(AttackSubType.HEADBUTT, 1.25);
+        defenses.set(AttackSubType.TAIL, 0.8);
+        defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
+        defenses.set(AttackSubType.ASSIST, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(6.5).dexterity(6).aim(8)
                 .agility(4).speed(4).intellect(5).willpower(6).size(5).weight(5.5).build();

@@ -22,8 +22,8 @@ public class Gnasher extends RangedAttack {
         super();
         this.name = "Gnasher Shotgun";
         this.description = "8 ammo";
-        this.power = 85;
-        this.variance = 8;
+        this.power = 100;
+        this.variance = 10;
         this.speed = 2.5;
         this.ammo = 8;
         this.subtypes = Collections.singletonList(AttackSubType.SHOTGUN);

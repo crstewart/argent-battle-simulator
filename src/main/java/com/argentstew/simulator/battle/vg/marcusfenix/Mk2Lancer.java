@@ -22,8 +22,8 @@ public class Mk2Lancer extends RangedAttack {
         super();
         this.name = "Mark 2 Lancer Assault Rifle";
         this.description = "300 ammo, each attack uses 100 ammo";
-        this.power = 70;
-        this.variance = 12;
+        this.power = 80;
+        this.variance = 15;
         this.speed = 1.5;
         this.ammo = 300;
         this.subtypes = Collections.singletonList(AttackSubType.RIFLE);
