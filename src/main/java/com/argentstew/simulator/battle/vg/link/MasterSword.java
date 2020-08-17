@@ -18,7 +18,7 @@ public class MasterSword extends MeleeAttack {
         super();
         this.name = "Master Sword";
         this.power = 60;
-        this.variance = 5;
+        this.variance = 6;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.SLASH, AttackSubType.LIGHT);
         this.characteristics = Collections.emptyList();

@@ -56,6 +56,7 @@ import com.argentstew.simulator.battle.vg.kosmos.KOSMOS;
 import com.argentstew.simulator.battle.vg.kratos.Kratos;
 import com.argentstew.simulator.battle.vg.laracroft.LaraCroft;
 import com.argentstew.simulator.battle.vg.leonkennedy.LeonKennedy;
+import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.magus.Magus;
 import com.argentstew.simulator.battle.vg.mario.Mario;
 import com.argentstew.simulator.battle.vg.marth.Marth;
@@ -80,7 +81,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = LeonKennedy.NAME;
+    private static final String TEST_FIGHTER = Link.NAME;
 
     public static void main(String[] args) {
 
