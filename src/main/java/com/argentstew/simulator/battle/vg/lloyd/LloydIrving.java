@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.strategy.MeleeStrategy;
 import com.argentstew.simulator.battle.vg.kosmos.*;
 
 import java.util.Arrays;
@@ -24,9 +25,10 @@ public class LloydIrving {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
+        defenses.set(AttackType.MAGIC, 0.8);
+        defenses.set(AttackSubType.SLASH, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(4).toughness(4.5).dexterity(7.5).aim(4.5)
+        FighterStats stats = FighterStats.builder().strength(4).toughness(4.5).dexterity(7.5).aim(5)
                 .agility(6.5).speed(6).intellect(5.5).willpower(7).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
@@ -37,7 +39,7 @@ public class LloydIrving {
                         "Lloyd: 'Let's all work together for the sake of a peaceful world.'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new BalancedStrategy()).build()
+                .strategy(new MeleeStrategy()).build()
                 .addAction(new TwinBlades()).addAction(new DemonFang()).addAction(new SonicThrust())
                 .addAction(new SwordRain()).addAction(new GraveBlade())
                 .addAction(new FalconsCrest())
