@@ -17,8 +17,8 @@ public class TrueFalchion extends MeleeXStrike {
     public TrueFalchion() {
         super();
         this.name = "True Falchion";
-        this.power = 225;
-        this.variance = 15;
+        this.power = 240;
+        this.variance = 16;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.SLASH, AttackSubType.LIGHT);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);

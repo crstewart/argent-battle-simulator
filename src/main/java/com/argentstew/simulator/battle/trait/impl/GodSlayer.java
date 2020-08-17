@@ -23,7 +23,7 @@ public class GodSlayer implements Trait {
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {
         if (defender.getClassifications().contains(FighterClassification.DIVINE)) {
-            return rawDamage * 1.25;
+            return rawDamage * 1.50;
         }
 
         return rawDamage;

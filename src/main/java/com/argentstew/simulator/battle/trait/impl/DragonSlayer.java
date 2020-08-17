@@ -23,7 +23,7 @@ public class DragonSlayer implements Trait {
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {
         if (defender.getClassifications().contains(FighterClassification.DRAGON)) {
-            return rawDamage * 1.25;
+            return rawDamage * 1.5;
         }
 
         return rawDamage;

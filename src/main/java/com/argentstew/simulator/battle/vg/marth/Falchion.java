@@ -17,8 +17,8 @@ public class Falchion extends MeleeAttack {
     public Falchion() {
         super();
         this.name = "Falchion";
-        this.power = 50;
-        this.variance = 4;
+        this.power = 55;
+        this.variance = 5;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
         this.characteristics = Collections.emptyList();

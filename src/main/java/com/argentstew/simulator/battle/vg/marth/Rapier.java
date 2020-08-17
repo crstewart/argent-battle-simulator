@@ -17,8 +17,8 @@ public class Rapier extends MeleeAttack {
     public Rapier() {
         super();
         this.name = "Rapier";
-        this.power = 45;
-        this.variance = 4;
+        this.power = 50;
+        this.variance = 5;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.PIERCE, AttackSubType.ARMOR_PIERCING);
         this.characteristics = Collections.emptyList();

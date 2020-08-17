@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.strategy.MeleeStrategy;
 import com.argentstew.simulator.battle.trait.impl.DragonSlayer;
 import com.argentstew.simulator.battle.vg.link.*;
 
@@ -25,14 +26,14 @@ public class Marth {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MELEE, 0.9);
-        defenses.set(AttackType.RANGED, 0.9);
-        defenses.set(AttackType.MAGIC, 0.8);
-        defenses.set(AttackSubType.PIERCE, 1.25);
-        defenses.set(AttackSubType.ARMOR_PIERCING, 1.25);
-        defenses.set(AttackSubType.HACK, 0.75);
+        defenses.set(AttackType.MAGIC, 0.7);
+        defenses.set(AttackSubType.SLASH, 0.7);
+        defenses.set(AttackSubType.SMASH, 0.8);
+        defenses.set(AttackSubType.PIERCE, 1.5);
+        defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
+        defenses.set(AttackSubType.HACK, 0.5);
 
-        FighterStats stats = FighterStats.builder().strength(5).toughness(6).dexterity(7).aim(4)
+        FighterStats stats = FighterStats.builder().strength(5).toughness(6).dexterity(7.5).aim(4)
                 .agility(6).speed(6).intellect(5).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new DragonSlayer()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
@@ -43,7 +44,7 @@ public class Marth {
                         "Marth: 'Let this be a ray of hope that lights the way for others!'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new BalancedStrategy()).build()
+                .strategy(new MeleeStrategy()).build()
                 .addAction(new Falchion()).addAction(new Rapier()).addAction(new Armorslayer())
                 .addAction(new LevinSword())
                 .addAction(new TrueFalchion())

@@ -16,8 +16,8 @@ public class LevinSword extends MagicAttack {
     public LevinSword() {
         super();
         this.name = "Levin Sword";
-        this.power = 40;
-        this.variance = 4;
+        this.power = 50;
+        this.variance = 5;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.THUNDER);
         this.characteristics = Collections.emptyList();

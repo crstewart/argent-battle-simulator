@@ -84,7 +84,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Mario.NAME;
+    private static final String TEST_FIGHTER = Marth.NAME;
 
     public static void main(String[] args) {
 
