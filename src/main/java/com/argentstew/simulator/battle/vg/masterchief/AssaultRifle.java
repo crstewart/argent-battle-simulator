@@ -22,8 +22,8 @@ public class AssaultRifle extends RangedAttack {
         super();
         this.name = "Assault Rifle";
         this.description = "96 ammo, each attack uses 32 ammo";
-        this.power = 65;
-        this.variance = 15;
+        this.power = 75;
+        this.variance = 20;
         this.speed = 2;
         this.ammo = 96;
         this.subtypes = Collections.singletonList(AttackSubType.RIFLE);
