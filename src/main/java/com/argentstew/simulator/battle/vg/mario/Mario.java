@@ -25,13 +25,12 @@ public class Mario {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.8);
         defenses.set(AttackSubType.PIERCE, 1.2);
         defenses.set(AttackSubType.FIRE, 1.2);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(5.5).aim(6)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(6).aim(6.5)
                 .agility(5).speed(5).intellect(5).willpower(5.5).size(4).weight(4.5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Bowser.NAME, 1.1)));
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Bowser.NAME, 1.25)));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("An all-around fighter who can win any fight and deals extra damage to Bowser.")
                 .entryQuotes(Arrays.asList("Mario: 'Here we go!'", "Mario: 'It's-a me, Mario!'"))
