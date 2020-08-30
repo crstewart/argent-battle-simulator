@@ -25,9 +25,9 @@ public class Morrigan {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
-        defenses.set(AttackSubType.LIGHT, 1.1);
-        defenses.set(AttackSubType.DARK, 0.9);
+        defenses.set(AttackType.MAGIC, 0.7);
+        defenses.set(AttackSubType.LIGHT, 1.25);
+        defenses.set(AttackSubType.DARK, 0.75);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(2).dexterity(6).aim(6.5)
                 .agility(5).speed(4.5).intellect(4.5).willpower(6).size(4.5).weight(4.5).build();

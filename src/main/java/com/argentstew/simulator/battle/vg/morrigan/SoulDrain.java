@@ -30,8 +30,8 @@ public class SoulDrain extends RangedAttack {
     public DamageReport doAttack(Fighter defender) {
         if (defender.getXStrikeMeter() > 0) {
             double rng = Math.random();
-            defender.adjustXStrikeMeter((rng < 0.2) ? -2 : -1);
-            this.owner.adjustXStrikeMeter((rng < 0.2) ? 2 : 1);
+            defender.adjustXStrikeMeter((rng < 0.5) ? -2 : -1);
+            this.owner.adjustXStrikeMeter((rng < 0.5) ? 2 : 1);
         }
 
         return super.doAttack(defender);
