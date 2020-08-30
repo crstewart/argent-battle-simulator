@@ -41,6 +41,11 @@ public class DuelBattle implements Battle {
     public void start() {
         int turn = 1;
         while (fighter1.getHp() > 0 && fighter2.getHp() > 0) {
+            if (turn >= 100) {
+                fighter1.setHp(0);
+                fighter2.setHp(0);
+                continue;
+            }
             battleLogger.log("----- Turn " + turn + " -----");
             Action fighter1Action = fighter1.selectAction();
             Action fighter2Action = fighter2.selectAction();

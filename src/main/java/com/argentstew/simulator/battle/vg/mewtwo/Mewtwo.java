@@ -24,12 +24,12 @@ public class Mewtwo {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.PUNCH, 0.875);
-        defenses.set(AttackSubType.KICK, 0.875);
-        defenses.set(AttackSubType.DARK, 1.25);
-        defenses.set(AttackSubType.NATURE, 1.125);
-        defenses.set(AttackSubType.MYSTIC, 0.75);
-        defenses.set(AttackSubType.CHI, 0.75);
+        defenses.set(AttackSubType.PUNCH, 0.75);
+        defenses.set(AttackSubType.KICK, 0.75);
+        defenses.set(AttackSubType.DARK, 2);
+        defenses.set(AttackSubType.NATURE, 1.25);
+        defenses.set(AttackSubType.MYSTIC, 0.5);
+        defenses.set(AttackSubType.CHI, 0.5);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(4).aim(6.5)
                 .agility(8).speed(7).intellect(10).willpower(5).size(5.5).weight(6.5).build();

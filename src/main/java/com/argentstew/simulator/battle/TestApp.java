@@ -65,6 +65,7 @@ import com.argentstew.simulator.battle.vg.mario.Mario;
 import com.argentstew.simulator.battle.vg.marth.Marth;
 import com.argentstew.simulator.battle.vg.masterchief.MasterChief;
 import com.argentstew.simulator.battle.vg.megaman.MegaMan;
+import com.argentstew.simulator.battle.vg.mewtwo.Mewtwo;
 import com.argentstew.simulator.battle.vg.princeofpersia.PrinceOfPersia;
 import com.argentstew.simulator.battle.vg.ridley.Ridley;
 import com.argentstew.simulator.battle.vg.sans.Sans;
@@ -86,7 +87,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = MegaMan.NAME;
+    private static final String TEST_FIGHTER = Mewtwo.NAME;
 
     public static void main(String[] args) {
 
