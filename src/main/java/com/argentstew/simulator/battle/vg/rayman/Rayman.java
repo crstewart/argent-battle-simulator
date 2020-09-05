@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.strategy.MeleeStrategy;
 import com.argentstew.simulator.battle.vg.handsomejack.*;
 import com.argentstew.simulator.battle.vg.terry.TerryStrategy;
 
@@ -25,11 +26,10 @@ public class Rayman {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
-        defenses.set(AttackSubType.WATER, 0.9);
-        defenses.set(AttackSubType.PIERCE, 1.1);
+        defenses.set(AttackSubType.WATER, 0.7);
+        defenses.set(AttackSubType.PIERCE, 1.25);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(4).dexterity(6).aim(6)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(4).dexterity(6.5).aim(6)
                 .agility(5).speed(6).intellect(5).willpower(5).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
@@ -39,7 +39,7 @@ public class Rayman {
                         "Rayman does the air guitar and poses with a big grin."))
                 .classifications(Collections.singletonList(FighterClassification.ALIEN))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new BalancedStrategy()).build()
+                .strategy(new MeleeStrategy()).build()
                 .addAction(new MagicPunch()).addAction(new MagicKick()).addAction(new SpinningStrike())
                 .addAction(new WindUpPunch())
                 .addAction(new RaymanAlliedAssault())

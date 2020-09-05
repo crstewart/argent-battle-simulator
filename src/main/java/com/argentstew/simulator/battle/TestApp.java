@@ -76,6 +76,7 @@ import com.argentstew.simulator.battle.vg.pikachu.Pikachu;
 import com.argentstew.simulator.battle.vg.pit.Pit;
 import com.argentstew.simulator.battle.vg.princeofpersia.PrinceOfPersia;
 import com.argentstew.simulator.battle.vg.ratchet.RatchetAndClank;
+import com.argentstew.simulator.battle.vg.rayman.Rayman;
 import com.argentstew.simulator.battle.vg.ridley.Ridley;
 import com.argentstew.simulator.battle.vg.sans.Sans;
 import com.argentstew.simulator.battle.vg.scorpion.Scorpion;
@@ -96,7 +97,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = RatchetAndClank.NAME;
+    private static final String TEST_FIGHTER = Rayman.NAME;
 
     public static void main(String[] args) {
 
