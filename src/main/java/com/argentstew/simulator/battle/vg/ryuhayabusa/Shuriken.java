@@ -23,6 +23,6 @@ public class Shuriken extends RangedAttack {
         this.variance = 4;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.PIERCE);
-        this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.STEALTH);
     }
 }

@@ -24,7 +24,7 @@ public class RyuHayabusa {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.CHI, 0.9);
+        defenses.set(AttackSubType.CHI, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(5).dexterity(7.5).aim(6.5)
                 .agility(7).speed(6).intellect(5).willpower(4).size(5).weight(5).build();
