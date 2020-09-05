@@ -26,20 +26,22 @@ public class Ridley {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.2);
-        defenses.set(AttackSubType.PUNCH, 1.1);
-        defenses.set(AttackSubType.KICK, 0.9);
-        defenses.set(AttackSubType.ICE, 1.1);
-        defenses.set(AttackSubType.PLASMA, 1.05);
-        defenses.set(AttackSubType.HANDGUN, 0.9);
-        defenses.set(AttackSubType.SHOTGUN, 0.9);
-        defenses.set(AttackSubType.RIFLE, 0.9);
-        defenses.set(AttackSubType.EXPLOSIVE, 1.05);
+        defenses.set(AttackType.MAGIC, 1.4);
+        defenses.set(AttackSubType.PUNCH, 1.2);
+        defenses.set(AttackSubType.KICK, 0.8);
+        defenses.set(AttackSubType.WING, 0.8);
+        defenses.set(AttackSubType.TAIL, 0.8);
+        defenses.set(AttackSubType.ICE, 1.3);
+        defenses.set(AttackSubType.PLASMA, 1.25);
+        defenses.set(AttackSubType.HANDGUN, 0.8);
+        defenses.set(AttackSubType.SHOTGUN, 0.8);
+        defenses.set(AttackSubType.RIFLE, 0.8);
+        defenses.set(AttackSubType.EXPLOSIVE, 1.25);
 
-        FighterStats stats = FighterStats.builder().strength(7).toughness(5.5).dexterity(5).aim(4.5)
-                .agility(8).speed(8).intellect(4).willpower(3).size(10).weight(8).build();
+        FighterStats stats = FighterStats.builder().strength(7.5).toughness(5.5).dexterity(5).aim(4.5)
+                .agility(8).speed(8).intellect(6).willpower(3).size(9).weight(8).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
-        return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(170).maxHp(170).xStrikeMeter(0)
                 .description("A brawler with high speed and power whose tail can strike critically.")
                 .entryQuotes(Arrays.asList("Ridley swoops into the battlefield with a flap of his wings.'",
                         "Ridley roars and prepares himself for the coming battle.'"))
