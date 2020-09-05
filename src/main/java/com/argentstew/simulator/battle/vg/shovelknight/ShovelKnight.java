@@ -25,13 +25,14 @@ public class ShovelKnight {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
-        defenses.set(AttackSubType.HEADBUTT, 0.9);
-        defenses.set(AttackSubType.SLASH, 0.9);
-        defenses.set(AttackSubType.PIERCE, 1.2);
-        defenses.set(AttackSubType.HACK, 0.9);
-        defenses.set(AttackSubType.SMASH, 0.9);
-        defenses.set(AttackSubType.ARMOR_PIERCING, 1.1);
+        defenses.set(AttackType.MAGIC, 0.8);
+        defenses.set(AttackSubType.HEADBUTT, 0.8);
+        defenses.set(AttackSubType.SLASH, 0.8);
+        defenses.set(AttackSubType.PIERCE, 1.25);
+        defenses.set(AttackSubType.HACK, 0.8);
+        defenses.set(AttackSubType.SMASH, 0.8);
+        defenses.set(AttackSubType.WATER, 0.8);
+        defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(3).dexterity(5.5).aim(5.5)
                 .agility(4).speed(3.5).intellect(3.5).willpower(5).size(4).weight(5).build();
