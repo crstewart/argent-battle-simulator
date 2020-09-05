@@ -85,6 +85,7 @@ import com.argentstew.simulator.battle.vg.sans.Sans;
 import com.argentstew.simulator.battle.vg.scorpion.Scorpion;
 import com.argentstew.simulator.battle.vg.sephiroth.Sephiroth;
 import com.argentstew.simulator.battle.vg.shovelknight.ShovelKnight;
+import com.argentstew.simulator.battle.vg.sigma.Sigma;
 import com.argentstew.simulator.battle.vg.sonic.Sonic;
 import com.argentstew.simulator.battle.vg.spyro.Spyro;
 import com.argentstew.simulator.battle.vg.tracer.Tracer;
@@ -102,7 +103,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = ShovelKnight.NAME;
+    private static final String TEST_FIGHTER = Sigma.NAME;
 
     public static void main(String[] args) {
 

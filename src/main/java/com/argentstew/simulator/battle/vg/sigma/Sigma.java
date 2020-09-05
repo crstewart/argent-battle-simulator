@@ -25,13 +25,13 @@ public class Sigma {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.2);
-        defenses.set(AttackSubType.SLASH, 1.1);
-        defenses.set(AttackSubType.THUNDER, 1.1);
-        defenses.set(AttackSubType.SOUND, 1.05);
-        defenses.set(AttackSubType.HANDGUN, 0.8);
-        defenses.set(AttackSubType.RIFLE, 0.8);
-        defenses.set(AttackSubType.SHOTGUN, 0.8);
+        defenses.set(AttackType.MAGIC, 1.5);
+        defenses.set(AttackSubType.SLASH, 1.25);
+        defenses.set(AttackSubType.THUNDER, 1.25);
+        defenses.set(AttackSubType.SOUND, 1.2);
+        defenses.set(AttackSubType.HANDGUN, 0.7);
+        defenses.set(AttackSubType.RIFLE, 0.7);
+        defenses.set(AttackSubType.SHOTGUN, 0.7);
 
         FighterStats stats = FighterStats.builder().strength(7).toughness(6.5).dexterity(6).aim(6)
                 .agility(6).speed(6.5).intellect(7).willpower(3).size(5).weight(5).build();
