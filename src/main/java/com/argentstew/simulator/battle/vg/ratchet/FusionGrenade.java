@@ -16,8 +16,8 @@ public class FusionGrenade extends RangedAttack {
     public FusionGrenade() {
         super();
         this.name = "Fusion Grenade";
-        this.power = 65;
-        this.variance = 6;
+        this.power = 75;
+        this.variance = 7;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.EXPLOSIVE);
         this.characteristics = Collections.emptyList();

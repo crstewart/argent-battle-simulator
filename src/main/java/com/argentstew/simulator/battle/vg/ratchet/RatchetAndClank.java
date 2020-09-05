@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.strategy.RangedStrategy;
 import com.argentstew.simulator.battle.vg.jak.*;
 
 import java.util.Arrays;
@@ -24,10 +25,10 @@ public class RatchetAndClank {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.1);
-        defenses.set(AttackSubType.ASSIST, 0.8);
+        defenses.set(AttackType.MAGIC, 1.4);
+        defenses.set(AttackSubType.ASSIST, 0.6);
 
-        FighterStats stats = FighterStats.builder().strength(4).toughness(4).dexterity(6).aim(8)
+        FighterStats stats = FighterStats.builder().strength(4).toughness(4).dexterity(6).aim(8.5)
                 .agility(5.5).speed(4.5).intellect(7).willpower(5).size(4).weight(4).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
@@ -38,7 +39,7 @@ public class RatchetAndClank {
                         "Clank: 'Why must we always choose between certain death and probable death?'"))
                 .classifications(Arrays.asList(FighterClassification.ANIMAL, FighterClassification.ALIEN))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new BalancedStrategy()).build()
+                .strategy(new RangedStrategy()).build()
                 .addAction(new IonBlaster()).addAction(new Omniwrench()).addAction(new TeslaClaw())
                 .addAction(new Combuster()).addAction(new FusionGrenade()).addAction(new VortexCannon())
                 .addAction(new TeslaBarrier())

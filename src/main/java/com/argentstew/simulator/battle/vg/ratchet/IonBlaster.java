@@ -20,8 +20,8 @@ public class IonBlaster extends RangedAttack {
     public IonBlaster() {
         super();
         this.name = "Ion Blaster";
-        this.power = 55;
-        this.variance = 5;
+        this.power = 65;
+        this.variance = 6;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.PLASMA);
         this.characteristics = Collections.emptyList();

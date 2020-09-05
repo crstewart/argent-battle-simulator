@@ -17,8 +17,8 @@ public class Combuster extends RangedAttack {
     public Combuster() {
         super();
         this.name = "Combuster";
-        this.power = 60;
-        this.variance = 5;
+        this.power = 70;
+        this.variance = 7;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.FIRE);
         this.characteristics = Collections.emptyList();
