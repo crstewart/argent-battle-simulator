@@ -22,7 +22,7 @@ public class SAS12 extends RangedAttack {
         super();
         this.name = "SAS-12";
         this.description = "8 ammo";
-        this.power = 75;
+        this.power = 95;
         this.variance = 10;
         this.speed = 2;
         this.ammo = 8;

@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.strategy.RangedStrategy;
 import com.argentstew.simulator.battle.vg.ratchet.*;
 
 import java.util.Arrays;
@@ -35,7 +36,7 @@ public class NathanDrake {
                         "Nathan: 'Oh, you're gonna feel that in the morning!'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new BalancedStrategy()).build()
+                .strategy(new RangedStrategy()).build()
                 .addAction(new AK47()).addAction(new SAS12()).addAction(new MkNDIGrenade())
                 .addAction(new SteelFist())
                 .addAction(new EddysGoldenGun())
