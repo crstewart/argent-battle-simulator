@@ -100,7 +100,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Samus.NAME;
+    private static final String TEST_FIGHTER = Sans.NAME;
 
     public static void main(String[] args) {
 
