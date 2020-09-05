@@ -25,18 +25,18 @@ public class Pikachu {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.EARTH, 1.25);
-        defenses.set(AttackSubType.THUNDER, 0.75);
-        defenses.set(AttackSubType.AIR, 0.75);
-        defenses.set(AttackSubType.METAL, 0.75);
-        defenses.set(AttackSubType.HANDGUN, 0.875);
-        defenses.set(AttackSubType.SHOTGUN, 0.875);
-        defenses.set(AttackSubType.RIFLE, 0.875);
+        defenses.set(AttackSubType.EARTH, 2);
+        defenses.set(AttackSubType.THUNDER, 0.5);
+        defenses.set(AttackSubType.AIR, 0.5);
+        defenses.set(AttackSubType.METAL, 0.5);
+        defenses.set(AttackSubType.HANDGUN, 0.75);
+        defenses.set(AttackSubType.SHOTGUN, 0.75);
+        defenses.set(AttackSubType.RIFLE, 0.75);
 
         FighterStats stats = FighterStats.builder().strength(2).toughness(4).dexterity(8).aim(8.5)
                 .agility(9).speed(8).intellect(3).willpower(5.5).size(2).weight(1.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
-        return Fighter.builder().name(NAME).hp(125).maxHp(125).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(120).maxHp(120).xStrikeMeter(0)
                 .description("A speedy fighter with strong defenses leading to a powerful X-Strike.")
                 .entryQuotes(Arrays.asList("Pikachu: 'Pi-KA!'", "Pikachu: 'Pika pi!'"))
                 .victoryQuotes(Arrays.asList("Pikachu: 'Pika pika! Pikachu!'", "Pikachu: 'Pi pikachu!'"))
