@@ -55,7 +55,7 @@ public class Therapy extends Heal {
 
     @Override
     protected int calculateAmountHealed(int incomingDamage) {
-        double baseHeal = 28 + (owner.getStats().getIntellect() * 0.4);
+        double baseHeal = 30 + (owner.getStats().getIntellect() * 0.4);
         double variance = Math.random() * 8;
         return (int) Math.round(baseHeal + variance);
     }

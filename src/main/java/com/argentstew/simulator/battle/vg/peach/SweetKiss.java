@@ -22,8 +22,8 @@ public class SweetKiss extends MagicAttack {
         super();
         this.name = "Sweet Kiss";
         this.description = "Uses 5 SP";
-        this.power = 80;
-        this.variance = 6;
+        this.power = 90;
+        this.variance = 8;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.MYSTIC);
         this.characteristics = Collections.emptyList();
