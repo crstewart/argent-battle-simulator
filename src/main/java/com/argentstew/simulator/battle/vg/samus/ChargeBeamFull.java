@@ -15,7 +15,7 @@ public class ChargeBeamFull extends RangedAttack {
 
     public ChargeBeamFull() {
         super();
-        this.name = "Charge Beam (Charged)";
+        this.name = "Power Beam (Charged)";
         this.power = 90;
         this.variance = 5;
         this.speed = 5;

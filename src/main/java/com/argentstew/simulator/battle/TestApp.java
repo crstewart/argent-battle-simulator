@@ -80,6 +80,7 @@ import com.argentstew.simulator.battle.vg.rayman.Rayman;
 import com.argentstew.simulator.battle.vg.ridley.Ridley;
 import com.argentstew.simulator.battle.vg.ryu.Ryu;
 import com.argentstew.simulator.battle.vg.ryuhayabusa.RyuHayabusa;
+import com.argentstew.simulator.battle.vg.samus.Samus;
 import com.argentstew.simulator.battle.vg.sans.Sans;
 import com.argentstew.simulator.battle.vg.scorpion.Scorpion;
 import com.argentstew.simulator.battle.vg.sonic.Sonic;
@@ -99,7 +100,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = RyuHayabusa.NAME;
+    private static final String TEST_FIGHTER = Samus.NAME;
 
     public static void main(String[] args) {
 

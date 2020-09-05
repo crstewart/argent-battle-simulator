@@ -29,17 +29,17 @@ public class Samus {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.25);
-        defenses.set(AttackSubType.TOXIC, 1.1);
+        defenses.set(AttackType.MAGIC, 1.3);
+        defenses.set(AttackSubType.TOXIC, 1.3);
         defenses.set(AttackSubType.HANDGUN, 0.75);
         defenses.set(AttackSubType.SHOTGUN, 0.75);
         defenses.set(AttackSubType.RIFLE, 0.75);
-        defenses.set(AttackSubType.ARMOR_PIERCING, 1.1);
+        defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(5.5).aim(7)
                 .agility(6).speed(4).intellect(5).willpower(4.5).size(4.5).weight(4.5).build();
-        FighterTraits traits = new FighterTraits(Arrays.asList(new BountyHunter(), new Rival(Ridley.NAME, 1.1)));
-        return Fighter.builder().name(NAME).hp(130).maxHp(130).mp(10).maxMp(10).xStrikeMeter(0)
+        FighterTraits traits = new FighterTraits(Arrays.asList(new BountyHunter(), new Rival(Ridley.NAME, 1.25)));
+        return Fighter.builder().name(NAME).hp(140).maxHp(140).mp(10).maxMp(10).xStrikeMeter(0)
                 .description("A futuristic gunner with a large arsenal that deals extra damage to Ridley.")
                 .entryQuotes(Arrays.asList("Samus: 'You're mine!'", "Samus: 'Try me.'"))
                 .victoryQuotes(Arrays.asList("Samus: 'My past is not a memory. It's a force at my back.'",
