@@ -25,10 +25,10 @@ public class Ness {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.MYSTIC, 1.1);
-        defenses.set(AttackSubType.THUNDER, 1.1);
+        defenses.set(AttackSubType.MYSTIC, 1.2);
+        defenses.set(AttackSubType.THUNDER, 1.2);
 
-        FighterStats stats = FighterStats.builder().strength(4.5).toughness(5).dexterity(7).aim(5.5)
+        FighterStats stats = FighterStats.builder().strength(4.5).toughness(5).dexterity(7).aim(6)
                 .agility(5).speed(5).intellect(5).willpower(7).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(135).maxHp(135).mp(120).maxMp(120).xStrikeMeter(0)
