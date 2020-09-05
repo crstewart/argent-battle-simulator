@@ -18,7 +18,7 @@ public class BonusFruit extends RangedAttack {
         super();
         this.name = "Bonus Fruit";
         this.power = 45;
-        this.variance = 15;
+        this.variance = 20;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.NATURE);
         this.characteristics = Collections.emptyList();
