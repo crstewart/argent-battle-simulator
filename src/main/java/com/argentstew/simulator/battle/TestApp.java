@@ -95,7 +95,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Pit.NAME;
+    private static final String TEST_FIGHTER = PrinceOfPersia.NAME;
 
     public static void main(String[] args) {
 
