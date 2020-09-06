@@ -18,7 +18,7 @@ import lombok.Getter;
 @EqualsAndHashCode
 public class MaverickHunter implements Trait {
 
-    private String name = "Maverick Hunter";
+    private final String name = "Maverick Hunter";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {

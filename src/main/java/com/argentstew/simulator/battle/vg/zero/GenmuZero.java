@@ -18,8 +18,8 @@ public class GenmuZero extends RangedXStrike {
     public GenmuZero() {
         super();
         this.name = "Genmu Zero";
-        this.power = 230;
-        this.variance = 13;
+        this.power = 250;
+        this.variance = 15;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.PLASMA, AttackSubType.SLASH);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
