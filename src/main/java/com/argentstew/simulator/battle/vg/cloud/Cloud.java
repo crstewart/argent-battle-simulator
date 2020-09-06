@@ -32,7 +32,7 @@ public class Cloud {
 
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(5).dexterity(2.5).aim(6.5)
                 .agility(5.5).speed(5.5).intellect(5).willpower(3).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Sephiroth.NAME, 1.2)));
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Sephiroth.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(0).maxMp(10).xStrikeMeter(0)
                 .description("A brawler who can unleash stronger versions of his limit break attacks.")
                 .entryQuotes(Arrays.asList("Cloud: 'Are sins ever forgiven...?'", "Cloud: 'Let's just...get this over with.'"))

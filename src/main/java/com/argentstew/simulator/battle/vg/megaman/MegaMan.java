@@ -39,7 +39,7 @@ public class MegaMan {
 
         FighterStats stats = FighterStats.builder().strength(5).toughness(2).dexterity(6).aim(8)
                 .agility(3).speed(3.5).intellect(2).willpower(3).size(4.5).weight(5.5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(DrWily.NAME, 1.25)));
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(DrWily.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A weaponmaster with a large arsenal of ranged attacks that deals extra damage to Dr. Wily.")
                 .entryQuotes(Arrays.asList("Mega Man: 'I am more than a robot!'", "Mega Man: 'We don't have to fight!'"))

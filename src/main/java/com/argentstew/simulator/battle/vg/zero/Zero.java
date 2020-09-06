@@ -37,7 +37,7 @@ public class Zero {
 
         FighterStats stats = FighterStats.builder().strength(7).toughness(5).dexterity(9).aim(5)
                 .agility(7).speed(5.5).intellect(4).willpower(3).size(5).weight(5.5).build();
-        FighterTraits traits = new FighterTraits(Arrays.asList(new MaverickHunter(), new Rival(Sigma.NAME, 1.25)));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new MaverickHunter(), new Rival(Sigma.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A weaponmaster with experience fighting other mechs, especially Sigma.")
                 .entryQuotes(Arrays.asList("Zero: 'Starting mission now!'",
