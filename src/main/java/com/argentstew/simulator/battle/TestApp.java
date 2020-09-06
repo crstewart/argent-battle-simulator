@@ -90,6 +90,7 @@ import com.argentstew.simulator.battle.vg.samus.Samus;
 import com.argentstew.simulator.battle.vg.sans.Sans;
 import com.argentstew.simulator.battle.vg.scorpion.Scorpion;
 import com.argentstew.simulator.battle.vg.sephiroth.Sephiroth;
+import com.argentstew.simulator.battle.vg.shadow.Shadow;
 import com.argentstew.simulator.battle.vg.shovelknight.ShovelKnight;
 import com.argentstew.simulator.battle.vg.sigma.Sigma;
 import com.argentstew.simulator.battle.vg.simon.SimonBelmont;
@@ -127,7 +128,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Rathalos.NAME;
+    private static final String TEST_FIGHTER = Shadow.NAME;
 
     public static void main(String[] args) {
 
