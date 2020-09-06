@@ -13,6 +13,7 @@ import com.argentstew.simulator.battle.vg.banjo.BanjoKazooie;
 import com.argentstew.simulator.battle.vg.bigdaddy.BigDaddy;
 import com.argentstew.simulator.battle.vg.bomberman.Bomberman;
 import com.argentstew.simulator.battle.vg.bowser.Bowser;
+import com.argentstew.simulator.battle.vg.bowserjr.BowserJr;
 import com.argentstew.simulator.battle.vg.captfalcon.CaptainFalcon;
 import com.argentstew.simulator.battle.vg.captprice.CaptainPrice;
 import com.argentstew.simulator.battle.vg.charizard.Charizard;
@@ -119,7 +120,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Zero.NAME;
+    private static final String TEST_FIGHTER = BowserJr.NAME;
 
     public static void main(String[] args) {
 

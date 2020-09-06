@@ -10,6 +10,7 @@ import com.argentstew.simulator.battle.vg.banjo.BanjoKazooie;
 import com.argentstew.simulator.battle.vg.bigdaddy.BigDaddy;
 import com.argentstew.simulator.battle.vg.bomberman.Bomberman;
 import com.argentstew.simulator.battle.vg.bowser.Bowser;
+import com.argentstew.simulator.battle.vg.bowserjr.BowserJr;
 import com.argentstew.simulator.battle.vg.captfalcon.CaptainFalcon;
 import com.argentstew.simulator.battle.vg.captprice.CaptainPrice;
 import com.argentstew.simulator.battle.vg.charizard.Charizard;
@@ -128,7 +129,8 @@ public class VgFighterFactory implements FighterFactory {
             Rayman.NAME, Ezio.NAME, PrinceOfPersia.NAME, Thrall.NAME, Jaina.NAME, Arthas.NAME, Diablo.NAME,
             Kerrigan.NAME, Tracer.NAME, SubZero.NAME, Scorpion.NAME, Bomberman.NAME, BanjoKazooie.NAME, LaraCroft.NAME,
             CommanderShepard.NAME, RyuHayabusa.NAME, Dovahkiin.NAME, ShovelKnight.NAME, Sans.NAME, Joker.NAME,
-            DoomSlayer.NAME, CaptainPrice.NAME, Cuphead.NAME, GuybrushThreepwood.NAME, Draven.NAME, GeraltOfRivia.NAME);
+            DoomSlayer.NAME, CaptainPrice.NAME, Cuphead.NAME, GuybrushThreepwood.NAME, Draven.NAME, GeraltOfRivia.NAME,
+            BowserJr.NAME);
 
     @Override
     public List<String> getAllFighters() {
@@ -338,6 +340,8 @@ public class VgFighterFactory implements FighterFactory {
                 return Draven.get();
             case GeraltOfRivia.NAME:
                 return GeraltOfRivia.get();
+            case BowserJr.NAME:
+                return BowserJr.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
