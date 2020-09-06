@@ -25,12 +25,12 @@ public class Thrall {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 0.8);
-        defenses.set(AttackSubType.FIRE, 0.9);
-        defenses.set(AttackSubType.ICE, 0.9);
-        defenses.set(AttackSubType.THUNDER, 0.9);
-        defenses.set(AttackSubType.AIR, 0.9);
-        defenses.set(AttackSubType.EARTH, 0.9);
-        defenses.set(AttackSubType.NATURE, 0.9);
+        defenses.set(AttackSubType.FIRE, 0.8);
+        defenses.set(AttackSubType.ICE, 0.8);
+        defenses.set(AttackSubType.THUNDER, 0.8);
+        defenses.set(AttackSubType.AIR, 0.8);
+        defenses.set(AttackSubType.EARTH, 0.8);
+        defenses.set(AttackSubType.NATURE, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(6).dexterity(6.5).aim(7)
                 .agility(4.5).speed(6).intellect(5.5).willpower(6.5).size(5).weight(5).build();
