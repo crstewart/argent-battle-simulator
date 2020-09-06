@@ -8,6 +8,8 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
+import com.argentstew.simulator.battle.trait.impl.Rival;
+import com.argentstew.simulator.battle.vg.kingkrool.KingKRool;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -29,7 +31,7 @@ public class DonkeyKong {
 
         FighterStats stats = FighterStats.builder().strength(9).toughness(7.5).dexterity(3).aim(2)
                 .agility(4).speed(3).intellect(1.5).willpower(5).size(8).weight(8).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(KingKRool.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(200).maxHp(200).mp(4).maxMp(4).xStrikeMeter(0)
                 .description("A tank who fights overly aggressively, taking extra damage from many attacks.")
                 .entryQuotes(Arrays.asList("DK pounds his chest and prepares for battle.",
