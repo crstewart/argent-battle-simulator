@@ -25,10 +25,9 @@ public class SimonBelmont {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
-        defenses.set(AttackSubType.DARK, 0.9);
+        defenses.set(AttackSubType.DARK, 0.75);
 
-        FighterStats stats = FighterStats.builder().strength(5.5).toughness(6).dexterity(6.5).aim(7)
+        FighterStats stats = FighterStats.builder().strength(5.5).toughness(6).dexterity(7).aim(7.5)
                 .agility(4.5).speed(4).intellect(5).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(10).maxMp(10).xStrikeMeter(0)
