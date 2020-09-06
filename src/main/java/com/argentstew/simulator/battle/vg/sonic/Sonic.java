@@ -29,9 +29,9 @@ public class Sonic {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.05);
-        defenses.set(AttackSubType.PIERCE, 1.2);
-        defenses.set(AttackSubType.WATER, 1.05);
+        defenses.set(AttackType.MAGIC, 1.2);
+        defenses.set(AttackSubType.PIERCE, 1.25);
+        defenses.set(AttackSubType.WATER, 1.2);
 
         FighterStats stats = FighterStats.builder().strength(3).toughness(3).dexterity(5.5).aim(4)
                 .agility(8).speed(10).intellect(5).willpower(5).size(4).weight(4).build();
