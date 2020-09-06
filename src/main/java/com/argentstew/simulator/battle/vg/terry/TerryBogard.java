@@ -26,14 +26,14 @@ public class TerryBogard {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.PUNCH, 0.9);
-        defenses.set(AttackSubType.KICK, 0.9);
-        defenses.set(AttackSubType.HEADBUTT, 0.9);
-        defenses.set(AttackSubType.SLAM, 0.9);
-        defenses.set(AttackSubType.GRAPPLE, 0.9);
-        defenses.set(AttackSubType.CHI, 0.8);
+        defenses.set(AttackSubType.PUNCH, 0.8);
+        defenses.set(AttackSubType.KICK, 0.8);
+        defenses.set(AttackSubType.HEADBUTT, 0.8);
+        defenses.set(AttackSubType.SLAM, 0.8);
+        defenses.set(AttackSubType.GRAPPLE, 0.8);
+        defenses.set(AttackSubType.CHI, 0.5);
 
-        FighterStats stats = FighterStats.builder().strength(5.5).toughness(6).dexterity(6).aim(5.5)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(6.5).aim(5.5)
                 .agility(6.5).speed(5.5).intellect(4.5).willpower(5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
