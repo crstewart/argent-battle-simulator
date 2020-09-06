@@ -95,6 +95,7 @@ import com.argentstew.simulator.battle.vg.spyro.Spyro;
 import com.argentstew.simulator.battle.vg.squall.Squall;
 import com.argentstew.simulator.battle.vg.steve.Steve;
 import com.argentstew.simulator.battle.vg.subzero.SubZero;
+import com.argentstew.simulator.battle.vg.tails.Tails;
 import com.argentstew.simulator.battle.vg.tracer.Tracer;
 import com.argentstew.simulator.battle.vg.viewtifuljoe.ViewtifulJoe;
 
@@ -110,7 +111,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = SubZero.NAME;
+    private static final String TEST_FIGHTER = Tails.NAME;
 
     public static void main(String[] args) {
 

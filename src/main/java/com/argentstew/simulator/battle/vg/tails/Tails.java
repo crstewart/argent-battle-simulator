@@ -28,14 +28,14 @@ public class Tails {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.1);
-        defenses.set(AttackSubType.AIR, 1.1);
-        defenses.set(AttackSubType.PIERCE, 1.1);
+        defenses.set(AttackType.MAGIC, 1.2);
+        defenses.set(AttackSubType.AIR, 1.2);
+        defenses.set(AttackSubType.PIERCE, 1.25);
 
         FighterStats stats = FighterStats.builder().strength(1.5).toughness(2.5).dexterity(8).aim(8)
-                .agility(6).speed(8).intellect(8).willpower(4.5).size(4).weight(4).build();
+                .agility(7).speed(8.5).intellect(8.5).willpower(4.5).size(4).weight(4).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
-        return Fighter.builder().name(NAME).hp(135).maxHp(135).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A speedy fighter who relies on his intellect and technical defenses.")
                 .entryQuotes(Arrays.asList("Tails: 'I'll give it my best shot.'",
                         "Tails: 'I know I can do this by myself!'"))
