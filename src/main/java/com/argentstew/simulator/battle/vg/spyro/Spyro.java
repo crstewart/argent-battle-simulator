@@ -23,12 +23,13 @@ public class Spyro {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.AIR, 1.05);
+        defenses.set(AttackSubType.FIRE, 0.8);
+        defenses.set(AttackSubType.AIR, 1.2);
 
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(6).dexterity(7).aim(7)
-                .agility(6.5).speed(6.5).intellect(4).willpower(5).size(4).weight(3.5).build();
+                .agility(7).speed(6.5).intellect(4).willpower(5).size(4).weight(3.5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
                 .description("A speedy fighter with various elemental breath attacks.")
                 .entryQuotes(Arrays.asList("Spyro: 'Looks like I got some things to do!'", "Spyro: 'All fired up!'"))
                 .victoryQuotes(Arrays.asList("Spyro: 'I should go on vacation! Somewhere warm... Somewhere sunny...'",
@@ -36,8 +37,8 @@ public class Spyro {
                 .classifications(Collections.singletonList(FighterClassification.DRAGON))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
-                .addAction(new Charge()).addAction(new FlameBreath()).addAction(new ElectricityBreath())
-                .addAction(new WindBreath())
+                .addAction(new FlameBreath()).addAction(new ElectricityBreath()).addAction(new WindBreath())
+                .addAction(new Charge())
                 .addAction(new SuperflameBreath())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
     }

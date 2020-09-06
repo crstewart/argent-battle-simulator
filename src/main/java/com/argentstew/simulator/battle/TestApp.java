@@ -107,7 +107,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Sora.NAME;
+    private static final String TEST_FIGHTER = Spyro.NAME;
 
     public static void main(String[] args) {
 
