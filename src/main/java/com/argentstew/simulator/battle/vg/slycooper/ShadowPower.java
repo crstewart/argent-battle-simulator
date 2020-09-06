@@ -22,6 +22,6 @@ public class ShadowPower extends MeleeAttack {
         this.variance = 4;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.SMASH);
-        this.characteristics = Arrays.asList(AttackCharacteristic.UNDODGEABLE, AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.STEALTH);
     }
 }
