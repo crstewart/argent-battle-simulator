@@ -25,7 +25,7 @@ public class Vyse {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
+        defenses.set(AttackType.MAGIC, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(5.5).aim(5.5)
                 .agility(4).speed(5.5).intellect(4.5).willpower(5).size(7).weight(8).build();

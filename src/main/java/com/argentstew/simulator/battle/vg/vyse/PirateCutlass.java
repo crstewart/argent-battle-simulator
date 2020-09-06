@@ -18,7 +18,7 @@ public class PirateCutlass extends MeleeAttack {
         super();
         this.name = "Pirate Cutlass";
         this.power = 50;
-        this.variance = 4;
+        this.variance = 5;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
         this.characteristics = Collections.emptyList();

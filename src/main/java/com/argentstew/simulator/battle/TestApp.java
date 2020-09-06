@@ -101,6 +101,7 @@ import com.argentstew.simulator.battle.vg.thrall.Thrall;
 import com.argentstew.simulator.battle.vg.tracer.Tracer;
 import com.argentstew.simulator.battle.vg.tronbonne.TronBonne;
 import com.argentstew.simulator.battle.vg.viewtifuljoe.ViewtifulJoe;
+import com.argentstew.simulator.battle.vg.vyse.Vyse;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -114,7 +115,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = ViewtifulJoe.NAME;
+    private static final String TEST_FIGHTER = Vyse.NAME;
 
     public static void main(String[] args) {
 
