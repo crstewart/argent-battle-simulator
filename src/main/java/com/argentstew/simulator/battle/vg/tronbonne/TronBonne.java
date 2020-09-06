@@ -26,14 +26,14 @@ public class TronBonne {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.1);
-        defenses.set(AttackSubType.PUNCH, 1.1);
-        defenses.set(AttackSubType.KICK, 1.05);
-        defenses.set(AttackSubType.PLASMA, 1.05);
-        defenses.set(AttackSubType.HANDGUN, 0.9);
-        defenses.set(AttackSubType.RIFLE, 0.9);
-        defenses.set(AttackSubType.SHOTGUN, 0.9);
-        defenses.set(AttackSubType.ARMOR_PIERCING, 1.1);
+        defenses.set(AttackType.MAGIC, 1.2);
+        defenses.set(AttackSubType.PUNCH, 1.2);
+        defenses.set(AttackSubType.KICK, 1.1);
+        defenses.set(AttackSubType.PLASMA, 1.2);
+        defenses.set(AttackSubType.HANDGUN, 0.8);
+        defenses.set(AttackSubType.RIFLE, 0.8);
+        defenses.set(AttackSubType.SHOTGUN, 0.8);
+        defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
 
         FighterStats stats = FighterStats.builder().strength(7.5).toughness(4).dexterity(4).aim(5)
                 .agility(3).speed(2.5).intellect(8.5).willpower(6).size(6).weight(7).build();
