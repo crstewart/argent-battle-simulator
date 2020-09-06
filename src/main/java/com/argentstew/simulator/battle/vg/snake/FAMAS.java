@@ -22,8 +22,8 @@ public class FAMAS extends RangedAttack {
         super();
         this.name = "FAMAS G1";
         this.description = "100 ammo, each attack uses 25 ammo";
-        this.power = 55;
-        this.variance = 8;
+        this.power = 75;
+        this.variance = 10;
         this.speed = 2;
         this.ammo = 100;
         this.subtypes = Collections.singletonList(AttackSubType.RIFLE);

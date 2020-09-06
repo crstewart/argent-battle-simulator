@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
+import com.argentstew.simulator.battle.trait.impl.StealthDetection;
 import com.argentstew.simulator.battle.vg.slycooper.*;
 
 import java.util.Arrays;
@@ -25,15 +26,16 @@ public class SolidSnake {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.1);
+        defenses.set(AttackType.MAGIC, 1.3);
+        defenses.set(AttackSubType.PLASMA, 1.2);
         defenses.set(AttackSubType.HANDGUN, 0.9);
         defenses.set(AttackSubType.RIFLE, 0.9);
         defenses.set(AttackSubType.SHOTGUN, 0.9);
-        defenses.set(AttackSubType.ARMOR_PIERCING, 1.1);
+        defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(7).dexterity(6).aim(7)
                 .agility(5).speed(4.5).intellect(7.5).willpower(4).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new StealthDetection()));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("An all-around fighter with tactics that make some attacks difficult to defend.")
                 .entryQuotes(Arrays.asList("Snake: 'Kept you waiting, huh?'",
