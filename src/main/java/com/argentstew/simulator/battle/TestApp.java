@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.logger.NoopBattleLogger;
 import com.argentstew.simulator.battle.logger.StandardBattleLogger;
 import com.argentstew.simulator.battle.vg.akuma.Akuma;
 import com.argentstew.simulator.battle.vg.albertwesker.AlbertWesker;
+import com.argentstew.simulator.battle.vg.aloy.Aloy;
 import com.argentstew.simulator.battle.vg.arthas.Arthas;
 import com.argentstew.simulator.battle.vg.arthur.Arthur;
 import com.argentstew.simulator.battle.vg.banjo.BanjoKazooie;
@@ -129,7 +130,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = SweetTooth.NAME;
+    private static final String TEST_FIGHTER = Aloy.NAME;
 
     public static void main(String[] args) {
 
@@ -185,5 +186,6 @@ public class TestApp {
             System.out.println("      " + result);
         }
         System.out.println("  Wins: " + overallWins + ", Losses: " + overallLosses + ", Draws: " + overallDraws);
+        System.out.println("  Win rate: " + ((overallWins + (overallDraws / 2.0)) / (overallWins + overallLosses + overallDraws)));
     }
 }
