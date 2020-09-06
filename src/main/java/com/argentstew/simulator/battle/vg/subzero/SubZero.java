@@ -25,16 +25,16 @@ public class SubZero {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.ICE, 0.95);
-        defenses.set(AttackSubType.PUNCH, 0.95);
-        defenses.set(AttackSubType.KICK, 0.95);
-        defenses.set(AttackSubType.HEADBUTT, 0.95);
-        defenses.set(AttackSubType.SLAM, 0.95);
+        defenses.set(AttackSubType.ICE, 0.6);
+        defenses.set(AttackSubType.PUNCH, 0.8);
+        defenses.set(AttackSubType.KICK, 0.8);
+        defenses.set(AttackSubType.HEADBUTT, 0.8);
+        defenses.set(AttackSubType.SLAM, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(5).toughness(5.5).dexterity(6).aim(6)
                 .agility(6).speed(5).intellect(5).willpower(5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(145).maxHp(145).mp(0).maxMp(100).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(0).maxMp(100).xStrikeMeter(0)
                 .description("An all-around fighter who can stun his opponents by freezing them.")
                 .entryQuotes(Arrays.asList("Sub-Zero: 'This fight will be your last!'",
                         "Sub-Zero: 'You must go. There will be others.'"))

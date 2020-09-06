@@ -17,8 +17,8 @@ public class KoriBlade extends MeleeAttack {
     public KoriBlade() {
         super();
         this.name = "Kori Blade";
-        this.power = 40;
-        this.variance = 5;
+        this.power = 45;
+        this.variance = 6;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
         this.characteristics = Collections.emptyList();
