@@ -23,7 +23,7 @@ public class Squall {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
+        defenses.set(AttackType.MAGIC, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(4.5).dexterity(6).aim(8)
                 .agility(6).speed(6.5).intellect(5).willpower(5).size(5).weight(5).build();

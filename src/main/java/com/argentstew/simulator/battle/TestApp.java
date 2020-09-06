@@ -92,6 +92,7 @@ import com.argentstew.simulator.battle.vg.snake.SolidSnake;
 import com.argentstew.simulator.battle.vg.sonic.Sonic;
 import com.argentstew.simulator.battle.vg.sora.Sora;
 import com.argentstew.simulator.battle.vg.spyro.Spyro;
+import com.argentstew.simulator.battle.vg.squall.Squall;
 import com.argentstew.simulator.battle.vg.tracer.Tracer;
 import com.argentstew.simulator.battle.vg.viewtifuljoe.ViewtifulJoe;
 
@@ -107,7 +108,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Spyro.NAME;
+    private static final String TEST_FIGHTER = Squall.NAME;
 
     public static void main(String[] args) {
 
