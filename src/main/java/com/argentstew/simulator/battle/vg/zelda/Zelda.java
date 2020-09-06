@@ -27,7 +27,7 @@ public class Zelda {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.7);
+        defenses.set(AttackType.MAGIC, 0.6);
 
         FighterStats stats = FighterStats.builder().strength(3.5).toughness(3).dexterity(7).aim(8)
                 .agility(5).speed(4).intellect(8).willpower(8).size(4.5).weight(4.5).build();
