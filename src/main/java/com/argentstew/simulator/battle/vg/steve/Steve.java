@@ -24,16 +24,16 @@ public class Steve {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.EXPLOSIVE, 1.1);
-        defenses.set(AttackSubType.SLASH, 0.95);
-        defenses.set(AttackSubType.PIERCE, 0.95);
-        defenses.set(AttackSubType.HACK, 0.95);
-        defenses.set(AttackSubType.SMASH, 0.95);
-        defenses.set(AttackSubType.BITE, 0.95);
-        defenses.set(AttackSubType.TAIL, 0.95);
-        defenses.set(AttackSubType.HEADBUTT, 0.95);
-        defenses.set(AttackSubType.PUNCH, 0.95);
-        defenses.set(AttackSubType.KICK, 0.95);
+        defenses.set(AttackSubType.EXPLOSIVE, 1.4);
+        defenses.set(AttackSubType.SLASH, 0.8);
+        defenses.set(AttackSubType.PIERCE, 0.8);
+        defenses.set(AttackSubType.HACK, 0.8);
+        defenses.set(AttackSubType.SMASH, 0.8);
+        defenses.set(AttackSubType.BITE, 0.8);
+        defenses.set(AttackSubType.TAIL, 0.8);
+        defenses.set(AttackSubType.HEADBUTT, 0.8);
+        defenses.set(AttackSubType.PUNCH, 0.8);
+        defenses.set(AttackSubType.KICK, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(5).toughness(5).dexterity(6).aim(5.5)
                 .agility(5.5).speed(5).intellect(5).willpower(5).size(5).weight(5).build();
