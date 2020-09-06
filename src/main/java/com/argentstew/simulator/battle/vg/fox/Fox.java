@@ -11,6 +11,7 @@ import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.vg.bowser.Bowser;
 import com.argentstew.simulator.battle.vg.mario.*;
+import com.argentstew.simulator.battle.vg.wolf.Wolf;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,7 +32,7 @@ public class Fox {
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(5.5).dexterity(7.5).aim(8.5)
                 .agility(6).speed(6.5).intellect(6).willpower(6).size(4.5).weight(4.5).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Wolf.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(125).maxHp(125).xStrikeMeter(0)
                 .description("A speedy fighter with a reflective guard and a blaster that does not stun opponents.")
                 .entryQuotes(Arrays.asList("Fox: 'Here I come!'", "Fox: 'Star Fox, ready for duty!'"))

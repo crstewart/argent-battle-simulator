@@ -104,6 +104,7 @@ import com.argentstew.simulator.battle.vg.viewtifuljoe.ViewtifulJoe;
 import com.argentstew.simulator.battle.vg.vyse.Vyse;
 import com.argentstew.simulator.battle.vg.waluigi.Waluigi;
 import com.argentstew.simulator.battle.vg.wario.Wario;
+import com.argentstew.simulator.battle.vg.wolf.Wolf;
 import com.argentstew.simulator.battle.vg.yoshi.Yoshi;
 import com.argentstew.simulator.battle.vg.zelda.Zelda;
 import com.argentstew.simulator.battle.vg.zero.Zero;
@@ -134,7 +135,7 @@ public class VgFighterFactory implements FighterFactory {
             Kerrigan.NAME, Tracer.NAME, SubZero.NAME, Scorpion.NAME, Bomberman.NAME, BanjoKazooie.NAME, LaraCroft.NAME,
             CommanderShepard.NAME, RyuHayabusa.NAME, Dovahkiin.NAME, ShovelKnight.NAME, Sans.NAME, Joker.NAME,
             DoomSlayer.NAME, CaptainPrice.NAME, Cuphead.NAME, GuybrushThreepwood.NAME, Draven.NAME, GeraltOfRivia.NAME,
-            BowserJr.NAME, Waluigi.NAME, KingKRool.NAME, Metaknight.NAME, Greninja.NAME);
+            BowserJr.NAME, Waluigi.NAME, KingKRool.NAME, Metaknight.NAME, Greninja.NAME, Wolf.NAME);
 
     @Override
     public List<String> getAllFighters() {
@@ -354,6 +355,8 @@ public class VgFighterFactory implements FighterFactory {
                 return Metaknight.get();
             case Greninja.NAME:
                 return Greninja.get();
+            case Wolf.NAME:
+                return Wolf.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

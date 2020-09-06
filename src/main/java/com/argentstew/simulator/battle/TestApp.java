@@ -108,6 +108,7 @@ import com.argentstew.simulator.battle.vg.viewtifuljoe.ViewtifulJoe;
 import com.argentstew.simulator.battle.vg.vyse.Vyse;
 import com.argentstew.simulator.battle.vg.waluigi.Waluigi;
 import com.argentstew.simulator.battle.vg.wario.Wario;
+import com.argentstew.simulator.battle.vg.wolf.Wolf;
 import com.argentstew.simulator.battle.vg.yoshi.Yoshi;
 import com.argentstew.simulator.battle.vg.zelda.Zelda;
 import com.argentstew.simulator.battle.vg.zero.Zero;
@@ -124,7 +125,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Greninja.NAME;
+    private static final String TEST_FIGHTER = Wolf.NAME;
 
     public static void main(String[] args) {
 
