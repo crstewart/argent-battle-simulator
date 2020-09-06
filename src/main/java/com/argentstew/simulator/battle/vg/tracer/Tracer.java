@@ -26,10 +26,10 @@ public class Tracer {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.2);
+        defenses.set(AttackType.MAGIC, 1.3);
 
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(4).dexterity(8).aim(9)
-                .agility(8).speed(7).intellect(5.5).willpower(6).size(4.5).weight(4.5).build();
+                .agility(8).speed(7.5).intellect(5.5).willpower(6).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).mp(0).maxMp(100).xStrikeMeter(0)
                 .description("A futuristic speedy fighter with a powerful undodgeable attack that requires time to charge.")

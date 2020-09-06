@@ -20,8 +20,8 @@ public class PulsePistols extends RangedAttack {
         super();
         this.name = "Pulse Pistols";
         this.description = "Gains 35 SP";
-        this.power = 50;
-        this.variance = 16;
+        this.power = 75;
+        this.variance = 20;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.PLASMA);
         this.characteristics = Collections.singletonList(AttackCharacteristic.BULLET_SPEED);
