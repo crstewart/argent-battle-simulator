@@ -24,10 +24,10 @@ public class ViewtifulJoe {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.FIRE, 0.9);
+        defenses.set(AttackSubType.FIRE, 0.7);
 
         FighterStats stats = FighterStats.builder().strength(5).toughness(3.5).dexterity(8).aim(8)
-                .agility(7).speed(7).intellect(3.5).willpower(5).size(4.5).weight(4.5).build();
+                .agility(7.5).speed(7.5).intellect(3.5).willpower(5).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
                 .description("A speedy fighter whose ability to alter time leads to accurate attacks.")

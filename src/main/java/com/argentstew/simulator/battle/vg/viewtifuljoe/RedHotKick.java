@@ -17,7 +17,7 @@ public class RedHotKick extends MeleeAttack {
     public RedHotKick() {
         super();
         this.name = "Red Hot Kick";
-        this.power = 50;
+        this.power = 55;
         this.variance = 4;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.KICK, AttackSubType.FIRE);

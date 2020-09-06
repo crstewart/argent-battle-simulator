@@ -16,8 +16,8 @@ public class Voomerang extends RangedAttack {
     public Voomerang() {
         super();
         this.name = "Voomerang";
-        this.power = 30;
-        this.variance = 3;
+        this.power = 50;
+        this.variance = 5;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
         this.characteristics = Collections.emptyList();
