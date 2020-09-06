@@ -99,6 +99,7 @@ import com.argentstew.simulator.battle.vg.tracer.Tracer;
 import com.argentstew.simulator.battle.vg.tronbonne.TronBonne;
 import com.argentstew.simulator.battle.vg.viewtifuljoe.ViewtifulJoe;
 import com.argentstew.simulator.battle.vg.vyse.Vyse;
+import com.argentstew.simulator.battle.vg.waluigi.Waluigi;
 import com.argentstew.simulator.battle.vg.wario.Wario;
 import com.argentstew.simulator.battle.vg.yoshi.Yoshi;
 import com.argentstew.simulator.battle.vg.zelda.Zelda;
@@ -130,7 +131,7 @@ public class VgFighterFactory implements FighterFactory {
             Kerrigan.NAME, Tracer.NAME, SubZero.NAME, Scorpion.NAME, Bomberman.NAME, BanjoKazooie.NAME, LaraCroft.NAME,
             CommanderShepard.NAME, RyuHayabusa.NAME, Dovahkiin.NAME, ShovelKnight.NAME, Sans.NAME, Joker.NAME,
             DoomSlayer.NAME, CaptainPrice.NAME, Cuphead.NAME, GuybrushThreepwood.NAME, Draven.NAME, GeraltOfRivia.NAME,
-            BowserJr.NAME);
+            BowserJr.NAME, Waluigi.NAME);
 
     @Override
     public List<String> getAllFighters() {
@@ -342,6 +343,8 @@ public class VgFighterFactory implements FighterFactory {
                 return GeraltOfRivia.get();
             case BowserJr.NAME:
                 return BowserJr.get();
+            case Waluigi.NAME:
+                return Waluigi.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
