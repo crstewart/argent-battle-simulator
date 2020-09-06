@@ -18,8 +18,8 @@ public class Counterattack extends MeleeAttack {
     public Counterattack() {
         super();
         this.name = "Counterattack";
-        this.power = 30;
-        this.variance = 3;
+        this.power = 50;
+        this.variance = 5;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
         this.characteristics = Collections.emptyList();
