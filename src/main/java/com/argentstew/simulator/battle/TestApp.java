@@ -109,6 +109,7 @@ import com.argentstew.simulator.battle.vg.subzero.SubZero;
 import com.argentstew.simulator.battle.vg.sweettooth.SweetTooth;
 import com.argentstew.simulator.battle.vg.sylvanas.Sylvanas;
 import com.argentstew.simulator.battle.vg.tails.Tails;
+import com.argentstew.simulator.battle.vg.teemo.Teemo;
 import com.argentstew.simulator.battle.vg.terry.TerryBogard;
 import com.argentstew.simulator.battle.vg.thrall.Thrall;
 import com.argentstew.simulator.battle.vg.tracer.Tracer;
@@ -135,7 +136,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Agent47.NAME;
+    private static final String TEST_FIGHTER = Teemo.NAME;
 
     public static void main(String[] args) {
 
