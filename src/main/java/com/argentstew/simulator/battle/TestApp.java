@@ -115,6 +115,7 @@ import com.argentstew.simulator.battle.vg.viewtifuljoe.ViewtifulJoe;
 import com.argentstew.simulator.battle.vg.vyse.Vyse;
 import com.argentstew.simulator.battle.vg.waluigi.Waluigi;
 import com.argentstew.simulator.battle.vg.wario.Wario;
+import com.argentstew.simulator.battle.vg.widowmaker.Widowmaker;
 import com.argentstew.simulator.battle.vg.wolf.Wolf;
 import com.argentstew.simulator.battle.vg.yoshi.Yoshi;
 import com.argentstew.simulator.battle.vg.zelda.Zelda;
@@ -132,7 +133,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Deathwing.NAME;
+    private static final String TEST_FIGHTER = Widowmaker.NAME;
 
     public static void main(String[] args) {
 
