@@ -36,7 +36,7 @@ public class Rathalos {
         return Fighter.builder().name(NAME).hp(200).maxHp(200).xStrikeMeter(0)
                 .description("A large tank with a variety of exploitable weaknesses.")
                 .entryQuotes(Arrays.asList("The Rathalos soars through the sky and lands on the battlefield.",
-                        "The Rathalos roars in a terrifying manner at his opponent.'"))
+                        "The Rathalos roars in a terrifying manner at his opponent."))
                 .victoryQuotes(Arrays.asList("The Rathalos rears back and roars triumphantly.",
                         "The Rathalos flies off, having dealt with the immediate threat."))
                 .classifications(Arrays.asList(FighterClassification.MONSTER, FighterClassification.DRAGON))

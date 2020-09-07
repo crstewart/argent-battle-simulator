@@ -7,6 +7,8 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.trait.impl.Rival;
+import com.argentstew.simulator.battle.vg.deathwing.Deathwing;
 import com.argentstew.simulator.battle.vg.princeofpersia.*;
 
 import java.util.Arrays;
@@ -34,7 +36,7 @@ public class Thrall {
 
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(6).dexterity(6.5).aim(7)
                 .agility(4.5).speed(6).intellect(5.5).willpower(6.5).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Deathwing.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
                 .description("An all-around fighter who commands and resists elemental attacks.")
                 .entryQuotes(Arrays.asList("Thrall: 'For the Horde!'", "Thrall: 'Blood and thunder!'"))
