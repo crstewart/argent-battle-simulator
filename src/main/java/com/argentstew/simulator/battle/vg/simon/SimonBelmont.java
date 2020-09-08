@@ -8,6 +8,8 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
+import com.argentstew.simulator.battle.trait.impl.Rival;
+import com.argentstew.simulator.battle.vg.dracula.Dracula;
 import com.argentstew.simulator.battle.vg.snake.*;
 
 import java.util.Arrays;
@@ -29,7 +31,7 @@ public class SimonBelmont {
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(6).dexterity(7).aim(7.5)
                 .agility(4.5).speed(4).intellect(5).willpower(6).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Dracula.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(10).maxMp(10).xStrikeMeter(0)
                 .description("A weaponmaster who wields various light-based attacks.")
                 .entryQuotes(Arrays.asList("Simon: 'If you will fight, then stand resolute.'",
