@@ -24,7 +24,7 @@ public class DiddyKong {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
 
-        FighterStats stats = FighterStats.builder().strength(3.5).toughness(4).dexterity(8.5).aim(8)
+        FighterStats stats = FighterStats.builder().strength(3.5).toughness(4).dexterity(8.5).aim(8.5)
                 .agility(8.5).speed(6.5).intellect(4).willpower(3.5).size(4).weight(3.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(130).maxHp(130).xStrikeMeter(0)

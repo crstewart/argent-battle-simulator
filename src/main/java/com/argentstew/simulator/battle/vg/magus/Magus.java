@@ -30,7 +30,7 @@ public class Magus {
         defenses.set(AttackSubType.SLASH, 1.25);
 
         FighterStats stats = FighterStats.builder().strength(3).toughness(4).dexterity(4).aim(8)
-                .agility(4).speed(3.5).intellect(8).willpower(8).size(5).weight(5).build();
+                .agility(4).speed(3.5).intellect(7).willpower(7.5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new BarrierChange()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A mage with dark magic and a varying elemental barrier.")

@@ -17,7 +17,7 @@ public class Fludd extends RangedAttack {
         super();
         this.name = "F.L.U.D.D.";
         this.power = 40;
-        this.variance = 10;
+        this.variance = 12;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.WATER);
         this.characteristics = Collections.emptyList();

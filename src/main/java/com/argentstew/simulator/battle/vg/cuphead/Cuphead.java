@@ -25,10 +25,10 @@ public class Cuphead {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.75);
+        defenses.set(AttackType.MAGIC, 0.7);
         defenses.set(AttackSubType.SMASH, 1.25);
 
-        FighterStats stats = FighterStats.builder().strength(2).toughness(4).dexterity(6).aim(8.5)
+        FighterStats stats = FighterStats.builder().strength(2).toughness(4).dexterity(6).aim(9)
                 .agility(6).speed(4).intellect(6).willpower(9).size(4).weight(4).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(140).maxHp(140).mp(0).maxMp(10).xStrikeMeter(0)

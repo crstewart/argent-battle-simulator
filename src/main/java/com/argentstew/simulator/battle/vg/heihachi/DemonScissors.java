@@ -16,8 +16,8 @@ public class DemonScissors extends MeleeAttack {
     public DemonScissors() {
         super();
         this.name = "Demon Scissors";
-        this.power = 70;
-        this.variance = 7;
+        this.power = 80;
+        this.variance = 9;
         this.speed = 2.5;
         this.subtypes = Collections.singletonList(AttackSubType.KICK);
         this.characteristics = Collections.emptyList();

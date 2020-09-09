@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 /**
- * com.argentstew.simulator.battle.vg.mario
+ * com.argentstew.simulator.battle.vg.bowser
  * 8/26/2019
  *
  * @author Craig
@@ -31,7 +31,7 @@ public class Bowser {
         FighterStats stats = FighterStats.builder().strength(8).toughness(10).dexterity(2).aim(2)
                 .agility(2).speed(2).intellect(3).willpower(6).size(8.5).weight(9).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Hazardous()));
-        return Fighter.builder().name(NAME).hp(230).maxHp(230).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(220).maxHp(220).xStrikeMeter(0)
                 .description("A strong, tough tank whose spiked shell hurts melee attackers.")
                 .entryQuotes(Arrays.asList("Bowser: 'I'll show you the power of the Koopa King!'",
                         "Bowser: 'Stomping fools is my business!'"))

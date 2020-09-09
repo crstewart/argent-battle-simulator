@@ -29,7 +29,7 @@ public class Jaina {
         defenses.set(AttackSubType.ICE, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(3.5).dexterity(6).aim(8)
-                .agility(4.5).speed(5).intellect(7).willpower(8).size(4.5).weight(4.5).build();
+                .agility(4.5).speed(5).intellect(8).willpower(8).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A frost mage whose attacks critically hit when chained together.")

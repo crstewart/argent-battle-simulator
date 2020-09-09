@@ -28,7 +28,7 @@ public class Mario {
         defenses.set(AttackSubType.PIERCE, 1.2);
         defenses.set(AttackSubType.FIRE, 1.2);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(6).aim(6.5)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(6.5).aim(6.5)
                 .agility(5).speed(5).intellect(5).willpower(5.5).size(4).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Bowser.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)

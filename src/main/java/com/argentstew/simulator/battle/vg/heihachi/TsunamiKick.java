@@ -16,7 +16,7 @@ public class TsunamiKick extends MeleeAttack {
     public TsunamiKick() {
         super();
         this.name = "Tsunami Kick";
-        this.power = 55;
+        this.power = 70;
         this.variance = 5;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.KICK);

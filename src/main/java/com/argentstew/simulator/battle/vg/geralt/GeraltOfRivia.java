@@ -32,7 +32,7 @@ public class GeraltOfRivia {
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.3);
         defenses.set(AttackSubType.TOXIC, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(6.5).toughness(7).dexterity(7.5).aim(7.5)
+        FighterStats stats = FighterStats.builder().strength(6.5).toughness(7).dexterity(7).aim(7.5)
                 .agility(6.5).speed(6).intellect(6).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new MonsterHunter()));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)

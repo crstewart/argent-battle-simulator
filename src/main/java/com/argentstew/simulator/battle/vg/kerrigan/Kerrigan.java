@@ -25,12 +25,12 @@ public class Kerrigan {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.4);
+        defenses.set(AttackType.MAGIC, 1.3);
         defenses.set(AttackSubType.TOXIC, 0.7);
         defenses.set(AttackSubType.NATURE, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(6.5).toughness(5).dexterity(7).aim(6.5)
-                .agility(7.5).speed(5).intellect(5).willpower(2).size(4.5).weight(4.5).build();
+        FighterStats stats = FighterStats.builder().strength(6.5).toughness(5).dexterity(7.5).aim(6.5)
+                .agility(7.5).speed(5.5).intellect(5).willpower(2).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A futuristic all-around fighter who can spawn zerg to aid her in battle.")

@@ -18,7 +18,7 @@ public class Stonehead extends MeleeAttack {
     public Stonehead() {
         super();
         this.name = "Stonehead";
-        this.power = 30;
+        this.power = 40;
         this.variance = 3;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.HEADBUTT, AttackSubType.GRAPPLE);

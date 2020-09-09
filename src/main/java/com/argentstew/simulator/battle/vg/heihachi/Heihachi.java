@@ -31,7 +31,7 @@ public class Heihachi {
         defenses.set(AttackSubType.SLAM, 0.8);
         defenses.set(AttackSubType.GRAPPLE, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(5).dexterity(5.5).aim(3.5)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(5).dexterity(6).aim(3.5)
                 .agility(3).speed(4).intellect(5).willpower(5).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)

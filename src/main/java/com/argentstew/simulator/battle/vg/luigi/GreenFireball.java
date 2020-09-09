@@ -16,7 +16,7 @@ public class GreenFireball extends RangedAttack {
     public GreenFireball() {
         super();
         this.name = "Green Fireball";
-        this.power = 45;
+        this.power = 55;
         this.variance = 5;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.FIRE);

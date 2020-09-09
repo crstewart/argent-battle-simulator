@@ -21,8 +21,8 @@ public class MegaBlast extends MagicAttack {
         super();
         this.name = "Mega Blast";
         this.description = "Costs 2 SP";
-        this.power = 120;
-        this.variance = 12;
+        this.power = 150;
+        this.variance = 15;
         this.speed = 2;
         this.subtypes = Collections.emptyList();
         this.characteristics = Collections.emptyList();

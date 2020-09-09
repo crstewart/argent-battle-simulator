@@ -16,8 +16,8 @@ public class DemonUppercut extends MeleeAttack {
     public DemonUppercut() {
         super();
         this.name = "Demon Uppercut";
-        this.power = 50;
-        this.variance = 4;
+        this.power = 60;
+        this.variance = 5;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.PUNCH);
         this.characteristics = Collections.emptyList();

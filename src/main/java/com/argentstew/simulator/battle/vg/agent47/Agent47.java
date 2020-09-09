@@ -22,7 +22,7 @@ public class Agent47 {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
 
-        FighterStats stats = FighterStats.builder().strength(6.5).toughness(6.5).dexterity(5).aim(7.5)
+        FighterStats stats = FighterStats.builder().strength(6.5).toughness(6.5).dexterity(5).aim(7)
                 .agility(5).speed(5).intellect(7).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(155).maxHp(155).xStrikeMeter(0)
