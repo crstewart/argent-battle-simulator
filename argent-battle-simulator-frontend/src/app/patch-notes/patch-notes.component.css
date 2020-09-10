@@ -14,6 +14,32 @@
     padding: 0 40px;
 }
 
+.patch-notes ul li {
+    margin: 6px 0;
+}
+
+ul.character-changes {
+    list-style: none;
+}
+
+li.buff::before {
+    content: '▲';
+    color: green;
+    margin-right: 8px;
+}
+
+li.nerf::before {
+    content: '▼';
+    color: red;
+    margin-right: 8px;
+}
+
+li.neutral::before {
+    content: '■';
+    color: black;
+    margin-right: 8px;
+}
+
 @media screen and (max-width: 640px) {
     .border {
         width: 90%;
