@@ -9,8 +9,8 @@ import {Standings} from "../model/standings";
 })
 export class StandingsComponent implements OnInit {
 
-    powerDivisionStandings: Standings[] = [];
-    mastersDivisionStandings: Standings[] = [];
+    shadowDivisionStandings: Standings[] = [];
+    chaosDivisionStandings: Standings[] = [];
 
     constructor(private httpService: HttpService) {
     }
@@ -19,35 +19,35 @@ export class StandingsComponent implements OnInit {
         this.httpService.getStandings().subscribe((data: Standings[]) => this.arrangeStandings(data));
     }
 
-    getPowerDivisionLeaderWinDifferential(): number {
-        if (this.powerDivisionStandings.length === 0) {
+    getShadowDivisionLeaderWinDifferential(): number {
+        if (this.shadowDivisionStandings.length === 0) {
             return 0;
         }
 
-        let leaderStandings = this.powerDivisionStandings[0];
+        let leaderStandings = this.shadowDivisionStandings[0];
         return leaderStandings.wins - leaderStandings.losses;
     }
 
-    getMastersDivisionLeaderWinDifferential(): number {
-        if (this.mastersDivisionStandings.length === 0) {
+    getChaosDivisionLeaderWinDifferential(): number {
+        if (this.chaosDivisionStandings.length === 0) {
             return 0;
         }
 
-        let leaderStandings = this.mastersDivisionStandings[0];
+        let leaderStandings = this.chaosDivisionStandings[0];
         return leaderStandings.wins - leaderStandings.losses;
     }
 
     private arrangeStandings(standings: Standings[]) {
         for (let teamStandings of standings) {
-            if (teamStandings.division === "Power Division") {
-                this.powerDivisionStandings.push(teamStandings);
+            if (teamStandings.division === "Shadow Division") {
+                this.shadowDivisionStandings.push(teamStandings);
             } else {
-                this.mastersDivisionStandings.push(teamStandings);
+                this.chaosDivisionStandings.push(teamStandings);
             }
         }
 
-        StandingsComponent.sortStandings(this.powerDivisionStandings);
-        StandingsComponent.sortStandings(this.mastersDivisionStandings);
+        StandingsComponent.sortStandings(this.shadowDivisionStandings);
+        StandingsComponent.sortStandings(this.chaosDivisionStandings);
     }
 
     private static sortStandings(standings: Standings[]) {

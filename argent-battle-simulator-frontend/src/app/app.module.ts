@@ -15,6 +15,7 @@ import {StandingsComponent} from "./standings/standings.component";
 import {RostersComponent} from "./rosters/rosters.component";
 import {ScheduleComponent} from "./schedule/schedule.component";
 import {BattleLogsComponent} from "./battle-logs/battle-logs.component";
+import {SeasonOneComponent} from "./season-one/season-one.component";
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import {BattleLogsComponent} from "./battle-logs/battle-logs.component";
         StandingsComponent,
         RostersComponent,
         ScheduleComponent,
-        BattleLogsComponent
+        BattleLogsComponent,
+        SeasonOneComponent
     ],
     imports: [
         BrowserModule,

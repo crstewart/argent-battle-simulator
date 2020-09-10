@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.action.defense.Heal;
 import com.argentstew.simulator.battle.factory.FighterFactory;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.fighter.FighterClassification;
+import com.argentstew.simulator.battle.strategy.*;
 import com.argentstew.simulator.battle.trait.Trait;
 import com.argentstew.simulator.battle.web.model.AttackDTO;
 import com.argentstew.simulator.battle.web.model.FighterDTO;
@@ -101,7 +102,7 @@ public class VgFighterService implements FighterService {
         }
         dto.setDefenses(defenses);
 
-        dto.setStrategy(fighter.getStrategy().getClass().getSimpleName());
+        dto.setStrategy(getStrategyType(fighter.getStrategy()));
 
         List<AttackDTO> attacks = new ArrayList<>();
         List<GuardDTO> guards = new ArrayList<>();
@@ -153,6 +154,22 @@ public class VgFighterService implements FighterService {
         dto.setHeals(heals);
 
         return dto;
+    }
+
+    private String getStrategyType(Strategy strategy) {
+        if (strategy instanceof BalancedStrategy) {
+            return "Balanced";
+        } else if (strategy instanceof OffensiveStrategy) {
+            return "Focused on Offense";
+        } else if (strategy instanceof DefensiveStrategy) {
+            return "Focused on Defense";
+        } else if (strategy instanceof MeleeStrategy) {
+            return "Focused on Melee attacks";
+        } else if (strategy instanceof RangedStrategy) {
+            return "Focused on Ranged attacks";
+        }
+
+        return "Unique";
     }
 
     private static boolean isXStrike(Action action) {

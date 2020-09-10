@@ -8,6 +8,7 @@ import {StandingsComponent} from "./standings/standings.component";
 import {RostersComponent} from "./rosters/rosters.component";
 import {ScheduleComponent} from "./schedule/schedule.component";
 import {BattleLogsComponent} from "./battle-logs/battle-logs.component";
+import {SeasonOneComponent} from "./season-one/season-one.component";
 
 const routes: Routes = [
     { path: '', component: SimulatorComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: 'rosters', component: RostersComponent },
     { path: 'schedule', component: ScheduleComponent },
     { path: 'battle-logs', component: BattleLogsComponent },
+    { path: 'season-one', component: SeasonOneComponent },
 ];
 
 @NgModule({

@@ -34,31 +34,35 @@ export class HttpService {
         return this.httpClient.get<Fighter>("v1/fighters/" + name);
     }
 
-    public getTeams(): Observable<string[]> {
-        return this.httpClient.get<string[]>("v1/seasons/1/teams");
-    }
-
-    public getStandings(): Observable<Standings[]> {
+    public getSeasonOneStandings(): Observable<Standings[]> {
         return this.httpClient.get<Standings[]>("v1/seasons/1/standings");
     }
 
+    public getTeams(): Observable<string[]> {
+        return this.httpClient.get<string[]>("v1/seasons/2/teams");
+    }
+
+    public getStandings(): Observable<Standings[]> {
+        return this.httpClient.get<Standings[]>("v1/seasons/2/standings");
+    }
+
     public getRoster(teamName: string): Observable<string[]> {
-        return this.httpClient.get<string[]>("v1/seasons/1/rosters?team=" + teamName);
+        return this.httpClient.get<string[]>("v1/seasons/2/rosters?team=" + teamName);
     }
 
     public getWeeks(): Observable<number[]> {
-        return this.httpClient.get<number[]>("v1/seasons/1/weeks");
+        return this.httpClient.get<number[]>("v1/seasons/2/weeks");
     }
 
     public getScheduleByWeek(week: number): Observable<Match[]> {
-        return this.httpClient.get<Match[]>("v1/seasons/1/schedule?week=" + week);
+        return this.httpClient.get<Match[]>("v1/seasons/2/schedule?week=" + week);
     }
 
     public getScheduleByTeam(team: string): Observable<Match[]> {
-        return this.httpClient.get<Match[]>("v1/seasons/1/schedule/" + team);
+        return this.httpClient.get<Match[]>("v1/seasons/2/schedule/" + team);
     }
 
     public getScheduleByTeamAndWeek(team: string, week: number): Observable<Match[]> {
-        return this.httpClient.get<Match[]>("v1/seasons/1/schedule/" + team + "?week=" + week);
+        return this.httpClient.get<Match[]>("v1/seasons/2/schedule/" + team + "?week=" + week);
     }
 }

@@ -1,6 +1,6 @@
 <div class="border">
     <h2 class="standings-header">Season 1 Standings</h2>
-    <div *ngIf="powerDivisionStandings.length > 0 && mastersDivisionStandings.length > 0">
+    <div *ngIf="shadowDivisionStandings.length > 0 || chaosDivisionStandings.length > 0">
         <table>
             <tr class="table-header">
                 <td>Team Name</td>
@@ -11,26 +11,26 @@
                 <td>GB</td>
             </tr>
             <tr class="table-header">
-                <td colspan="6">Power Division</td>
+                <td colspan="6">Shadow Division</td>
             </tr>
-            <tr *ngFor="let standings of powerDivisionStandings">
+            <tr *ngFor="let standings of shadowDivisionStandings">
                 <td>{{standings.team}}</td>
                 <td>{{standings.wins}}</td>
                 <td>{{standings.losses}}</td>
                 <td>{{standings.draws}}</td>
                 <td>{{standings.winPercentage.toPrecision(3)}}</td>
-                <td>{{(getPowerDivisionLeaderWinDifferential() - (standings.wins - standings.losses)) / 2.0}}</td>
+                <td>{{(getShadowDivisionLeaderWinDifferential() - (standings.wins - standings.losses)) / 2.0}}</td>
             </tr>
             <tr class="table-header">
-                <td colspan="6">Masters Division</td>
+                <td colspan="6">Chaos Division</td>
             </tr>
-            <tr *ngFor="let standings of mastersDivisionStandings">
+            <tr *ngFor="let standings of chaosDivisionStandings">
                 <td>{{standings.team}}</td>
                 <td>{{standings.wins}}</td>
                 <td>{{standings.losses}}</td>
                 <td>{{standings.draws}}</td>
                 <td>{{standings.winPercentage.toPrecision(3)}}</td>
-                <td>{{(getMastersDivisionLeaderWinDifferential() - (standings.wins - standings.losses)) / 2.0}}</td>
+                <td>{{(getChaosDivisionLeaderWinDifferential() - (standings.wins - standings.losses)) / 2.0}}</td>
             </tr>
         </table>
         <p>
