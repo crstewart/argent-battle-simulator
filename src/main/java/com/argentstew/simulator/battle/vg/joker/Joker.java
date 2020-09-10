@@ -32,7 +32,7 @@ public class Joker {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(4).toughness(5).dexterity(7.5).aim(8)
+        FighterStats stats = FighterStats.builder().strength(4).toughness(5).dexterity(7).aim(8)
                 .agility(6.5).speed(5.5).intellect(6).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Trickster()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).mp(0).maxMp(100).xStrikeMeter(0)
