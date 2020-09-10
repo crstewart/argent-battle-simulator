@@ -44,4 +44,19 @@ public class TestConfig {
 
     @MockBean
     private SeasonOneMatchRepository matchRepository;
+
+    @MockBean
+    private SeasonTwoTeamRepository seasonTwoTeamRepository;
+
+    @MockBean
+    private SeasonTwoDivisionRepository seasonTwoDivisionRepository;
+
+    @MockBean
+    private SeasonTwoFighterRepository seasonTwoFighterRepository;
+
+    @MockBean
+    private SeasonTwoWeekRepository seasonTwoWeekRepository;
+
+    @MockBean
+    private SeasonTwoMatchRepository seasonTwoMatchRepository;
 }
