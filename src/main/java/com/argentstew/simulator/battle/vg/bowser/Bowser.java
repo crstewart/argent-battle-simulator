@@ -29,7 +29,7 @@ public class Bowser {
         defenses.set(AttackSubType.FIRE, 1.4);
 
         FighterStats stats = FighterStats.builder().strength(8).toughness(10).dexterity(2).aim(2)
-                .agility(2).speed(2).intellect(3).willpower(6).size(8.5).weight(9).build();
+                .agility(2).speed(2).intellect(3).willpower(7).size(8).weight(8.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Hazardous()));
         return Fighter.builder().name(NAME).hp(220).maxHp(220).xStrikeMeter(0)
                 .description("A strong, tough tank whose spiked shell hurts melee attackers.")

@@ -26,7 +26,7 @@ public class Sephiroth {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(3).dexterity(8).aim(5)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(3).dexterity(8.5).aim(5)
                 .agility(5.5).speed(5.5).intellect(5).willpower(5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(130).maxHp(130).xStrikeMeter(0)

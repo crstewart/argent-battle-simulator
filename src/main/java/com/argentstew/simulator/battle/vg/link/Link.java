@@ -30,11 +30,10 @@ public class Link {
         defenses.set(AttackSubType.SLASH, 0.8);
         defenses.set(AttackSubType.HACK, 0.8);
         defenses.set(AttackSubType.SMASH, 0.8);
-        defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
         defenses.set(AttackSubType.FIRE, 1.25);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(9).aim(8)
-                .agility(5).speed(4).intellect(5).willpower(8).size(5).weight(5).build();
+                .agility(5).speed(4.5).intellect(5).willpower(8).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Ganondorf.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A weaponmaster with a variety of accurate attacks who deals extra damage against Ganondorf.")

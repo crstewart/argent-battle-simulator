@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -29,8 +30,8 @@ public class Deathwing {
         defenses.set(AttackSubType.MYSTIC, 1.4);
         defenses.set(AttackSubType.DARK, 1.2);
 
-        FighterStats stats = FighterStats.builder().strength(10).toughness(9).dexterity(3.5).aim(4)
-                .agility(2).speed(4).intellect(3).willpower(9).size(10).weight(10).build();
+        FighterStats stats = FighterStats.builder().strength(10).toughness(9).dexterity(3.5).aim(3.5)
+                .agility(2).speed(3).intellect(3).willpower(9).size(10).weight(10).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(200).maxHp(200).xStrikeMeter(0)
                 .description("A strong, tough tank with inaccurate but strong attacks.")
@@ -40,7 +41,7 @@ public class Deathwing {
                         "Deathwing: 'You will learn to show respect!'"))
                 .classifications(Collections.singletonList(FighterClassification.DRAGON))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new BalancedStrategy()).build()
+                .strategy(new OffensiveStrategy()).build()
                 .addAction(new MoltenFlame()).addAction(new Incinerate()).addAction(new Onslaught())
                 .addAction(new EarthShatter())
                 .addAction(new Cataclysm())

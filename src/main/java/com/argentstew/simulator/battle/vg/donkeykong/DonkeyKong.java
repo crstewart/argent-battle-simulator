@@ -29,7 +29,7 @@ public class DonkeyKong {
         defenses.set(AttackType.MELEE, 1.1);
         defenses.set(AttackType.RANGED, 1.1);
 
-        FighterStats stats = FighterStats.builder().strength(9).toughness(7.5).dexterity(3).aim(2)
+        FighterStats stats = FighterStats.builder().strength(9).toughness(7.5).dexterity(3.5).aim(2)
                 .agility(4).speed(3).intellect(1.5).willpower(5).size(8).weight(8).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(KingKRool.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(200).maxHp(200).mp(4).maxMp(4).xStrikeMeter(0)

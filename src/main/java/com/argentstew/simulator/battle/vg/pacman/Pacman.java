@@ -25,7 +25,7 @@ public class Pacman {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
 
-        FighterStats stats = FighterStats.builder().strength(5.5).toughness(3.5).dexterity(6.5).aim(6.5)
+        FighterStats stats = FighterStats.builder().strength(5.5).toughness(4).dexterity(6.5).aim(6.5)
                 .agility(5).speed(4.5).intellect(5).willpower(5.5).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(155).maxHp(155).xStrikeMeter(0)

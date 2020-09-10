@@ -24,7 +24,7 @@ public class Ganondorf {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.8);
+        defenses.set(AttackType.MAGIC, 0.7);
         defenses.set(AttackSubType.LIGHT, 1.25);
         defenses.set(AttackSubType.DARK, 1.25);
 

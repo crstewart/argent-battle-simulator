@@ -14,7 +14,7 @@ public class MediBot extends Heal {
 
     public MediBot() {
         this.name = "Medi-Bot";
-        this.description = "Heals 40-50 damage";
+        this.description = "Heals 45-55 damage";
         this.initiateMessage = "prepares his Medi-Bot!";
         this.successMessage = "uses the bot to heal himself!";
         this.failureMessage = "fails to heal!";
@@ -50,7 +50,7 @@ public class MediBot extends Heal {
 
     @Override
     protected int calculateAmountHealed(int incomingDamage) {
-        double baseHeal = 40;
+        double baseHeal = 45;
         double variance = Math.random() * 10;
         return (int) Math.round(baseHeal + variance);
     }

@@ -35,7 +35,7 @@ public class Steve {
         defenses.set(AttackSubType.PUNCH, 0.8);
         defenses.set(AttackSubType.KICK, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(5).toughness(5).dexterity(6).aim(5.5)
+        FighterStats stats = FighterStats.builder().strength(5).toughness(5).dexterity(6).aim(6)
                 .agility(5.5).speed(5).intellect(5).willpower(5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)

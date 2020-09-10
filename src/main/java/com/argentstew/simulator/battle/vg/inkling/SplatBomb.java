@@ -23,7 +23,7 @@ public class SplatBomb extends RangedAttack {
         super();
         this.name = "Splat Bomb";
         this.description = "Uses 30 SP";
-        this.power = 100;
+        this.power = 110;
         this.variance = 8;
         this.speed = 1.5;
         this.subtypes = Arrays.asList(AttackSubType.TOXIC, AttackSubType.EXPLOSIVE);

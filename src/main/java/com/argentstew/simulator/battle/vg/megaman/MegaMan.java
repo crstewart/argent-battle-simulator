@@ -26,7 +26,7 @@ public class MegaMan {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.4);
+        defenses.set(AttackType.MAGIC, 1.3);
         defenses.set(AttackSubType.PIERCE, 1.25);
         defenses.set(AttackSubType.THUNDER, 1.2);
         defenses.set(AttackSubType.ICE, 1.2);
@@ -37,7 +37,7 @@ public class MegaMan {
         defenses.set(AttackSubType.SHOTGUN, 0.6);
         defenses.set(AttackSubType.ARMOR_PIERCING, 0.6);
 
-        FighterStats stats = FighterStats.builder().strength(5).toughness(2).dexterity(6).aim(8)
+        FighterStats stats = FighterStats.builder().strength(5).toughness(2).dexterity(6).aim(8.5)
                 .agility(3).speed(3.5).intellect(2).willpower(3).size(4.5).weight(5.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(DrWily.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)

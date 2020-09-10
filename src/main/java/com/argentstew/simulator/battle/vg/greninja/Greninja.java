@@ -24,7 +24,7 @@ public class Greninja {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(3).dexterity(7).aim(6.5)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(3).dexterity(7).aim(7)
                 .agility(8).speed(8).intellect(3.5).willpower(7).size(3.5).weight(3).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new Protean(), new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)

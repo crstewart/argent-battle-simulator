@@ -26,7 +26,10 @@ public class ColeMacgrath {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.THUNDER, 0.5);
         defenses.set(AttackSubType.EARTH, 1.1);
-        defenses.set(AttackSubType.METAL, 0.8);
+        defenses.set(AttackSubType.METAL, 0.7);
+        defenses.set(AttackSubType.HANDGUN, 0.7);
+        defenses.set(AttackSubType.SHOTGUN, 0.8);
+        defenses.set(AttackSubType.RIFLE, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(5).dexterity(6.5).aim(6)
                 .agility(7.5).speed(6.5).intellect(5).willpower(4).size(5).weight(5).build();

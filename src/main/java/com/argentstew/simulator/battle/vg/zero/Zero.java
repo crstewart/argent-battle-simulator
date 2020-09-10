@@ -27,15 +27,15 @@ public class Zero {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.2);
+        defenses.set(AttackType.MAGIC, 1.3);
         defenses.set(AttackSubType.FIRE, 1.2);
         defenses.set(AttackSubType.PLASMA, 0.8);
-        defenses.set(AttackSubType.HANDGUN, 0.7);
-        defenses.set(AttackSubType.RIFLE, 0.7);
-        defenses.set(AttackSubType.SHOTGUN, 0.7);
+        defenses.set(AttackSubType.HANDGUN, 0.6);
+        defenses.set(AttackSubType.RIFLE, 0.6);
+        defenses.set(AttackSubType.SHOTGUN, 0.6);
         defenses.set(AttackSubType.EXPLOSIVE, 1.2);
 
-        FighterStats stats = FighterStats.builder().strength(7).toughness(5).dexterity(9).aim(5)
+        FighterStats stats = FighterStats.builder().strength(7).toughness(5).dexterity(9).aim(6)
                 .agility(7).speed(5.5).intellect(4).willpower(3).size(5).weight(5.5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new MaverickHunter(), new Rival(Sigma.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)

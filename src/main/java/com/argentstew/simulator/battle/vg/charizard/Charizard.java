@@ -35,7 +35,7 @@ public class Charizard {
         defenses.set(AttackSubType.SHOTGUN, 0.875);
         defenses.set(AttackSubType.RIFLE, 0.875);
 
-        FighterStats stats = FighterStats.builder().strength(6.5).toughness(6).dexterity(3).aim(3.5)
+        FighterStats stats = FighterStats.builder().strength(6.5).toughness(6).dexterity(3.5).aim(3.5)
                 .agility(4).speed(5).intellect(3).willpower(4.5).size(4.5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)

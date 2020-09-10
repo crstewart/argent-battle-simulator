@@ -27,7 +27,7 @@ public class ShieldBot extends Guard {
         this.initiateMessage = "prepare his Shield Bot!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to defend the attack!";
-        this.speed = 2;
+        this.speed = 1.5;
     }
 
     @Override

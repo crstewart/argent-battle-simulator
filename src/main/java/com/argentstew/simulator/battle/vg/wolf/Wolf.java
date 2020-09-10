@@ -25,7 +25,7 @@ public class Wolf {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 1.3);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(7.5).dexterity(7).aim(7.5)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(7.5).dexterity(7.5).aim(7.5)
                 .agility(5).speed(5.5).intellect(5).willpower(5).size(4.5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new StealthDetection()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
