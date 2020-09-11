@@ -32,9 +32,9 @@ public class Metaknight {
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A speedy weaponmaster with a stealthy attack.")
-                .entryQuotes(Arrays.asList("Metaknight: 'Fight me!'", "Metaknight: 'Know my power!'"))
-                .victoryQuotes(Arrays.asList("Metaknight: 'Come back when you can put up a fight.'",
-                        "Metaknight: 'Victory... is my destiny...'"))
+                .entryQuotes(Arrays.asList("Meta Knight: 'Fight me!'", "Meta Knight: 'Know my power!'"))
+                .victoryQuotes(Arrays.asList("Meta Knight: 'Come back when you can put up a fight.'",
+                        "Meta Knight: 'Victory... is my destiny...'"))
                 .classifications(Collections.singletonList(FighterClassification.ALIEN))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new MeleeStrategy()).build()
