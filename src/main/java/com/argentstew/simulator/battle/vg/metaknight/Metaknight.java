@@ -19,7 +19,7 @@ import java.util.Collections;
  */
 public class Metaknight {
 
-    public static final String NAME = "Metaknight";
+    public static final String NAME = "Meta Knight";
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
