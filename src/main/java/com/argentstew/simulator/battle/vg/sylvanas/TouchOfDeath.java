@@ -16,7 +16,7 @@ public class TouchOfDeath extends MagicXStrike {
 
     public TouchOfDeath() {
         super();
-        this.name = "Ice Shatter";
+        this.name = "Touch of Death";
         this.description = "Has 50% critical hit chance";
         this.power = 200;
         this.variance = 10;
