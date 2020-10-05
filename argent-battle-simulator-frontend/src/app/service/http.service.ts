@@ -27,11 +27,11 @@ export class HttpService {
     }
 
     public getDownloadLink(id: string) {
-        return "v1/files/" + id + ".txt";
+        return `v1/files/${id}.txt`;
     }
 
     public getFighter(name: string): Observable<Fighter> {
-        return this.httpClient.get<Fighter>("v1/fighters/" + name);
+        return this.httpClient.get<Fighter>(`v1/fighters/${name}`);
     }
 
     public getSeasonOneStandings(): Observable<Standings[]> {
@@ -47,7 +47,7 @@ export class HttpService {
     }
 
     public getRoster(teamName: string): Observable<string[]> {
-        return this.httpClient.get<string[]>("v1/seasons/2/rosters?team=" + teamName);
+        return this.httpClient.get<string[]>(`v1/seasons/2/rosters?team=${teamName}`);
     }
 
     public getWeeks(): Observable<number[]> {
@@ -55,14 +55,14 @@ export class HttpService {
     }
 
     public getScheduleByWeek(week: number): Observable<Match[]> {
-        return this.httpClient.get<Match[]>("v1/seasons/2/schedule?week=" + week);
+        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?week=${week}`);
     }
 
     public getScheduleByTeam(team: string): Observable<Match[]> {
-        return this.httpClient.get<Match[]>("v1/seasons/2/schedule/" + team);
+        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${team}`);
     }
 
     public getScheduleByTeamAndWeek(team: string, week: number): Observable<Match[]> {
-        return this.httpClient.get<Match[]>("v1/seasons/2/schedule/" + team + "?week=" + week);
+        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${team}&week=${week}`);
     }
 }
