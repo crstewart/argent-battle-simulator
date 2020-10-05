@@ -89,5 +89,5 @@ given season.
 `GET v1/seasons/{season}/schedule?week={week}` gets the full or weekly
 schedule for the given season.
 
-`GET v1/seasons/{season}/schedule/{team}?week={week}` gets the full or 
+`GET v1/seasons/{season}/schedule?teamName={team}&week={week}` gets the full or 
 weekly schedule for the given team on the given season.
