@@ -140,15 +140,16 @@ public class DuelBattle implements Battle {
                     report = trait.applyArmor(report);
                 }
                 int damage = defense.applyDefense(report.getDamage());
+                if (defense instanceof Heal && damage < defense.getOwner().getHp()) {
+                    applyHeal((Heal) defense, damage);
+                }
                 if (damage > 0) {
                     battleLogger.log(defense.getOwner().getName() + " takes " + damage + " damage!");
                     defense.getOwner().takeDamage(damage);
-                    battleLogger.log(defense.getOwner());
                 }
+                battleLogger.log(defense.getOwner());
                 defense.getOwner().getStrategy().adjustWeight(defense, defense.getSuccessAdjustment());
-                if (defense instanceof Heal) {
-                    applyHeal((Heal) defense, damage);
-                } else if (defense instanceof Dodge) {
+                if (defense instanceof Dodge) {
                     defense.getOwner().adjustXStrikeMeter(2);
                 } else {
                     defense.getOwner().adjustXStrikeMeter(3);
