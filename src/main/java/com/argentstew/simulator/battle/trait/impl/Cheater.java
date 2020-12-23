@@ -22,7 +22,7 @@ public class Cheater implements Trait {
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {
-        double damageMultiplier = (Math.random() * 0.2) + 1;
+        double damageMultiplier = (Math.random() * 0.1) + 1;
 
         return rawDamage * damageMultiplier;
     }
@@ -34,7 +34,7 @@ public class Cheater implements Trait {
 
     @Override
     public DamageReport applyArmor(DamageReport report) {
-        double damageMultiplier = 1 - (Math.random() * 0.2);
+        double damageMultiplier = 1 - (Math.random() * 0.1);
         report.setDamage((int) Math.round(report.getDamage() * damageMultiplier));
 
         return report;

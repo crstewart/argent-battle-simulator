@@ -22,7 +22,7 @@ public class RangedStrategy extends BasicStrategy {
 
     public Double addAction(Action action) {
         if (action instanceof XStrike) {
-            return super.addAction(action, 8.0);
+            return super.addAction(action, 10.0);
         } else if (action instanceof AttackAction) {
             AttackAction attack = (AttackAction) action;
             if (attack.isRequiresMeleeRange()) {

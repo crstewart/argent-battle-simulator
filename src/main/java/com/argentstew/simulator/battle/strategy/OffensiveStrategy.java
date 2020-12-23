@@ -21,7 +21,7 @@ public class OffensiveStrategy extends BasicStrategy {
 
     public Double addAction(Action action) {
         if (action instanceof XStrike) {
-            return super.addAction(action, 8.0);
+            return super.addAction(action, 10.0);
         } else if (action instanceof AttackAction) {
             return super.addAction(action, 1.5);
         } else if (action instanceof Advance) {

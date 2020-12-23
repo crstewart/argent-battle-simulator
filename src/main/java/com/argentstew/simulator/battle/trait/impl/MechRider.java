@@ -42,7 +42,7 @@ public class MechRider implements Trait {
         adjustedReport.setCrit(report.isCrit());
         adjustedReport.setStun(report.isStun());
         adjustedReport.setDamage(report.isCrit() ? (int) Math.round(report.getDamage() * 1.25) :
-                (int) Math.round(report.getDamage() * 0.85));
+                (int) Math.round(report.getDamage() * 0.8));
 
         return adjustedReport;
     }

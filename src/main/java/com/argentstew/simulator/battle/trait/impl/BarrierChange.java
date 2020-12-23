@@ -69,7 +69,7 @@ public class BarrierChange implements Trait {
         for (AttackSubType subType : attack.getSubtypes()) {
             if (ELEMENTS.contains(subType)) {
                 if (subType.equals(lastElementUsed)) {
-                    finalDamage = (int) Math.floor(finalDamage * 1.25);
+                    finalDamage = (int) Math.floor(finalDamage * 2);
                 } else {
                     finalDamage = (int) Math.ceil(finalDamage * 0.5);
                 }
