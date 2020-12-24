@@ -28,7 +28,6 @@ public class Charizard {
         defenses.set(AttackSubType.WATER, 2);
         defenses.set(AttackSubType.THUNDER, 2);
         defenses.set(AttackSubType.NATURE, 0.25);
-        defenses.set(AttackSubType.METAL, 0.5);
         defenses.set(AttackSubType.LIGHT, 0.75);
         defenses.set(AttackSubType.CHI, 0.5);
         defenses.set(AttackSubType.HANDGUN, 0.875);

@@ -28,7 +28,6 @@ public class Pikachu {
         defenses.set(AttackSubType.EARTH, 2);
         defenses.set(AttackSubType.THUNDER, 0.5);
         defenses.set(AttackSubType.AIR, 0.5);
-        defenses.set(AttackSubType.METAL, 0.5);
         defenses.set(AttackSubType.HANDGUN, 0.75);
         defenses.set(AttackSubType.SHOTGUN, 0.75);
         defenses.set(AttackSubType.RIFLE, 0.75);

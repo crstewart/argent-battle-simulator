@@ -21,7 +21,7 @@ public class IronTail extends MeleeAttack {
         this.power = 100;
         this.variance = 7;
         this.speed = 3;
-        this.subtypes = Arrays.asList(AttackSubType.TAIL, AttackSubType.METAL);
+        this.subtypes = Arrays.asList(AttackSubType.TAIL);
         this.characteristics = Collections.emptyList();
     }
 }

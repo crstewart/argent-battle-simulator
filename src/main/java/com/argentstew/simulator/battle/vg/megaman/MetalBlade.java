@@ -20,7 +20,7 @@ public class MetalBlade extends RangedAttack {
         this.power = 45;
         this.variance = 5;
         this.speed = 1;
-        this.subtypes = Arrays.asList(AttackSubType.METAL, AttackSubType.HACK);
+        this.subtypes = Arrays.asList(AttackSubType.HACK);
         this.characteristics = Collections.emptyList();
     }
 }

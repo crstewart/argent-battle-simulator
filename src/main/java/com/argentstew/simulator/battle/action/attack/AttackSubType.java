@@ -41,12 +41,12 @@ public enum AttackSubType {
     LIGHT,
     DARK,
     NATURE,
-    METAL,
     PLASMA,
     MYSTIC,
     CHI,
     SOUND,
     TOXIC,
+    GRAVITY,
 
     // special types
     ASSIST,

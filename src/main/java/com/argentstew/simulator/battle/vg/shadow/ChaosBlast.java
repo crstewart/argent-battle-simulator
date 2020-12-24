@@ -22,7 +22,7 @@ public class ChaosBlast extends RangedXStrike {
         this.power = 300;
         this.variance = 10;
         this.speed = 6;
-        this.subtypes = Collections.singletonList(AttackSubType.DARK);
+        this.subtypes = Arrays.asList(AttackSubType.DARK, AttackSubType.GRAVITY);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }
 }

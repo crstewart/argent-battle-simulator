@@ -19,7 +19,7 @@ public class Galaxian extends RangedAttack {
         this.power = 70;
         this.variance = 7;
         this.speed = 2;
-        this.subtypes = Collections.singletonList(AttackSubType.METAL);
+        this.subtypes = Collections.singletonList(AttackSubType.SLAM);
         this.characteristics = Collections.emptyList();
     }
 }

@@ -21,7 +21,7 @@ public class BlackHoleBomb extends RangedXStrike {
         this.power = 250;
         this.variance = 15;
         this.speed = 1;
-        this.subtypes = Collections.emptyList();
+        this.subtypes = Collections.singletonList(AttackSubType.GRAVITY);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }
 }

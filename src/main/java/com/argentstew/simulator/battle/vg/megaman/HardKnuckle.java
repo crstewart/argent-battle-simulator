@@ -20,7 +20,7 @@ public class HardKnuckle extends RangedAttack {
         this.power = 70;
         this.variance = 4;
         this.speed = 2;
-        this.subtypes = Arrays.asList(AttackSubType.METAL, AttackSubType.PUNCH);
+        this.subtypes = Arrays.asList(AttackSubType.PUNCH);
         this.characteristics = Collections.emptyList();
     }
 }

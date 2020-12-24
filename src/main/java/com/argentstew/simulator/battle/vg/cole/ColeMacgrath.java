@@ -26,7 +26,6 @@ public class ColeMacgrath {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.THUNDER, 0.5);
         defenses.set(AttackSubType.EARTH, 1.1);
-        defenses.set(AttackSubType.METAL, 0.7);
         defenses.set(AttackSubType.HANDGUN, 0.7);
         defenses.set(AttackSubType.SHOTGUN, 0.8);
         defenses.set(AttackSubType.RIFLE, 0.8);
