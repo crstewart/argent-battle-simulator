@@ -8,6 +8,8 @@ package com.argentstew.simulator.battle.action.attack;
  */
 public enum AttackCharacteristic {
 
+    HOMING,
+    HOLD,
     UNDODGEABLE,
     UNGUARDABLE,
     BULLET_SPEED,

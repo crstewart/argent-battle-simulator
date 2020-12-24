@@ -21,6 +21,6 @@ public class Gauntlet extends MeleeAttack {
         this.variance = 5;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

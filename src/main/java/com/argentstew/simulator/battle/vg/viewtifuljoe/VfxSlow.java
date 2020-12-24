@@ -22,6 +22,6 @@ public class VfxSlow extends MeleeAttack {
         this.variance = 5;
         this.speed = 4;
         this.subtypes = Collections.singletonList(AttackSubType.PUNCH);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNDODGEABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOMING);
     }
 }

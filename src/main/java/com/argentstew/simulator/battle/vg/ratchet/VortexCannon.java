@@ -21,6 +21,6 @@ public class VortexCannon extends RangedAttack {
         this.variance = 4;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.AIR);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

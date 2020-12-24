@@ -22,6 +22,6 @@ public class Confusion extends RangedAttack {
         this.variance = 4;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.MYSTIC, AttackSubType.GRAPPLE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

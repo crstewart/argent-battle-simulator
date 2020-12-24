@@ -22,6 +22,6 @@ public class PsychoField extends RangedAttack {
         this.variance = 5;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.DARK, AttackSubType.MYSTIC);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

@@ -22,6 +22,6 @@ public class KoopaToss extends MeleeAttack {
         this.variance = 7;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

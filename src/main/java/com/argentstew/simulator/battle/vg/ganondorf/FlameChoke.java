@@ -22,6 +22,6 @@ public class FlameChoke extends MeleeAttack {
         this.variance = 6;
         this.speed = 1.5;
         this.subtypes = Arrays.asList(AttackSubType.GRAPPLE, AttackSubType.DARK);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

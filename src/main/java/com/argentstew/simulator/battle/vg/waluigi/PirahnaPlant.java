@@ -22,6 +22,6 @@ public class PirahnaPlant extends MeleeAttack {
         this.variance = 8;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.BITE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

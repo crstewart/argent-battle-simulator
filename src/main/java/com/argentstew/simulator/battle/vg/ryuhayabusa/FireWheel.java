@@ -22,6 +22,6 @@ public class FireWheel extends RangedAttack {
         this.variance = 5;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.FIRE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNDODGEABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOMING);
     }
 }

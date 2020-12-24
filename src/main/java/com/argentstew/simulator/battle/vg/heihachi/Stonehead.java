@@ -22,6 +22,6 @@ public class Stonehead extends MeleeAttack {
         this.variance = 3;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.HEADBUTT, AttackSubType.GRAPPLE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

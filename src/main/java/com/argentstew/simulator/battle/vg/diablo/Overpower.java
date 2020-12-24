@@ -21,6 +21,6 @@ public class Overpower extends MeleeAttack {
         this.variance = 4;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

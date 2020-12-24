@@ -21,6 +21,6 @@ public class GravityGun extends MeleeAttack {
         this.variance = 5;
         this.speed = 1;
         this.subtypes = Collections.emptyList();
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

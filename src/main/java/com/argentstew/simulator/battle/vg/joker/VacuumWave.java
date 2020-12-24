@@ -22,7 +22,7 @@ public class VacuumWave extends MagicAttack {
         this.variance = 7;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.AIR);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNDODGEABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOMING);
     }
 
     @Override

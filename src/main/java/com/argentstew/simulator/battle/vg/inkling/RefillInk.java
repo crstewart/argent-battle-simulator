@@ -28,7 +28,8 @@ public class RefillInk extends Heal {
             return true;
         }
 
-        if (attack.hasCharacteristic(AttackCharacteristic.UNDODGEABLE)) {
+        if (attack.hasCharacteristic(AttackCharacteristic.UNDODGEABLE)
+                || attack.hasCharacteristic(AttackCharacteristic.HOMING)) {
             return false;
         }
 

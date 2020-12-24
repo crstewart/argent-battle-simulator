@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.action.defense;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.DefenseAction;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
+import com.argentstew.simulator.battle.trait.impl.Teleportation;
 
 /**
  * com.argentstew.simulator.battle.action.defense
@@ -18,7 +19,9 @@ public abstract class Guard extends DefenseAction {
             return true;
         }
 
-        if (attack.hasCharacteristic(AttackCharacteristic.UNGUARDABLE) || attack.hasCharacteristic(AttackCharacteristic.STEALTH)) {
+        if (attack.hasCharacteristic(AttackCharacteristic.UNGUARDABLE)
+                || (attack.hasCharacteristic(AttackCharacteristic.HOLD) && !owner.getTraits().has(new Teleportation()))
+                || attack.hasCharacteristic(AttackCharacteristic.STEALTH)) {
             return false;
         }
 

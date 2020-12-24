@@ -24,7 +24,7 @@ public class EggLay extends MeleeAttack {
         this.variance = 2;
         this.speed = 0.5;
         this.subtypes = Arrays.asList(AttackSubType.GRAPPLE, AttackSubType.BITE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 
     @Override

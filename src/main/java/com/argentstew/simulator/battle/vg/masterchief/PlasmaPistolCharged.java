@@ -22,6 +22,6 @@ public class PlasmaPistolCharged extends RangedAttack {
         this.variance = 7;
         this.speed = 3.5;
         this.subtypes = Arrays.asList(AttackSubType.PLASMA, AttackSubType.ARMOR_PIERCING);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNDODGEABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOMING);
     }
 }

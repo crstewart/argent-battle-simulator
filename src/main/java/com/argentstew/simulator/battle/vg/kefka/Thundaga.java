@@ -21,6 +21,6 @@ public class Thundaga extends MagicAttack {
         this.variance = 12;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.THUNDER);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNDODGEABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOMING);
     }
 }

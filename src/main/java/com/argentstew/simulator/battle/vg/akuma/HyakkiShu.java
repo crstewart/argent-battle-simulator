@@ -21,6 +21,6 @@ public class HyakkiShu extends MeleeAttack {
         this.variance = 6;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.DefenseAction;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
+import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
 import lombok.EqualsAndHashCode;
 
 /**
@@ -39,7 +40,9 @@ public class Dodge extends DefenseAction {
             return true;
         }
 
-        if (attack.hasCharacteristic(AttackCharacteristic.UNDODGEABLE) || attack.hasCharacteristic(AttackCharacteristic.STEALTH)) {
+        if (attack.hasCharacteristic(AttackCharacteristic.UNDODGEABLE)
+                || (attack.hasCharacteristic(AttackCharacteristic.HOMING) && !owner.getTraits().has(new TimeManipulation()))
+                || attack.hasCharacteristic(AttackCharacteristic.STEALTH)) {
             return false;
         }
 

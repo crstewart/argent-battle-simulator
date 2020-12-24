@@ -41,6 +41,8 @@ public class CamouflageCloak extends Guard {
     protected boolean doesGuardAttack(AttackAction attack) {
         return !attack.getCharacteristics().contains(AttackCharacteristic.UNGUARDABLE) &&
                 !attack.getCharacteristics().contains(AttackCharacteristic.UNDODGEABLE) &&
+                !attack.getCharacteristics().contains(AttackCharacteristic.HOMING) &&
+                !attack.getCharacteristics().contains(AttackCharacteristic.HOLD) &&
                 !AttackType.MAGIC.equals(attack.getAttackType());
     }
 }

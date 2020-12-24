@@ -23,7 +23,7 @@ public class Chaser extends MagicAttack {
         this.variance = 6;
         this.speed = 1;
         this.subtypes = Collections.emptyList();
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNDODGEABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOMING);
     }
 
     @Override

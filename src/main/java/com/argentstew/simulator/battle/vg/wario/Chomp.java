@@ -22,6 +22,6 @@ public class Chomp extends MeleeAttack {
         this.variance = 4;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.GRAPPLE, AttackSubType.BITE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

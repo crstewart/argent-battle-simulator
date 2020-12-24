@@ -22,6 +22,6 @@ public class FalconDive extends MeleeAttack {
         this.variance = 3;
         this.speed = 1.5;
         this.subtypes = Arrays.asList(AttackSubType.GRAPPLE, AttackSubType.FIRE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

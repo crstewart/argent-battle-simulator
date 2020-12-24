@@ -21,6 +21,6 @@ public class AirDrop extends MeleeAttack {
         this.variance = 7;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

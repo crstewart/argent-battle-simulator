@@ -25,6 +25,6 @@ public class Inhale extends MeleeAttack {
         this.variance = 5;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.AIR);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

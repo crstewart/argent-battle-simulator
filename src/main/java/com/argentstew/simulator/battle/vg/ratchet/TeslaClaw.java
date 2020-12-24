@@ -21,6 +21,6 @@ public class TeslaClaw extends RangedAttack {
         this.variance = 4;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.THUNDER);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNDODGEABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOMING);
     }
 }

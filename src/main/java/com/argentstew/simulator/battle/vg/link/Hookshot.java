@@ -22,6 +22,6 @@ public class Hookshot extends RangedAttack {
         this.variance = 5;
         this.speed = 2.5;
         this.subtypes = Arrays.asList(AttackSubType.PIERCE, AttackSubType.GRAPPLE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 }

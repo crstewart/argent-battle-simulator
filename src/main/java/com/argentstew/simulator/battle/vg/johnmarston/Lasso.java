@@ -24,7 +24,7 @@ public class Lasso extends RangedAttack {
         this.variance = 2;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNGUARDABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }
 
     @Override

@@ -22,7 +22,7 @@ public class HomingAttack extends MeleeAttack {
         this.variance = 3;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.SLAM);
-        this.characteristics = Collections.singletonList(AttackCharacteristic.UNDODGEABLE);
+        this.characteristics = Collections.singletonList(AttackCharacteristic.HOMING);
     }
 
     @Override
