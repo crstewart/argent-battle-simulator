@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.MeleeStrategy;
+import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
 import com.argentstew.simulator.battle.vg.ezio.*;
 
 import java.util.Arrays;
@@ -30,7 +31,7 @@ public class PrinceOfPersia {
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(5.5).dexterity(7).aim(7)
                 .agility(8.5).speed(7).intellect(5).willpower(6).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new TimeManipulation()));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A speedy fighter who can reverse time to heal wounds.")
                 .entryQuotes(Arrays.asList("The Prince: 'Have you been waiting long?'",

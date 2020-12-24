@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.RangedStrategy;
+import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
 import com.argentstew.simulator.battle.vg.jak.*;
 
 import java.util.Arrays;
@@ -30,7 +31,7 @@ public class RatchetAndClank {
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(4).dexterity(6).aim(8.5)
                 .agility(5.5).speed(4.5).intellect(7).willpower(5).size(4).weight(4).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new TimeManipulation()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A futuristic weaponmaster duo who wields a large arsenal of guns.")
                 .entryQuotes(Arrays.asList("Ratchet: 'Slow down. Don't embarrass yourself.'",

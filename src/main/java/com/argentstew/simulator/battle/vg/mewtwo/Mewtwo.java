@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
+import com.argentstew.simulator.battle.trait.impl.Teleportation;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -33,7 +34,7 @@ public class Mewtwo {
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(4).aim(6.5)
                 .agility(8).speed(7).intellect(10).willpower(5).size(5.5).weight(6.5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new NaturalAgility(), new Teleportation()));
         return Fighter.builder().name(NAME).hp(180).maxHp(180).xStrikeMeter(0)
                 .description("A tank with overwhelming stats and calculated strikes.")
                 .entryQuotes(Arrays.asList("Mewtwo: 'Behold my powers! I am the strongest Pokémon in the world.'",

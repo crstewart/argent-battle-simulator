@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
+import com.argentstew.simulator.battle.trait.impl.Teleportation;
 import com.argentstew.simulator.battle.vg.viewtifuljoe.*;
 
 import java.util.Arrays;
@@ -31,7 +32,7 @@ public class Morrigan {
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(2).dexterity(6).aim(6.5)
                 .agility(5).speed(4.5).intellect(4.5).willpower(6).size(4.5).weight(4.5).build();
-        FighterTraits traits = new FighterTraits(Collections.emptyList());
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new Teleportation()));
         return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
                 .description("An anti-mage who has the ability to sap her opponent's X-Strike power.")
                 .entryQuotes(Arrays.asList("Morrigan: 'Eternity can be lonely. Please keep me company...'",

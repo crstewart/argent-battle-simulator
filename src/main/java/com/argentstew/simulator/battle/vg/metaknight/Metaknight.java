@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.MeleeStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
+import com.argentstew.simulator.battle.trait.impl.Teleportation;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -29,7 +30,7 @@ public class Metaknight {
 
         FighterStats stats = FighterStats.builder().strength(2.5).toughness(4).dexterity(10).aim(6)
                 .agility(7).speed(7.5).intellect(6).willpower(7).size(1.5).weight(1.5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new NaturalAgility(), new Teleportation()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A speedy weaponmaster with a stealthy attack.")
                 .entryQuotes(Arrays.asList("Meta Knight: 'Fight me!'", "Meta Knight: 'Know my power!'"))

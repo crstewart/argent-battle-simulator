@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.RangedStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
+import com.argentstew.simulator.battle.trait.impl.Teleportation;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,7 +32,7 @@ public class Dracula {
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(6.5).dexterity(6).aim(6.5)
                 .agility(6).speed(5.5).intellect(7.5).willpower(8.5).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new NaturalAgility(), new Teleportation()));
         return Fighter.builder().name(NAME).hp(160).maxHp(160).mp(0).maxMp(0).xStrikeMeter(0)
                 .description("An undead mage with a variety of powerful but inaccurate spells.")
                 .entryQuotes(Arrays.asList("Dracula: 'Have at you!'", "Dracula: 'What are you afraid of?'"))

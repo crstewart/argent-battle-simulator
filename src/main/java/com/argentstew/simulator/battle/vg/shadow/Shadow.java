@@ -9,6 +9,7 @@ import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.Hazardous;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
+import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,7 +33,7 @@ public class Shadow {
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(3).dexterity(6).aim(7)
                 .agility(9).speed(9.5).intellect(4).willpower(5).size(4).weight(4).build();
-        FighterTraits traits = new FighterTraits(Arrays.asList(new NaturalAgility(), new Hazardous()));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new NaturalAgility(), new Hazardous(), new TimeManipulation()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A speedy fighter with space-bending, undodgeable attacks.")
                 .entryQuotes(Arrays.asList("Shadow: 'I am the Ultimate Life Form!'",

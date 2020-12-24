@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
+import com.argentstew.simulator.battle.trait.impl.Teleportation;
 import com.argentstew.simulator.battle.vg.chunli.*;
 
 import java.util.Arrays;
@@ -33,7 +34,7 @@ public class Akuma {
 
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(3).dexterity(5.5).aim(4)
                 .agility(7).speed(6).intellect(5).willpower(4).size(5).weight(4.5).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new Teleportation()));
         return Fighter.builder().name(NAME).hp(130).maxHp(130).xStrikeMeter(0)
                 .description("A speedy fighter with a powerful finishing move.")
                 .entryQuotes(Arrays.asList("Akuma: 'I am Akuma! And I will teach you the meaning of pain!'",

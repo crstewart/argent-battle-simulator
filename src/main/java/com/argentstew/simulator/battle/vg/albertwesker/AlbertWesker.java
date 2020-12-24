@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
+import com.argentstew.simulator.battle.trait.impl.Teleportation;
 import com.argentstew.simulator.battle.vg.leonkennedy.*;
 
 import java.util.Arrays;
@@ -27,7 +28,7 @@ public class AlbertWesker {
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(3).dexterity(6.5).aim(7.5)
                 .agility(6.5).speed(6.5).intellect(6).willpower(4).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new NaturalAgility(), new Teleportation()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A speedy fighter with a handgun and an explosive finishing move.")
                 .entryQuotes(Arrays.asList("Wesker: 'You'll make a nice test subject.'",
