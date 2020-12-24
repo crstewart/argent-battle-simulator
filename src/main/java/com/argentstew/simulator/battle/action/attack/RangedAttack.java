@@ -68,7 +68,7 @@ public abstract class RangedAttack extends AttackAction {
                     ((10 - defender.getStats().getSize()) * 0.005));
         }
 
-        return ((-0.075 * Math.pow(owner.getStats().getAim(), 1.1)) + 0.945)
+        return ((-0.075 * Math.pow(owner.getStats().getAim(), 1.025)) + 0.8)
                 + (0.01 * (11 - defender.getStats().getSize()));
     }
 
