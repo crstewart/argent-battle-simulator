@@ -31,7 +31,7 @@ public class Diablo {
         FighterStats stats = FighterStats.builder().strength(7.5).toughness(8.5).dexterity(3.5).aim(4.5)
                 .agility(3.5).speed(4).intellect(4).willpower(8.5).size(7).weight(7).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(220).maxHp(220).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(210).maxHp(210).xStrikeMeter(0)
                 .description("A tank who can shrug off almost any attack.")
                 .entryQuotes(Arrays.asList("Diablo: 'Kneel before the Lord of Terror.'", "Diablo: 'I will feast upon your terror!'"))
                 .victoryQuotes(Arrays.asList("Diablo: 'Not even death can save you from me!'",

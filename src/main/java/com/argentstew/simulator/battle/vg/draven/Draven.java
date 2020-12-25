@@ -30,10 +30,10 @@ public class Draven {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(4.5).dexterity(8).aim(7.5)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(4.5).dexterity(8.5).aim(8)
                 .agility(5).speed(4.5).intellect(4.5).willpower(4).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(145).maxHp(145).mp(0).maxMp(10).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(145).maxHp(145).mp(0).maxMp(0).xStrikeMeter(0)
                 .description("A weaponmaster who has higher damage on some critical hits.")
                 .entryQuotes(Arrays.asList("Draven: 'Welcome to the League of Draven.'",
                         "Draven: 'Who wants some Draven? Heheheh.'"))

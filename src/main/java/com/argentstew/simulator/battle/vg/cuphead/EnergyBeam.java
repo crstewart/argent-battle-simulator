@@ -19,8 +19,8 @@ public class EnergyBeam extends RangedXStrike {
     public EnergyBeam() {
         super();
         this.name = "Energy Beam";
-        this.power = 240;
-        this.variance = 14;
+        this.power = 260;
+        this.variance = 15;
         this.speed = 4;
         this.subtypes = Collections.emptyList();
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);

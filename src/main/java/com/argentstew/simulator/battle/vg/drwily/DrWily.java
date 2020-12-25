@@ -41,7 +41,7 @@ public class DrWily {
         FighterStats stats = FighterStats.builder().strength(7).toughness(7.5).dexterity(5.5).aim(5.5)
                 .agility(2).speed(2).intellect(9).willpower(5).size(8).weight(9).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new MechRider()));
-        return Fighter.builder().name(NAME).hp(190).maxHp(190).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(180).maxHp(180).xStrikeMeter(0)
                 .description("A mech-riding tank that calls on his Robot Masters to assist in his X-Strike.")
                 .entryQuotes(Arrays.asList("Dr. Wily: 'The name's Wily... The one and only, the brilliant scientist, Dr. Wily!'",
                         "Dr. Wily: 'I'll defeat you and conquer the world!'"))

@@ -28,7 +28,7 @@ public class CrashBandicoot {
         defenses.set(AttackSubType.MYSTIC, 0.75);
         defenses.set(AttackSubType.EARTH, 0.75);
 
-        FighterStats stats = FighterStats.builder().strength(7.5).toughness(6).dexterity(4.5).aim(5)
+        FighterStats stats = FighterStats.builder().strength(7.5).toughness(6).dexterity(5).aim(5)
                 .agility(6).speed(5.5).intellect(2).willpower(5).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)

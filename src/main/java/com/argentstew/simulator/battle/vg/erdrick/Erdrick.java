@@ -25,13 +25,13 @@ public class Erdrick {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.8);
+        defenses.set(AttackType.MAGIC, 0.7);
         defenses.set(AttackSubType.PIERCE, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(6).aim(6)
                 .agility(5.5).speed(4.5).intellect(5).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new DragonSlayer()));
-        return Fighter.builder().name(NAME).hp(160).maxHp(160).mp(25).maxMp(25).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(160).maxHp(160).mp(30).maxMp(30).xStrikeMeter(0)
                 .description("An all-around fighter with magic power, healing, and dragon slaying potential.")
                 .entryQuotes(Arrays.asList("The hero raises his sword in preparation for the battle.",
                         "The hero appears magically, appearing ready for a fight!"))

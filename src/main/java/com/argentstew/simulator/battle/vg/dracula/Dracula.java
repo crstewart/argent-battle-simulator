@@ -30,10 +30,10 @@ public class Dracula {
         defenses.set(AttackSubType.DARK, 0.5);
         defenses.set(AttackSubType.LIGHT, 1.5);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(6.5).dexterity(6).aim(6.5)
-                .agility(6).speed(5.5).intellect(7.5).willpower(8.5).size(5).weight(5).build();
+        FighterStats stats = FighterStats.builder().strength(6).toughness(7.5).dexterity(6).aim(6.5)
+                .agility(6).speed(6).intellect(7.5).willpower(8.5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new NaturalAgility(), new Teleportation()));
-        return Fighter.builder().name(NAME).hp(160).maxHp(160).mp(0).maxMp(0).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(155).maxHp(155).mp(0).maxMp(0).xStrikeMeter(0)
                 .description("An undead mage with a variety of powerful but inaccurate spells.")
                 .entryQuotes(Arrays.asList("Dracula: 'Have at you!'", "Dracula: 'What are you afraid of?'"))
                 .victoryQuotes(Arrays.asList("Dracula: 'What is a man? A miserable little pile of secrets!'",

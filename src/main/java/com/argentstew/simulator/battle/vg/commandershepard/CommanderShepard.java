@@ -39,11 +39,11 @@ public class CommanderShepard {
         defenses.set(AttackSubType.SHOTGUN, 0.75);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
 
-        FighterStats stats = FighterStats.builder().strength(5.5).toughness(5.5).dexterity(5.5).aim(5.5)
+        FighterStats stats = FighterStats.builder().strength(5.5).toughness(5.5).dexterity(5).aim(5)
                 .agility(3).speed(2.5).intellect(5).willpower(3).size(5).weight(5.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(180).maxHp(180).xStrikeMeter(0)
-                .description("A futuristic tank who uses a variety of ammo types in his guns.")
+                .description("A futuristic tank who uses a variety of ammo types in their guns.")
                 .entryQuotes(Arrays.asList("Shepard: 'My name is Shepard, and I don’t take threats lightly.'",
                         "Shepard: 'Get out of my way.'"))
                 .victoryQuotes(Arrays.asList("Shepard: 'Humans are aggressive. Wars have started because of our need for constant progress.'",

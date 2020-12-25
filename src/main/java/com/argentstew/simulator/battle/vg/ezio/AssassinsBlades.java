@@ -19,7 +19,7 @@ public class AssassinsBlades extends MeleeXStrike {
         super();
         this.name = "Assassin's Blades";
         this.description = "Has 50% critical hit chance";
-        this.power = 150;
+        this.power = 160;
         this.variance = 10;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.PIERCE, AttackSubType.TOXIC);

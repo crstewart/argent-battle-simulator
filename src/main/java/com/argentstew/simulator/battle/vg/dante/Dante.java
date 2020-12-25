@@ -29,7 +29,7 @@ public class Dante {
         defenses.set(AttackSubType.LIGHT, 1.25);
         defenses.set(AttackSubType.DARK, 1.25);
 
-        FighterStats stats = FighterStats.builder().strength(8).toughness(4.5).dexterity(5).aim(5)
+        FighterStats stats = FighterStats.builder().strength(8).toughness(4.5).dexterity(6).aim(6)
                 .agility(7.5).speed(8).intellect(5).willpower(5.5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Demonslayer()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)

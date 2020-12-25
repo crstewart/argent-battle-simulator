@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 /**
- * com.argentstew.simulator.battle.vg.rathalos
+ * com.argentstew.simulator.battle.vg.deathwing
  * 4/1/2020
  *
  * @author argen
@@ -29,9 +29,10 @@ public class Deathwing {
         defenses.set(AttackSubType.EARTH, 0.8);
         defenses.set(AttackSubType.MYSTIC, 1.4);
         defenses.set(AttackSubType.DARK, 1.2);
+        defenses.set(AttackSubType.GRAVITY, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(10).toughness(9).dexterity(3.5).aim(3.5)
-                .agility(2).speed(3).intellect(3).willpower(9).size(10).weight(10).build();
+        FighterStats stats = FighterStats.builder().strength(10).toughness(9).dexterity(3).aim(3)
+                .agility(2).speed(2.5).intellect(2).willpower(9).size(10).weight(10).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(200).maxHp(200).xStrikeMeter(0)
                 .description("A strong, tough tank with inaccurate but strong attacks.")

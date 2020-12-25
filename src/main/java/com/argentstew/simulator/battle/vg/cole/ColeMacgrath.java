@@ -33,7 +33,7 @@ public class ColeMacgrath {
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(5).dexterity(6.5).aim(6)
                 .agility(7.5).speed(6.5).intellect(5).willpower(4).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A speedy fighter who charges all his attacks with electricity.")
                 .entryQuotes(Arrays.asList("Cole: 'Let me introduce myself.'",
                         "Cole: 'You sure you want to face me?'"))

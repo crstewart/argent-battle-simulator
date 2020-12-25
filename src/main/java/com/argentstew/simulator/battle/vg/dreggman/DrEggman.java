@@ -37,7 +37,7 @@ public class DrEggman {
         FighterStats stats = FighterStats.builder().strength(7.5).toughness(6).dexterity(4).aim(5)
                 .agility(3).speed(2).intellect(9).willpower(4).size(7).weight(8).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new MechRider()));
-        return Fighter.builder().name(NAME).hp(180).maxHp(180).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(170).maxHp(170).xStrikeMeter(0)
                 .description("A mech-riding tank who antagonizes animal characters.")
                 .entryQuotes(Arrays.asList("Dr. Eggman: 'Get a load of this!'",
                         "Dr. Eggman: 'Do you think you can beat me?'"))

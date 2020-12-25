@@ -18,8 +18,8 @@ public class FinaleStinger extends MeleeXStrike {
     public FinaleStinger() {
         super();
         this.name = "Finale Stinger";
-        this.power = 220;
-        this.variance = 18;
+        this.power = 250;
+        this.variance = 16;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.PIERCE);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);

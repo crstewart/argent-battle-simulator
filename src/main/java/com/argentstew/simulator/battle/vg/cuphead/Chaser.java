@@ -19,7 +19,7 @@ public class Chaser extends MagicAttack {
         super();
         this.name = "Chaser";
         this.description = "Gains 1 SP";
-        this.power = 30;
+        this.power = 40;
         this.variance = 6;
         this.speed = 1;
         this.subtypes = Collections.emptyList();
