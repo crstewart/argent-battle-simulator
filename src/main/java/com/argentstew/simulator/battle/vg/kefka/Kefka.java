@@ -30,9 +30,9 @@ public class Kefka {
         defenses.set(AttackSubType.SLASH, 1.25);
 
         FighterStats stats = FighterStats.builder().strength(2).toughness(2).dexterity(6).aim(8)
-                .agility(4.5).speed(4.5).intellect(6.5).willpower(7).size(5).weight(5).build();
+                .agility(4).speed(4).intellect(7).willpower(7).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(130).maxHp(130).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A crazed mage with even crazier techniques.")
                 .entryQuotes(Arrays.asList("Kefka: 'Run! Run! Or you'll be well done!'",
                         "Kefka: 'Fire! Fire! Heh-heh-heh!'"))

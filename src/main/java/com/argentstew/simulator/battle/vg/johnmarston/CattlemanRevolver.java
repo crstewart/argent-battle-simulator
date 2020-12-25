@@ -22,7 +22,7 @@ public class CattlemanRevolver extends RangedAttack {
         super();
         this.name = "Cattleman Revolver";
         this.description = "6 ammo";
-        this.power = 70;
+        this.power = 75;
         this.variance = 6;
         this.speed = 1;
         this.ammo = 6;

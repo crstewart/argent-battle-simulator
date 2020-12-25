@@ -29,7 +29,7 @@ public class LaraCroft {
         FighterStats stats = FighterStats.builder().strength(5).toughness(5.5).dexterity(6.5).aim(8)
                 .agility(5.5).speed(4.5).intellect(6).willpower(5.5).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(0).maxMp(100).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(0).maxMp(0).xStrikeMeter(0)
                 .description("A weaponmaster with guns unhindered by the need for ammo.")
                 .entryQuotes(Arrays.asList("Lara: 'Get out of the way, or you die.'",
                         "Lara: 'You have my total attention now.'"))

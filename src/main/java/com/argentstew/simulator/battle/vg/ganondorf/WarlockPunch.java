@@ -17,7 +17,7 @@ public class WarlockPunch extends MeleeAttack {
     public WarlockPunch() {
         super();
         this.name = "Warlock Punch";
-        this.power = 120;
+        this.power = 150;
         this.variance = 15;
         this.speed = 7;
         this.subtypes = Arrays.asList(AttackSubType.PUNCH, AttackSubType.DARK);

@@ -18,8 +18,8 @@ public class FlameChoke extends MeleeAttack {
     public FlameChoke() {
         super();
         this.name = "Flame Choke";
-        this.power = 70;
-        this.variance = 6;
+        this.power = 60;
+        this.variance = 5;
         this.speed = 1.5;
         this.subtypes = Arrays.asList(AttackSubType.GRAPPLE, AttackSubType.DARK);
         this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);

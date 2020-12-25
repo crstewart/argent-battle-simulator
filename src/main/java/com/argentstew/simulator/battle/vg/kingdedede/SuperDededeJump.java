@@ -16,7 +16,7 @@ public class SuperDededeJump extends MeleeAttack {
     public SuperDededeJump() {
         super();
         this.name = "Super Dedede Jump";
-        this.power = 90;
+        this.power = 100;
         this.variance = 6;
         this.speed = 4;
         this.subtypes = Collections.singletonList(AttackSubType.SLAM);

@@ -18,8 +18,8 @@ public class MagicOrb extends MagicAttack {
     public MagicOrb() {
         super();
         this.name = "Magic Orb";
-        this.power = 50;
-        this.variance = 5;
+        this.power = 70;
+        this.variance = 7;
         this.speed = 3;
         this.subtypes = Collections.singletonList(AttackSubType.DARK);
         this.characteristics = Collections.emptyList();

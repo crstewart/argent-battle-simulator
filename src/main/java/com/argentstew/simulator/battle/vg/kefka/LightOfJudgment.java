@@ -19,7 +19,7 @@ public class LightOfJudgment extends MagicXStrike {
         super();
         this.name = "Light of Judgment";
         this.power = 180;
-        this.variance = 30;
+        this.variance = 40;
         this.speed = 5;
         this.subtypes = Arrays.asList(AttackSubType.LIGHT, AttackSubType.DARK);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);

@@ -16,7 +16,7 @@ public class Sandvich extends Heal {
 
     public Sandvich() {
         this.name = "Sandvich";
-        this.description = "Heals 50-75 damage";
+        this.description = "Heals 70-100 damage";
         this.initiateMessage = "pulls out his Sandvich!";
         this.successMessage = "eats his beloved Sandvich!";
         this.failureMessage = "is stopped before he can eat!";
@@ -54,8 +54,8 @@ public class Sandvich extends Heal {
 
     @Override
     protected int calculateAmountHealed(int incomingDamage) {
-        double baseHeal = 50;
-        double variance = Math.random() * 25;
+        double baseHeal = 70;
+        double variance = Math.random() * 30;
         return (int) Math.round(baseHeal + variance);
     }
 }

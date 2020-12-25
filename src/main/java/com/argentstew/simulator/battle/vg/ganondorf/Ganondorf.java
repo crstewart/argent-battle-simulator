@@ -28,7 +28,7 @@ public class Ganondorf {
         defenses.set(AttackSubType.LIGHT, 1.25);
         defenses.set(AttackSubType.DARK, 1.25);
 
-        FighterStats stats = FighterStats.builder().strength(6.5).toughness(5.5).dexterity(4).aim(5)
+        FighterStats stats = FighterStats.builder().strength(6.5).toughness(6.5).dexterity(4.5).aim(5)
                 .agility(4).speed(3.5).intellect(6.5).willpower(7.5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)

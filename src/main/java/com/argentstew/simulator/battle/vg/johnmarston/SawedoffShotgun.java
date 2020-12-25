@@ -22,7 +22,7 @@ public class SawedoffShotgun extends RangedAttack {
         super();
         this.name = "Sawed-Off Shotgun";
         this.description = "2 ammo";
-        this.power = 80;
+        this.power = 85;
         this.variance = 8;
         this.speed = 2;
         this.ammo = 2;

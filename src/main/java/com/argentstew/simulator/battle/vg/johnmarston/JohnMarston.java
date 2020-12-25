@@ -28,7 +28,7 @@ public class JohnMarston {
         defenses.set(AttackType.MAGIC, 0.9);
         defenses.set(AttackSubType.PLASMA, 1.2);
 
-        FighterStats stats = FighterStats.builder().strength(5).toughness(6.5).dexterity(6.5).aim(8)
+        FighterStats stats = FighterStats.builder().strength(5.5).toughness(6.5).dexterity(7).aim(8)
                 .agility(5).speed(4.5).intellect(4).willpower(5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)

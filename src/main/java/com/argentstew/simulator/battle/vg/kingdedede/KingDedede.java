@@ -26,10 +26,10 @@ public class KingDedede {
         defenses.set(AttackSubType.PIERCE, 1.25);
         defenses.set(AttackSubType.DARK, 1.25);
 
-        FighterStats stats = FighterStats.builder().strength(7.5).toughness(3).dexterity(4).aim(4)
+        FighterStats stats = FighterStats.builder().strength(8).toughness(3).dexterity(4).aim(4)
                 .agility(3).speed(3).intellect(5).willpower(4).size(2).weight(3).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(170).maxHp(170).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(175).maxHp(175).xStrikeMeter(0)
                 .description("A brawler with powerful, inaccurate attacks.")
                 .entryQuotes(Arrays.asList("King Dedede raises his hammer in the air and settles it on his shoulder.",
                         "King Dedede: 'Ha! You're going to love this.'"))

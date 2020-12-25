@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.MeleeStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
+import com.argentstew.simulator.battle.trait.impl.ComboStrike;
 import com.argentstew.simulator.battle.vg.pacman.*;
 
 import java.util.Arrays;
@@ -31,9 +32,9 @@ public class Heihachi {
         defenses.set(AttackSubType.SLAM, 0.8);
         defenses.set(AttackSubType.GRAPPLE, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(5).dexterity(6).aim(3.5)
+        FighterStats stats = FighterStats.builder().strength(6.5).toughness(5).dexterity(6.5).aim(3.5)
                 .agility(3).speed(4).intellect(5).willpower(5).size(4.5).weight(4.5).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new ComboStrike()));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A brawler with powerful hand-to-hand techniques.")
                 .entryQuotes(Arrays.asList("Heihachi: 'Show me what you've got.'",

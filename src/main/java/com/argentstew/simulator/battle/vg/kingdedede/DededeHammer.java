@@ -17,7 +17,7 @@ public class DededeHammer extends MeleeAttack {
         super();
         this.name = "Dedede Hammer";
         this.power = 100;
-        this.variance = 8;
+        this.variance = 10;
         this.speed = 3.5;
         this.subtypes = Collections.singletonList(AttackSubType.SMASH);
         this.characteristics = Collections.emptyList();

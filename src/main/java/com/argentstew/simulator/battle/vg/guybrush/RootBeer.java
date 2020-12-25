@@ -20,7 +20,7 @@ public class RootBeer extends RangedAttack {
     public RootBeer() {
         super();
         this.name = "Root Beer";
-        this.description = "Deals 50% additional damage to undead";
+        this.description = "Deals double damage to undead";
         this.power = 60;
         this.variance = 6;
         this.speed = 1;
@@ -49,7 +49,7 @@ public class RootBeer extends RangedAttack {
 
     private int modifyDamage(Fighter defender, int damage) {
         if (defender.getClassifications().contains(FighterClassification.UNDEAD)) {
-            return (int) Math.round(damage * 1.5);
+            return (int) Math.round(damage * 2);
         }
 
         return damage;

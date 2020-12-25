@@ -17,7 +17,7 @@ public class Bomb extends RangedAttack {
         super();
         this.name = "Bomb";
         this.power = 40;
-        this.variance = 7;
+        this.variance = 10;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.EXPLOSIVE);
         this.characteristics = Collections.emptyList();

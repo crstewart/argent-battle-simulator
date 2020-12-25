@@ -27,7 +27,7 @@ public class GuybrushThreepwood {
         defenses.set(AttackType.MAGIC, 0.9);
         defenses.set(AttackSubType.PLASMA, 1.2);
 
-        FighterStats stats = FighterStats.builder().strength(4.5).toughness(4).dexterity(8).aim(7.5)
+        FighterStats stats = FighterStats.builder().strength(4.5).toughness(4).dexterity(9).aim(7.5)
                 .agility(5.5).speed(5).intellect(5.5).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(0).maxMp(0).xStrikeMeter(0)

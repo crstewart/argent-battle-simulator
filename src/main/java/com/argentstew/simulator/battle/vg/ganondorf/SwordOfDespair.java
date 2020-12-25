@@ -17,7 +17,7 @@ public class SwordOfDespair extends MeleeAttack {
     public SwordOfDespair() {
         super();
         this.name = "Sword of Despair";
-        this.power = 55;
+        this.power = 60;
         this.variance = 6;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.SLASH, AttackSubType.DARK);

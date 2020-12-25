@@ -20,7 +20,7 @@ public class DarkLordGanon extends MeleeXStrike {
     public DarkLordGanon() {
         super();
         this.name = "Dark Lord Ganon";
-        this.power = 260;
+        this.power = 280;
         this.variance = 12;
         this.speed = 3;
         this.subtypes = Arrays.asList(AttackSubType.SLAM, AttackSubType.DARK);

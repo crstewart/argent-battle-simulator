@@ -18,7 +18,7 @@ public class DualUzis extends RangedAttack {
         super();
         this.name = "Dual Uzis";
         this.power = 60;
-        this.variance = 15;
+        this.variance = 18;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.RIFLE);
         this.characteristics = Collections.singletonList(AttackCharacteristic.BULLET_SPEED);

@@ -39,7 +39,7 @@ public class Link {
                 .description("A weaponmaster with a variety of accurate attacks who deals extra damage against Ganondorf.")
                 .entryQuotes(Arrays.asList("Navi: 'Hey! Listen! Watch out!'",
                         "Fi: 'Master, I predict an 85% chance of victory against this foe.'"))
-                .victoryQuotes(Arrays.asList("Link swings and spins his sword before sheathing it triumphantly.",
+                .victoryQuotes(Arrays.asList("Link spins and swings his sword before sheathing it triumphantly.",
                         "Midna: 'So, you're not absolutely stupid after all!'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)

@@ -30,7 +30,7 @@ public class Inkling {
         FighterStats stats = FighterStats.builder().strength(3).toughness(2.5).dexterity(9).aim(9)
                 .agility(6.5).speed(5).intellect(4).willpower(4).size(3.5).weight(3.5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(135).maxHp(135).mp(100).maxMp(100).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(140).maxHp(140).mp(100).maxMp(100).xStrikeMeter(0)
                 .description("A weaponmaster whose ink attacks deal extra damage to those with weakness to poison.")
                 .entryQuotes(Arrays.asList("Inkling: 'Ready!'", "Inkling: 'Yes!'"))
                 .victoryQuotes(Arrays.asList("Inkling: 'Booyah!'", "Inkling: 'Woomy!'"))

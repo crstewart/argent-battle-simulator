@@ -19,8 +19,8 @@ public class HerosBow extends RangedAttack {
         super();
         this.name = "Hero's Bow";
         this.power = 50;
-        this.variance = 4;
-        this.speed = 4;
+        this.variance = 5;
+        this.speed = 3;
         this.subtypes = Collections.singletonList(AttackSubType.PIERCE);
         this.characteristics = Collections.emptyList();
     }

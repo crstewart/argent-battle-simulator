@@ -19,7 +19,7 @@ public class TriforceSlash extends MeleeXStrike {
     public TriforceSlash() {
         super();
         this.name = "Triforce Slash";
-        this.power = 240;
+        this.power = 250;
         this.variance = 15;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.SLASH, AttackSubType.LIGHT);

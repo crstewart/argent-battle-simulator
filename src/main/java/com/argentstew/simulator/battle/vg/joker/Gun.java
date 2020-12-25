@@ -22,7 +22,7 @@ public class Gun extends RangedAttack {
     public Gun() {
         super();
         this.name = "Gun";
-        this.power = 70;
+        this.power = 80;
         this.variance = 8;
         this.speed = 1;
         this.ammo = 2;
