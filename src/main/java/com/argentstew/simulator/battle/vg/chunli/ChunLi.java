@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.trait.impl.ComboStrike;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.vg.mbison.MBison;
 import com.argentstew.simulator.battle.vg.ryu.*;
@@ -26,14 +27,14 @@ public class ChunLi {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.PUNCH, 0.8);
-        defenses.set(AttackSubType.KICK, 0.7);
+        defenses.set(AttackSubType.KICK, 0.6);
         defenses.set(AttackSubType.HEADBUTT, 0.9);
         defenses.set(AttackSubType.SLAM, 0.8);
         defenses.set(AttackSubType.CHI, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(5).dexterity(6).aim(5)
                 .agility(6).speed(5).intellect(5).willpower(5).size(5).weight(4.5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(MBison.NAME, 1.3)));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new ComboStrike(), new Rival(MBison.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
                 .description("An all-around fighter with powerful kick attacks.")
                 .entryQuotes(Arrays.asList("Chun Li: 'You ready for this?'",

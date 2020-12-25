@@ -1,6 +1,7 @@
 package com.argentstew.simulator.battle.fighter;
 
 import com.argentstew.simulator.battle.action.Action;
+import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.XStrike;
 import com.argentstew.simulator.battle.arena.Arena;
 import com.argentstew.simulator.battle.strategy.Strategy;
@@ -80,6 +81,17 @@ public class Fighter {
         }
 
         return strategy.selectAction(doableActions);
+    }
+
+    public AttackAction selectAttack() {
+        List<Action> doableActions = new ArrayList<>();
+        for (Action action : actions) {
+            if (action instanceof AttackAction && !(action instanceof XStrike) && action.isDoable()) {
+                doableActions.add(action);
+            }
+        }
+
+        return (AttackAction) strategy.selectAction(doableActions);
     }
 
     public void takeDamage(int damage) {

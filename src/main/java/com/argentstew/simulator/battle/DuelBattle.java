@@ -14,6 +14,7 @@ import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.logger.BattleLogger;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 import com.argentstew.simulator.battle.trait.Trait;
+import com.argentstew.simulator.battle.trait.impl.ComboStrike;
 import lombok.AllArgsConstructor;
 
 /**
@@ -98,6 +99,11 @@ public class DuelBattle implements Battle {
                 if (report.isStun()) {
                     battleLogger.log(fighter2.getName() + " is stunned by the attack and cannot act!");
                     fighter2.getStrategy().adjustWeight(fighter2Action, fighter2Action.getFailureAdjustment());
+                    if (fighter1Action.getOwner().getTraits().has(new ComboStrike())) {
+                        battleLogger.log(fighter1.getName() + " does a combo attack!");
+                        AttackAction combo = fighter1.selectAttack();
+                        resolveAttackAgainstFighter(combo, fighter2);
+                    }
                 } else {
                     resolveAttackAgainstFighter(fighter2Action, fighter1);
                 }
@@ -108,6 +114,11 @@ public class DuelBattle implements Battle {
                 if (report.isStun()) {
                     battleLogger.log(fighter1.getName() + " is stunned by the attack and cannot act!");
                     fighter1.getStrategy().adjustWeight(fighter1Action, fighter1Action.getFailureAdjustment());
+                    if (fighter2Action.getOwner().getTraits().has(new ComboStrike())) {
+                        battleLogger.log(fighter2.getName() + " does a combo attack!");
+                        AttackAction combo = fighter2.selectAttack();
+                        resolveAttackAgainstFighter(combo, fighter1);
+                    }
                 } else {
                     resolveAttackAgainstFighter(fighter1Action, fighter2);
                 }
@@ -175,6 +186,11 @@ public class DuelBattle implements Battle {
             if (report.isStun()) {
                 battleLogger.log(move.getOwner().getName() + " is stunned by the attack and cannot act!");
                 move.getOwner().getStrategy().adjustWeight(move, move.getFailureAdjustment());
+                if (attack.getOwner().getTraits().has(new ComboStrike())) {
+                    battleLogger.log(attack.getOwner().getName() + " does a combo attack!");
+                    AttackAction combo = attack.getOwner().selectAttack();
+                    resolveAttackAgainstFighter(combo, move.getOwner());
+                }
             } else {
                 if ((move instanceof Advance && move.getOwner().getArena().canAdvance(move.getOwner())) ||
                         (move instanceof Retreat && move.getOwner().getArena().canRetreat(move.getOwner()))) {
