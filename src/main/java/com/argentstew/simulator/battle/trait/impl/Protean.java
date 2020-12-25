@@ -82,7 +82,7 @@ public class Protean implements Trait {
         double finalDamage = damage;
         for (AttackSubType subType : attack.getSubtypes()) {
             if (subType.equals(AttackSubType.FIRE) || subType.equals(AttackSubType.WATER)
-                    || subType.equals(AttackSubType.ICE) || subType.equals(AttackSubType.METAL)) {
+                    || subType.equals(AttackSubType.ICE)) {
                 finalDamage *= 0.5;
             } else if (subType.equals(AttackSubType.HANDGUN) || subType.equals(AttackSubType.RIFLE)
                     || subType.equals(AttackSubType.SHOTGUN)) {
