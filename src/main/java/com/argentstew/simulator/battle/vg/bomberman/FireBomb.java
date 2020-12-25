@@ -17,7 +17,7 @@ public class FireBomb extends RangedAttack {
     public FireBomb() {
         super();
         this.name = "Fire Bomb";
-        this.power = 50;
+        this.power = 55;
         this.variance = 8;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.FIRE, AttackSubType.EXPLOSIVE);

@@ -18,7 +18,7 @@ public class RagingDemon extends MeleeXStrike {
     public RagingDemon() {
         super();
         this.name = "Raging Demon";
-        this.power = 350;
+        this.power = 400;
         this.variance = 30;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.DARK);

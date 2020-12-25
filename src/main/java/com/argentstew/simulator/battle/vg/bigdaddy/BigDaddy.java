@@ -29,12 +29,12 @@ public class BigDaddy {
         defenses.set(AttackSubType.FIRE, 1.2);
         defenses.set(AttackSubType.THUNDER, 1.2);
         defenses.set(AttackSubType.NATURE, 1.15);
-        defenses.set(AttackSubType.HANDGUN, 0.7);
-        defenses.set(AttackSubType.RIFLE, 0.7);
-        defenses.set(AttackSubType.SHOTGUN, 0.75);
-        defenses.set(AttackSubType.SMASH, 0.7);
+        defenses.set(AttackSubType.HANDGUN, 0.6);
+        defenses.set(AttackSubType.RIFLE, 0.6);
+        defenses.set(AttackSubType.SHOTGUN, 0.65);
+        defenses.set(AttackSubType.SMASH, 0.6);
 
-        FighterStats stats = FighterStats.builder().strength(8).toughness(8).dexterity(1.5).aim(1.5)
+        FighterStats stats = FighterStats.builder().strength(8).toughness(8).dexterity(2).aim(2)
                 .agility(2.5).speed(2.5).intellect(1).willpower(6.5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(200).maxHp(200).xStrikeMeter(0)

@@ -17,7 +17,7 @@ public class ThunderBomb extends RangedAttack {
     public ThunderBomb() {
         super();
         this.name = "Thunder Bomb";
-        this.power = 50;
+        this.power = 55;
         this.variance = 8;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.THUNDER, AttackSubType.EXPLOSIVE);

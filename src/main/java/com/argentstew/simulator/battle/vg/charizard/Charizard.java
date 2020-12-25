@@ -37,7 +37,7 @@ public class Charizard {
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(6).dexterity(3.5).aim(3.5)
                 .agility(4).speed(5).intellect(3).willpower(4.5).size(4.5).weight(5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(170).maxHp(170).xStrikeMeter(0)
                 .description("A brawler with a variety of attacks, strengths, and weaknesses.")
                 .entryQuotes(Arrays.asList("Charizard breathes fire and stares down its opponent menacingly.",
                         "Charizard swoops down from the sky and lands with a mighty roar!"))

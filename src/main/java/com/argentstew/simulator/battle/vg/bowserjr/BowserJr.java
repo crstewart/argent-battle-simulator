@@ -25,14 +25,14 @@ public class BowserJr {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackSubType.FIRE, 1.2);
+        defenses.set(AttackSubType.FIRE, 1.4);
         defenses.set(AttackSubType.WATER, 1.2);
         defenses.set(AttackSubType.TOXIC, 0.75);
 
         FighterStats stats = FighterStats.builder().strength(3.5).toughness(4).dexterity(6).aim(6)
                 .agility(5.5).speed(6).intellect(2).willpower(7.5).size(4).weight(5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new MechRider(), new Hazardous()));
-        return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
                 .description("A mech-riding weaponmaster that can hurt melee attackers with his spiky shell.")
                 .entryQuotes(Arrays.asList("Bowser Jr: 'I won't even need my dad's help to take care of you!'",
                         "Bowser Jr: 'I'm Bowser Jr., and you'll be losing to ME today!'"))

@@ -17,8 +17,8 @@ public class RaptorBoost extends MeleeAttack {
     public RaptorBoost() {
         super();
         this.name = "Raptor Boost";
-        this.power = 40;
-        this.variance = 4;
+        this.power = 45;
+        this.variance = 6;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.PUNCH, AttackSubType.FIRE);
         this.characteristics = Collections.emptyList();

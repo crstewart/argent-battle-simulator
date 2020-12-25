@@ -18,8 +18,8 @@ public class FalconDive extends MeleeAttack {
     public FalconDive() {
         super();
         this.name = "Falcon Dive";
-        this.power = 35;
-        this.variance = 3;
+        this.power = 40;
+        this.variance = 4;
         this.speed = 1.5;
         this.subtypes = Arrays.asList(AttackSubType.GRAPPLE, AttackSubType.FIRE);
         this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);

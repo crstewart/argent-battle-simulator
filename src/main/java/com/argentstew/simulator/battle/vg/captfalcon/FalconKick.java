@@ -17,8 +17,8 @@ public class FalconKick extends MeleeAttack {
     public FalconKick() {
         super();
         this.name = "Falcon Kick";
-        this.power = 45;
-        this.variance = 3;
+        this.power = 50;
+        this.variance = 4;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.KICK, AttackSubType.FIRE);
         this.characteristics = Collections.emptyList();

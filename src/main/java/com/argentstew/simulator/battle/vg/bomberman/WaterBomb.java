@@ -17,7 +17,7 @@ public class WaterBomb extends RangedAttack {
     public WaterBomb() {
         super();
         this.name = "Water Bomb";
-        this.power = 50;
+        this.power = 55;
         this.variance = 8;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.WATER, AttackSubType.EXPLOSIVE);

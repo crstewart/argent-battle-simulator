@@ -25,10 +25,10 @@ public class Arthas {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 0.6);
-        defenses.set(AttackSubType.SLASH, 0.9);
-        defenses.set(AttackSubType.PIERCE, 0.9);
-        defenses.set(AttackSubType.HACK, 0.9);
-        defenses.set(AttackSubType.SMASH, 1.1);
+        defenses.set(AttackSubType.SLASH, 0.8);
+        defenses.set(AttackSubType.PIERCE, 0.8);
+        defenses.set(AttackSubType.HACK, 0.8);
+        defenses.set(AttackSubType.SMASH, 1.2);
         defenses.set(AttackSubType.CLAW, 0.9);
         defenses.set(AttackSubType.BITE, 0.9);
         defenses.set(AttackSubType.PUNCH, 0.9);

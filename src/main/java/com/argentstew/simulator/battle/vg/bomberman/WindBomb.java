@@ -17,7 +17,7 @@ public class WindBomb extends RangedAttack {
     public WindBomb() {
         super();
         this.name = "Wind Bomb";
-        this.power = 50;
+        this.power = 55;
         this.variance = 8;
         this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.AIR, AttackSubType.EXPLOSIVE);

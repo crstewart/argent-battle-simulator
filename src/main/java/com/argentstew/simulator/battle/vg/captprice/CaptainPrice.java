@@ -26,7 +26,7 @@ public class CaptainPrice {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
 
-        FighterStats stats = FighterStats.builder().strength(5.5).toughness(5).dexterity(6).aim(7)
+        FighterStats stats = FighterStats.builder().strength(5.5).toughness(5).dexterity(6).aim(7.5)
                 .agility(4).speed(4.5).intellect(5).willpower(5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
