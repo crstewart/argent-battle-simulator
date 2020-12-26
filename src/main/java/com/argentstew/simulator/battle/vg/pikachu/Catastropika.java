@@ -18,9 +18,9 @@ public class Catastropika extends RangedXStrike {
     public Catastropika() {
         super();
         this.name = "Catastropika";
-        this.power = 210;
-        this.variance = 14;
-        this.speed = 3;
+        this.power = 240;
+        this.variance = 24;
+        this.speed = 5;
         this.subtypes = Collections.singletonList(AttackSubType.THUNDER);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }

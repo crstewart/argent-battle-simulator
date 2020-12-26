@@ -27,9 +27,10 @@ public class Metaknight {
         defenses.set(AttackSubType.HEADBUTT, 0.8);
         defenses.set(AttackSubType.AIR, 1.2);
         defenses.set(AttackSubType.DARK, 1.2);
+        defenses.set(AttackSubType.GRAVITY, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(2.5).toughness(4).dexterity(10).aim(6)
-                .agility(7).speed(7.5).intellect(6).willpower(7).size(1.5).weight(1.5).build();
+        FighterStats stats = FighterStats.builder().strength(3).toughness(4).dexterity(10).aim(6)
+                .agility(8).speed(7.5).intellect(6).willpower(7).size(1.5).weight(1.5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new NaturalAgility(), new Teleportation()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A speedy weaponmaster with a stealthy attack.")

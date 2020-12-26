@@ -33,10 +33,10 @@ public class Marth {
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
         defenses.set(AttackSubType.HACK, 0.5);
 
-        FighterStats stats = FighterStats.builder().strength(5).toughness(6).dexterity(7.5).aim(4)
+        FighterStats stats = FighterStats.builder().strength(5).toughness(6).dexterity(8.5).aim(4.5)
                 .agility(6).speed(6).intellect(5).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new DragonSlayer()));
-        return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
                 .description("A weaponmaster who takes extra damage from piercing attacks but resists hack attacks.")
                 .entryQuotes(Arrays.asList("Marth: 'If you will allow me, I can be your strength!'",
                         "Marth: 'Everyone, watch over me!'"))

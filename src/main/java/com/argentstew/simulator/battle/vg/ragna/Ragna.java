@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.MeleeStrategy;
+import com.argentstew.simulator.battle.trait.impl.ComboStrike;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,7 +32,7 @@ public class Ragna {
 
         FighterStats stats = FighterStats.builder().strength(7).toughness(7.5).dexterity(4.5).aim(4)
                 .agility(5.5).speed(5.5).intellect(5).willpower(2.5).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new ComboStrike()));
         return Fighter.builder().name(NAME).hp(160).maxHp(160).mp(0).maxMp(0).xStrikeMeter(0)
                 .description("A strong, tough brawler who heals himself with most of his attacks.")
                 .entryQuotes(Arrays.asList("Ragna: 'Move it!'", "Ragna: 'Ready?'"))

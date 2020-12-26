@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 /**
- * com.argentstew.simulator.battle.vg.mario
+ * com.argentstew.simulator.battle.vg.luigi
  * 8/24/2019
  *
  * @author Craig
@@ -18,8 +18,8 @@ public class Poultergust extends RangedXStrike {
     public Poultergust() {
         super();
         this.name = "Poultergust";
-        this.power = 240;
-        this.variance = 15;
+        this.power = 250;
+        this.variance = 20;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.AIR);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);

@@ -28,8 +28,8 @@ public class LloydIrving {
         defenses.set(AttackType.MAGIC, 0.8);
         defenses.set(AttackSubType.SLASH, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(4).toughness(4.5).dexterity(7.5).aim(5)
-                .agility(6.5).speed(6).intellect(5.5).willpower(7).size(5).weight(5).build();
+        FighterStats stats = FighterStats.builder().strength(4.5).toughness(4.5).dexterity(7.5).aim(5)
+                .agility(7).speed(6).intellect(5.5).willpower(7).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A speedy fighter with fast sword techniques.")

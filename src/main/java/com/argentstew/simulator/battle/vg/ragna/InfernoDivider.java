@@ -19,7 +19,7 @@ public class InfernoDivider extends MeleeAttack {
     public InfernoDivider() {
         super();
         this.name = "Inferno Divider";
-        this.description = "Heals for 20% of the damage dealt";
+        this.description = "Heals for 25% of the damage dealt";
         this.power = 45;
         this.variance = 6;
         this.speed = 1.5;
@@ -30,7 +30,7 @@ public class InfernoDivider extends MeleeAttack {
     @Override
     public DamageReport doAttack(Fighter defender) {
         DamageReport report = super.doAttack(defender);
-        this.owner.heal(report.getDamage() / 5);
+        this.owner.heal(report.getDamage() / 4);
         return report;
     }
 }

@@ -28,11 +28,12 @@ public class Rayman {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.WATER, 0.7);
         defenses.set(AttackSubType.PIERCE, 1.25);
+        defenses.set(AttackSubType.GRAVITY, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(4).dexterity(6.5).aim(6)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(5).dexterity(6.5).aim(6)
                 .agility(5).speed(6).intellect(5).willpower(5).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("An all-around fighter who strikes with a variety of punches and kicks.")
                 .entryQuotes(Arrays.asList("Rayman: 'No Problem!'", "Rayman: 'Ya-hoo!'"))
                 .victoryQuotes(Arrays.asList("Rayman: 'Yeah-HOO! Yay me!'",

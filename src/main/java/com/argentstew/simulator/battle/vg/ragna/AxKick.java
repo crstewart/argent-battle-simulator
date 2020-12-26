@@ -19,7 +19,7 @@ public class AxKick extends MeleeAttack {
     public AxKick() {
         super();
         this.name = "Ax Kick";
-        this.description = "Heals for 20% of the damage dealt";
+        this.description = "Heals for 25% of the damage dealt";
         this.power = 40;
         this.variance = 5;
         this.speed = 1;
@@ -30,7 +30,7 @@ public class AxKick extends MeleeAttack {
     @Override
     public DamageReport doAttack(Fighter defender) {
         DamageReport report = super.doAttack(defender);
-        this.owner.heal(report.getDamage() / 5);
+        this.owner.heal(report.getDamage() / 4);
         return report;
     }
 }

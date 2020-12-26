@@ -18,8 +18,8 @@ public class PlasmaScream extends RangedXStrike {
     public PlasmaScream() {
         super();
         this.name = "Plasma Scream";
-        this.power = 235;
-        this.variance = 12;
+        this.power = 280;
+        this.variance = 18;
         this.speed = 4;
         this.subtypes = Collections.singletonList(AttackSubType.PLASMA);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);

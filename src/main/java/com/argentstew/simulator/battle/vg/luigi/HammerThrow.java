@@ -16,7 +16,7 @@ public class HammerThrow extends RangedAttack {
     public HammerThrow() {
         super();
         this.name = "Hammer Throw";
-        this.power = 70;
+        this.power = 80;
         this.variance = 8;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.SMASH);

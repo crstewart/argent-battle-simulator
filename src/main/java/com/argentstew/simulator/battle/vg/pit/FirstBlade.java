@@ -18,7 +18,7 @@ public class FirstBlade extends MeleeAttack {
         super();
         this.name = "First Blade";
         this.power = 60;
-        this.variance = 3;
+        this.variance = 4;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
         this.characteristics = Collections.emptyList();

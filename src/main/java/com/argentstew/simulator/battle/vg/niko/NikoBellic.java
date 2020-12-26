@@ -25,7 +25,7 @@ public class NikoBellic {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
 
-        FighterStats stats = FighterStats.builder().strength(5.5).toughness(6).dexterity(6).aim(7)
+        FighterStats stats = FighterStats.builder().strength(5.5).toughness(6).dexterity(6.5).aim(7)
                 .agility(4.5).speed(5).intellect(4.5).willpower(5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)

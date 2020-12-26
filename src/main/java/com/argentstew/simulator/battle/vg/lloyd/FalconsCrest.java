@@ -18,7 +18,7 @@ public class FalconsCrest extends MeleeXStrike {
     public FalconsCrest() {
         super();
         this.name = "Falcon's Crest";
-        this.power = 230;
+        this.power = 260;
         this.variance = 16;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);

@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 
 import java.util.Arrays;
 
@@ -41,7 +42,7 @@ public class Rathalos {
                         "The Rathalos flies off, having dealt with the immediate threat."))
                 .classifications(Arrays.asList(FighterClassification.MONSTER, FighterClassification.DRAGON))
                 .defenses(defenses).stats(stats).traits(traits)
-                .strategy(new BalancedStrategy()).build()
+                .strategy(new OffensiveStrategy()).build()
                 .addAction(new WyvernFireball()).addAction(new SonicRoar()).addAction(new PoisonClaw())
                 .addAction(new SlidingTackle())
                 .addAction(new ExplosiveFireballs())

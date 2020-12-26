@@ -18,9 +18,9 @@ public class SuperPacMan extends MeleeXStrike {
     public SuperPacMan() {
         super();
         this.name = "Super Pac-Man";
-        this.power = 240;
-        this.variance = 16;
-        this.speed = 1;
+        this.power = 250;
+        this.variance = 18;
+        this.speed = 3;
         this.subtypes = Collections.singletonList(AttackSubType.BITE);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }

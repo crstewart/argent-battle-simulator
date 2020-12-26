@@ -18,7 +18,7 @@ public class Gauntlet extends MeleeAttack {
         super();
         this.name = "Gauntlet";
         this.power = 55;
-        this.variance = 5;
+        this.variance = 6;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);
         this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);

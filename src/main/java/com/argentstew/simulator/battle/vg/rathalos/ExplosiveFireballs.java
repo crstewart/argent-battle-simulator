@@ -18,8 +18,8 @@ public class ExplosiveFireballs extends RangedXStrike {
     public ExplosiveFireballs() {
         super();
         this.name = "Explosive Fireballs";
-        this.power = 280;
-        this.variance = 18;
+        this.power = 300;
+        this.variance = 30;
         this.speed = 6;
         this.subtypes = Arrays.asList(AttackSubType.EXPLOSIVE, AttackSubType.FIRE);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);

@@ -20,7 +20,7 @@ public class DeadSpike extends RangedAttack {
     public DeadSpike() {
         super();
         this.name = "Dead Spike";
-        this.description = "Heals for 20% of the damage dealt";
+        this.description = "Heals for 25% of the damage dealt";
         this.power = 35;
         this.variance = 5;
         this.speed = 1;
@@ -31,7 +31,7 @@ public class DeadSpike extends RangedAttack {
     @Override
     public DamageReport doAttack(Fighter defender) {
         DamageReport report = super.doAttack(defender);
-        this.owner.heal(report.getDamage() / 5);
+        this.owner.heal(report.getDamage() / 4);
         return report;
     }
 }

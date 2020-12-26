@@ -9,6 +9,7 @@ import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.BountyHunter;
+import com.argentstew.simulator.battle.trait.impl.GodSlayer;
 import com.argentstew.simulator.battle.vg.captfalcon.*;
 
 import java.util.Arrays;
@@ -30,9 +31,9 @@ public class Pit {
         defenses.set(AttackSubType.LIGHT, 0.7);
         defenses.set(AttackSubType.DARK, 0.7);
 
-        FighterStats stats = FighterStats.builder().strength(4).toughness(3).dexterity(7).aim(8)
-                .agility(5.5).speed(4.5).intellect(3).willpower(6).size(4.5).weight(4.5).build();
-        FighterTraits traits = new FighterTraits();
+        FighterStats stats = FighterStats.builder().strength(4).toughness(3).dexterity(7.5).aim(8.5)
+                .agility(6.5).speed(4.5).intellect(3).willpower(6).size(4.5).weight(4.5).build();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new GodSlayer()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A weaponmaster with resistances to light and dark magic.")
                 .entryQuotes(Arrays.asList("Pit: 'Sorry to keep you waiting!'",

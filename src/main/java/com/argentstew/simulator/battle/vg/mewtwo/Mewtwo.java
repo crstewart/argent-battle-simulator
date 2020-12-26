@@ -32,7 +32,7 @@ public class Mewtwo {
         defenses.set(AttackSubType.MYSTIC, 0.5);
         defenses.set(AttackSubType.CHI, 0.5);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(4).aim(6.5)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(5).aim(6.5)
                 .agility(8).speed(7).intellect(10).willpower(5).size(5.5).weight(6.5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new NaturalAgility(), new Teleportation()));
         return Fighter.builder().name(NAME).hp(180).maxHp(180).xStrikeMeter(0)

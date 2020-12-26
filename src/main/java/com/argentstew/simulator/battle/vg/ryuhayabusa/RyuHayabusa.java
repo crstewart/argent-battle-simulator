@@ -29,7 +29,7 @@ public class RyuHayabusa {
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(5).dexterity(7.5).aim(6.5)
                 .agility(7).speed(6).intellect(5).willpower(4).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A speedy fighter whose ninjitsu allows him to bypass defenses.")
                 .entryQuotes(Arrays.asList("Ryu Hayabusa: 'Those that stand against me are doomed to fail.'",
                         "Ryu Hayabusa: 'I will defeat all evil!'"))

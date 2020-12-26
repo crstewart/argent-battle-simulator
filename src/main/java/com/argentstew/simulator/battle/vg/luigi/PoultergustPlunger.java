@@ -17,7 +17,7 @@ public class PoultergustPlunger extends MeleeAttack {
     public PoultergustPlunger() {
         super();
         this.name = "Poultergust Plunger";
-        this.power = 55;
+        this.power = 60;
         this.variance = 6;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);

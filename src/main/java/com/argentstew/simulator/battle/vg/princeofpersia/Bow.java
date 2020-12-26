@@ -18,8 +18,8 @@ public class Bow extends RangedAttack {
     public Bow() {
         super();
         this.name = "Bow and Arrow";
-        this.power = 50;
-        this.variance = 4;
+        this.power = 60;
+        this.variance = 6;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.PIERCE);
         this.characteristics = Collections.emptyList();

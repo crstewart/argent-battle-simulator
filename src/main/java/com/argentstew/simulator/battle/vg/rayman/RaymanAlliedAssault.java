@@ -19,8 +19,8 @@ public class RaymanAlliedAssault extends MeleeXStrike {
     public RaymanAlliedAssault() {
         super();
         this.name = "Rayman Allied Assault";
-        this.power = 220;
-        this.variance = 18;
+        this.power = 250;
+        this.variance = 20;
         this.speed = 3;
         this.subtypes = Arrays.asList(AttackSubType.HACK, AttackSubType.SLAM, AttackSubType.PUNCH, AttackSubType.ASSIST);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);

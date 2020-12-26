@@ -16,8 +16,8 @@ public class PowerPellet extends RangedAttack {
     public PowerPellet() {
         super();
         this.name = "Power Pellet";
-        this.power = 80;
-        this.variance = 8;
+        this.power = 90;
+        this.variance = 9;
         this.speed = 2.5;
         this.subtypes = Collections.emptyList();
         this.characteristics = Collections.emptyList();

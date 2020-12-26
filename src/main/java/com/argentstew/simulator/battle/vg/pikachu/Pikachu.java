@@ -33,7 +33,7 @@ public class Pikachu {
         defenses.set(AttackSubType.RIFLE, 0.75);
 
         FighterStats stats = FighterStats.builder().strength(2).toughness(4).dexterity(8).aim(8.5)
-                .agility(9).speed(8).intellect(3).willpower(5.5).size(2).weight(1.5).build();
+                .agility(9.5).speed(8.5).intellect(3).willpower(5.5).size(2).weight(1.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(120).maxHp(120).xStrikeMeter(0)
                 .description("A speedy fighter with strong defenses leading to a powerful X-Strike.")

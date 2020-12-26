@@ -32,7 +32,7 @@ public class PrinceOfPersia {
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(5.5).dexterity(7).aim(7)
                 .agility(8.5).speed(7).intellect(5).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new TimeManipulation()));
-        return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
                 .description("A speedy fighter who can reverse time to heal wounds.")
                 .entryQuotes(Arrays.asList("The Prince: 'Have you been waiting long?'",
                         "The Prince: 'How long have I been gone?'"))

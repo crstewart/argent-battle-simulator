@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.MeleeStrategy;
+import com.argentstew.simulator.battle.trait.impl.ComboStrike;
 import com.argentstew.simulator.battle.trait.impl.MechRider;
 import com.argentstew.simulator.battle.vg.tronbonne.*;
 
@@ -32,11 +33,11 @@ public class Ryu {
         defenses.set(AttackSubType.SLAM, 0.75);
         defenses.set(AttackSubType.GRAPPLE, 0.75);
         defenses.set(AttackSubType.CHI, 0.75);
-        defenses.set(AttackSubType.DARK, 1.5);
+        defenses.set(AttackSubType.DARK, 1.3);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(5).dexterity(5).aim(4)
+        FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(5).aim(5)
                 .agility(4.5).speed(4.5).intellect(4.5).willpower(6).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new ComboStrike()));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("An all-around fighter with experience against other hand-to-hand combatants.")
                 .entryQuotes(Arrays.asList("Ryu: 'The answer lies in the heart of battle.'",
