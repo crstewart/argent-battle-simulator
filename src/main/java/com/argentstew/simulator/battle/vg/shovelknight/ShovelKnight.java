@@ -34,10 +34,10 @@ public class ShovelKnight {
         defenses.set(AttackSubType.WATER, 0.8);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
 
-        FighterStats stats = FighterStats.builder().strength(5.5).toughness(3).dexterity(5.5).aim(5.5)
+        FighterStats stats = FighterStats.builder().strength(5.5).toughness(3).dexterity(5.5).aim(5)
                 .agility(4).speed(3.5).intellect(3.5).willpower(5).size(4).weight(5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(160).maxHp(160).mp(40).maxMp(40).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(170).maxHp(170).mp(40).maxMp(40).xStrikeMeter(0)
                 .description("An all-around fighter who is a mix of tank, brawler, and mage.")
                 .entryQuotes(Arrays.asList("Shovel Knight: 'Stand aside! I've no quarrel with you.'",
                         "Shovel Knight: 'Prepare to taste justice! Shovel justice!'"))

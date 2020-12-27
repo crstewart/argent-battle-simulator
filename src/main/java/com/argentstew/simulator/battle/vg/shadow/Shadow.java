@@ -31,10 +31,10 @@ public class Shadow {
         defenses.set(AttackSubType.DARK, 1.2);
         defenses.set(AttackSubType.MYSTIC, 1.3);
 
-        FighterStats stats = FighterStats.builder().strength(4).toughness(3).dexterity(6).aim(7)
+        FighterStats stats = FighterStats.builder().strength(4).toughness(3).dexterity(7).aim(7)
                 .agility(9).speed(9.5).intellect(4).willpower(5).size(4).weight(4).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new NaturalAgility(), new Hazardous(), new TimeManipulation()));
-        return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
                 .description("A speedy fighter with space-bending, undodgeable attacks.")
                 .entryQuotes(Arrays.asList("Shadow: 'I am the Ultimate Life Form!'",
                         "Shadow: 'You best try your hardest...or else you'll get hurt!'"))

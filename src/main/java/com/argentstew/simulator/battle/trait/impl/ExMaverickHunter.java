@@ -24,7 +24,7 @@ public class ExMaverickHunter implements Trait {
     public double applyBonusDamage(Fighter defender, double rawDamage) {
         if (defender.getClassifications().contains(FighterClassification.HUMANOID)
                 || defender.getClassifications().contains(FighterClassification.MECH)) {
-            return rawDamage * 1.1;
+            return rawDamage * 1.2;
         }
 
         return rawDamage;

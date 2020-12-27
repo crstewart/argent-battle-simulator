@@ -17,7 +17,7 @@ public class Pickaxe extends MeleeAttack {
         super();
         this.name = "Pick-axe";
         this.power = 60;
-        this.variance = 5;
+        this.variance = 6;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.HACK);
         this.characteristics = Collections.emptyList();

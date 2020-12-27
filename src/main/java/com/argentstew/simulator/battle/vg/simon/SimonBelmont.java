@@ -29,10 +29,10 @@ public class SimonBelmont {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.DARK, 0.75);
 
-        FighterStats stats = FighterStats.builder().strength(5.5).toughness(6).dexterity(7).aim(7.5)
+        FighterStats stats = FighterStats.builder().strength(5.5).toughness(6).dexterity(7.5).aim(7.5)
                 .agility(4.5).speed(4).intellect(5).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Dracula.NAME, 1.3)));
-        return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(10).maxMp(10).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(0).maxMp(0).xStrikeMeter(0)
                 .description("A weaponmaster who wields various light-based attacks.")
                 .entryQuotes(Arrays.asList("Simon: 'If you will fight, then stand resolute.'",
                         "Simon: 'I will show you the might of House Belmont.'"))

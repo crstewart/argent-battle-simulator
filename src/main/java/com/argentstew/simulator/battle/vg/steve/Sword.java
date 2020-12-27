@@ -17,7 +17,7 @@ public class Sword extends MeleeAttack {
         super();
         this.name = "Sword";
         this.power = 55;
-        this.variance = 6;
+        this.variance = 7;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
         this.characteristics = Collections.emptyList();

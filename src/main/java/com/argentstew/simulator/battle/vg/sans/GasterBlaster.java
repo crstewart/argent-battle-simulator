@@ -16,7 +16,7 @@ public class GasterBlaster extends MagicAttack {
     public GasterBlaster() {
         super();
         this.name = "Gaster Blaster";
-        this.power = 75;
+        this.power = 80;
         this.variance = 10;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.PLASMA);

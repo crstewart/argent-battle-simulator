@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.trait.impl.ComboStrike;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.vg.tracer.*;
 
@@ -33,7 +34,7 @@ public class SubZero {
 
         FighterStats stats = FighterStats.builder().strength(5).toughness(5.5).dexterity(6).aim(6)
                 .agility(6).speed(5).intellect(5).willpower(5).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new ComboStrike()));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(0).maxMp(100).xStrikeMeter(0)
                 .description("An all-around fighter who can stun his opponents by freezing them.")
                 .entryQuotes(Arrays.asList("Sub-Zero: 'This fight will be your last!'",

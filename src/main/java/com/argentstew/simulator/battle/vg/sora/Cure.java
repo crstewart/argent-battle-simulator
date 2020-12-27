@@ -16,7 +16,7 @@ public class Cure extends Heal {
 
     public Cure() {
         this.name = "Cure";
-        this.description = "Heals more than 32 damage";
+        this.description = "Heals more than 40 damage";
         this.initiateMessage = "prepares to cast Cure!";
         this.successMessage = "casts Cure!";
         this.failureMessage = "failed to cast Cure!";
@@ -53,7 +53,7 @@ public class Cure extends Heal {
 
     @Override
     protected int calculateAmountHealed(int incomingDamage) {
-        double baseHeal = 32 + (owner.getStats().getIntellect() * 0.4);
+        double baseHeal = 40 + (owner.getStats().getIntellect() * 0.4);
         double variance = Math.random() * 10;
         return (int) Math.round(baseHeal + variance);
     }

@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.vg.scorpion;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeXStrike;
+import com.argentstew.simulator.battle.action.attack.RangedXStrike;
 import com.argentstew.simulator.battle.fighter.Fighter;
 
 import java.util.Arrays;
@@ -14,7 +15,7 @@ import java.util.Collections;
  *
  * @author Craig
  */
-public class Toasty extends MeleeXStrike {
+public class Toasty extends RangedXStrike {
 
     public Toasty() {
         super();

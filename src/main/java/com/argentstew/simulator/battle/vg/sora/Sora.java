@@ -29,9 +29,9 @@ public class Sora {
         defenses.set(AttackSubType.MYSTIC, 1.2);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(6.5).dexterity(6.5).aim(6.5)
-                .agility(5.5).speed(5).intellect(3).willpower(6.5).size(4.5).weight(4.5).build();
+                .agility(5.5).speed(5.5).intellect(3).willpower(6.5).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new TimeManipulation()));
-        return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(12).maxMp(12).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(20).maxMp(20).xStrikeMeter(0)
                 .description("An all-around fighter who can restore magic power through his guard ability.")
                 .entryQuotes(Arrays.asList("Sora: No problem. Let's do it!'",
                         "Sora: Man. What kind of world is this, anyway?'"))

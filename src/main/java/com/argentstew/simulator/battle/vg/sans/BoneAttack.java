@@ -18,7 +18,7 @@ public class BoneAttack extends MagicAttack {
         super();
         this.name = "Bone Attack";
         this.power = 60;
-        this.variance = 12;
+        this.variance = 15;
         this.speed = 2;
         this.subtypes = Collections.emptyList();
         this.characteristics = Collections.emptyList();

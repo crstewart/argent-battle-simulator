@@ -18,9 +18,9 @@ public class ShadowPower extends MeleeAttack {
     public ShadowPower() {
         super();
         this.name = "Shadow Power";
-        this.power = 40;
+        this.power = 45;
         this.variance = 4;
-        this.speed = 1;
+        this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.SMASH);
         this.characteristics = Collections.singletonList(AttackCharacteristic.STEALTH);
     }

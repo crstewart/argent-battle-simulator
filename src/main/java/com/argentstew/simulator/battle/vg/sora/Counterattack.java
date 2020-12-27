@@ -27,7 +27,7 @@ public class Counterattack extends MeleeAttack {
 
     @Override
     public DamageReport doAttack(Fighter defender) {
-        owner.setMp(Math.min(owner.getMaxMp(), owner.getMp() + 3));
+        owner.restoreMagic(5);
         return super.doAttack(defender);
     }
 }

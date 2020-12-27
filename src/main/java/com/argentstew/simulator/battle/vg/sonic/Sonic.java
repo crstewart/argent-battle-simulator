@@ -33,11 +33,11 @@ public class Sonic {
         defenses.set(AttackSubType.PIERCE, 1.25);
         defenses.set(AttackSubType.WATER, 1.2);
 
-        FighterStats stats = FighterStats.builder().strength(3).toughness(3).dexterity(5.5).aim(4)
+        FighterStats stats = FighterStats.builder().strength(3).toughness(3).dexterity(6).aim(4)
                 .agility(8).speed(10).intellect(5).willpower(5).size(4).weight(4).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new NaturalAgility(), new Hazardous(),
                 new Rival(DrEggman.NAME, 1.3)));
-        return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
                 .description("A speedy fighter with hazardous quills and fast melee attacks who counters Dr. Eggman.")
                 .entryQuotes(Arrays.asList("Sonic: 'Sonic's the name. Speed's my game.'",
                         "Sonic: 'Aw, yeah! This is happenin'!'"))

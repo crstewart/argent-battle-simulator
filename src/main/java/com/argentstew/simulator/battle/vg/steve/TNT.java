@@ -16,8 +16,8 @@ public class TNT extends RangedAttack {
     public TNT() {
         super();
         this.name = "TNT";
-        this.power = 80;
-        this.variance = 8;
+        this.power = 90;
+        this.variance = 9;
         this.speed = 3;
         this.subtypes = Collections.singletonList(AttackSubType.EXPLOSIVE);
         this.characteristics = Collections.emptyList();

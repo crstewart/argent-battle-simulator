@@ -19,9 +19,9 @@ public class CooperGangAssault extends MeleeXStrike {
     public CooperGangAssault() {
         super();
         this.name = "Cooper Gang Assault";
-        this.power = 230;
-        this.variance = 15;
-        this.speed = 1.5;
+        this.power = 250;
+        this.variance = 18;
+        this.speed = 1;
         this.subtypes = Arrays.asList(AttackSubType.SLAM, AttackSubType.SMASH, AttackSubType.ASSIST);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }

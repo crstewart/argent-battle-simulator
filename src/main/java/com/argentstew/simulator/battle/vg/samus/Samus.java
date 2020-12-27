@@ -30,12 +30,13 @@ public class Samus {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.3);
-        defenses.set(AttackSubType.TOXIC, 1.3);
+        defenses.set(AttackType.MAGIC, 1.4);
+        defenses.set(AttackSubType.TOXIC, 1.4);
         defenses.set(AttackSubType.HANDGUN, 0.75);
         defenses.set(AttackSubType.SHOTGUN, 0.75);
         defenses.set(AttackSubType.RIFLE, 0.75);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
+        defenses.set(AttackSubType.GRAVITY, 0.6);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(5.5).aim(7)
                 .agility(6).speed(4).intellect(5).willpower(4.5).size(4.5).weight(4.5).build();

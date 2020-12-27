@@ -139,7 +139,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = RyuHayabusa.NAME;
+    private static final String TEST_FIGHTER = Sylvanas.NAME;
 
     public static void main(String[] args) {
 

@@ -17,8 +17,8 @@ public class Axe extends RangedAttack {
     public Axe() {
         super();
         this.name = "Axe";
-        this.power = 70;
-        this.variance = 7;
+        this.power = 80;
+        this.variance = 8;
         this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.HACK);
         this.characteristics = Collections.emptyList();

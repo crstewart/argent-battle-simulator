@@ -21,8 +21,8 @@ public class Fira extends MagicAttack {
         super();
         this.name = "Fira";
         this.description = "Uses 5 SP";
-        this.power = 65;
-        this.variance = 5;
+        this.power = 70;
+        this.variance = 6;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.FIRE);
         this.characteristics = Collections.emptyList();

@@ -19,9 +19,9 @@ public class DiamondSword extends MeleeXStrike {
     public DiamondSword() {
         super();
         this.name = "Diamond Sword";
-        this.power = 240;
-        this.variance = 15;
-        this.speed = 3;
+        this.power = 220;
+        this.variance = 28;
+        this.speed = 4;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }
