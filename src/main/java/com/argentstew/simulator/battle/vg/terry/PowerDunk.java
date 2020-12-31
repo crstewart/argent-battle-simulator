@@ -17,7 +17,7 @@ public class PowerDunk extends MeleeAttack {
     public PowerDunk() {
         super();
         this.name = "Power Dunk";
-        this.power = 55;
+        this.power = 65;
         this.variance = 6;
         this.speed = 2;
         this.subtypes = Arrays.asList(AttackSubType.PUNCH, AttackSubType.CHI);

@@ -31,9 +31,10 @@ public class Tails {
         defenses.set(AttackType.MAGIC, 1.2);
         defenses.set(AttackSubType.AIR, 1.2);
         defenses.set(AttackSubType.PIERCE, 1.25);
+        defenses.set(AttackSubType.GRAVITY, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(1.5).toughness(2.5).dexterity(8).aim(8)
-                .agility(7).speed(8.5).intellect(8.5).willpower(4.5).size(4).weight(4).build();
+                .agility(7.5).speed(8.5).intellect(8.5).willpower(4.5).size(4).weight(4).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A speedy fighter who relies on his intellect and technical defenses.")

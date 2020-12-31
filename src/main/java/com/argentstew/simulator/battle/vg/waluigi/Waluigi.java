@@ -27,8 +27,8 @@ public class Waluigi {
         defenses.set(AttackSubType.WATER, 0.7);
         defenses.set(AttackSubType.TOXIC, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(4.5).toughness(4).dexterity(4).aim(5)
-                .agility(8).speed(5.5).intellect(5).willpower(6).size(4.5).weight(4).build();
+        FighterStats stats = FighterStats.builder().strength(4.5).toughness(4).dexterity(5).aim(5)
+                .agility(8).speed(6).intellect(5).willpower(6).size(4.5).weight(4).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Cheater()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A speedy fighter that has the tendency to cheat his way to victory.")

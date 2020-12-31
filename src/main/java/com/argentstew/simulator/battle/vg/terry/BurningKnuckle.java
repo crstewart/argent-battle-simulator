@@ -18,7 +18,7 @@ public class BurningKnuckle extends MeleeAttack {
     public BurningKnuckle() {
         super();
         this.name = "Burning Knuckle";
-        this.power = 50;
+        this.power = 60;
         this.variance = 5;
         this.speed = 1.5;
         this.subtypes = Arrays.asList(AttackSubType.PUNCH, AttackSubType.FIRE);

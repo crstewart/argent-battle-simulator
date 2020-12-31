@@ -17,8 +17,8 @@ public class Ryuenjin extends MeleeAttack {
     public Ryuenjin() {
         super();
         this.name = "Ryuenjin";
-        this.power = 60;
-        this.variance = 6;
+        this.power = 70;
+        this.variance = 7;
         this.speed = 1.5;
         this.subtypes = Arrays.asList(AttackSubType.SLASH, AttackSubType.FIRE);
         this.characteristics = Collections.emptyList();

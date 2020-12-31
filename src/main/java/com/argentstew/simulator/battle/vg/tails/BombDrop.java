@@ -16,9 +16,9 @@ public class BombDrop extends RangedAttack {
     public BombDrop() {
         super();
         this.name = "Bomb Drop";
-        this.power = 70;
-        this.variance = 6;
-        this.speed = 1;
+        this.power = 80;
+        this.variance = 8;
+        this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.EXPLOSIVE);
         this.characteristics = Collections.emptyList();
     }

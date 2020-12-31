@@ -26,9 +26,9 @@ public class Widowmaker {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.4);
+        defenses.set(AttackType.MAGIC, 1.3);
 
-        FighterStats stats = FighterStats.builder().strength(4).toughness(5).dexterity(5.5).aim(10)
+        FighterStats stats = FighterStats.builder().strength(4).toughness(5).dexterity(7).aim(10)
                 .agility(6).speed(5).intellect(7).willpower(2).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new StealthDetection()));
         return Fighter.builder().name(NAME).hp(130).maxHp(130).mp(0).maxMp(0).xStrikeMeter(0)

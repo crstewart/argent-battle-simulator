@@ -28,7 +28,7 @@ public class Vyse {
         defenses.set(AttackType.MAGIC, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(5.5).aim(5.5)
-                .agility(4).speed(5.5).intellect(4.5).willpower(5).size(7).weight(8).build();
+                .agility(4).speed(5.5).intellect(4.5).willpower(5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(30).maxMp(30).xStrikeMeter(0)
                 .description("An all-around fighter with a mix of magic and counterattacks.")

@@ -28,7 +28,7 @@ public class Teemo {
         defenses.set(AttackType.MAGIC, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(2).toughness(3).dexterity(6.5).aim(6.5)
-                .agility(7.5).speed(7.5).intellect(6).willpower(6).size(4).weight(4).build();
+                .agility(7).speed(7).intellect(6).willpower(6).size(4).weight(4).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(125).maxHp(125).xStrikeMeter(0)
                 .description("A speedy fighter who relies on stealth tactics to be effective.")

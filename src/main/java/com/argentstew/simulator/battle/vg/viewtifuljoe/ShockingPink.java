@@ -16,8 +16,8 @@ public class ShockingPink extends RangedAttack {
     public ShockingPink() {
         super();
         this.name = "Shocking Pink";
-        this.power = 65;
-        this.variance = 6;
+        this.power = 70;
+        this.variance = 10;
         this.speed = 2.5;
         this.subtypes = Collections.singletonList(AttackSubType.EXPLOSIVE);
         this.characteristics = Collections.emptyList();

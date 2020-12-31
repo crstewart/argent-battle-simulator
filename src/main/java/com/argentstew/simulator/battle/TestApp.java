@@ -139,7 +139,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Sylvanas.NAME;
+    private static final String TEST_FIGHTER = Zero.NAME;
 
     public static void main(String[] args) {
 

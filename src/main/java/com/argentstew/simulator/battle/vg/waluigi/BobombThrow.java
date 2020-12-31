@@ -22,7 +22,7 @@ public class BobombThrow extends RangedAttack {
         this.name = "Bob-omb Throw";
         this.description = "Only usable once";
         this.power = 90;
-        this.variance = 5;
+        this.variance = 9;
         this.speed = 3;
         this.ammo = 1;
         this.subtypes = Collections.singletonList(AttackSubType.EXPLOSIVE);

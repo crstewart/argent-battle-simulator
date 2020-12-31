@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
+import com.argentstew.simulator.battle.trait.impl.Cheater;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -25,10 +26,10 @@ public class Wario {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.TOXIC, 0.8);
 
-        FighterStats stats = FighterStats.builder().strength(6.5).toughness(6).dexterity(3).aim(5)
+        FighterStats stats = FighterStats.builder().strength(6.5).toughness(6).dexterity(2).aim(4)
                 .agility(3).speed(3.5).intellect(5).willpower(6).size(4).weight(5).build();
-        FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(190).maxHp(190).xStrikeMeter(0)
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new Cheater()));
+        return Fighter.builder().name(NAME).hp(170).maxHp(170).xStrikeMeter(0)
                 .description("A tank with a single-use ranged attack that fights aggressively in melee.")
                 .entryQuotes(Arrays.asList("Wario: 'I'm-a Wario, I'm-a gonna win!'",
                         "Wario: 'Hey! Look here! It's Wario.'"))

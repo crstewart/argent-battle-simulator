@@ -35,10 +35,10 @@ public class TronBonne {
         defenses.set(AttackSubType.SHOTGUN, 0.8);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
 
-        FighterStats stats = FighterStats.builder().strength(7.5).toughness(4).dexterity(4).aim(5)
+        FighterStats stats = FighterStats.builder().strength(7.5).toughness(5).dexterity(4).aim(5)
                 .agility(3).speed(2.5).intellect(8.5).willpower(6).size(6).weight(7).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new MechRider()));
-        return Fighter.builder().name(NAME).hp(180).maxHp(180).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(170).maxHp(170).xStrikeMeter(0)
                 .description("A mech-riding tank with an army of Servbots at her side.")
                 .entryQuotes(Arrays.asList("Tron: 'Give me all your valuables and leave!'",
                         "Tron: 'I would give up now if I were you!'"))

@@ -18,8 +18,8 @@ public class VfxSlow extends MeleeAttack {
     public VfxSlow() {
         super();
         this.name = "VFX Slow";
-        this.power = 45;
-        this.variance = 5;
+        this.power = 60;
+        this.variance = 6;
         this.speed = 4;
         this.subtypes = Collections.singletonList(AttackSubType.PUNCH);
         this.characteristics = Collections.singletonList(AttackCharacteristic.HOMING);

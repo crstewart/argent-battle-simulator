@@ -21,7 +21,7 @@ public class GuardShell extends Guard {
         this.initiateMessage = "uses Guard Shell";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to block the attack!";
-        this.speed = 2;
+        this.speed = 1;
     }
 
     @Override

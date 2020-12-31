@@ -17,7 +17,7 @@ public class EnergyCannon extends RangedAttack {
         super();
         this.name = "Energy Cannon";
         this.power = 60;
-        this.variance = 5;
+        this.variance = 6;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.PLASMA);
         this.characteristics = Collections.emptyList();
