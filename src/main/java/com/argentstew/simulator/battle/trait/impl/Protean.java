@@ -2,11 +2,8 @@ package com.argentstew.simulator.battle.trait.impl;
 
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.MeleeAttack;
-import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 import com.argentstew.simulator.battle.trait.Trait;
-import com.argentstew.simulator.battle.vg.joker.Joker;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
@@ -33,16 +30,6 @@ public class Protean implements Trait {
 
     public void setState(String state) {
         this.state = state;
-    }
-
-    @Override
-    public double applyBonusDamage(Fighter defender, double rawDamage) {
-        return rawDamage;
-    }
-
-    @Override
-    public AttackAction applyPassiveDefense(AttackAction attack) {
-        return null;
     }
 
     @Override

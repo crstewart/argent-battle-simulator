@@ -27,12 +27,7 @@ public class Hazardous implements Trait {
             AttackSubType.CLAW, AttackSubType.BITE, AttackSubType.TAIL
     ));
 
-    private String name = "Hazardous";
-
-    @Override
-    public double applyBonusDamage(Fighter defender, double rawDamage) {
-        return rawDamage;
-    }
+    private final String name = "Hazardous";
 
     @Override
     public AttackAction applyPassiveDefense(AttackAction attack) {
@@ -43,11 +38,6 @@ public class Hazardous implements Trait {
         }
 
         return null;
-    }
-
-    @Override
-    public DamageReport applyArmor(DamageReport report) {
-        return report;
     }
 
     public static class HazardousBody extends AttackAction {

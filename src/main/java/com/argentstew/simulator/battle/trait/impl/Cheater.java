@@ -1,8 +1,6 @@
 package com.argentstew.simulator.battle.trait.impl;
 
-import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
-import com.argentstew.simulator.battle.fighter.FighterClassification;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 import com.argentstew.simulator.battle.trait.Trait;
 import lombok.EqualsAndHashCode;
@@ -25,11 +23,6 @@ public class Cheater implements Trait {
         double damageMultiplier = (Math.random() * 0.2) + 1;
 
         return rawDamage * damageMultiplier;
-    }
-
-    @Override
-    public AttackAction applyPassiveDefense(AttackAction attack) {
-        return null;
     }
 
     @Override

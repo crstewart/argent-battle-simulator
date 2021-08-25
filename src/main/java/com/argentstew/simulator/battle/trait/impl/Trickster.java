@@ -3,16 +3,11 @@ package com.argentstew.simulator.battle.trait.impl;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
-import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 import com.argentstew.simulator.battle.trait.Trait;
 import com.argentstew.simulator.battle.vg.joker.Joker;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * com.argentstew.simulator.battle.trait.impl
@@ -24,23 +19,13 @@ import java.util.List;
 @EqualsAndHashCode
 public class Trickster implements Trait {
 
-    private String name = "Trickster";
+    private final String name = "Trickster";
     private String state = null;
 
     public Trickster() { }
 
     public void setState(String state) {
         this.state = state;
-    }
-
-    @Override
-    public double applyBonusDamage(Fighter defender, double rawDamage) {
-        return rawDamage;
-    }
-
-    @Override
-    public AttackAction applyPassiveDefense(AttackAction attack) {
-        return null;
     }
 
     @Override

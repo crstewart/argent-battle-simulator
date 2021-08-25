@@ -1,9 +1,7 @@
 package com.argentstew.simulator.battle.trait.impl;
 
-import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.fighter.FighterClassification;
-import com.argentstew.simulator.battle.reporting.DamageReport;
 import com.argentstew.simulator.battle.trait.Trait;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -18,7 +16,7 @@ import lombok.Getter;
 @EqualsAndHashCode
 public class DragonSlayer implements Trait {
 
-    private String name = "Dragon Slayer";
+    private final String name = "Dragon Slayer";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {
@@ -27,15 +25,5 @@ public class DragonSlayer implements Trait {
         }
 
         return rawDamage;
-    }
-
-    @Override
-    public AttackAction applyPassiveDefense(AttackAction attack) {
-        return null;
-    }
-
-    @Override
-    public DamageReport applyArmor(DamageReport report) {
-        return report;
     }
 }

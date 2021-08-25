@@ -1,8 +1,6 @@
 package com.argentstew.simulator.battle.trait.impl;
 
-import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
-import com.argentstew.simulator.battle.reporting.DamageReport;
 import com.argentstew.simulator.battle.trait.Trait;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,8 +15,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class Rival implements Trait {
 
-    private String rivalName;
-    private double damageMultiplier;
+    private final String rivalName;
+    private final double damageMultiplier;
 
     @Override
     public String getName() {
@@ -32,15 +30,5 @@ public class Rival implements Trait {
         }
 
         return rawDamage;
-    }
-
-    @Override
-    public AttackAction applyPassiveDefense(AttackAction attack) {
-        return null;
-    }
-
-    @Override
-    public DamageReport applyArmor(DamageReport report) {
-        return report;
     }
 }

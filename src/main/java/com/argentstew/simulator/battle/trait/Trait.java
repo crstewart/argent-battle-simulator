@@ -13,7 +13,16 @@ import com.argentstew.simulator.battle.reporting.DamageReport;
 public interface Trait {
 
     String getName();
-    double applyBonusDamage(Fighter defender, double rawDamage);
-    AttackAction applyPassiveDefense(AttackAction attack);
-    DamageReport applyArmor(DamageReport report);
+
+    default double applyBonusDamage(Fighter defender, double rawDamage) {
+        return rawDamage;
+    }
+
+    default AttackAction applyPassiveDefense(AttackAction attack) {
+        return null;
+    }
+
+    default DamageReport applyArmor(DamageReport report) {
+        return report;
+    }
 }

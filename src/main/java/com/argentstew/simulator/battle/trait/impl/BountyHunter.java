@@ -1,9 +1,7 @@
 package com.argentstew.simulator.battle.trait.impl;
 
-import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.fighter.FighterClassification;
-import com.argentstew.simulator.battle.reporting.DamageReport;
 import com.argentstew.simulator.battle.trait.Trait;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -18,7 +16,7 @@ import lombok.Getter;
 @EqualsAndHashCode
 public class BountyHunter implements Trait {
 
-    private String name = "Bounty Hunter";
+    private final String name = "Bounty Hunter";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {
@@ -28,15 +26,5 @@ public class BountyHunter implements Trait {
         }
 
         return rawDamage;
-    }
-
-    @Override
-    public AttackAction applyPassiveDefense(AttackAction attack) {
-        return null;
-    }
-
-    @Override
-    public DamageReport applyArmor(DamageReport report) {
-        return report;
     }
 }
