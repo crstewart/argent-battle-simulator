@@ -3,9 +3,10 @@ package com.argentstew.simulator.battle.trait.impl;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.reporting.DamageReport;
-import com.argentstew.simulator.battle.trait.Trait;
+import com.argentstew.simulator.battle.trait.AbstractArmorTrait;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 /**
  * com.argentstew.simulator.battle.trait.impl
@@ -14,8 +15,9 @@ import lombok.Getter;
  * @author argen
  */
 @Getter
-@EqualsAndHashCode
-public class Protean implements Trait {
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+public class Protean extends AbstractArmorTrait {
 
     public static final String WATER_TYPE = "Type: Water";
     public static final String GHOST_TYPE = "Type: Ghost";
@@ -26,30 +28,14 @@ public class Protean implements Trait {
 
     private String state = WATER_TYPE;
 
-    public Protean() { }
-
     public void setState(String state) {
         this.state = state;
     }
 
     @Override
-    public DamageReport applyArmor(DamageReport report) {
-        if (report.isMiss()) {
-            return report;
-        }
-
-        DamageReport adjustedReport = new DamageReport();
-        adjustedReport.setDefender(report.getDefender());
-        adjustedReport.setAttack(report.getAttack());
-        adjustedReport.setMiss(report.isMiss());
-        adjustedReport.setCrit(report.isCrit());
-        adjustedReport.setStun(report.isStun());
-        adjustedReport.setDamage(modifyDamage(report.getAttack(), report.getDamage()));
-
-        return adjustedReport;
-    }
-
-    private int modifyDamage(AttackAction attack, int damage) {
+    protected int recalculateDamage(DamageReport report) {
+        AttackAction attack = report.getAttack();
+        int damage = report.getDamage();
         if (state == null) {
             return damage;
         } else if (WATER_TYPE.equals(state)) {

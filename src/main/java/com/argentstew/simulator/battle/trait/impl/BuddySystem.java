@@ -3,7 +3,7 @@ package com.argentstew.simulator.battle.trait.impl;
 import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.reporting.DamageReport;
-import com.argentstew.simulator.battle.trait.Trait;
+import com.argentstew.simulator.battle.trait.AbstractArmorTrait;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
@@ -14,8 +14,8 @@ import lombok.Getter;
  * @author argen
  */
 @Getter
-@EqualsAndHashCode
-public class BuddySystem implements Trait {
+@EqualsAndHashCode(callSuper = true)
+public class BuddySystem extends AbstractArmorTrait {
 
     private final String name = "Buddy System";
 
@@ -25,24 +25,12 @@ public class BuddySystem implements Trait {
     }
 
     @Override
-    public DamageReport applyArmor(DamageReport report) {
-        if (report.isMiss()) {
-            return report;
-        }
-
-        DamageReport adjustedReport = new DamageReport();
-        adjustedReport.setDefender(report.getDefender());
-        adjustedReport.setAttack(report.getAttack());
-        adjustedReport.setMiss(report.isMiss());
-        adjustedReport.setCrit(report.isCrit());
-        adjustedReport.setStun(report.isStun());
+    protected int recalculateDamage(DamageReport report) {
         if ((report.getDefender().getHp() > report.getDefender().getMaxHp() / 2)
                 && report.getAttack().getSubtypes().contains(AttackSubType.ASSIST)) {
-            adjustedReport.setDamage((int) Math.round(report.getDamage() * 0.5));
-        } else {
-            adjustedReport.setDamage(report.getDamage());
+            return (int) Math.round(report.getDamage() * 0.5);
         }
 
-        return adjustedReport;
+        return report.getDamage();
     }
 }

@@ -1,7 +1,7 @@
 package com.argentstew.simulator.battle.trait.impl;
 
 import com.argentstew.simulator.battle.reporting.DamageReport;
-import com.argentstew.simulator.battle.trait.Trait;
+import com.argentstew.simulator.battle.trait.AbstractArmorTrait;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
@@ -12,25 +12,13 @@ import lombok.Getter;
  * @author argen
  */
 @Getter
-@EqualsAndHashCode
-public class CriticalArmor implements Trait {
+@EqualsAndHashCode(callSuper = true)
+public class CriticalArmor extends AbstractArmorTrait {
 
     private final String name = "Critical Armor";
 
     @Override
-    public DamageReport applyArmor(DamageReport report) {
-        if (report.isMiss()) {
-            return report;
-        }
-
-        DamageReport adjustedReport = new DamageReport();
-        adjustedReport.setDefender(report.getDefender());
-        adjustedReport.setAttack(report.getAttack());
-        adjustedReport.setMiss(report.isMiss());
-        adjustedReport.setCrit(report.isCrit());
-        adjustedReport.setStun(report.isStun());
-        adjustedReport.setDamage(report.isCrit() ? (int) Math.round(report.getDamage() * 0.75) : report.getDamage());
-
-        return adjustedReport;
+    protected int recalculateDamage(DamageReport report) {
+        return report.isCrit() ? (int) Math.round(report.getDamage() * 0.75) : report.getDamage();
     }
 }
