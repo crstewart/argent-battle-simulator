@@ -1,12 +1,11 @@
 package com.argentstew.simulator.battle.vg.sonic;
 
+import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeXStrike;
-import com.argentstew.simulator.battle.action.attack.RangedXStrike;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * com.argentstew.simulator.battle.vg.sonic
@@ -29,6 +28,6 @@ public class SuperSonic extends MeleeXStrike {
 
     @Override
     public double calculateSpeed() {
-        return this.speed;
+        return ((Action) this).calculateSpeed();
     }
 }

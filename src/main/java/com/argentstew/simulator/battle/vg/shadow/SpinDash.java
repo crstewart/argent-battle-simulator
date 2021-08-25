@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.vg.shadow;
 
+import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 
@@ -26,6 +27,6 @@ public class SpinDash extends MeleeAttack {
 
     @Override
     public double calculateSpeed() {
-        return this.speed;
+        return ((Action) this).calculateSpeed();
     }
 }

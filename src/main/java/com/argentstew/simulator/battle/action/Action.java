@@ -1,6 +1,7 @@
 package com.argentstew.simulator.battle.action;
 
 import com.argentstew.simulator.battle.fighter.Fighter;
+import com.argentstew.simulator.battle.trait.Trait;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -22,7 +23,14 @@ public abstract class Action {
 
     public abstract boolean isDoable();
 
-    public abstract double calculateSpeed();
+    public double calculateSpeed() {
+        double calculatedSpeed = speed;
+        for (Trait trait : owner.getTraits().getTraits()) {
+            calculatedSpeed = trait.applyBonusPriority(this, calculatedSpeed);
+        }
+
+        return calculatedSpeed;
+    }
 
     public abstract double getFailureAdjustment();
 }

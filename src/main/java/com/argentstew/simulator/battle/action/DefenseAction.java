@@ -1,7 +1,5 @@
 package com.argentstew.simulator.battle.action;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -29,11 +27,6 @@ public abstract class DefenseAction extends Action {
 
     public double getSuccessAdjustment() {
         return owner.getStats().getIntellect() * 0.04;
-    }
-
-    @Override
-    public double calculateSpeed() {
-        return speed;
     }
 
     @Override

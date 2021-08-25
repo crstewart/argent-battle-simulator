@@ -95,8 +95,9 @@ public abstract class MeleeAttack extends AttackAction {
 
     @Override
     public double calculateSpeed() {
+        double speed = super.calculateSpeed();
         int distance = (int) Math.round(owner.getArena().getDistanceBetweenFighters());
-        return 1 + (2 * (distance - 1)) + this.speed;
+        return 1 + (2 * (distance - 1)) + speed;
     }
 
     @Override

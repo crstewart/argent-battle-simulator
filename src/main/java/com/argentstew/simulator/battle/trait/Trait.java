@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.trait;
 
+import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
@@ -16,6 +17,10 @@ public interface Trait {
 
     default double applyBonusDamage(Fighter defender, double rawDamage) {
         return rawDamage;
+    }
+
+    default double applyBonusPriority(Action action, double speed) {
+        return speed;
     }
 
     default AttackAction applyPassiveDefense(AttackAction attack) {

@@ -101,12 +101,13 @@ public abstract class MagicAttack extends AttackAction {
 
     @Override
     public double calculateSpeed() {
+        double speed = super.calculateSpeed();
         if (requiresMeleeRange) {
             int distance = (int) Math.round(owner.getArena().getDistanceBetweenFighters());
-            return 1 + (2 * (distance - 1)) + this.speed;
+            return 1 + (2 * (distance - 1)) + speed;
         }
 
-        return this.speed;
+        return speed;
     }
 
     @Override

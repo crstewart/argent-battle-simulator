@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.vg.sonic;
 
+import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
@@ -27,6 +28,6 @@ public class HomingAttack extends MeleeAttack {
 
     @Override
     public double calculateSpeed() {
-        return this.speed;
+        return ((Action) this).calculateSpeed();
     }
 }

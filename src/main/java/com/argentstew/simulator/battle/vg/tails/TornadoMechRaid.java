@@ -2,7 +2,6 @@ package com.argentstew.simulator.battle.vg.tails;
 
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.MeleeXStrike;
 import com.argentstew.simulator.battle.action.attack.RangedXStrike;
 
 import java.util.Arrays;
@@ -24,10 +23,5 @@ public class TornadoMechRaid extends RangedXStrike {
         this.speed = 5;
         this.subtypes = Collections.singletonList(AttackSubType.EXPLOSIVE);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
-    }
-
-    @Override
-    public double calculateSpeed() {
-        return this.speed;
     }
 }

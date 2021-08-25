@@ -44,11 +44,6 @@ public abstract class AttackAction extends Action {
     public abstract double getFailureAdjustment();
 
     @Override
-    public double calculateSpeed() {
-        return speed;
-    }
-
-    @Override
     public boolean isDoable() {
         return true;
     }

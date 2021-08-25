@@ -94,11 +94,6 @@ public abstract class RangedAttack extends AttackAction {
     }
 
     @Override
-    public double calculateSpeed() {
-        return this.speed;
-    }
-
-    @Override
     public double getStrategyAdjustment(DamageReport report) {
         double expectedDamage = getBaseDamage() + (variance / 2.0);
         for (Trait trait : owner.getTraits().getTraits()) {
