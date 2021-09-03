@@ -30,6 +30,7 @@ public class Shadow {
         defenses.set(AttackSubType.PIERCE, 1.25);
         defenses.set(AttackSubType.DARK, 1.2);
         defenses.set(AttackSubType.MYSTIC, 1.3);
+        defenses.set(AttackSubType.GRAVITY, 0.65);
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(3).dexterity(7).aim(7)
                 .agility(9).speed(9.5).intellect(4).willpower(5).size(4).weight(4).build();

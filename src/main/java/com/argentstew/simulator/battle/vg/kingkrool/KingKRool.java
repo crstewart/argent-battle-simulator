@@ -27,6 +27,7 @@ public class KingKRool {
         defenses.set(AttackSubType.HEADBUTT, 0.8);
         defenses.set(AttackSubType.SLAM, 1.2);
         defenses.set(AttackSubType.EXPLOSIVE, 1.3);
+        defenses.set(AttackSubType.GRAVITY, 1.4);
 
         FighterStats stats = FighterStats.builder().strength(8).toughness(9).dexterity(4).aim(4.5)
                 .agility(2).speed(4).intellect(5).willpower(3).size(8).weight(9).build();

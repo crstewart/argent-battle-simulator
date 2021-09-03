@@ -7,7 +7,6 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.vg.terry.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -26,6 +25,7 @@ public class HandsomeJack {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 1.2);
         defenses.set(AttackSubType.FIRE, 1.25);
+        defenses.set(AttackSubType.GRAVITY, 0.75);
 
         FighterStats stats = FighterStats.builder().strength(3.5).toughness(3).dexterity(7).aim(8)
                 .agility(4).speed(4).intellect(7).willpower(7).size(5).weight(5).build();

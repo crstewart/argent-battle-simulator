@@ -7,11 +7,9 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.trait.impl.Demonslayer;
 import com.argentstew.simulator.battle.trait.impl.Hazardous;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.trait.impl.Rival;
-import com.argentstew.simulator.battle.vg.arthur.*;
 import com.argentstew.simulator.battle.vg.dreggman.DrEggman;
 
 import java.util.Arrays;
@@ -32,6 +30,7 @@ public class Sonic {
         defenses.set(AttackType.MAGIC, 1.2);
         defenses.set(AttackSubType.PIERCE, 1.25);
         defenses.set(AttackSubType.WATER, 1.2);
+        defenses.set(AttackSubType.GRAVITY, 0.9);
 
         FighterStats stats = FighterStats.builder().strength(3).toughness(3).dexterity(6).aim(4)
                 .agility(8).speed(10).intellect(5).willpower(5).size(4).weight(4).build();

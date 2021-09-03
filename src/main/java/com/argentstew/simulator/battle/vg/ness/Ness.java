@@ -1,14 +1,11 @@
 package com.argentstew.simulator.battle.vg.ness;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.trait.impl.DragonSlayer;
-import com.argentstew.simulator.battle.vg.marth.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -27,6 +24,7 @@ public class Ness {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.MYSTIC, 1.2);
         defenses.set(AttackSubType.THUNDER, 1.2);
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(5).dexterity(7).aim(7)
                 .agility(5).speed(5).intellect(5).willpower(7).size(4.5).weight(4.5).build();

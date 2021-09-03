@@ -7,9 +7,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.MechRider;
-import com.argentstew.simulator.battle.vg.drwily.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -34,6 +32,7 @@ public class TronBonne {
         defenses.set(AttackSubType.RIFLE, 0.8);
         defenses.set(AttackSubType.SHOTGUN, 0.8);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
+        defenses.set(AttackSubType.GRAVITY, 1.2);
 
         FighterStats stats = FighterStats.builder().strength(7.5).toughness(5).dexterity(4).aim(5)
                 .agility(3).speed(2.5).intellect(8.5).willpower(6).size(6).weight(7).build();

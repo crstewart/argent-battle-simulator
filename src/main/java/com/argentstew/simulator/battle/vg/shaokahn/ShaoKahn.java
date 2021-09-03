@@ -5,7 +5,6 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.ComboStrike;
 
 import java.util.Arrays;
@@ -32,6 +31,7 @@ public class ShaoKahn {
         defenses.set(AttackSubType.PIERCE, 0.8);
         defenses.set(AttackSubType.SMASH, 0.8);
         defenses.set(AttackSubType.HACK, 0.8);
+        defenses.set(AttackSubType.GRAVITY, 1.05);
 
         FighterStats stats = FighterStats.builder().strength(7).toughness(7.5).dexterity(6).aim(6)
                 .agility(4.5).speed(4).intellect(6).willpower(7).size(5.5).weight(5.5).build();

@@ -7,12 +7,9 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.BountyHunter;
-import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.trait.impl.StealthDetection;
-import com.argentstew.simulator.battle.vg.pikachu.*;
 import com.argentstew.simulator.battle.vg.ridley.Ridley;
 
 import java.util.Arrays;
@@ -36,7 +33,7 @@ public class Samus {
         defenses.set(AttackSubType.SHOTGUN, 0.75);
         defenses.set(AttackSubType.RIFLE, 0.75);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
-        defenses.set(AttackSubType.GRAVITY, 0.6);
+        defenses.set(AttackSubType.GRAVITY, 0.7);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(5.5).aim(7)
                 .agility(6).speed(4).intellect(5).willpower(4.5).size(4.5).weight(4.5).build();

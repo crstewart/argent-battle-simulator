@@ -26,6 +26,7 @@ public class SweetTooth {
         defenses.set(AttackType.MAGIC, 1.3);
         defenses.set(AttackSubType.FIRE, 0.8);
         defenses.set(AttackSubType.ICE, 0.7);
+        defenses.set(AttackSubType.GRAVITY, 1.05);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(7).dexterity(5).aim(6)
                 .agility(4).speed(5).intellect(3).willpower(6).size(5).weight(5.5).build();

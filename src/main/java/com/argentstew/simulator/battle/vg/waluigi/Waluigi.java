@@ -6,7 +6,6 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.Cheater;
 
 import java.util.Arrays;
@@ -26,6 +25,7 @@ public class Waluigi {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.WATER, 0.7);
         defenses.set(AttackSubType.TOXIC, 0.8);
+        defenses.set(AttackSubType.GRAVITY, 0.9);
 
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(4).dexterity(5).aim(5)
                 .agility(8).speed(6).intellect(5).willpower(6).size(4.5).weight(4).build();

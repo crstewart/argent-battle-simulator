@@ -5,9 +5,7 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
-import com.argentstew.simulator.battle.vg.cole.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -24,6 +22,7 @@ public class SlyCooper {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(3).dexterity(9.5).aim(5)
                 .agility(9).speed(6.5).intellect(6.5).willpower(5).size(5).weight(4.5).build();

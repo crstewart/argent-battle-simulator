@@ -1,11 +1,11 @@
 package com.argentstew.simulator.battle.vg.greninja;
 
+import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.trait.impl.Protean;
 
@@ -23,6 +23,7 @@ public class Greninja {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
+        defenses.set(AttackSubType.GRAVITY, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(3).dexterity(7).aim(7)
                 .agility(8).speed(8).intellect(3.5).willpower(7).size(3.5).weight(3).build();

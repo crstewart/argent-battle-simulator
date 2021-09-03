@@ -6,12 +6,8 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
-import com.argentstew.simulator.battle.trait.impl.Hazardous;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
-import com.argentstew.simulator.battle.trait.impl.Rival;
-import com.argentstew.simulator.battle.vg.sonic.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,7 +27,7 @@ public class Tails {
         defenses.set(AttackType.MAGIC, 1.2);
         defenses.set(AttackSubType.AIR, 1.2);
         defenses.set(AttackSubType.PIERCE, 1.25);
-        defenses.set(AttackSubType.GRAVITY, 0.8);
+        defenses.set(AttackSubType.GRAVITY, 1.15);
 
         FighterStats stats = FighterStats.builder().strength(1.5).toughness(2.5).dexterity(8).aim(8)
                 .agility(7.5).speed(8.5).intellect(8.5).willpower(4.5).size(4).weight(4).build();

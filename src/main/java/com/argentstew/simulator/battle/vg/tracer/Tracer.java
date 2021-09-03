@@ -2,15 +2,11 @@ package com.argentstew.simulator.battle.vg.tracer;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.AttackType;
-import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
-import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
-import com.argentstew.simulator.battle.vg.kerrigan.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -28,6 +24,7 @@ public class Tracer {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 1.3);
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(4).dexterity(8).aim(9)
                 .agility(8.5).speed(7.5).intellect(5.5).willpower(6).size(4.5).weight(4.5).build();

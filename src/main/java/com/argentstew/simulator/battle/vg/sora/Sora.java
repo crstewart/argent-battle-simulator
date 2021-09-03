@@ -7,7 +7,6 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.trait.impl.DragonSlayer;
 import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
 
 import java.util.Arrays;
@@ -27,6 +26,7 @@ public class Sora {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 0.8);
         defenses.set(AttackSubType.MYSTIC, 1.2);
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(6.5).dexterity(6.5).aim(6.5)
                 .agility(5.5).speed(5.5).intellect(3).willpower(6.5).size(4.5).weight(4.5).build();

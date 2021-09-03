@@ -6,7 +6,6 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.trait.impl.Teleportation;
 
@@ -31,6 +30,7 @@ public class Mewtwo {
         defenses.set(AttackSubType.NATURE, 1.25);
         defenses.set(AttackSubType.MYSTIC, 0.5);
         defenses.set(AttackSubType.CHI, 0.5);
+        defenses.set(AttackSubType.GRAVITY, 1.15);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(5).aim(6.5)
                 .agility(8).speed(7).intellect(10).willpower(5).size(5.5).weight(6.5).build();

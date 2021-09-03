@@ -8,9 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.ComboStrike;
-import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.trait.impl.Teleportation;
-import com.argentstew.simulator.battle.vg.viewtifuljoe.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -30,6 +28,7 @@ public class Morrigan {
         defenses.set(AttackType.MAGIC, 0.7);
         defenses.set(AttackSubType.LIGHT, 1.25);
         defenses.set(AttackSubType.DARK, 0.75);
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(2).dexterity(6).aim(6)
                 .agility(5).speed(4.5).intellect(4.5).willpower(6).size(4.5).weight(4.5).build();

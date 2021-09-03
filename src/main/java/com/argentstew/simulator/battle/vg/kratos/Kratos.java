@@ -6,10 +6,8 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.GodSlayer;
-import com.argentstew.simulator.battle.vg.nathandrake.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -30,6 +28,7 @@ public class Kratos {
         defenses.set(AttackSubType.FIRE, 0.8);
         defenses.set(AttackSubType.LIGHT, 1.2);
         defenses.set(AttackSubType.DARK, 1.2);
+        defenses.set(AttackSubType.GRAVITY, 1.05);
 
         FighterStats stats = FighterStats.builder().strength(7.5).toughness(9).dexterity(5).aim(4.5)
                 .agility(7).speed(6).intellect(3).willpower(6.5).size(5.5).weight(5.5).build();

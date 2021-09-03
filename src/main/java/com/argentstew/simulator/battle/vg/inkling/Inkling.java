@@ -6,11 +6,8 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.vg.pit.*;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * com.argentstew.simulator.battle.vg.inkling
@@ -26,6 +23,7 @@ public class Inkling {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 1.2);
         defenses.set(AttackSubType.WATER, 1.5);
+        defenses.set(AttackSubType.GRAVITY, 0.85);
 
         FighterStats stats = FighterStats.builder().strength(3).toughness(2.5).dexterity(9).aim(9)
                 .agility(6.5).speed(5).intellect(4).willpower(4).size(3.5).weight(3.5).build();

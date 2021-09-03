@@ -1,14 +1,12 @@
 package com.argentstew.simulator.battle.vg.luigi;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.Rival;
-import com.argentstew.simulator.battle.vg.mario.*;
 import com.argentstew.simulator.battle.vg.waluigi.Waluigi;
 
 import java.util.Arrays;
@@ -28,6 +26,7 @@ public class Luigi {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.PIERCE, 1.25);
         defenses.set(AttackSubType.FIRE, 1.25);
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(4.5).dexterity(6.5).aim(6.5)
                 .agility(5.5).speed(5).intellect(5).willpower(5.5).size(4).weight(4.5).build();

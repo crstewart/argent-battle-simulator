@@ -7,7 +7,6 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.vg.gordonfreeman.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,6 +30,7 @@ public class MasterChief {
         defenses.set(AttackSubType.RIFLE, 0.7);
         defenses.set(AttackSubType.SHOTGUN, 0.75);
         defenses.set(AttackSubType.EXPLOSIVE, 0.7);
+        defenses.set(AttackSubType.GRAVITY, 1.05);
 
         FighterStats stats = FighterStats.builder().strength(7).toughness(7).dexterity(5).aim(6.5)
                 .agility(3.5).speed(3).intellect(6).willpower(5).size(5).weight(5.5).build();

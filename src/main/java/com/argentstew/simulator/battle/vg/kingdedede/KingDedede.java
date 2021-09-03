@@ -1,7 +1,6 @@
 package com.argentstew.simulator.battle.vg.kingdedede;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
@@ -9,7 +8,6 @@ import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * com.argentstew.simulator.battle.vg.kingdedede
@@ -25,6 +23,7 @@ public class KingDedede {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.PIERCE, 1.25);
         defenses.set(AttackSubType.DARK, 1.25);
+        defenses.set(AttackSubType.GRAVITY, 0.8);
 
         FighterStats stats = FighterStats.builder().strength(8).toughness(3).dexterity(4).aim(4)
                 .agility(3).speed(3).intellect(5).willpower(4).size(2).weight(3).build();

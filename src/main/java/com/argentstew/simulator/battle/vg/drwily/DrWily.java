@@ -6,12 +6,8 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
-import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.MechRider;
-import com.argentstew.simulator.battle.trait.impl.Rival;
-import com.argentstew.simulator.battle.vg.megaman.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -37,6 +33,7 @@ public class DrWily {
         defenses.set(AttackSubType.RIFLE, 0.8);
         defenses.set(AttackSubType.SHOTGUN, 0.8);
         defenses.set(AttackSubType.EXPLOSIVE, 1.1);
+        defenses.set(AttackSubType.GRAVITY, 1.4);
 
         FighterStats stats = FighterStats.builder().strength(7).toughness(7.5).dexterity(5.5).aim(5.5)
                 .agility(2).speed(2).intellect(9).willpower(5).size(8).weight(9).build();

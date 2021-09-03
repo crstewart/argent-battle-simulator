@@ -6,7 +6,6 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.vg.kingkrool.KingKRool;
@@ -28,6 +27,7 @@ public class DonkeyKong {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MELEE, 1.1);
         defenses.set(AttackType.RANGED, 1.1);
+        defenses.set(AttackSubType.GRAVITY, 1.3);
 
         FighterStats stats = FighterStats.builder().strength(9).toughness(7.5).dexterity(4.5).aim(2)
                 .agility(4).speed(3).intellect(1.5).willpower(5).size(8).weight(8).build();

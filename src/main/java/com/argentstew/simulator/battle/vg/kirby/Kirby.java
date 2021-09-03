@@ -1,15 +1,11 @@
 package com.argentstew.simulator.battle.vg.kirby;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.trait.impl.Rival;
-import com.argentstew.simulator.battle.vg.bowser.Bowser;
-import com.argentstew.simulator.battle.vg.mario.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -27,6 +23,8 @@ public class Kirby {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.PIERCE, 1.25);
+        defenses.set(AttackSubType.AIR, 1.2);
+        defenses.set(AttackSubType.GRAVITY, 0.75);
 
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(8).dexterity(4).aim(4.5)
                 .agility(6).speed(3.5).intellect(2.5).willpower(8).size(1).weight(1).build();

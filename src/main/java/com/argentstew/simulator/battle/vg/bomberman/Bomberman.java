@@ -5,9 +5,7 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.RangedStrategy;
-import com.argentstew.simulator.battle.vg.scorpion.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -24,6 +22,7 @@ public class Bomberman {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
+        defenses.set(AttackSubType.GRAVITY, 0.9);
 
         FighterStats stats = FighterStats.builder().strength(3).toughness(2.5).dexterity(7.5).aim(7.5)
                 .agility(4).speed(4).intellect(4.5).willpower(4).size(4).weight(4).build();

@@ -7,7 +7,6 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.vg.jaina.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -36,6 +35,7 @@ public class Arthas {
         defenses.set(AttackSubType.HEADBUTT, 0.9);
         defenses.set(AttackSubType.DARK, 0.8);
         defenses.set(AttackSubType.LIGHT, 1.25);
+        defenses.set(AttackSubType.GRAVITY, 1.05);
 
         FighterStats stats = FighterStats.builder().strength(7).toughness(6.5).dexterity(6).aim(6.5)
                 .agility(3).speed(3).intellect(5.5).willpower(7.5).size(5).weight(5.5).build();

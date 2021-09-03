@@ -7,10 +7,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.MechRider;
-import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
-import com.argentstew.simulator.battle.vg.tails.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -33,6 +30,7 @@ public class DrEggman {
         defenses.set(AttackSubType.HANDGUN, 0.8);
         defenses.set(AttackSubType.RIFLE, 0.8);
         defenses.set(AttackSubType.SHOTGUN, 0.8);
+        defenses.set(AttackSubType.GRAVITY, 1.3);
 
         FighterStats stats = FighterStats.builder().strength(7.5).toughness(6).dexterity(4).aim(5)
                 .agility(3).speed(2).intellect(9).willpower(4).size(7).weight(8).build();

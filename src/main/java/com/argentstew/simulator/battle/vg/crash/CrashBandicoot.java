@@ -1,14 +1,11 @@
 package com.argentstew.simulator.battle.vg.crash;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.trait.impl.BarrierChange;
-import com.argentstew.simulator.battle.vg.magus.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -27,6 +24,7 @@ public class CrashBandicoot {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.MYSTIC, 0.75);
         defenses.set(AttackSubType.EARTH, 0.75);
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(7.5).toughness(6).dexterity(5).aim(5)
                 .agility(6).speed(5.5).intellect(2).willpower(5).size(4.5).weight(4.5).build();

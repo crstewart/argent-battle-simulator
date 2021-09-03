@@ -5,11 +5,8 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.MeleeStrategy;
-import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.BountyHunter;
-import com.argentstew.simulator.battle.vg.ness.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -26,6 +23,7 @@ public class CaptainFalcon {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
+        defenses.set(AttackSubType.GRAVITY, 0.75);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(5).dexterity(6).aim(2)
                 .agility(5).speed(6).intellect(5).willpower(4.5).size(5).weight(5).build();

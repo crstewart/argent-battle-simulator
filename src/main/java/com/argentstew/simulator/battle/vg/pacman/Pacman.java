@@ -1,13 +1,11 @@
 package com.argentstew.simulator.battle.vg.pacman;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.vg.simon.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -24,6 +22,7 @@ public class Pacman {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(4).dexterity(6.5).aim(6.5)
                 .agility(5).speed(4.5).intellect(5).willpower(5.5).size(4.5).weight(4.5).build();

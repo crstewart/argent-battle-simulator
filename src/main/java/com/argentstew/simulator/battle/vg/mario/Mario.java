@@ -1,7 +1,6 @@
 package com.argentstew.simulator.battle.vg.mario;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
@@ -27,6 +26,7 @@ public class Mario {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.PIERCE, 1.2);
         defenses.set(AttackSubType.FIRE, 1.2);
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(6.5).aim(6.5)
                 .agility(5).speed(5).intellect(5).willpower(5.5).size(4).weight(4.5).build();

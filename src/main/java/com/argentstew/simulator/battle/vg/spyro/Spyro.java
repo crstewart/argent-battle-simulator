@@ -6,7 +6,6 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.vg.crash.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -25,7 +24,7 @@ public class Spyro {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.FIRE, 0.8);
         defenses.set(AttackSubType.AIR, 1.2);
-        defenses.set(AttackSubType.GRAVITY, 0.8);
+        defenses.set(AttackSubType.GRAVITY, 1.1);
 
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(6).dexterity(7).aim(7)
                 .agility(7).speed(6.5).intellect(4).willpower(5).size(4).weight(3.5).build();

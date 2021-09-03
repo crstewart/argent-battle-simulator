@@ -7,8 +7,6 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
-import com.argentstew.simulator.battle.trait.impl.Demonslayer;
-import com.argentstew.simulator.battle.vg.captprice.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -27,6 +25,7 @@ public class Cuphead {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 0.7);
         defenses.set(AttackSubType.SMASH, 1.25);
+        defenses.set(AttackSubType.GRAVITY, 0.9);
 
         FighterStats stats = FighterStats.builder().strength(2).toughness(4).dexterity(6).aim(9)
                 .agility(6).speed(4).intellect(6).willpower(9).size(4).weight(4).build();

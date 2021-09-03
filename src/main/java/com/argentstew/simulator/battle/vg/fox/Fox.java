@@ -6,16 +6,12 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.trait.impl.StealthDetection;
-import com.argentstew.simulator.battle.vg.bowser.Bowser;
-import com.argentstew.simulator.battle.vg.mario.*;
 import com.argentstew.simulator.battle.vg.wolf.Wolf;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * com.argentstew.simulator.battle.vg.fox
@@ -30,6 +26,7 @@ public class Fox {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 1.2);
+        defenses.set(AttackSubType.GRAVITY, 0.7);
 
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(5.5).dexterity(8.5).aim(8.5)
                 .agility(6.5).speed(6.5).intellect(6).willpower(6).size(4.5).weight(4.5).build();

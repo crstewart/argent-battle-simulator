@@ -6,8 +6,6 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.strategy.RangedStrategy;
 import com.argentstew.simulator.battle.trait.impl.MechScrapper;
 
@@ -27,6 +25,7 @@ public class Aloy {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 1.2);
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(6.5).dexterity(6).aim(8)
                 .agility(4.5).speed(5).intellect(8).willpower(6).size(4.5).weight(4.5).build();

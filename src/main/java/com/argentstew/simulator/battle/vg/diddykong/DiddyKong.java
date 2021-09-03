@@ -1,12 +1,11 @@
 package com.argentstew.simulator.battle.vg.diddykong;
 
-import com.argentstew.simulator.battle.action.attack.AttackType;
+import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -23,6 +22,7 @@ public class DiddyKong {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
+        defenses.set(AttackSubType.GRAVITY, 0.85);
 
         FighterStats stats = FighterStats.builder().strength(3.5).toughness(4).dexterity(9).aim(8.5)
                 .agility(8.5).speed(7.5).intellect(4).willpower(3.5).size(4).weight(3.5).build();

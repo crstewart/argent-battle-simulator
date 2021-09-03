@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.vg.yoshi;
 
+import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
@@ -22,6 +23,7 @@ public class Yoshi {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
+        defenses.set(AttackSubType.GRAVITY, 0.9);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(5.5).dexterity(5).aim(9)
                 .agility(6.5).speed(6).intellect(3).willpower(8).size(4).weight(4).build();

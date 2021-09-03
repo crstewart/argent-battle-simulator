@@ -28,6 +28,7 @@ public class Geno {
         defenses.set(AttackType.MELEE, 1.2);
         defenses.set(AttackType.RANGED, 1.2);
         defenses.set(AttackType.MAGIC, 1.4);
+        defenses.set(AttackSubType.GRAVITY, 0.85);
 
         FighterStats stats = FighterStats.builder().strength(7).toughness(5).dexterity(6.5).aim(7.5)
                 .agility(6).speed(6.5).intellect(6).willpower(8).size(4).weight(3.5).build();

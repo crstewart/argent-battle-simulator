@@ -25,6 +25,7 @@ public class BubAndBob {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.FIRE, 0.75);
         defenses.set(AttackSubType.WATER, 0.75);
+        defenses.set(AttackSubType.GRAVITY, 0.75);
 
         FighterStats stats = FighterStats.builder().strength(3).toughness(2).dexterity(5).aim(7)
                 .agility(4).speed(3).intellect(4).willpower(4).size(3.5).weight(2.5).build();

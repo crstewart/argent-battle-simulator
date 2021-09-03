@@ -6,7 +6,6 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.MaverickHunter;
 import com.argentstew.simulator.battle.trait.impl.Rival;
@@ -34,6 +33,7 @@ public class Zero {
         defenses.set(AttackSubType.RIFLE, 0.6);
         defenses.set(AttackSubType.SHOTGUN, 0.6);
         defenses.set(AttackSubType.EXPLOSIVE, 1.2);
+        defenses.set(AttackSubType.GRAVITY, 1.05);
 
         FighterStats stats = FighterStats.builder().strength(7).toughness(5).dexterity(9).aim(8)
                 .agility(7).speed(6).intellect(4).willpower(3).size(5).weight(5.5).build();

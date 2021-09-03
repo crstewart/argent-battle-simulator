@@ -5,7 +5,6 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 
 import java.util.Arrays;
@@ -30,6 +29,7 @@ public class Rathalos {
         defenses.set(AttackSubType.AIR, 1.2);
         defenses.set(AttackSubType.EXPLOSIVE, 1.2);
         defenses.set(AttackSubType.SOUND, 0.6);
+        defenses.set(AttackSubType.GRAVITY, 1.6);
 
         FighterStats stats = FighterStats.builder().strength(9).toughness(2).dexterity(4.5).aim(5)
                 .agility(4).speed(3).intellect(1.5).willpower(6).size(9.5).weight(8.5).build();

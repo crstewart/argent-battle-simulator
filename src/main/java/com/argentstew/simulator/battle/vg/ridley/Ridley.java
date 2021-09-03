@@ -6,10 +6,8 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
-import com.argentstew.simulator.battle.vg.mewtwo.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -38,7 +36,7 @@ public class Ridley {
         defenses.set(AttackSubType.SHOTGUN, 0.8);
         defenses.set(AttackSubType.RIFLE, 0.8);
         defenses.set(AttackSubType.EXPLOSIVE, 1.25);
-        defenses.set(AttackSubType.GRAVITY, 0.7);
+        defenses.set(AttackSubType.GRAVITY, 1.55);
 
         FighterStats stats = FighterStats.builder().strength(7.5).toughness(5.5).dexterity(5).aim(5)
                 .agility(8).speed(8).intellect(6).willpower(3).size(9).weight(8).build();

@@ -7,7 +7,6 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.vg.lloyd.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,6 +31,7 @@ public class GordonFreeman {
         defenses.set(AttackSubType.SHOTGUN, 0.8);
         defenses.set(AttackSubType.EXPLOSIVE, 0.8);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
+        defenses.set(AttackSubType.GRAVITY, 0.75);
 
         FighterStats stats = FighterStats.builder().strength(5).toughness(4.5).dexterity(7).aim(8)
                 .agility(4.5).speed(4.5).intellect(6.5).willpower(5).size(5).weight(5).build();

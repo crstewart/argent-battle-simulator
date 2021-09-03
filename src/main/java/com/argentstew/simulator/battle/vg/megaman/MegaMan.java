@@ -6,7 +6,6 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.RangedStrategy;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
@@ -37,6 +36,7 @@ public class MegaMan {
         defenses.set(AttackSubType.RIFLE, 0.6);
         defenses.set(AttackSubType.SHOTGUN, 0.6);
         defenses.set(AttackSubType.ARMOR_PIERCING, 0.6);
+        defenses.set(AttackSubType.GRAVITY, 1.05);
 
         FighterStats stats = FighterStats.builder().strength(5).toughness(2).dexterity(6).aim(8.5)
                 .agility(3).speed(3.5).intellect(2).willpower(3).size(4.5).weight(5.5).build();

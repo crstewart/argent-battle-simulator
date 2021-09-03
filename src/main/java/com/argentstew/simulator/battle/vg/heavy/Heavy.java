@@ -1,13 +1,11 @@
 package com.argentstew.simulator.battle.vg.heavy;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.vg.gordonfreeman.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -27,6 +25,7 @@ public class Heavy {
         defenses.set(AttackSubType.SLASH, 1.2);
         defenses.set(AttackSubType.PIERCE, 1.2);
         defenses.set(AttackSubType.FIRE, 1.2);
+        defenses.set(AttackSubType.GRAVITY, 1.05);
 
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(6.5).dexterity(5).aim(6)
                 .agility(4).speed(4).intellect(4).willpower(5).size(5.5).weight(5.5).build();

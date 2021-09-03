@@ -8,7 +8,6 @@ import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
-import com.argentstew.simulator.battle.vg.albertwesker.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -26,6 +25,7 @@ public class ViewtifulJoe {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackSubType.FIRE, 0.7);
+        defenses.set(AttackSubType.GRAVITY, 0.7);
 
         FighterStats stats = FighterStats.builder().strength(5).toughness(3.5).dexterity(8).aim(8)
                 .agility(7.5).speed(7.5).intellect(3.5).willpower(5).size(4.5).weight(4.5).build();

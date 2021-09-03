@@ -27,7 +27,7 @@ public class Metaknight {
         defenses.set(AttackSubType.HEADBUTT, 0.8);
         defenses.set(AttackSubType.AIR, 1.2);
         defenses.set(AttackSubType.DARK, 1.2);
-        defenses.set(AttackSubType.GRAVITY, 0.8);
+        defenses.set(AttackSubType.GRAVITY, 0.9);
 
         FighterStats stats = FighterStats.builder().strength(3).toughness(4).dexterity(10).aim(6)
                 .agility(8).speed(7.5).intellect(6).willpower(7).size(1.5).weight(1.5).build();

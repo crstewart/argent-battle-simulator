@@ -1,13 +1,11 @@
 package com.argentstew.simulator.battle.vg.pikachu;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
-import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 
 import java.util.Arrays;
@@ -31,6 +29,7 @@ public class Pikachu {
         defenses.set(AttackSubType.HANDGUN, 0.75);
         defenses.set(AttackSubType.SHOTGUN, 0.75);
         defenses.set(AttackSubType.RIFLE, 0.75);
+        defenses.set(AttackSubType.GRAVITY, 0.65);
 
         FighterStats stats = FighterStats.builder().strength(2).toughness(4).dexterity(8).aim(8.5)
                 .agility(9.5).speed(8.5).intellect(3).willpower(5.5).size(2).weight(1.5).build();

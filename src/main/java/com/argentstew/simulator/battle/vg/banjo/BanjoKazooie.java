@@ -28,6 +28,7 @@ public class BanjoKazooie {
         defenses.set(AttackSubType.ICE, 1.1);
         defenses.set(AttackSubType.TOXIC, 1.25);
         defenses.set(AttackSubType.ASSIST, 0.7);
+        defenses.set(AttackSubType.GRAVITY, 0.9);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(7.5).dexterity(6).aim(5.5)
                 .agility(4.5).speed(4.5).intellect(4).willpower(5.5).size(4).weight(4).build();

@@ -6,7 +6,6 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.RangedStrategy;
 
 import java.util.Arrays;
@@ -27,6 +26,7 @@ public class Sylvanas {
         defenses.set(AttackSubType.DARK, 0.75);
         defenses.set(AttackSubType.LIGHT, 1.25);
         defenses.set(AttackSubType.TOXIC, 0.8);
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(7.5).dexterity(5.5).aim(8)
                 .agility(6).speed(6.5).intellect(7).willpower(9).size(4.5).weight(4.5).build();

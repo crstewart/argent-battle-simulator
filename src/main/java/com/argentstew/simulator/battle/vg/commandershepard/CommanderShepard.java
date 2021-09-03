@@ -7,7 +7,6 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.vg.cole.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -38,6 +37,7 @@ public class CommanderShepard {
         defenses.set(AttackSubType.RIFLE, 0.8);
         defenses.set(AttackSubType.SHOTGUN, 0.75);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
+        defenses.set(AttackSubType.GRAVITY, 1.05);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(5.5).dexterity(5).aim(5)
                 .agility(3).speed(2.5).intellect(5).willpower(3).size(5).weight(5.5).build();

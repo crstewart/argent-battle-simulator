@@ -6,7 +6,6 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 
 import java.util.Arrays;
@@ -29,7 +28,7 @@ public class Deathwing {
         defenses.set(AttackSubType.EARTH, 0.8);
         defenses.set(AttackSubType.MYSTIC, 1.4);
         defenses.set(AttackSubType.DARK, 1.2);
-        defenses.set(AttackSubType.GRAVITY, 0.8);
+        defenses.set(AttackSubType.GRAVITY, 1.75);
 
         FighterStats stats = FighterStats.builder().strength(10).toughness(9).dexterity(3).aim(3)
                 .agility(2).speed(2.5).intellect(2).willpower(9).size(10).weight(10).build();

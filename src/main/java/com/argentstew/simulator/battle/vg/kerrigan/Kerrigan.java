@@ -7,11 +7,8 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
-import com.argentstew.simulator.battle.vg.diablo.*;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * com.argentstew.simulator.battle.vg.kerrigan
@@ -28,6 +25,7 @@ public class Kerrigan {
         defenses.set(AttackType.MAGIC, 1.3);
         defenses.set(AttackSubType.TOXIC, 0.7);
         defenses.set(AttackSubType.NATURE, 0.8);
+        defenses.set(AttackSubType.GRAVITY, 0.7);
 
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(5).dexterity(7.5).aim(6.5)
                 .agility(7.5).speed(5.5).intellect(5).willpower(2).size(4.5).weight(4.5).build();

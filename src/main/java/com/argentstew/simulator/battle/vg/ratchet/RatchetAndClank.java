@@ -6,10 +6,8 @@ import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.RangedStrategy;
 import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
-import com.argentstew.simulator.battle.vg.jak.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -28,6 +26,7 @@ public class RatchetAndClank {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 1.4);
         defenses.set(AttackSubType.ASSIST, 0.6);
+        defenses.set(AttackSubType.GRAVITY, 0.65);
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(4).dexterity(6).aim(8.5)
                 .agility(5.5).speed(4.5).intellect(7).willpower(5).size(4).weight(4).build();

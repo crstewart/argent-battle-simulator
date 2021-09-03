@@ -1,12 +1,11 @@
 package com.argentstew.simulator.battle.vg.teemo;
 
+import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.strategy.RangedStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 
@@ -26,6 +25,7 @@ public class Teemo {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 0.8);
+        defenses.set(AttackSubType.GRAVITY, 0.9);
 
         FighterStats stats = FighterStats.builder().strength(2).toughness(3).dexterity(6.5).aim(6.5)
                 .agility(7).speed(7).intellect(6).willpower(6).size(4).weight(4).build();

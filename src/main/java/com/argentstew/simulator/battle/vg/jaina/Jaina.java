@@ -8,7 +8,6 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.Teleportation;
-import com.argentstew.simulator.battle.vg.thrall.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -28,6 +27,7 @@ public class Jaina {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 0.6);
         defenses.set(AttackSubType.ICE, 0.8);
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(3.5).dexterity(6).aim(8)
                 .agility(4.5).speed(5).intellect(8).willpower(8).size(4.5).weight(4.5).build();

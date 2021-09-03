@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.vg.wolf;
 
+import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
@@ -24,6 +25,7 @@ public class Wolf {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 1.3);
+        defenses.set(AttackSubType.GRAVITY, 0.75);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(7.5).dexterity(7.5).aim(7.5)
                 .agility(5).speed(5.5).intellect(5).willpower(5).size(4.5).weight(5).build();
