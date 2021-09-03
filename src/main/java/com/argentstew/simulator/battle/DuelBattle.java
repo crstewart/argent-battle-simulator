@@ -48,6 +48,8 @@ public class DuelBattle implements Battle {
                 continue;
             }
             battleLogger.log("----- Turn " + turn + " -----");
+            fighter1.setUpTurn();
+            fighter2.setUpTurn();
             Action fighter1Action = fighter1.selectAction();
             Action fighter2Action = fighter2.selectAction();
             resolveStealth(fighter1Action, fighter2Action);

@@ -39,6 +39,7 @@ import com.argentstew.simulator.battle.vg.erdrick.Erdrick;
 import com.argentstew.simulator.battle.vg.ezio.Ezio;
 import com.argentstew.simulator.battle.vg.fox.Fox;
 import com.argentstew.simulator.battle.vg.ganondorf.Ganondorf;
+import com.argentstew.simulator.battle.vg.geno.Geno;
 import com.argentstew.simulator.battle.vg.geralt.GeraltOfRivia;
 import com.argentstew.simulator.battle.vg.gordonfreeman.GordonFreeman;
 import com.argentstew.simulator.battle.vg.greninja.Greninja;
@@ -152,7 +153,8 @@ public class VgFighterFactory implements FighterFactory {
             DoomSlayer.NAME, CaptainPrice.NAME, Cuphead.NAME, GuybrushThreepwood.NAME, Draven.NAME, GeraltOfRivia.NAME,
             BowserJr.NAME, Waluigi.NAME, KingKRool.NAME, Metaknight.NAME, Greninja.NAME, Wolf.NAME, MBison.NAME,
             Rathalos.NAME, Shadow.NAME, SweetTooth.NAME, Aloy.NAME, Sylvanas.NAME, Deathwing.NAME, Widowmaker.NAME,
-            SamFisher.NAME, Agent47.NAME, Teemo.NAME, ShaoKahn.NAME, Dracula.NAME, Ragna.NAME, BubAndBob.NAME);
+            SamFisher.NAME, Agent47.NAME, Teemo.NAME, ShaoKahn.NAME, Dracula.NAME, Ragna.NAME, BubAndBob.NAME,
+            Geno.NAME);
 
     @Override
     public List<String> getAllFighters() {
@@ -404,6 +406,8 @@ public class VgFighterFactory implements FighterFactory {
                 return Ragna.get();
             case BubAndBob.NAME:
                 return BubAndBob.get();
+            case Geno.NAME:
+                return Geno.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

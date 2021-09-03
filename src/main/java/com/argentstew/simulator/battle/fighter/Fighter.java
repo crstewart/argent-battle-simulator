@@ -5,10 +5,10 @@ import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.XStrike;
 import com.argentstew.simulator.battle.arena.Arena;
 import com.argentstew.simulator.battle.strategy.Strategy;
+import com.argentstew.simulator.battle.trait.Trait;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,6 +92,12 @@ public class Fighter {
         }
 
         return (AttackAction) strategy.selectAction(doableActions);
+    }
+
+    public void setUpTurn() {
+        for (Trait trait : traits.getTraits()) {
+            trait.setUpTurn();
+        }
     }
 
     public void takeDamage(int damage) {

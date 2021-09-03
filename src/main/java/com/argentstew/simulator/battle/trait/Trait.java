@@ -15,6 +15,8 @@ public interface Trait {
 
     String getName();
 
+    default void setUpTurn() {}
+
     default double applyBonusDamage(Fighter defender, double rawDamage) {
         return rawDamage;
     }
