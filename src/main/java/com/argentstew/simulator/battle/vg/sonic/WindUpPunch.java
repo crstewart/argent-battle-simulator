@@ -1,6 +1,5 @@
 package com.argentstew.simulator.battle.vg.sonic;
 
-import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 
@@ -27,6 +26,6 @@ public class WindUpPunch extends MeleeAttack {
 
     @Override
     public double calculateSpeed() {
-        return ((Action) this).calculateSpeed();
+        return this.speed;
     }
 }

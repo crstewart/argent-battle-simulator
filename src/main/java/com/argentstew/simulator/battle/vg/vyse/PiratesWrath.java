@@ -1,6 +1,5 @@
 package com.argentstew.simulator.battle.vg.vyse;
 
-import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeXStrike;
@@ -27,6 +26,6 @@ public class PiratesWrath extends MeleeXStrike {
 
     @Override
     public double calculateSpeed() {
-        return ((Action) this).calculateSpeed();
+        return this.speed;
     }
 }

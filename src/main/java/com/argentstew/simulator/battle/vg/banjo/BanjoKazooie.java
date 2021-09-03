@@ -7,7 +7,6 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.vg.bomberman.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -44,6 +43,7 @@ public class BanjoKazooie {
                 .strategy(new BalancedStrategy()).build()
                 .addAction(new BlueEgg()).addAction(new FireEgg()).addAction(new GrenadeEgg())
                 .addAction(new ClawSwipe()).addAction(new ForwardRoll()).addAction(new RatatatRap())
+                .addAction(new WonderWing())
                 .addAction(new SummonJinjonator())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
     }
