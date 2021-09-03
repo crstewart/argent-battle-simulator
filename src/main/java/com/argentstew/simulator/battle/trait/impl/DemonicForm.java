@@ -18,7 +18,7 @@ import lombok.Getter;
  * @author Craig
  */
 @Getter
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = true, exclude = {"transformedUser"})
 public class DemonicForm extends AbstractArmorTrait {
 
     public static final String DEMONIC_FORM_ENABLED_STATUS = "Demon Form";
@@ -36,13 +36,14 @@ public class DemonicForm extends AbstractArmorTrait {
 
     @Override
     public AttackAction applyPassiveDefense(AttackAction attack) {
-        return DEMONIC_FORM_ENABLED_STATUS.equals(attack.getOwner().getSelfStatus()) && attack.isRequiresMeleeRange()
-                ? new ImmolationAura() : null;
+        return (transformedUser != null
+                && DEMONIC_FORM_ENABLED_STATUS.equals(transformedUser.getSelfStatus())
+                && attack.isRequiresMeleeRange()) ? new ImmolationAura() : null;
     }
 
     @Override
     protected int recalculateDamage(DamageReport report) {
-        return (int) Math.round(report.getDamage() * 0.9);
+        return (int) Math.round(report.getDamage() * 0.875);
     }
 
     @Override
@@ -60,7 +61,7 @@ public class DemonicForm extends AbstractArmorTrait {
     }
 
     public void transform(Fighter owner) {
-        remainingTurns = 4;
+        remainingTurns = 6;
         transformedUser = owner;
         owner.setSelfStatus(DEMONIC_FORM_ENABLED_STATUS);
     }

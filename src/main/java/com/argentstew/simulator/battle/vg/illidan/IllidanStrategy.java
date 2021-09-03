@@ -23,7 +23,7 @@ public class IllidanStrategy extends OffensiveStrategy {
 
     public Double addAction(Action action) {
         if (action instanceof Metamorphosis) {
-            return super.addAction(action, 0.8);
+            return super.addAction(action, 0.5);
         } else {
             return super.addAction(action);
         }

@@ -28,8 +28,8 @@ public class Illidan {
         defenses.set(AttackSubType.DARK, 0.7);
         defenses.set(AttackSubType.LIGHT, 1.3);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(5).dexterity(6).aim(5)
-                .agility(8).speed(8.5).intellect(5.5).willpower(6.5).size(5).weight(5).build();
+        FighterStats stats = FighterStats.builder().strength(6.5).toughness(5).dexterity(6).aim(5)
+                .agility(8).speed(8.5).intellect(6).willpower(6.5).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new Demonslayer(), new StealthDetection(), new DemonicForm()));
         return Fighter.builder().name(NAME).hp(130).maxHp(130).mp(0).maxMp(0).xStrikeMeter(0)
                 .description("A speedy fighter and anti-mage who becomes more powerful upon changing to demon form.")
@@ -41,7 +41,7 @@ public class Illidan {
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new IllidanStrategy(traits)).build()
                 .addAction(new WarglaivesOfAzzinoth()).addAction(new FlameCrash()).addAction(new EyeBeam())
-                .addAction(new DarkBarrage()).addAction(new ShadowBlast())
+                .addAction(new DarkBarrage()).addAction(new ShadowBlast()).addAction(new Metamorphosis())
                 .addAction(new TheHunt())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
     }

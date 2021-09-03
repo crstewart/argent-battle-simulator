@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.vg.illidan;
 import com.argentstew.simulator.battle.action.MoveAction;
 import com.argentstew.simulator.battle.trait.impl.DemonicForm;
 import lombok.EqualsAndHashCode;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * com.argentstew.simulator.battle.vg.illidan
@@ -15,7 +16,7 @@ public class Metamorphosis extends MoveAction {
 
     public Metamorphosis() {
         this.setName("Metamorphosis");
-        this.setDescription("Changes user into demon form");
+        this.setDescription("Changes user into demon form for 5 turns");
         this.setMessage("switches to Demon Form! 'Now I am complete!'");
         this.setDirection(1);
     }
@@ -27,7 +28,7 @@ public class Metamorphosis extends MoveAction {
 
     @Override
     public boolean isDoable() {
-        return !DemonicForm.DEMONIC_FORM_DISABLED_STATUS.equals(owner.getSelfStatus());
+        return StringUtils.isBlank(owner.getSelfStatus());
     }
 
     @Override
