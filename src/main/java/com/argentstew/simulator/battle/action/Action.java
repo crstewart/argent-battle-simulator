@@ -25,7 +25,7 @@ public abstract class Action {
 
     public double calculateSpeed() {
         double calculatedSpeed = speed;
-        for (Trait trait : owner.getTraits().getTraits()) {
+        for (Trait trait : owner.getTraits()) {
             calculatedSpeed = trait.applyBonusPriority(this, calculatedSpeed);
         }
 

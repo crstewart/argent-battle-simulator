@@ -5,7 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
 /**
  * com.argentstew.simulator.battle.fighter
@@ -15,12 +18,16 @@ import java.util.List;
  */
 @Data
 @AllArgsConstructor
-public class FighterTraits {
+public class FighterTraits implements Iterable<Trait> {
 
     private List<Trait> traits;
 
     public FighterTraits() {
         this.traits = new ArrayList<>();
+    }
+
+    public boolean isEmpty() {
+        return traits.isEmpty();
     }
 
     public boolean has(Trait trait) {
@@ -48,5 +55,20 @@ public class FighterTraits {
         }
 
         return traits.stream().filter(clazz::isInstance).map(trait -> (T) trait).findFirst().orElse(null);
+    }
+
+    @Override
+    public Iterator<Trait> iterator() {
+        return traits.iterator();
+    }
+
+    @Override
+    public void forEach(Consumer<? super Trait> action) {
+        traits.forEach(action);
+    }
+
+    @Override
+    public Spliterator<Trait> spliterator() {
+        return traits.spliterator();
     }
 }

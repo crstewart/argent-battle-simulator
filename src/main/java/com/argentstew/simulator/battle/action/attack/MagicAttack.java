@@ -42,7 +42,7 @@ public abstract class MagicAttack extends AttackAction {
         for (AttackSubType subType : this.subtypes) {
             damage *= defender.getDefenses().get(subType);
         }
-        for (Trait trait : owner.getTraits().getTraits()) {
+        for (Trait trait : owner.getTraits()) {
             damage = trait.applyBonusDamage(defender, damage);
         }
 
@@ -113,7 +113,7 @@ public abstract class MagicAttack extends AttackAction {
     @Override
     public double getStrategyAdjustment(DamageReport report) {
         double expectedDamage = getBaseDamage() + (variance / 2.0);
-        for (Trait trait : owner.getTraits().getTraits()) {
+        for (Trait trait : owner.getTraits()) {
             expectedDamage = trait.applyBonusDamage(report.getDefender(), expectedDamage);
         }
         if (report.isCrit()) {

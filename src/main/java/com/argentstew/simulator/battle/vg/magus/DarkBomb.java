@@ -28,8 +28,8 @@ public class DarkBomb extends MagicAttack {
 
     @Override
     public DamageReport doAttack(Fighter defender) {
-        if (!owner.getTraits().getTraits().isEmpty()) {
-            BarrierChange trait = (BarrierChange) this.owner.getTraits().getTraits().get(0);
+        BarrierChange trait = this.owner.getTraits().getTrait(BarrierChange.class);
+        if (trait != null) {
             trait.setLastElementUsed(AttackSubType.DARK);
         }
 

@@ -28,8 +28,11 @@ public class LightningII extends MagicAttack {
 
     @Override
     public DamageReport doAttack(Fighter defender) {
-        BarrierChange trait = (BarrierChange) this.owner.getTraits().getTraits().get(0);
-        trait.setLastElementUsed(AttackSubType.THUNDER);
+        BarrierChange trait = this.owner.getTraits().getTrait(BarrierChange.class);
+        if (trait != null) {
+            trait.setLastElementUsed(AttackSubType.THUNDER);
+        }
+
         return super.doAttack(defender);
     }
 }

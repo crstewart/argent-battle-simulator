@@ -28,8 +28,11 @@ public class FireII extends MagicAttack {
 
     @Override
     public DamageReport doAttack(Fighter defender) {
-        BarrierChange trait = (BarrierChange) this.owner.getTraits().getTraits().get(0);
-        trait.setLastElementUsed(AttackSubType.FIRE);
+        BarrierChange trait = this.owner.getTraits().getTrait(BarrierChange.class);
+        if (trait != null) {
+            trait.setLastElementUsed(AttackSubType.FIRE);
+        }
+
         return super.doAttack(defender);
     }
 }

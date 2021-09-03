@@ -34,7 +34,8 @@ public class SummonArsene extends MoveAction {
     @Override
     public void move() {
         owner.setMp(0);
-        ((Trickster) owner.getTraits().getTraits().get(0)).setState(Joker.PERSONA_ARSENE);
+        Trickster trait = this.owner.getTraits().getTrait(Trickster.class);
+        trait.setState(Joker.PERSONA_ARSENE);
         owner.setSelfStatus(Joker.PERSONA_ARSENE);
     }
 }

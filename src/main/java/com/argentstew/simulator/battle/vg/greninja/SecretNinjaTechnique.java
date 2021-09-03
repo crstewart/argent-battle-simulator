@@ -29,8 +29,11 @@ public class SecretNinjaTechnique extends MeleeXStrike {
 
     @Override
     public DamageReport doAttack(Fighter defender) {
-        Protean trait = (Protean) this.owner.getTraits().getTraits().get(0);
-        trait.setState(Protean.WATER_TYPE);
+        Protean trait = this.owner.getTraits().getTrait(Protean.class);
+        if (trait != null) {
+            trait.setState(Protean.WATER_TYPE);
+        }
+
         return super.doAttack(defender);
     }
 }

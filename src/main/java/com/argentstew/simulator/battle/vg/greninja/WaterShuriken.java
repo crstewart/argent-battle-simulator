@@ -28,10 +28,11 @@ public class WaterShuriken extends RangedAttack {
 
     @Override
     public DamageReport doAttack(Fighter defender) {
-        if (this.owner.getTraits().has(new Protean())) {
-            Protean trait = (Protean) this.owner.getTraits().getTraits().get(0);
+        Protean trait = this.owner.getTraits().getTrait(Protean.class);
+        if (trait != null) {
             trait.setState(Protean.WATER_TYPE);
         }
+
         return super.doAttack(defender);
     }
 }

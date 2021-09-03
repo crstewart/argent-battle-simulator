@@ -149,7 +149,7 @@ public class DuelBattle implements Battle {
             if (defense.isSuccessful(attack)) {
                 battleLogger.log(defense.getOwner().getName() + " " + defense.getSuccessMessage());
                 DamageReport report = attack.doAttack(defense.getOwner());
-                for (Trait trait : defense.getOwner().getTraits().getTraits()) {
+                for (Trait trait : defense.getOwner().getTraits()) {
                     report = trait.applyArmor(report);
                 }
                 int damage = defense.applyDefense(report.getDamage());
@@ -262,7 +262,7 @@ public class DuelBattle implements Battle {
         }
         battleLogger.log(attack.getOwner().getName() + " attacks " + fighter.getName() + " with " + attack.getName() + "!");
         DamageReport report = attack.doAttack(fighter);
-        for (Trait trait : fighter.getTraits().getTraits()) {
+        for (Trait trait : fighter.getTraits()) {
             report = trait.applyArmor(report);
         }
         if (report.isMiss()) {
@@ -287,11 +287,11 @@ public class DuelBattle implements Battle {
     }
 
     private void applyPassiveDefenses(AttackAction attack, Fighter defender) {
-        for (Trait trait : defender.getTraits().getTraits()) {
+        for (Trait trait : defender.getTraits()) {
             AttackAction counterAttack = trait.applyPassiveDefense(attack);
             if (counterAttack != null) {
                 DamageReport counterReport = counterAttack.doAttack(attack.getOwner());
-                for (Trait armorTrait : defender.getTraits().getTraits()) {
+                for (Trait armorTrait : defender.getTraits()) {
                     counterReport = armorTrait.applyArmor(counterReport);
                 }
                 battleLogger.log(defender.getName() + "'s " + counterReport.getAttack().getName() + " counters for " + counterReport.getDamage() + " damage!");

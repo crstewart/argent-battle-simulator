@@ -34,7 +34,8 @@ public class SummonFutsunushi extends MoveAction {
     @Override
     public void move() {
         owner.setMp(0);
-        ((Trickster) owner.getTraits().getTraits().get(0)).setState(Joker.PERSONA_FUTSUNUSHI);
+        Trickster trait = this.owner.getTraits().getTrait(Trickster.class);
+        trait.setState(Joker.PERSONA_FUTSUNUSHI);
         owner.setSelfStatus(Joker.PERSONA_FUTSUNUSHI);
     }
 }

@@ -2,7 +2,6 @@ package com.argentstew.simulator.battle.vg.dovahkiin;
 
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
@@ -43,7 +42,7 @@ public class UnrelentingForce extends RangedAttack {
     @Override
     public double getStrategyAdjustment(DamageReport report) {
         double expectedDamage = getBaseDamage() + (variance / 2.0) + 5;
-        for (Trait trait : owner.getTraits().getTraits()) {
+        for (Trait trait : owner.getTraits()) {
             expectedDamage = trait.applyBonusDamage(report.getDefender(), expectedDamage);
         }
         if (report.isCrit()) {

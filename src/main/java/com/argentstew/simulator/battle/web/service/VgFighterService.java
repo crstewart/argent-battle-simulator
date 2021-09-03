@@ -74,7 +74,7 @@ public class VgFighterService implements FighterService {
         dto.setWeight(fighter.getStats().getWeight());
 
         List<String> traits = new ArrayList<>();
-        for (Trait trait : fighter.getTraits().getTraits()) {
+        for (Trait trait : fighter.getTraits()) {
             traits.add(trait.getName());
         }
         dto.setTraits(traits);

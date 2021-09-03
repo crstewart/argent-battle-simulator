@@ -28,8 +28,10 @@ public class MatBlock extends Guard {
     protected boolean doesGuardAttack(AttackAction attack) {
         this.uses -= 1;
 
-        Protean trait = (Protean) this.owner.getTraits().getTraits().get(0);
-        trait.setState(Protean.FIGHTING_TYPE);
+        Protean trait = this.owner.getTraits().getTrait(Protean.class);
+        if (trait != null) {
+            trait.setState(Protean.FIGHTING_TYPE);
+        }
 
         return true;
     }

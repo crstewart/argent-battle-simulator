@@ -73,11 +73,11 @@ public class CharacterDescriptionWriter {
                 fileWriter.write("Agi " + fighter.getStats().getAgility() + "\t\t\t Wgt " + fighter.getStats().getWeight() + "\n");
 
                 fileWriter.write("\nTraits: ");
-                if (fighter.getTraits().getTraits().isEmpty()) {
+                if (fighter.getTraits().isEmpty()) {
                     fileWriter.write("NONE");
                 } else {
                     List<String> traits = new ArrayList<>();
-                    for (Trait trait : fighter.getTraits().getTraits()) {
+                    for (Trait trait : fighter.getTraits()) {
                         traits.add(trait.getName());
                     }
                     fileWriter.write(String.join(", ", traits));
