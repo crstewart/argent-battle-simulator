@@ -2,7 +2,7 @@ package com.argentstew.simulator.battle.vg.illidan;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
-import com.argentstew.simulator.battle.trait.impl.DemonicForm;
+import com.argentstew.simulator.battle.trait.impl.DemonHeart;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -29,7 +29,7 @@ public class FlameCrash extends MeleeAttack {
     @Override
     protected double getBaseDamage() {
         int adjustedPower = this.power;
-        if (DemonicForm.DEMONIC_FORM_ENABLED_STATUS.equals(owner.getSelfStatus())) {
+        if (DemonHeart.DEMONIC_FORM_ENABLED_STATUS.equals(owner.getSelfStatus())) {
             adjustedPower += 10;
         }
 

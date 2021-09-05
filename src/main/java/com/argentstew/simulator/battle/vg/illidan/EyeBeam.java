@@ -4,7 +4,7 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MagicAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
-import com.argentstew.simulator.battle.trait.impl.DemonicForm;
+import com.argentstew.simulator.battle.trait.impl.DemonHeart;
 
 import java.util.Collections;
 
@@ -30,7 +30,7 @@ public class EyeBeam extends MagicAttack {
     @Override
     public DamageReport doAttack(Fighter defender) {
         DamageReport report = super.doAttack(defender);
-        if (DemonicForm.DEMONIC_FORM_ENABLED_STATUS.equals(owner.getSelfStatus())) {
+        if (DemonHeart.DEMONIC_FORM_ENABLED_STATUS.equals(owner.getSelfStatus())) {
             this.owner.heal(report.getDamage() / 5);
         }
 

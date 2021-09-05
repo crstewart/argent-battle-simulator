@@ -2,7 +2,7 @@ package com.argentstew.simulator.battle.vg.illidan;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MagicAttack;
-import com.argentstew.simulator.battle.trait.impl.DemonicForm;
+import com.argentstew.simulator.battle.trait.impl.DemonHeart;
 
 import java.util.Collections;
 
@@ -27,6 +27,6 @@ public class ShadowBlast extends MagicAttack {
 
     @Override
     public boolean isDoable() {
-        return DemonicForm.DEMONIC_FORM_ENABLED_STATUS.equals(owner.getSelfStatus());
+        return DemonHeart.DEMONIC_FORM_ENABLED_STATUS.equals(owner.getSelfStatus());
     }
 }

@@ -2,7 +2,7 @@ package com.argentstew.simulator.battle.vg.illidan;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
-import com.argentstew.simulator.battle.trait.impl.DemonicForm;
+import com.argentstew.simulator.battle.trait.impl.DemonHeart;
 
 import java.util.Collections;
 
@@ -28,7 +28,7 @@ public class WarglaivesOfAzzinoth extends MeleeAttack {
     @Override
     public double calculateSpeed() {
         double speed = super.calculateSpeed();
-        if (DemonicForm.DEMONIC_FORM_ENABLED_STATUS.equals(owner.getSelfStatus())) {
+        if (DemonHeart.DEMONIC_FORM_ENABLED_STATUS.equals(owner.getSelfStatus())) {
             speed *= 0.5;
         }
 

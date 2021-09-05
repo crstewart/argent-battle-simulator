@@ -19,12 +19,12 @@ import lombok.Getter;
  */
 @Getter
 @EqualsAndHashCode(callSuper = true, exclude = {"transformedUser"})
-public class DemonicForm extends AbstractArmorTrait {
+public class DemonHeart extends AbstractArmorTrait {
 
     public static final String DEMONIC_FORM_ENABLED_STATUS = "Demon Form";
     public static final String DEMONIC_FORM_DISABLED_STATUS = "Resting";
 
-    private final String name = "Demonic Form";
+    private final String name = "Demon Heart";
 
     private Fighter transformedUser;
     private Strategy strategy;

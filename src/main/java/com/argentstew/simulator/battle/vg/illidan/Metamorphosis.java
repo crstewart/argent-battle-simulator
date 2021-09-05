@@ -1,7 +1,7 @@
 package com.argentstew.simulator.battle.vg.illidan;
 
 import com.argentstew.simulator.battle.action.MoveAction;
-import com.argentstew.simulator.battle.trait.impl.DemonicForm;
+import com.argentstew.simulator.battle.trait.impl.DemonHeart;
 import lombok.EqualsAndHashCode;
 import org.apache.commons.lang3.StringUtils;
 
@@ -33,7 +33,7 @@ public class Metamorphosis extends MoveAction {
 
     @Override
     public void move() {
-        DemonicForm trait = owner.getTraits().getTrait(DemonicForm.class);
+        DemonHeart trait = owner.getTraits().getTrait(DemonHeart.class);
         if (trait != null) {
             trait.transform(this.owner);
         }
