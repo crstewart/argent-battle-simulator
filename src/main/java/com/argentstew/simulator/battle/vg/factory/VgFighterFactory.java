@@ -6,6 +6,7 @@ import com.argentstew.simulator.battle.vg.agent47.Agent47;
 import com.argentstew.simulator.battle.vg.akuma.Akuma;
 import com.argentstew.simulator.battle.vg.albertwesker.AlbertWesker;
 import com.argentstew.simulator.battle.vg.aloy.Aloy;
+import com.argentstew.simulator.battle.vg.amaterasu.Amaterasu;
 import com.argentstew.simulator.battle.vg.arthas.Arthas;
 import com.argentstew.simulator.battle.vg.arthur.Arthur;
 import com.argentstew.simulator.battle.vg.banjo.BanjoKazooie;
@@ -156,7 +157,7 @@ public class VgFighterFactory implements FighterFactory {
             BowserJr.NAME, Waluigi.NAME, KingKRool.NAME, Metaknight.NAME, Greninja.NAME, Wolf.NAME, MBison.NAME,
             Rathalos.NAME, Shadow.NAME, SweetTooth.NAME, Aloy.NAME, Sylvanas.NAME, Deathwing.NAME, Widowmaker.NAME,
             SamFisher.NAME, Agent47.NAME, Teemo.NAME, ShaoKahn.NAME, Dracula.NAME, Ragna.NAME, BubAndBob.NAME,
-            Geno.NAME, Illidan.NAME, Raiden.NAME);
+            Geno.NAME, Illidan.NAME, Raiden.NAME, Amaterasu.NAME);
 
     @Override
     public List<String> getAllFighters() {
@@ -414,6 +415,8 @@ public class VgFighterFactory implements FighterFactory {
                 return Illidan.get();
             case Raiden.NAME:
                 return Raiden.get();
+            case Amaterasu.NAME:
+                return Amaterasu.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

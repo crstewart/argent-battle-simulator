@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.vg.raiden;
 
+import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
@@ -25,11 +26,12 @@ public class Raiden {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
+        defenses.set(AttackSubType.THUNDER, 0.7);
 
-        FighterStats stats = FighterStats.builder().strength(7).toughness(5).dexterity(8).aim(4)
+        FighterStats stats = FighterStats.builder().strength(7).toughness(5).dexterity(8).aim(4.5)
                 .agility(7.5).speed(8).intellect(7).willpower(6).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new Rival(ShaoKahn.NAME, 1.3), new ComboStrike(), new Teleportation()));
-        return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(155).maxHp(155).xStrikeMeter(0)
                 .description("A speedy fighter who strikes his opponents with electrically charged attacks.")
                 .entryQuotes(Arrays.asList("Raiden: 'We have come to challenge you in Mortal Kombat.'",
                         "Raiden: 'I presume recent circumstances precipitate your arrival?'"))
