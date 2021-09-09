@@ -2,7 +2,6 @@ package com.argentstew.simulator.battle.vg.scorpion;
 
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.MeleeXStrike;
 import com.argentstew.simulator.battle.action.attack.RangedXStrike;
 import com.argentstew.simulator.battle.fighter.Fighter;
 
@@ -20,6 +19,7 @@ public class Toasty extends RangedXStrike {
     public Toasty() {
         super();
         this.name = "Toasty";
+        this.description = "Has 50% critical hit chance";
         this.power = 160;
         this.variance = 12;
         this.speed = 1.5;
