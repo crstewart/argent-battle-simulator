@@ -1,7 +1,6 @@
 package com.argentstew.simulator.battle.vg.sweettooth;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
@@ -38,6 +37,6 @@ public class Shotgun extends RangedAttack {
 
     @Override
     public boolean isDoable() {
-        return ammo > 0;
+        return super.isDoable() && ammo > 0;
     }
 }

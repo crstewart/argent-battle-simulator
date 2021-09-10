@@ -39,6 +39,6 @@ public class Gun extends RangedAttack {
 
     @Override
     public boolean isDoable() {
-        return ammo > 0 && owner.getMaxMp() > owner.getMp() && StringUtils.isBlank(owner.getSelfStatus());
+        return super.isDoable() && ammo > 0 && owner.getMaxMp() > owner.getMp() && StringUtils.isBlank(owner.getSelfStatus());
     }
 }

@@ -1,6 +1,5 @@
 package com.argentstew.simulator.battle.vg.jak;
 
-import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
@@ -39,6 +38,6 @@ public class Lobber extends RangedAttack {
 
     @Override
     public boolean isDoable() {
-        return ammo > 0;
+        return super.isDoable() && ammo > 0;
     }
 }

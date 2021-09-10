@@ -38,6 +38,6 @@ public class Mk2Lancer extends RangedAttack {
 
     @Override
     public boolean isDoable() {
-        return ammo > 0;
+        return super.isDoable() && ammo > 0;
     }
 }

@@ -7,7 +7,6 @@ import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * com.argentstew.simulator.battle.vg.commandershepard
@@ -39,6 +38,6 @@ public class M76Revenant extends RangedAttack {
 
     @Override
     public boolean isDoable() {
-        return ammo > 0;
+        return super.isDoable() && ammo > 0;
     }
 }

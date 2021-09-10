@@ -26,6 +26,6 @@ public class Megidolaon extends MagicAttack {
 
     @Override
     public boolean isDoable() {
-        return Joker.PERSONA_VISHNU.equals(owner.getSelfStatus());
+        return super.isDoable() && Joker.PERSONA_VISHNU.equals(owner.getSelfStatus());
     }
 }

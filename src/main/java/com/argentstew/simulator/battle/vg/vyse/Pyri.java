@@ -5,7 +5,6 @@ import com.argentstew.simulator.battle.action.attack.MagicAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 
-import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -37,6 +36,6 @@ public class Pyri extends MagicAttack {
 
     @Override
     public boolean isDoable() {
-        return owner.getMp() >= MP_COST;
+        return super.isDoable() && owner.getMp() >= MP_COST;
     }
 }

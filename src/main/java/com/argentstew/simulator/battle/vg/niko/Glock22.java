@@ -6,7 +6,6 @@ import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 
-import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -39,6 +38,6 @@ public class Glock22 extends RangedAttack {
 
     @Override
     public boolean isDoable() {
-        return ammo > 0;
+        return super.isDoable() && ammo > 0;
     }
 }

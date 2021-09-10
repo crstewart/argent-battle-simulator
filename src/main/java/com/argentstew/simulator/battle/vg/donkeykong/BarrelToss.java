@@ -1,7 +1,6 @@
 package com.argentstew.simulator.battle.vg.donkeykong;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
@@ -37,6 +36,6 @@ public class BarrelToss extends RangedAttack {
 
     @Override
     public boolean isDoable() {
-        return owner.getMp() >= MP_COST;
+        return super.isDoable() && owner.getMp() >= MP_COST;
     }
 }

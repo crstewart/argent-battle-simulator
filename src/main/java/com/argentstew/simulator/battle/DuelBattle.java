@@ -73,6 +73,20 @@ public class DuelBattle implements Battle {
             fighter1.adjustXStrikeMeter(1);
             fighter2.adjustXStrikeMeter(1);
 
+            if (fighter1.getStatus() != null) {
+                fighter1.getStatus().resolveTurn();
+                if (fighter1.getStatus().hasEnded()) {
+                    fighter1.setStatus(null);
+                }
+            }
+
+            if (fighter2.getStatus() != null) {
+                fighter2.getStatus().resolveTurn();
+                if (fighter2.getStatus().hasEnded()) {
+                    fighter2.setStatus(null);
+                }
+            }
+
             battleLogger.log("Status: " + fighter1 + " vs " + fighter2);
             turn++;
         }
@@ -101,7 +115,7 @@ public class DuelBattle implements Battle {
                 if (report.isStun()) {
                     battleLogger.log(fighter2.getName() + " is stunned by the attack and cannot act!");
                     fighter2.getStrategy().adjustWeight(fighter2Action, fighter2Action.getFailureAdjustment());
-                    if (fighter1Action.getOwner().getTraits().has(new ComboStrike())) {
+                    if (fighter1Action.getOwner().getTraits().has(new ComboStrike()) && !(fighter1Action instanceof XStrike)) {
                         battleLogger.log(fighter1.getName() + " does a combo attack!");
                         AttackAction combo = fighter1.selectAttack();
                         resolveAttackAgainstFighter(combo, fighter2);
@@ -116,7 +130,7 @@ public class DuelBattle implements Battle {
                 if (report.isStun()) {
                     battleLogger.log(fighter1.getName() + " is stunned by the attack and cannot act!");
                     fighter1.getStrategy().adjustWeight(fighter1Action, fighter1Action.getFailureAdjustment());
-                    if (fighter2Action.getOwner().getTraits().has(new ComboStrike())) {
+                    if (fighter2Action.getOwner().getTraits().has(new ComboStrike()) && !(fighter1Action instanceof XStrike)) {
                         battleLogger.log(fighter2.getName() + " does a combo attack!");
                         AttackAction combo = fighter2.selectAttack();
                         resolveAttackAgainstFighter(combo, fighter1);
@@ -188,7 +202,7 @@ public class DuelBattle implements Battle {
             if (report.isStun()) {
                 battleLogger.log(move.getOwner().getName() + " is stunned by the attack and cannot act!");
                 move.getOwner().getStrategy().adjustWeight(move, move.getFailureAdjustment());
-                if (attack.getOwner().getTraits().has(new ComboStrike())) {
+                if (attack.getOwner().getTraits().has(new ComboStrike()) && !(attack instanceof XStrike)) {
                     battleLogger.log(attack.getOwner().getName() + " does a combo attack!");
                     AttackAction combo = attack.getOwner().selectAttack();
                     resolveAttackAgainstFighter(combo, move.getOwner());

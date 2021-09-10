@@ -26,6 +26,6 @@ public class PowerGeyser extends MeleeAttack {
 
     @Override
     public boolean isDoable() {
-        return owner.getHp() <= (owner.getMaxHp() / 3);
+        return super.isDoable() && owner.getHp() <= (owner.getMaxHp() / 3);
     }
 }

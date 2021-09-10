@@ -34,6 +34,6 @@ public class BladeBeamLimitBreak extends RangedAttack {
 
     @Override
     public boolean isDoable() {
-        return this.owner.getMp() >= this.owner.getMaxMp();
+        return super.isDoable() && this.owner.getMp() >= this.owner.getMaxMp();
     }
 }

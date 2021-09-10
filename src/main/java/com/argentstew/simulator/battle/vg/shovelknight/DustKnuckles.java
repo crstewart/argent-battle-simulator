@@ -1,7 +1,6 @@
 package com.argentstew.simulator.battle.vg.shovelknight;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.MagicAttack;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
@@ -37,6 +36,6 @@ public class DustKnuckles extends MeleeAttack {
 
     @Override
     public boolean isDoable() {
-        return owner.getMp() >= MP_COST;
+        return super.isDoable() && owner.getMp() >= MP_COST;
     }
 }

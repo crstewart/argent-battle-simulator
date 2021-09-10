@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.XStrike;
 import com.argentstew.simulator.battle.arena.Arena;
+import com.argentstew.simulator.battle.status.StatusEffect;
 import com.argentstew.simulator.battle.strategy.Strategy;
 import com.argentstew.simulator.battle.trait.Trait;
 import lombok.AllArgsConstructor;
@@ -32,7 +33,7 @@ public class Fighter {
     private int mp;
     private int maxMp;
     private String selfStatus;
-    private String status;
+    private StatusEffect status;
     private boolean isStealth;
     private int xStrikeMeter;
 

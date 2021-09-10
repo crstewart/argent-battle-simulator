@@ -3,7 +3,6 @@ package com.argentstew.simulator.battle.vg.terry;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 
-import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -27,6 +26,6 @@ public class BusterWolf extends MeleeAttack {
 
     @Override
     public boolean isDoable() {
-        return owner.getHp() <= (owner.getMaxHp() / 3);
+        return super.isDoable() && owner.getHp() <= (owner.getMaxHp() / 3);
     }
 }

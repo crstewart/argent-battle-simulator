@@ -21,7 +21,6 @@ import java.util.Collections;
 public class Jaina {
 
     public static final String NAME = "Jaina Proudmoore";
-    public static final String STATUS_FROSTBITTEN = "Frostbitten";
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();

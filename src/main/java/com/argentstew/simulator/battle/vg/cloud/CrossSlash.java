@@ -2,7 +2,6 @@ package com.argentstew.simulator.battle.vg.cloud;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
-import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 
@@ -36,6 +35,6 @@ public class CrossSlash extends MeleeAttack {
 
     @Override
     public boolean isDoable() {
-        return this.owner.getMp() < this.owner.getMaxMp();
+        return super.isDoable() && this.owner.getMp() < this.owner.getMaxMp();
     }
 }

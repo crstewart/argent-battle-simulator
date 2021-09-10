@@ -1,7 +1,6 @@
 package com.argentstew.simulator.battle.vg.kirby;
 
 import com.argentstew.simulator.battle.action.Action;
-import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
@@ -52,6 +51,6 @@ public class Inhale extends MeleeAttack {
 
     @Override
     public boolean isDoable() {
-        return StringUtils.isBlank(this.owner.getSelfStatus());
+        return super.isDoable() && StringUtils.isBlank(this.owner.getSelfStatus());
     }
 }

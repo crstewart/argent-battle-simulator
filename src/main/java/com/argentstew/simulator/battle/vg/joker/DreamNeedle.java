@@ -1,7 +1,6 @@
 package com.argentstew.simulator.battle.vg.joker;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.MagicAttack;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 
@@ -33,6 +32,6 @@ public class DreamNeedle extends RangedAttack {
 
     @Override
     public boolean isDoable() {
-        return Joker.PERSONA_ARSENE.equals(owner.getSelfStatus());
+        return super.isDoable() && Joker.PERSONA_ARSENE.equals(owner.getSelfStatus());
     }
 }

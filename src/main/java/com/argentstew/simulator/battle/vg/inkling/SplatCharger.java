@@ -51,6 +51,6 @@ public class SplatCharger extends RangedAttack {
 
     @Override
     public boolean isDoable() {
-        return owner.getMp() >= MP_COST;
+        return super.isDoable() && owner.getMp() >= MP_COST;
     }
 }

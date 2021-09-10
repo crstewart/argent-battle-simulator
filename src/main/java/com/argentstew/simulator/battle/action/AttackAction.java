@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.status.StatusType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -45,6 +46,10 @@ public abstract class AttackAction extends Action {
 
     @Override
     public boolean isDoable() {
-        return true;
+        if (!requiresMeleeRange) {
+            return true;
+        }
+
+        return owner.getStatus() == null || owner.getStatus().getType() != StatusType.ROOTED;
     }
 }
