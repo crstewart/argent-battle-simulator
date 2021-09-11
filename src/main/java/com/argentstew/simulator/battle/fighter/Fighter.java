@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.XStrike;
 import com.argentstew.simulator.battle.arena.Arena;
 import com.argentstew.simulator.battle.status.StatusEffect;
+import com.argentstew.simulator.battle.status.StatusType;
 import com.argentstew.simulator.battle.strategy.Strategy;
 import com.argentstew.simulator.battle.trait.Trait;
 import lombok.AllArgsConstructor;
@@ -50,6 +51,40 @@ public class Fighter {
     private FighterStats stats;
     private FighterTraits traits;
     private Strategy strategy;
+
+    public double getStat(String stat) {
+        if (stat == null) {
+            return 1.0;
+        }
+
+        double multiplier = (status != null && stat.equals(status.getType().getStatEffected()))
+                ? status.getType().getStatMultiplier() : 1;
+
+        switch (stat) {
+            case FighterStats.STRENGTH:
+                return multiplier * stats.getStrength();
+            case FighterStats.TOUGHNESS:
+                return multiplier * stats.getToughness();
+            case FighterStats.DEXTERITY:
+                return multiplier * stats.getDexterity();
+            case FighterStats.AIM:
+                return multiplier * stats.getAim();
+            case FighterStats.AGILITY:
+                return multiplier * stats.getAgility();
+            case FighterStats.SPEED:
+                return multiplier * stats.getSpeed();
+            case FighterStats.INTELLECT:
+                return multiplier * stats.getIntellect();
+            case FighterStats.WILLPOWER:
+                return multiplier * stats.getWillpower();
+            case FighterStats.SIZE:
+                return multiplier * stats.getSize();
+            case FighterStats.WEIGHT:
+                return multiplier * stats.getWeight();
+            default:
+                return 1.0;
+        }
+    }
 
     public Fighter addAction(Action action) {
         if (actions == null) {
@@ -119,6 +154,21 @@ public class Fighter {
 
     public void adjustXStrikeMeter(int adjustment) {
         this.xStrikeMeter += adjustment;
+    }
+
+    public void setStatus(StatusEffect status) {
+        if (status == null) {
+            this.status = null;
+        } else if (status.getType().getEffectCheck().doesResistStatus(this)) {
+            // do nothing
+        } else if (this.status == null) {
+            this.status = status;
+        } else if (this.status.getType() == status.getType()) {
+            StatusType statusType = this.status.getType();
+            if (statusType.canBeOverwritten()) {
+                this.status = status;
+            }
+        }
     }
 
     public String getEntryQuote() {

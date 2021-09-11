@@ -3,7 +3,7 @@ package com.argentstew.simulator.battle.vg.tracer;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.defense.Dodge;
-import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
+import com.argentstew.simulator.battle.fighter.FighterStats;
 
 /**
  * com.argentstew.simulator.battle.vg.tracer
@@ -38,6 +38,6 @@ public class Blink extends Dodge {
             return false;
         }
 
-        return Math.random() < (owner.getStats().getSpeed() * 0.05 + owner.getStats().getAgility() * 0.05);
+        return Math.random() < (owner.getStat(FighterStats.SPEED) * 0.05 + owner.getStat(FighterStats.AGILITY) * 0.05);
     }
 }

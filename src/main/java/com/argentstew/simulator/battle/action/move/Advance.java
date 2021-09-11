@@ -1,6 +1,7 @@
 package com.argentstew.simulator.battle.action.move;
 
 import com.argentstew.simulator.battle.action.MoveAction;
+import com.argentstew.simulator.battle.fighter.FighterStats;
 import lombok.EqualsAndHashCode;
 
 /**
@@ -20,7 +21,7 @@ public class Advance extends MoveAction {
 
     @Override
     public double calculateSpeed() {
-        return 5.0 - (owner.getStats().getSpeed() / 2.0);
+        return 5.0 - (owner.getStat(FighterStats.SPEED) / 2.0);
     }
 
     @Override

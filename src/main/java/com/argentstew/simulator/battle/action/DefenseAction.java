@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.action;
 
+import com.argentstew.simulator.battle.fighter.FighterStats;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -26,12 +27,12 @@ public abstract class DefenseAction extends Action {
     public abstract AttackAction doCounterAttack(AttackAction attack, int damage);
 
     public double getSuccessAdjustment() {
-        return owner.getStats().getIntellect() * 0.04;
+        return owner.getStat(FighterStats.INTELLECT) * 0.04;
     }
 
     @Override
     public double getFailureAdjustment() {
-        return owner.getStats().getIntellect() * -0.03;
+        return owner.getStat(FighterStats.INTELLECT) * -0.03;
     }
 
 }

@@ -2,6 +2,7 @@ package com.argentstew.simulator.battle.vg.illidan;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
+import com.argentstew.simulator.battle.fighter.FighterStats;
 import com.argentstew.simulator.battle.trait.impl.DemonHeart;
 
 import java.util.Arrays;
@@ -33,6 +34,6 @@ public class FlameCrash extends MeleeAttack {
             adjustedPower += 10;
         }
 
-        return (adjustedPower * 0.2) + (owner.getStats().getStrength() * 0.4);
+        return (adjustedPower * 0.2) + (owner.getStat(FighterStats.STRENGTH) * 0.4);
     }
 }

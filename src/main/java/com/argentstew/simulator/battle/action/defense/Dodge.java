@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.action.defense;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.DefenseAction;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
+import com.argentstew.simulator.battle.fighter.FighterStats;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
 import lombok.EqualsAndHashCode;
@@ -50,7 +51,7 @@ public class Dodge extends DefenseAction {
             return false;
         }
 
-        return Math.random() < (owner.getStats().getSpeed() * 0.0325 + owner.getStats().getAgility() * 0.0575);
+        return Math.random() < (owner.getStat(FighterStats.SPEED) * 0.0325 + owner.getStat(FighterStats.AGILITY) * 0.0575);
     }
 
     @Override

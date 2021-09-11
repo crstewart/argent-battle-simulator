@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.vg.peach;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.MagicAttack;
 import com.argentstew.simulator.battle.action.defense.Heal;
+import com.argentstew.simulator.battle.fighter.FighterStats;
 
 /**
  * com.argentstew.simulator.battle.vg.peach
@@ -27,9 +28,9 @@ public class Therapy extends Heal {
     public boolean isSuccessful(AttackAction attack) {
         double stunChance = 0;
         if (attack instanceof MagicAttack) {
-            stunChance = ((-0.03 * Math.pow(owner.getStats().getWillpower(), 1.05)) + 0.4);
+            stunChance = ((-0.03 * Math.pow(owner.getStat(FighterStats.WILLPOWER), 1.05)) + 0.4);
         } else {
-            stunChance = ((-0.03 * Math.pow(owner.getStats().getToughness(), 1.05)) + 0.4);
+            stunChance = ((-0.03 * Math.pow(owner.getStat(FighterStats.TOUGHNESS), 1.05)) + 0.4);
         }
 
         return (Math.random() < stunChance);
@@ -53,7 +54,7 @@ public class Therapy extends Heal {
 
     @Override
     protected int calculateAmountHealed(int incomingDamage) {
-        double baseHeal = 30 + (owner.getStats().getIntellect() * 0.4);
+        double baseHeal = 30 + (owner.getStat(FighterStats.INTELLECT) * 0.4);
         double variance = Math.random() * 8;
         return (int) Math.round(baseHeal + variance);
     }

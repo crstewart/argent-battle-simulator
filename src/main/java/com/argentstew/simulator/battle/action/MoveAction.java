@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.action;
 
+import com.argentstew.simulator.battle.fighter.FighterStats;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -19,11 +20,11 @@ public abstract class MoveAction extends Action {
     public abstract void move();
 
     public double getSuccessAdjustment() {
-        return owner.getStats().getIntellect() * 0.025;
+        return owner.getStat(FighterStats.INTELLECT) * 0.025;
     }
 
     @Override
     public double getFailureAdjustment() {
-        return owner.getStats().getIntellect() * -0.025;
+        return owner.getStat(FighterStats.INTELLECT) * -0.025;
     }
 }

@@ -12,10 +12,11 @@ import lombok.Getter;
 public class StatusEffect {
 
     private final StatusType type;
+
     private int turnsRemaining;
 
     public StatusEffect(StatusType type) {
-        this(type, Integer.MAX_VALUE - 1);
+        this(type, 100);
     }
 
     public StatusEffect(StatusType type, int turnsRemaining) {
@@ -25,6 +26,10 @@ public class StatusEffect {
 
     public void resolveTurn() {
         turnsRemaining--;
+    }
+
+    public void setForRemovalNextTurn() {
+        turnsRemaining = 0;
     }
 
     public boolean hasEnded() {

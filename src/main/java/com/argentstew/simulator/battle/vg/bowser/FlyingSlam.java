@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.vg.bowser;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
+import com.argentstew.simulator.battle.fighter.FighterStats;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -28,6 +29,6 @@ public class FlyingSlam extends MeleeAttack {
 
     @Override
     public double getBaseDamage() {
-        return (power * 0.25) + ((owner.getStats().getStrength() - (owner.getStats().getWeight() * 0.5)));
+        return (power * 0.25) + ((owner.getStat(FighterStats.STRENGTH) - (owner.getStat(FighterStats.WEIGHT) * 0.5)));
     }
 }

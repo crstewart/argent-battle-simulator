@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.vg.sans;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.defense.Dodge;
+import com.argentstew.simulator.battle.fighter.FighterStats;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 
 /**
@@ -35,6 +36,6 @@ public class SansDodge extends Dodge {
             return false;
         }
 
-        return Math.random() < (owner.getStats().getSpeed() * 0.0275 + owner.getStats().getAgility() * 0.0475);
+        return Math.random() < (owner.getStat(FighterStats.SPEED) * 0.0275 + owner.getStat(FighterStats.AGILITY) * 0.0475);
     }
 }

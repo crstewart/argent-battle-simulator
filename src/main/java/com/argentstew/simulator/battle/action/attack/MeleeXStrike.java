@@ -1,8 +1,8 @@
 package com.argentstew.simulator.battle.action.attack;
 
-import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.status.StatusType;
 import lombok.EqualsAndHashCode;
 
 /**
@@ -17,6 +17,14 @@ public abstract class MeleeXStrike extends MeleeAttack implements XStrike {
     @Override
     public DamageReport doAttack(Fighter defender) {
         owner.adjustXStrikeMeter(-1 * X_STRIKE_METER_READY);
+
+        if (owner.getStatus() != null && owner.getStatus().getType() == StatusType.SLEEP) {
+            owner.setStatus(null);
+        }
+
+        if (defender.getStatus() != null && defender.getStatus().getType() == StatusType.SLEEP) {
+            defender.getStatus().setForRemovalNextTurn();
+        }
 
         return super.doAttack(defender);
     }

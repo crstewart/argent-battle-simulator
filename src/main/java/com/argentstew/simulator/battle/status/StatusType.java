@@ -76,4 +76,8 @@ public enum StatusType {
     public boolean disallowsAction(Action action) {
         return blockedActionTypes.stream().anyMatch(clazz -> clazz.isInstance(action));
     }
+
+    public boolean canBeOverwritten() {
+        return blockedActionTypes == null || blockedActionTypes.isEmpty();
+    }
 }

@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
+import com.argentstew.simulator.battle.fighter.FighterStats;
 import com.argentstew.simulator.battle.reporting.DamageReport;
 import com.argentstew.simulator.battle.trait.Trait;
 
@@ -32,7 +33,7 @@ public class UnrelentingForce extends RangedAttack {
     public DamageReport doAttack(Fighter defender) {
         DamageReport report = super.doAttack(defender);
         if (report.getDamage() > 0) {
-            report.setDamage(report.getDamage() + (2 * (int) Math.round(defender.getStats().getWeight())));
+            report.setDamage(report.getDamage() + (2 * (int) Math.round(defender.getStat(FighterStats.WEIGHT))));
             owner.getArena().fullRetreat(defender);
         }
 
@@ -50,6 +51,6 @@ public class UnrelentingForce extends RangedAttack {
         }
 
         double damageDifference = report.getDamage() - expectedDamage;
-        return owner.getStats().getIntellect() * damageDifference * 0.05;
+        return owner.getStat(FighterStats.INTELLECT) * damageDifference * 0.05;
     }
 }

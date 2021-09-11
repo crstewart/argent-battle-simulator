@@ -2,7 +2,9 @@ package com.argentstew.simulator.battle.action.attack;
 
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.fighter.Fighter;
+import com.argentstew.simulator.battle.fighter.FighterStats;
 import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.status.StatusType;
 import com.argentstew.simulator.battle.trait.Trait;
 import com.argentstew.simulator.battle.trait.impl.StealthDetection;
 import lombok.EqualsAndHashCode;
@@ -59,25 +61,29 @@ public abstract class RangedAttack extends AttackAction {
             report.setStun(true);
         }
 
+        if (defender.getStatus() != null && defender.getStatus().getType() == StatusType.SLEEP) {
+            defender.getStatus().setForRemovalNextTurn();
+        }
+
         return report;
     }
 
     protected double getMissChance(Fighter defender) {
         if (defender.isStealth() && !owner.getTraits().has(new StealthDetection())) {
-            return (defender.getStats().getSpeed() * 0.0325 + defender.getStats().getAgility() * 0.0575 +
-                    ((10 - defender.getStats().getSize()) * 0.005));
+            return (defender.getStat(FighterStats.SPEED) * 0.0325 + defender.getStat(FighterStats.AGILITY) * 0.0575 +
+                    ((10 - defender.getStat(FighterStats.SIZE)) * 0.005));
         }
 
-        return ((-0.075 * Math.pow(owner.getStats().getAim(), 1.025)) + 0.8)
-                + (0.01 * (11 - defender.getStats().getSize()));
+        return ((-0.075 * Math.pow(owner.getStat(FighterStats.AIM), 1.025)) + 0.8)
+                + (0.01 * (11 - defender.getStat(FighterStats.SIZE)));
     }
 
     protected double getBaseDamage() {
-        return (power * 0.2) + (owner.getStats().getDexterity() * 0.4);
+        return (power * 0.2) + (owner.getStat(FighterStats.DEXTERITY) * 0.4);
     }
 
     protected double getCritChance(Fighter defender) {
-        return 0.04 + (owner.getStats().getAgility() * 0.003) + (owner.getStats().getAim() * 0.005);
+        return 0.04 + (owner.getStat(FighterStats.AGILITY) * 0.003) + (owner.getStat(FighterStats.AIM) * 0.005);
     }
 
     protected double getCritMultiplier(Fighter defender) {
@@ -85,7 +91,7 @@ public abstract class RangedAttack extends AttackAction {
     }
 
     protected double getStunChance(Fighter defender, boolean isCrit) {
-        double stunChance = ((-0.03 * Math.pow(defender.getStats().getToughness(), 1.05)) + 0.4);
+        double stunChance = ((-0.03 * Math.pow(defender.getStat(FighterStats.TOUGHNESS), 1.05)) + 0.4);
         if (isCrit) {
             stunChance *= 1.3;
         }
@@ -104,11 +110,11 @@ public abstract class RangedAttack extends AttackAction {
         }
 
         double damageDifference = report.getDamage() - expectedDamage;
-        return owner.getStats().getIntellect() * damageDifference * 0.05;
+        return owner.getStat(FighterStats.INTELLECT) * damageDifference * 0.05;
     }
 
     @Override
     public double getFailureAdjustment() {
-        return owner.getStats().getIntellect() * -0.05;
+        return owner.getStat(FighterStats.INTELLECT) * -0.05;
     }
 }
