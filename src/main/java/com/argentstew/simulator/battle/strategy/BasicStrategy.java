@@ -47,11 +47,7 @@ public class BasicStrategy implements Strategy {
 
     @Override
     public void setWeight(Action action, double weight) {
-        if (weight < MIN_WEIGHT) {
-            throw new IllegalStateException("Strategy weight cannot be less than 0.01");
-        }
-
-        weights.put(action.getBaseName(), weight);
+        weights.put(action.getBaseName(), Math.max(weight, MIN_WEIGHT));
     }
 
     @Override

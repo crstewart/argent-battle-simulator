@@ -68,6 +68,7 @@ import com.argentstew.simulator.battle.vg.link.Link;
 import com.argentstew.simulator.battle.vg.lloyd.LloydIrving;
 import com.argentstew.simulator.battle.vg.luigi.Luigi;
 import com.argentstew.simulator.battle.vg.magus.Magus;
+import com.argentstew.simulator.battle.vg.mallow.Mallow;
 import com.argentstew.simulator.battle.vg.marcusfenix.MarcusFenix;
 import com.argentstew.simulator.battle.vg.mario.Mario;
 import com.argentstew.simulator.battle.vg.marth.Marth;
@@ -160,7 +161,8 @@ public class VgFighterFactory implements FighterFactory {
             BowserJr.NAME, Waluigi.NAME, KingKRool.NAME, Metaknight.NAME, Greninja.NAME, Wolf.NAME, MBison.NAME,
             Rathalos.NAME, Shadow.NAME, SweetTooth.NAME, Aloy.NAME, Sylvanas.NAME, Deathwing.NAME, Widowmaker.NAME,
             SamFisher.NAME, Agent47.NAME, Teemo.NAME, ShaoKahn.NAME, Dracula.NAME, Ragna.NAME, BubAndBob.NAME,
-            Geno.NAME, Illidan.NAME, Raiden.NAME, Amaterasu.NAME, Decidueye.NAME, TerraBranford.NAME, Rosalina.NAME);
+            Geno.NAME, Illidan.NAME, Raiden.NAME, Amaterasu.NAME, Decidueye.NAME, TerraBranford.NAME, Rosalina.NAME,
+            Mallow.NAME);
 
     @Override
     public List<String> getAllFighters() {
@@ -426,6 +428,8 @@ public class VgFighterFactory implements FighterFactory {
                 return TerraBranford.get();
             case Rosalina.NAME:
                 return Rosalina.get();
+            case Mallow.NAME:
+                return Mallow.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

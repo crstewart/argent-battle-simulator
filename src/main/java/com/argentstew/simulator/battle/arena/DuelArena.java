@@ -110,6 +110,15 @@ public class DuelArena implements Arena {
         }
     }
 
+    @Override
+    public Fighter getOpponent(Fighter fighter) {
+        if (leftFighter.equals(fighter)) {
+            return rightFighter;
+        }
+
+        return leftFighter;
+    }
+
     public Position getFighterPosition(Fighter fighter) {
         if (fighter == null) {
             return null;

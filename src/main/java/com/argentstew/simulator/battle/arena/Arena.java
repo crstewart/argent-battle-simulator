@@ -19,6 +19,7 @@ public interface Arena {
     void retreat(Fighter fighter);
     void fullAdvance(Fighter fighter);
     void fullRetreat(Fighter fighter);
+    Fighter getOpponent(Fighter fighter);
 
     @Data
     @AllArgsConstructor
