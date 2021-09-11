@@ -4,8 +4,8 @@ import com.argentstew.simulator.battle.arena.DuelArena;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.logger.BattleLogger;
 import com.argentstew.simulator.battle.logger.NoopBattleLogger;
-import com.argentstew.simulator.battle.vg.decidueye.Decidueye;
 import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
+import com.argentstew.simulator.battle.vg.ryu.Ryu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Decidueye.NAME;
+    private static final String TEST_FIGHTER = Ryu.NAME;
 
     public static void main(String[] args) {
 

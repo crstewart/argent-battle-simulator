@@ -44,7 +44,7 @@ public class Regenerate extends Heal {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return (owner.getHp() < owner.getMaxHp() && Joker.PERSONA_FUTSUNUSHI.equals(owner.getSelfStatus()));
     }
 

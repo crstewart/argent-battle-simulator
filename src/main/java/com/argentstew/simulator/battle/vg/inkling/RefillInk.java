@@ -55,7 +55,7 @@ public class RefillInk extends Heal {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return this.owner.getMp() < this.owner.getMaxMp();
     }
 }

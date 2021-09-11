@@ -3,7 +3,6 @@ package com.argentstew.simulator.battle.vg.geralt;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.MagicAttack;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
-import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.action.defense.Guard;
 
 /**
@@ -34,7 +33,7 @@ public class HeliotropSign extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 

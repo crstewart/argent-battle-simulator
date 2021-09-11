@@ -31,7 +31,7 @@ public class WhirlingFortress extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 

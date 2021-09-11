@@ -25,7 +25,7 @@ public class BraveBlade extends MeleeAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && Joker.PERSONA_FUTSUNUSHI.equals(owner.getSelfStatus());
+    public boolean isAllowed() {
+        return Joker.PERSONA_FUTSUNUSHI.equals(owner.getSelfStatus());
     }
 }

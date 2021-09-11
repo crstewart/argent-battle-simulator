@@ -27,7 +27,7 @@ public class GunSpecial extends RangedAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && StringUtils.isNotBlank(owner.getSelfStatus());
+    public boolean isAllowed() {
+        return StringUtils.isNotBlank(owner.getSelfStatus());
     }
 }

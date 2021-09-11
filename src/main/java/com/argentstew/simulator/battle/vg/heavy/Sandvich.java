@@ -48,7 +48,7 @@ public class Sandvich extends Heal {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return (uses > 0) && (owner.getHp() < owner.getMaxHp());
     }
 

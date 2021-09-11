@@ -5,7 +5,6 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
-import com.argentstew.simulator.battle.status.StatusType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -42,14 +41,8 @@ public abstract class AttackAction extends Action {
 
     public abstract double getStrategyAdjustment(DamageReport report);
 
-    public abstract double getFailureAdjustment();
-
     @Override
-    public boolean isDoable() {
-        if (!requiresMeleeRange) {
-            return true;
-        }
-
-        return owner.getStatus() == null || owner.getStatus().getType() != StatusType.ROOTED;
+    public boolean isAllowed() {
+        return true;
     }
 }

@@ -34,7 +34,7 @@ public class Parry extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 

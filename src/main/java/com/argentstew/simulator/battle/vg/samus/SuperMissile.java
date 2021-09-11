@@ -36,7 +36,7 @@ public class SuperMissile extends RangedAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && owner.getMp() >= MP_COST;
+    public boolean isAllowed() {
+        return owner.getMp() >= MP_COST;
     }
 }

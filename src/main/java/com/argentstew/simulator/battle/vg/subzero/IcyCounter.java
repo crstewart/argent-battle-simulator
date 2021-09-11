@@ -1,6 +1,5 @@
 package com.argentstew.simulator.battle.vg.subzero;
 
-import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
@@ -56,7 +55,7 @@ public class IcyCounter extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 }

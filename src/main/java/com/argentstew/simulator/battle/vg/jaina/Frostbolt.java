@@ -32,10 +32,10 @@ public class Frostbolt extends MagicAttack {
     public DamageReport doAttack(Fighter defender) {
         DamageReport report = super.doAttack(defender);
 
-        if (defender.getStatus() != null && defender.getStatus().getType() == StatusType.FROSTBITTEN) {
+        if (defender.getStatus() != null && defender.getStatus().getType() == StatusType.FROSTBITE) {
             defender.setStatus(null);
         } else {
-            defender.setStatus(new StatusEffect(StatusType.FROSTBITTEN));
+            defender.setStatus(new StatusEffect(StatusType.FROSTBITE));
         }
 
         return report;
@@ -43,7 +43,7 @@ public class Frostbolt extends MagicAttack {
 
     @Override
     public double getCritChance(Fighter defender) {
-        return (defender.getStatus() != null && defender.getStatus().getType() == StatusType.FROSTBITTEN)
+        return (defender.getStatus() != null && defender.getStatus().getType() == StatusType.FROSTBITE)
                 ? 1 : super.getCritChance(defender);
     }
 }

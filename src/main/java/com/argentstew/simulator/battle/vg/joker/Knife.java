@@ -34,7 +34,7 @@ public class Knife extends MeleeAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && owner.getMaxMp() > owner.getMp() && StringUtils.isBlank(owner.getSelfStatus());
+    public boolean isAllowed() {
+        return owner.getMaxMp() > owner.getMp() && StringUtils.isBlank(owner.getSelfStatus());
     }
 }

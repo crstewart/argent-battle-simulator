@@ -32,8 +32,8 @@ public class GenoBlast extends MagicAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && owner.getMp() >= MP_COST;
+    public boolean isAllowed() {
+        return owner.getMp() >= MP_COST;
     }
 
     @Override

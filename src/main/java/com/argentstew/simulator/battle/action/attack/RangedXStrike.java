@@ -36,7 +36,7 @@ public abstract class RangedXStrike extends RangedAttack implements XStrike {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return owner.getXStrikeMeter() >= X_STRIKE_METER_READY;
     }
 }

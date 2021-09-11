@@ -27,7 +27,7 @@ public class Metamorphosis extends MoveAction {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return StringUtils.isBlank(owner.getSelfStatus());
     }
 

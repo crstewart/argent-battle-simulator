@@ -1,10 +1,7 @@
 package com.argentstew.simulator.battle.vg.shaokahn;
 
 import com.argentstew.simulator.battle.action.MoveAction;
-import com.argentstew.simulator.battle.trait.impl.Trickster;
-import com.argentstew.simulator.battle.vg.joker.Joker;
 import lombok.EqualsAndHashCode;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * com.argentstew.simulator.battle.vg.shaokahn
@@ -29,6 +26,11 @@ public class Ridicule extends MoveAction {
 
     @Override
     public boolean isDoable() {
+        return true;
+    }
+
+    @Override
+    public boolean isAllowed() {
         return true;
     }
 

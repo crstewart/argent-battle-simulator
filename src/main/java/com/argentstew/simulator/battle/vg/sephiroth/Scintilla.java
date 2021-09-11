@@ -53,7 +53,7 @@ public class Scintilla extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 }

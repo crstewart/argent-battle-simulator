@@ -1,7 +1,6 @@
 package com.argentstew.simulator.battle.vg.shovelknight;
 
 import com.argentstew.simulator.battle.action.AttackAction;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Guard;
 
 /**
@@ -35,7 +34,7 @@ public class PhaseLocket extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 

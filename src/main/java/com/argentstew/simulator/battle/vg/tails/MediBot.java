@@ -44,7 +44,7 @@ public class MediBot extends Heal {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return (owner.getHp() < owner.getMaxHp());
     }
 

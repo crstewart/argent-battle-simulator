@@ -27,7 +27,7 @@ public class SummonVishnu extends MoveAction {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return owner.getMp() >= owner.getMaxMp() && StringUtils.isBlank(owner.getSelfStatus());
     }
 

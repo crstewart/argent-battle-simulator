@@ -2,9 +2,7 @@ package com.argentstew.simulator.battle.vg.ratchet;
 
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.action.defense.Guard;
-import com.argentstew.simulator.battle.vg.common.ReflectedRangedAttack;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -44,7 +42,7 @@ public class TeslaBarrier extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 

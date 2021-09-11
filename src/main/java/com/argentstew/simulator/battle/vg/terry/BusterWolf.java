@@ -25,7 +25,7 @@ public class BusterWolf extends MeleeAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && owner.getHp() <= (owner.getMaxHp() / 3);
+    public boolean isAllowed() {
+        return owner.getHp() <= (owner.getMaxHp() / 3);
     }
 }

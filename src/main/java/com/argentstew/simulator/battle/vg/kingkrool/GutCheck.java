@@ -69,7 +69,7 @@ public class GutCheck extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 }

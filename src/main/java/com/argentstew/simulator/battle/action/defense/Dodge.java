@@ -54,7 +54,7 @@ public class Dodge extends DefenseAction {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 }

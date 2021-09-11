@@ -34,7 +34,7 @@ public class MeteorainLimitBreak extends RangedAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && this.owner.getMp() >= this.owner.getMaxMp();
+    public boolean isAllowed() {
+        return this.owner.getMp() >= this.owner.getMaxMp();
     }
 }

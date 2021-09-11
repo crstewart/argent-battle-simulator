@@ -44,7 +44,7 @@ public class ReverseTime extends Heal {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return (owner.getHp() < owner.getMaxHp());
     }
 

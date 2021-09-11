@@ -31,7 +31,7 @@ public class SpiritShackle extends RangedAttack {
 
     @Override
     public DamageReport doAttack(Fighter defender) {
-        defender.setStatus(new StatusEffect(StatusType.ROOTED, 2));
+        defender.setStatus(new StatusEffect(StatusType.ROOT, 1));
         return super.doAttack(defender);
     }
 }

@@ -51,7 +51,7 @@ public class Recover extends Heal {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 }

@@ -46,7 +46,7 @@ public class Heal extends com.argentstew.simulator.battle.action.defense.Heal {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return (owner.getMp() >= MP_COST) && (owner.getHp() < owner.getMaxHp());
     }
 

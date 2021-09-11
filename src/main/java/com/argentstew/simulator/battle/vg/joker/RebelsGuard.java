@@ -38,7 +38,7 @@ public class RebelsGuard extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return owner.getMaxMp() > owner.getMp() && StringUtils.isBlank(owner.getSelfStatus());
     }
 }

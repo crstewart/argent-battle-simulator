@@ -1,9 +1,7 @@
 package com.argentstew.simulator.battle.vg.peach;
 
 import com.argentstew.simulator.battle.action.AttackAction;
-import com.argentstew.simulator.battle.action.DefenseAction;
 import com.argentstew.simulator.battle.action.attack.MagicAttack;
-import com.argentstew.simulator.battle.action.defense.Guard;
 import com.argentstew.simulator.battle.action.defense.Heal;
 
 /**
@@ -49,7 +47,7 @@ public class Therapy extends Heal {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return (owner.getMp() >= MP_COST) && (owner.getHp() < owner.getMaxHp());
     }
 

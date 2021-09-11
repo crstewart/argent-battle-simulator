@@ -40,7 +40,7 @@ public class Protect extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return uses > 0;
     }
 }

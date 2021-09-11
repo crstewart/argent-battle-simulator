@@ -1,6 +1,5 @@
 package com.argentstew.simulator.battle.action;
 
-import com.argentstew.simulator.battle.status.StatusType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -16,11 +15,6 @@ public abstract class MoveAction extends Action {
 
     private String message;
     private int direction;
-
-    @Override
-    public boolean isDoable() {
-        return owner.getStatus() == null || owner.getStatus().getType() != StatusType.ROOTED;
-    }
 
     public abstract void move();
 

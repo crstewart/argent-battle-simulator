@@ -15,27 +15,28 @@ import java.util.Collections;
  */
 public class BarrelToss extends RangedAttack {
 
-    public static final int MP_COST = 1;
+    private int uses;
 
     public BarrelToss() {
         super();
         this.name = "Barrel Toss";
-        this.description = "Costs 1 SP";
+        this.description = "Has 4 uses";
         this.power = 65;
         this.variance = 6;
         this.speed = 3;
         this.subtypes = Collections.singletonList(AttackSubType.SMASH);
         this.characteristics = Collections.emptyList();
+        this.uses = 4;
     }
 
     @Override
     public DamageReport doAttack(Fighter defender) {
-        owner.useMagic(MP_COST);
+        uses--;
         return super.doAttack(defender);
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && owner.getMp() >= MP_COST;
+    public boolean isAllowed() {
+        return uses > 0;
     }
 }

@@ -37,7 +37,7 @@ public class MatildaHandgun extends RangedAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && ammo > 0;
+    public boolean isAllowed() {
+        return ammo > 0;
     }
 }

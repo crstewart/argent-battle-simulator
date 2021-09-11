@@ -1,8 +1,6 @@
 package com.argentstew.simulator.battle.vg.kosmos;
 
 import com.argentstew.simulator.battle.action.AttackAction;
-import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.attack.MagicAttack;
 import com.argentstew.simulator.battle.action.defense.Guard;
 
@@ -39,7 +37,7 @@ public class ForceShield extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 }

@@ -1,8 +1,6 @@
 package com.argentstew.simulator.battle.vg.pit;
 
 import com.argentstew.simulator.battle.action.AttackAction;
-import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Guard;
 
 /**
@@ -38,7 +36,7 @@ public class GuardianOrbitars extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 }

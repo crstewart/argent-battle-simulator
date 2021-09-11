@@ -26,7 +26,7 @@ public class VacuumWave extends MagicAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && Joker.PERSONA_VISHNU.equals(owner.getSelfStatus());
+    public boolean isAllowed() {
+        return Joker.PERSONA_VISHNU.equals(owner.getSelfStatus());
     }
 }

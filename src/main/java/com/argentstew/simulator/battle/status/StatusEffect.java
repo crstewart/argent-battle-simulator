@@ -15,12 +15,12 @@ public class StatusEffect {
     private int turnsRemaining;
 
     public StatusEffect(StatusType type) {
-        this(type, Integer.MAX_VALUE);
+        this(type, Integer.MAX_VALUE - 1);
     }
 
     public StatusEffect(StatusType type, int turnsRemaining) {
         this.type = type;
-        this.turnsRemaining = turnsRemaining;
+        this.turnsRemaining = turnsRemaining + 1; // add 1 for resolution on turn status is applied
     }
 
     public void resolveTurn() {

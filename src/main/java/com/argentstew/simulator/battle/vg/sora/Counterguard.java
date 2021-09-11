@@ -1,6 +1,5 @@
 package com.argentstew.simulator.battle.vg.sora;
 
-import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 import com.argentstew.simulator.battle.action.defense.Guard;
@@ -44,7 +43,7 @@ public class Counterguard extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 }

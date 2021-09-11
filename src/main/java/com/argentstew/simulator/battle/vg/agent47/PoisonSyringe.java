@@ -37,7 +37,7 @@ public class PoisonSyringe extends MeleeAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && uses > 0;
+    public boolean isAllowed() {
+        return uses > 0;
     }
 }

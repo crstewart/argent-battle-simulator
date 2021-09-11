@@ -32,7 +32,7 @@ public class VanishCap extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 

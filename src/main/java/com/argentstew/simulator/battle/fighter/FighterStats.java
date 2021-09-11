@@ -13,6 +13,17 @@ import lombok.Data;
 @Builder
 public class FighterStats {
 
+    public static final String STRENGTH = "strength";
+    public static final String TOUGHNESS = "toughness";
+    public static final String DEXTERITY = "dexterity";
+    public static final String AIM = "aim";
+    public static final String AGILITY = "agility";
+    public static final String SPEED = "speed";
+    public static final String INTELLECT = "intellect";
+    public static final String WILLPOWER = "willpower";
+    public static final String SIZE = "size";
+    public static final String WEIGHT = "weight";
+
     // factors into damage done and stun chance with melee attacks
     private double strength;
 

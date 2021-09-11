@@ -41,7 +41,7 @@ public class BoomShield extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 

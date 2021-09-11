@@ -26,7 +26,7 @@ public class ShadowBlast extends MagicAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && DemonHeart.DEMONIC_FORM_ENABLED_STATUS.equals(owner.getSelfStatus());
+    public boolean isAllowed() {
+        return DemonHeart.DEMONIC_FORM_ENABLED_STATUS.equals(owner.getSelfStatus());
     }
 }

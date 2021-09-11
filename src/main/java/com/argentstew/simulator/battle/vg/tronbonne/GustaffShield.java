@@ -4,10 +4,6 @@ import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Guard;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * com.argentstew.simulator.battle.vg.tronbonne
  * 8/26/2019
@@ -41,7 +37,7 @@ public class GustaffShield extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 }

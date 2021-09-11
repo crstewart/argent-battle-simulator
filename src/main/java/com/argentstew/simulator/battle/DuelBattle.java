@@ -13,6 +13,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.logger.BattleLogger;
 import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.status.StatusEffect;
 import com.argentstew.simulator.battle.trait.Trait;
 import com.argentstew.simulator.battle.trait.impl.ComboStrike;
 import lombok.AllArgsConstructor;
@@ -73,19 +74,8 @@ public class DuelBattle implements Battle {
             fighter1.adjustXStrikeMeter(1);
             fighter2.adjustXStrikeMeter(1);
 
-            if (fighter1.getStatus() != null) {
-                fighter1.getStatus().resolveTurn();
-                if (fighter1.getStatus().hasEnded()) {
-                    fighter1.setStatus(null);
-                }
-            }
-
-            if (fighter2.getStatus() != null) {
-                fighter2.getStatus().resolveTurn();
-                if (fighter2.getStatus().hasEnded()) {
-                    fighter2.setStatus(null);
-                }
-            }
+            resolveStatus(fighter1);
+            resolveStatus(fighter2);
 
             battleLogger.log("Status: " + fighter1 + " vs " + fighter2);
             turn++;
@@ -308,7 +298,8 @@ public class DuelBattle implements Battle {
                 for (Trait armorTrait : defender.getTraits()) {
                     counterReport = armorTrait.applyArmor(counterReport);
                 }
-                battleLogger.log(defender.getName() + "'s " + counterReport.getAttack().getName() + " counters for " + counterReport.getDamage() + " damage!");
+                battleLogger.log(defender.getName() + "'s " + counterReport.getAttack().getName()
+                        + " counters for " + counterReport.getDamage() + " damage!");
                 attack.getOwner().takeDamage(counterReport.getDamage());
                 battleLogger.log(attack.getOwner());
             }
@@ -322,6 +313,25 @@ public class DuelBattle implements Battle {
             battleLogger.log(heal.getOwner().getName() + " restores " + hpRestored + " health!");
             heal.getOwner().getStrategy().adjustWeight(heal, heal.getSuccessAdjustment());
             heal.getOwner().adjustXStrikeMeter(2);
+        }
+    }
+
+    private void resolveStatus(Fighter fighter) {
+        StatusEffect status = fighter.getStatus();
+        if (status != null) {
+            status.resolveTurn();
+            if (fighter.getStatus().hasEnded()) {
+                fighter.setStatus(null);
+                battleLogger.log(fighter.getName() + " is no longer " + status.getType().getLogName() + "!");
+            } else {
+                battleLogger.log(fighter.getName() + " is " + status.getType().getLogName() + "!");
+                if (status.getType().getDotDamage() > 0) {
+                    int damage = (int) Math.round(status.getType().getDotDamage() * fighter.getDefenses().get(status.getType().getDotType()));
+                    fighter.takeDamage(damage);
+                    battleLogger.log(fighter.getName() + " takes " + damage + " damage from their "
+                            + status.getType().toString().toLowerCase() + "!");
+                }
+            }
         }
     }
 

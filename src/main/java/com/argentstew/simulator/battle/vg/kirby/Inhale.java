@@ -50,7 +50,7 @@ public class Inhale extends MeleeAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && StringUtils.isBlank(this.owner.getSelfStatus());
+    public boolean isAllowed() {
+        return StringUtils.isBlank(this.owner.getSelfStatus());
     }
 }

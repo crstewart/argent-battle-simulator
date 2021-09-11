@@ -67,7 +67,7 @@ public class SolarFlare extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 }

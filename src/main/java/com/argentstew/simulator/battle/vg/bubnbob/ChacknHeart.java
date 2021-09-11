@@ -40,7 +40,7 @@ public class ChacknHeart extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return charge >= 5;
     }
 

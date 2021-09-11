@@ -21,7 +21,13 @@ public abstract class Action {
     protected Fighter owner;
     protected double speed;
 
-    public abstract boolean isDoable();
+    public boolean isDoable() {
+        if (owner.getStatus() != null && owner.getStatus().getType().disallowsAction(this)) {
+            return false;
+        }
+
+        return isAllowed();
+    }
 
     public double calculateSpeed() {
         double calculatedSpeed = speed;
@@ -29,8 +35,14 @@ public abstract class Action {
             calculatedSpeed = trait.applyBonusPriority(this, calculatedSpeed);
         }
 
+        if (owner.getStatus() != null) {
+            calculatedSpeed += owner.getStatus().getType().getPriorityChange();
+        }
+
         return calculatedSpeed;
     }
+
+    public abstract boolean isAllowed();
 
     public abstract double getFailureAdjustment();
 }

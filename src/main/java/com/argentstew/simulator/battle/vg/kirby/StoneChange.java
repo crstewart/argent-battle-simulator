@@ -55,7 +55,7 @@ public class StoneChange extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 }

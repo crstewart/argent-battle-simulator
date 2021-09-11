@@ -1,7 +1,6 @@
 package com.argentstew.simulator.battle.vg.mario;
 
 import com.argentstew.simulator.battle.action.AttackAction;
-import com.argentstew.simulator.battle.action.DefenseAction;
 import com.argentstew.simulator.battle.action.defense.Guard;
 
 /**
@@ -32,7 +31,7 @@ public class MetalCap extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 

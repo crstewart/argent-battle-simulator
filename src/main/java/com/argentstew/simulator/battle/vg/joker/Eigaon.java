@@ -25,7 +25,7 @@ public class Eigaon extends MagicAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && Joker.PERSONA_ARSENE.equals(owner.getSelfStatus());
+    public boolean isAllowed() {
+        return Joker.PERSONA_ARSENE.equals(owner.getSelfStatus());
     }
 }

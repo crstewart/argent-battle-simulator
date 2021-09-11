@@ -3,7 +3,6 @@ package com.argentstew.simulator.battle.vg.ness;
 import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 import com.argentstew.simulator.battle.action.defense.Guard;
-import com.argentstew.simulator.battle.vg.common.ReflectedMeleeAttack;
 
 /**
  * com.argentstew.simulator.battle.vg.zelda
@@ -41,7 +40,7 @@ public class PsiShieldAlpha extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return owner.getMp() >= MP_COST;
     }
 }

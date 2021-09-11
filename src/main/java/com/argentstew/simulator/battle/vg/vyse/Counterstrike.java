@@ -2,11 +2,7 @@ package com.argentstew.simulator.battle.vg.vyse;
 
 import com.argentstew.simulator.battle.action.Action;
 import com.argentstew.simulator.battle.action.AttackAction;
-import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.MagicAttack;
-import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 import com.argentstew.simulator.battle.action.defense.Guard;
-import com.argentstew.simulator.battle.vg.kirby.StoneSmash;
 
 /**
  * com.argentstew.simulator.battle.vg.pikachu
@@ -50,7 +46,7 @@ public class Counterstrike extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return true;
     }
 }

@@ -24,7 +24,7 @@ public class Retreat extends MoveAction {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return owner.getArena().canRetreat(owner);
     }
 

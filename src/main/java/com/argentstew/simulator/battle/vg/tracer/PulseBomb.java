@@ -35,7 +35,7 @@ public class PulseBomb extends RangedAttack {
     }
 
     @Override
-    public boolean isDoable() {
-        return super.isDoable() && owner.getMp() == owner.getMaxMp();
+    public boolean isAllowed() {
+        return owner.getMp() == owner.getMaxMp();
     }
 }

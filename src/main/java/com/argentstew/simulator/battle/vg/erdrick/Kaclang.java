@@ -40,7 +40,7 @@ public class Kaclang extends Guard {
     }
 
     @Override
-    public boolean isDoable() {
+    public boolean isAllowed() {
         return owner.getMp() >= MP_COST;
     }
 }
