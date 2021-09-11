@@ -42,6 +42,10 @@ public abstract class Action {
         return calculatedSpeed;
     }
 
+    public String getBaseName() {
+        return name;
+    }
+
     public abstract boolean isAllowed();
 
     public abstract double getFailureAdjustment();

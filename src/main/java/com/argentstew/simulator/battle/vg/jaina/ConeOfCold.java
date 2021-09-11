@@ -34,7 +34,7 @@ public class ConeOfCold extends MagicAttack {
         DamageReport report = super.doAttack(defender);
 
         if (defender.getStatus() != null && defender.getStatus().getType() == StatusType.FROSTBITE) {
-            defender.setStatus(null);
+            defender.getStatus().setForRemovalNextTurn();
         } else {
             defender.setStatus(new StatusEffect(StatusType.FROSTBITE));
         }
