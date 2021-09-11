@@ -3,12 +3,12 @@ package com.argentstew.simulator.battle.vg.sans;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MagicXStrike;
-import com.argentstew.simulator.battle.action.attack.RangedXStrike;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.status.StatusEffect;
+import com.argentstew.simulator.battle.status.StatusType;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * com.argentstew.simulator.battle.vg.sans
@@ -32,6 +32,7 @@ public class FinalAttack extends MagicXStrike {
     @Override
     public DamageReport doAttack(Fighter defender) {
         owner.setSelfStatus(Sans.TIRED_SELF_STATUS);
+        owner.setStatus(new StatusEffect(StatusType.SLEEP, 5));
         return super.doAttack(defender);
     }
 }

@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 
@@ -41,6 +42,6 @@ public class Cuphead {
                 .addAction(new Peashooter()).addAction(new MegaBlast()).addAction(new Chaser())
                 .addAction(new ChaosOrbit()).addAction(new Parry())
                 .addAction(new EnergyBeam())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

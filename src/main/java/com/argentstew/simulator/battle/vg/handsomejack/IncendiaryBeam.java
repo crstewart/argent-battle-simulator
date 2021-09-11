@@ -1,11 +1,12 @@
 package com.argentstew.simulator.battle.vg.handsomejack;
 
-import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.fighter.FighterClassification;
 import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.status.StatusEffect;
+import com.argentstew.simulator.battle.status.StatusType;
 
 import java.util.Collections;
 
@@ -20,8 +21,8 @@ public class IncendiaryBeam extends RangedAttack {
     public IncendiaryBeam() {
         super();
         this.name = "Incendiary Beam";
-        this.description = "Deals 25% additional damage to humanoids and animals";
-        this.power = 60;
+        this.description = "Deals 25% additional damage to humanoids and animals; applies burn status for two turns on hit";
+        this.power = 55;
         this.variance = 6;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.FIRE);
@@ -43,6 +44,10 @@ public class IncendiaryBeam extends RangedAttack {
         adjustedReport.setCrit(report.isCrit());
         adjustedReport.setStun(report.isStun());
         adjustedReport.setDamage(modifyDamage(defender, report.getDamage()));
+
+        if (!adjustedReport.isMiss() && adjustedReport.getDamage() > 0) {
+            defender.setStatus(new StatusEffect(StatusType.BURN, 2));
+        }
 
         return adjustedReport;
     }

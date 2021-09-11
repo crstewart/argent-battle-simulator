@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 
@@ -39,9 +40,9 @@ public class Peach {
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
-                .addAction(new PeachParasol()).addAction(new FryingPan())
-                .addAction(new SweetKiss()).addAction(new Therapy())
+                .addAction(new PeachParasol()).addAction(new FryingPan()).addAction(new SweetKiss())
+                .addAction(new SleepyTime()).addAction(new Therapy())
                 .addAction(new PsychBomb())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

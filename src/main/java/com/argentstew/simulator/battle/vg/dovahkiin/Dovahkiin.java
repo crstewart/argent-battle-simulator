@@ -5,10 +5,10 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.DragonSlayer;
-import com.argentstew.simulator.battle.vg.ryuhayabusa.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -47,6 +47,6 @@ public class Dovahkiin {
                 .addAction(new UnrelentingForce()).addAction(new FireBreath()).addAction(new SteelSword())
                 .addAction(new Sparks()).addAction(new SteelShield())
                 .addAction(new CallDragon())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

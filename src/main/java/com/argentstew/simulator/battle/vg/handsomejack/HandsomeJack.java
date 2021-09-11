@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 
@@ -27,7 +28,7 @@ public class HandsomeJack {
         defenses.set(AttackSubType.FIRE, 1.25);
         defenses.set(AttackSubType.GRAVITY, 0.75);
 
-        FighterStats stats = FighterStats.builder().strength(3.5).toughness(3).dexterity(7).aim(8)
+        FighterStats stats = FighterStats.builder().strength(3.5).toughness(3).dexterity(6).aim(8)
                 .agility(4).speed(4).intellect(7).willpower(7).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
@@ -42,6 +43,6 @@ public class HandsomeJack {
                 .addAction(new EnergyBolt()).addAction(new IncendiaryBeam()).addAction(new CorrosiveGrenade())
                 .addAction(new Turret()).addAction(new ShieldSurveyor())
                 .addAction(new SummonTheWarrior())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

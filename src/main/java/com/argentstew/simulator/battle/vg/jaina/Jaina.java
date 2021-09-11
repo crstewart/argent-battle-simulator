@@ -5,8 +5,10 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.trait.impl.ColdResistance;
 import com.argentstew.simulator.battle.trait.impl.Teleportation;
 
 import java.util.Arrays;
@@ -30,7 +32,7 @@ public class Jaina {
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(3.5).dexterity(6).aim(8)
                 .agility(4.5).speed(5).intellect(8).willpower(8).size(4.5).weight(4.5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new Teleportation()));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new ColdResistance(), new Teleportation()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A frost mage whose attacks critically hit when chained together.")
                 .entryQuotes(Arrays.asList("Jaina: 'For the Alliance!'", "Jaina: 'I hate resorting to violence.'"))
@@ -42,6 +44,6 @@ public class Jaina {
                 .addAction(new Frostbolt()).addAction(new ConeOfCold()).addAction(new IceLance())
                 .addAction(new Blizzard()).addAction(new IceBlock())
                 .addAction(new RingOfFrost())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

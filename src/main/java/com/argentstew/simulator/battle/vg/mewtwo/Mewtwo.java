@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
@@ -47,6 +48,6 @@ public class Mewtwo {
                 .addAction(new Psychic()).addAction(new ShadowBall()).addAction(new Confusion())
                 .addAction(new Recover())
                 .addAction(new MegaPsystrike())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

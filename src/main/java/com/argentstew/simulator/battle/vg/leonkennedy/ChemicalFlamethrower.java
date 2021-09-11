@@ -4,6 +4,8 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.status.StatusEffect;
+import com.argentstew.simulator.battle.status.StatusType;
 
 import java.util.Collections;
 
@@ -20,8 +22,8 @@ public class ChemicalFlamethrower extends RangedAttack {
     public ChemicalFlamethrower() {
         super();
         this.name = "Chemical Flamethrower";
-        this.description = "100 ammo, each attack uses 25 ammo";
-        this.power = 75;
+        this.description = "100 ammo, each attack uses 25 ammo; applies burn status for three turns on hit";
+        this.power = 50;
         this.variance = 5;
         this.speed = 1;
         this.ammo = 100;
@@ -32,7 +34,12 @@ public class ChemicalFlamethrower extends RangedAttack {
     @Override
     public DamageReport doAttack(Fighter defender) {
         ammo -= 25;
-        return super.doAttack(defender);
+        DamageReport damageReport = super.doAttack(defender);
+        if (!damageReport.isMiss() && damageReport.getDamage() > 0) {
+            defender.setStatus(new StatusEffect(StatusType.BURN, 3));
+        }
+
+        return damageReport;
     }
 
     @Override

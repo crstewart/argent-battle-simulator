@@ -6,7 +6,6 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 
-import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -30,6 +29,6 @@ public class TestFighter {
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

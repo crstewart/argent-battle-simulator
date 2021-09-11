@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.MeleeStrategy;
 
@@ -40,6 +41,6 @@ public class Rayman {
                 .addAction(new MagicPunch()).addAction(new MagicKick()).addAction(new SpinningStrike())
                 .addAction(new WindUpPunch())
                 .addAction(new RaymanAlliedAssault())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

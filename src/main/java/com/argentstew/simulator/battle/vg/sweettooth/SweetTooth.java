@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 
@@ -43,6 +44,6 @@ public class SweetTooth {
                 .addAction(new MacheteMassacre()).addAction(new ChainsawSlaughter()).addAction(new JawBreaker())
                 .addAction(new Shotgun()).addAction(new MolotovCocktail())
                 .addAction(new MechaTooth())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

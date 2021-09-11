@@ -3,6 +3,9 @@ package com.argentstew.simulator.battle.vg.draven;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
+import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.status.StatusEffect;
+import com.argentstew.simulator.battle.status.StatusType;
 
 import java.util.Collections;
 
@@ -17,7 +20,7 @@ public class StandAside extends RangedAttack {
     public StandAside() {
         super();
         this.name = "Stand Aside";
-        this.description = "Has 150% normal stun chance";
+        this.description = "Has 50% additional stun chance; applies bleed status for three turns on critical hit";
         this.power = 55;
         this.variance = 6;
         this.speed = 1.5;
@@ -31,7 +34,12 @@ public class StandAside extends RangedAttack {
     }
 
     @Override
-    public double getCritMultiplier(Fighter defender) {
-        return 2.5;
+    public DamageReport doAttack(Fighter defender) {
+        DamageReport damageReport = super.doAttack(defender);
+        if (!damageReport.isMiss() && damageReport.isCrit()) {
+            defender.setStatus(new StatusEffect(StatusType.BLEED, 3));
+        }
+
+        return damageReport;
     }
 }

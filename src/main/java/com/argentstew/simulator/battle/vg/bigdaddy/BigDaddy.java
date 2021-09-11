@@ -1,14 +1,12 @@
 package com.argentstew.simulator.battle.vg.bigdaddy;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
-import com.argentstew.simulator.battle.vg.johnmarston.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -48,6 +46,6 @@ public class BigDaddy {
                 .strategy(new OffensiveStrategy()).build()
                 .addAction(new DrillSlam()).addAction(new DrillPunch()).addAction(new Charge())
                 .addAction(new EnragedFrenzy())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

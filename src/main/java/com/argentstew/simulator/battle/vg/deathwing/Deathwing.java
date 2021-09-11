@@ -5,8 +5,11 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
+import com.argentstew.simulator.battle.trait.impl.HeatResistance;
+import com.argentstew.simulator.battle.trait.impl.Insomniac;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,7 +35,7 @@ public class Deathwing {
 
         FighterStats stats = FighterStats.builder().strength(10).toughness(9).dexterity(3).aim(3)
                 .agility(2).speed(2.5).intellect(2).willpower(9).size(10).weight(10).build();
-        FighterTraits traits = new FighterTraits();
+        FighterTraits traits = new FighterTraits(Arrays.asList(new HeatResistance(), new Insomniac()));
         return Fighter.builder().name(NAME).hp(200).maxHp(200).xStrikeMeter(0)
                 .description("A strong, tough tank with inaccurate but strong attacks.")
                 .entryQuotes(Arrays.asList("Deathwing: 'I am power incarnate!'",
@@ -45,6 +48,6 @@ public class Deathwing {
                 .addAction(new MoltenFlame()).addAction(new Incinerate()).addAction(new Onslaught())
                 .addAction(new EarthShatter())
                 .addAction(new Cataclysm())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

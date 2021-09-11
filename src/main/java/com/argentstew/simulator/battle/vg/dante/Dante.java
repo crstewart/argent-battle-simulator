@@ -5,10 +5,10 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.Demonslayer;
-import com.argentstew.simulator.battle.vg.morrigan.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -44,6 +44,6 @@ public class Dante {
                 .addAction(new Rebellion()).addAction(new EbonyAndIvory()).addAction(new JamSession())
                 .addAction(new Crystal()).addAction(new Twister()).addAction(new Volcano())
                 .addAction(new FinaleStinger())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

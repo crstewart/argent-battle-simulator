@@ -17,9 +17,9 @@ public class BlowgunDarts extends RangedAttack {
     public BlowgunDarts() {
         super();
         this.name = "Blowgun Darts";
-        this.power = 50;
+        this.power = 30;
         this.variance = 3;
-        this.speed = 2;
+        this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.PIERCE);
         this.characteristics = Collections.singletonList(AttackCharacteristic.STEALTH);
     }

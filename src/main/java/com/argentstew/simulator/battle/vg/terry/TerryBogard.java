@@ -4,12 +4,8 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
-import com.argentstew.simulator.battle.vg.bigdaddy.Charge;
-import com.argentstew.simulator.battle.vg.bigdaddy.DrillPunch;
-import com.argentstew.simulator.battle.vg.bigdaddy.DrillSlam;
-import com.argentstew.simulator.battle.vg.bigdaddy.EnragedFrenzy;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -48,6 +44,6 @@ public class TerryBogard {
                 .addAction(new PowerWave()).addAction(new BurningKnuckle()).addAction(new CrackShoot())
                 .addAction(new PowerDunk()).addAction(new BusterWolf()).addAction(new PowerGeyser())
                 .addAction(new TripleWolf())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

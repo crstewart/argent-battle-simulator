@@ -5,11 +5,11 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.vg.sephiroth.Sephiroth;
-import com.argentstew.simulator.battle.vg.vyse.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -45,6 +45,6 @@ public class Cloud {
                 .addAction(new CrossSlash()).addAction(new CrossSlashLimitBreak()).addAction(new Meteorain())
                 .addAction(new MeteorainLimitBreak())
                 .addAction(new Omnislash())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

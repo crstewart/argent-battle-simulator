@@ -1,13 +1,12 @@
 package com.argentstew.simulator.battle.vg.ryuhayabusa;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.vg.commandershepard.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -41,6 +40,6 @@ public class RyuHayabusa {
                 .addAction(new DragonSword()).addAction(new Shuriken()).addAction(new FireWheel())
                 .addAction(new GuillotineThrow())
                 .addAction(new EyeOfTheDragon())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

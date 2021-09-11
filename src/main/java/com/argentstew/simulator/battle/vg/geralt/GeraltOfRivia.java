@@ -5,10 +5,10 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.MonsterHunter;
-import com.argentstew.simulator.battle.vg.draven.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -46,6 +46,6 @@ public class GeraltOfRivia {
                 .addAction(new WitchersSword()).addAction(new AardSign()).addAction(new IgniSign())
                 .addAction(new GrapeshotBomb()).addAction(new HeliotropSign())
                 .addAction(new HuntOfTheWhiteWolf())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

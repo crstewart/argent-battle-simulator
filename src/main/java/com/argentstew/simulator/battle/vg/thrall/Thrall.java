@@ -5,11 +5,11 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.vg.deathwing.Deathwing;
-import com.argentstew.simulator.battle.vg.princeofpersia.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -48,6 +48,6 @@ public class Thrall {
                 .addAction(new ChainLightning()).addAction(new Doomhammer()).addAction(new FeralSpirit())
                 .addAction(new Sundering())
                 .addAction(new Earthquake())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

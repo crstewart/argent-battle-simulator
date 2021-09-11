@@ -3,7 +3,6 @@ package com.argentstew.simulator.battle.vg.megaman;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 
-import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -20,7 +19,7 @@ public class MetalBlade extends RangedAttack {
         this.power = 45;
         this.variance = 5;
         this.speed = 1;
-        this.subtypes = Arrays.asList(AttackSubType.HACK);
+        this.subtypes = Collections.singletonList(AttackSubType.HACK);
         this.characteristics = Collections.emptyList();
     }
 }

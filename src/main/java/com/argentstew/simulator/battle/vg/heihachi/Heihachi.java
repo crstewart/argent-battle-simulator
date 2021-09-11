@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.MeleeStrategy;
 import com.argentstew.simulator.battle.trait.impl.ComboStrike;
@@ -45,6 +46,6 @@ public class Heihachi {
                 .addAction(new DemonUppercut()).addAction(new TsunamiKick()).addAction(new DemonScissors())
                 .addAction(new Stonehead())
                 .addAction(new LightningHammer())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

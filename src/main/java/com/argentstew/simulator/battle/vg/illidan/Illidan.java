@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.trait.impl.DemonHeart;
 import com.argentstew.simulator.battle.trait.impl.Demonslayer;
@@ -43,6 +44,6 @@ public class Illidan {
                 .addAction(new WarglaivesOfAzzinoth()).addAction(new FlameCrash()).addAction(new EyeBeam())
                 .addAction(new DarkBarrage()).addAction(new ShadowBlast()).addAction(new Metamorphosis())
                 .addAction(new TheHunt())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

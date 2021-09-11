@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 
@@ -39,6 +40,6 @@ public class SlyCooper {
                 .addAction(new CaneSwipe()).addAction(new CaneStun()).addAction(new RaccoonRoll())
                 .addAction(new ShadowPower())
                 .addAction(new CooperGangAssault())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

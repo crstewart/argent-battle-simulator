@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.Hazardous;
@@ -41,6 +42,6 @@ public class Bowser {
                 .addAction(new FireBreath()).addAction(new KoopaClaw()).addAction(new BowserBomb())
                 .addAction(new FlyingSlam()).addAction(new WhirlingFortress())
                 .addAction(new GiantBowserPunch())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

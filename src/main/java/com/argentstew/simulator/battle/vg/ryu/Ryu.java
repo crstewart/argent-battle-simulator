@@ -1,16 +1,13 @@
 package com.argentstew.simulator.battle.vg.ryu;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.MeleeStrategy;
 import com.argentstew.simulator.battle.trait.impl.ComboStrike;
-import com.argentstew.simulator.battle.trait.impl.MechRider;
-import com.argentstew.simulator.battle.vg.tronbonne.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -50,6 +47,6 @@ public class Ryu {
                 .addAction(new Hadouken()).addAction(new Shoryuken()).addAction(new TatsumakiSenpukyaku())
                 .addAction(new CollarboneBreaker()).addAction(new JoudanSokutigeri())
                 .addAction(new ShinkuHadouken())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

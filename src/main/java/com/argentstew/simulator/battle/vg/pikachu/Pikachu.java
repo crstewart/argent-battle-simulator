@@ -4,12 +4,13 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
+import com.argentstew.simulator.battle.trait.impl.Static;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * com.argentstew.simulator.battle.vg.pikachu
@@ -33,7 +34,7 @@ public class Pikachu {
 
         FighterStats stats = FighterStats.builder().strength(2).toughness(4).dexterity(8).aim(8.5)
                 .agility(9.5).speed(8.5).intellect(3).willpower(5.5).size(2).weight(1.5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new NaturalAgility()));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new Static(), new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(120).maxHp(120).xStrikeMeter(0)
                 .description("A speedy fighter with strong defenses leading to a powerful X-Strike.")
                 .entryQuotes(Arrays.asList("Pikachu: 'Pi-KA!'", "Pikachu: 'Pika pi!'"))
@@ -44,6 +45,6 @@ public class Pikachu {
                 .addAction(new Thunderbolt()).addAction(new IronTail()).addAction(new QuickAttack())
                 .addAction(new Protect())
                 .addAction(new Catastropika())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

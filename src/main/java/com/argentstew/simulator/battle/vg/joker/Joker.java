@@ -1,16 +1,12 @@
 package com.argentstew.simulator.battle.vg.joker;
 
-import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
-import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.trait.impl.Trickster;
-import com.argentstew.simulator.battle.vg.sans.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -48,6 +44,6 @@ public class Joker {
                 .addAction(new DreamNeedle()).addAction(new Megidolaon()).addAction(new VacuumWave())
                 .addAction(new MyriadSlashes()).addAction(new BraveBlade()).addAction(new Regenerate())
                 .addAction(new AllOutAttack())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

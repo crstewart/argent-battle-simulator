@@ -5,6 +5,8 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.status.StatusEffect;
+import com.argentstew.simulator.battle.status.StatusType;
 
 import java.util.Collections;
 
@@ -21,9 +23,9 @@ public class PoisonSyringe extends MeleeAttack {
     public PoisonSyringe() {
         super();
         this.name = "Poison Syringe";
-        this.description = "Only usable once";
-        this.power = 60;
-        this.variance = 7;
+        this.description = "Only usable once; applies poison status for three turns on hit";
+        this.power = 20;
+        this.variance = 3;
         this.speed = 4;
         this.uses = 1;
         this.subtypes = Collections.singletonList(AttackSubType.TOXIC);
@@ -33,7 +35,12 @@ public class PoisonSyringe extends MeleeAttack {
     @Override
     public DamageReport doAttack(Fighter defender) {
         uses -= 1;
-        return super.doAttack(defender);
+        DamageReport damageReport = super.doAttack(defender);
+        if (!damageReport.isMiss() && damageReport.getDamage() > 0) {
+            defender.setStatus(new StatusEffect(StatusType.POISON, 3));
+        }
+
+        return damageReport;
     }
 
     @Override

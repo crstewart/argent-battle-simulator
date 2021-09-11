@@ -4,8 +4,8 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.Cheater;
 
@@ -41,6 +41,6 @@ public class Wario {
                 .addAction(new ShoulderCharge()).addAction(new CorkscrewConk()).addAction(new BobombThrow())
                 .addAction(new Chomp())
                 .addAction(new WarioWaft())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

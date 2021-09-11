@@ -15,7 +15,7 @@ public class SpawnBanelings extends RangedAttack {
 
     public SpawnBanelings() {
         super();
-        this.name = "Spawn Zerglings";
+        this.name = "Spawn Banelings";
         this.power = 50;
         this.variance = 10;
         this.speed = 3;

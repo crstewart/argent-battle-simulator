@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.vg.agent47;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 
@@ -37,6 +38,6 @@ public class Agent47 {
                 .addAction(new Silverballer()).addAction(new M4()).addAction(new CombatKnife())
                 .addAction(new PoisonSyringe()).addAction(new StealthTakedown())
                 .addAction(new M195Sniper())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

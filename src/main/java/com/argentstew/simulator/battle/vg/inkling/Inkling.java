@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 
 import java.util.Arrays;
@@ -38,6 +39,6 @@ public class Inkling {
                 .addAction(new Splattershot()).addAction(new SplatRoller()).addAction(new SplatCharger())
                 .addAction(new SplatBomb()).addAction(new RefillInk())
                 .addAction(new KillerWail())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

@@ -4,14 +4,13 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.Hazardous;
 import com.argentstew.simulator.battle.trait.impl.MechRider;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * com.argentstew.simulator.battle.vg.bowserjr
@@ -44,6 +43,6 @@ public class BowserJr {
                 .addAction(new ClownCannon()).addAction(new HammerWhack()).addAction(new Mechakoopa())
                 .addAction(new KoopaShellToss()).addAction(new WhirlingFortress())
                 .addAction(new ShadowMarioPaint())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

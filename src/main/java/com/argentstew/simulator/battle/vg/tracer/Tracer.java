@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.trait.impl.NaturalAgility;
 import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
@@ -41,6 +42,6 @@ public class Tracer {
                 .addAction(new PulsePistols()).addAction(new MeleeAttack()).addAction(new PulseBomb())
                 .addAction(new Recall())
                 .addAction(new CallOverwatch())
-                .addAction(new Blink()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Blink()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

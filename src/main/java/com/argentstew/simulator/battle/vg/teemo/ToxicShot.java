@@ -6,6 +6,8 @@ import com.argentstew.simulator.battle.action.attack.MagicAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.fighter.FighterClassification;
 import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.status.StatusEffect;
+import com.argentstew.simulator.battle.status.StatusType;
 
 import java.util.Collections;
 
@@ -20,10 +22,10 @@ public class ToxicShot extends MagicAttack {
     public ToxicShot() {
         super();
         this.name = "Toxic Shot";
-        this.description = "Deals 50% bonus damage against monsters";
-        this.power = 50;
-        this.variance = 4;
-        this.speed = 1;
+        this.description = "Deals 50% bonus damage against monsters; applies poison status for three turns on hit";
+        this.power = 20;
+        this.variance = 3;
+        this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.TOXIC);
         this.characteristics = Collections.singletonList(AttackCharacteristic.STEALTH);
     }
@@ -43,6 +45,10 @@ public class ToxicShot extends MagicAttack {
         adjustedReport.setCrit(report.isCrit());
         adjustedReport.setStun(report.isStun());
         adjustedReport.setDamage(modifyDamage(defender, report.getDamage()));
+
+        if (!adjustedReport.isMiss() && adjustedReport.getDamage() > 0) {
+            defender.setStatus(new StatusEffect(StatusType.POISON, 3));
+        }
 
         return adjustedReport;
     }

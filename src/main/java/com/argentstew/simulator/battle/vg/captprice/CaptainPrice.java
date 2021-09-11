@@ -1,14 +1,11 @@
 package com.argentstew.simulator.battle.vg.captprice;
 
-import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
-import com.argentstew.simulator.battle.trait.impl.Demonslayer;
-import com.argentstew.simulator.battle.vg.doomslayer.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -41,6 +38,6 @@ public class CaptainPrice {
                 .addAction(new M4A1()).addAction(new M1911()).addAction(new DesertEagle())
                 .addAction(new CombatKnife())
                 .addAction(new JuggernautSuit())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

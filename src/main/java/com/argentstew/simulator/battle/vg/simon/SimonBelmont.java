@@ -1,16 +1,14 @@
 package com.argentstew.simulator.battle.vg.simon;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.strategy.DefensiveStrategy;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.vg.dracula.Dracula;
-import com.argentstew.simulator.battle.vg.snake.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -44,6 +42,6 @@ public class SimonBelmont {
                 .addAction(new VampireKiller()).addAction(new Cross()).addAction(new Axe())
                 .addAction(new HolyWater())
                 .addAction(new GrandCross())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

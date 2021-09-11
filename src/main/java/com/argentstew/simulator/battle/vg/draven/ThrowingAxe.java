@@ -1,9 +1,11 @@
 package com.argentstew.simulator.battle.vg.draven;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.MeleeAttack;
 import com.argentstew.simulator.battle.action.attack.RangedAttack;
 import com.argentstew.simulator.battle.fighter.Fighter;
+import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.status.StatusEffect;
+import com.argentstew.simulator.battle.status.StatusType;
 
 import java.util.Collections;
 
@@ -18,7 +20,7 @@ public class ThrowingAxe extends RangedAttack {
     public ThrowingAxe() {
         super();
         this.name = "Throwing Axe";
-        this.description = "Does 250% damage on critical hits, instead of the normal 200%";
+        this.description = "Applies bleed status for three turns on critical hit";
         this.power = 50;
         this.variance = 4;
         this.speed = 1;
@@ -27,7 +29,12 @@ public class ThrowingAxe extends RangedAttack {
     }
 
     @Override
-    public double getCritMultiplier(Fighter defender) {
-        return 2.5;
+    public DamageReport doAttack(Fighter defender) {
+        DamageReport damageReport = super.doAttack(defender);
+        if (!damageReport.isMiss() && damageReport.isCrit()) {
+            defender.setStatus(new StatusEffect(StatusType.BLEED, 3));
+        }
+
+        return damageReport;
     }
 }

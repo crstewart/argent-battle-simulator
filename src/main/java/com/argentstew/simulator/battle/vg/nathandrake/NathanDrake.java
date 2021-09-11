@@ -1,14 +1,11 @@
 package com.argentstew.simulator.battle.vg.nathandrake;
 
-import com.argentstew.simulator.battle.action.attack.AttackSubType;
-import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.strategy.RangedStrategy;
-import com.argentstew.simulator.battle.vg.ratchet.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -40,6 +37,6 @@ public class NathanDrake {
                 .addAction(new AK47()).addAction(new SAS12()).addAction(new MkNDIGrenade())
                 .addAction(new SteelFist())
                 .addAction(new EddysGoldenGun())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

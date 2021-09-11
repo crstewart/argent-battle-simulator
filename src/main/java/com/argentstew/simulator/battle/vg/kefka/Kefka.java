@@ -5,9 +5,9 @@ import com.argentstew.simulator.battle.action.attack.AttackType;
 import com.argentstew.simulator.battle.action.defense.Dodge;
 import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
+import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.vg.squall.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -44,6 +44,6 @@ public class Kefka {
                 .addAction(new HavocWing()).addAction(new Forsaken()).addAction(new Firaga())
                 .addAction(new Blizzaga()).addAction(new Thundaga())
                 .addAction(new LightOfJudgment())
-                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat());
+                .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }
