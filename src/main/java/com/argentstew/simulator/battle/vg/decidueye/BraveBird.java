@@ -32,7 +32,7 @@ public class BraveBird extends MeleeAttack {
         DamageReport damageReport = super.doAttack(defender);
         int recoil = (int) Math.round(damageReport.getDamage() / 3.0);
         owner.takeDamage(recoil);
-        if (defender.getHp() <= 0 && owner.getHp() <= 0) {
+        if (defender.getHp() - damageReport.getDamage() <= 0 && owner.getHp() <= 0) {
             owner.setHp(1);
         }
 
