@@ -22,8 +22,8 @@ public class StatusEffect {
     public StatusEffect(StatusType type, int turnsRemaining) {
         this.type = type;
 
-        // add 1 for resolution on turn status if effect does not do damage over time
-        this.turnsRemaining = (type.getDotDamage() > 0) ? turnsRemaining : turnsRemaining + 1;
+        // add 1 for resolution on turn status
+        this.turnsRemaining = turnsRemaining + 1;
     }
 
     public void resolveTurn() {

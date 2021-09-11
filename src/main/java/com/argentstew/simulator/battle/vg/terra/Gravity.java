@@ -23,7 +23,7 @@ public class Gravity extends MagicAttack {
         super();
         this.name = LEVEL1;
         this.description = "Has three levels of power, upgrading with each hit";
-        this.power = 60;
+        this.power = 50;
         this.variance = 7;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.GRAVITY);
@@ -37,11 +37,11 @@ public class Gravity extends MagicAttack {
         if (!damageReport.isMiss()) {
             if (LEVEL1.equals(name)) {
                 name = LEVEL2;
-                power = 90;
+                power = 80;
                 variance = 10;
             } else if (LEVEL2.equals(name)) {
                 name = LEVEL3;
-                power = 140;
+                power = 120;
                 variance = 15;
             }
         }

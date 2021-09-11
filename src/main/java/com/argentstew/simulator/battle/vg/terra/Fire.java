@@ -23,8 +23,8 @@ public class Fire extends MagicAttack {
         super();
         this.name = LEVEL1;
         this.description = "Has three levels of power, upgrading with each hit";
-        this.power = 50;
-        this.variance = 5;
+        this.power = 40;
+        this.variance = 4;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.FIRE);
         this.characteristics = Collections.emptyList();
@@ -37,12 +37,12 @@ public class Fire extends MagicAttack {
         if (!damageReport.isMiss()) {
             if (LEVEL1.equals(name)) {
                 name = LEVEL2;
-                power = 75;
-                variance = 8;
+                power = 70;
+                variance = 7;
             } else if (LEVEL2.equals(name)) {
                 name = LEVEL3;
-                power = 110;
-                variance = 11;
+                power = 100;
+                variance = 10;
             }
         }
 
