@@ -105,6 +105,7 @@ public class VgFighterService implements FighterService {
         dto.setStrategy(getStrategyType(fighter.getStrategy()));
 
         List<AttackDTO> attacks = new ArrayList<>();
+        List<AttackDTO> xstrikes = new ArrayList<>();
         List<GuardDTO> guards = new ArrayList<>();
         List<GuardDTO> heals = new ArrayList<>();
         for (Action action : fighter.getActions()) {
@@ -132,7 +133,7 @@ public class VgFighterService implements FighterService {
                 attackDTO.setCharacteristics(characteristics);
 
                 if (isXStrike(attack)) {
-                    dto.setXStrike(attackDTO);
+                    xstrikes.add(attackDTO);
                 } else {
                     attacks.add(attackDTO);
                 }
@@ -150,6 +151,7 @@ public class VgFighterService implements FighterService {
         }
 
         dto.setAttacks(attacks);
+        dto.setXStrikes(xstrikes);
         dto.setGuards(guards);
         dto.setHeals(heals);
 

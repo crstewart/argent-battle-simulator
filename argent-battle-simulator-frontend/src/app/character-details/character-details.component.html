@@ -77,11 +77,13 @@
         </div><br/>
         <br/>
         <span>X-Strike: </span><br/>
-        <span [innerText]="selectedFighter.xstrike.name + ' - Type: ' + selectedFighter.xstrike.attackType + ', Power: '
-            + selectedFighter.xstrike.power + ' +0-' + selectedFighter.xstrike.variance + ', Speed: '
-            + selectedFighter.xstrike.speed + ', Elements: ' + selectedFighter.xstrike.attackSubTypes.join(', ')"></span><br/>
-        <div *ngIf="selectedFighter.xstrike.description != null">
-            <span [innerText]="' (' + selectedFighter.xstrike.description + ')'"></span><br/>
+        <div *ngFor="let xstrike of selectedFighter.xstrikes">
+            <span [innerText]="xstrike.name + ' - Type: ' + xstrike.attackType + ', Power: '
+                + xstrike.power + ' +0-' + xstrike.variance + ', Speed: '
+                + xstrike.speed + ', Elements: ' + xstrike.attackSubTypes.join(', ')"></span><br/>
+                <div *ngIf="xstrike.description != null">
+                    <span [innerText]="' (' + xstrike.description + ')'"></span><br/>
+                </div>
         </div>
     </div>
 </div>

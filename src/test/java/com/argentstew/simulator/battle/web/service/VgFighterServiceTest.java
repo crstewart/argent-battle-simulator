@@ -1,8 +1,6 @@
 package com.argentstew.simulator.battle.web.service;
 
 import com.argentstew.simulator.battle.factory.FighterFactory;
-import com.argentstew.simulator.battle.fighter.Fighter;
-import com.argentstew.simulator.battle.fighter.FighterTraits;
 import com.argentstew.simulator.battle.web.model.FighterDTO;
 import com.argentstew.simulator.battle.web.test.TestFighter;
 import org.junit.jupiter.api.Test;

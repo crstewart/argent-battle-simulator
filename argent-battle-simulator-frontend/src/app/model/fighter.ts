@@ -25,7 +25,7 @@ export interface Fighter {
 
     // moveset
     attacks: Attack[];
-    xstrike: Attack;
+    xstrikes: Attack[];
     guards: Guard[];
     heals: Guard[];
 }

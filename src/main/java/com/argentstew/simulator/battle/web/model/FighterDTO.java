@@ -39,7 +39,7 @@ public class FighterDTO {
 
     // moveset
     private List<AttackDTO> attacks;
-    private AttackDTO xStrike;
+    private List<AttackDTO> xStrikes;
     private List<GuardDTO> guards;
     private List<GuardDTO> heals;
 }
