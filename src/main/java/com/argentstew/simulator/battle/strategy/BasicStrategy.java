@@ -1,6 +1,7 @@
 package com.argentstew.simulator.battle.strategy;
 
 import com.argentstew.simulator.battle.action.Action;
+import com.argentstew.simulator.battle.action.attack.ShapeshiftAction;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -71,6 +72,10 @@ public class BasicStrategy implements Strategy {
             throw new IllegalStateException("Cannot choose no action!");
         }
 
+        if (actions.size() == 1) {
+            return actions.get(0);
+        }
+
         Map<Action, Double> relativeWeight = new HashMap<>();
         double totalWeight = 0;
         for (Action action: actions) {
@@ -85,6 +90,13 @@ public class BasicStrategy implements Strategy {
                 selectedAction = action;
             } else {
                 break;
+            }
+        }
+
+        if (selectedAction instanceof ShapeshiftAction) {
+            ShapeshiftAction shapeshiftAction = (ShapeshiftAction) selectedAction;
+            if (shapeshiftAction.hasClassToReplace()) {
+                shapeshiftAction.replaceClass();
             }
         }
 
