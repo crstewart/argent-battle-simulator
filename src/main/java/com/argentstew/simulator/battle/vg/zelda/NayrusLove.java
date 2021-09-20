@@ -31,7 +31,7 @@ public class NayrusLove extends Guard {
         }
 
         if (attack instanceof MagicAttack) {
-            return !((MagicAttack) attack).isRequiresMeleeRange();
+            return !attack.isRequiresMeleeRange();
         }
 
         return false;
