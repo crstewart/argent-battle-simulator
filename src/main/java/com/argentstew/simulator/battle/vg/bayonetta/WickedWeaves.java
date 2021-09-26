@@ -17,14 +17,16 @@ import java.util.Collections;
  *
  * @author Craig
  */
-public class WickedWeavesButterfly extends RangedXStrike implements ShapeshiftAction {
+public class WickedWeaves extends RangedXStrike implements ShapeshiftAction {
 
-    public WickedWeavesButterfly() {
+    private static final String BASE_NAME = "Wicked Weaves";
+
+    public WickedWeaves() {
         super();
-        this.name = "Wicked Weaves (Madama Butterfly)";
-        this.description = "Deals triple damage to demonic opponents";
-        this.power = 200;
-        this.variance = 20;
+        this.name = BASE_NAME;
+        this.description = "Power is increased by 50% and type is changed against demonic and divine opponents";
+        this.power = 300;
+        this.variance = 18;
         this.speed = 4;
         this.subtypes = Collections.singletonList(AttackSubType.PUNCH);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
@@ -32,12 +34,19 @@ public class WickedWeavesButterfly extends RangedXStrike implements ShapeshiftAc
 
     @Override
     public DamageReport doAttack(Fighter defender) {
-        DamageReport damageReport = super.doAttack(defender);
         if (defender.getClassifications().contains(FighterClassification.DEMONIC)) {
-            damageReport.setDamage(damageReport.getDamage() * 3);
+            this.name += " (Madama Butterfly)";
+            this.power = (int) Math.round(this.power * 1.5);
+            this.subtypes = Collections.singletonList(AttackSubType.KICK);
+        } else if (defender.getClassifications().contains(FighterClassification.DIVINE)) {
+            this.name += " (Gomorrah)";
+            this.power = (int) Math.round(this.power * 1.5);
+            this.subtypes = Collections.singletonList(AttackSubType.BITE);
+        } else {
+            this.name += " (Hekatoncheir)";
         }
 
-        return damageReport;
+        return super.doAttack(defender);
     }
 
     @Override
@@ -49,5 +58,10 @@ public class WickedWeavesButterfly extends RangedXStrike implements ShapeshiftAc
     public void replaceClass() {
         owner.getClassifications().remove(FighterClassification.ANIMAL);
         owner.getClassifications().add(FighterClassification.HUMANOID);
+    }
+
+    @Override
+    public String getBaseName() {
+        return BASE_NAME;
     }
 }

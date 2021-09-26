@@ -18,6 +18,7 @@ public class PantherWithin extends MeleeAttack implements ShapeshiftAction {
     public PantherWithin() {
         super();
         this.name = "Panther Within";
+        this.description = "Changes the user from humanoid to animal until another non-animal action is chosen";
         this.power = 70;
         this.variance = 5;
         this.speed = 2;

@@ -46,8 +46,7 @@ public class Bayonetta {
                 .strategy(new BalancedStrategy()).build()
                 .addAction(new LoveIsBlue()).addAction(new WitchTwist()).addAction(new AfterBurnerKick())
                 .addAction(new PantherWithin())
-                .addAction(new WickedWeavesButterfly()).addAction(new WickedWeavesGomorrah())
-                .addAction(new WickedWeavesHekatoncheir())
+                .addAction(new WickedWeaves())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

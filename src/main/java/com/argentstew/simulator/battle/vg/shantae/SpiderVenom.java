@@ -22,7 +22,7 @@ public class SpiderVenom extends RangedAttack implements ShapeshiftAction {
     public SpiderVenom() {
         super();
         this.name = "Spider Venom";
-        this.description = "Applies poison status for 4 turns on hit";
+        this.description = "Changes the user from humanoid to animal until another non-animal action is chosen; applies poison status for 4 turns on hit";
         this.power = 10;
         this.variance = 2;
         this.speed = 2.5;

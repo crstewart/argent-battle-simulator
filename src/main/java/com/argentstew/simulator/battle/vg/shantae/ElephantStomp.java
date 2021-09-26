@@ -18,6 +18,7 @@ public class ElephantStomp extends MeleeAttack implements ShapeshiftAction {
     public ElephantStomp() {
         super();
         this.name = "Elephant Stomp";
+        this.description = "Changes the user from humanoid to animal until another non-animal action is chosen";
         this.power = 90;
         this.variance = 12;
         this.speed = 3;
