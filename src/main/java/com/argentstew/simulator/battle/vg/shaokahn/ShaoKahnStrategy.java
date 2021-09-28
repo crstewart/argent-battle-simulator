@@ -5,7 +5,6 @@ import com.argentstew.simulator.battle.action.AttackAction;
 import com.argentstew.simulator.battle.action.MoveAction;
 import com.argentstew.simulator.battle.action.attack.XStrike;
 import com.argentstew.simulator.battle.action.move.Advance;
-import com.argentstew.simulator.battle.strategy.BasicStrategy;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
 
 /**
@@ -22,7 +21,7 @@ public class ShaoKahnStrategy extends OffensiveStrategy {
 
     public Double addAction(Action action) {
         if (action instanceof XStrike) {
-            return super.addAction(action, 8.0);
+            return super.addAction(action, 10.0);
         } else if (action instanceof AttackAction || action instanceof Ridicule) {
             return super.addAction(action, 1.5);
         } else if (action instanceof Advance) {

@@ -25,11 +25,6 @@ public class Ridicule extends MoveAction {
     }
 
     @Override
-    public boolean isDoable() {
-        return true;
-    }
-
-    @Override
     public boolean isAllowed() {
         return true;
     }
