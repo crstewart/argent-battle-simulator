@@ -42,6 +42,7 @@ public class DuelBattle implements Battle {
     @Override
     public void start() {
         int turn = 1;
+        applyStartOfGameEffects(fighter1, fighter2);
         while (fighter1.getHp() > 0 && fighter2.getHp() > 0) {
             if (turn >= 100) {
                 fighter1.setHp(0);
@@ -79,6 +80,16 @@ public class DuelBattle implements Battle {
 
             battleLogger.log("Status: " + fighter1 + " vs " + fighter2);
             turn++;
+        }
+    }
+
+    private void applyStartOfGameEffects(Fighter fighter1, Fighter fighter2) {
+        for (Trait trait1 : fighter1.getTraits()) {
+            trait1.applyStartOfGameEffects(fighter1, fighter2);
+        }
+
+        for (Trait trait2 : fighter2.getTraits()) {
+            trait2.applyStartOfGameEffects(fighter2, fighter1);
         }
     }
 

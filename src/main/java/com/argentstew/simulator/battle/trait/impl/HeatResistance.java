@@ -15,4 +15,9 @@ import lombok.Getter;
 public class HeatResistance implements Trait {
 
     private final String name = "Heat Resistance";
+
+    @Override
+    public boolean isImmuneToTorment() {
+        return true;
+    }
 }

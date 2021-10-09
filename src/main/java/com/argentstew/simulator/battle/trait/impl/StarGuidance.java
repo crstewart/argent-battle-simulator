@@ -43,4 +43,9 @@ public class StarGuidance implements Trait {
             blockableDamage = TOTAL_HP;
         }
     }
+
+    @Override
+    public boolean isImmuneToTorment() {
+        return true;
+    }
 }

@@ -15,6 +15,8 @@ public interface Trait {
 
     String getName();
 
+    default void applyStartOfGameEffects(Fighter owner, Fighter opponent) {}
+
     default void setUpTurn() {}
 
     default double applyBonusDamage(Fighter defender, double rawDamage) {
@@ -31,5 +33,9 @@ public interface Trait {
 
     default DamageReport applyArmor(DamageReport report) {
         return report;
+    }
+
+    default boolean isImmuneToTorment() {
+        return false;
     }
 }

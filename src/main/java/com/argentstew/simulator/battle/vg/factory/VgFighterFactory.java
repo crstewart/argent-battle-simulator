@@ -89,6 +89,7 @@ import com.argentstew.simulator.battle.vg.peach.Peach;
 import com.argentstew.simulator.battle.vg.pikachu.Pikachu;
 import com.argentstew.simulator.battle.vg.pit.Pit;
 import com.argentstew.simulator.battle.vg.princeofpersia.PrinceOfPersia;
+import com.argentstew.simulator.battle.vg.pyramidhead.PyramidHead;
 import com.argentstew.simulator.battle.vg.ragna.Ragna;
 import com.argentstew.simulator.battle.vg.raiden.Raiden;
 import com.argentstew.simulator.battle.vg.ratchet.RatchetAndClank;
@@ -167,7 +168,7 @@ public class VgFighterFactory implements FighterFactory {
             Rathalos.NAME, Shadow.NAME, SweetTooth.NAME, Aloy.NAME, Sylvanas.NAME, Deathwing.NAME, Widowmaker.NAME,
             SamFisher.NAME, Agent47.NAME, Teemo.NAME, ShaoKahn.NAME, Dracula.NAME, Ragna.NAME, BubAndBob.NAME,
             Geno.NAME, Illidan.NAME, Raiden.NAME, Amaterasu.NAME, Decidueye.NAME, TerraBranford.NAME, Rosalina.NAME,
-            Mallow.NAME, Bayonetta.NAME, Shantae.NAME, Palutena.NAME, Ellie.NAME, Wander.NAME);
+            Mallow.NAME, Bayonetta.NAME, Shantae.NAME, Palutena.NAME, Ellie.NAME, Wander.NAME, PyramidHead.NAME);
 
     @Override
     public List<String> getAllFighters() {
@@ -445,6 +446,8 @@ public class VgFighterFactory implements FighterFactory {
                 return Ellie.get();
             case Wander.NAME:
                 return Wander.get();
+            case PyramidHead.NAME:
+                return PyramidHead.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }

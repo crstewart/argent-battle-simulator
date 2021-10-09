@@ -117,4 +117,9 @@ public class Protean extends AbstractArmorTrait {
 
         return (int) Math.round(finalDamage);
     }
+
+    @Override
+    public boolean isImmuneToTorment() {
+        return true;
+    }
 }

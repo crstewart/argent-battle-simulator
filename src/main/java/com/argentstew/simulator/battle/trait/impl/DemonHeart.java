@@ -60,6 +60,11 @@ public class DemonHeart extends AbstractArmorTrait {
         }
     }
 
+    @Override
+    public boolean isImmuneToTorment() {
+        return true;
+    }
+
     public void transform(Fighter owner) {
         remainingTurns = 6;
         transformedUser = owner;

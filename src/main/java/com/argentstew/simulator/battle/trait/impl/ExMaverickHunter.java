@@ -27,4 +27,9 @@ public class ExMaverickHunter implements Trait {
 
         return rawDamage;
     }
+
+    @Override
+    public boolean isImmuneToTorment() {
+        return true;
+    }
 }

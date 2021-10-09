@@ -26,4 +26,9 @@ public class StarPower implements Trait {
     public int getPower() {
         return power;
     }
+
+    @Override
+    public boolean isImmuneToTorment() {
+        return true;
+    }
 }

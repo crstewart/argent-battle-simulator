@@ -31,6 +31,11 @@ public class Static implements Trait {
         return null;
     }
 
+    @Override
+    public boolean isImmuneToTorment() {
+        return true;
+    }
+
     public static class StaticElectricity extends AttackAction {
 
         private StaticElectricity() {

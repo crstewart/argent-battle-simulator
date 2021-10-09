@@ -15,4 +15,9 @@ import lombok.Getter;
 public class NaturalAgility implements Trait {
 
     private final String name = "Natural Agility";
+
+    @Override
+    public boolean isImmuneToTorment() {
+        return true;
+    }
 }

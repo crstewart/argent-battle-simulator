@@ -23,4 +23,9 @@ public class MechRider extends AbstractArmorTrait {
                 ? (int) Math.round(report.getDamage() * 1.25)
                 : (int) Math.round(report.getDamage() * 0.8);
     }
+
+    @Override
+    public boolean isImmuneToTorment() {
+        return true;
+    }
 }

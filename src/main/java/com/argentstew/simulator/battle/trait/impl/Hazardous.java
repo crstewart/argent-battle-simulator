@@ -68,4 +68,9 @@ public class Hazardous implements Trait {
             return 0;
         }
     }
+
+    @Override
+    public boolean isImmuneToTorment() {
+        return true;
+    }
 }

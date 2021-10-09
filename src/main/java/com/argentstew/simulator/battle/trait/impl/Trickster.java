@@ -45,6 +45,11 @@ public class Trickster extends AbstractArmorTrait {
         return damage;
     }
 
+    @Override
+    public boolean isImmuneToTorment() {
+        return true;
+    }
+
     private int applyArseneArmor(AttackAction attack, int damage) {
         double finalDamage = damage;
         for (AttackSubType subType : attack.getSubtypes()) {

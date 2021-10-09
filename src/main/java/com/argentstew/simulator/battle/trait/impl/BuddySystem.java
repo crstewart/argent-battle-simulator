@@ -33,4 +33,9 @@ public class BuddySystem extends AbstractArmorTrait {
 
         return report.getDamage();
     }
+
+    @Override
+    public boolean isImmuneToTorment() {
+        return true;
+    }
 }
