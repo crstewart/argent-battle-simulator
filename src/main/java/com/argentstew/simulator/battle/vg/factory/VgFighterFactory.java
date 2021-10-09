@@ -82,6 +82,7 @@ import com.argentstew.simulator.battle.vg.mewtwo.Mewtwo;
 import com.argentstew.simulator.battle.vg.morrigan.Morrigan;
 import com.argentstew.simulator.battle.vg.nathandrake.NathanDrake;
 import com.argentstew.simulator.battle.vg.ness.Ness;
+import com.argentstew.simulator.battle.vg.nightmare.Nightmare;
 import com.argentstew.simulator.battle.vg.niko.NikoBellic;
 import com.argentstew.simulator.battle.vg.pacman.Pacman;
 import com.argentstew.simulator.battle.vg.palutena.Palutena;
@@ -168,7 +169,8 @@ public class VgFighterFactory implements FighterFactory {
             Rathalos.NAME, Shadow.NAME, SweetTooth.NAME, Aloy.NAME, Sylvanas.NAME, Deathwing.NAME, Widowmaker.NAME,
             SamFisher.NAME, Agent47.NAME, Teemo.NAME, ShaoKahn.NAME, Dracula.NAME, Ragna.NAME, BubAndBob.NAME,
             Geno.NAME, Illidan.NAME, Raiden.NAME, Amaterasu.NAME, Decidueye.NAME, TerraBranford.NAME, Rosalina.NAME,
-            Mallow.NAME, Bayonetta.NAME, Shantae.NAME, Palutena.NAME, Ellie.NAME, Wander.NAME, PyramidHead.NAME);
+            Mallow.NAME, Bayonetta.NAME, Shantae.NAME, Palutena.NAME, Ellie.NAME, Wander.NAME, PyramidHead.NAME,
+            Nightmare.NAME);
 
     @Override
     public List<String> getAllFighters() {
@@ -448,6 +450,8 @@ public class VgFighterFactory implements FighterFactory {
                 return Wander.get();
             case PyramidHead.NAME:
                 return PyramidHead.get();
+            case Nightmare.NAME:
+                return Nightmare.get();
             default:
                 throw new IllegalStateException("Fighter not found!");
         }
