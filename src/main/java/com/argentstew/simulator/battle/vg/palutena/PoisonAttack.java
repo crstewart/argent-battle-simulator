@@ -44,7 +44,7 @@ public class PoisonAttack extends RangedAttack {
             defender.setStatus(new StatusEffect(StatusType.POISON, 3));
         }
 
-        return super.doAttack(defender);
+        return damageReport;
     }
 
     @Override

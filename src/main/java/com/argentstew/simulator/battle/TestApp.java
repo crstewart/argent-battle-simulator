@@ -5,7 +5,7 @@ import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.logger.BattleLogger;
 import com.argentstew.simulator.battle.logger.NoopBattleLogger;
 import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
-import com.argentstew.simulator.battle.vg.nightmare.Nightmare;
+import com.argentstew.simulator.battle.vg.tyrael.Tyrael;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Nightmare.NAME;
+    private static final String TEST_FIGHTER = Tyrael.NAME;
 
     public static void main(String[] args) {
 

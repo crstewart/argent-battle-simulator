@@ -44,7 +44,7 @@ public class FreezeAttack extends RangedAttack {
             defender.setStatus(new StatusEffect(StatusType.FROSTBITE));
         }
 
-        return super.doAttack(defender);
+        return damageReport;
     }
 
     @Override

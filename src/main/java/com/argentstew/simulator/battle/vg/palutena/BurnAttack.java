@@ -44,7 +44,7 @@ public class BurnAttack extends RangedAttack {
             defender.setStatus(new StatusEffect(StatusType.BURN, 5));
         }
 
-        return super.doAttack(defender);
+        return damageReport;
     }
 
     @Override

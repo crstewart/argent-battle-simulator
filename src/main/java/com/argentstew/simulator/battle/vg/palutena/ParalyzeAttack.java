@@ -44,7 +44,7 @@ public class ParalyzeAttack extends RangedAttack {
             defender.setStatus(new StatusEffect(StatusType.PARALYSIS));
         }
 
-        return super.doAttack(defender);
+        return damageReport;
     }
 
     @Override
