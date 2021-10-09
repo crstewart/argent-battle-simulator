@@ -24,7 +24,7 @@ public class FreezeAttack extends RangedAttack {
     public FreezeAttack() {
         super();
         this.name = "Freeze Attack";
-        this.description = "Applies frostbite on hit";
+        this.description = "Costs 10 SP to equip; applies frostbite on hit";
         this.power = 70;
         this.variance = 8;
         this.speed = 1;
@@ -36,7 +36,7 @@ public class FreezeAttack extends RangedAttack {
     public DamageReport doAttack(Fighter defender) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         DamageReport damageReport = super.doAttack(defender);
@@ -49,6 +49,6 @@ public class FreezeAttack extends RangedAttack {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 }

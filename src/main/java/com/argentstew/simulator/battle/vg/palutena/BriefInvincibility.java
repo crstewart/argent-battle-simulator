@@ -17,7 +17,7 @@ public class BriefInvincibility extends Guard {
 
     public BriefInvincibility() {
         this.name = "Brief Invicibility";
-        this.description = "Blocks all effects of fast attacks";
+        this.description = "Costs 6 SP to equip; blocks all effects of fast attacks";
         this.initiateMessage = "becomes invincible!";
         this.successMessage = "negates the attack!";
         this.failureMessage = "failed to defend the attack!";
@@ -33,7 +33,7 @@ public class BriefInvincibility extends Guard {
     public int applyDefense(int damage) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         return 0;
@@ -46,6 +46,6 @@ public class BriefInvincibility extends Guard {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 }

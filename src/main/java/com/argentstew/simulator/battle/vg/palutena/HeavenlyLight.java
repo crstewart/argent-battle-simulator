@@ -22,6 +22,7 @@ public class HeavenlyLight extends MagicAttack {
     public HeavenlyLight() {
         super();
         this.name = "Heavenly Light";
+        this.description = "Costs 7 SP to equip";
         this.power = 50;
         this.variance = 6;
         this.speed = 0.5;
@@ -34,7 +35,7 @@ public class HeavenlyLight extends MagicAttack {
     public DamageReport doAttack(Fighter defender) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         return super.doAttack(defender);
@@ -42,6 +43,6 @@ public class HeavenlyLight extends MagicAttack {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 }

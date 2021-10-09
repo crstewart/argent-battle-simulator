@@ -24,7 +24,7 @@ public class BurnAttack extends RangedAttack {
     public BurnAttack() {
         super();
         this.name = "Burn Attack";
-        this.description = "Applies burn for 5 turns on hit";
+        this.description = "Costs 6 SP to equip; applies burn for 5 turns on hit";
         this.power = 30;
         this.variance = 3;
         this.speed = 1;
@@ -36,7 +36,7 @@ public class BurnAttack extends RangedAttack {
     public DamageReport doAttack(Fighter defender) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         DamageReport damageReport = super.doAttack(defender);
@@ -49,6 +49,6 @@ public class BurnAttack extends RangedAttack {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 }

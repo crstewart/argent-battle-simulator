@@ -24,7 +24,7 @@ public class PoisonAttack extends RangedAttack {
     public PoisonAttack() {
         super();
         this.name = "Poison Attack";
-        this.description = "Applies poison for 3 turns on hit";
+        this.description = "Costs 4 SP to equip; applies poison for 3 turns on hit";
         this.power = 15;
         this.variance = 2;
         this.speed = 1;
@@ -36,7 +36,7 @@ public class PoisonAttack extends RangedAttack {
     public DamageReport doAttack(Fighter defender) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         DamageReport damageReport = super.doAttack(defender);
@@ -49,6 +49,6 @@ public class PoisonAttack extends RangedAttack {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 }

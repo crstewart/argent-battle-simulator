@@ -21,7 +21,7 @@ public class ReflectBarrier extends Guard {
 
     public ReflectBarrier() {
         this.name = "Reflect Barrier";
-        this.description = "Reflects ranged attacks and ranged magic";
+        this.description = "Costs 8 SP to equip; reflects ranged attacks and ranged magic";
         this.initiateMessage = "puts up a barrier!";
         this.successMessage = "reflects the attack!";
         this.failureMessage = "failed to defend the attack!";
@@ -45,7 +45,7 @@ public class ReflectBarrier extends Guard {
     public int applyDefense(int damage) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         return 0;
@@ -77,6 +77,6 @@ public class ReflectBarrier extends Guard {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 }

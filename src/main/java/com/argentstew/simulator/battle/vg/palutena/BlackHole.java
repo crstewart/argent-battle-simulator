@@ -23,6 +23,7 @@ public class BlackHole extends MagicAttack {
     public BlackHole() {
         super();
         this.name = "Black Hole";
+        this.description = "Costs 7 SP to equip";
         this.power = 70;
         this.variance = 6;
         this.speed = 2;
@@ -34,7 +35,7 @@ public class BlackHole extends MagicAttack {
     public DamageReport doAttack(Fighter defender) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         return super.doAttack(defender);
@@ -42,6 +43,6 @@ public class BlackHole extends MagicAttack {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 }

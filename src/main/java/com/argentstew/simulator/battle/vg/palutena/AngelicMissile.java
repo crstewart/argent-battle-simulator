@@ -22,6 +22,7 @@ public class AngelicMissile extends MeleeAttack {
     public AngelicMissile() {
         super();
         this.name = "Angelic Missile";
+        this.description = "Costs 8 SP to equip";
         this.power = 60;
         this.variance = 7;
         this.speed = 0.5;
@@ -33,7 +34,7 @@ public class AngelicMissile extends MeleeAttack {
     public DamageReport doAttack(Fighter defender) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         return super.doAttack(defender);
@@ -41,6 +42,6 @@ public class AngelicMissile extends MeleeAttack {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 }

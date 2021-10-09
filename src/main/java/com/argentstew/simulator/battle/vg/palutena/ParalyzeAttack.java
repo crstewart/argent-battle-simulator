@@ -24,7 +24,7 @@ public class ParalyzeAttack extends RangedAttack {
     public ParalyzeAttack() {
         super();
         this.name = "Paralyze Attack";
-        this.description = "Applies paralysis on hit";
+        this.description = "Costs 5 SP to equip; applies paralysis for 3 turns on hit";
         this.power = 40;
         this.variance = 4;
         this.speed = 1;
@@ -36,12 +36,12 @@ public class ParalyzeAttack extends RangedAttack {
     public DamageReport doAttack(Fighter defender) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         DamageReport damageReport = super.doAttack(defender);
         if (!damageReport.isMiss()) {
-            defender.setStatus(new StatusEffect(StatusType.PARALYSIS));
+            defender.setStatus(new StatusEffect(StatusType.PARALYSIS, 3));
         }
 
         return damageReport;
@@ -49,6 +49,6 @@ public class ParalyzeAttack extends RangedAttack {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 }

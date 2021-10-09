@@ -22,7 +22,7 @@ public class WeakpointReticle extends MagicAttack {
     public WeakpointReticle() {
         super();
         this.name = "Weak-point Reticle";
-        this.description = "Has 50% critical hit chance";
+        this.description = "Costs 6 SP to equip; has 50% critical hit chance";
         this.power = 40;
         this.variance = 4;
         this.speed = 1;
@@ -34,7 +34,7 @@ public class WeakpointReticle extends MagicAttack {
     public DamageReport doAttack(Fighter defender) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         return super.doAttack(defender);
@@ -47,6 +47,6 @@ public class WeakpointReticle extends MagicAttack {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 }

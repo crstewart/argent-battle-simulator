@@ -29,10 +29,10 @@ public class Palutena {
         defenses.set(AttackSubType.GRAVITY, 0.95);
         defenses.set(AttackSubType.DARK, 1.4);
 
-        FighterStats stats = FighterStats.builder().strength(4).toughness(3).dexterity(6).aim(6)
+        FighterStats stats = FighterStats.builder().strength(4).toughness(3).dexterity(5.5).aim(6)
                 .agility(6.5).speed(6.5).intellect(7.5).willpower(4).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Teleportation()));
-        return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(0).maxMp(36).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(0).mp(36).maxMp(36).xStrikeMeter(0)
                 .description("An all-around fighter that can only carry a portion of her large moveset into battle.")
                 .entryQuotes(Arrays.asList("Palutena: 'You shall be purified!'",
                         "Palutena: 'Uh... this really doesn't look like much of a party.'"))

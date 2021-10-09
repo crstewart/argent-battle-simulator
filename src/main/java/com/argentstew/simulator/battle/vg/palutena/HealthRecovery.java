@@ -19,7 +19,7 @@ public class HealthRecovery extends Heal {
 
     public HealthRecovery() {
         this.name = "Health Recovery";
-        this.description = "Heals at least 30 damage";
+        this.description = "Costs 6 SP to equip; heals at least 30 damage";
         this.initiateMessage = "prepares a recovery ability!";
         this.successMessage = "uses Health Recovery!";
         this.failureMessage = "failed to recover health!";
@@ -42,7 +42,7 @@ public class HealthRecovery extends Heal {
     public int restoreHealth(int incomingDamage) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         return super.restoreHealth(incomingDamage);
@@ -55,7 +55,7 @@ public class HealthRecovery extends Heal {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 
     @Override

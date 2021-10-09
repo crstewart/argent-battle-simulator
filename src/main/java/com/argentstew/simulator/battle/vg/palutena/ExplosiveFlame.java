@@ -23,6 +23,7 @@ public class ExplosiveFlame extends MagicAttack {
     public ExplosiveFlame() {
         super();
         this.name = "Explosive Flame";
+        this.description = "Costs 9 SP to equip";
         this.power = 65;
         this.variance = 5;
         this.speed = 1;
@@ -34,7 +35,7 @@ public class ExplosiveFlame extends MagicAttack {
     public DamageReport doAttack(Fighter defender) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         return super.doAttack(defender);
@@ -42,6 +43,6 @@ public class ExplosiveFlame extends MagicAttack {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 }

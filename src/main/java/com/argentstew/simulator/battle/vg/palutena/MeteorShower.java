@@ -23,6 +23,7 @@ public class MeteorShower extends RangedAttack {
     public MeteorShower() {
         super();
         this.name = "Meteor Shower";
+        this.description = "Costs 7 SP to equip";
         this.power = 40;
         this.variance = 6;
         this.speed = 1.5;
@@ -34,7 +35,7 @@ public class MeteorShower extends RangedAttack {
     public DamageReport doAttack(Fighter defender) {
         if (!used) {
             used = true;
-            owner.restoreMagic(EQUIP_COST);
+            owner.useMagic(EQUIP_COST);
         }
 
         return super.doAttack(defender);
@@ -42,6 +43,6 @@ public class MeteorShower extends RangedAttack {
 
     @Override
     public boolean isAllowed() {
-        return used || owner.getMp() + EQUIP_COST <= owner.getMaxMp();
+        return used || owner.getMp() >= EQUIP_COST;
     }
 }
