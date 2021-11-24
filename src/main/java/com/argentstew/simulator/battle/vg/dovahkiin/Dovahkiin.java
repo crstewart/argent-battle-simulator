@@ -9,6 +9,8 @@ import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.DragonSlayer;
+import com.argentstew.simulator.battle.trait.impl.Rival;
+import com.argentstew.simulator.battle.vg.alduin.Alduin;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -34,7 +36,7 @@ public class Dovahkiin {
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(6).dexterity(6).aim(6.5)
                 .agility(5).speed(4.5).intellect(5).willpower(6).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new DragonSlayer()));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new DragonSlayer(), new Rival(Alduin.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("An all-around fighter with an attack that pushes foes back and deals additional damage to heavyweights.")
                 .entryQuotes(Arrays.asList("Dragonborn: 'Stand aside, or else.'",
