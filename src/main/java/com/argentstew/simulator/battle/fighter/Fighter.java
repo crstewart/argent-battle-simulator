@@ -15,6 +15,7 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * com.argentstew.simulator.battle.fighter
@@ -125,6 +126,12 @@ public class Fighter {
             if (action instanceof AttackAction && !(action instanceof XStrike) && action.isDoable()) {
                 doableActions.add(action);
             }
+        }
+
+        if (doableActions.isEmpty()) {
+            doableActions = actions.stream()
+                    .filter(action -> action instanceof AttackAction && !(action instanceof XStrike))
+                    .collect(Collectors.toList());
         }
 
         return (AttackAction) strategy.selectAction(doableActions);
