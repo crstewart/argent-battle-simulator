@@ -18,8 +18,8 @@ public class DeathbringerGun extends RangedXStrike {
     public DeathbringerGun() {
         super();
         this.name = "Deathbringer Gun";
-        this.power = 230;
-        this.variance = 12;
+        this.power = 250;
+        this.variance = 15;
         this.speed = 3;
         this.subtypes = Collections.singletonList(AttackSubType.RIFLE);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);

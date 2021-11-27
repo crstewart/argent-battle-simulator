@@ -17,8 +17,8 @@ public class BlastSling extends RangedAttack {
     public BlastSling() {
         super();
         this.name = "Blast Sling";
-        this.power = 45;
-        this.variance = 4;
+        this.power = 50;
+        this.variance = 5;
         this.speed = 4;
         this.subtypes = Collections.singletonList(AttackSubType.EXPLOSIVE);
         this.characteristics = Collections.singletonList(AttackCharacteristic.STEALTH);

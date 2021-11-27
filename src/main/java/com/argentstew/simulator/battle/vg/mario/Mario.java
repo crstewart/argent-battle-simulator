@@ -30,7 +30,7 @@ public class Mario {
         defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(6).dexterity(6.5).aim(6.5)
-                .agility(5).speed(5).intellect(5).willpower(5.5).size(4).weight(4.5).build();
+                .agility(5.5).speed(5).intellect(5).willpower(5.5).size(4).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Bowser.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("An all-around fighter who can win any fight and deals extra damage to Bowser.")

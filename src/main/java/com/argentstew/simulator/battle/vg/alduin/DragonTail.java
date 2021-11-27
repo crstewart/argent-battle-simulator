@@ -19,7 +19,7 @@ public class DragonTail extends MeleeAttack {
         this.name = "Dragon Tail";
         this.description = "Has a 50% increased chance to stun";
         this.power = 40;
-        this.variance = 3;
+        this.variance = 4;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.TAIL);
         this.characteristics = Collections.emptyList();

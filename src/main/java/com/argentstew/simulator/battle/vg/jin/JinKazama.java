@@ -39,7 +39,7 @@ public class JinKazama {
         defenses.set(AttackSubType.MYSTIC, 1.25);
         defenses.set(AttackSubType.GRAVITY, 1.25);
 
-        FighterStats stats = FighterStats.builder().strength(7).toughness(4).dexterity(6.5).aim(4)
+        FighterStats stats = FighterStats.builder().strength(7).toughness(4).dexterity(6).aim(4.5)
                 .agility(5.5).speed(6).intellect(4).willpower(3).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new ComboStrike(), new Teleportation(), new StealthDetection()));
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)

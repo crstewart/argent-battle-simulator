@@ -19,7 +19,7 @@ public class RiotGun extends RangedAttack {
         super();
         this.name = "Riot Gun";
         this.description = "Requires a summoned persona";
-        this.power = 120;
+        this.power = 105;
         this.variance = 10;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.HANDGUN);
