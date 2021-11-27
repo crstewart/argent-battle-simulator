@@ -33,17 +33,17 @@ public class MonsterHunter {
         defenses.set(AttackSubType.SLASH, 0.8);
         defenses.set(AttackSubType.HACK, 0.8);
         defenses.set(AttackSubType.SMASH, 0.8);
-        defenses.set(AttackSubType.BITE, 0.75);
-        defenses.set(AttackSubType.CLAW, 0.75);
-        defenses.set(AttackSubType.TAIL, 0.75);
+        defenses.set(AttackSubType.BITE, 0.7);
+        defenses.set(AttackSubType.CLAW, 0.7);
+        defenses.set(AttackSubType.TAIL, 0.7);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
-        defenses.set(AttackSubType.FIRE, 0.6);
-        defenses.set(AttackSubType.THUNDER, 1.4);
-        defenses.set(AttackSubType.MYSTIC, 1.4);
-        defenses.set(AttackSubType.GRAVITY, 1.05);
+        defenses.set(AttackSubType.FIRE, 0.7);
+        defenses.set(AttackSubType.THUNDER, 1.3);
+        defenses.set(AttackSubType.MYSTIC, 1.3);
+        defenses.set(AttackSubType.GRAVITY, 1.1);
 
-        FighterStats stats = FighterStats.builder().strength(6).toughness(4).dexterity(7.5).aim(7)
-                .agility(4).speed(4).intellect(5).willpower(5.5).size(5).weight(5.5).build();
+        FighterStats stats = FighterStats.builder().strength(6).toughness(4).dexterity(8).aim(7)
+                .agility(4).speed(4).intellect(5).willpower(5.5).size(5).weight(6).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new Rival(Rathalos.NAME, 1.3),
                 new com.argentstew.simulator.battle.trait.impl.MonsterHunter()));
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)

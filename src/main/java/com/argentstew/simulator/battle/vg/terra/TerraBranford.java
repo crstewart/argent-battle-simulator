@@ -30,7 +30,7 @@ public class TerraBranford {
         defenses.set(AttackSubType.GRAVITY, 0.95);
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(2).dexterity(5).aim(7)
-                .agility(4.5).speed(4).intellect(7.5).willpower(5).size(4.5).weight(4.5).build();
+                .agility(5).speed(4).intellect(8).willpower(7.5).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Collections.singletonList(new Rival(Kefka.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A mage with spells that upgrade over the course of a battle.")

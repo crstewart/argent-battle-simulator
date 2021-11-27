@@ -30,7 +30,7 @@ public class Shantae {
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(5).dexterity(7).aim(5)
                 .agility(6).speed(6).intellect(6.5).willpower(6).size(4.5).weight(4.5).build();
         FighterTraits traits = new FighterTraits();
-        return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(30).maxMp(30).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(150).maxHp(150).mp(40).maxMp(40).xStrikeMeter(0)
                 .description("A defensive all-around fighter with a mixed bag of attacks and transformations.")
                 .entryQuotes(Arrays.asList("Shantae: 'I can handle this!'", "Shantae: 'I had a feeling you'd show up!'"))
                 .victoryQuotes(Arrays.asList("Shantae: 'Whew! Life as a half-genie is hard work!'",

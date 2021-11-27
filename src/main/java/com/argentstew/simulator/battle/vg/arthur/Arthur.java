@@ -25,7 +25,7 @@ public class Arthur {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.9);
+        defenses.set(AttackType.MAGIC, 0.8);
         defenses.set(AttackSubType.SLAM, 1.2);
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.3);
         defenses.set(AttackSubType.GRAVITY, 0.95);

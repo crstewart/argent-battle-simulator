@@ -16,7 +16,7 @@ public class SpawnZerglings extends RangedAttack {
     public SpawnZerglings() {
         super();
         this.name = "Spawn Zerglings";
-        this.power = 30;
+        this.power = 40;
         this.variance = 8;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.ASSIST);

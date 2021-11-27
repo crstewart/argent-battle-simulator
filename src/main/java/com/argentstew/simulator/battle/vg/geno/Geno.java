@@ -24,11 +24,11 @@ public class Geno {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
+        defenses.set(AttackType.MAGIC, 1.4);
         defenses.set(AttackSubType.FIRE, 1.2);
         defenses.set(AttackSubType.NATURE, 0.7);
         defenses.set(AttackType.MELEE, 1.2);
         defenses.set(AttackType.RANGED, 1.2);
-        defenses.set(AttackType.MAGIC, 1.4);
         defenses.set(AttackSubType.GRAVITY, 0.85);
 
         FighterStats stats = FighterStats.builder().strength(7).toughness(5).dexterity(6.5).aim(7.5)

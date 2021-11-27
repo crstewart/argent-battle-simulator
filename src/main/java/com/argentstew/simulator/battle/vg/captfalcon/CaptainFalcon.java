@@ -24,6 +24,7 @@ public class CaptainFalcon {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
+        defenses.set(AttackSubType.FIRE, 0.8);
         defenses.set(AttackSubType.GRAVITY, 0.75);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(5).dexterity(6).aim(2)
@@ -31,8 +32,7 @@ public class CaptainFalcon {
         FighterTraits traits = new FighterTraits(Collections.singletonList(new BountyHunter()));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("A speedy all-around fighter with standard defenses whose attacks are all on fire.")
-                .entryQuotes(Arrays.asList("Captain Falcon: 'Show me your moves!'",
-                        "Captain Falcon: 'C'mon!'"))
+                .entryQuotes(Arrays.asList("Captain Falcon: 'Show me your moves!'", "Captain Falcon: 'C'mon!'"))
                 .victoryQuotes(Arrays.asList("Captain Falcon: 'You don't win by being lucky - you win by being bold!'",
                         "Captain Falcon: 'There are two kinds of drivers in this race... me, and the losers!'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))

@@ -25,13 +25,13 @@ public class Rosalina {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 0.75);
+        defenses.set(AttackType.MAGIC, 0.8);
         defenses.set(AttackSubType.GRAVITY, 0.5);
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(7).dexterity(5).aim(5)
                 .agility(5).speed(4).intellect(9).willpower(8).size(5).weight(5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new StarGuidance(), new Teleportation()));
-        return Fighter.builder().name(NAME).hp(180).maxHp(180).xStrikeMeter(0)
+        return Fighter.builder().name(NAME).hp(185).maxHp(185).xStrikeMeter(0)
                 .description("A bulky mage who utilizes her Lumas to protect her in battle.")
                 .entryQuotes(Arrays.asList("Rosalina: 'My name is Rosalina. I watch over and protect the cosmos.'",
                         "Rosalina: 'This is sure to make for a good match.'"))

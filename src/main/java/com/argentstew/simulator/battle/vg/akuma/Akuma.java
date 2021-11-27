@@ -30,9 +30,10 @@ public class Akuma {
         defenses.set(AttackSubType.SLAM, 0.9);
         defenses.set(AttackSubType.LIGHT, 1.2);
         defenses.set(AttackSubType.DARK, 0.8);
+        defenses.set(AttackSubType.GRAVITY, 0.95);
 
-        FighterStats stats = FighterStats.builder().strength(6.5).toughness(3).dexterity(5.5).aim(4)
-                .agility(7).speed(6).intellect(5).willpower(4).size(5).weight(4.5).build();
+        FighterStats stats = FighterStats.builder().strength(7).toughness(3).dexterity(5.5).aim(4)
+                .agility(7).speed(6.5).intellect(5).willpower(4).size(5).weight(4.5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new ComboStrike(), new Teleportation()));
         return Fighter.builder().name(NAME).hp(130).maxHp(130).xStrikeMeter(0)
                 .description("A speedy fighter with a powerful finishing move.")

@@ -31,7 +31,7 @@ public class RocketPunch extends RangedAttack {
         double damage = super.getBaseDamage();
 
         if (GenoBoost.GENO_BOOST_STATUS.equals(owner.getSelfStatus())) {
-            damage += 2;
+            damage += 5;
             owner.setSelfStatus(null);
         }
 

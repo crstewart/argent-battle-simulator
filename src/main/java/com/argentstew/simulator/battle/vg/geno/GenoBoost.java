@@ -18,7 +18,7 @@ public class GenoBoost extends Guard {
 
     public GenoBoost() {
         this.name = "Geno Boost";
-        this.description = "Costs 4 SP; reduces damage by 50% on Star Power 2 but always grants 2 additional damage on the next ranged attack";
+        this.description = "Costs 4 SP; reduces damage by 50% on Star Power 2 but always grants 5 additional damage on the next ranged attack";
         this.initiateMessage = "uses Geno Boost!";
         this.successMessage = "gained an attack boost and resisted the attack!";
         this.failureMessage = "gained an attack boost but could not resist the attack!";

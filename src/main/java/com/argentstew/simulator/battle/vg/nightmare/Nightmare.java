@@ -39,15 +39,15 @@ public class Nightmare {
         defenses.set(AttackSubType.ARMOR_PIERCING, 1.5);
         defenses.set(AttackSubType.GRAVITY, 1.1);
 
-        FighterStats stats = FighterStats.builder().strength(7).toughness(7.5).dexterity(4).aim(4)
-                .agility(3.5).speed(3.5).intellect(7).willpower(4).size(5).weight(6).build();
+        FighterStats stats = FighterStats.builder().strength(7.5).toughness(8).dexterity(4).aim(4)
+                .agility(3.5).speed(3.5).intellect(7).willpower(3).size(5).weight(6).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new StanceChange(), new ComboStrike()));
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
                 .description("An armored brawler who can change stances to adjust speed and damage.")
                 .entryQuotes(Arrays.asList("Nightmare: 'Show me the madness that hides within!'",
                         "Nightmare: 'Offer your soul!'"))
-                .victoryQuotes(Arrays.asList("Nightmare: 'There will be no order as long Soul Edge and those abominations, the malfested, exist.'",
-                        "Nightmare: 'Souls. Give me more souls!'"))
+                .victoryQuotes(Arrays.asList("Nightmare: 'Souls. Give me more souls!'",
+                        "Nightmare: 'There will be no order as long as Soul Edge and those abominations, the malfested, exist.'"))
                 .classifications(Collections.singletonList(FighterClassification.MONSTER))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new OffensiveStrategy()).build()

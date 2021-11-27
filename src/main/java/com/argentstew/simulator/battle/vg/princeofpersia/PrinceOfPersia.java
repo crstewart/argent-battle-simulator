@@ -26,6 +26,7 @@ public class PrinceOfPersia {
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
         defenses.set(AttackType.MAGIC, 0.9);
+        defenses.set(AttackSubType.MYSTIC, 0.7);
         defenses.set(AttackSubType.PLASMA, 1.2);
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(5.5).dexterity(7).aim(7)

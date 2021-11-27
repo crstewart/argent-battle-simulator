@@ -42,7 +42,7 @@ public class Tyrael {
         defenses.set(AttackSubType.DARK, 0.75);
         defenses.set(AttackSubType.GRAVITY, 1.15);
 
-        FighterStats stats = FighterStats.builder().strength(6.5).toughness(9).dexterity(4.5).aim(3)
+        FighterStats stats = FighterStats.builder().strength(6.5).toughness(9).dexterity(5).aim(3)
                 .agility(2).speed(2.5).intellect(7).willpower(8).size(5.5).weight(6.5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new Righteousness(), new Teleportation(), new Rival(Diablo.NAME, 1.3)));
         return Fighter.builder().name(NAME).hp(175).maxHp(175).mp(0).xStrikeMeter(0)

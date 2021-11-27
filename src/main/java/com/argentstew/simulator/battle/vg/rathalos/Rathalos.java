@@ -32,7 +32,7 @@ public class Rathalos {
         defenses.set(AttackSubType.SOUND, 0.6);
         defenses.set(AttackSubType.GRAVITY, 1.6);
 
-        FighterStats stats = FighterStats.builder().strength(9).toughness(2).dexterity(4.5).aim(5)
+        FighterStats stats = FighterStats.builder().strength(9).toughness(2.5).dexterity(4.5).aim(5)
                 .agility(4).speed(3).intellect(1.5).willpower(6).size(9.5).weight(8.5).build();
         FighterTraits traits = new FighterTraits();
         return Fighter.builder().name(NAME).hp(200).maxHp(200).xStrikeMeter(0)

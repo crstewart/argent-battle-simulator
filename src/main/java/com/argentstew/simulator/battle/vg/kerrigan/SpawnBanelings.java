@@ -16,7 +16,7 @@ public class SpawnBanelings extends RangedAttack {
     public SpawnBanelings() {
         super();
         this.name = "Spawn Banelings";
-        this.power = 50;
+        this.power = 60;
         this.variance = 10;
         this.speed = 3;
         this.subtypes = Collections.singletonList(AttackSubType.ASSIST);

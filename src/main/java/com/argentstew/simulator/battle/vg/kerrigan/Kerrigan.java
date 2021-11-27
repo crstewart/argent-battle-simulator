@@ -23,7 +23,7 @@ public class Kerrigan {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.3);
+        defenses.set(AttackType.MAGIC, 1.4);
         defenses.set(AttackSubType.TOXIC, 0.7);
         defenses.set(AttackSubType.NATURE, 0.8);
         defenses.set(AttackSubType.GRAVITY, 0.7);

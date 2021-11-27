@@ -28,7 +28,7 @@ public class Sunrise extends AbstractArmorTrait {
             if (action instanceof AttackAction) {
                 AttackAction attack = (AttackAction) action;
                 if (attack.getSubtypes().contains(AttackSubType.DARK)) {
-                    return (int) Math.ceil(report.getDamage() * 0.85);
+                    return (int) Math.ceil(report.getDamage() * 0.8);
                 }
             }
         }
