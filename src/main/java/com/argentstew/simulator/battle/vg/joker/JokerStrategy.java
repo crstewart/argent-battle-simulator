@@ -21,9 +21,9 @@ public class JokerStrategy extends BalancedStrategy {
         if (action instanceof XStrike) {
             return super.addAction(action, 10.0);
         } else if (action instanceof SummonArsene) {
-            return super.addAction(action, 5.0);
-        } else if (action instanceof SummonVishnu || action instanceof SummonFutsunushi) {
-            return super.addAction(action, 2.5);
+            return super.addAction(action, 15.0);
+        } else if (action instanceof SummonOrpheus || action instanceof SummonIzanagi) {
+            return super.addAction(action, 7.5);
         } else if (action instanceof RebelsGuard) {
             return super.addAction(action, 2.5);
         } else if (action instanceof Gun || action instanceof Knife) {

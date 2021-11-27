@@ -13,11 +13,11 @@ import java.util.Collections;
  *
  * @author Craig
  */
-public class GunSpecial extends RangedAttack {
+public class RiotGun extends RangedAttack {
 
-    public GunSpecial() {
+    public RiotGun() {
         super();
-        this.name = "Gun Special";
+        this.name = "Riot Gun";
         this.description = "Requires a summoned persona";
         this.power = 120;
         this.variance = 10;

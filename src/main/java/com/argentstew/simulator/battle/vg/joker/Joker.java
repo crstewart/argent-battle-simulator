@@ -6,7 +6,7 @@ import com.argentstew.simulator.battle.action.move.Advance;
 import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
-import com.argentstew.simulator.battle.trait.impl.Trickster;
+import com.argentstew.simulator.battle.trait.impl.FoolArcana;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -20,9 +20,10 @@ import java.util.Collections;
 public class Joker {
 
     public static final String NAME = "Joker";
+
     public static final String PERSONA_ARSENE = "Persona: Arsene";
-    public static final String PERSONA_VISHNU = "Persona: Vishnu";
-    public static final String PERSONA_FUTSUNUSHI = "Persona: Futsunushi";
+    public static final String PERSONA_IZANAGI = "Persona: Izanagi";
+    public static final String PERSONA_ORPHEUS = "Persona: Orpheus";
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
@@ -30,7 +31,7 @@ public class Joker {
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(5).dexterity(6.5).aim(8)
                 .agility(6.5).speed(5.5).intellect(6).willpower(5.5).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new Trickster()));
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new FoolArcana()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).mp(0).maxMp(100).xStrikeMeter(0)
                 .description("A speedy fighter who can summon personas to improve his power.")
                 .entryQuotes(Arrays.asList("Joker: 'Leave it to me!'", "Joker: 'You're done!'"))
@@ -39,10 +40,11 @@ public class Joker {
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new JokerStrategy()).build()
                 .addAction(new Gun()).addAction(new Knife()).addAction(new RebelsGuard())
-                .addAction(new SummonArsene()).addAction(new SummonVishnu()).addAction(new SummonFutsunushi())
-                .addAction(new GunSpecial()).addAction(new Eigaon()).addAction(new Cleave())
-                .addAction(new DreamNeedle()).addAction(new Megidolaon()).addAction(new VacuumWave())
-                .addAction(new MyriadSlashes()).addAction(new BraveBlade()).addAction(new Regenerate())
+                .addAction(new SummonArsene()).addAction(new SummonIzanagi()).addAction(new SummonOrpheus())
+                .addAction(new RiotGun()).addAction(new Eiha()).addAction(new Cleave())
+                .addAction(new DreamNeedle()).addAction(new Zionga()).addAction(new CrossSlash())
+                .addAction(new Maragion())
+                .addAction(new NullPhys()).addAction(new Cadenza()).addAction(new Matarunda())
                 .addAction(new AllOutAttack())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }

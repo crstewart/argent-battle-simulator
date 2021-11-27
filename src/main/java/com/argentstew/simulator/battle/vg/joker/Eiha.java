@@ -11,11 +11,11 @@ import java.util.Collections;
  *
  * @author Craig
  */
-public class Eigaon extends MagicAttack {
+public class Eiha extends MagicAttack {
 
-    public Eigaon() {
+    public Eiha() {
         super();
-        this.name = "Eigaon";
+        this.name = "Eiha";
         this.description = "Requires Arsene";
         this.power = 60;
         this.variance = 12;

@@ -1,7 +1,7 @@
 package com.argentstew.simulator.battle.vg.joker;
 
 import com.argentstew.simulator.battle.action.MoveAction;
-import com.argentstew.simulator.battle.trait.impl.Trickster;
+import com.argentstew.simulator.battle.trait.impl.FoolArcana;
 import lombok.EqualsAndHashCode;
 import org.apache.commons.lang3.StringUtils;
 
@@ -34,7 +34,7 @@ public class SummonArsene extends MoveAction {
     @Override
     public void move() {
         owner.setMp(0);
-        Trickster trait = this.owner.getTraits().getTrait(Trickster.class);
+        FoolArcana trait = this.owner.getTraits().getTrait(FoolArcana.class);
         trait.setState(Joker.PERSONA_ARSENE);
         owner.setSelfStatus(Joker.PERSONA_ARSENE);
     }

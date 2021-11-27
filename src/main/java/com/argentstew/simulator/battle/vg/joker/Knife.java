@@ -20,8 +20,8 @@ public class Knife extends MeleeAttack {
         super();
         this.name = "Knife";
         this.description = "Gains 40 SP";
-        this.power = 45;
-        this.variance = 4;
+        this.power = 40;
+        this.variance = 3;
         this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
         this.characteristics = Collections.emptyList();

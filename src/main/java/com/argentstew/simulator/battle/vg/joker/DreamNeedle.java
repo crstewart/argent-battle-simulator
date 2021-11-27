@@ -20,10 +20,10 @@ public class DreamNeedle extends RangedAttack {
     public DreamNeedle() {
         super();
         this.name = "Dream Needle";
-        this.description = "Requires Arsene, applies sleep status on hit";
-        this.power = 10;
-        this.variance = 2;
-        this.speed = 0.5;
+        this.description = "Requires Arsene, has 50% chance to apply sleep status for 3 turns on hit";
+        this.power = 50;
+        this.variance = 5;
+        this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.PIERCE);
         this.characteristics = Collections.emptyList();
     }
@@ -32,7 +32,10 @@ public class DreamNeedle extends RangedAttack {
     public DamageReport doAttack(Fighter defender) {
         DamageReport damageReport = super.doAttack(defender);
         if (!damageReport.isMiss() && damageReport.getDamage() > 0) {
-            defender.setStatus(new StatusEffect(StatusType.SLEEP, 3));
+            double rng = Math.random();
+            if (rng >= 0.5) {
+                defender.setStatus(new StatusEffect(StatusType.SLEEP, 3));
+            }
         }
 
         return damageReport;

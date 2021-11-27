@@ -11,21 +11,21 @@ import java.util.Collections;
  *
  * @author Craig
  */
-public class MyriadSlashes extends MeleeAttack {
+public class CrossSlash extends MeleeAttack {
 
-    public MyriadSlashes() {
+    public CrossSlash() {
         super();
-        this.name = "Myriad Slashes";
-        this.description = "Requires Futsunushi";
-        this.power = 60;
-        this.variance = 15;
-        this.speed = 1;
+        this.name = "Cross Slash";
+        this.description = "Requires Izanagi";
+        this.power = 90;
+        this.variance = 8;
+        this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
         this.characteristics = Collections.emptyList();
     }
 
     @Override
     public boolean isAllowed() {
-        return Joker.PERSONA_FUTSUNUSHI.equals(owner.getSelfStatus());
+        return Joker.PERSONA_IZANAGI.equals(owner.getSelfStatus());
     }
 }

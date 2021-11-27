@@ -18,7 +18,7 @@ public class RebelsGuard extends Guard {
         this.initiateMessage = "uses Rebel's Guard!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to defend the attack!";
-        this.speed = 1;
+        this.speed = 0.5;
     }
 
     @Override

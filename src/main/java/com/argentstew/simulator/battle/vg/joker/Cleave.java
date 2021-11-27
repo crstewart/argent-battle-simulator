@@ -2,6 +2,7 @@ package com.argentstew.simulator.battle.vg.joker;
 
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
+import com.argentstew.simulator.battle.fighter.Fighter;
 
 import java.util.Collections;
 
@@ -16,12 +17,22 @@ public class Cleave extends MeleeAttack {
     public Cleave() {
         super();
         this.name = "Cleave";
-        this.description = "Requires Arsene";
-        this.power = 95;
+        this.description = "Requires Arsene; has 20% additional critical hit rate against stealthed foes";
+        this.power = 90;
         this.variance = 9;
-        this.speed = 1;
+        this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.SLASH);
         this.characteristics = Collections.emptyList();
+    }
+
+    @Override
+    public double getCritChance(Fighter defender) {
+        double critChance = super.getCritChance(defender);
+        if (defender.isStealth()) {
+            critChance += 0.2;
+        }
+
+        return critChance;
     }
 
     @Override

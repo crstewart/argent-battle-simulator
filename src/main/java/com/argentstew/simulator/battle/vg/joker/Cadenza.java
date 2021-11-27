@@ -11,12 +11,12 @@ import com.argentstew.simulator.battle.fighter.FighterStats;
  *
  * @author Craig
  */
-public class Regenerate extends Heal {
+public class Cadenza extends Heal {
 
-    public Regenerate() {
-        this.name = "Regenerate";
-        this.description = "Requires Futsunushi, heals 30-36 damage";
-        this.initiateMessage = "uses Regenerate 3!";
+    public Cadenza() {
+        this.name = "Cadenza";
+        this.description = "Requires Orpheus, heals 40-45 damage";
+        this.initiateMessage = "calls forth Orpheus to cast Cadenza!";
         this.successMessage = "is healed!";
         this.failureMessage = "fails to heal!";
         this.speed = 2;
@@ -46,13 +46,13 @@ public class Regenerate extends Heal {
 
     @Override
     public boolean isAllowed() {
-        return (owner.getHp() < owner.getMaxHp() && Joker.PERSONA_FUTSUNUSHI.equals(owner.getSelfStatus()));
+        return (owner.getHp() < owner.getMaxHp() && Joker.PERSONA_ORPHEUS.equals(owner.getSelfStatus()));
     }
 
     @Override
     protected int calculateAmountHealed(int incomingDamage) {
-        double baseHeal = 30;
-        double variance = Math.random() * 6;
+        double baseHeal = 40;
+        double variance = Math.random() * 5;
         return (int) Math.round(baseHeal + variance);
     }
 }

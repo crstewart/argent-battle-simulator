@@ -1,7 +1,7 @@
 package com.argentstew.simulator.battle.vg.joker;
 
 import com.argentstew.simulator.battle.action.MoveAction;
-import com.argentstew.simulator.battle.trait.impl.Trickster;
+import com.argentstew.simulator.battle.trait.impl.FoolArcana;
 import lombok.EqualsAndHashCode;
 import org.apache.commons.lang3.StringUtils;
 
@@ -12,12 +12,12 @@ import org.apache.commons.lang3.StringUtils;
  * @author Craig
  */
 @EqualsAndHashCode(callSuper = true)
-public class SummonFutsunushi extends MoveAction {
+public class SummonIzanagi extends MoveAction {
 
-    public SummonFutsunushi() {
-        this.setName("Summon Futsunushi");
+    public SummonIzanagi() {
+        this.setName("Summon Izanagi");
         this.setDescription("Uses all SP");
-        this.setMessage("summons Futsunushi!");
+        this.setMessage("summons Izanagi Picaro!");
         this.setDirection(1);
     }
 
@@ -34,8 +34,8 @@ public class SummonFutsunushi extends MoveAction {
     @Override
     public void move() {
         owner.setMp(0);
-        Trickster trait = this.owner.getTraits().getTrait(Trickster.class);
-        trait.setState(Joker.PERSONA_FUTSUNUSHI);
-        owner.setSelfStatus(Joker.PERSONA_FUTSUNUSHI);
+        FoolArcana trait = this.owner.getTraits().getTrait(FoolArcana.class);
+        trait.setState(Joker.PERSONA_IZANAGI);
+        owner.setSelfStatus(Joker.PERSONA_IZANAGI);
     }
 }
