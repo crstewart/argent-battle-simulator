@@ -40,6 +40,18 @@ li.neutral::before {
     margin-right: 8px;
 }
 
+li table {
+    border: 1px black solid;
+    margin: 0 auto;
+    text-align: center;
+}
+
+li table tbody tr td {
+    border: 1px black solid;
+    margin: 0 auto;
+    text-align: center;
+}
+
 @media screen and (max-width: 640px) {
     .border {
         width: 90%;
