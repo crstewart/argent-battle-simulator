@@ -1,6 +1,9 @@
 package com.argentstew.simulator.battle.web.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * com.argentstew.simulator.battle.web.model
@@ -9,6 +12,9 @@ import lombok.Data;
  * @author argen
  */
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class StandingsDTO {
 
     private String team;

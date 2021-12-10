@@ -6,7 +6,7 @@ package com.argentstew.simulator.battle.web.exception;
  *
  * @author argen
  */
-public class LeagueException extends Exception {
+public class LeagueException extends IllegalStateException {
 
     public LeagueException(String message) {
         super(message);

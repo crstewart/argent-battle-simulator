@@ -3,7 +3,8 @@ package com.argentstew.simulator.battle.web.controller;
 import com.argentstew.simulator.battle.web.exception.LeagueException;
 import com.argentstew.simulator.battle.web.model.ScheduleDTO;
 import com.argentstew.simulator.battle.web.model.StandingsDTO;
-import com.argentstew.simulator.battle.web.service.SeasonOneLeagueService;
+import com.argentstew.simulator.battle.web.service.LeagueService;
+import com.argentstew.simulator.battle.web.service.TeamService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -28,17 +30,22 @@ public class SeasonOneLeagueController {
 
     private static final Logger LOG = LogManager.getLogger(SeasonOneLeagueController.class);
 
-    private final SeasonOneLeagueService leagueService;
+    private static final String SEASON_ONE_ID = "e9359546-f8a7-410e-bddb-ed884600aa47";
+
+    private final LeagueService leagueService;
+    private final TeamService teamService;
 
     @Autowired
-    public SeasonOneLeagueController(SeasonOneLeagueService leagueService) {
+    public SeasonOneLeagueController(LeagueService leagueService,
+                                     TeamService teamService) {
         this.leagueService = leagueService;
+        this.teamService = teamService;
     }
 
     @GetMapping(path = "/teams", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<String>> getTeams() {
         try {
-            List<String> teams = leagueService.getTeams();
+            List<String> teams = leagueService.getTeamsBySeason(SEASON_ONE_ID);
             LOG.info("Retrieved list of teams");
             return new ResponseEntity<>(teams, HttpStatus.OK);
         } catch (Exception e) {
@@ -50,7 +57,7 @@ public class SeasonOneLeagueController {
     @GetMapping(path = "/standings", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<StandingsDTO>> getStandings() {
         try {
-            List<StandingsDTO> standings = leagueService.getStandings();
+            List<StandingsDTO> standings = leagueService.getStandings(SEASON_ONE_ID);
             LOG.info("Retrieved standings");
             return new ResponseEntity<>(standings, HttpStatus.OK);
         } catch (Exception e) {
@@ -60,10 +67,11 @@ public class SeasonOneLeagueController {
     }
 
     @GetMapping(path = "/rosters", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<String>> getRosterByTeam(@RequestParam String team) {
+    public ResponseEntity<List<String>> getRosterByTeam(@RequestParam("team") String teamName) {
         try {
-            List<String> roster = leagueService.getRosterByTeam(team);
-            LOG.info("Retrieved roster of {}", team);
+            UUID teamId = teamService.getTeamId(SEASON_ONE_ID, teamName);
+            List<String> roster = leagueService.getRosterByTeam(teamId.toString());
+            LOG.info("Retrieved roster of {}", teamName);
             return new ResponseEntity<>(roster, HttpStatus.OK);
         } catch (LeagueException e) {
             LOG.error("An error occurred fetching roster for the given team name", e);
@@ -77,7 +85,7 @@ public class SeasonOneLeagueController {
     @GetMapping(path = "/weeks", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Integer>> getWeeks() {
         try {
-            List<Integer> weeks = leagueService.getWeeks();
+            List<Integer> weeks = leagueService.getWeeks(SEASON_ONE_ID);
             LOG.info("Retrieved weeks of the season");
             return new ResponseEntity<>(weeks, HttpStatus.OK);
         } catch (Exception e) {
@@ -89,18 +97,18 @@ public class SeasonOneLeagueController {
     @GetMapping(path = "/schedule", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<ScheduleDTO>> getSchedule(@RequestParam(required = false) Integer week) {
         try {
-            List<Integer> weeks = leagueService.getWeeks();
+            List<Integer> weeks = leagueService.getWeeks(SEASON_ONE_ID);
             int minWeek = weeks.get(0);
             int maxWeek = weeks.get(weeks.size() - 1);
             if (week == null) {
-                List<ScheduleDTO> schedule = leagueService.getFullSchedule();
+                List<ScheduleDTO> schedule = leagueService.getFullScheduleForSeason(SEASON_ONE_ID);
                 LOG.info("Retrieved full schedule");
                 return new ResponseEntity<>(schedule, HttpStatus.OK);
             } else if (week < minWeek || week > maxWeek) {
                 LOG.error("Bad week given");
                 return new ResponseEntity<>(Collections.emptyList(), HttpStatus.BAD_REQUEST);
             } else {
-                List<ScheduleDTO> weeklySchedule = leagueService.getWeeklySchedule(week);
+                List<ScheduleDTO> weeklySchedule = leagueService.getWeeklyScheduleForSeason(SEASON_ONE_ID, week);
                 LOG.info("Retrieved schedule for week {}", week);
                 return new ResponseEntity<>(weeklySchedule, HttpStatus.OK);
             }
@@ -114,18 +122,19 @@ public class SeasonOneLeagueController {
     public ResponseEntity<List<ScheduleDTO>> getScheduleForTeam(@PathVariable("teamName") String teamName,
                                                                 @RequestParam(required = false) Integer week) {
         try {
-            List<Integer> weeks = leagueService.getWeeks();
+            UUID teamId = teamService.getTeamId(SEASON_ONE_ID, teamName);
+            List<Integer> weeks = leagueService.getWeeks(SEASON_ONE_ID);
             int minWeek = weeks.get(0);
             int maxWeek = weeks.get(weeks.size() - 1);
             if (week == null) {
-                List<ScheduleDTO> schedule = leagueService.getFullScheduleForTeam(teamName);
+                List<ScheduleDTO> schedule = leagueService.getFullScheduleForTeam(teamId.toString());
                 LOG.info("Retrieved schedule for {}", teamName);
                 return new ResponseEntity<>(schedule, HttpStatus.OK);
             } else if (week < minWeek || week > maxWeek) {
                 LOG.info("Bad week given");
                 return new ResponseEntity<>(Collections.emptyList(), HttpStatus.BAD_REQUEST);
             } else {
-                List<ScheduleDTO> weeklySchedule = leagueService.getWeeklyScheduleForTeam(week, teamName);
+                List<ScheduleDTO> weeklySchedule = leagueService.getWeeklyScheduleForTeam(teamId.toString(), week);
                 LOG.info("Retrieved schedule for {}, week {}", teamName, week);
                 return new ResponseEntity<>(weeklySchedule, HttpStatus.OK);
             }

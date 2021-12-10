@@ -4,8 +4,8 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "build": "ng build --outputPath=../src/main/webapp",
-        "prod": "ng build --prod --outputPath=../src/main/webapp",
+        "build": "ng build --outputPath=../src/main/resources/static",
+        "prod": "ng build --prod --outputPath=../src/main/resources/static",
         "minify": "uglifyjs --compress --mangle --output ../src/main/webapp/app.min.js -- ../src/main/webapp/*.js",
         "test": "ng test",
         "lint": "ng lint",

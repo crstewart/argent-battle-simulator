@@ -1,5 +1,5 @@
-FROM alpine:3.11.5
-MAINTAINER argentstew@gmail.com
+FROM alpine:3.14.2
+LABEL author="argentstew@gmail.com"
 
 EXPOSE 80
 

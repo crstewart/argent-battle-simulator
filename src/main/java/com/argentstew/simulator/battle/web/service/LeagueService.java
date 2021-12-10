@@ -1,6 +1,5 @@
 package com.argentstew.simulator.battle.web.service;
 
-import com.argentstew.simulator.battle.web.exception.LeagueException;
 import com.argentstew.simulator.battle.web.model.ScheduleDTO;
 import com.argentstew.simulator.battle.web.model.StandingsDTO;
 
@@ -14,19 +13,21 @@ import java.util.List;
  */
 public interface LeagueService {
 
-    List<String> getTeams();
+    List<String> getTeamsBySeason(String seasonId);
 
-    List<StandingsDTO> getStandings();
+    List<String> getTeamsByDivision(String divisionId);
 
-    List<String> getRosterByTeam(String teamName) throws LeagueException;
+    List<StandingsDTO> getStandings(String seasonId);
 
-    List<Integer> getWeeks();
+    List<String> getRosterByTeam(String teamId);
 
-    List<ScheduleDTO> getFullSchedule();
+    List<Integer> getWeeks(String seasonId);
 
-    List<ScheduleDTO> getFullScheduleForTeam(String teamName) throws LeagueException;
+    List<ScheduleDTO> getFullScheduleForSeason(String seasonId);
 
-    List<ScheduleDTO> getWeeklySchedule(int week) throws LeagueException;
+    List<ScheduleDTO> getFullScheduleForTeam(String teamName);
 
-    List<ScheduleDTO> getWeeklyScheduleForTeam(int week, String teamName) throws LeagueException;
+    List<ScheduleDTO> getWeeklyScheduleForSeason(String seasonId, int weekNumber);
+
+    List<ScheduleDTO> getWeeklyScheduleForTeam(String teamId, int weekNumber);
 }
