@@ -21,9 +21,9 @@ public class GenoBeam extends MagicAttack {
     public GenoBeam() {
         super();
         this.name = "Geno Beam";
-        this.description = "Costs 3 SP; 33% faster and 25% weaker at Star Power 1; 100% slower and 50% stronger at Star Power 3";
-        this.power = 80;
-        this.variance = 6;
+        this.description = "Costs 3 SP; faster but weaker at Star Power 1; slower but stronger at Star Power 3";
+        this.power = 90;
+        this.variance = 9;
         this.speed = 1.5;
         this.subtypes = Collections.singletonList(AttackSubType.PLASMA);
         this.characteristics = Collections.emptyList();
@@ -42,9 +42,9 @@ public class GenoBeam extends MagicAttack {
         if (starPower <= 1) {
             this.power = 60;
         } else if (starPower >= 3) {
-            this.power = 120;
+            this.power = 150;
         } else {
-            this.power = 80;
+            this.power = 90;
         }
 
         return super.doAttack(defender);
@@ -54,7 +54,7 @@ public class GenoBeam extends MagicAttack {
     public double calculateSpeed() {
         int starPower = getStarPower();
         if (starPower <= 1) {
-            this.speed = 1;
+            this.speed = 0.5;
         } else if (starPower >= 3) {
             this.speed = 3;
         } else {

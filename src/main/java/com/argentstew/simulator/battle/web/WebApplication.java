@@ -4,7 +4,6 @@ import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -38,7 +37,7 @@ public class WebApplication extends SpringBootServletInitializer {
         config.setJdbcUrl(System.getenv("LEAGUE_DATABASE_URL"));
         config.setUsername(System.getenv("LEAGUE_DATABASE_USER"));
         config.setPassword(System.getenv("LEAGUE_DATABASE_PASS"));
-        config.setSchema("league");
+        config.setSchema("public");
         config.addDataSourceProperty( "cachePrepStmts", Boolean.TRUE.toString());
         config.addDataSourceProperty( "prepStmtCacheSize", "250");
         config.addDataSourceProperty( "prepStmtCacheSqlLimit", "2048");

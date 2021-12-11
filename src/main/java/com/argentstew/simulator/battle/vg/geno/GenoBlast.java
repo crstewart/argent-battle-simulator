@@ -23,9 +23,9 @@ public class GenoBlast extends MagicAttack {
     public GenoBlast() {
         super();
         this.name = "Geno Blast";
-        this.description = "Costs 12 SP; 50% faster and 33% weaker at Star Power 1; 100% slower and 50% stronger at Star Power 3";
-        this.power = 90;
-        this.variance = 9;
+        this.description = "Costs 12 SP; faster but weaker at Star Power 1; slower but stronger at Star Power 3";
+        this.power = 100;
+        this.variance = 10;
         this.speed = 3;
         this.subtypes = Arrays.asList(AttackSubType.LIGHT, AttackSubType.EXPLOSIVE);
         this.characteristics = Collections.singletonList(AttackCharacteristic.UNDODGEABLE);
@@ -42,11 +42,11 @@ public class GenoBlast extends MagicAttack {
 
         int starPower = getStarPower();
         if (starPower <= 1) {
-            this.power = 60;
+            this.power = 75;
         } else if (starPower >= 3) {
-            this.power = 135;
+            this.power = 175;
         } else {
-            this.power = 90;
+            this.power = 100;
         }
 
         return super.doAttack(defender);
@@ -58,7 +58,7 @@ public class GenoBlast extends MagicAttack {
         if (starPower <= 1) {
             this.speed = 1.5;
         } else if (starPower >= 3) {
-            this.speed = 6;
+            this.speed = 5;
         } else {
             this.speed = 3;
         }

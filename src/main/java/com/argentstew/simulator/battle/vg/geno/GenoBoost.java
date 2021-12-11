@@ -12,23 +12,21 @@ import com.argentstew.simulator.battle.trait.impl.StarPower;
  */
 public class GenoBoost extends Guard {
 
-    public static final String GENO_BOOST_STATUS = "Geno Boost";
-
     public static final int MP_COST = 4;
 
     public GenoBoost() {
         this.name = "Geno Boost";
-        this.description = "Costs 4 SP; reduces damage by 50% on Star Power 2 but always grants 5 additional damage on the next ranged attack";
+        this.description = "Costs 4 SP; reduces damage by 50% on Star Power 2 but always increases strength by 1 to a maximum of 10";
         this.initiateMessage = "uses Geno Boost!";
-        this.successMessage = "gained an attack boost and resisted the attack!";
-        this.failureMessage = "gained an attack boost but could not resist the attack!";
+        this.successMessage = "increased strength and resisted the attack!";
+        this.failureMessage = "increased strength but could not resist the attack!";
         this.speed = 1;
     }
 
     @Override
     protected boolean doesGuardAttack(AttackAction attack) {
         this.owner.useMagic(MP_COST);
-        this.owner.setSelfStatus(GENO_BOOST_STATUS);
+        this.owner.getStats().setStrength(this.owner.getStats().getStrength() + 1);
         return getStarPower() == 2;
     }
 

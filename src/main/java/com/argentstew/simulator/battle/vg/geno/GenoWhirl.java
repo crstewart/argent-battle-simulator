@@ -22,8 +22,8 @@ public class GenoWhirl extends MagicAttack {
         super();
         this.name = "Geno Whirl";
         this.description = "Costs 8 SP; Can only hit critically on Star Power 2, but does so for 5x damage";
-        this.power = 30;
-        this.variance = 3;
+        this.power = 40;
+        this.variance = 4;
         this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.LIGHT);
         this.characteristics = Collections.emptyList();

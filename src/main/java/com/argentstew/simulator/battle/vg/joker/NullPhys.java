@@ -23,7 +23,7 @@ public class NullPhys extends Guard {
 
     public NullPhys() {
         this.name = "Null Phys";
-        this.description = "Blocks all physical attacks";
+        this.description = "Requires Izanagi; blocks all physical attacks";
         this.initiateMessage = "calls forth Izanagi to prepare a defense!";
         this.successMessage = "successfully defended the attack!";
         this.failureMessage = "failed to defend the attack!";

@@ -18,7 +18,7 @@ public class GenoFlash extends MagicXStrike {
     public GenoFlash() {
         super();
         this.name = "Geno Flash";
-        this.power = 320;
+        this.power = 330;
         this.variance = 15;
         this.speed = 6;
         this.subtypes = Collections.singletonList(AttackSubType.LIGHT);

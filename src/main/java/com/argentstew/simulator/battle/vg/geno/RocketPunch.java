@@ -19,9 +19,9 @@ public class RocketPunch extends RangedAttack {
         super();
         this.name = "Rocket Punch";
         this.description = "Does 50% bonus damage and cannot miss on Star Power 2";
-        this.power = 35;
+        this.power = 45;
         this.variance = 5;
-        this.speed = 1.5;
+        this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.PUNCH);
         this.characteristics = Collections.emptyList();
     }
@@ -29,11 +29,6 @@ public class RocketPunch extends RangedAttack {
     @Override
     protected double getBaseDamage() {
         double damage = super.getBaseDamage();
-
-        if (GenoBoost.GENO_BOOST_STATUS.equals(owner.getSelfStatus())) {
-            damage += 5;
-            owner.setSelfStatus(null);
-        }
 
         if (getStarPower() == 2) {
             damage *= 1.5;

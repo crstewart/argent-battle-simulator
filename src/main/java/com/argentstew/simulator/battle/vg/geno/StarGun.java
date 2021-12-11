@@ -20,9 +20,9 @@ public class StarGun extends RangedAttack {
         super();
         this.name = "Star Gun";
         this.description = "Does 50% bonus damage and cannot miss on Star Power 2";
-        this.power = 45;
+        this.power = 50;
         this.variance = 5;
-        this.speed = 3;
+        this.speed = 2.5;
         this.subtypes = Collections.singletonList(AttackSubType.LIGHT);
         this.characteristics = Collections.singletonList(AttackCharacteristic.BULLET_SPEED);
     }
@@ -30,11 +30,6 @@ public class StarGun extends RangedAttack {
     @Override
     protected double getBaseDamage() {
         double damage = super.getBaseDamage();
-
-        if (GenoBoost.GENO_BOOST_STATUS.equals(owner.getSelfStatus())) {
-            damage += 5;
-            owner.setSelfStatus(null);
-        }
 
         if (getStarPower() == 2) {
             damage *= 1.5;

@@ -8,6 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.trait.impl.StarPower;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -24,17 +25,20 @@ public class Geno {
 
     public static Fighter get() {
         FighterDefenses defenses = new FighterDefenses();
-        defenses.set(AttackType.MAGIC, 1.4);
+        defenses.set(AttackType.MELEE, 1.1);
+        defenses.set(AttackType.RANGED, 1.1);
+        defenses.set(AttackType.MAGIC, 1.2);
         defenses.set(AttackSubType.FIRE, 1.2);
         defenses.set(AttackSubType.NATURE, 0.7);
-        defenses.set(AttackType.MELEE, 1.2);
-        defenses.set(AttackType.RANGED, 1.2);
-        defenses.set(AttackSubType.GRAVITY, 0.85);
+        defenses.set(AttackSubType.LIGHT, 0.7);
+        defenses.set(AttackSubType.MYSTIC, 0.8);
+        defenses.set(AttackSubType.TOXIC, 0.6);
+        defenses.set(AttackSubType.GRAVITY, 0.6);
 
-        FighterStats stats = FighterStats.builder().strength(7).toughness(5).dexterity(6.5).aim(7.5)
-                .agility(6).speed(6.5).intellect(6).willpower(8).size(4).weight(3.5).build();
-        FighterTraits traits = new FighterTraits(Collections.emptyList());
-        return Fighter.builder().name(NAME).hp(130).maxHp(130).mp(50).maxMp(50).xStrikeMeter(0)
+        FighterStats stats = FighterStats.builder().strength(7).toughness(3).dexterity(8).aim(8.5)
+                .agility(6.5).speed(6).intellect(7).willpower(8).size(4).weight(3.5).build();
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new StarPower()));
+        return Fighter.builder().name(NAME).hp(130).maxHp(130).mp(90).maxMp(90).xStrikeMeter(0)
                 .description("A weaponmaster with weak defenses whose attacks vary in speed and power.")
                 .entryQuotes(Arrays.asList("Geno: 'I serve... a higher authority...'",
                         "Geno: 'Come on! Let's get this show on the road.'"))
