@@ -11,7 +11,7 @@ import {BattleLogsComponent} from "./battle-logs/battle-logs.component";
 import {SeasonOneComponent} from "./season-one/season-one.component";
 
 const routes: Routes = [
-    {path: '', component: SimulatorComponent},
+    {path: 'home', component: SimulatorComponent},
     {path: 'how-it-works', component: SimulatorDetailsComponent},
     {path: 'details', component: CharacterDetailsComponent},
     {path: 'patch-notes', component: PatchNotesComponent},
@@ -20,6 +20,7 @@ const routes: Routes = [
     {path: 'schedule', component: ScheduleComponent},
     {path: 'battle-logs', component: BattleLogsComponent},
     {path: 'season-one', component: SeasonOneComponent},
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 
 @NgModule({

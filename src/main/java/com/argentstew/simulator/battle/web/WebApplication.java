@@ -37,7 +37,7 @@ public class WebApplication extends SpringBootServletInitializer {
         config.setJdbcUrl(System.getenv("LEAGUE_DATABASE_URL"));
         config.setUsername(System.getenv("LEAGUE_DATABASE_USER"));
         config.setPassword(System.getenv("LEAGUE_DATABASE_PASS"));
-        config.setSchema("public");
+        config.setSchema("main");
         config.addDataSourceProperty( "cachePrepStmts", Boolean.TRUE.toString());
         config.addDataSourceProperty( "prepStmtCacheSize", "250");
         config.addDataSourceProperty( "prepStmtCacheSqlLimit", "2048");
