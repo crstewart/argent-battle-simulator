@@ -37,10 +37,10 @@ public class WebApplication extends SpringBootServletInitializer {
         config.setJdbcUrl(System.getenv("LEAGUE_DATABASE_URL"));
         config.setUsername(System.getenv("LEAGUE_DATABASE_USER"));
         config.setPassword(System.getenv("LEAGUE_DATABASE_PASS"));
-        config.setSchema("main");
-        config.addDataSourceProperty( "cachePrepStmts", Boolean.TRUE.toString());
-        config.addDataSourceProperty( "prepStmtCacheSize", "250");
-        config.addDataSourceProperty( "prepStmtCacheSqlLimit", "2048");
+        config.setSchema(System.getenv("LEAGUE_DATABASE_SCHEMA"));
+        config.addDataSourceProperty("cachePrepStmts", Boolean.TRUE.toString());
+        config.addDataSourceProperty("prepStmtCacheSize", "250");
+        config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
 
         return new HikariDataSource(config);
     }

@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.web.config;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -16,6 +17,7 @@ import java.util.List;
  *
  * @author argen
  */
+@Configuration
 public class SpringMvcConfig implements WebMvcConfigurer {
 
     private static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(
