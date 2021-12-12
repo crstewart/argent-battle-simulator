@@ -22,16 +22,16 @@ export class HttpService {
         });
     }
 
-    public getFighters(): Observable<string[]> {
-        return this.httpClient.get<string[]>("v1/fighters");
-    }
-
     public getDownloadLink(id: string) {
         return `v1/files/${id}.txt`;
     }
 
+    public getFighters(): Observable<string[]> {
+        return this.httpClient.get<string[]>("v1/fighters");
+    }
+
     public getFighter(name: string): Observable<Fighter> {
-        return this.httpClient.get<Fighter>(`v1/fighters/${name}`);
+        return this.httpClient.get<Fighter>(`v1/fighters/${name.replace(/H/g, '%48')}`);
     }
 
     public getSeasonOneStandings(): Observable<Standings[]> {
