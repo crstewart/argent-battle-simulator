@@ -38,7 +38,9 @@ import {SeasonOneComponent} from "./season-one/season-one.component";
         ReactiveFormsModule,
         AppRoutingModule
     ],
-    providers: [HttpService],
+    providers: [
+        HttpService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

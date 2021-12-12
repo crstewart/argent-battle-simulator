@@ -14,7 +14,7 @@ import java.util.UUID;
  */
 public interface WeekRepository extends CrudRepository<Week, UUID> {
 
-    List<Integer> getNumberBySeasonIdOrderByNumberAsc(UUID id);
+    List<Week> findAllBySeasonIdOrderByNumberAsc(UUID id);
 
     Week findBySeasonIdAndNumber(UUID id, int number);
 }

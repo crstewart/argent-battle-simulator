@@ -2,14 +2,20 @@ package com.argentstew.simulator.battle.web.service;
 
 import com.argentstew.simulator.battle.web.model.ScheduleDTO;
 import com.argentstew.simulator.battle.web.model.StandingsDTO;
-import com.argentstew.simulator.battle.web.persistence.*;
+import com.argentstew.simulator.battle.web.persistence.Match;
+import com.argentstew.simulator.battle.web.persistence.MatchStatus;
+import com.argentstew.simulator.battle.web.persistence.Team;
+import com.argentstew.simulator.battle.web.persistence.Week;
 import com.argentstew.simulator.battle.web.repository.MatchRepository;
 import com.argentstew.simulator.battle.web.repository.TeamRepository;
 import com.argentstew.simulator.battle.web.repository.WeekRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -37,12 +43,6 @@ public class BasicLeagueService implements LeagueService {
     @Override
     public List<String> getTeamsBySeason(String seasonId) {
         return teamRepository.findAllByDivisionSeasonId(UUID.fromString(seasonId)).stream().map(Team::getName)
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<String> getTeamsByDivision(String divisionId) {
-        return teamRepository.findAllByDivisionId(UUID.fromString(divisionId)).stream().map(Team::getName)
                 .collect(Collectors.toList());
     }
 
@@ -77,15 +77,9 @@ public class BasicLeagueService implements LeagueService {
     }
 
     @Override
-    public List<String> getRosterByTeam(String teamId) {
-        return teamRepository.findById(UUID.fromString(teamId))
-                .orElse(Team.builder().fighters(Collections.emptyList()).build()).getFighters().stream()
-                .map(TeamFighter::getFighter).map(Fighter::getName).sorted().collect(Collectors.toList());
-    }
-
-    @Override
     public List<Integer> getWeeks(String seasonId) {
-        return weekRepository.getNumberBySeasonIdOrderByNumberAsc(UUID.fromString(seasonId));
+        return weekRepository.findAllBySeasonIdOrderByNumberAsc(UUID.fromString(seasonId)).stream()
+                .map(Week::getNumber).sorted().collect(Collectors.toList());
     }
 
     @Override
@@ -95,9 +89,8 @@ public class BasicLeagueService implements LeagueService {
     }
 
     @Override
-    public List<ScheduleDTO> getFullScheduleForTeam(String teamId) {
-        UUID uuid = UUID.fromString(teamId);
-        return matchRepository.findAllByHomeTeamIdOrAwayTeamIdOrderByStartDateAsc(uuid, uuid)
+    public List<ScheduleDTO> getFullScheduleForTeam(Team team) {
+        return matchRepository.findAllByHomeTeamOrAwayTeamOrderByStartDateAsc(team, team)
                 .stream().map(ScheduleDTO::from).collect(Collectors.toList());
     }
 
@@ -105,18 +98,17 @@ public class BasicLeagueService implements LeagueService {
     public List<ScheduleDTO> getWeeklyScheduleForSeason(String seasonId, int weekNumber) {
         Week week = weekRepository.findBySeasonIdAndNumber(UUID.fromString(seasonId), weekNumber);
         return matchRepository
-                .findAllBySeasonIdAndStartDateGreaterThanEqualAndStartDateLessThanEqualOrderByStartDateAsc(
-                        UUID.fromString(seasonId), week.getStartDate(), week.getEndDate()
+                .findAllByStartDateBetweenAndSeasonIdOrderByStartDateAsc(
+                        week.getStartDate(), week.getEndDate(), UUID.fromString(seasonId)
                 ).stream().map(ScheduleDTO::from).collect(Collectors.toList());
     }
 
     @Override
-    public List<ScheduleDTO> getWeeklyScheduleForTeam(String teamId, int weekNumber) {
-        UUID uuid = UUID.fromString(teamId);
-        Week week = weekRepository.findBySeasonIdAndNumber(UUID.fromString(teamId), weekNumber);
+    public List<ScheduleDTO> getWeeklyScheduleForTeam(Team team, int weekNumber) {
+        Week week = weekRepository.findBySeasonIdAndNumber(team.getDivision().getSeason().getId(), weekNumber);
         return matchRepository
-                .findAllByHomeTeamIdOrAwayTeamIdAndStartDateGreaterThanEqualAndStartDateLessThanEqualOrderByStartDateAsc(
-                        uuid, uuid, week.getStartDate(), week.getEndDate()
+                .findAllByStartDateBetweenAndHomeTeamOrStartDateBetweenAndAwayTeamOrderByStartDateAsc(
+                        week.getStartDate(), week.getEndDate(), team, week.getStartDate(), week.getEndDate(), team
                 ).stream().map(ScheduleDTO::from).collect(Collectors.toList());
     }
 }

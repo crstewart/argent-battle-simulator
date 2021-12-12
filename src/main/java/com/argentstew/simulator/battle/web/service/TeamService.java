@@ -1,6 +1,8 @@
 package com.argentstew.simulator.battle.web.service;
 
-import java.util.UUID;
+import com.argentstew.simulator.battle.web.persistence.Team;
+
+import java.util.List;
 
 /**
  * com.argentstew.simulator.battle.web.service
@@ -10,5 +12,7 @@ import java.util.UUID;
  */
 public interface TeamService {
 
-    UUID getTeamId(String seasonId, String teamName);
+    Team getTeam(String seasonId, String teamName);
+
+    List<String> getRosterByTeam(String seasonId, String teamName);
 }

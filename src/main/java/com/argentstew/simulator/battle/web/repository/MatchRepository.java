@@ -1,6 +1,7 @@
 package com.argentstew.simulator.battle.web.repository;
 
 import com.argentstew.simulator.battle.web.persistence.Match;
+import com.argentstew.simulator.battle.web.persistence.Team;
 import org.springframework.data.repository.CrudRepository;
 
 import java.time.LocalDateTime;
@@ -17,9 +18,12 @@ public interface MatchRepository extends CrudRepository<Match, UUID> {
 
     List<Match> findAllBySeasonIdOrderByStartDateAsc(UUID id);
 
-    List<Match> findAllByHomeTeamIdOrAwayTeamIdOrderByStartDateAsc(UUID homeId, UUID awayId);
+    List<Match> findAllByHomeTeamOrAwayTeamOrderByStartDateAsc(Team homeTeam, Team awayTeam);
 
-    List<Match> findAllBySeasonIdAndStartDateGreaterThanEqualAndStartDateLessThanEqualOrderByStartDateAsc(UUID id, LocalDateTime startDate, LocalDateTime endDate);
+    List<Match> findAllByStartDateBetweenAndSeasonIdOrderByStartDateAsc(LocalDateTime startDate, LocalDateTime endDate,
+                                                                        UUID id);
 
-    List<Match> findAllByHomeTeamIdOrAwayTeamIdAndStartDateGreaterThanEqualAndStartDateLessThanEqualOrderByStartDateAsc(UUID homeId, UUID awayId, LocalDateTime startDate, LocalDateTime endDate);
+    List<Match> findAllByStartDateBetweenAndHomeTeamOrStartDateBetweenAndAwayTeamOrderByStartDateAsc(
+            LocalDateTime homeStartDate, LocalDateTime homeEndDate, Team homeTeam, LocalDateTime awayStartDate,
+            LocalDateTime awayEndDate, Team awayTeam);
 }

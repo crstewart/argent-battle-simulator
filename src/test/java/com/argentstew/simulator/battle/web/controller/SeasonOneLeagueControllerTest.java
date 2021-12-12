@@ -4,6 +4,7 @@ import com.argentstew.simulator.battle.config.TestConfig;
 import com.argentstew.simulator.battle.web.exception.LeagueException;
 import com.argentstew.simulator.battle.web.model.ScheduleDTO;
 import com.argentstew.simulator.battle.web.model.StandingsDTO;
+import com.argentstew.simulator.battle.web.persistence.Team;
 import com.argentstew.simulator.battle.web.service.LeagueService;
 import com.argentstew.simulator.battle.web.service.TeamService;
 import org.junit.jupiter.api.Test;
@@ -19,11 +20,9 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
 /**
@@ -82,9 +81,7 @@ public class SeasonOneLeagueControllerTest {
 
     @Test
     void getRosters_Success() throws Exception {
-        UUID testId = UUID.randomUUID();
-        when(leagueService.getRosterByTeam(testId.toString())).thenReturn(Collections.singletonList("Fighter1"));
-        when(teamService.getTeamId(anyString(), eq("team1"))).thenReturn(testId);
+        when(teamService.getRosterByTeam(anyString(), eq("team1"))).thenReturn(Collections.singletonList("Fighter1"));
         MvcResult result = mvc.perform(MockMvcRequestBuilders.get("/v1/seasons/1/rosters?team=team1"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andReturn();
@@ -95,16 +92,14 @@ public class SeasonOneLeagueControllerTest {
 
     @Test
     void getRosters_BadTeamName() throws Exception {
-        when(teamService.getTeamId(anyString(), eq("team1"))).thenThrow(LeagueException.class);
+        when(teamService.getRosterByTeam(anyString(), eq("team1"))).thenThrow(LeagueException.class);
         mvc.perform(MockMvcRequestBuilders.get("/v1/seasons/1/rosters?team=team1"))
                 .andExpect(MockMvcResultMatchers.status().isBadRequest());
     }
 
     @Test
     void getRosters_Exception() throws Exception {
-        UUID testId = UUID.randomUUID();
-        when(leagueService.getRosterByTeam(testId.toString())).thenThrow(RuntimeException.class);
-        when(teamService.getTeamId(anyString(), eq("team1"))).thenReturn(testId);
+        when(teamService.getRosterByTeam(anyString(), eq("team1"))).thenThrow(RuntimeException.class);
         mvc.perform(MockMvcRequestBuilders.get("/v1/seasons/1/rosters?team=team1"))
                 .andExpect(MockMvcResultMatchers.status().isInternalServerError());
     }
@@ -157,45 +152,44 @@ public class SeasonOneLeagueControllerTest {
 
     @Test
     void getScheduleForTeam_FullSchedule() throws Exception {
-        UUID testId = UUID.randomUUID();
+        Team team = new Team();
         when(leagueService.getWeeks(anyString())).thenReturn(Arrays.asList(1, 2, 3));
-        when(leagueService.getFullScheduleForTeam(testId.toString()))
-                .thenReturn(Collections.singletonList(new ScheduleDTO()));
-        when(teamService.getTeamId(anyString(), eq("team1"))).thenReturn(testId);
+        when(leagueService.getFullScheduleForTeam(team)).thenReturn(Collections.singletonList(new ScheduleDTO()));
+        when(teamService.getTeam(anyString(), eq("team1"))).thenReturn(team);
         mvc.perform(MockMvcRequestBuilders.get("/v1/seasons/1/schedule/team1"))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 
     @Test
     void getScheduleForTeam_WeeklySchedule() throws Exception {
-        UUID testId = UUID.randomUUID();
+        Team team = new Team();
         when(leagueService.getWeeks(anyString())).thenReturn(Arrays.asList(1, 2, 3));
-        when(leagueService.getWeeklyScheduleForTeam(testId.toString(), 1))
+        when(leagueService.getWeeklyScheduleForTeam(team, 1))
                 .thenReturn(Collections.singletonList(new ScheduleDTO()));
-        when(teamService.getTeamId(anyString(), eq("team1"))).thenReturn(testId);
+        when(teamService.getTeam(anyString(), eq("team1"))).thenReturn(team);
         mvc.perform(MockMvcRequestBuilders.get("/v1/seasons/1/schedule/team1?week=1"))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 
     @Test
     void getScheduleForTeam_BadWeek() throws Exception {
-        UUID testId = UUID.randomUUID();
+        Team team = new Team();
         when(leagueService.getWeeks(anyString())).thenReturn(Arrays.asList(1, 2, 3));
-        when(teamService.getTeamId(anyString(), eq("team1"))).thenReturn(testId);
+        when(teamService.getTeam(anyString(), eq("team1"))).thenReturn(team);
         mvc.perform(MockMvcRequestBuilders.get("/v1/seasons/1/schedule/team1?week=4"))
                 .andExpect(MockMvcResultMatchers.status().isBadRequest());
     }
 
     @Test
     void getScheduleForTeam_BadTeam() throws Exception {
-        when(teamService.getTeamId(anyString(), eq("team1"))).thenThrow(LeagueException.class);
+        when(teamService.getTeam(anyString(), eq("team1"))).thenThrow(LeagueException.class);
         mvc.perform(MockMvcRequestBuilders.get("/v1/seasons/1/schedule/team1"))
                 .andExpect(MockMvcResultMatchers.status().isBadRequest());
     }
 
     @Test
     void getScheduleForTeam_Exception() throws Exception {
-        when(leagueService.getFullScheduleForTeam("team1")).thenThrow(RuntimeException.class);
+        when(leagueService.getFullScheduleForTeam(any(Team.class))).thenThrow(RuntimeException.class);
         mvc.perform(MockMvcRequestBuilders.get("/v1/seasons/1/schedule/team1"))
                 .andExpect(MockMvcResultMatchers.status().isInternalServerError());
     }

@@ -16,7 +16,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
-import static org.springframework.http.MediaType.*;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.http.MediaType.APPLICATION_OCTET_STREAM_VALUE;
 
 /**
  * com.argentstew.simulator.battle.web.servlet
@@ -89,7 +90,8 @@ public class SimulatorController {
     @GetMapping(path = "/fighters/{name}", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<FighterDTO> getFighterByName(@PathVariable("name") String name) {
         try {
-            return new ResponseEntity<>(fighterService.getFighter(name), HttpStatus.OK);
+            return new ResponseEntity<>(fighterService.getFighter(name.replaceAll("\\+", " ")),
+                    HttpStatus.OK);
         } catch (IllegalStateException e) {
             LOG.error("Could not fetch requested fighter", e);
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

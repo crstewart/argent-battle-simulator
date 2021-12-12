@@ -31,7 +31,7 @@ export class HttpService {
     }
 
     public getFighter(name: string): Observable<Fighter> {
-        return this.httpClient.get<Fighter>(`v1/fighters/${name.replace(/H/g, '%48')}`);
+        return this.httpClient.get<Fighter>(`v1/fighters/${name.replace(/\s/gi, '+')}`);
     }
 
     public getSeasonOneStandings(): Observable<Standings[]> {
@@ -47,7 +47,7 @@ export class HttpService {
     }
 
     public getRoster(teamName: string): Observable<string[]> {
-        return this.httpClient.get<string[]>(`v1/seasons/2/rosters?team=${teamName}`);
+        return this.httpClient.get<string[]>(`v1/seasons/2/rosters?team=${teamName.replace(/\s/gi, '+')}`);
     }
 
     public getWeeks(): Observable<number[]> {
@@ -59,10 +59,10 @@ export class HttpService {
     }
 
     public getScheduleByTeam(team: string): Observable<Match[]> {
-        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${team}`);
+        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${team.replace(/\s/gi, '+')}`);
     }
 
     public getScheduleByTeamAndWeek(team: string, week: number): Observable<Match[]> {
-        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${team}&week=${week}`);
+        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${team.replace(/\s/gi, '+')}&week=${week}`);
     }
 }
