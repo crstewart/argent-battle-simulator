@@ -28,4 +28,10 @@ public class Fighter {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "series_of_origin")
+    private String seriesOfOrigin;
+
+    @Column(name = "copyright_owner")
+    private String copyrightOwner;
 }

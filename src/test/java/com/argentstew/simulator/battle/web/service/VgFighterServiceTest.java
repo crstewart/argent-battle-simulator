@@ -2,6 +2,8 @@ package com.argentstew.simulator.battle.web.service;
 
 import com.argentstew.simulator.battle.factory.FighterFactory;
 import com.argentstew.simulator.battle.web.model.FighterDTO;
+import com.argentstew.simulator.battle.web.persistence.Fighter;
+import com.argentstew.simulator.battle.web.repository.FighterRepository;
 import com.argentstew.simulator.battle.web.test.TestFighter;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,6 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -31,6 +34,9 @@ public class VgFighterServiceTest {
     @Mock
     private FighterFactory fighterFactory;
 
+    @Mock
+    private FighterRepository fighterRepository;
+
     @Test
     void testGetFighters() {
         List<String> fighters = Collections.singletonList("1");
@@ -42,6 +48,7 @@ public class VgFighterServiceTest {
     @Test
     void testGetFighter_Success() {
         when(fighterFactory.getFighter(anyString())).thenReturn(TestFighter.get());
+        when(fighterRepository.findByName(anyString())).thenReturn(Optional.of(new Fighter()));
 
         FighterDTO dto = service.getFighter("1");
         assertNotNull(dto);

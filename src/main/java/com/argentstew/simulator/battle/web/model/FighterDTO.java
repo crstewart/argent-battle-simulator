@@ -15,6 +15,8 @@ public class FighterDTO {
 
     private String name;
     private String description;
+    private String seriesOfOrigin;
+    private String copyrightOwner;
     private List<String> classifications;
 
     // stats

@@ -1,9 +1,7 @@
 package com.argentstew.simulator.battle.web.controller;
 
 import com.argentstew.simulator.battle.config.TestConfig;
-import com.argentstew.simulator.battle.web.model.FighterDTO;
 import com.argentstew.simulator.battle.web.model.SimulationResult;
-import com.argentstew.simulator.battle.web.service.FighterService;
 import com.argentstew.simulator.battle.web.service.SimulatorService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,7 +14,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.io.IOException;
-import java.util.Collections;
 import java.util.UUID;
 
 import static org.mockito.ArgumentMatchers.anyString;
@@ -40,8 +37,8 @@ public class SimulatorControllerTest {
     @Autowired
     private SimulatorService simulatorService;
 
-    @Autowired
-    private FighterService fighterService;
+//    @Autowired
+//    private FighterService fighterService;
 
     @Test
     void testSimulation_Success() throws Exception {
@@ -93,38 +90,38 @@ public class SimulatorControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isNotFound());
     }
 
-    @Test
-    void testGetFighters_Success() throws Exception {
-        when(fighterService.getFighters()).thenReturn(Collections.emptyList());
-        mvc.perform(MockMvcRequestBuilders.get("/v1/fighters"))
-                .andExpect(MockMvcResultMatchers.status().isOk());
-    }
-
-    @Test
-    void testGetFighters_Error() throws Exception {
-        when(fighterService.getFighters()).thenThrow(IllegalStateException.class);
-        mvc.perform(MockMvcRequestBuilders.get("/v1/fighters"))
-                .andExpect(MockMvcResultMatchers.status().isInternalServerError());
-    }
-
-    @Test
-    void testGetFighterByName_Success() throws Exception {
-        when(fighterService.getFighter(anyString())).thenReturn(new FighterDTO());
-        mvc.perform(MockMvcRequestBuilders.get("/v1/fighters/f1"))
-                .andExpect(MockMvcResultMatchers.status().isOk());
-    }
-
-    @Test
-    void testGetFighterByName_FighterNotFound() throws Exception {
-        when(fighterService.getFighter(anyString())).thenThrow(IllegalStateException.class);
-        mvc.perform(MockMvcRequestBuilders.get("/v1/fighters/f1"))
-                .andExpect(MockMvcResultMatchers.status().isBadRequest());
-    }
-
-    @Test
-    void testGetFighterByName_UnknownError() throws Exception {
-        when(fighterService.getFighter(anyString())).thenThrow(RuntimeException.class);
-        mvc.perform(MockMvcRequestBuilders.get("/v1/fighters/f1"))
-                .andExpect(MockMvcResultMatchers.status().isInternalServerError());
-    }
+//    @Test
+//    void testGetFighters_Success() throws Exception {
+//        when(fighterService.getFighters()).thenReturn(Collections.emptyList());
+//        mvc.perform(MockMvcRequestBuilders.get("/v1/fighters"))
+//                .andExpect(MockMvcResultMatchers.status().isOk());
+//    }
+//
+//    @Test
+//    void testGetFighters_Error() throws Exception {
+//        when(fighterService.getFighters()).thenThrow(IllegalStateException.class);
+//        mvc.perform(MockMvcRequestBuilders.get("/v1/fighters"))
+//                .andExpect(MockMvcResultMatchers.status().isInternalServerError());
+//    }
+//
+//    @Test
+//    void testGetFighterByName_Success() throws Exception {
+//        when(fighterService.getFighter(anyString())).thenReturn(new FighterDTO());
+//        mvc.perform(MockMvcRequestBuilders.get("/v1/fighters/f1"))
+//                .andExpect(MockMvcResultMatchers.status().isOk());
+//    }
+//
+//    @Test
+//    void testGetFighterByName_FighterNotFound() throws Exception {
+//        when(fighterService.getFighter(anyString())).thenThrow(IllegalStateException.class);
+//        mvc.perform(MockMvcRequestBuilders.get("/v1/fighters/f1"))
+//                .andExpect(MockMvcResultMatchers.status().isBadRequest());
+//    }
+//
+//    @Test
+//    void testGetFighterByName_UnknownError() throws Exception {
+//        when(fighterService.getFighter(anyString())).thenThrow(RuntimeException.class);
+//        mvc.perform(MockMvcRequestBuilders.get("/v1/fighters/f1"))
+//                .andExpect(MockMvcResultMatchers.status().isInternalServerError());
+//    }
 }

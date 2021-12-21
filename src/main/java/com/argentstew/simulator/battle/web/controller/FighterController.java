@@ -1,16 +1,17 @@
 package com.argentstew.simulator.battle.web.controller;
 
+import com.argentstew.simulator.battle.web.exception.ImageTypeNotRecognizedException;
 import com.argentstew.simulator.battle.web.model.FighterDTO;
+import com.argentstew.simulator.battle.web.model.ImageDTO;
+import com.argentstew.simulator.battle.web.model.ImageType;
 import com.argentstew.simulator.battle.web.service.FighterService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -52,6 +53,29 @@ public class FighterController {
                     HttpStatus.OK);
         } catch (IllegalStateException e) {
             LOG.error("Could not fetch requested fighter", e);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        } catch (Exception e) {
+            LOG.error("Unknown error occurred. Please contact the administrator.", e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping(path = "/{name}/image")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<byte[]> getFighterImage(@PathVariable("name") String name) {
+        try {
+            ImageDTO fighterImage = fighterService.getFighterImage(name);
+
+            HttpHeaders headers = new HttpHeaders();
+            ImageType imageType = ImageType.forExtension(fighterImage.getExtension());
+            if (imageType == null) {
+                throw new ImageTypeNotRecognizedException("Image type not recognized: " + fighterImage.getExtension());
+            }
+            headers.setContentType(imageType.getMediaType());
+
+            return new ResponseEntity<>(fighterImage.getBytes(), headers, HttpStatus.OK);
+        } catch (IllegalStateException e) {
+            LOG.error("Could not fetch requested fighter image", e);
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
             LOG.error("Unknown error occurred. Please contact the administrator.", e);
