@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, ViewChild} from "@angular/core";
-import {SimulatorFormComponent} from "./form/simulator-form.component";
 import {SimulationResult} from "../model/simulation-result";
 import {HttpService} from "../service/http.service";
+import {SimulatorFormComponent} from "../widgets/simulator-form/simulator-form.component";
 
 @Component({
     selector: 'simulator',
@@ -10,8 +10,7 @@ import {HttpService} from "../service/http.service";
 })
 export class SimulatorComponent implements AfterViewInit {
 
-    @ViewChild('simulatorForm')
-    simForm: SimulatorFormComponent;
+    @ViewChild('simulatorForm') simulatorForm: SimulatorFormComponent;
 
     simulation: SimulationResult;
 
@@ -19,7 +18,7 @@ export class SimulatorComponent implements AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.simForm.onSimulationRun
+        this.simulatorForm.onSimulationRun
             .subscribe((data: SimulationResult) => this.simulation = data);
     }
 

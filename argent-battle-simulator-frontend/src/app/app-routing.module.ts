@@ -1,28 +1,61 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {CharacterDetailsComponent} from "./character-details/character-details.component";
 import {SimulatorComponent} from "./simulator/simulator.component";
-import {SimulatorDetailsComponent} from "./simulator-details/simulator-details.component";
-import {PatchNotesComponent} from "./patch-notes/patch-notes.component";
-import {StandingsComponent} from "./standings/standings.component";
-import {RostersComponent} from "./rosters/rosters.component";
-import {ScheduleComponent} from "./schedule/schedule.component";
-import {BattleLogsComponent} from "./battle-logs/battle-logs.component";
-import {SeasonOneComponent} from "./season-one/season-one.component";
 import {MissingPageComponent} from "./missing-page/missing-page.component";
 
 const routes: Routes = [
-    {path: 'home', component: SimulatorComponent},
-    {path: 'how-it-works', component: SimulatorDetailsComponent},
-    {path: 'details', component: CharacterDetailsComponent},
-    {path: 'patch-notes', component: PatchNotesComponent},
-    {path: 'standings', component: StandingsComponent},
-    {path: 'rosters', component: RostersComponent},
-    {path: 'schedule', component: ScheduleComponent},
-    {path: 'battle-logs', component: BattleLogsComponent},
-    {path: 'season-one', component: SeasonOneComponent},
-    {path: '', redirectTo: '/home', pathMatch: 'full'},
-    {path: '**', component: MissingPageComponent}
+    {
+        path: 'home',
+        component: SimulatorComponent,
+        data: {title: 'Argent Battle Simulator'}
+    },
+    {
+        path: 'how-it-works',
+        loadChildren: () => import('./simulator-details/simulator-details.module').then(m => m.SimulatorDetailsModule)
+    },
+    {
+        path: 'fighters',
+        loadChildren: () => import('./character-details/character-details.module').then(m => m.CharacterDetailsModule)
+    },
+    {
+        path: 'patch-notes',
+        loadChildren: () => import('./patch-notes/patch-notes.module').then(m => m.PatchNotesModule)
+    },
+    {
+        path: 'standings',
+        loadChildren: () => import('./standings/standings.module').then(m => m.StandingsModule)
+    },
+    {
+        path: 'rosters',
+        loadChildren: () => import('./rosters/rosters.module').then(m => m.RostersModule)
+    },
+    {
+        path: 'schedule',
+        loadChildren: () => import('./schedule/schedule.module').then(m => m.ScheduleModule)
+    },
+    {
+        path: 'battle-logs',
+        loadChildren: () => import('./battle-logs/battle-logs.module').then(m => m.BattleLogsModule)
+    },
+    {
+        path: 'season-one',
+        loadChildren: () => import('./battle-logs/battle-logs.module').then(m => m.BattleLogsModule)
+    },
+    {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+    },
+    {
+        path: 'details',
+        redirectTo: '/fighters',
+        pathMatch: 'full'
+    },
+    {
+        path: '**',
+        component: MissingPageComponent,
+        data: {title: 'Argent Battle Simulator - 404\'d!'}
+    }
 ];
 
 @NgModule({
