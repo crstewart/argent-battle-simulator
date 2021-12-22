@@ -1,22 +1,29 @@
 import {Component, OnInit} from "@angular/core";
 import {HttpService} from "../service/http.service";
 import {Standings} from "../model/standings";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Title} from "@angular/platform-browser";
+import {ComplexHttpComponent} from "../common/complex.http.component";
 
 @Component({
     selector: 'standings',
     templateUrl: './standings.component.html',
     styleUrls: ['./standings.component.css']
 })
-export class StandingsComponent implements OnInit {
+export class StandingsComponent extends ComplexHttpComponent implements OnInit {
 
     shadowDivisionStandings: Standings[] = [];
     chaosDivisionStandings: Standings[] = [];
 
-    constructor(private httpService: HttpService) {
+    constructor(private http: HttpService,
+                private router: Router,
+                private route: ActivatedRoute,
+                private title: Title) {
+        super(http, router, route, title);
     }
 
     ngOnInit(): void {
-        this.httpService.getStandings().subscribe((data: Standings[]) => this.arrangeStandings(data));
+        this.http.getStandings().subscribe((data: Standings[]) => this.arrangeStandings(data));
     }
 
     getShadowDivisionLeaderWinDifferential(): number {

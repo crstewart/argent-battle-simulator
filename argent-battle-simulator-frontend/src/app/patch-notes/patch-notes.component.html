@@ -2,9 +2,9 @@
     <div id="top" class="patch-notes">
         <label for="patch-notes-selection">Select a patch to view its notes: </label>
         <select id="patch-notes-selection" [ngModel]="selected" (ngModelChange)="setVersion($event)">
-            <option *ngFor="let option of options" [value]="option">Version {{option}}</option>
+            <option *ngFor="let option of options" [value]="option.number">Version {{getVersionLabel(option)}}</option>
         </select>
-        <div *ngIf="selected === '1.2.1'">
+        <div *ngIf="selected.number === '1.2.1'">
             <h2>Version 1.2.1</h2>
             <ul>
                 <li>
@@ -33,7 +33,7 @@
                 </li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.2 - Myths and Monsters'">
+        <div *ngIf="selected.number === '1.2'">
             <h2>Version 1.2</h2>
             <ul>
                 <li>
@@ -1043,15 +1043,15 @@
                 </li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.1.1'">
+        <div *ngIf="selected.number === '1.1.1'">
             <h2>Version 1.1.1</h2>
             <ul>
                 <li>
-                    Fixed a bug in which Sylvanas Windrunner’s X-Strike was named incorrectly.
+                    Fixed a bug in which Sylvanas Windrunner's X-Strike was named incorrectly.
                 </li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.1 - Reign of Shadows'">
+        <div *ngIf="selected.number === '1.1'">
             <h2>Version 1.1</h2>
             <ul>
                 <li>
@@ -2126,13 +2126,13 @@
                 </li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.0.4'">
+        <div *ngIf="selected.number === '1.0.4'">
             <h2>Version 1.0.4</h2>
             <ul>
                 <li>Fixed a bug in which some fighters might not be able to heal properly.</li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.0.3'">
+        <div *ngIf="selected.number === '1.0.3'">
             <h2>Version 1.0.3</h2>
             <ul>
                 <li>Fixed a bug in which both fighters could advance onto the same space.</li>
@@ -2140,7 +2140,7 @@
                 <li>Fixed a bug in which a fighter could retreat after being hit by Dovahkiin's Unrelenting Force.</li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.0.2'">
+        <div *ngIf="selected.number === '1.0.2'">
             <h2>Version 1.0.2</h2>
             <ul>
                 <li>
@@ -2148,7 +2148,7 @@
                 </li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.0.1'">
+        <div *ngIf="selected.number === '1.0.1'">
             <h2>Version 1.0.1</h2>
             <ul>
                 <li>

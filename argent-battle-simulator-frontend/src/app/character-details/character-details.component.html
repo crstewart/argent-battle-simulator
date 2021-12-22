@@ -1,7 +1,7 @@
 <div class="border">
     <div class="character-select">
-        <label for="fighter1select">Select a fighter to view their details: </label>
-        <select id="fighter1select" [ngModel]="selectedFighter == null ? null : selectedFighter.name"
+        <label for="fighterSelect">Select a fighter to view their details: </label>
+        <select id="fighterSelect" [ngModel]="selectedFighter == null ? null : selectedFighter.name"
                 (ngModelChange)="setFighter($event)" required>
             <option *ngFor="let fighter of fighters" [value]="fighter">{{fighter}}</option>
         </select>

@@ -1,13 +1,16 @@
 import {Component, OnInit} from "@angular/core";
 import {HttpService} from "../service/http.service";
 import {Match} from "../model/match";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Title} from "@angular/platform-browser";
+import {ComplexHttpComponent} from "../common/complex.http.component";
 
 @Component({
     selector: 'schedule',
     templateUrl: './schedule.component.html',
     styleUrls: ['./schedule.component.css']
 })
-export class ScheduleComponent implements OnInit {
+export class ScheduleComponent extends ComplexHttpComponent implements OnInit {
 
     teams: string[];
     weeks: number[];
@@ -17,12 +20,16 @@ export class ScheduleComponent implements OnInit {
 
     schedule: Match[];
 
-    constructor(private httpService: HttpService) {
+    constructor(private http: HttpService,
+                private router: Router,
+                private route: ActivatedRoute,
+                private title: Title) {
+        super(http, router, route, title);
     }
 
     ngOnInit(): void {
-        this.httpService.getTeams().subscribe((data: string[]) => this.teams = data.filter((team) => team !== ""));
-        this.httpService.getWeeks().subscribe((data: number[]) => this.weeks = data);
+        this.http.getTeams().subscribe((data: string[]) => this.teams = data.filter((team) => team !== ""));
+        this.http.getWeeks().subscribe((data: number[]) => this.weeks = data);
     }
 
     setTeam(event: Event) {
@@ -49,11 +56,11 @@ export class ScheduleComponent implements OnInit {
         if (!this.selectedTeam && !this.selectedWeek) {
             this.schedule = [];
         } else if (this.selectedTeam && !this.selectedWeek) {
-            this.httpService.getScheduleByTeam(this.selectedTeam).subscribe((data: Match[]) => this.schedule = data);
+            this.http.getScheduleByTeam(this.selectedTeam).subscribe((data: Match[]) => this.schedule = data);
         } else if (!this.selectedTeam && this.selectedWeek) {
-            this.httpService.getScheduleByWeek(this.selectedWeek).subscribe((data: Match[]) => this.schedule = data);
+            this.http.getScheduleByWeek(this.selectedWeek).subscribe((data: Match[]) => this.schedule = data);
         } else {
-            this.httpService.getScheduleByTeamAndWeek(this.selectedTeam, this.selectedWeek)
+            this.http.getScheduleByTeamAndWeek(this.selectedTeam, this.selectedWeek)
                 .subscribe((data: Match[]) => this.schedule = data);
         }
     }
