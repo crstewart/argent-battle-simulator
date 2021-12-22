@@ -7,6 +7,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
+import com.argentstew.simulator.battle.trait.impl.MonsterSlayer;
 import com.argentstew.simulator.battle.trait.impl.Rival;
 import com.argentstew.simulator.battle.vg.rathalos.Rathalos;
 
@@ -45,7 +46,7 @@ public class MonsterHunter {
         FighterStats stats = FighterStats.builder().strength(6).toughness(4).dexterity(8).aim(7)
                 .agility(4).speed(4).intellect(5).willpower(5.5).size(5).weight(6).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new Rival(Rathalos.NAME, 1.3),
-                new com.argentstew.simulator.battle.trait.impl.MonsterHunter()));
+                new MonsterSlayer()));
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
                 .description("A tanky weaponmaster with a variety of weapons at their disposal.")
                 .entryQuotes(Arrays.asList("Monster Hunter: 'I've taken down bigger beasts than you!'",

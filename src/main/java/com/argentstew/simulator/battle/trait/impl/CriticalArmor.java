@@ -16,6 +16,7 @@ import lombok.Getter;
 public class CriticalArmor extends AbstractArmorTrait {
 
     private final String name = "Critical Armor";
+    private final String description = "The fighter receives 25% reduced damage from critical hits.";
 
     @Override
     protected int recalculateDamage(DamageReport report) {

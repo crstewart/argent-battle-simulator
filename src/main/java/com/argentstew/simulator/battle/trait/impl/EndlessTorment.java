@@ -20,6 +20,7 @@ import java.util.List;
 public class EndlessTorment implements Trait {
 
     private final String name = "Endless Torment";
+    private final String description = "The opposing fighter has multiple traits suppressed.";
 
     @Override
     public void applyStartOfGameEffects(Fighter owner, Fighter defender) {

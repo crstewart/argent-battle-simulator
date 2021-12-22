@@ -16,6 +16,8 @@ import lombok.Getter;
 public class MechRider extends AbstractArmorTrait {
 
     private final String name = "Mech Rider";
+    private final String description = "The fighter receives 20% reduced damage from attacks but 25% additional " +
+            "damage from critical hits.";
 
     @Override
     protected int recalculateDamage(DamageReport report) {

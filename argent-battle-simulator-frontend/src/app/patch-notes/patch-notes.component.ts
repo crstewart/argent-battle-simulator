@@ -8,6 +8,7 @@ import {ChangeDetectorRef, Component} from "@angular/core";
 export class PatchNotesComponent {
 
     options: string[] = [
+        "1.2.1",
         "1.2 - Myths and Monsters",
         "1.1.1",
         "1.1 - Reign of Shadows",

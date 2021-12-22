@@ -17,6 +17,7 @@ import lombok.Getter;
 public class ExMaverickHunter implements Trait {
 
     private final String name = "Ex-Maverick Hunter";
+    private final String description = "The fighter does 20% additional damage to humanoid and mech characters.";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {

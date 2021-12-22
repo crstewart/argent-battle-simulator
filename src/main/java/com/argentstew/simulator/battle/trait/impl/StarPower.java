@@ -15,6 +15,8 @@ import lombok.Getter;
 public class StarPower implements Trait {
 
     private final String name = "Star Power";
+    private final String description = "The fighter chooses a power level from 1 to 3 each turn, affecting the power " +
+            "and effects of their moves.";
 
     private int power;
 

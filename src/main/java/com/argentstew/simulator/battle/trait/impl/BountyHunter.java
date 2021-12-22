@@ -17,6 +17,7 @@ import lombok.Getter;
 public class BountyHunter implements Trait {
 
     private final String name = "Bounty Hunter";
+    private final String description = "The fighter does 10% additional damage to humanoid and alien characters.";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {

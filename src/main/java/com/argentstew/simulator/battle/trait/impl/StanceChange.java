@@ -16,6 +16,9 @@ import lombok.Getter;
 public class StanceChange implements Trait {
 
     private final String name = "Stance Change";
+    private final String description = "The fighter can change stances every 2 turns. Aggressive stance improves " +
+            "strength but reduces accuracy. Quick stance improves speed but reduces strength. Targeted stance " +
+            "improves accuracy but reduces speed.";
 
     private Fighter owner;
     private boolean isReady;

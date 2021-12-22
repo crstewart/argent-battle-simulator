@@ -15,4 +15,5 @@ import lombok.Getter;
 public class StealthDetection implements Trait {
 
     private final String name = "Stealth Detection";
+    private final String description = "The fighter's hit chance is unaffected by stealth.";
 }

@@ -14,14 +14,15 @@ import lombok.Getter;
  */
 @Getter
 @EqualsAndHashCode
-public class AnimalHunter implements Trait {
+public class MonsterSlayer implements Trait {
 
-    private final String name = "Animal Hunter";
+    private final String name = "Monster Slayer";
+    private final String description = "The fighter does 50% additional damage to monster characters.";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {
-        if (defender.getClassifications().contains(FighterClassification.ANIMAL)) {
-            return rawDamage * 1.1;
+        if (defender.getClassifications().contains(FighterClassification.MONSTER)) {
+            return rawDamage * 1.5;
         }
 
         return rawDamage;

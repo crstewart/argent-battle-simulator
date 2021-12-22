@@ -1,6 +1,8 @@
 export interface Fighter {
     name: string;
     description: string;
+    seriesOfOrigin: string;
+    copyrightOwner: string;
     classifications: string[];
 
     // stats
@@ -19,7 +21,7 @@ export interface Fighter {
     weight: number;
 
     // characteristics
-    traits: string[];
+    traits: Trait[];
     defenses: string[];
     strategy: string;
 
@@ -28,6 +30,12 @@ export interface Fighter {
     xstrikes: Attack[];
     guards: Guard[];
     heals: Guard[];
+}
+
+export interface Trait {
+    name: string;
+    description: string;
+    immuneToTorment: boolean;
 }
 
 export interface Attack {

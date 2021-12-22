@@ -28,6 +28,8 @@ public class Survivalist extends AbstractArmorTrait {
     ));
 
     private final String name = "Survivalist";
+    private final String description = "The fighter receives up to 10% reduced damage from physical, weapon, and " +
+            "firearm attacks.";
 
     @Override
     protected int recalculateDamage(DamageReport report) {

@@ -17,6 +17,9 @@ public class StarGuidance implements Trait {
     private static final int TOTAL_HP = 40;
 
     private final String name = "Star Guidance";
+    private final String description = "The fighter summons a Luma with 40 HP. The Luma is required for certain " +
+            "attacks; however, it absorbs damage when guarding and takes double damage from attacks. When defeated, " +
+            "Luma takes 3 turns to respawn.";
 
     private int turnsUntilReady;
     private int blockableDamage;

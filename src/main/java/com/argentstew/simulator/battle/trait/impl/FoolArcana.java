@@ -21,6 +21,8 @@ import lombok.NoArgsConstructor;
 public class FoolArcana extends AbstractArmorTrait {
 
     private final String name = "Fool Arcana";
+    private final String description = "The fighter can summon a persona for 100 SP that grants a new set of " +
+            "attacks, resistances, and weaknesses.";
 
     private String state = null;
 

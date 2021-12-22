@@ -15,4 +15,5 @@ import lombok.Getter;
 public class Teleportation implements Trait {
 
     private final String name = "Teleportation";
+    private final String description = "The fighter can guard hold attacks.";
 }

@@ -35,7 +35,7 @@ public class FighterDTO {
     private double weight;
 
     // characteristics
-    private List<String> traits;
+    private List<TraitDTO> traits;
     private List<String> defenses;
     private String strategy;
 

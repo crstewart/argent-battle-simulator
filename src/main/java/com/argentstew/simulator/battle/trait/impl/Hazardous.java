@@ -28,6 +28,7 @@ public class Hazardous implements Trait {
     ));
 
     private final String name = "Hazardous";
+    private final String description = "The fighter does counterattack damage to physical attackers.";
 
     @Override
     public AttackAction applyPassiveDefense(AttackAction attack) {

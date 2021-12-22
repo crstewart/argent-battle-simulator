@@ -23,4 +23,16 @@ export class CharacterDetailsComponent implements OnInit {
         let fighterName = ""+event;
         this.httpService.getFighter(fighterName).subscribe((data: Fighter) => this.selectedFighter = data);
     }
+
+    prettyPrintValue(value: string): string {
+        return value.split(/ _/g).map(this.prettyPrintWord).join(" ");
+    }
+
+    prettyPrintValues(values: string[]): string {
+        return values.map(this.prettyPrintValue).join(", ");
+    }
+
+    prettyPrintWord(word: string): string {
+        return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
+    }
 }

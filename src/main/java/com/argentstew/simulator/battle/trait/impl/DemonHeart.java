@@ -25,6 +25,9 @@ public class DemonHeart extends AbstractArmorTrait {
     public static final String DEMONIC_FORM_DISABLED_STATUS = "Resting";
 
     private final String name = "Demon Heart";
+    private final String description = "The fighter can shift into a demon form that lasts five turns, gaining an " +
+            "aura that deals fire and dark magical damage to melee attackers, additional effects on attacks, and " +
+            "12.5% damage reduction on all incoming attacks.";
 
     private Fighter transformedUser;
     private Strategy strategy;

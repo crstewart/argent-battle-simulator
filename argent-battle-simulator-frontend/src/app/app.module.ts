@@ -16,10 +16,14 @@ import {RostersComponent} from "./rosters/rosters.component";
 import {ScheduleComponent} from "./schedule/schedule.component";
 import {BattleLogsComponent} from "./battle-logs/battle-logs.component";
 import {SeasonOneComponent} from "./season-one/season-one.component";
+import {CharacterImageComponent} from './widgets/character-image/character-image.component';
 
 @NgModule({
     declarations: [
+        // main component
         AppComponent,
+
+        // page components
         SimulatorComponent,
         SimulatorDetailsComponent,
         CharacterDetailsComponent,
@@ -29,7 +33,10 @@ import {SeasonOneComponent} from "./season-one/season-one.component";
         RostersComponent,
         ScheduleComponent,
         BattleLogsComponent,
-        SeasonOneComponent
+        SeasonOneComponent,
+
+        // widgets
+        CharacterImageComponent
     ],
     imports: [
         BrowserModule,

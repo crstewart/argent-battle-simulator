@@ -12,10 +12,7 @@ import com.argentstew.simulator.battle.strategy.*;
 import com.argentstew.simulator.battle.trait.Trait;
 import com.argentstew.simulator.battle.web.cache.ImageCache;
 import com.argentstew.simulator.battle.web.file.FileAccessor;
-import com.argentstew.simulator.battle.web.model.AttackDTO;
-import com.argentstew.simulator.battle.web.model.FighterDTO;
-import com.argentstew.simulator.battle.web.model.GuardDTO;
-import com.argentstew.simulator.battle.web.model.ImageDTO;
+import com.argentstew.simulator.battle.web.model.*;
 import com.argentstew.simulator.battle.web.repository.FighterRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -93,9 +90,13 @@ public class VgFighterService implements FighterService {
         dto.setSize(fighter.getStats().getSize());
         dto.setWeight(fighter.getStats().getWeight());
 
-        List<String> traits = new ArrayList<>();
+        List<TraitDTO> traits = new ArrayList<>();
         for (Trait trait : fighter.getTraits()) {
-            traits.add(trait.getName());
+            TraitDTO traitDto = new TraitDTO();
+            traitDto.setName(trait.getName());
+            traitDto.setDescription(trait.getDescription());
+            traitDto.setImmuneToTorment(trait.isImmuneToTorment());
+            traits.add(traitDto);
         }
         dto.setTraits(traits);
 

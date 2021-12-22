@@ -16,6 +16,8 @@ import lombok.Getter;
 public class PowerScaling implements Trait {
 
     private final String name = "Power Scaling";
+    private final String description = "The fighter does 10% additional damage for every 5 HP the fighter has " +
+            "over 150.";
 
     private double scale;
 

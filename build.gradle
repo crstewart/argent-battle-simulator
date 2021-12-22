@@ -11,8 +11,8 @@ sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
 ext {
-    springBootVersion = '2.6.1' // 2.2.6.RELEASE
-    awsSdkVersion = '1.12.31'
+    springBootVersion = '2.6.1'
+    awsSdkVersion = '1.12.129'
 }
 
 repositories {

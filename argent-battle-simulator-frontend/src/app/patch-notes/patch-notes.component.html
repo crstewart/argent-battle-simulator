@@ -1,9 +1,30 @@
 <div class="border">
     <div id="top" class="patch-notes">
         <label for="patch-notes-selection">Select a patch to view its notes: </label>
-        <select id="patch-notes-selection" name="versionSelect" [ngModel]="selected" (ngModelChange)="setVersion($event)">
+        <select id="patch-notes-selection" [ngModel]="selected" (ngModelChange)="setVersion($event)">
             <option *ngFor="let option of options" [value]="option">Version {{option}}</option>
         </select>
+        <div *ngIf="selected === '1.2.1'">
+            <h2>Version 1.2.1</h2>
+            <ul>
+                <li>
+                    <strong>Site Updates</strong>
+                    <ul>
+                        <li>Improved and reformatted the character details pages</li>
+                        <li>Character details can now be directly referenced by a URL</li>
+                        <li>Character images now added to details and simulator pages</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Traits</strong>
+                    <ul>
+                        <li>Mech Scrapper renamed to Mech Slayer</li>
+                        <li>Maverick Hunter removed and replaced with Mech Slayer</li>
+                        <li>Monster Hunter renamed to Monster Slayer</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
         <div *ngIf="selected === '1.2 - Myths and Monsters'">
             <h2>Version 1.2</h2>
             <ul>

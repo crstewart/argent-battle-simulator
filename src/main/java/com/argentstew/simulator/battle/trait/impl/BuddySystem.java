@@ -18,6 +18,8 @@ import lombok.Getter;
 public class BuddySystem extends AbstractArmorTrait {
 
     private final String name = "Buddy System";
+    private final String description = "When at 50% health or higher, the character gains 4 additional priority on " +
+            "all moves and a 50% resistance to assist attacks.";
 
     @Override
     public double applyBonusPriority(Action action, double speed) {

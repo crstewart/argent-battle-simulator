@@ -15,6 +15,7 @@ import lombok.Getter;
 public class NaturalAgility implements Trait {
 
     private final String name = "Natural Agility";
+    private final String description = "The fighter cannot be paralyzed and can dodge bullet speed attacks.";
 
     @Override
     public boolean isImmuneToTorment() {

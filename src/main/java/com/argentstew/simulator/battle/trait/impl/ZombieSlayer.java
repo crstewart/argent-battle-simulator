@@ -17,6 +17,7 @@ import lombok.Getter;
 public class ZombieSlayer implements Trait {
 
     private final String name = "Zombie Slayer";
+    private final String description = "The fighter does 50% additional damage to undead characters.";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {

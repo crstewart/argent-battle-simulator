@@ -17,6 +17,7 @@ import lombok.Getter;
 public class DragonSlayer implements Trait {
 
     private final String name = "Dragon Slayer";
+    private final String description = "The fighter does 50% additional damage to dragon characters.";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {

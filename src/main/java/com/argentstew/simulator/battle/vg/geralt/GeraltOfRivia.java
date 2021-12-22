@@ -8,7 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.trait.impl.MonsterHunter;
+import com.argentstew.simulator.battle.trait.impl.MonsterSlayer;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -34,7 +34,7 @@ public class GeraltOfRivia {
 
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(7).dexterity(7).aim(7.5)
                 .agility(6.5).speed(6).intellect(6).willpower(6).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new MonsterHunter()));
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new MonsterSlayer()));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("An all-around fighter who excels against monsters.")
                 .entryQuotes(Arrays.asList("Geralt: 'I believe in the sword.'", "Geralt: 'Damn, you're ugly.'"))

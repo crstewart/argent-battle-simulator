@@ -19,6 +19,7 @@ import lombok.Getter;
 public class Righteousness implements Trait {
 
     private final String name = "Righteousness";
+    private final String description = "The fighter does light-elemental counterattack damage to melee attackers.";
 
     @Override
     public AttackAction applyPassiveDefense(AttackAction attack) {

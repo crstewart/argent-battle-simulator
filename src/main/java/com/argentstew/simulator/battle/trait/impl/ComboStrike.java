@@ -15,4 +15,6 @@ import lombok.Getter;
 public class ComboStrike implements Trait {
 
     private final String name = "Combo Strike";
+    private final String description = "When stunning the opponent with an attack, the character gets a second " +
+            "attack on the same turn for free.";
 }

@@ -17,11 +17,12 @@ import lombok.Getter;
 public class GodSlayer implements Trait {
 
     private final String name = "God Slayer";
+    private final String description = "The fighter does 50% additional damage to divine characters.";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {
         if (defender.getClassifications().contains(FighterClassification.DIVINE)) {
-            return rawDamage * 1.50;
+            return rawDamage * 1.5;
         }
 
         return rawDamage;

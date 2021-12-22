@@ -21,6 +21,8 @@ import lombok.Getter;
 public class Static implements Trait {
 
     private final String name = "Static";
+    private final String description = "The fighter has a 30% chance to paralyze the opponent when struck by a " +
+            "melee attack.";
 
     @Override
     public AttackAction applyPassiveDefense(AttackAction attack) {

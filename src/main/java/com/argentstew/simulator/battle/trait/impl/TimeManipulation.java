@@ -15,4 +15,5 @@ import lombok.Getter;
 public class TimeManipulation implements Trait {
 
     private final String name = "Time Manipulation";
+    private final String description = "The fighter can dodge homing attacks.";
 }

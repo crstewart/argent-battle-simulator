@@ -15,6 +15,7 @@ import lombok.Getter;
 public class ColdResistance implements Trait {
 
     private final String name = "Cold Resistance";
+    private final String description = "The fighter cannot be frostbitten.";
 
     @Override
     public boolean isImmuneToTorment() {
