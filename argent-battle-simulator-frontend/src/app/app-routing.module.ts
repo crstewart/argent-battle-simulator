@@ -9,6 +9,7 @@ import {RostersComponent} from "./rosters/rosters.component";
 import {ScheduleComponent} from "./schedule/schedule.component";
 import {BattleLogsComponent} from "./battle-logs/battle-logs.component";
 import {SeasonOneComponent} from "./season-one/season-one.component";
+import {MissingPageComponent} from "./missing-page/missing-page.component";
 
 const routes: Routes = [
     {path: 'home', component: SimulatorComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
     {path: 'battle-logs', component: BattleLogsComponent},
     {path: 'season-one', component: SeasonOneComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'},
+    {path: '**', component: MissingPageComponent}
 ];
 
 @NgModule({

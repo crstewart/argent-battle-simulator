@@ -17,6 +17,7 @@ import {ScheduleComponent} from "./schedule/schedule.component";
 import {BattleLogsComponent} from "./battle-logs/battle-logs.component";
 import {SeasonOneComponent} from "./season-one/season-one.component";
 import {CharacterImageComponent} from './widgets/character-image/character-image.component';
+import {MissingPageComponent} from './missing-page/missing-page.component';
 
 @NgModule({
     declarations: [
@@ -34,6 +35,7 @@ import {CharacterImageComponent} from './widgets/character-image/character-image
         ScheduleComponent,
         BattleLogsComponent,
         SeasonOneComponent,
+        MissingPageComponent,
 
         // widgets
         CharacterImageComponent
