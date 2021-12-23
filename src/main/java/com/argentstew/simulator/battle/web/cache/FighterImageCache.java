@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.web.model.ImageType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -28,8 +29,8 @@ public class FighterImageCache implements ImageCache {
     private final boolean active;
 
     @Autowired
-    public FighterImageCache() {
-        this.directory = new File(System.getenv("IMAGE_CACHE_LOCATION"));
+    public FighterImageCache(@Value("${argent.fighter.image.cache}") String directory) {
+        this.directory = new File(directory);
         this.active = (!this.directory.exists() && this.directory.mkdir()) || this.directory.isDirectory();
     }
 

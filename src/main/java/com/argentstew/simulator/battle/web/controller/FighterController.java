@@ -36,7 +36,7 @@ public class FighterController {
         this.fighterService = fighterService;
     }
 
-    @GetMapping(path = "/", produces = APPLICATION_JSON_VALUE)
+    @GetMapping(produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<String>> getAllFighters() {
         try {
             return new ResponseEntity<>(fighterService.getFighters(), HttpStatus.OK);

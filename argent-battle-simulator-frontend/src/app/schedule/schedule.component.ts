@@ -8,7 +8,8 @@ import {ComplexHttpComponent} from "../common/complex.http.component";
 @Component({
     selector: 'schedule',
     templateUrl: './schedule.component.html',
-    styleUrls: ['./schedule.component.css']
+    styleUrls: ['./schedule.component.css'],
+    providers: [HttpService]
 })
 export class ScheduleComponent extends ComplexHttpComponent implements OnInit {
 

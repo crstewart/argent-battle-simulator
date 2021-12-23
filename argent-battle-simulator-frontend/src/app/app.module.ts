@@ -3,10 +3,11 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import {SimulatorComponent} from "./simulator/simulator.component";
 import {MissingPageComponent} from './missing-page/missing-page.component';
 import {WidgetsModule} from "./widgets/widgets.module";
+import {HttpService} from "./service/http.service";
 
 @NgModule({
     declarations: [
@@ -24,7 +25,7 @@ import {WidgetsModule} from "./widgets/widgets.module";
         AppRoutingModule
     ],
     providers: [
-        HttpClient
+        HttpService
     ],
     bootstrap: [AppComponent]
 })

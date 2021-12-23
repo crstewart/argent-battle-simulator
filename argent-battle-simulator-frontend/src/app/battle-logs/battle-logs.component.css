@@ -15,11 +15,11 @@ iframe {
     height: 600px;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 960px) {
     .border {
         width: 90%;
         min-width: 160px;
-        max-width: 640px;
+        max-width: 960px;
     }
 
     iframe {

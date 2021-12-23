@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {HttpService} from "../service/http.service";
 import {Fighter} from "../model/fighter";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -11,20 +11,21 @@ import {Location} from "@angular/common";
 @Component({
     selector: 'character-details',
     templateUrl: './character-details.component.html',
-    styleUrls: ['./character-details.component.css']
+    styleUrls: ['./character-details.component.css'],
+    providers: [HttpService]
 })
-export class CharacterDetailsComponent extends ComplexHttpComponent {
+export class CharacterDetailsComponent extends ComplexHttpComponent implements OnInit {
 
     fighters: string[];
 
-    selectedFighter: Fighter;
+    selectedFighter?: string;
+    displayedFighter: Fighter;
 
     constructor(private http: HttpService,
                 private router: Router,
                 private route: ActivatedRoute,
                 private title: Title,
-                private location: Location,
-                private detector: ChangeDetectorRef) {
+                private location: Location) {
         super(http, router, route, title);
         combineLatest([this.route.params,
             this.route.data,
@@ -38,28 +39,33 @@ export class CharacterDetailsComponent extends ComplexHttpComponent {
                     this.setFighter(params.name);
                     this.title.setTitle((data.title as string).replace(':name', params.name));
                 } else {
-                    this.location.replaceState('/fighters');
+                    this.title.setTitle((data.title as string));
                 }
-
-                this.detector.detectChanges();
             });
     }
 
-    setFighter(event: Event): void {
-        let fighterName = ""+event;
-        this.http.getFighter(fighterName).subscribe((data: Fighter) => {
-            this.selectedFighter = data;
-            this.location.replaceState(`/fighters/${fighterName}`);
-            this.detector.detectChanges();
+    ngOnInit(): void {
+        if (this.selectedFighter) {
+            this.location.replaceState(`/fighters/${this.selectedFighter}`);
+        } else {
+            this.location.replaceState('/fighters');
+        }
+    }
+
+    setFighter(name: string): void {
+        this.http.getFighter(name).subscribe((fighter: Fighter) => {
+            this.displayedFighter = fighter;
+            this.selectedFighter = name;
+            this.location.replaceState(`/fighters/${name}`);
         });
     }
 
     prettyPrintValue(value: string): string {
-        return value.split(/ _/g).map(this.prettyPrintWord).join(" ");
+        return value.trim().split(/[\s_]/g).map(word => this.prettyPrintWord(word)).join(" ");
     }
 
     prettyPrintValues(values: string[]): string {
-        return values.map(this.prettyPrintValue).join(", ");
+        return values.map(value => this.prettyPrintValue(value)).join(", ");
     }
 
     prettyPrintWord(word: string): string {

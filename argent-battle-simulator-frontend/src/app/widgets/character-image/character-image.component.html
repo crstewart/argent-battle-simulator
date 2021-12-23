@@ -1,4 +1,4 @@
-<div ng-class="'character-image float-' + float">
+<div [class]="'character-image float-' + float">
     <img [src]="getImgSrc()" [alt]="fighter.name" />
     <span>&copy; {{fighter.copyrightOwner}}</span>
 </div>

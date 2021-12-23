@@ -8,7 +8,8 @@ import {ComplexHttpComponent} from "../common/complex.http.component";
 @Component({
     selector: 'season-one',
     templateUrl: './season-one.component.html',
-    styleUrls: ['./season-one.component.css']
+    styleUrls: ['./season-one.component.css'],
+    providers: [HttpService]
 })
 export class SeasonOneComponent extends ComplexHttpComponent implements OnInit {
 

@@ -12,6 +12,7 @@ import com.argentstew.simulator.battle.web.model.ImageType;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -23,6 +24,7 @@ import java.io.IOException;
  * @author argen
  */
 @Component
+@Profile("prod")
 public class S3FileAccessor implements FileAccessor {
 
     private final AmazonS3ClientBuilder s3ClientBuilder;
@@ -33,12 +35,12 @@ public class S3FileAccessor implements FileAccessor {
     }
 
     @Override
-    public ImageDTO getImage(String directory, String name) {
-        if (StringUtils.isBlank(directory)) {
+    public ImageDTO getImage(String bucket, String key) {
+        if (StringUtils.isBlank(bucket)) {
             throw new S3FileException("Could not fetch from S3: Bucket not specified");
         }
 
-        if (StringUtils.isBlank(name)) {
+        if (StringUtils.isBlank(key)) {
             throw new S3FileException("Could not fetch from S3: Name not specified");
         }
 
@@ -51,16 +53,16 @@ public class S3FileAccessor implements FileAccessor {
 
         try {
             for (String extension : ImageType.getAllExtensions()) {
-                String key = name + "." + extension;
-                if (client.doesObjectExist(directory, key)) {
-                    try (S3Object s3Object = client.getObject(directory, key)) {
-                        return ImageDTO.builder().name(name).extension(extension)
+                String fullKey = key + "." + extension;
+                if (client.doesObjectExist(bucket, fullKey)) {
+                    try (S3Object s3Object = client.getObject(bucket, fullKey)) {
+                        return ImageDTO.builder().name(fullKey).extension(extension)
                                 .bytes(IOUtils.toByteArray(s3Object.getObjectContent())).build();
                     } catch (IOException e) {
                         throw new S3FileException("Could not read from S3");
                     } catch (AmazonServiceException e) {
-                        throw new S3FileException(String.format("Error from S3 for %s (%s - %s)", key, e.getErrorCode(),
-                                e.getErrorMessage()));
+                        throw new S3FileException(String.format("Error from S3 for %s (%s - %s)", fullKey,
+                                e.getErrorCode(), e.getErrorMessage()));
                     }
                 }
             }

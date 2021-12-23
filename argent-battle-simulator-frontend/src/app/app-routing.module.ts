@@ -52,6 +52,11 @@ const routes: Routes = [
         pathMatch: 'full'
     },
     {
+        path: 'characters',
+        redirectTo: '/fighters',
+        pathMatch: 'full'
+    },
+    {
         path: '**',
         component: MissingPageComponent,
         data: {title: 'Argent Battle Simulator - 404\'d!'}

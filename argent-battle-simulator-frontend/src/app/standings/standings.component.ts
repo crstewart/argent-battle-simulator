@@ -8,7 +8,8 @@ import {ComplexHttpComponent} from "../common/complex.http.component";
 @Component({
     selector: 'standings',
     templateUrl: './standings.component.html',
-    styleUrls: ['./standings.component.css']
+    styleUrls: ['./standings.component.css'],
+    providers: [HttpService]
 })
 export class StandingsComponent extends ComplexHttpComponent implements OnInit {
 

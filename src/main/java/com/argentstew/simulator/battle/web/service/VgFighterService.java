@@ -17,6 +17,7 @@ import com.argentstew.simulator.battle.web.repository.FighterRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -43,12 +44,13 @@ public class VgFighterService implements FighterService {
     public VgFighterService(FighterFactory fighterFactory,
                             FighterRepository fighterRepository,
                             FileAccessor fileAccessor,
-                            ImageCache imageCache) {
+                            ImageCache imageCache,
+                            @Value("${argent.fighter.image.directory}") String imageDirectory) {
         this.fighterFactory = fighterFactory;
         this.fighterRepository = fighterRepository;
         this.fileAccessor = fileAccessor;
         this.imageCache = imageCache;
-        this.imageDirectory = System.getenv("IMAGE_STORAGE_DIRECTORY");
+        this.imageDirectory = imageDirectory;
     }
 
     @Override

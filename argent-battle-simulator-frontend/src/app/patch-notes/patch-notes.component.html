@@ -1,8 +1,8 @@
 <div class="border">
-    <div id="top" class="patch-notes">
+    <div class="patch-notes">
         <label for="patch-notes-selection">Select a patch to view its notes: </label>
         <select id="patch-notes-selection" [ngModel]="selected" (ngModelChange)="setVersion($event)">
-            <option *ngFor="let option of options" [value]="option.number">Version {{getVersionLabel(option)}}</option>
+            <option *ngFor="let option of options" [ngValue]="option">{{getVersionLabel(option)}}</option>
         </select>
         <div *ngIf="selected.number === '1.2.1'">
             <h2>Version 1.2.1</h2>
@@ -2156,6 +2156,5 @@
                 </li>
             </ul>
         </div>
-        <a href="#top">Return to the top</a>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Title} from "@angular/platform-browser";
 import {ComplexRoutingComponent} from "../common/complex.routing.component";
@@ -11,9 +11,9 @@ import {Location} from "@angular/common";
     templateUrl: './patch-notes.component.html',
     styleUrls: ['./patch-notes.component.css']
 })
-export class PatchNotesComponent extends ComplexRoutingComponent {
+export class PatchNotesComponent extends ComplexRoutingComponent implements OnInit {
 
-    options: {number: string, name?: string}[] = [
+    options: Option[] = [
         {number: '1.2.1'},
         {number: '1.2', name: 'Myths and Monsters'},
         {number: '1.1.1'},
@@ -24,13 +24,12 @@ export class PatchNotesComponent extends ComplexRoutingComponent {
         {number: '1.0.1'}
     ];
 
-    selected: {number: string, name?: string};
+    selected: Option;
 
     constructor(private router: Router,
                 private route: ActivatedRoute,
                 private title: Title,
-                private location: Location,
-                private detector: ChangeDetectorRef) {
+                private location: Location) {
         super(router, route, title);
         combineLatest([this.route.params,
             this.route.data
@@ -39,23 +38,27 @@ export class PatchNotesComponent extends ComplexRoutingComponent {
                 ({params: params, data: data})))
             .subscribe(({params, data}) => {
                 if (params.version) {
-                    let version = this.options.find(option => option.number === params.version);
+                    let version: Option = this.options.find(option => option.number === params.version);
                     if (version) {
                         this.selected = version;
                         this.title.setTitle((data.title as string).replace(':version', version.number));
-                    } else {
-                        this.location.replaceState(`/patch-notes`);
                     }
                 } else {
                     this.selected = this.options[0];
-                    this.location.replaceState(`/patch-notes/${this.selected.number}`);
+                    this.title.setTitle((data.title as string));
                 }
-
-                this.detector.detectChanges();
             });
     }
 
-    getVersionLabel(option: {number: string, name?: string}) {
+    ngOnInit(): void {
+        if (this.selected) {
+            this.location.replaceState(`/patch-notes/${this.selected.number}`);
+        } else {
+            this.location.replaceState(`/patch-notes`);
+        }
+    }
+
+    getVersionLabel(option: Option) {
         let label = `Version ${option.number}`;
         if (option.name) {
             label += ` - ${option.name}`;
@@ -64,15 +67,13 @@ export class PatchNotesComponent extends ComplexRoutingComponent {
         return label;
     }
 
-    setVersion(event: Event) {
-        let versionNumber = ""+event;
-        for (let option of this.options) {
-            if (option.number === versionNumber) {
-                this.selected = option;
-                break;
-            }
-        }
-
-        this.detector.detectChanges();
+    setVersion(option: Option) {
+        this.selected = option;
+        this.location.replaceState(`/patch-notes/${this.selected.number}`);
     }
+}
+
+interface Option {
+    number: string,
+    name?: string
 }

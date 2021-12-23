@@ -7,7 +7,8 @@ import {Title} from "@angular/platform-browser";
 @Component({
     selector: 'rosters',
     templateUrl: './rosters.component.html',
-    styleUrls: ['./rosters.component.css']
+    styleUrls: ['./rosters.component.css'],
+    providers: [HttpService]
 })
 export class RostersComponent extends ComplexHttpComponent {
 

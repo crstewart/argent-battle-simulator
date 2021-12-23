@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-body {
+html, body {
     background: black;
     color: white;
     font-family: sans-serif;

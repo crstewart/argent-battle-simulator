@@ -1,135 +1,138 @@
 <div class="border">
     <div class="character-select">
         <label for="fighterSelect">Select a fighter to view their details: </label>
-        <select id="fighterSelect" [ngModel]="selectedFighter == null ? null : selectedFighter.name"
-                (ngModelChange)="setFighter($event)" required>
-            <option *ngFor="let fighter of fighters" [value]="fighter">{{fighter}}</option>
+        <select id="fighterSelect" [ngModel]="selectedFighter" (ngModelChange)="setFighter($event)" required>
+            <option *ngFor="let fighter of fighters" [ngValue]="fighter">{{fighter}}</option>
         </select>
     </div>
 </div>
-<div *ngIf="selectedFighter != null" class="border">
+<div *ngIf="selectedFighter" class="border">
     <div class="character-details">
-        <character-image [fighter]="selectedFighter" float="right"></character-image>
-        <span class="name">{{selectedFighter.name}}</span><br/>
-        <br/>
-        <strong>Series of Origin:</strong> <span>{{selectedFighter.seriesOfOrigin}}</span><br/>
-        <br/>
-        <strong>Classifications:</strong> <span>{{prettyPrintValues(selectedFighter.classifications)}}</span><br/>
-        <em>{{selectedFighter.description}}</em><br/>
-        <br/>
-        <table>
-            <tr>
-                <td>HP: {{selectedFighter.hp}}/{{selectedFighter.hp}}</td>
-                <td>SP: {{selectedFighter.sp}}/{{selectedFighter.maxSp}}</td>
-            </tr>
-            <tr>
-                <td>Strength: {{selectedFighter.strength}}</td>
-                <td>Speed: {{selectedFighter.speed}}</td>
-            </tr>
-            <tr>
-                <td>Toughness: {{selectedFighter.toughness}}</td>
-                <td>Intellect: {{selectedFighter.intellect}}</td>
-            </tr>
-            <tr>
-                <td>Dexterity: {{selectedFighter.dexterity}}</td>
-                <td>Willpower: {{selectedFighter.willpower}}</td>
-            </tr>
-            <tr>
-                <td>Aim: {{selectedFighter.aim}}</td>
-                <td>Size: {{selectedFighter.size}}</td>
-            </tr>
-            <tr>
-                <td>Agility: {{selectedFighter.agility}}</td>
-                <td>Weight: {{selectedFighter.weight}}</td>
-            </tr>
-        </table>
-        <br/>
-        <div *ngIf="selectedFighter.traits.length > 0">
-            <strong>Traits:</strong><br/>
+        <character-image [fighter]="displayedFighter" float="right"></character-image>
+        <div class="character-details-top">
+            <span class="name">{{displayedFighter.name}}</span><br/>
+            <em>{{displayedFighter.description}}</em><br/>
+            <br/>
+            <strong>Series of Origin: </strong><span>{{displayedFighter.seriesOfOrigin}}</span><br/>
+            <br/>
+            <strong>Classifications: </strong><span>{{prettyPrintValues(displayedFighter.classifications)}}</span><br/>
+            <br/>
             <table>
-                <tr *ngFor="let trait of selectedFighter.traits">
-                    <td><strong [innerText]="trait.name"></strong></td>
-                    <td>
-                        <span [innerText]="trait.description"></span>
-                        <em *ngIf="trait.immuneToTorment">(not affected by Endless Torment)</em>
-                    </td>
+                <tr>
+                    <td>HP: {{displayedFighter.hp}}/{{displayedFighter.hp}}</td>
+                    <td>SP: {{displayedFighter.sp}}/{{displayedFighter.maxSp}}</td>
+                </tr>
+                <tr>
+                    <td>Strength: {{displayedFighter.strength}}</td>
+                    <td>Speed: {{displayedFighter.speed}}</td>
+                </tr>
+                <tr>
+                    <td>Toughness: {{displayedFighter.toughness}}</td>
+                    <td>Intellect: {{displayedFighter.intellect}}</td>
+                </tr>
+                <tr>
+                    <td>Dexterity: {{displayedFighter.dexterity}}</td>
+                    <td>Willpower: {{displayedFighter.willpower}}</td>
+                </tr>
+                <tr>
+                    <td>Aim: {{displayedFighter.aim}}</td>
+                    <td>Size: {{displayedFighter.size}}</td>
+                </tr>
+                <tr>
+                    <td>Agility: {{displayedFighter.agility}}</td>
+                    <td>Weight: {{displayedFighter.weight}}</td>
                 </tr>
             </table>
         </div>
-        <strong>Defenses:</strong><br/>
-        <div *ngFor="let defense of selectedFighter.defenses">
-            <span [innerText]="prettyPrintValue(defense)"></span><br/>
-        </div>
-        <br/>
-        <strong>Strategy:</strong> <span>{{selectedFighter.strategy}}</span><br/>
-        <br/>
-        <strong>Attacks:</strong><br/>
-        <table>
-            <ng-template *ngFor="let attack of selectedFighter.attacks">
-                <tr>
-                    <td colspan="2"><strong>{{attack.name}}</strong></td>
-                    <td title="Classification of the attack: Melee, Ranged, or Magic">
-                        {{prettyPrintValue(attack.attackType)}}
-                    </td>
-                </tr>
-                <tr>
-                    <td title="Attack types used for calculating weaknesses and resistances">
-                        Attack Type: {{prettyPrintValues(attack.attackSubTypes)}}
-                    </td>
-                    <td title="Power helps determine the strength of an attack; the value denoted by +0-N determines the variable extra damage than can be dealt">
-                        Power: {{attack.power}} +0-{{attack.variance}}
-                    </td>
-                    <td title="The lower the priority, the quicker the character acts in a turn (melee attacks have worse priority based on distance)">
-                        Priority: {{attack.speed}}
-                    </td>
-                </tr>
-                <tr *ngIf="attack.description && attack.description.length > 0">
-                    <td colspan="3"><em>{{attack.description}}</em></td>
-                </tr>
-                <tr *ngIf="attack.characteristics && attack.characteristics.length > 0">
-                    <td colspan="3">{{prettyPrintValues(attack.characteristics)}}</td>
-                </tr>
-            </ng-template>
-        </table>
-        <br/>
-        <div *ngIf="selectedFighter.guards && selectedFighter.guards.length > 0">
-            <strong>Guards: </strong>
-            <div *ngFor="let guard of selectedFighter.guards">
-                <strong>{{guard.name}}</strong> - <span>{{guard.description}}</span>
+        <div class="character-details-bottom">
+            <div *ngIf="displayedFighter.traits.length > 0">
+                <strong>Traits</strong><br/>
+                <table>
+                    <tr *ngFor="let trait of displayedFighter.traits">
+                        <td><strong [innerText]="trait.name"></strong></td>
+                        <td>
+                            <span [innerText]="trait.description"></span>
+                            <em *ngIf="trait.immuneToTorment"> (not affected by Endless Torment)</em>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
             </div>
-        </div>
-        <br/>
-        <div *ngIf="selectedFighter.heals && selectedFighter.heals.length > 0">
-            <strong>Heals: </strong>
-            <div *ngFor="let heal of selectedFighter.heals">
-                <strong>{{heal.name}}</strong> - <span>{{heal.description}}</span>
+            <strong>Defenses</strong><br/>
+            <div *ngFor="let defense of displayedFighter.defenses">
+                <span [innerText]="prettyPrintValue(defense)"></span><br/>
             </div>
+            <br/>
+            <strong>Strategy: </strong><span>{{displayedFighter.strategy}}</span><br/>
+            <br/>
+            <strong>Attacks</strong><br/>
+            <table>
+                <ng-container *ngFor="let attack of displayedFighter.attacks">
+                    <tr>
+                        <td colspan="2"><strong>{{attack.name}}</strong></td>
+                        <td title="Classification of the attack: Melee, Ranged, or Magic">
+                            {{prettyPrintValue(attack.attackType)}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td title="Attack types used for calculating weaknesses and resistances">
+                            Attack Type: {{prettyPrintValues(attack.attackSubTypes)}}
+                        </td>
+                        <td title="Power helps determine the strength of an attack; the value denoted by +0-N determines the variable extra damage than can be dealt">
+                            Power: {{attack.power}} +0-{{attack.variance}}
+                        </td>
+                        <td title="The lower the priority, the quicker the character acts in a turn (melee attacks have worse priority based on distance)">
+                            Priority: {{attack.speed}}
+                        </td>
+                    </tr>
+                    <tr *ngIf="attack.description && attack.description.length > 0">
+                        <td colspan="3"><em>{{attack.description}}</em></td>
+                    </tr>
+                    <tr *ngIf="attack.characteristics && attack.characteristics.length > 0">
+                        <td colspan="3">{{prettyPrintValues(attack.characteristics)}}</td>
+                    </tr>
+                </ng-container>
+            </table>
+            <br/>
+            <div *ngIf="displayedFighter.guards && displayedFighter.guards.length > 0">
+                <strong>Guards</strong>
+                <div *ngFor="let guard of displayedFighter.guards">
+                    <strong>{{guard.name}}</strong> - <span>{{guard.description}}</span>
+                </div>
+                <br/>
+            </div>
+            <div *ngIf="displayedFighter.heals && displayedFighter.heals.length > 0">
+                <strong>Heals</strong>
+                <div *ngFor="let heal of displayedFighter.heals">
+                    <strong>{{heal.name}}</strong> - <span>{{heal.description}}</span>
+                </div>
+                <br/>
+            </div>
+            <strong>X-Strikes</strong><br/>
+            <table>
+                <ng-container *ngFor="let xstrike of displayedFighter.xstrikes">
+                    <tr>
+                        <td colspan="2"><strong>{{xstrike.name}}</strong></td>
+                        <td title="Classification of the attack: Melee, Ranged, or Magic">
+                            {{prettyPrintValue(xstrike.attackType)}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td title="Attack types used for calculating weaknesses and resistances">
+                            Attack Type: {{prettyPrintValues(xstrike.attackSubTypes)}}
+                        </td>
+                        <td title="Power helps determine the strength of an attack; the value denoted by +0-N determines the variable extra damage than can be dealt">
+                            Power: {{xstrike.power}} +0-{{xstrike.variance}}
+                        </td>
+                        <td title="The lower the priority, the quicker the character acts in a turn (melee attacks have worse priority based on distance)">
+                            Priority: {{xstrike.speed}}
+                        </td>
+                    </tr>
+                    <tr *ngIf="xstrike.description && xstrike.description.length > 0">
+                        <td colspan="3"><em>{{xstrike.description}}</em></td>
+                    </tr>
+                </ng-container>
+            </table>
         </div>
-        <br/>
-        <strong>X-Strike: </strong><br/>
-        <table>
-            <ng-template *ngFor="let xstrike of selectedFighter.xstrikes">
-                <tr>
-                    <td colspan="2"><strong>{{xstrike.name}}</strong></td>
-                    <td title="Classification of the attack: Melee, Ranged, or Magic">
-                        {{prettyPrintValue(xstrike.attackType)}}
-                    </td>
-                </tr>
-                <tr>
-                    <td title="Attack types used for calculating weaknesses and resistances">
-                        Attack Type: {{prettyPrintValues(xstrike.attackSubTypes)}}
-                    </td>
-                    <td title="Power helps determine the strength of an attack; the value denoted by +0-N determines the variable extra damage than can be dealt">
-                        Power: {{xstrike.power}} +0-{{xstrike.variance}}
-                    </td>
-                    <td title="The lower the priority, the quicker the character acts in a turn (melee attacks have worse priority based on distance)">
-                        Priority: {{xstrike.speed}}
-                    </td>
-                </tr>
-                <tr *ngIf="xstrike.description && xstrike.description.length > 0">
-                    <td colspan="3"><em>{{xstrike.description}}</em></td>
-                </tr>
-            </ng-template>
-        </table>
     </div>
 </div>

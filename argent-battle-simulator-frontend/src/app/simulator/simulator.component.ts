@@ -9,7 +9,8 @@ import {Title} from "@angular/platform-browser";
 @Component({
     selector: 'simulator',
     templateUrl: './simulator.component.html',
-    styleUrls: ['./simulator.component.css']
+    styleUrls: ['./simulator.component.css'],
+    providers: [HttpService]
 })
 export class SimulatorComponent extends ComplexHttpComponent implements AfterViewInit {
 

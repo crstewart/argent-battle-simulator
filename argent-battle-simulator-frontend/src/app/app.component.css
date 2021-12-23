@@ -97,7 +97,7 @@ a.hamburger {
     color: white;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 960px) {
     a.title {
         display: block;
         margin: 0 auto;
@@ -107,7 +107,7 @@ a.hamburger {
 
     #nav-bar {
         min-width: 160px;
-        max-width: 640px;
+        max-width: 960px;
     }
 
     .dropdown {
@@ -119,7 +119,7 @@ a.hamburger {
         left: 0;
         width: 100%;
         min-width: 160px;
-        max-width: 640px;
+        max-width: 960px;
     }
 
     ul.nav li {
@@ -129,7 +129,7 @@ a.hamburger {
     ul.nav li a {
         padding: 16px 0;
         width: 100%;
-        max-width: 640px;
+        max-width: 960px;
     }
 
     a.hamburger {
