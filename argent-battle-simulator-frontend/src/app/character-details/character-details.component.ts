@@ -35,9 +35,10 @@ export class CharacterDetailsComponent extends ComplexHttpComponent implements O
                 ({params: params, data: data, fighters: fighters})))
             .subscribe(({params, data, fighters}) => {
                 this.fighters = fighters;
-                if (params.name && this.fighters && this.fighters.includes(params.name)) {
-                    this.setFighter(params.name);
-                    this.title.setTitle((data.title as string).replace(':name', params.name));
+                let name = (params.name) ? CharacterDetailsComponent.getStandardName(params.name) : undefined;
+                if (name && this.fighters && this.fighters.includes(name)) {
+                    this.setFighter(name);
+                    this.title.setTitle((data.title as string).replace(':name', name));
                 } else {
                     this.title.setTitle((data.title as string));
                 }
@@ -46,7 +47,8 @@ export class CharacterDetailsComponent extends ComplexHttpComponent implements O
 
     ngOnInit(): void {
         if (this.selectedFighter) {
-            this.location.replaceState(`/fighters/${this.selectedFighter}`);
+            this.location
+                .replaceState(`/fighters/${CharacterDetailsComponent.getCanonicalName(this.selectedFighter)}`);
         } else {
             this.location.replaceState('/fighters');
         }
@@ -56,7 +58,7 @@ export class CharacterDetailsComponent extends ComplexHttpComponent implements O
         this.http.getFighter(name).subscribe((fighter: Fighter) => {
             this.displayedFighter = fighter;
             this.selectedFighter = name;
-            this.location.replaceState(`/fighters/${name}`);
+            this.location.replaceState(`/fighters/${CharacterDetailsComponent.getCanonicalName(name)}`);
         });
     }
 
@@ -70,5 +72,13 @@ export class CharacterDetailsComponent extends ComplexHttpComponent implements O
 
     prettyPrintWord(word: string): string {
         return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
+    }
+
+    private static getCanonicalName(name: string): string {
+        return name.trim().replace(/\s+/g, '_');
+    }
+
+    private static getStandardName(canonicalName: string): string {
+        return canonicalName.trim().replace(/_/g, ' ');
     }
 }

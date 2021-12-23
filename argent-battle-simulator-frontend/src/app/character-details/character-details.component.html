@@ -59,8 +59,11 @@
                 <br/>
             </div>
             <strong>Defenses</strong><br/>
+            <div *ngIf="displayedFighter.defenses && displayedFighter.defenses.length === 0">
+                <span>NONE</span>
+            </div>
             <div *ngFor="let defense of displayedFighter.defenses">
-                <span [innerText]="prettyPrintValue(defense)"></span><br/>
+                <span>{{prettyPrintValue(defense)}}</span><br/>
             </div>
             <br/>
             <strong>Strategy: </strong><span>{{displayedFighter.strategy}}</span><br/>
