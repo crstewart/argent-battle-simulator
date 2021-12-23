@@ -1,6 +1,9 @@
 package com.argentstew.simulator.battle.web.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -11,6 +14,9 @@ import java.util.List;
  * @author argen
  */
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class FighterDTO {
 
     private String name;

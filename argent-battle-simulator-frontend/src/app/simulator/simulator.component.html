@@ -6,9 +6,15 @@
 </div>
 
 <div *ngIf="simulation != null" class="border simulator-result">
-    <a *ngIf="simulation.id != null" class="download-link" target="_blank"
-       [href]="getDownloadLink(simulation.id)">Download Log</a>
+    <a *ngIf="simulation.id != null" class="download-link" target="_blank" [href]="getDownloadLink(simulation.id)">
+        Download Log
+    </a>
     <div class="log">
+        <character-image [fighter]="simulation.fighter1"></character-image>
+        <div class="vs-frame">
+            <img src="assets/images/vs.png" alt="VS" />
+        </div>
+        <character-image [fighter]="simulation.fighter2"></character-image>
         <p>{{simulation.message}}</p>
     </div>
 </div>

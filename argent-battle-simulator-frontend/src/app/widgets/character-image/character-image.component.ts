@@ -10,6 +10,12 @@ export class CharacterImageComponent {
 
     @Input() fighter: Fighter;
 
+    @Input() float: 'none' | 'left' | 'right' = 'none';
+
+    constructor() {
+
+    }
+
     getImgSrc(): string {
         return `v1/fighters/${this.fighter.name}/image`;
     }

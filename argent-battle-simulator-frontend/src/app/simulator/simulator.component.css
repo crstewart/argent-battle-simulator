@@ -23,6 +23,19 @@
     font-family: "Courier New", monospace;
 }
 
+.vs-frame {
+    display: inline-block;
+    height: 320px;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.vs-frame img {
+    display: block;
+    height: 100%;
+    object-fit: contain;
+}
+
 .download-link {
     display: inline-block;
     border: 1px solid black;
@@ -45,5 +58,9 @@
         width: 90%;
         min-width: 160px;
         max-width: 640px;
+    }
+
+    .vs-frame {
+        height: 120px;
     }
 }

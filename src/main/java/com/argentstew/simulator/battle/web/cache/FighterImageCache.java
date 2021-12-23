@@ -34,12 +34,12 @@ public class FighterImageCache implements ImageCache {
     }
 
     @Override
-    public ImageDTO get(String name) {
+    public ImageDTO get(String canonicalName) {
         byte[] data = null;
         String extension = null;
         if (active) {
             for (String possibleExtension : ImageType.getAllExtensions()) {
-                String fileName = name + "." + possibleExtension;
+                String fileName = canonicalName + "." + possibleExtension;
                 try {
                     File file = new File(directory, fileName);
                     if (file.exists()) {
@@ -61,7 +61,7 @@ public class FighterImageCache implements ImageCache {
             return null;
         }
 
-        return ImageDTO.builder().name(name).extension(extension).bytes(data).build();
+        return ImageDTO.builder().name(canonicalName).extension(extension).bytes(data).build();
     }
 
     @Override

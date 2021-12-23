@@ -1,9 +1,20 @@
 .character-image {
     display: inline-block;
-    float: right;
     height: 320px;
     padding: 0 24px;
     text-align: center;
+}
+
+.float-none {
+    float: none;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
 }
 
 .character-image img {
@@ -22,7 +33,14 @@
 @media screen and (max-width: 640px) {
 
     .character-image {
-        float: none;
         height: 120px;
+    }
+
+    .float-left {
+        float: none;
+    }
+
+    .float-right {
+        float: none;
     }
 }

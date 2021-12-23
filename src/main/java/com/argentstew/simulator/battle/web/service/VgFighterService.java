@@ -201,13 +201,20 @@ public class VgFighterService implements FighterService {
 
     @Override
     public ImageDTO getFighterImage(String name) {
-        ImageDTO image = imageCache.get(name);
+        String canonicalName = getCanonicalName(name);
+        ImageDTO image = imageCache.get(canonicalName);
         if (image == null) {
             log.info("Image for {} not cached, fetching from remote file system", name);
-            image = fileAccessor.getImage(imageDirectory, name);
+            image = fileAccessor.getImage(imageDirectory, canonicalName);
             imageCache.put(image);
         }
 
+        image.setName(name);
         return image;
+    }
+
+    private String getCanonicalName(String name) {
+        return name.trim().replaceAll("\\s", "_").replaceAll("\\.", "")
+                .replaceAll("&", "and").toLowerCase();
     }
 }

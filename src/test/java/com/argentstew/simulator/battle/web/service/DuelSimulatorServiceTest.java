@@ -9,6 +9,7 @@ import com.argentstew.simulator.battle.web.log.WebLogger;
 import com.argentstew.simulator.battle.web.model.SimulationResult;
 import com.argentstew.simulator.battle.web.provider.BattleProvider;
 import com.argentstew.simulator.battle.web.provider.LoggerProvider;
+import com.argentstew.simulator.battle.web.repository.FighterRepository;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,6 +19,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -40,6 +42,9 @@ public class DuelSimulatorServiceTest {
     private FighterFactory fighterFactory;
 
     @Mock
+    private FighterRepository fighterRepository;
+
+    @Mock
     private BattleProvider battleProvider;
 
     @Mock
@@ -56,13 +61,21 @@ public class DuelSimulatorServiceTest {
 
     @Test
     void testRun_Success() throws Exception {
+        String testOwner = "Test Co.";
+
         when(fighterFactory.getFighter(anyString())).thenReturn(Fighter.builder().build());
+        when(fighterRepository.findByName(anyString()))
+                .thenReturn(Optional.of(
+                        com.argentstew.simulator.battle.web.persistence.Fighter.builder().copyrightOwner(testOwner).build()
+                ));
         when(battleProvider.setUpBattle(any(Fighter.class), any(Fighter.class), any(BattleLogger.class)))
                 .thenReturn(battle);
         when(loggerProvider.getLogger(any(Writer.class))).thenReturn(logger);
         when(logger.getUuid()).thenReturn("abc");
 
         SimulationResult result = service.run("fighter1", "fighter2");
+        assertEquals(testOwner, result.getFighter1().getCopyrightOwner());
+        assertEquals(testOwner, result.getFighter2().getCopyrightOwner());
         assertEquals("Draw", result.getWinner());
         assertEquals("abc", result.getId());
         assertTrue(StringUtils.isBlank(result.getMessage()));

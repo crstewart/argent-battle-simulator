@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.factory.FighterFactory;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.web.log.LogFetcher;
 import com.argentstew.simulator.battle.web.log.WebLogger;
+import com.argentstew.simulator.battle.web.model.FighterDTO;
 import com.argentstew.simulator.battle.web.model.SimulationResult;
 import com.argentstew.simulator.battle.web.provider.BattleProvider;
 import com.argentstew.simulator.battle.web.provider.LoggerProvider;
@@ -68,8 +69,15 @@ public class DuelSimulatorService implements SimulatorService {
             logger.close();
         }
 
+        String fighter1Copyright = fighterRepository.findByName(fighter1Name)
+                .map(fighter -> fighter.getCopyrightOwner()).orElse("(Unknown)");
+        String fighter2Copyright = fighterRepository.findByName(fighter2Name)
+                .map(fighter -> fighter.getCopyrightOwner()).orElse("(Unknown)");
+
         SimulationResult result = new SimulationResult();
         result.setWinner(winner == null ? "Draw" : winner.getName());
+        result.setFighter1(FighterDTO.builder().name(fighter1Name).copyrightOwner(fighter1Copyright).build());
+        result.setFighter2(FighterDTO.builder().name(fighter2Name).copyrightOwner(fighter2Copyright).build());
         result.setMessage(stringWriter.toString());
         result.setId(logger.getUuid());
 

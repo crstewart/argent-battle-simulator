@@ -9,7 +9,7 @@
 </div>
 <div *ngIf="selectedFighter != null" class="border">
     <div class="character-details">
-        <character-image [fighter]="selectedFighter"></character-image>
+        <character-image [fighter]="selectedFighter" float="right"></character-image>
         <span class="name">{{selectedFighter.name}}</span><br/>
         <br/>
         <strong>Series of Origin:</strong> <span>{{selectedFighter.seriesOfOrigin}}</span><br/>
