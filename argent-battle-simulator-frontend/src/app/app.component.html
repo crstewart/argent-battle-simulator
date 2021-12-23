@@ -31,7 +31,8 @@
 </div>
 <router-outlet></router-outlet>
 <div class="footer">
-    <a routerLink="#top">Return to the top</a><br/>
+    <a (click)="navigateToTop()" style="cursor: pointer">Return to the top</a><br/>
+    <br/>
     <span>Argent Battle Simulator is &copy; 2020-2021 Craig Stewart</span><br/>
     <span>All characters and character images are &copy; their respective owners.</span><br/>
     <span>This software is provided for free to all users.</span><br/>

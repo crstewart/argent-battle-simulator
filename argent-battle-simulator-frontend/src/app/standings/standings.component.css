@@ -38,19 +38,19 @@ p {
 @media screen and (max-width: 960px) {
     .border {
         width: 90%;
-        min-width: 160px;
+        min-width: 320px;
         max-width: 960px;
     }
 
     table {
         width: 90%;
-        min-width: 160px;
+        min-width: 320px;
         max-width: 960px;
     }
 
     p {
         width: 90%;
-        min-width: 160px;
+        min-width: 320px;
         max-width: 960px;
     }
 }

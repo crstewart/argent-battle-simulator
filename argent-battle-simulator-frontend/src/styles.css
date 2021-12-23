@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-html, body {
+body, html {
     background: black;
     color: white;
     font-family: sans-serif;
+}
+
+@media screen and (max-width: 960px) {
+    body, html {
+        font-size: 16px;
+    }
 }

@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import "rxjs/Rx";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-base',
@@ -7,6 +8,13 @@ import "rxjs/Rx";
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+    constructor(private router: Router) {
+    }
+
+    navigateToTop(): void {
+        this.router.navigate([], {fragment: 'top'});
+    }
 
     toggleMenu(isInternal: boolean) {
         if (AppComponent.hasTouch()) {

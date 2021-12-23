@@ -33,9 +33,17 @@
 }
 
 @media screen and (max-width: 960px) {
-
     .character-image {
-        height: 120px;
+        height: 160px;
+        padding: 0 4px;
+        width: inherit;
+        max-width: 50%;
+        margin: 12px 0;
+    }
+
+    .character-image span {
+        font-size: 16pt;
+        padding-top: 2px;
     }
 
     .float-left {

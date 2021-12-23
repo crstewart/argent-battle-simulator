@@ -62,8 +62,9 @@ a.hamburger {
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Opera and Firefox */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                     supported by Chrome, Opera and Firefox */
 }
 
 .intro {
@@ -106,7 +107,7 @@ a.hamburger {
     }
 
     #nav-bar {
-        min-width: 160px;
+        min-width: 320px;
         max-width: 960px;
     }
 
@@ -118,7 +119,7 @@ a.hamburger {
     ul.nav {
         left: 0;
         width: 100%;
-        min-width: 160px;
+        min-width: 320px;
         max-width: 960px;
     }
 
@@ -134,6 +135,7 @@ a.hamburger {
 
     a.hamburger {
         display: block;
+        font-size: 16pt;
         margin: 0 auto;
         padding: 6px 0;
         width: 50%;
@@ -146,5 +148,9 @@ a.hamburger {
         width: 70%;
         background-image: none;
         text-align: center;
+    }
+
+    .footer {
+        font-size: 16pt;
     }
 }

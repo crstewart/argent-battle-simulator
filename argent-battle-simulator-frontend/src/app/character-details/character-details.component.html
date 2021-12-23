@@ -8,14 +8,16 @@
 </div>
 <div *ngIf="selectedFighter" class="border">
     <div class="character-details">
+        <span class="name">{{displayedFighter.name}}</span><br/>
+        <em>{{displayedFighter.description}}</em><br/>
         <character-image [fighter]="displayedFighter" float="right"></character-image>
+        <br/>
         <div class="character-details-top">
-            <span class="name">{{displayedFighter.name}}</span><br/>
-            <em>{{displayedFighter.description}}</em><br/>
-            <br/>
             <strong>Series of Origin: </strong><span>{{displayedFighter.seriesOfOrigin}}</span><br/>
             <br/>
             <strong>Classifications: </strong><span>{{prettyPrintValues(displayedFighter.classifications)}}</span><br/>
+            <br/>
+            <strong>Strategy: </strong><span>{{displayedFighter.strategy}}</span><br/>
             <br/>
             <table>
                 <tr>
@@ -46,7 +48,7 @@
         </div>
         <div class="character-details-bottom">
             <div *ngIf="displayedFighter.traits.length > 0">
-                <strong>Traits</strong><br/>
+                <h3>Traits</h3><br/>
                 <table>
                     <tr *ngFor="let trait of displayedFighter.traits">
                         <td><strong [innerText]="trait.name"></strong></td>
@@ -58,7 +60,7 @@
                 </table>
                 <br/>
             </div>
-            <strong>Defenses</strong><br/>
+            <h3>Defenses</h3><br/>
             <div *ngIf="displayedFighter.defenses && displayedFighter.defenses.length === 0">
                 <span>NONE</span>
             </div>
@@ -66,9 +68,7 @@
                 <span>{{prettyPrintValue(defense)}}</span><br/>
             </div>
             <br/>
-            <strong>Strategy: </strong><span>{{displayedFighter.strategy}}</span><br/>
-            <br/>
-            <strong>Attacks</strong><br/>
+            <h3>Attacks</h3><br/>
             <table>
                 <ng-container *ngFor="let attack of displayedFighter.attacks">
                     <tr>
@@ -98,20 +98,20 @@
             </table>
             <br/>
             <div *ngIf="displayedFighter.guards && displayedFighter.guards.length > 0">
-                <strong>Guards</strong>
+                <h3>Guards</h3>
                 <div *ngFor="let guard of displayedFighter.guards">
                     <strong>{{guard.name}}</strong> - <span>{{guard.description}}</span>
                 </div>
                 <br/>
             </div>
             <div *ngIf="displayedFighter.heals && displayedFighter.heals.length > 0">
-                <strong>Heals</strong>
+                <h3>Heals</h3>
                 <div *ngFor="let heal of displayedFighter.heals">
                     <strong>{{heal.name}}</strong> - <span>{{heal.description}}</span>
                 </div>
                 <br/>
             </div>
-            <strong>X-Strikes</strong><br/>
+            <h3>X-Strikes</h3><br/>
             <table>
                 <ng-container *ngFor="let xstrike of displayedFighter.xstrikes">
                     <tr>
