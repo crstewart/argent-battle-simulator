@@ -56,7 +56,7 @@ public class S3FileAccessor implements FileAccessor {
                 String fullKey = key + "." + extension;
                 if (client.doesObjectExist(bucket, fullKey)) {
                     try (S3Object s3Object = client.getObject(bucket, fullKey)) {
-                        return ImageDTO.builder().name(fullKey).extension(extension)
+                        return ImageDTO.builder().name(key).extension(extension)
                                 .bytes(IOUtils.toByteArray(s3Object.getObjectContent())).build();
                     } catch (IOException e) {
                         throw new S3FileException("Could not read from S3");

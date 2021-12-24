@@ -20,4 +20,7 @@ export class CharacterImageComponent {
         return `v1/fighters/${this.fighter.name}/image`;
     }
 
+    getFighterName(): string {
+        return this.fighter.name.trim().replace(/\s+/gi, '_');
+    }
 }

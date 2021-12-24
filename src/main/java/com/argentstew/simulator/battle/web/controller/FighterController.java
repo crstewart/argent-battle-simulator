@@ -62,7 +62,7 @@ public class FighterController {
 
     @GetMapping(path = "/{name}/image")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<byte[]> getFighterImage(@PathVariable("name") String name) {
+    public ResponseEntity<byte[]> getFighterImage(@PathVariable String name) {
         try {
             ImageDTO fighterImage = fighterService.getFighterImage(name.trim().replaceAll("_", " "));
 
