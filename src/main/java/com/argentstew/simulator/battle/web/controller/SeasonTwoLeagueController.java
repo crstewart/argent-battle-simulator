@@ -5,6 +5,7 @@ import com.argentstew.simulator.battle.web.model.ScheduleDTO;
 import com.argentstew.simulator.battle.web.model.StandingsDTO;
 import com.argentstew.simulator.battle.web.service.LeagueService;
 import com.argentstew.simulator.battle.web.service.TeamService;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,10 +70,10 @@ public class SeasonTwoLeagueController {
     }
 
     @GetMapping(path = "/rosters", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<String>> getRosterByTeam(@RequestParam("team") String teamName) {
+    public ResponseEntity<List<String>> getRosterByTeam(@RequestParam String team) {
         try {
-            List<String> roster = teamService.getRosterByTeam(SEASON_TWO_ID, teamName);
-            LOG.info("Retrieved roster of {}", teamName);
+            List<String> roster = teamService.getRosterByTeam(SEASON_TWO_ID, team.trim().replaceAll("_", " "));
+            LOG.info("Retrieved roster of {}", team);
             return new ResponseEntity<>(roster, HttpStatus.OK);
         } catch (LeagueException e) {
             LOG.error("An error occurred fetching roster for the given team name", e);
@@ -98,6 +99,7 @@ public class SeasonTwoLeagueController {
     @GetMapping(path = "/schedule", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<ScheduleDTO>> getSchedule(@RequestParam(required = false) String teamName,
                                                          @RequestParam(required = false) Integer week) {
+        teamName = (StringUtils.isNotBlank(teamName)) ? teamName.trim().replaceAll("_", " ") : null;
         try {
             List<Integer> weeks = leagueService.getWeeks(SEASON_TWO_ID);
             int minWeek = weeks.get(0);

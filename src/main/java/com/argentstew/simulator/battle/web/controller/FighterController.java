@@ -49,7 +49,7 @@ public class FighterController {
     @GetMapping(path = "/{name}", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<FighterDTO> getFighter(@PathVariable("name") String name) {
         try {
-            return new ResponseEntity<>(fighterService.getFighter(name.replaceAll("\\+", " ")),
+            return new ResponseEntity<>(fighterService.getFighter(name.trim().replaceAll("_", " ")),
                     HttpStatus.OK);
         } catch (IllegalStateException e) {
             LOG.error("Could not fetch requested fighter", e);
@@ -64,7 +64,7 @@ public class FighterController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<byte[]> getFighterImage(@PathVariable("name") String name) {
         try {
-            ImageDTO fighterImage = fighterService.getFighterImage(name);
+            ImageDTO fighterImage = fighterService.getFighterImage(name.trim().replaceAll("_", " "));
 
             HttpHeaders headers = new HttpHeaders();
             ImageType imageType = ImageType.forExtension(fighterImage.getExtension());

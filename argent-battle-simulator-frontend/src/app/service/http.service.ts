@@ -16,8 +16,8 @@ export class HttpService {
     public getSimulation(fighter1Name: string, fighter2Name: string): Observable<SimulationResult> {
         return this.httpClient.get<SimulationResult>("v1/simulation", {
             params: {
-                fighter1: fighter1Name,
-                fighter2: fighter2Name
+                fighter1: fighter1Name.trim().replace(/\s+/gi, "_"),
+                fighter2: fighter2Name.trim().replace(/\s+/gi, "_")
             }
         });
     }
@@ -31,11 +31,11 @@ export class HttpService {
     }
 
     public getFighter(name: string): Observable<Fighter> {
-        return this.httpClient.get<Fighter>(`v1/fighters/${name.replace(/\s/gi, '+')}`);
+        return this.httpClient.get<Fighter>(`v1/fighters/${name.trim().replace(/\s+/gi, '_')}`);
     }
 
     public getFighterCopyright(name: string): Observable<string> {
-        return this.httpClient.get<string>(`v1/fighters/${name.replace(/\s/gi, '+')}/owner`);
+        return this.httpClient.get<string>(`v1/fighters/${name.trim().replace(/\s+/gi, '_')}/owner`);
     }
 
     public getSeasonOneStandings(): Observable<Standings[]> {
@@ -50,8 +50,8 @@ export class HttpService {
         return this.httpClient.get<Standings[]>("v1/seasons/2/standings");
     }
 
-    public getRoster(teamName: string): Observable<string[]> {
-        return this.httpClient.get<string[]>(`v1/seasons/2/rosters?team=${teamName}`);
+    public getRoster(team: string): Observable<string[]> {
+        return this.httpClient.get<string[]>(`v1/seasons/2/rosters?team=${team.trim().replace(/\s+/gi, '_')}`);
     }
 
     public getWeeks(): Observable<number[]> {
@@ -63,10 +63,10 @@ export class HttpService {
     }
 
     public getScheduleByTeam(team: string): Observable<Match[]> {
-        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${team}`);
+        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${team.trim().replace(/\s+/gi, '_')}`);
     }
 
     public getScheduleByTeamAndWeek(team: string, week: number): Observable<Match[]> {
-        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${team}&week=${week}`);
+        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${team.trim().replace(/\s+/gi, '_')}&week=${week}`);
     }
 }

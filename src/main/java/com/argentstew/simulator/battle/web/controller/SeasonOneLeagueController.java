@@ -67,10 +67,10 @@ public class SeasonOneLeagueController {
     }
 
     @GetMapping(path = "/rosters", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<String>> getRosterByTeam(@RequestParam("team") String teamName) {
+    public ResponseEntity<List<String>> getRosterByTeam(@RequestParam String team) {
         try {
-            List<String> roster = teamService.getRosterByTeam(SEASON_ONE_ID, teamName);
-            LOG.info("Retrieved roster of {}", teamName);
+            List<String> roster = teamService.getRosterByTeam(SEASON_ONE_ID, team.trim().replaceAll("_", " "));
+            LOG.info("Retrieved roster of {}", team);
             return new ResponseEntity<>(roster, HttpStatus.OK);
         } catch (LeagueException e) {
             LOG.error("An error occurred fetching roster for the given team name", e);
@@ -121,7 +121,7 @@ public class SeasonOneLeagueController {
     public ResponseEntity<List<ScheduleDTO>> getScheduleForTeam(@PathVariable("teamName") String teamName,
                                                                 @RequestParam(required = false) Integer week) {
         try {
-            Team team = teamService.getTeam(SEASON_ONE_ID, teamName);
+            Team team = teamService.getTeam(SEASON_ONE_ID, teamName.trim().replaceAll("_", " "));
             List<Integer> weeks = leagueService.getWeeks(SEASON_ONE_ID);
             int minWeek = weeks.get(0);
             int maxWeek = weeks.get(weeks.size() - 1);
