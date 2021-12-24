@@ -205,7 +205,7 @@ public class VgFighterService implements FighterService {
     public ImageDTO getFighterImage(String name) {
         String canonicalName = getCanonicalName(name);
         ImageDTO image = imageCache.get(canonicalName);
-        if (image == null) {
+        if (image == null || image.getBytes() == null) {
             log.info("Image for {} not cached, fetching from remote file system", name);
             image = fileAccessor.getImage(imageDirectory, canonicalName);
             imageCache.put(image);
@@ -216,7 +216,7 @@ public class VgFighterService implements FighterService {
     }
 
     private String getCanonicalName(String name) {
-        return name.trim().replaceAll("\\s", "_").replaceAll("\\.", "")
+        return name.trim().replaceAll("\\s+", "_").replaceAll("\\.", "")
                 .replaceAll("&", "and").toLowerCase();
     }
 }
