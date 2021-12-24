@@ -1,5 +1,6 @@
 package com.argentstew.simulator.battle.config;
 
+import com.argentstew.simulator.battle.web.repository.FighterRepository;
 import com.argentstew.simulator.battle.web.repository.MatchRepository;
 import com.argentstew.simulator.battle.web.repository.TeamRepository;
 import com.argentstew.simulator.battle.web.repository.WeekRepository;
@@ -34,6 +35,9 @@ public class TestConfig {
 
     @MockBean
     private HikariDataSource dataSource;
+
+    @MockBean
+    private FighterRepository fighterRepository;
 
     @MockBean
     private MatchRepository matchRepository;

@@ -25,6 +25,10 @@ public class BarrierChange extends AbstractArmorTrait {
     );
 
     private final String name = "Barrier Change";
+    private final String description = "The fighter, using four different elemental spells, takes 50% damage from " +
+            "the last used element and 200% damage from the remaining three. The element selected matches that of the" +
+            "last spell used.";
+
     private AttackSubType lastElementUsed;
 
     public BarrierChange() {

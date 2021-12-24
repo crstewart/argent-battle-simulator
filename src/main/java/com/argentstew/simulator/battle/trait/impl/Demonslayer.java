@@ -16,7 +16,8 @@ import lombok.Getter;
 @EqualsAndHashCode
 public class Demonslayer implements Trait {
 
-    private final String name = "Demonslayer";
+    private final String name = "Demon Slayer";
+    private final String description = "The fighter does 50% additional damage to demonic characters.";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {

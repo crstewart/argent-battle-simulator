@@ -17,6 +17,8 @@ import lombok.Getter;
 public class Psychopath implements Trait {
 
     private final String name = "Psychopath";
+    private final String description = "The fighter is aware of the opponent's HP and can adjust their strategy " +
+            "as necessary.";
 
     private Fighter user;
     private PsychopathStrategy strategy;

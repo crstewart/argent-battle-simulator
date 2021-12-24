@@ -34,6 +34,10 @@ export class HttpService {
         return this.httpClient.get<Fighter>(`v1/fighters/${name.replace(/\s/gi, '+')}`);
     }
 
+    public getFighterCopyright(name: string): Observable<string> {
+        return this.httpClient.get<string>(`v1/fighters/${name.replace(/\s/gi, '+')}/owner`);
+    }
+
     public getSeasonOneStandings(): Observable<Standings[]> {
         return this.httpClient.get<Standings[]>("v1/seasons/1/standings");
     }

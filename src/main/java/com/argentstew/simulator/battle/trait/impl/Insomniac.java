@@ -15,4 +15,5 @@ import lombok.Getter;
 public class Insomniac implements Trait {
 
     private final String name = "Insomniac";
+    private final String description = "The fighter cannot be put to sleep.";
 }

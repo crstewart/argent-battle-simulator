@@ -1,29 +1,36 @@
 import {AfterViewInit, Component, ViewChild} from "@angular/core";
-import {SimulatorFormComponent} from "./form/simulator-form.component";
 import {SimulationResult} from "../model/simulation-result";
 import {HttpService} from "../service/http.service";
+import {SimulatorFormComponent} from "../widgets/simulator-form/simulator-form.component";
+import {ComplexHttpComponent} from "../common/complex.http.component";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Title} from "@angular/platform-browser";
 
 @Component({
     selector: 'simulator',
     templateUrl: './simulator.component.html',
-    styleUrls: ['./simulator.component.css']
+    styleUrls: ['./simulator.component.css'],
+    providers: [HttpService]
 })
-export class SimulatorComponent implements AfterViewInit {
+export class SimulatorComponent extends ComplexHttpComponent implements AfterViewInit {
 
-    @ViewChild('simulatorForm')
-    simForm: SimulatorFormComponent;
+    @ViewChild('simulatorForm') simulatorForm: SimulatorFormComponent;
 
     simulation: SimulationResult;
 
-    constructor(private httpService: HttpService) {
+    constructor(private http: HttpService,
+                private router: Router,
+                private route: ActivatedRoute,
+                private title: Title) {
+        super(http, router, route, title);
     }
 
     ngAfterViewInit(): void {
-        this.simForm.onSimulationRun
+        this.simulatorForm.onSimulationRun
             .subscribe((data: SimulationResult) => this.simulation = data);
     }
 
     getDownloadLink(id: string): string {
-        return this.httpService.getDownloadLink(id)
+        return this.http.getDownloadLink(id)
     }
 }

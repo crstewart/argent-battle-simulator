@@ -15,6 +15,8 @@ public interface Trait {
 
     String getName();
 
+    String getDescription();
+
     default void applyStartOfGameEffects(Fighter owner, Fighter opponent) {}
 
     default void setUpTurn() {}

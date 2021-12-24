@@ -19,6 +19,8 @@ public class GiantKiller implements Trait {
     private static final int GIANT_SIZE_MIN = 6;
 
     private final String name = "Giant Killer";
+    private final String description = "The fighter does 30% additional damage to characters of size 6 or higher, " +
+            "dealing an additional 5% damage for every 0.5 size over that value.";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {

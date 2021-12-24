@@ -3,39 +3,25 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {SimulatorFormComponent} from "./simulator/form/simulator-form.component";
-import {HttpService} from "./service/http.service";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {CharacterDetailsComponent} from "./character-details/character-details.component";
 import {SimulatorComponent} from "./simulator/simulator.component";
-import {SimulatorDetailsComponent} from "./simulator-details/simulator-details.component";
-import {PatchNotesComponent} from "./patch-notes/patch-notes.component";
-import {StandingsComponent} from "./standings/standings.component";
-import {RostersComponent} from "./rosters/rosters.component";
-import {ScheduleComponent} from "./schedule/schedule.component";
-import {BattleLogsComponent} from "./battle-logs/battle-logs.component";
-import {SeasonOneComponent} from "./season-one/season-one.component";
+import {MissingPageComponent} from './missing-page/missing-page.component';
+import {WidgetsModule} from "./widgets/widgets.module";
+import {HttpService} from "./service/http.service";
 
 @NgModule({
     declarations: [
+        // main component
         AppComponent,
+
+        // page components
         SimulatorComponent,
-        SimulatorDetailsComponent,
-        CharacterDetailsComponent,
-        PatchNotesComponent,
-        SimulatorFormComponent,
-        StandingsComponent,
-        RostersComponent,
-        ScheduleComponent,
-        BattleLogsComponent,
-        SeasonOneComponent
+        MissingPageComponent
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
+        WidgetsModule,
         AppRoutingModule
     ],
     providers: [

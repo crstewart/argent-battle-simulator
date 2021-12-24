@@ -3,12 +3,13 @@ package com.argentstew.simulator.battle.web.service;
 import com.argentstew.simulator.battle.Battle;
 import com.argentstew.simulator.battle.factory.FighterFactory;
 import com.argentstew.simulator.battle.fighter.Fighter;
-import com.argentstew.simulator.battle.logger.BattleLogger;
 import com.argentstew.simulator.battle.web.log.LogFetcher;
 import com.argentstew.simulator.battle.web.log.WebLogger;
+import com.argentstew.simulator.battle.web.model.FighterDTO;
 import com.argentstew.simulator.battle.web.model.SimulationResult;
 import com.argentstew.simulator.battle.web.provider.BattleProvider;
 import com.argentstew.simulator.battle.web.provider.LoggerProvider;
+import com.argentstew.simulator.battle.web.repository.FighterRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,14 +30,19 @@ public class DuelSimulatorService implements SimulatorService {
     private static final Logger LOG = LogManager.getLogger(DuelSimulatorService.class);
 
     private final FighterFactory fighterFactory;
+    private final FighterRepository fighterRepository;
     private final BattleProvider battleProvider;
     private final LoggerProvider<WebLogger> loggerProvider;
     private final LogFetcher logFetcher;
 
     @Autowired
-    public DuelSimulatorService(FighterFactory fighterFactory, BattleProvider battleProvider,
-                                LoggerProvider<WebLogger> loggerProvider, LogFetcher logFetcher) {
+    public DuelSimulatorService(FighterFactory fighterFactory,
+                                FighterRepository fighterRepository,
+                                BattleProvider battleProvider,
+                                LoggerProvider<WebLogger> loggerProvider,
+                                LogFetcher logFetcher) {
         this.fighterFactory = fighterFactory;
+        this.fighterRepository = fighterRepository;
         this.battleProvider = battleProvider;
         this.loggerProvider = loggerProvider;
         this.logFetcher = logFetcher;
@@ -63,8 +69,15 @@ public class DuelSimulatorService implements SimulatorService {
             logger.close();
         }
 
+        String fighter1Copyright = fighterRepository.findByName(fighter1Name)
+                .map(fighter -> fighter.getCopyrightOwner()).orElse("(Unknown)");
+        String fighter2Copyright = fighterRepository.findByName(fighter2Name)
+                .map(fighter -> fighter.getCopyrightOwner()).orElse("(Unknown)");
+
         SimulationResult result = new SimulationResult();
         result.setWinner(winner == null ? "Draw" : winner.getName());
+        result.setFighter1(FighterDTO.builder().name(fighter1Name).copyrightOwner(fighter1Copyright).build());
+        result.setFighter2(FighterDTO.builder().name(fighter2Name).copyrightOwner(fighter2Copyright).build());
         result.setMessage(stringWriter.toString());
         result.setId(logger.getUuid());
 

@@ -1,8 +1,6 @@
 package com.argentstew.simulator.battle.web.controller;
 
-import com.argentstew.simulator.battle.web.model.FighterDTO;
 import com.argentstew.simulator.battle.web.model.SimulationResult;
-import com.argentstew.simulator.battle.web.service.FighterService;
 import com.argentstew.simulator.battle.web.service.SimulatorService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -13,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.UUID;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -32,12 +29,10 @@ public class SimulatorController {
     private static final Logger LOG = LogManager.getLogger(SimulatorController.class);
 
     private final SimulatorService simulatorService;
-    private final FighterService fighterService;
 
     @Autowired
-    public SimulatorController(SimulatorService simulatorService, FighterService fighterService) {
+    public SimulatorController(SimulatorService simulatorService) {
         this.simulatorService = simulatorService;
-        this.fighterService = fighterService;
     }
 
     @GetMapping(path = "/simulation", produces = APPLICATION_JSON_VALUE)
@@ -74,30 +69,6 @@ public class SimulatorController {
         } catch (IOException e) {
             LOG.error("Missing file", e);
             return new ResponseEntity<>("File not found", HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @GetMapping(path = "/fighters", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<String>> getFighters() {
-        try {
-            return new ResponseEntity<>(fighterService.getFighters(), HttpStatus.OK);
-        } catch (Exception e) {
-            LOG.error("Unknown error occurred. Please contact the administrator.", e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @GetMapping(path = "/fighters/{name}", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<FighterDTO> getFighterByName(@PathVariable("name") String name) {
-        try {
-            return new ResponseEntity<>(fighterService.getFighter(name.replaceAll("\\+", " ")),
-                    HttpStatus.OK);
-        } catch (IllegalStateException e) {
-            LOG.error("Could not fetch requested fighter", e);
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        } catch (Exception e) {
-            LOG.error("Unknown error occurred. Please contact the administrator.", e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

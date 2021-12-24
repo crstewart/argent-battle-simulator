@@ -3,6 +3,7 @@
 build/
 .gradle/
 src/main/resources/static/
+src/main/resources/test/
 node_modules/
 argent-battle-simulator-frontend/dist/
 argent-battle-simulator-frontend/node_modules/

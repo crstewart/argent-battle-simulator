@@ -15,6 +15,7 @@ import lombok.Getter;
 public class HeatResistance implements Trait {
 
     private final String name = "Heat Resistance";
+    private final String description = "The fighter cannot be burned.";
 
     @Override
     public boolean isImmuneToTorment() {

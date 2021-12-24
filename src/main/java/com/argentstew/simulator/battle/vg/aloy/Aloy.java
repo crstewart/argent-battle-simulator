@@ -8,7 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.RangedStrategy;
-import com.argentstew.simulator.battle.trait.impl.MechScrapper;
+import com.argentstew.simulator.battle.trait.impl.MechSlayer;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -30,7 +30,7 @@ public class Aloy {
 
         FighterStats stats = FighterStats.builder().strength(4.5).toughness(6.5).dexterity(6).aim(8)
                 .agility(4.5).speed(5).intellect(8).willpower(6).size(4.5).weight(4.5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new MechScrapper()));
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new MechSlayer()));
         return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
                 .description("A stealthy weaponmaster who excels at taking down mechs.")
                 .entryQuotes(Arrays.asList("Aloy: 'Stop there if you want me to hear you out.'",

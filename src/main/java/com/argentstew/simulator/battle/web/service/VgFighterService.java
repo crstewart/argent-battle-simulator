@@ -10,12 +10,14 @@ import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.fighter.FighterClassification;
 import com.argentstew.simulator.battle.strategy.*;
 import com.argentstew.simulator.battle.trait.Trait;
-import com.argentstew.simulator.battle.web.model.AttackDTO;
-import com.argentstew.simulator.battle.web.model.FighterDTO;
-import com.argentstew.simulator.battle.web.model.GuardDTO;
+import com.argentstew.simulator.battle.web.cache.ImageCache;
+import com.argentstew.simulator.battle.web.file.FileAccessor;
+import com.argentstew.simulator.battle.web.model.*;
+import com.argentstew.simulator.battle.web.repository.FighterRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -30,13 +32,25 @@ import java.util.List;
 @Service
 public class VgFighterService implements FighterService {
 
-    private static final Logger LOG = LogManager.getLogger(VgFighterService.class);
+    private static final Logger log = LogManager.getLogger(VgFighterService.class);
 
     private final FighterFactory fighterFactory;
+    private final FighterRepository fighterRepository;
+    private final FileAccessor fileAccessor;
+    private final ImageCache imageCache;
+    private final String imageDirectory;
 
     @Autowired
-    public VgFighterService(FighterFactory fighterFactory) {
+    public VgFighterService(FighterFactory fighterFactory,
+                            FighterRepository fighterRepository,
+                            FileAccessor fileAccessor,
+                            ImageCache imageCache,
+                            @Value("${argent.fighter.image.directory}") String imageDirectory) {
         this.fighterFactory = fighterFactory;
+        this.fighterRepository = fighterRepository;
+        this.fileAccessor = fileAccessor;
+        this.imageCache = imageCache;
+        this.imageDirectory = imageDirectory;
     }
 
     @Override
@@ -47,9 +61,14 @@ public class VgFighterService implements FighterService {
     @Override
     public FighterDTO getFighter(String name) {
         Fighter fighter = fighterFactory.getFighter(name);
-        LOG.info("Fetching fighter information for {}", fighter.getName());
+        log.info("Fetching fighter information for {}", fighter.getName());
 
         FighterDTO dto = new FighterDTO();
+
+        fighterRepository.findByName(name).ifPresent(entry -> {
+            dto.setSeriesOfOrigin(entry.getSeriesOfOrigin());
+            dto.setCopyrightOwner(entry.getCopyrightOwner());
+        });
 
         dto.setName(fighter.getName());
         dto.setDescription(fighter.getDescription());
@@ -73,9 +92,13 @@ public class VgFighterService implements FighterService {
         dto.setSize(fighter.getStats().getSize());
         dto.setWeight(fighter.getStats().getWeight());
 
-        List<String> traits = new ArrayList<>();
+        List<TraitDTO> traits = new ArrayList<>();
         for (Trait trait : fighter.getTraits()) {
-            traits.add(trait.getName());
+            TraitDTO traitDto = new TraitDTO();
+            traitDto.setName(trait.getName());
+            traitDto.setDescription(trait.getDescription());
+            traitDto.setImmuneToTorment(trait.isImmuneToTorment());
+            traits.add(traitDto);
         }
         dto.setTraits(traits);
 
@@ -176,5 +199,24 @@ public class VgFighterService implements FighterService {
 
     private static boolean isXStrike(Action action) {
         return action instanceof MeleeXStrike || action instanceof RangedXStrike || action instanceof MagicXStrike;
+    }
+
+    @Override
+    public ImageDTO getFighterImage(String name) {
+        String canonicalName = getCanonicalName(name);
+        ImageDTO image = imageCache.get(canonicalName);
+        if (image == null) {
+            log.info("Image for {} not cached, fetching from remote file system", name);
+            image = fileAccessor.getImage(imageDirectory, canonicalName);
+            imageCache.put(image);
+        }
+
+        image.setName(name);
+        return image;
+    }
+
+    private String getCanonicalName(String name) {
+        return name.trim().replaceAll("\\s", "_").replaceAll("\\.", "")
+                .replaceAll("&", "and").toLowerCase();
     }
 }

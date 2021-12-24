@@ -3,11 +3,13 @@ package com.argentstew.simulator.battle.web;
 import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
@@ -26,6 +28,13 @@ public class WebApplication extends SpringBootServletInitializer {
         SpringApplication.run(WebApplication.class, args);
     }
 
+    private final Environment env;
+
+    @Autowired
+    public WebApplication(Environment env) {
+        this.env = env;
+    }
+
     @Bean
     public VgFighterFactory fighterFactory() {
         return new VgFighterFactory();
@@ -34,10 +43,10 @@ public class WebApplication extends SpringBootServletInitializer {
     @Bean
     public HikariDataSource dataSource() {
         HikariConfig config = new HikariConfig();
-        config.setJdbcUrl(System.getenv("LEAGUE_DATABASE_URL"));
-        config.setUsername(System.getenv("LEAGUE_DATABASE_USER"));
-        config.setPassword(System.getenv("LEAGUE_DATABASE_PASS"));
-        config.setSchema(System.getenv("LEAGUE_DATABASE_SCHEMA"));
+        config.setJdbcUrl(env.getProperty("argent.simulator.database.url"));
+        config.setUsername(env.getProperty("argent.simulator.database.username"));
+        config.setPassword(env.getProperty("argent.simulator.database.pass"));
+        config.setSchema(env.getProperty("argent.simulator.database.schema"));
         config.addDataSourceProperty("cachePrepStmts", Boolean.TRUE.toString());
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");

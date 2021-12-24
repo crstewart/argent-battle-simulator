@@ -1,22 +1,30 @@
 import {Component, OnInit} from "@angular/core";
 import {HttpService} from "../service/http.service";
 import {Standings} from "../model/standings";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Title} from "@angular/platform-browser";
+import {ComplexHttpComponent} from "../common/complex.http.component";
 
 @Component({
     selector: 'season-one',
     templateUrl: './season-one.component.html',
-    styleUrls: ['./season-one.component.css']
+    styleUrls: ['./season-one.component.css'],
+    providers: [HttpService]
 })
-export class SeasonOneComponent implements OnInit {
+export class SeasonOneComponent extends ComplexHttpComponent implements OnInit {
 
     powerDivisionStandings: Standings[] = [];
     mastersDivisionStandings: Standings[] = [];
 
-    constructor(private httpService: HttpService) {
+    constructor(private http: HttpService,
+                private router: Router,
+                private route: ActivatedRoute,
+                private title: Title) {
+        super(http, router, route, title);
     }
 
     ngOnInit(): void {
-        this.httpService.getSeasonOneStandings().subscribe((data: Standings[]) => this.arrangeStandings(data));
+        this.http.getSeasonOneStandings().subscribe((data: Standings[]) => this.arrangeStandings(data));
     }
 
     getPowerDivisionLeaderWinDifferential(): number {

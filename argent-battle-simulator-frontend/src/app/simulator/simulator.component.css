@@ -23,6 +23,20 @@
     font-family: "Courier New", monospace;
 }
 
+.vs-frame {
+    display: inline-block;
+    height: 320px;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.vs-frame img {
+    display: block;
+    height: 80%;
+    margin: 24px 0;
+    object-fit: contain;
+}
+
 .download-link {
     display: inline-block;
     border: 1px solid black;
@@ -40,10 +54,19 @@
     background: white;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 960px) {
     .border {
         width: 90%;
-        min-width: 160px;
-        max-width: 640px;
+        min-width: 320px;
+        max-width: 960px;
+    }
+
+    .vs-frame {
+        height: 120px;
+        padding: 0 8px;
+    }
+
+    .vs-frame img {
+        margin: 0;
     }
 }

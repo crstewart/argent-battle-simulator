@@ -24,6 +24,11 @@ public class Rival implements Trait {
     }
 
     @Override
+    public String getDescription() {
+        return "The fighter does 30% additional damage to " + rivalName + ".";
+    }
+
+    @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {
         if (defender.getName().equals(rivalName)) {
             return rawDamage * damageMultiplier;

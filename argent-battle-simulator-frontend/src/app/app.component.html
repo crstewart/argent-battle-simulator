@@ -1,4 +1,4 @@
-<div class="main">
+<div id="top" class="main">
     <nav id="nav-bar">
         <a class="title noselect" routerLink="/" routerLinkActive="active">Argent Battle Simulator</a>
         <div [class]="setDropdownClass()">
@@ -6,7 +6,7 @@
             <ul id="internalLinks" class="nav">
                 <li><a routerLink="/" routerLinkActive="active">Home</a></li>
                 <li><a routerLink="/how-it-works" routerLinkActive="active">How It Works</a></li>
-                <li><a routerLink="/details" routerLinkActive="active">Character Details</a></li>
+                <li><a routerLink="/fighters" routerLinkActive="active">Character Details</a></li>
                 <li><a routerLink="/patch-notes" routerLinkActive="active">Patch Notes</a></li>
             </ul>
         </div>
@@ -31,6 +31,8 @@
 </div>
 <router-outlet></router-outlet>
 <div class="footer">
+    <a (click)="navigateToTop()" style="cursor: pointer">Return to the top</a><br/>
+    <br/>
     <span>Argent Battle Simulator is &copy; 2020-2021 Craig Stewart</span><br/>
     <span>All characters and character images are &copy; their respective owners.</span><br/>
     <span>This software is provided for free to all users.</span><br/>

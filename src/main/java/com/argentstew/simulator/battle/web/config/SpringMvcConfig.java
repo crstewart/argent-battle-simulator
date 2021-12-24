@@ -26,12 +26,12 @@ public class SpringMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler(FILE_EXTENSIONS.stream().map(extension -> "/**/*." + extension).toArray(String[]::new))
+        registry.addResourceHandler(FILE_EXTENSIONS.stream().map(extension -> "/*/*." + extension).toArray(String[]::new))
                 .addResourceLocations("classpath:/static/")
                 .resourceChain(true)
                 .addResolver(getRelativeResolver());
 
-        registry.addResourceHandler("/**/*")
+        registry.addResourceHandler("/*/*")
                 .addResourceLocations("classpath:/static/index.html")
                 .resourceChain(true)
                 .addResolver(getAbsoluteResolver());

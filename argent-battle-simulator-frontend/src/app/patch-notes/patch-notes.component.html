@@ -1,10 +1,41 @@
 <div class="border">
-    <div id="top" class="patch-notes">
+    <div class="patch-notes">
         <label for="patch-notes-selection">Select a patch to view its notes: </label>
-        <select id="patch-notes-selection" name="versionSelect" [ngModel]="selected" (ngModelChange)="setVersion($event)">
-            <option *ngFor="let option of options" [value]="option">Version {{option}}</option>
+        <select id="patch-notes-selection" [ngModel]="selected" (ngModelChange)="setVersion($event)">
+            <option *ngFor="let option of options" [ngValue]="option">{{getVersionLabel(option)}}</option>
         </select>
-        <div *ngIf="selected === '1.2 - Myths and Monsters'">
+        <div *ngIf="selected.number === '1.2.1'">
+            <h2>Version 1.2.1</h2>
+            <ul>
+                <li>
+                    <strong>Site Updates</strong>
+                    <ul>
+                        <li>Improved page load speed</li>
+                        <li>Improved layout for mobile devices</li>
+                        <li>Improved and reformatted the character details pages</li>
+                        <li>Character details can now be directly referenced by fighter via URL</li>
+                        <li>Character images now added to details and simulator pages</li>
+                        <li>Patch notes can now be directly referenced by version via URL</li>
+                        <li>Added security fixes and updates</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Traits</strong>
+                    <ul>
+                        <li>Mech Scrapper renamed to Mech Slayer</li>
+                        <li>Maverick Hunter removed and replaced with Mech Slayer</li>
+                        <li>Monster Hunter renamed to Monster Slayer</li>
+                        <li><em>
+                            Developer Note: In order to simplify the various classification themed traits, I have
+                            decided to normalize their names to be <strong>(Type) Slayer</strong>. This way, it should
+                            be more visible at a glance which classification of character the fighter is strong against.
+                            The traits Bounty Hunter and Ex-Maverick Hunter will remain the same for now.
+                        </em></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div *ngIf="selected.number === '1.2'">
             <h2>Version 1.2</h2>
             <ul>
                 <li>
@@ -1014,15 +1045,15 @@
                 </li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.1.1'">
+        <div *ngIf="selected.number === '1.1.1'">
             <h2>Version 1.1.1</h2>
             <ul>
                 <li>
-                    Fixed a bug in which Sylvanas Windrunner’s X-Strike was named incorrectly.
+                    Fixed a bug in which Sylvanas Windrunner's X-Strike was named incorrectly.
                 </li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.1 - Reign of Shadows'">
+        <div *ngIf="selected.number === '1.1'">
             <h2>Version 1.1</h2>
             <ul>
                 <li>
@@ -2097,13 +2128,13 @@
                 </li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.0.4'">
+        <div *ngIf="selected.number === '1.0.4'">
             <h2>Version 1.0.4</h2>
             <ul>
                 <li>Fixed a bug in which some fighters might not be able to heal properly.</li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.0.3'">
+        <div *ngIf="selected.number === '1.0.3'">
             <h2>Version 1.0.3</h2>
             <ul>
                 <li>Fixed a bug in which both fighters could advance onto the same space.</li>
@@ -2111,7 +2142,7 @@
                 <li>Fixed a bug in which a fighter could retreat after being hit by Dovahkiin's Unrelenting Force.</li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.0.2'">
+        <div *ngIf="selected.number === '1.0.2'">
             <h2>Version 1.0.2</h2>
             <ul>
                 <li>
@@ -2119,7 +2150,7 @@
                 </li>
             </ul>
         </div>
-        <div *ngIf="selected === '1.0.1'">
+        <div *ngIf="selected.number === '1.0.1'">
             <h2>Version 1.0.1</h2>
             <ul>
                 <li>
@@ -2127,6 +2158,5 @@
                 </li>
             </ul>
         </div>
-        <a href="#top">Return to the top</a>
     </div>
 </div>

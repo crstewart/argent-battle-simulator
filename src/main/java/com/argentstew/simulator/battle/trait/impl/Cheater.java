@@ -17,6 +17,8 @@ import lombok.Getter;
 public class Cheater implements Trait {
 
     private final String name = "Cheater";
+    private final String description = "The fighter does up to 20% additional damage on all attacks and receives 20% " +
+            "reduced damage from all incoming attacks.";
 
     @Override
     public double applyBonusDamage(Fighter defender, double rawDamage) {

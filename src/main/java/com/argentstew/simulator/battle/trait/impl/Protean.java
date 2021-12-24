@@ -25,6 +25,8 @@ public class Protean extends AbstractArmorTrait {
     public static final String FIGHTING_TYPE = "Type: Fighting";
 
     private final String name = "Protean";
+    private final String description = "The fighter changes their elemental type based on the attack used, gaining " +
+            "new weaknesses and resistances each time.";
 
     private String state = WATER_TYPE;
 

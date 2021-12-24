@@ -20,6 +20,8 @@ import lombok.Getter;
 public class Sunrise extends AbstractArmorTrait {
 
     private final String name = "Sunrise";
+    private final String description = "The fighter receives 20% reduced damage from characters who have a " +
+            "dark-elemental attack.";
 
     @Override
     protected int recalculateDamage(DamageReport report) {

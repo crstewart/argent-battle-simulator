@@ -1,38 +1,46 @@
 plugins {
     id 'java'
     id 'war'
-    id "io.freefair.lombok" version "3.8.4"
-    id 'org.springframework.boot' version '2.2.6.RELEASE'
+    id "io.freefair.lombok" version "5.3.0"
+    id 'org.springframework.boot' version '2.6.1'
 }
 
-version = '1.2'
+version = '1.2.1'
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
+ext {
+    springBootVersion = '2.6.1'
+    awsSdkVersion = '1.12.129'
+}
+
 repositories {
+    maven { url 'https://jitpack.io' }
     mavenCentral()
 }
 
 dependencies {
-    compile 'com.zaxxer:HikariCP:3.4.3'
-    compile 'org.apache.commons:commons-lang3:3.9'
-    compile 'org.springframework.boot:spring-boot-starter-data-jpa:2.2.6.RELEASE'
-    compile 'org.springframework.boot:spring-boot-starter-web:2.2.6.RELEASE'
-    compile 'org.springframework.boot:spring-boot-starter-tomcat:2.2.6.RELEASE'
+    implementation 'com.zaxxer:HikariCP:4.0.3'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    implementation "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
 
-    compileOnly 'org.projectlombok:lombok:1.18.8'
+    implementation "com.amazonaws:aws-java-sdk-s3:$awsSdkVersion"
 
-    runtime 'org.postgresql:postgresql:42.2.12'
+    implementation 'org.apache.logging.log4j:log4j-api:2.16.0'
 
-    testCompile 'org.junit.jupiter:junit-jupiter:5.6.2'
-    testCompile 'org.mockito:mockito-core:3.3.3'
-    testCompile 'org.mockito:mockito-junit-jupiter:3.3.3'
-    testCompile ('org.springframework.boot:spring-boot-starter-test:2.2.6.RELEASE') {
+    runtimeOnly 'org.postgresql:postgresql:42.3.1'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testImplementation 'org.mockito:mockito-core:4.1.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.1.0'
+    testImplementation ("org.springframework.boot:spring-boot-starter-test:$springBootVersion") {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 
-    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
 
 task fatjar(type: Jar) {
