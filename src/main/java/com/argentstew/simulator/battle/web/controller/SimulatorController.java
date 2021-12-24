@@ -36,7 +36,8 @@ public class SimulatorController {
     }
 
     @GetMapping(path = "/simulation", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<SimulationResult> getSimulation(@RequestParam String fighter1, @RequestParam String fighter2) {
+    public ResponseEntity<SimulationResult> getSimulation(@RequestParam String fighter1,
+                                                          @RequestParam String fighter2) {
         SimulationResult result = new SimulationResult();
         if (StringUtils.isBlank(fighter1) || StringUtils.isBlank(fighter2)) {
             LOG.error("Missing parameter. Fighter 1 = {}, Fighter 2 = {}", fighter1, fighter2);
@@ -48,8 +49,10 @@ public class SimulatorController {
             return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
         }
 
+        String canonicalName1 = fighter1.replaceAll("_", " ");
+        String canonicalName2 = fighter2.replaceAll("_", " ");
         try {
-            result = simulatorService.run(fighter1, fighter2);
+            result = simulatorService.run(canonicalName1, canonicalName2);
             return new ResponseEntity<>(result, HttpStatus.OK);
         } catch (Exception e) {
             LOG.error("Unknown error occurred", e);
