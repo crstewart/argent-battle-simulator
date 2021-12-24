@@ -17,10 +17,6 @@ export class CharacterImageComponent {
     }
 
     getImgSrc(): string {
-        return `v1/fighters/${this.fighter.name}/image`;
-    }
-
-    getFighterName(): string {
-        return this.fighter.name.trim().replace(/\s+/gi, '_');
+        return `v1/fighters/${this.fighter.name.trim().replace(/\s+/gi, '_')}/image`;
     }
 }
