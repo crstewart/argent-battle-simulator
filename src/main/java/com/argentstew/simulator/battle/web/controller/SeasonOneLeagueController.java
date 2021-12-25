@@ -69,8 +69,10 @@ public class SeasonOneLeagueController {
     @GetMapping(path = "/rosters", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<String>> getRosterByTeam(@RequestParam String team) {
         try {
-            List<String> roster = teamService.getRosterByTeam(SEASON_ONE_ID, team.trim().replaceAll("_", " "));
-            LOG.info("Retrieved roster of {}", team);
+            String teamName = team.trim().replaceAll("_and_", " & ")
+                    .replaceAll("_", " ");
+            List<String> roster = teamService.getRosterByTeam(SEASON_ONE_ID, teamName);
+            LOG.info("Retrieved roster of {}", teamName);
             return new ResponseEntity<>(roster, HttpStatus.OK);
         } catch (LeagueException e) {
             LOG.error("An error occurred fetching roster for the given team name", e);
@@ -117,23 +119,25 @@ public class SeasonOneLeagueController {
         }
     }
 
-    @GetMapping(path = "/schedule/{teamName}", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<ScheduleDTO>> getScheduleForTeam(@PathVariable("teamName") String teamName,
+    @GetMapping(path = "/schedule/{team}", produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<ScheduleDTO>> getScheduleForTeam(@PathVariable String team,
                                                                 @RequestParam(required = false) Integer week) {
         try {
-            Team team = teamService.getTeam(SEASON_ONE_ID, teamName.trim().replaceAll("_", " "));
+            String teamName = team.trim().replaceAll("_and_", " & ")
+                    .replaceAll("_", " ");
+            Team teamEntity = teamService.getTeam(SEASON_ONE_ID, teamName);
             List<Integer> weeks = leagueService.getWeeks(SEASON_ONE_ID);
             int minWeek = weeks.get(0);
             int maxWeek = weeks.get(weeks.size() - 1);
             if (week == null) {
-                List<ScheduleDTO> schedule = leagueService.getFullScheduleForTeam(team);
-                LOG.info("Retrieved schedule for {}", teamName);
+                List<ScheduleDTO> schedule = leagueService.getFullScheduleForTeam(teamEntity);
+                LOG.info("Retrieved schedule for {}", teamEntity);
                 return new ResponseEntity<>(schedule, HttpStatus.OK);
             } else if (week < minWeek || week > maxWeek) {
                 LOG.info("Bad week given");
                 return new ResponseEntity<>(Collections.emptyList(), HttpStatus.BAD_REQUEST);
             } else {
-                List<ScheduleDTO> weeklySchedule = leagueService.getWeeklyScheduleForTeam(team, week);
+                List<ScheduleDTO> weeklySchedule = leagueService.getWeeklyScheduleForTeam(teamEntity, week);
                 LOG.info("Retrieved schedule for {}, week {}", teamName, week);
                 return new ResponseEntity<>(weeklySchedule, HttpStatus.OK);
             }

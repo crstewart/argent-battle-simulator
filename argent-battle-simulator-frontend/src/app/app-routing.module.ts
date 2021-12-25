@@ -39,7 +39,7 @@ const routes: Routes = [
     },
     {
         path: 'season-one',
-        loadChildren: () => import('./battle-logs/battle-logs.module').then(m => m.BattleLogsModule)
+        loadChildren: () => import('./season-one/season-one.module').then(m => m.SeasonOneModule)
     },
     {
         path: '',

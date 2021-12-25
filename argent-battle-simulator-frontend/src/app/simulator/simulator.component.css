@@ -62,11 +62,13 @@
     }
 
     .vs-frame {
+        display: block;
         height: 120px;
         padding: 0 8px;
     }
 
     .vs-frame img {
+        display: inline;
         margin: 0;
     }
 }

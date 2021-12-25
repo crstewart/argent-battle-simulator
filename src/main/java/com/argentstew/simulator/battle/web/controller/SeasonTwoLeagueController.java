@@ -72,7 +72,9 @@ public class SeasonTwoLeagueController {
     @GetMapping(path = "/rosters", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<String>> getRosterByTeam(@RequestParam String team) {
         try {
-            List<String> roster = teamService.getRosterByTeam(SEASON_TWO_ID, team.trim().replaceAll("_", " "));
+            String teamName = team.trim().replaceAll("_and_", " & ")
+                    .replaceAll("_", " ");
+            List<String> roster = teamService.getRosterByTeam(SEASON_TWO_ID, teamName);
             LOG.info("Retrieved roster of {}", team);
             return new ResponseEntity<>(roster, HttpStatus.OK);
         } catch (LeagueException e) {
@@ -97,9 +99,10 @@ public class SeasonTwoLeagueController {
     }
 
     @GetMapping(path = "/schedule", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<ScheduleDTO>> getSchedule(@RequestParam(required = false) String teamName,
+    public ResponseEntity<List<ScheduleDTO>> getSchedule(@RequestParam(required = false) String team,
                                                          @RequestParam(required = false) Integer week) {
-        teamName = (StringUtils.isNotBlank(teamName)) ? teamName.trim().replaceAll("_", " ") : null;
+        String teamName = (StringUtils.isNotBlank(team)) ? team.trim().replaceAll("_and_", " & ")
+                .replaceAll("_", " ") : null;
         try {
             List<Integer> weeks = leagueService.getWeeks(SEASON_TWO_ID);
             int minWeek = weeks.get(0);
@@ -116,7 +119,8 @@ public class SeasonTwoLeagueController {
                 List<ScheduleDTO> weeklySchedule = (teamName == null)
                         ? leagueService.getWeeklyScheduleForSeason(SEASON_TWO_ID, week)
                         : leagueService.getWeeklyScheduleForTeam(teamService.getTeam(SEASON_TWO_ID, teamName), week);
-                LOG.info("Retrieved schedule{} for week {}", (teamName == null) ? "" : " for " + teamName, week);
+                LOG.info("Retrieved schedule{} for week {}", (teamName == null) ? "" : " for " + teamName,
+                        week);
                 return new ResponseEntity<>(weeklySchedule, HttpStatus.OK);
             }
         } catch (Exception e) {
