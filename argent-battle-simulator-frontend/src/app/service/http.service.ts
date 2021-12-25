@@ -16,8 +16,8 @@ export class HttpService {
     public getSimulation(fighter1Name: string, fighter2Name: string): Observable<SimulationResult> {
         return this.httpClient.get<SimulationResult>("v1/simulation", {
             params: {
-                fighter1: fighter1Name.trim().replace(/\s+/gi, "_"),
-                fighter2: fighter2Name.trim().replace(/\s+/gi, "_")
+                fighter1: this.getCanonicalId(fighter1Name),
+                fighter2: this.getCanonicalId(fighter2Name)
             }
         });
     }
@@ -31,11 +31,11 @@ export class HttpService {
     }
 
     public getFighter(name: string): Observable<Fighter> {
-        return this.httpClient.get<Fighter>(`v1/fighters/${name.trim().replace(/\s+/gi, '_')}`);
+        return this.httpClient.get<Fighter>(`v1/fighters/${this.getCanonicalId(name)}`);
     }
 
     public getFighterCopyright(name: string): Observable<string> {
-        return this.httpClient.get<string>(`v1/fighters/${name.trim().replace(/\s+/gi, '_')}/owner`);
+        return this.httpClient.get<string>(`v1/fighters/${this.getCanonicalId(name)}/owner`);
     }
 
     public getSeasonOneStandings(): Observable<Standings[]> {
@@ -51,7 +51,7 @@ export class HttpService {
     }
 
     public getRoster(team: string): Observable<string[]> {
-        return this.httpClient.get<string[]>(`v1/seasons/2/rosters?team=${team.trim().replace(/\s+/gi, '_')}`);
+        return this.httpClient.get<string[]>(`v1/seasons/2/rosters?team=${this.getCanonicalId(team)}`);
     }
 
     public getWeeks(): Observable<number[]> {
@@ -63,10 +63,15 @@ export class HttpService {
     }
 
     public getScheduleByTeam(team: string): Observable<Match[]> {
-        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${team.trim().replace(/\s+/gi, '_')}`);
+        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${this.getCanonicalId(team)}`);
     }
 
     public getScheduleByTeamAndWeek(team: string, week: number): Observable<Match[]> {
-        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${team.trim().replace(/\s+/gi, '_')}&week=${week}`);
+        return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${this.getCanonicalId(team)}&week=${week}`);
+    }
+
+    private getCanonicalId(value: string): string {
+        return value.trim().replace(/\s+&\s+/gi, '_and_')
+            .replace(/\s+/gi, '_');
     }
 }

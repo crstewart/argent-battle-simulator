@@ -49,10 +49,12 @@ public class SimulatorController {
             return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
         }
 
-        String canonicalName1 = fighter1.replaceAll("_", " ");
-        String canonicalName2 = fighter2.replaceAll("_", " ");
+        String fighter1Name = fighter1.trim().replaceAll("_and_", " & ")
+                .replaceAll("_", " ");
+        String fighter2Name = fighter2.trim().replaceAll("_and_", " & ")
+                .replaceAll("_", " ");
         try {
-            result = simulatorService.run(canonicalName1, canonicalName2);
+            result = simulatorService.run(fighter1Name, fighter2Name);
             return new ResponseEntity<>(result, HttpStatus.OK);
         } catch (Exception e) {
             LOG.error("Unknown error occurred", e);
