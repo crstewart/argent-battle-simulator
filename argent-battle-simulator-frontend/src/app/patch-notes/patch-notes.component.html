@@ -4,6 +4,18 @@
         <select id="patch-notes-selection" [ngModel]="selected" (ngModelChange)="setVersion($event)">
             <option *ngFor="let option of options" [ngValue]="option">{{getVersionLabel(option)}}</option>
         </select>
+        <div *ngIf="selected.number === '1.2.2'">
+            <h2>Version 1.2.2</h2>
+            <ul>
+                <li>
+                    <strong>Site Updates</strong>
+                    <ul>
+                        <li>Added contributions page (looking for contributors!)</li>
+                        <li>Added security fixes and updates</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
         <div *ngIf="selected.number === '1.2.1'">
             <h2>Version 1.2.1</h2>
             <ul>

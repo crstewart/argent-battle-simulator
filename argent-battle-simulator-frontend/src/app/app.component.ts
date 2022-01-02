@@ -29,8 +29,8 @@ export class AppComponent {
         }
     }
 
-    private static toggleLinks(linksToToggle: HTMLElement, linkstoHide: HTMLElement) {
-        linkstoHide.style.display = "none";
+    private static toggleLinks(linksToToggle: HTMLElement, linksToHide: HTMLElement) {
+        linksToHide.style.display = "none";
         if (linksToToggle.style.display === "block") {
             linksToToggle.style.display = "none";
         } else {
