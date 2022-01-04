@@ -1,0 +1,43 @@
+.border div {
+
+}
+
+.title {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+.entry-preview {
+    border: 1px solid black;
+    width: 80%;
+    margin: 0 auto;
+    padding: 12px;
+}
+
+.entry-preview a {
+    font-size: 20pt;
+}
+
+.blog-timestamp {
+    font: 12pt grey italic;
+}
+
+.blog-navigation {
+    display: flex;
+}
+
+.blog-navigation a {
+    flex: 1;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.blog-navigation a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 960px) {
+}

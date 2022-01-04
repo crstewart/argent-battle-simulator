@@ -3,12 +3,10 @@ package com.argentstew.simulator.battle.web.aws;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.util.IOUtils;
 import com.argentstew.simulator.battle.web.aws.exception.S3FileException;
 import com.argentstew.simulator.battle.web.file.FileAccessor;
-import com.argentstew.simulator.battle.web.model.BlogDTO;
 import com.argentstew.simulator.battle.web.model.ImageDTO;
 import com.argentstew.simulator.battle.web.model.ImageType;
 import org.apache.commons.lang3.StringUtils;
@@ -18,12 +16,6 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 /**
  * com.argentstew.simulator.battle.web.aws
@@ -34,10 +26,6 @@ import java.util.stream.Collectors;
 @Component
 @Profile("prod")
 public class S3FileAccessor implements FileAccessor {
-
-    private static final String META_ENTRY_TITLE = "Entry-Title";
-    private static final String META_ENTRY_DATE = "Entry-Date";
-    private static final String ENTRY_TYPE = ".html";
 
     private final AmazonS3ClientBuilder s3ClientBuilder;
 
@@ -75,33 +63,7 @@ public class S3FileAccessor implements FileAccessor {
     }
 
     @Override
-    public List<BlogDTO> getAllBlogTitles(String bucket) {
-        validateBucket(bucket);
-
-        AmazonS3 client = getS3Client();
-        try {
-            ObjectListing result = client.listObjects(bucket);
-            return result.getObjectSummaries().stream()
-                    .filter(summary -> summary.getKey().endsWith(ENTRY_TYPE)).parallel()
-                    .map(summary -> {
-                        Map<String, String> metadata = client.getObjectMetadata(bucket, summary.getKey())
-                                .getUserMetadata();
-                        return BlogDTO.builder()
-                                .number(Integer.parseInt(Pattern.compile("entry(\\d+)\\.html")
-                                        .matcher(summary.getKey()).group(0)))
-                                .title(metadata.get(META_ENTRY_TITLE))
-                                .timestamp(LocalDateTime.parse(metadata.get(META_ENTRY_DATE)))
-                                .build();
-                    })
-                    .sorted(Comparator.comparingInt(BlogDTO::getNumber))
-                    .collect(Collectors.toList());
-        } finally {
-            client.shutdown();
-        }
-    }
-
-    @Override
-    public BlogDTO getBlogEntry(String bucket, int entryNumber) {
+    public String getBlogEntry(String bucket, int entryNumber) {
         validateBucket(bucket);
         if (entryNumber <= 0) {
             throw new S3FileException("Could not fetch from S3: Blog entry number invalid");
@@ -109,15 +71,7 @@ public class S3FileAccessor implements FileAccessor {
 
         AmazonS3 client = getS3Client();
         try {
-            S3Object object = client.getObject(bucket, String.format("entry%d.html", entryNumber));
-            String entryHtml = IOUtils.toString(object.getObjectContent());
-            return BlogDTO.builder().number(entryNumber)
-                    .timestamp(LocalDateTime.parse(object.getObjectMetadata().getUserMetadata().get(META_ENTRY_DATE)))
-                    .title(object.getObjectMetadata().getUserMetadata().get(META_ENTRY_TITLE))
-                    .html(entryHtml)
-                    .build();
-        } catch (IOException e) {
-            throw new S3FileException("Could not fetch from S3: File could not be read");
+            return client.getObjectAsString(bucket, String.format("entry%d.html", entryNumber));
         } finally {
             client.shutdown();
         }

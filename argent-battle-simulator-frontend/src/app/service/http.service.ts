@@ -5,13 +5,15 @@ import {Observable} from "rxjs";
 import {Fighter} from "../model/fighter";
 import {Standings} from "../model/standings";
 import {Match} from "../model/match";
+import {BlogEntry} from "../model/blog-entry";
 
 @Injectable()
 export class HttpService {
 
     host: string = "http://localhost";
 
-    constructor(private httpClient: HttpClient) {}
+    constructor(private httpClient: HttpClient) {
+    }
 
     public getSimulation(fighter1Name: string, fighter2Name: string): Observable<SimulationResult> {
         return this.httpClient.get<SimulationResult>("v1/simulation", {
@@ -32,10 +34,6 @@ export class HttpService {
 
     public getFighter(name: string): Observable<Fighter> {
         return this.httpClient.get<Fighter>(`v1/fighters/${this.getCanonicalId(name)}`);
-    }
-
-    public getFighterCopyright(name: string): Observable<string> {
-        return this.httpClient.get<string>(`v1/fighters/${this.getCanonicalId(name)}/owner`);
     }
 
     public getSeasonOneStandings(): Observable<Standings[]> {
@@ -68,6 +66,14 @@ export class HttpService {
 
     public getScheduleByTeamAndWeek(team: string, week: number): Observable<Match[]> {
         return this.httpClient.get<Match[]>(`v1/seasons/2/schedule?teamName=${this.getCanonicalId(team)}&week=${week}`);
+    }
+
+    public getBlogEntries(): Observable<BlogEntry[]> {
+        return this.httpClient.get<BlogEntry[]>(`v1/blogs`);
+    }
+
+    public getBlogEntryByNumber(entryNumber: number): Observable<string> {
+        return this.httpClient.get(`v1/blogs/${entryNumber}`, {responseType: 'text'});
     }
 
     private getCanonicalId(value: string): string {

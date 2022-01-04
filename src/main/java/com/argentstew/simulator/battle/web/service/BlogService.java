@@ -15,7 +15,7 @@ public interface BlogService {
 
     List<BlogDTO> getEntryCatalog();
 
-    BlogDTO getEntry(int entryNumber);
+    String getEntry(int entryNumber);
 
     void reloadEntryCatalog();
 

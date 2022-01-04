@@ -14,7 +14,7 @@ const routes: Routes = [
         loadChildren: () => import('./simulator-details/simulator-details.module').then(m => m.SimulatorDetailsModule)
     },
     {
-        path: 'dev-blog',
+        path: 'developer-blog',
         loadChildren: () => import('./developer-blog/blog.module').then(m => m.BlogModule)
     },
     {
@@ -55,8 +55,8 @@ const routes: Routes = [
         pathMatch: 'full'
     },
     {
-        path: 'developer-blog',
-        redirectTo: '/dev-blog',
+        path: 'dev-blog',
+        redirectTo: '/developer-blog',
         pathMatch: 'full'
     },
     {

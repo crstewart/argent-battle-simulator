@@ -11,7 +11,7 @@ const routes: Routes = [
     {
         path: ':entry',
         component: BlogComponent,
-        data: {title: 'Argent Battle Simulator - Blog Entry :date'}
+        data: {title: 'Argent Battle Simulator - Developer Blog (:date)'}
     }
 ];
 

@@ -1,6 +1,5 @@
 package com.argentstew.simulator.battle.web.file;
 
-import com.argentstew.simulator.battle.web.model.BlogDTO;
 import com.argentstew.simulator.battle.web.model.ImageDTO;
 import com.argentstew.simulator.battle.web.model.ImageType;
 import org.apache.logging.log4j.LogManager;
@@ -13,13 +12,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * com.argentstew.simulator.battle.web.file
@@ -60,58 +52,13 @@ public class LocalFileAccessor implements FileAccessor {
     }
 
     @Override
-    public List<BlogDTO> getAllBlogTitles(String directory) {
-        File dir = new File(directory);
-        if (dir.isDirectory()) {
-            try {
-                List<Path> htmlPaths = Files.list(Paths.get(dir.getAbsolutePath()))
-                        .sorted((a, b) -> Comparator.<Long>naturalOrder().compare(a.toFile().lastModified(),
-                                b.toFile().lastModified()))
-                        .filter(path -> path.getFileName().endsWith(".html"))
-                        .collect(Collectors.toList());
-                List<BlogDTO> dtos = new ArrayList<>(htmlPaths.size());
-                for (int i = 0; i < htmlPaths.size(); i++) {
-                    dtos.add(BlogDTO.builder()
-                            .number(i + 1)
-                            .title(htmlPaths.get(i).getFileName().toString())
-                            .timestamp(LocalDateTime.ofEpochSecond(htmlPaths.get(i).toFile().lastModified(),
-                                    0, ZoneOffset.UTC))
-                            .build());
-                }
-
-                return dtos;
-            } catch (IOException e) {
-                log.error("Blog entry files could not be read from directory '{}'", directory, e);
-            }
+    public String getBlogEntry(String directory, int entryNumber) {
+        try {
+            return new String(Files.readAllBytes(Paths.get(directory, String.format("entry%d.html", entryNumber))));
+        } catch (IOException e) {
+            log.error("Blog entry number '{}' could not be read", entryNumber, e);
         }
 
-        return Collections.emptyList();
-    }
-
-    @Override
-    public BlogDTO getBlogEntry(String directory, int entryNumber) {
-        File dir = new File(directory);
-        if (dir.isDirectory()) {
-            try {
-                List<Path> htmlPaths = Files.list(Paths.get(dir.getAbsolutePath()))
-                        .sorted((a, b) -> Comparator.<Long>naturalOrder().compare(a.toFile().lastModified(),
-                                b.toFile().lastModified()))
-                        .filter(path -> path.getFileName().endsWith(".html"))
-                        .collect(Collectors.toList());
-
-                int index = entryNumber - 1;
-                return BlogDTO.builder()
-                        .number(entryNumber)
-                        .title(htmlPaths.get(entryNumber).getFileName().toString())
-                        .html(new String(Files.readAllBytes(htmlPaths.get(index))))
-                        .timestamp(LocalDateTime.ofEpochSecond(htmlPaths.get(index).toFile().lastModified(),
-                                0, ZoneOffset.UTC))
-                        .build();
-            } catch (IOException e) {
-                log.error("Blog entry number '{}' could not be read", entryNumber, e);
-            }
-        }
-
-        return null;
+        return "";
     }
 }

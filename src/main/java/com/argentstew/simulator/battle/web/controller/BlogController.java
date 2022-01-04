@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.http.MediaType.TEXT_HTML_VALUE;
 
 /**
  * com.argentstew.simulator.battle.web.controller
@@ -47,8 +48,8 @@ public class BlogController {
         }
     }
 
-    @GetMapping(path = "/{number}", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<BlogDTO> getBlogEntry(@PathVariable int number) {
+    @GetMapping(path = "/{number}", produces = TEXT_HTML_VALUE)
+    public ResponseEntity<String> getBlogEntry(@PathVariable int number) {
         try {
             return ResponseEntity.ok(blogService.getEntry(number));
         } catch (MissingBlogException e) {
@@ -58,7 +59,7 @@ public class BlogController {
         }
     }
 
-    @GetMapping(path = "/{image}", produces = APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/{image}/image")
     public ResponseEntity<byte[]> getBlogImage(@PathVariable String image) {
         try {
             ImageDTO imageDTO = blogService.getBlogImage(image);
