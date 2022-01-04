@@ -1,5 +1,5 @@
-.border div {
-
+.dev-blog {
+    padding: 0 5% 20px;
 }
 
 .title {
@@ -19,18 +19,29 @@
 
 .entry-preview a {
     font-size: 20pt;
+    text-decoration: none;
+}
+
+.entry-preview a:hover {
+    text-decoration: underline;
 }
 
 .blog-timestamp {
-    font: 12pt grey italic;
+    text-align: center;
+    color: grey;
+    font-size: 10pt;
+    font-style: italic;
 }
 
 .blog-navigation {
     display: flex;
+    text-align: center;
+    width: 75%;
+    margin: 20px;
 }
 
 .blog-navigation a {
-    flex: 1;
+    flex: 3;
     font-weight: bold;
     text-decoration: none;
 }

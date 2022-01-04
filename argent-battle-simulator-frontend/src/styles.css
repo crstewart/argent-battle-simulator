@@ -17,8 +17,8 @@ body, html {
 
 /** Dynamic content styles **/
 
-.dynamic-content {
-
+.dynamic-content ol li {
+    padding-bottom: 16pt;
 }
 
 @media screen and (max-width: 960px) {
