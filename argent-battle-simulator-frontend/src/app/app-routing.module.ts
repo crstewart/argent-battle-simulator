@@ -14,12 +14,20 @@ const routes: Routes = [
         loadChildren: () => import('./simulator-details/simulator-details.module').then(m => m.SimulatorDetailsModule)
     },
     {
+        path: 'developer-blog',
+        loadChildren: () => import('./developer-blog/blog.module').then(m => m.BlogModule)
+    },
+    {
         path: 'fighters',
         loadChildren: () => import('./character-details/character-details.module').then(m => m.CharacterDetailsModule)
     },
     {
         path: 'patch-notes',
         loadChildren: () => import('./patch-notes/patch-notes.module').then(m => m.PatchNotesModule)
+    },
+    {
+        path: 'contribute',
+        loadChildren: () => import('./contribute/contribute.module').then(m => m.ContributeModule)
     },
     {
         path: 'standings',
@@ -44,6 +52,11 @@ const routes: Routes = [
     {
         path: '',
         redirectTo: '/home',
+        pathMatch: 'full'
+    },
+    {
+        path: 'dev-blog',
+        redirectTo: '/developer-blog',
         pathMatch: 'full'
     },
     {

@@ -50,4 +50,15 @@ public class LocalFileAccessor implements FileAccessor {
 
         return ImageDTO.builder().name(name).extension(extension).bytes(data).build();
     }
+
+    @Override
+    public String getBlogEntry(String directory, int entryNumber) {
+        try {
+            return new String(Files.readAllBytes(Paths.get(directory, String.format("entry%d.html", entryNumber))));
+        } catch (IOException e) {
+            log.error("Blog entry number '{}' could not be read", entryNumber, e);
+        }
+
+        return "";
+    }
 }

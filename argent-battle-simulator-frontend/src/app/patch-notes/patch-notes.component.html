@@ -4,6 +4,22 @@
         <select id="patch-notes-selection" [ngModel]="selected" (ngModelChange)="setVersion($event)">
             <option *ngFor="let option of options" [ngValue]="option">{{getVersionLabel(option)}}</option>
         </select>
+        <div *ngIf="selected.number === '1.2.2'">
+            <h2>Version 1.2.2</h2>
+            <ul>
+                <li>
+                    <strong>Site Updates</strong>
+                    <ul>
+                        <li>Added <a routerLink="/contribute">contributors</a> page (looking for contributors!)</li>
+                        <li>Added <a routerLink="/developer-blog">developer blog</a> page</li>
+                        <li>Updated simulator details "How It Works" section with updated information</li>
+                        <li>Fixed a bug in which "Return to top" would refresh the page</li>
+                        <li>Fixed a bug in which the site would report a 404 and still return the page as normal</li>
+                        <li>Added security fixes and updates</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
         <div *ngIf="selected.number === '1.2.1'">
             <h2>Version 1.2.1</h2>
             <ul>

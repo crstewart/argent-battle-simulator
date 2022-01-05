@@ -36,21 +36,10 @@ public class S3FileAccessor implements FileAccessor {
 
     @Override
     public ImageDTO getImage(String bucket, String key) {
-        if (StringUtils.isBlank(bucket)) {
-            throw new S3FileException("Could not fetch from S3: Bucket not specified");
-        }
+        validateBucket(bucket);
+        validateKey(key);
 
-        if (StringUtils.isBlank(key)) {
-            throw new S3FileException("Could not fetch from S3: Name not specified");
-        }
-
-        AmazonS3 client;
-        try {
-            client = s3ClientBuilder.build();
-        } catch (Exception e) {
-            throw new S3FileException("Failed to create client");
-        }
-
+        AmazonS3 client = getS3Client();
         try {
             for (String extension : ImageType.getAllExtensions()) {
                 String fullKey = key + "." + extension;
@@ -71,5 +60,40 @@ public class S3FileAccessor implements FileAccessor {
         }
 
         throw new S3FileException("Could not fetch from S3: File does not exist");
+    }
+
+    @Override
+    public String getBlogEntry(String bucket, int entryNumber) {
+        validateBucket(bucket);
+        if (entryNumber <= 0) {
+            throw new S3FileException("Could not fetch from S3: Blog entry number invalid");
+        }
+
+        AmazonS3 client = getS3Client();
+        try {
+            return client.getObjectAsString(bucket, String.format("entry%d.html", entryNumber));
+        } finally {
+            client.shutdown();
+        }
+    }
+
+    private void validateBucket(String bucket) {
+        if (StringUtils.isBlank(bucket)) {
+            throw new S3FileException("Could not fetch from S3: Bucket not specified");
+        }
+    }
+
+    private void validateKey(String key) {
+        if (StringUtils.isBlank(key)) {
+            throw new S3FileException("Could not fetch from S3: Key not specified");
+        }
+    }
+
+    private AmazonS3 getS3Client() {
+        try {
+            return s3ClientBuilder.build();
+        } catch (Exception e) {
+            throw new S3FileException("Failed to create client");
+        }
     }
 }

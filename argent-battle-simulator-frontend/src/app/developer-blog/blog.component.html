@@ -1,0 +1,24 @@
+<div class="border">
+    <div *ngIf="!selected" class="dev-blog">
+        <h2 class="title">Developer Blog</h2>
+        <p class="subtitle">
+            A blog by developer Craig Stewart detailing information about the simulator. Learn tips about character
+            matchups, updates on new and existing characters, and possible future features!
+        </p>
+        <div *ngFor="let entry of entries.reverse()" class="entry-preview">
+            <a routerLink="/developer-blog/{{entry.number}}">{{entry.title}}</a><br/>
+            <em class="blog-timestamp">{{entry.timestamp}}</em>
+            <p>{{entry.description}}</p>
+        </div>
+    </div>
+    <div *ngIf="selected" class="dev-blog">
+        <h2 class="title">{{getSelectedEntry().title}}</h2>
+        <p class="blog-timestamp">{{getSelectedEntry().timestamp}}</p>
+        <div class="dynamic-content" [innerHTML]="getSelectedEntry().html"></div>
+        <div class="blog-navigation">
+            <a *ngIf="selected > 1" routerLink="/developer-blog/{{selected - 1}}">Previous</a>
+            <a routerLink="/developer-blog">Return to Catalog</a>
+            <a *ngIf="selected < entries.length - 1" routerLink="/developer-blog/{{selected + 1}}">Next</a>
+        </div>
+    </div>
+</div>

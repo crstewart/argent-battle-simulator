@@ -1,13 +1,13 @@
 <div class="border">
     <div class="simulator-description">
         <p>
-            The Argent Battle Simulator takes a one-on-one duel between two characters and plays out the battle between
-            them.
+            The Argent Battle Simulator takes a one-on-one fight between two characters, playing out the battle between
+            them in an RPG-style arena duel!
         </p>
         <h2>Overview</h2>
         <p>
-            The Argent Battle Simulator is written in Java. The source code is also available on GitHub (link in the
-            footer) if you want to take a peek at the inner workings of the simulator.
+            The Argent Battle Simulator is written in Java. If you want more details or to see the source code,
+            <a routerLink="/contribute">become a contributor!</a>
         </p>
         <p>
             The Argent Battle Simulator runs battles on a 5x1 grid in a turn-based RPG manner. The fighters start at
@@ -20,10 +20,10 @@
         <p>
             Attacks are split into three categories: Melee, ranged, and magic. Damage done by these attacks is
             determined by a mathematical formula based on the power and variance assigned to the attack plus the stats
-            for a character. The speed of the attack is determined by the attack’s speed. If a character is struck by
-            an attack before they can execute their own action, they have a chance of being stunned by the faster
-            attack. When stunned a character cannot act for that turn. Attacks that require melee range have their
-            speed in part determined by how far away they are from the other character.
+            for a character. The speed of the attack is determined by the attack's priority. If a character is struck
+            by an attack before they can execute their own action, they have a chance of being stunned by the faster
+            attack based on their ability to resist it. When stunned a character cannot act for that turn. Attacks that
+            require melee range have their speed in part determined by how far away they are from the other character.
         </p>
         <p>
             Fighters each have a set of statistics to help decide how they fight. Most of these stats will be familiar
@@ -41,25 +41,25 @@
             <li><strong>Aim</strong> determines a character’s ability to hit with ranged attacks, as well as their
                 critical hit chance.</li>
             <li><strong>Agility</strong> factors into a character’s ability to critical hit with melee and ranged
-                attacks. Higher numbers also allow them to dodge better.</li>
+                attacks. Higher numbers also allow them to dodge easier.</li>
             <li><strong>Speed</strong> factors into a character’s dodge chance. It also allows them to move on the
                 battlefield faster.</li>
             <li><strong>Intellect</strong> increases a fighter’s damage with magic attacks. It also affects the amount
                 of weight given to a particularly effective or ineffective action when determining strategy for future
-                turns. (Higher intellect means they will use effective attacks more often.)</li>
+                turns. (Higher intellect means they will use effective moves more often.)</li>
             <li><strong>Willpower</strong> helps determine the critical hit chance of magic attacks. It also affects
                 the stun chance of incoming magic attacks.</li>
             <li><strong>Size</strong> factors into the chance an incoming attack will miss the fighter. Smaller
                 characters are harder to hit.</li>
-            <li><strong>Weight</strong> does not take much into account except for certain attacks that use this number.</li>
+            <li><strong>Weight</strong> affects certain attacks, particularly certain grapples.</li>
         </ul>
         <h2>X-Strike</h2>
         <p>
             Every character in the simulator has a special attack known as the X-Strike. This attack is their most
             powerful move. X-Strikes require charging through various actions over the course of a battle. The X-Strike
             meter fills up infinitely during a battle; however, once a character hits 20 on their meter they can spend
-            20 X-Strike points to use this powerful attack. X-Strikes cannot be blocked or dodged. X-Strikes have a high
-            weight in all strategies, so it is likely they are used once their meter fills enough.
+            20 X-Strike points to use this powerful attack. X-Strikes cannot be blocked or dodged. X-Strikes have a
+            high weight in all strategies, so it is likely they are used once their meter fills enough.
         </p>
         <p>
             X-Strike meter is filled up by characters using the following rules:
@@ -68,7 +68,7 @@
             <li>Every character passively gains 1 point on their X-Strike meter each turn.</li>
             <li>A successful attack adds an additional 1 X-Strike point to their meter.</li>
             <li>A successful dodge adds 2 extra X-Strike points to their meter.</li>
-            <li>A successful block adds 3 additional X-Strikes points to their meter.</li>
+            <li>A successful guard adds 3 additional X-Strikes points to their meter.</li>
         </ul>
         <p>
             All-in-all, a successful guard adds 4 points to a character’s X-Strike meter in a single turn! Defensive
@@ -86,48 +86,42 @@
         <h2>Traits</h2>
         <p>
             Some characters in the simulator have special traits that aid them passively in battle. The list of traits
-            are as follows:
+            grows with each patch as more mechanics are changed and each new character gains their own unique feel.
+            Some examples of common traits include:
         </p>
         <ul>
             <li><strong>Rival</strong> allows a hero to deal 30% extra damage to the villain they fight most often. For
                 example, Mario is rivals with Bowser and does additional damage to him on all his attacks.</li>
-            <li><strong>Natural Agility</strong> allows a character to dodge gunfire, marked as BULLET_SPEED in the
-                character descriptions.</li>
+            <li><strong>Slayer</strong> allows a character to deal 50% additional damage on all attacks to a specific
+                classification of character. For example, Marth's Dragon Slayer makes him an effective counter to
+                dragons while Kratos' God Slayer makes him powerful against divine characters.</li>
+            <li><strong>Natural Agility</strong> allows a character to dodge gunfire, marked as "Bullet Speed" in the
+                character descriptions. A character with this trait also cannot be paralyzed.</li>
             <li><strong>Hazardous</strong> applies to characters with spiky bodies. They deal small amounts of passive
                 damage to anyone who attacks them in physical combat (punches, kicks, headbutts, etc.)</li>
-            <li><strong>Mech Rider</strong> applies to characters like Dr. Wily and Tron Bonne who ride mechs into
-                battle. They have a passive 15% damage reduction on all incoming attacks. However, critical hits apply
+            <li><strong>Mech Rider</strong> applies to characters like Dr. Eggman and Tron Bonne who ride mechs into
+                battle. They have a passive 20% damage reduction on all incoming attacks. However, critical hits apply
                 25% additional damage to them.</li>
-            <li><strong>Critical Armor</strong> negates 25% of all damage done by critical hits.</li>
-            <li><strong>Cheater</strong> grants up to 20% additional damage on all attacks and 20% damage reduction on
-                all incoming attacks.</li>
             <li><strong>Stealth Detection</strong> negates the dodge bonus applied to all stealth attacks, marked as
-                STEALTH in the character descriptions.</li>
-            <li><strong>Bounty Hunter</strong> allows a character to deal 10% additional damage to humanoid and alien
-                characters.</li>
-            <li><strong>Maverick Hunter</strong> is unique to Zero. It allows him to deal 50% additional damage to
-                mechs and mech riders.</li>
-            <li><strong>Ex-Maverick Hunter</strong> is unique to Sigma. It allows him to deal a 10% bonus damage to
-                humanoids and mechs.</li>
-            <li><strong>Monster Hunter</strong> allows a character to deal 50% additional damage to monster characters
-                like Mewtwo and Sans.</li>
-            <li><strong>Animal Hunter</strong> allows a character to deal 50% additional damage to animal characters
-                like Sonic and Pikachu.</li>
-            <li><strong>Dragon Slayer</strong> allows a character to deal a 50% additional damage to dragon characters
-                such as Charizard and Spyro.</li>
-            <li><strong>Mech Scrapper</strong> allows a character to deal a 50% additional damage to mech characters
-                such as Mega Man and KOS-MOS. Similar to Maverick Hunter.</li>
-            <li><strong>God Slayer</strong> allows a character to deal a 50% additional damage to divine characters
-                such as Pit.</li>
-            <li><strong>Demon Slayer</strong> allows a character to deal 50% additional damage to characters with
-                demonic elements such as Akuma and Diablo.</li>
-            <li><strong>Barrier Change</strong> is unique to Magus. Whenever he uses a spell, he gains a 25% weakness
-                to the same element as the attack. However, he also gains 50% passive armor against all attacks of the
-                other elements at his disposal.</li>
-            <li><strong>Fool Arcana</strong> is unique to Joker. Whenever he summons a persona, he gains the weaknesses
-                and resistances of the summon.</li>
-            <li><strong>Protean</strong> is unique to Greninja. Whenever it uses an attack, its weaknesses and
-                resistances change based on the type of the attack.</li>
+                "Stealth" in the character descriptions.</li>
+        </ul>
+        <h2>Status Effects</h2>
+        <p>
+            Some attacks may apply a status to the opponent. For many attacks, this is a certainty while others have
+            a percentage chance on hit. Some characters are resistant to these effects based on their characteristics
+            or traits. Regardless, these effects can change the flow of battle in various ways:
+        </p>
+        <ul>
+            <li><strong>Poison:</strong> Deals toxic damage at the end of every turn</li>
+            <li><strong>Bleed:</strong> Deals slash damage at the end of every turn</li>
+            <li><strong>Burn:</strong> Deals fire damage at the end of every turn</li>
+            <li><strong>Paralysis:</strong> Halves the speed stat</li>
+            <li><strong>Sleep:</strong> Prevents the character from acting until a certain number of turns pass
+                or they are hit by an attack</li>
+            <li><strong>Root:</strong> Prevents the character from moving or using melee attacks</li>
+            <li><strong>Slow:</strong> Reduces the priority of all moves by 1</li>
+            <li><strong>Silence:</strong> Prevents the character from using magic attacks</li>
+            <li><strong>Frostbite:</strong> Halves the agility stat</li>
         </ul>
         <h2>Battle Logs</h2>
         <p>

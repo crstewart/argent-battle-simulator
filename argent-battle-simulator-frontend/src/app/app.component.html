@@ -6,8 +6,10 @@
             <ul id="internalLinks" class="nav">
                 <li><a routerLink="/" routerLinkActive="active">Home</a></li>
                 <li><a routerLink="/how-it-works" routerLinkActive="active">How It Works</a></li>
-                <li><a routerLink="/fighters" routerLinkActive="active">Character Details</a></li>
+                <li><a routerLink="/dev-blog" routerLinkActive="active">Developer Blog</a></li>
+                <li><a routerLink="/fighters" routerLinkActive="active">Fighter Details</a></li>
                 <li><a routerLink="/patch-notes" routerLinkActive="active">Patch Notes</a></li>
+                <li><a routerLink="/contribute" routerLinkActive="active">Contribute!</a></li>
             </ul>
         </div>
         <div [class]="setDropdownClass()">
@@ -24,6 +26,7 @@
     <p class="intro">
         What would happen if Master Chief encountered Pikachu?<br/>
         Who really would win a match between Mario and Sonic?<br/>
+        Would a bandicoot beat a bear in a one-on-one brawl?<br/>
         <br/>
         All these questions and more can be answered by the <strong>Argent Battle Simulator</strong>!<br/>
         <br/>
@@ -31,11 +34,12 @@
 </div>
 <router-outlet></router-outlet>
 <div class="footer">
-    <a (click)="navigateToTop()" style="cursor: pointer">Return to the top</a><br/>
+    <a (click)="scrollToTop()" style="cursor: pointer">Return to the top</a><br/>
     <br/>
-    <span>Argent Battle Simulator is &copy; 2020-2021 Craig Stewart</span><br/>
+    <span>Argent Battle Simulator is &copy; 2020-2022 Craig Stewart</span><br/>
     <span>All characters and character images are &copy; their respective owners.</span><br/>
     <span>This software is provided for free to all users.</span><br/>
-    <a href="https://github.com/crstewart/argent-battle-simulator" target="_blank">Check it out on GitHub!</a>
+    <span>Looking for new contributors! </span>
+    <a routerLink="/contribute">Learn how to become a contributor to the project!</a>
 </div>
 

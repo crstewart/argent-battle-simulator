@@ -12,8 +12,8 @@ export class AppComponent {
     constructor(private router: Router) {
     }
 
-    navigateToTop(): void {
-        this.router.navigate([], {fragment: 'top'});
+    scrollToTop(): void {
+        window.scroll(0, 0);
     }
 
     toggleMenu(isInternal: boolean) {
@@ -29,8 +29,8 @@ export class AppComponent {
         }
     }
 
-    private static toggleLinks(linksToToggle: HTMLElement, linkstoHide: HTMLElement) {
-        linkstoHide.style.display = "none";
+    private static toggleLinks(linksToToggle: HTMLElement, linksToHide: HTMLElement) {
+        linksToHide.style.display = "none";
         if (linksToToggle.style.display === "block") {
             linksToToggle.style.display = "none";
         } else {

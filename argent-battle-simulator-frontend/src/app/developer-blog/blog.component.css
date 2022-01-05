@@ -1,0 +1,55 @@
+.dev-blog {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 5% 20px;
+}
+
+.title {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+.entry-preview {
+    border: 1px solid black;
+    width: 80%;
+    margin: 0 auto;
+    padding: 12px;
+}
+
+.entry-preview a {
+    font-size: 20pt;
+    text-decoration: none;
+}
+
+.entry-preview a:hover {
+    text-decoration: underline;
+}
+
+.blog-timestamp {
+    text-align: center;
+    color: grey;
+    font-size: 10pt;
+    font-style: italic;
+}
+
+.blog-navigation {
+    display: flex;
+    text-align: center;
+    margin: 20px;
+}
+
+.blog-navigation a {
+    flex: 3;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.blog-navigation a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 960px) {
+}
