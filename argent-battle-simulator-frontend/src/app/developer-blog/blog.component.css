@@ -1,4 +1,6 @@
 .dev-blog {
+    width: 90%;
+    margin: 0 auto;
     padding: 0 5% 20px;
 }
 
@@ -36,7 +38,6 @@
 .blog-navigation {
     display: flex;
     text-align: center;
-    width: 75%;
     margin: 20px;
 }
 

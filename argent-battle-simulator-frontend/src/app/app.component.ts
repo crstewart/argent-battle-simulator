@@ -12,8 +12,8 @@ export class AppComponent {
     constructor(private router: Router) {
     }
 
-    navigateToTop(): void {
-        this.router.navigate([], {fragment: 'top'});
+    scrollToTop(): void {
+        window.scroll(0, 0);
     }
 
     toggleMenu(isInternal: boolean) {

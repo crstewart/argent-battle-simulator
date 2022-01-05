@@ -145,7 +145,8 @@ a.hamburger {
 
     .intro {
         padding: 20px 5%;
-        width: 70%;
+        min-height: 240px;
+        width: 85%;
         background-image: none;
         text-align: center;
     }
