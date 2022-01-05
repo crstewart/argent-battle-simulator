@@ -5,7 +5,7 @@
             A blog by developer Craig Stewart detailing information about the simulator. Learn tips about character
             matchups, updates on new and existing characters, and possible future features!
         </p>
-        <div *ngFor="let entry of entries" class="entry-preview">
+        <div *ngFor="let entry of entries.reverse()" class="entry-preview">
             <a routerLink="/developer-blog/{{entry.number}}">{{entry.title}}</a><br/>
             <em class="blog-timestamp">{{entry.timestamp}}</em>
             <p>{{entry.description}}</p>
