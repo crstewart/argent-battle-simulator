@@ -1,9 +1,6 @@
 package com.argentstew.simulator.battle.config;
 
-import com.argentstew.simulator.battle.web.repository.FighterRepository;
-import com.argentstew.simulator.battle.web.repository.MatchRepository;
-import com.argentstew.simulator.battle.web.repository.TeamRepository;
-import com.argentstew.simulator.battle.web.repository.WeekRepository;
+import com.argentstew.simulator.battle.web.repository.*;
 import com.argentstew.simulator.battle.web.service.FighterService;
 import com.argentstew.simulator.battle.web.service.LeagueService;
 import com.argentstew.simulator.battle.web.service.SimulatorService;
@@ -47,4 +44,7 @@ public class TestConfig {
 
     @MockBean
     private WeekRepository weekRepository;
+
+    @MockBean
+    private BlogEntryRepository blogEntryRepository;
 }
