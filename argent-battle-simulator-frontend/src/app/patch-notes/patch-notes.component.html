@@ -4,6 +4,32 @@
         <select id="patch-notes-selection" [ngModel]="selected" (ngModelChange)="setVersion($event)">
             <option *ngFor="let option of options" [ngValue]="option">{{getVersionLabel(option)}}</option>
         </select>
+        <div *ngIf="selected.number === '1.2.3'">
+            <h2>Version 1.2.3</h2>
+            <ul>
+                <li>Characters
+                    <ul>
+                        <li>Charizard
+                            <ul class="character-changes">
+                                <li class="buff">Dragon Claw now does double damage to dragons</li>
+                                <li class="nerf">Dragon Claw now does half damage to mechs</li>
+                                <li class="buff">Added new attack Seismic Toss</li>
+                                <li class="nerf">Removed Smokescreen</li>
+                                <li class="neutral">Mega Fire Blast renamed G-Max Wildfire</li>
+                                <li class="nerf">G-Max Wildfire power reduced from 280 +0-16 to 240 +0-10</li>
+                                <li class="nerf">G-Max Wildfire priority increased from 6 to 7</li>
+                                <li class="buff">G-Max Wildfire now applies burn status for 3 turns</li>
+                                <li><em>
+                                    Developer Note: These changes were made to bring Charizard closer to its intended
+                                    role as an attack-heavy brawler. The X-Strike change was made to try to spice up
+                                    the character even more and solidify its identity as a user of the new fiery
+                                    burn status.
+                                </em></li>
+                            </ul>
+                        </li>
+                </li>
+            </ul>
+        </div>
         <div *ngIf="selected.number === '1.2.2'">
             <h2>Version 1.2.2</h2>
             <ul>
