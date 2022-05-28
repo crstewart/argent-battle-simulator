@@ -9,7 +9,7 @@ import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
 import com.argentstew.simulator.battle.trait.impl.ComboStrike;
-import com.argentstew.simulator.battle.trait.impl.Demonslayer;
+import com.argentstew.simulator.battle.trait.impl.DemonSlayer;
 import com.argentstew.simulator.battle.trait.impl.GodSlayer;
 import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
 
@@ -34,7 +34,7 @@ public class Bayonetta {
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(3).dexterity(6).aim(8)
                 .agility(7.5).speed(6).intellect(6).willpower(4).size(5.5).weight(5).build();
-        FighterTraits traits = new FighterTraits(Arrays.asList(new GodSlayer(), new Demonslayer(), new ComboStrike(), new TimeManipulation()));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new GodSlayer(), new DemonSlayer(), new ComboStrike(), new TimeManipulation()));
         return Fighter.builder().name(NAME).hp(145).maxHp(145).xStrikeMeter(0)
                 .description("A speedy fighter with exceptional skill in battle due to her traits.")
                 .entryQuotes(Arrays.asList("Bayonetta: 'Well, we can't be having that now can we!? Let's rock, baby!'",

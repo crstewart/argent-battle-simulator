@@ -8,7 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.trait.impl.DemonHeart;
-import com.argentstew.simulator.battle.trait.impl.Demonslayer;
+import com.argentstew.simulator.battle.trait.impl.DemonSlayer;
 import com.argentstew.simulator.battle.trait.impl.StealthDetection;
 
 import java.util.Arrays;
@@ -31,7 +31,7 @@ public class Illidan {
 
         FighterStats stats = FighterStats.builder().strength(6.5).toughness(5).dexterity(6).aim(5)
                 .agility(8).speed(8.5).intellect(6).willpower(6.5).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits(Arrays.asList(new Demonslayer(), new StealthDetection(), new DemonHeart()));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new DemonSlayer(), new StealthDetection(), new DemonHeart()));
         return Fighter.builder().name(NAME).hp(130).maxHp(130).mp(0).maxMp(0).xStrikeMeter(0)
                 .description("A speedy fighter and anti-mage who becomes more powerful upon changing to demon form.")
                 .entryQuotes(Arrays.asList("Illidan: 'You are not prepared!'",

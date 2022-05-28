@@ -3,7 +3,6 @@ package com.argentstew.simulator.battle.vg.mario;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
-import com.argentstew.simulator.battle.action.attack.RangedAttack;
 
 import java.util.Collections;
 
@@ -13,11 +12,11 @@ import java.util.Collections;
  *
  * @author Craig
  */
-public class KoopaToss extends MeleeAttack {
+public class AirplaneSwing extends MeleeAttack {
 
-    public KoopaToss() {
+    public AirplaneSwing() {
         super();
-        this.name = "Koopa Toss";
+        this.name = "Airplane Swing";
         this.power = 60;
         this.variance = 6;
         this.speed = 2;

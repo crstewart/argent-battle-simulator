@@ -17,20 +17,25 @@ import lombok.Getter;
 public class ExMaverickHunter implements Trait {
 
     private final String name = "Ex-Maverick Hunter";
-    private final String description = "The fighter does 20% additional damage to humanoid and mech characters.";
+    private final String description = "The fighter deals double damage to humanoids and inflicts virus status on " +
+            "the first successful attack.";
 
-    @Override
-    public double applyBonusDamage(Fighter defender, double rawDamage) {
-        if (defender.getClassifications().contains(FighterClassification.HUMANOID)
-                || defender.getClassifications().contains(FighterClassification.MECH)) {
-            return rawDamage * 1.2;
-        }
+    private boolean activated;
 
-        return rawDamage;
+    public ExMaverickHunter() {
+        this.activated = false;
     }
 
     @Override
     public boolean isImmuneToTorment() {
-        return true;
+        return false;
+    }
+
+    public boolean isActivated() {
+        return activated;
+    }
+
+    public void setActivated(boolean activated) {
+        this.activated = activated;
     }
 }

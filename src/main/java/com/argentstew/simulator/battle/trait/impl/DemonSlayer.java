@@ -14,7 +14,7 @@ import lombok.Getter;
  */
 @Getter
 @EqualsAndHashCode
-public class Demonslayer implements Trait {
+public class DemonSlayer implements Trait {
 
     private final String name = "Demon Slayer";
     private final String description = "The fighter does 50% additional damage to demonic characters.";

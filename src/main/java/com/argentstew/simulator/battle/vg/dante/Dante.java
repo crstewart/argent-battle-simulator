@@ -8,7 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.trait.impl.Demonslayer;
+import com.argentstew.simulator.battle.trait.impl.DemonSlayer;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,7 +31,7 @@ public class Dante {
 
         FighterStats stats = FighterStats.builder().strength(8).toughness(6).dexterity(6).aim(6)
                 .agility(7.5).speed(8).intellect(5).willpower(6).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new Demonslayer()));
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new DemonSlayer()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A speedy fighter with a wide array of attack options.")
                 .entryQuotes(Arrays.asList("Dante: 'Let's rock baby!'",

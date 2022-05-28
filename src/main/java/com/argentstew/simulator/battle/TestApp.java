@@ -5,8 +5,10 @@ import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.logger.BattleLogger;
 import com.argentstew.simulator.battle.logger.NoopBattleLogger;
 import com.argentstew.simulator.battle.vg.charizard.Charizard;
+import com.argentstew.simulator.battle.vg.drwily.DrWily;
 import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 import com.argentstew.simulator.battle.vg.geno.Geno;
+import com.argentstew.simulator.battle.vg.sigma.Sigma;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +21,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Charizard.NAME;
+    private static final String TEST_FIGHTER = Sigma.NAME;
 
     public static void main(String[] args) {
 
