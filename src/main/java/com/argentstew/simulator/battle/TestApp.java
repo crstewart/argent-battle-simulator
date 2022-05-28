@@ -8,6 +8,8 @@ import com.argentstew.simulator.battle.vg.charizard.Charizard;
 import com.argentstew.simulator.battle.vg.drwily.DrWily;
 import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 import com.argentstew.simulator.battle.vg.geno.Geno;
+import com.argentstew.simulator.battle.vg.greninja.Greninja;
+import com.argentstew.simulator.battle.vg.pikachu.Pikachu;
 import com.argentstew.simulator.battle.vg.sigma.Sigma;
 
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Sigma.NAME;
+    private static final String TEST_FIGHTER = Greninja.NAME;
 
     public static void main(String[] args) {
 

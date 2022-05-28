@@ -42,7 +42,7 @@ public class Luigi {
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
                 .addAction(new GreenFireball()).addAction(new SuperPunch()).addAction(new HammerThrow())
-                .addAction(new PoultergustPlunger()).addAction(new VanishCap())
+                .addAction(new SuctionShot()).addAction(new VanishCap())
                 .addAction(new Poultergust())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }

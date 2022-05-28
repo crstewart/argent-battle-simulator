@@ -36,15 +36,15 @@ public class Pikachu {
                 .agility(9.5).speed(8.5).intellect(3).willpower(5.5).size(2).weight(1.5).build();
         FighterTraits traits = new FighterTraits(Arrays.asList(new Static(), new NaturalAgility()));
         return Fighter.builder().name(NAME).hp(120).maxHp(120).xStrikeMeter(0)
-                .description("A speedy fighter with strong defenses leading to a powerful X-Strike.")
+                .description("A speedy fighter who plays defensively and utilizes paralysis to negate opponents' speed.")
                 .entryQuotes(Arrays.asList("Pikachu: 'Pi-KA!'", "Pikachu: 'Pika pi!'"))
                 .victoryQuotes(Arrays.asList("Pikachu: 'Pika pika! Pikachu!'", "Pikachu: 'Pi pikachu!'"))
                 .classifications(Arrays.asList(FighterClassification.ANIMAL, FighterClassification.MONSTER))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new DefensiveStrategy()).build()
-                .addAction(new Thunderbolt()).addAction(new IronTail()).addAction(new QuickAttack())
+                .addAction(new Thunderbolt()).addAction(new BodySlam()).addAction(new QuickAttack())
                 .addAction(new Protect())
-                .addAction(new Catastropika())
+                .addAction(new TenMillVoltThunderbolt())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

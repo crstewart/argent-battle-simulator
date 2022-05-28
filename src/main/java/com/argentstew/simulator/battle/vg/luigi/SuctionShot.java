@@ -12,11 +12,11 @@ import java.util.Collections;
  *
  * @author Craig
  */
-public class PoultergustPlunger extends MeleeAttack {
+public class SuctionShot extends MeleeAttack {
 
-    public PoultergustPlunger() {
+    public SuctionShot() {
         super();
-        this.name = "Poultergust Plunger";
+        this.name = "Suction Shot";
         this.power = 60;
         this.variance = 6;
         this.speed = 1;

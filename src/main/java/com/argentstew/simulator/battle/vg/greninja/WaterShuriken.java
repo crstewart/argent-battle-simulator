@@ -21,7 +21,7 @@ public class WaterShuriken extends RangedAttack {
         this.name = "Water Shuriken";
         this.power = 45;
         this.variance = 15;
-        this.speed = 1;
+        this.speed = 0.5;
         this.subtypes = Collections.singletonList(AttackSubType.WATER);
         this.characteristics = Collections.emptyList();
     }
