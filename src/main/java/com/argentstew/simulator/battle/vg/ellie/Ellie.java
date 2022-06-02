@@ -32,9 +32,9 @@ public class Ellie {
         FighterTraits traits = new FighterTraits(Arrays.asList(new ZombieSlayer(), new Survivalist()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A survivalist weaponmaster with experience fighting against the undead.")
-                .entryQuotes(Arrays.asList("Ellie: 'We're not murderers. We just survive.'",
+                .entryQuotes(Arrays.asList("Ellie: 'Everyone I have cared for has either died or left me.'",
                         "Ellie: 'I can make it quick... or I can make it so much worse.'"))
-                .victoryQuotes(Arrays.asList("Ellie: 'I shot the hell out of that one, huh?'",
+                .victoryQuotes(Arrays.asList("Ellie: 'We're not murderers. We just survive.'",
                         "Ellie: 'To the edge of the universe and back. Endure and survive.'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)

@@ -14,6 +14,7 @@ import {Location} from "@angular/common";
 export class PatchNotesComponent extends ComplexRoutingComponent implements OnInit {
 
     options: Option[] = [
+        {number: '1.2.3'},
         {number: '1.2.2'},
         {number: '1.2.1'},
         {number: '1.2', name: 'Myths and Monsters'},
