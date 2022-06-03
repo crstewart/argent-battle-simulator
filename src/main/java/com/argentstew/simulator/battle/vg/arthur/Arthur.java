@@ -8,7 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.RangedStrategy;
-import com.argentstew.simulator.battle.trait.impl.Demonslayer;
+import com.argentstew.simulator.battle.trait.impl.DemonSlayer;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,7 +32,7 @@ public class Arthur {
 
         FighterStats stats = FighterStats.builder().strength(4).toughness(8).dexterity(3.5).aim(9)
                 .agility(3).speed(2).intellect(4.5).willpower(7.5).size(4).weight(4.5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new Demonslayer()));
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new DemonSlayer()));
         return Fighter.builder().name(NAME).hp(130).maxHp(130).xStrikeMeter(0)
                 .description("A slow but steadfast fighter with all ranged attacks.")
                 .entryQuotes(Arrays.asList("Arthur: 'Sir Arthur is ready to do battle!'",

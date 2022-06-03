@@ -4,8 +4,14 @@ import com.argentstew.simulator.battle.arena.DuelArena;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.logger.BattleLogger;
 import com.argentstew.simulator.battle.logger.NoopBattleLogger;
+import com.argentstew.simulator.battle.vg.charizard.Charizard;
+import com.argentstew.simulator.battle.vg.drwily.DrWily;
 import com.argentstew.simulator.battle.vg.factory.VgFighterFactory;
 import com.argentstew.simulator.battle.vg.geno.Geno;
+import com.argentstew.simulator.battle.vg.greninja.Greninja;
+import com.argentstew.simulator.battle.vg.kefka.Kefka;
+import com.argentstew.simulator.battle.vg.pikachu.Pikachu;
+import com.argentstew.simulator.battle.vg.sigma.Sigma;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +24,7 @@ import java.util.List;
  */
 public class TestApp {
 
-    private static final String TEST_FIGHTER = Geno.NAME;
+    private static final String TEST_FIGHTER = Kefka.NAME;
 
     public static void main(String[] args) {
 

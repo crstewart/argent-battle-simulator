@@ -40,7 +40,7 @@ public class SolidSnake {
                 .entryQuotes(Arrays.asList("Snake: 'Kept you waiting, huh?'",
                         "Snake: 'He who controls the battlefield, controls history.'"))
                 .victoryQuotes(Arrays.asList("Snake: 'I’m no hero. Never was, never will be.'",
-                        "Snake: 'Colonel, mission accomplished.'"))
+                        "Snake: 'It's easy to forget what a sin is in the middle of a battlefield.'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()

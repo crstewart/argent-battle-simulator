@@ -1,6 +1,7 @@
 package com.argentstew.simulator.battle.vg.pikachu;
 
 import com.argentstew.simulator.battle.action.AttackAction;
+import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.defense.Guard;
 
 /**
@@ -15,7 +16,7 @@ public class Protect extends Guard {
 
     public Protect() {
         this.name = "Protect";
-        this.description = "Has 5 uses, blocks all guardable attacks";
+        this.description = "Has 5 uses, blocks all non-stealth attacks; absorbs only 75% damage from characters size 7 or higher";
         this.initiateMessage = "protects itself!";
         this.successMessage = "successfully foiled the attack!";
         this.failureMessage = "failed to defend the attack!";
@@ -26,12 +27,12 @@ public class Protect extends Guard {
     @Override
     protected boolean doesGuardAttack(AttackAction attack) {
         this.uses -= 1;
-        return true;
+        return !attack.getCharacteristics().contains(AttackCharacteristic.STEALTH);
     }
 
     @Override
     public int applyDefense(int damage) {
-        return 0;
+        return (owner.getArena().getOpponent(owner).getStats().getSize() >= 7) ? (int) Math.round(damage * 0.25) : 0;
     }
 
     @Override

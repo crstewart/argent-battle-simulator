@@ -8,7 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.BalancedStrategy;
-import com.argentstew.simulator.battle.trait.impl.Demonslayer;
+import com.argentstew.simulator.battle.trait.impl.DemonSlayer;
 import com.argentstew.simulator.battle.trait.impl.Sunrise;
 import com.argentstew.simulator.battle.trait.impl.TimeManipulation;
 
@@ -34,7 +34,7 @@ public class Amaterasu {
 
         FighterStats stats = FighterStats.builder().strength(5.5).toughness(4).dexterity(9.5).aim(6)
                 .agility(8).speed(7).intellect(8).willpower(7).size(4).weight(4).build();
-        FighterTraits traits = new FighterTraits(Arrays.asList(new Demonslayer(), new TimeManipulation(), new Sunrise()));
+        FighterTraits traits = new FighterTraits(Arrays.asList(new DemonSlayer(), new TimeManipulation(), new Sunrise()));
         return Fighter.builder().name(NAME).hp(140).maxHp(140).xStrikeMeter(0)
                 .description("A speedy fighter who punishes enemies relying on the power of darkness.")
                 .entryQuotes(Arrays.asList("Issun: 'Let's have one of those famous howls of yours!'",

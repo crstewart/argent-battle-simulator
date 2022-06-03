@@ -41,7 +41,7 @@ public class Mario {
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new BalancedStrategy()).build()
                 .addAction(new Fireball()).addAction(new PunchGlove()).addAction(new SuperHammer())
-                .addAction(new Fludd()).addAction(new KoopaToss()).addAction(new MetalCap())
+                .addAction(new Fludd()).addAction(new AirplaneSwing()).addAction(new MetalCap())
                 .addAction(new MarioFinale())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }

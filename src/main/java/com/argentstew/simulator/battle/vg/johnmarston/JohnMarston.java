@@ -33,8 +33,8 @@ public class JohnMarston {
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("An old west weaponmaster with a lasso that can tie up and stop his opponents.")
                 .entryQuotes(Arrays.asList("John Marston: 'My side ain't chosen. My side was given.'",
-                        "John Marston: 'If you win power, remember why you wanted it.'"))
-                .victoryQuotes(Arrays.asList("John Marston: 'I'm a semi-literate farmer and hired killer. I ain't in the power game.'",
+                        "John Marston: 'I'm a semi-literate farmer and hired killer. I ain't in the power game.'"))
+                .victoryQuotes(Arrays.asList("John Marston: 'If you find yourself in a hole, the first thing to do is stop diggin'.'",
                         "John Marston: 'While there are guns and money, there won't be any freedom.'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)

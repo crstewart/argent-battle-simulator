@@ -50,8 +50,8 @@ public class Charizard {
                 .defenses(defenses).stats(stats).traits(traits)
                 .strategy(new OffensiveStrategy()).build()
                 .addAction(new Flamethrower()).addAction(new DragonClaw()).addAction(new WingAttack())
-                .addAction(new Smokescreen())
-                .addAction(new MegaFireBlast())
+                .addAction(new SeismicToss())
+                .addAction(new GMaxWildfire())
                 .addAction(new Dodge()).addAction(new Advance()).addAction(new Retreat()).addAction(new Sleep());
     }
 }

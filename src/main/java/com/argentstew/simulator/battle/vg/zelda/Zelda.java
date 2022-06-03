@@ -34,7 +34,7 @@ public class Zelda {
                 .description("A mage with a reflective guard and strong magic abilities.")
                 .entryQuotes(Arrays.asList("Zelda: 'I will deal with Hyrule's enemies myself!'",
                         "Zelda: 'Stow your fear; it's now or never!'"))
-                .victoryQuotes(Arrays.asList("Zelda: 'Victory is ours on this day!'",
+                .victoryQuotes(Arrays.asList("Zelda: 'Courage need not be remembered, for it is never forgotten.'",
                         "Zelda: 'All shadows must eventually meet the light.'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))
                 .defenses(defenses).stats(stats).traits(traits)

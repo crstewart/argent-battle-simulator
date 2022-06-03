@@ -1,9 +1,8 @@
-package com.argentstew.simulator.battle.vg.mario;
+package com.argentstew.simulator.battle.vg.luigi;
 
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.MeleeAttack;
-import com.argentstew.simulator.battle.action.attack.RangedAttack;
 
 import java.util.Collections;
 
@@ -13,14 +12,14 @@ import java.util.Collections;
  *
  * @author Craig
  */
-public class KoopaToss extends MeleeAttack {
+public class SuctionShot extends MeleeAttack {
 
-    public KoopaToss() {
+    public SuctionShot() {
         super();
-        this.name = "Koopa Toss";
+        this.name = "Suction Shot";
         this.power = 60;
         this.variance = 6;
-        this.speed = 2;
+        this.speed = 1;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);
         this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }

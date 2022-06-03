@@ -8,7 +8,7 @@ import com.argentstew.simulator.battle.action.move.Retreat;
 import com.argentstew.simulator.battle.action.move.Sleep;
 import com.argentstew.simulator.battle.fighter.*;
 import com.argentstew.simulator.battle.strategy.OffensiveStrategy;
-import com.argentstew.simulator.battle.trait.impl.Demonslayer;
+import com.argentstew.simulator.battle.trait.impl.DemonSlayer;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,7 +31,7 @@ public class DoomSlayer {
 
         FighterStats stats = FighterStats.builder().strength(6).toughness(8).dexterity(5).aim(6)
                 .agility(5.5).speed(5.5).intellect(2.5).willpower(5).size(5).weight(5).build();
-        FighterTraits traits = new FighterTraits(Collections.singletonList(new Demonslayer()));
+        FighterTraits traits = new FighterTraits(Collections.singletonList(new DemonSlayer()));
         return Fighter.builder().name(NAME).hp(160).maxHp(160).xStrikeMeter(0)
                 .description("A futuristic gunner with experience fighting demons.")
                 .entryQuotes(Arrays.asList("The Doom Slayer looks side to side before setting his eyes on his enemy.",

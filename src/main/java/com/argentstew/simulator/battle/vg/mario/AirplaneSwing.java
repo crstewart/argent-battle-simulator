@@ -1,4 +1,4 @@
-package com.argentstew.simulator.battle.vg.luigi;
+package com.argentstew.simulator.battle.vg.mario;
 
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
@@ -12,14 +12,14 @@ import java.util.Collections;
  *
  * @author Craig
  */
-public class PoultergustPlunger extends MeleeAttack {
+public class AirplaneSwing extends MeleeAttack {
 
-    public PoultergustPlunger() {
+    public AirplaneSwing() {
         super();
-        this.name = "Poultergust Plunger";
+        this.name = "Airplane Swing";
         this.power = 60;
         this.variance = 6;
-        this.speed = 1;
+        this.speed = 2;
         this.subtypes = Collections.singletonList(AttackSubType.GRAPPLE);
         this.characteristics = Collections.singletonList(AttackCharacteristic.HOLD);
     }

@@ -37,7 +37,8 @@ public class GeraltOfRivia {
         FighterTraits traits = new FighterTraits(Collections.singletonList(new MonsterSlayer()));
         return Fighter.builder().name(NAME).hp(150).maxHp(150).xStrikeMeter(0)
                 .description("An all-around fighter who excels against monsters.")
-                .entryQuotes(Arrays.asList("Geralt: 'I believe in the sword.'", "Geralt: 'Damn, you're ugly.'"))
+                .entryQuotes(Arrays.asList("Geralt: 'I believe in the sword.'",
+                        "Geralt: 'The witch hunts will never be about witches. To have a scapegoat, that's the key.'"))
                 .victoryQuotes(Arrays.asList("Geralt: 'Time eats away at memories, distorts them. Sometimes we only remember the good...sometimes only the bad.'",
                         "Geralt: 'Evil is evil. Lesser, greater, middling...makes no difference.'"))
                 .classifications(Collections.singletonList(FighterClassification.HUMANOID))

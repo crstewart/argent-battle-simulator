@@ -3,6 +3,7 @@ package com.argentstew.simulator.battle.vg.pikachu;
 import com.argentstew.simulator.battle.action.attack.AttackCharacteristic;
 import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.RangedXStrike;
+import com.argentstew.simulator.battle.fighter.Fighter;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,14 +14,14 @@ import java.util.Collections;
  *
  * @author Craig
  */
-public class Catastropika extends RangedXStrike {
+public class TenMillVoltThunderbolt extends RangedXStrike {
 
-    public Catastropika() {
+    public TenMillVoltThunderbolt() {
         super();
-        this.name = "Catastropika";
-        this.power = 240;
-        this.variance = 24;
-        this.speed = 5;
+        this.name = "10,000,000 Volt Thunderbolt";
+        this.power = 250;
+        this.variance = 25;
+        this.speed = 6;
         this.subtypes = Collections.singletonList(AttackSubType.THUNDER);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }

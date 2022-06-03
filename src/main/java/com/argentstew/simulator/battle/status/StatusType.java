@@ -30,6 +30,7 @@ public enum StatusType {
     BLEED("bleeding", AttackSubType.SLASH, 5,
             fighter -> fighter.getClassifications().size() == 1 && fighter.getClassifications().contains(FighterClassification.MECH)),
     BURN("burned", AttackSubType.FIRE, 3, fighter -> fighter.getTraits().has(HeatResistance.class)),
+    VIRUS("infected", AttackSubType.THUNDER, 3, fighter -> !fighter.getClassifications().contains(FighterClassification.MECH)),
     PARALYSIS("paralyzed", FighterStats.SPEED, 0.5, fighter -> fighter.getTraits().has(NaturalAgility.class)),
     SLEEP("asleep", Arrays.asList(AttackAction.class, DefenseAction.class, MoveAction.class), fighter -> fighter.getTraits().has(Insomniac.class)),
     ROOT("rooted", Arrays.asList(MeleeAttack.class, MoveAction.class), fighter -> fighter.getTraits().has(Teleportation.class)),

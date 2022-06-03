@@ -16,7 +16,7 @@ public class MatBlock extends Guard {
 
     public MatBlock() {
         this.name = "Mat Block";
-        this.description = "Has 10 uses, blocks all guardable attacks";
+        this.description = "Has 10 uses, blocks all guardable attacks; chance of failure increases as it is used";
         this.initiateMessage = "protects itself!";
         this.successMessage = "successfully foiled the attack!";
         this.failureMessage = "failed to defend the attack!";
@@ -26,6 +26,7 @@ public class MatBlock extends Guard {
 
     @Override
     protected boolean doesGuardAttack(AttackAction attack) {
+        boolean isSuccessful = Math.random() < ((this.uses + 10) / 20.0);
         this.uses -= 1;
 
         Protean trait = this.owner.getTraits().getTrait(Protean.class);
@@ -33,7 +34,7 @@ public class MatBlock extends Guard {
             trait.setState(Protean.FIGHTING_TYPE);
         }
 
-        return true;
+        return isSuccessful;
     }
 
     @Override

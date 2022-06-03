@@ -5,6 +5,9 @@ import com.argentstew.simulator.battle.action.attack.AttackSubType;
 import com.argentstew.simulator.battle.action.attack.RangedXStrike;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.fighter.FighterClassification;
+import com.argentstew.simulator.battle.reporting.DamageReport;
+import com.argentstew.simulator.battle.status.StatusEffect;
+import com.argentstew.simulator.battle.status.StatusType;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -20,16 +23,20 @@ public class SigmaVirus extends RangedXStrike {
     public SigmaVirus() {
         super();
         this.name = "Sigma Virus";
-        this.description = "Always critical hits mechs";
-        this.power = 160;
-        this.variance = 10;
+        this.description = "Applies virus status on hit until the end of the match";
+        this.power = 250;
+        this.variance = 20;
         this.speed = 1.5;
         this.subtypes = Arrays.asList(AttackSubType.THUNDER, AttackSubType.TOXIC);
         this.characteristics = Arrays.asList(AttackCharacteristic.UNGUARDABLE, AttackCharacteristic.UNDODGEABLE);
     }
 
     @Override
-    public double getCritChance(Fighter defender) {
-        return defender.getClassifications().contains(FighterClassification.MECH) ? 1 : super.getCritChance(defender);
+    public DamageReport doAttack(Fighter defender) {
+        DamageReport report = super.doAttack(defender);
+
+        defender.setStatus(new StatusEffect(StatusType.VIRUS));
+
+        return report;
     }
 }
