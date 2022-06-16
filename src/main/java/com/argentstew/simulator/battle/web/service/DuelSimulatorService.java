@@ -3,7 +3,8 @@ package com.argentstew.simulator.battle.web.service;
 import com.argentstew.simulator.battle.Battle;
 import com.argentstew.simulator.battle.factory.FighterFactory;
 import com.argentstew.simulator.battle.fighter.Fighter;
-import com.argentstew.simulator.battle.web.log.LogFetcher;
+import com.argentstew.simulator.battle.web.file.FileAccessor;
+import com.argentstew.simulator.battle.web.file.FileStore;
 import com.argentstew.simulator.battle.web.log.WebLogger;
 import com.argentstew.simulator.battle.web.model.FighterDTO;
 import com.argentstew.simulator.battle.web.model.SimulationResult;
@@ -15,8 +16,10 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
 
 /**
  * com.argentstew.simulator.battle.web.service
@@ -29,23 +32,28 @@ public class DuelSimulatorService implements SimulatorService {
 
     private static final Logger LOG = LogManager.getLogger(DuelSimulatorService.class);
 
+    private static final String STORAGE_DIRECTORY = "";
+
     private final FighterFactory fighterFactory;
     private final FighterRepository fighterRepository;
     private final BattleProvider battleProvider;
     private final LoggerProvider<WebLogger> loggerProvider;
-    private final LogFetcher logFetcher;
+    private final FileAccessor fileAccessor;
+    private final FileStore fileStore;
 
     @Autowired
     public DuelSimulatorService(FighterFactory fighterFactory,
                                 FighterRepository fighterRepository,
                                 BattleProvider battleProvider,
                                 LoggerProvider<WebLogger> loggerProvider,
-                                LogFetcher logFetcher) {
+                                FileAccessor fileAccessor,
+                                FileStore fileStore) {
         this.fighterFactory = fighterFactory;
         this.fighterRepository = fighterRepository;
         this.battleProvider = battleProvider;
         this.loggerProvider = loggerProvider;
-        this.logFetcher = logFetcher;
+        this.fileAccessor = fileAccessor;
+        this.fileStore = fileStore;
     }
 
     @Override
@@ -55,37 +63,36 @@ public class DuelSimulatorService implements SimulatorService {
         LOG.info("Running simulation between {} and {}", fighter1.getName(), fighter2.getName());
 
         StringWriter stringWriter = new StringWriter();
-        WebLogger logger = loggerProvider.getLogger(stringWriter);
-        Fighter winner;
-        try {
+        SimulationResult result;
+        try (WebLogger logger = loggerProvider.getLogger(stringWriter)) {
             logger.open();
 
             Battle battle = battleProvider.setUpBattle(fighter1, fighter2, logger);
             battle.announce();
             battle.start();
+            Fighter winner = battle.determineWinner();
 
-            winner = battle.determineWinner();
-        } finally {
-            logger.close();
+            String fighter1Copyright = fighterRepository.findByName(fighter1Name)
+                    .map(fighter -> fighter.getCopyrightOwner()).orElse("(Unknown)");
+            String fighter2Copyright = fighterRepository.findByName(fighter2Name)
+                    .map(fighter -> fighter.getCopyrightOwner()).orElse("(Unknown)");
+
+            result = new SimulationResult();
+            result.setWinner(winner == null ? "Draw" : winner.getName());
+            result.setFighter1(FighterDTO.builder().name(fighter1Name).copyrightOwner(fighter1Copyright).build());
+            result.setFighter2(FighterDTO.builder().name(fighter2Name).copyrightOwner(fighter2Copyright).build());
+            result.setMessage(stringWriter.toString());
+            result.setId(logger.getUuid());
         }
 
-        String fighter1Copyright = fighterRepository.findByName(fighter1Name)
-                .map(fighter -> fighter.getCopyrightOwner()).orElse("(Unknown)");
-        String fighter2Copyright = fighterRepository.findByName(fighter2Name)
-                .map(fighter -> fighter.getCopyrightOwner()).orElse("(Unknown)");
-
-        SimulationResult result = new SimulationResult();
-        result.setWinner(winner == null ? "Draw" : winner.getName());
-        result.setFighter1(FighterDTO.builder().name(fighter1Name).copyrightOwner(fighter1Copyright).build());
-        result.setFighter2(FighterDTO.builder().name(fighter2Name).copyrightOwner(fighter2Copyright).build());
-        result.setMessage(stringWriter.toString());
-        result.setId(logger.getUuid());
+        fileStore.saveFile(STORAGE_DIRECTORY, result.getId() + ".txt",
+                new ByteArrayInputStream(result.getMessage().getBytes(StandardCharsets.UTF_8)));
 
         return result;
     }
 
     @Override
-    public String fetchSimulation(String id) throws IOException {
-        return logFetcher.getFile(id);
+    public String fetchSimulation(String id) {
+        return fileAccessor.getLogFile(STORAGE_DIRECTORY, id);
     }
 }

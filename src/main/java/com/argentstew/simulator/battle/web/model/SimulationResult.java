@@ -13,6 +13,8 @@ public class SimulationResult {
 
     private FighterDTO fighter1;
     private FighterDTO fighter2;
+    private String fighter1FinalHP;
+    private String fighter2FinalHP;
     private String winner;
     private String message;
     private String id;

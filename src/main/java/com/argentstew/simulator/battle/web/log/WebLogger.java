@@ -14,7 +14,7 @@ import java.util.UUID;
  *
  * @author argen
  */
-public class WebLogger implements BattleLogger {
+public class WebLogger implements BattleLogger, AutoCloseable {
 
     private String fileDir;
     private String uuid;

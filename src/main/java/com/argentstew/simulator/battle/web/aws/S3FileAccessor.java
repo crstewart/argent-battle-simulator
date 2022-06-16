@@ -72,6 +72,25 @@ public class S3FileAccessor implements FileAccessor {
         AmazonS3 client = getS3Client();
         try {
             return client.getObjectAsString(bucket, String.format("entry%d.html", entryNumber));
+        } catch (AmazonServiceException e) {
+            throw new S3FileException(String.format("Error from S3 for %s (%s - %s)", bucket,
+                    e.getErrorCode(), e.getErrorMessage()));
+        } finally {
+            client.shutdown();
+        }
+    }
+
+    @Override
+    public String getLogFile(String bucket, String id) {
+        validateBucket(bucket);
+        validateKey(id);
+
+        AmazonS3 client = getS3Client();
+        try {
+            return client.getObjectAsString(bucket, id + ".txt");
+        } catch (AmazonServiceException e) {
+            throw new S3FileException(String.format("Error from S3 for %s (%s - %s)", bucket,
+                    e.getErrorCode(), e.getErrorMessage()));
         } finally {
             client.shutdown();
         }

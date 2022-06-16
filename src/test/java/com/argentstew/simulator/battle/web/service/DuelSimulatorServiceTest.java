@@ -4,7 +4,8 @@ import com.argentstew.simulator.battle.Battle;
 import com.argentstew.simulator.battle.factory.FighterFactory;
 import com.argentstew.simulator.battle.fighter.Fighter;
 import com.argentstew.simulator.battle.logger.BattleLogger;
-import com.argentstew.simulator.battle.web.log.LogFetcher;
+import com.argentstew.simulator.battle.web.file.FileAccessor;
+import com.argentstew.simulator.battle.web.file.FileStore;
 import com.argentstew.simulator.battle.web.log.WebLogger;
 import com.argentstew.simulator.battle.web.model.SimulationResult;
 import com.argentstew.simulator.battle.web.provider.BattleProvider;
@@ -18,12 +19,14 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Writer;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
@@ -51,7 +54,10 @@ public class DuelSimulatorServiceTest {
     private LoggerProvider<WebLogger> loggerProvider;
 
     @Mock
-    private LogFetcher logFetcher;
+    private FileAccessor fileAccessor;
+
+    @Mock
+    private FileStore fileStore;
 
     @Mock
     private WebLogger logger;
@@ -79,6 +85,8 @@ public class DuelSimulatorServiceTest {
         assertEquals("Draw", result.getWinner());
         assertEquals("abc", result.getId());
         assertTrue(StringUtils.isBlank(result.getMessage()));
+
+        verify(fileStore).saveFile(anyString(), anyString(), any(InputStream.class));
     }
 
     @Test
@@ -89,16 +97,9 @@ public class DuelSimulatorServiceTest {
     }
 
     @Test
-    void testFetchSimulation_Success() throws Exception {
-        when(logFetcher.getFile(anyString())).thenReturn("Hello, simulator!");
+    void testFetchSimulation_Success() {
+        when(fileAccessor.getLogFile(anyString(), anyString())).thenReturn("Hello, simulator!");
 
         assertEquals("Hello, simulator!", service.fetchSimulation("abc"));
-    }
-
-    @Test
-    void testFetchSimulation_Error() throws Exception {
-        when(logFetcher.getFile(anyString())).thenThrow(IOException.class);
-
-        assertThrows(IOException.class, () -> service.fetchSimulation("abc"));
     }
 }

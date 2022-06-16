@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -57,6 +58,17 @@ public class LocalFileAccessor implements FileAccessor {
             return new String(Files.readAllBytes(Paths.get(directory, String.format("entry%d.html", entryNumber))));
         } catch (IOException e) {
             log.error("Blog entry number '{}' could not be read", entryNumber, e);
+        }
+
+        return "";
+    }
+
+    @Override
+    public String getLogFile(String directory, String id) {
+        try {
+            return new String(Files.readAllBytes(Paths.get(directory, String.format("%s.txt", id))));
+        } catch (IOException e) {
+            log.error("Log file ID '{}' could not be read", id, e);
         }
 
         return "";
